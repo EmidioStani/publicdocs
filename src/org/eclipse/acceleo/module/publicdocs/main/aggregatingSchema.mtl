@@ -1,0 +1,296 @@
+[comment encoding = UTF-8 /]
+[module aggregatingSchema('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::main::util/]
+[import org::eclipse::acceleo::module::publicdocs::main::annotation/]
+[import org::eclipse::acceleo::module::publicdocs::main::complextype /]
+[import org::eclipse::acceleo::module::publicdocs::main::codelist /]
+[import org::eclipse::acceleo::module::publicdocs::common::givedate /]
+[import org::eclipse::acceleo::module::publicdocs::common::giveconfiguration /]
+
+
+[template public beginSchema(pack : Package, version: String)]
+[comment @main/]
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================= -->
+<!--  [pack.name/] XML Schema File -->
+<!-- 
+    Schema agency: European Commission
+    Schema version: [version/]
+    Schema date: 
+    Copyright  (C) - 2016 
+-->
+<!-- ====================================================== -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="[pack.URI/]"
+		   xmlns="[pack.URI/]"
+[for (packName : String | Sequence{'pdc', 'cvb', 'cva', 'forms', 'udt'})]
+	[if packName <> pack.name]
+		[if packName = 'cva']
+				   xmlns:[packName/] ="[getConfig('url.cva')/]"	
+		[else][if packName = 'cvb']
+				   xmlns:[packName/] ="[getConfig('url.cvb')/]"
+				[else][if packName = 'udt']
+				   xmlns:[packName/] ="[getConfig('url.udt')/]"
+					  [else]
+				   xmlns:[packName/] ="[getConfig('url.pdc')/][packName/]"
+					 [/if]
+			  [/if]
+		[/if]
+	[/if]
+[/for]
+[comment]
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+[/comment]
+>
+<xs:annotation>	
+	<xs:documentation xml:lang="en">
+        Public Documents XML schema [version/]
+        Copyright (C) European Union, [getDate('yyyy')/]
+        Licensed under the ISA Open Metadata Licence
+        Original authors:
+        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+        Emidio Stani (emidio.stani@be.pwc.com),
+        Ioana Novacean (ioana.novacean@be.pwc.com)
+	</xs:documentation>
+	<xs:appinfo>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description rdf:about="http://data.europa.eu/xyz/[version/]">
+                <dc:title>Public Documents XML schema</dc:title>
+                <dc:description>This schema defines terms for Public Document model based on the regulation ...</dc:description>
+                <dc:publisher>E-Justice Portal</dc:publisher>
+                <dc:creator>Suzanne Wigard (suzanne.wigard@ec.europa.eu)</dc:creator>
+                <dc:creator>Emidio Stani (emidio.stani@be.pwc.com)</dc:creator>
+                <dc:creator>Ioana Novacean (ioana.novacean@be.pwc.com)</dc:creator>
+                <dc:rights>Copyright (C) European Union, 2017</dc:rights>
+                <dc:license>https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11</dc:license>
+            </rdf:Description>
+        </rdf:RDF>
+	</xs:appinfo>
+</xs:annotation>
+[/template]
+
+[template public endSchema(pack : Package, version: String)]
+</xs:schema>
+[/template]
+
+[template public generateImports(pack : Package, version: String)]
+[if(pack.name <> 'pdc')]
+<!-- ===== Imports======================================== -->                                                                  
+<xs:import namespace="http://urn:ec:ejustice:publicdocuments/pdc"
+           schemaLocation="pdc-AggregatedComponents-[version/].xsd"/>
+[else]
+<!-- ===== Imports========================================= -->           
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+           schemaLocation="../[getConfig('path.cvb')/]"/>
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+           schemaLocation="../[getConfig('path.cva')/]"/>
+[comment]
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+           schemaLocation="CoreVocabularies-BasicComponents-1.1.xsd"/>
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+           schemaLocation="CoreVocabularies-AggregateComponents-1.1.xsd"/>
+[/comment]
+[/if]
+[if(pack.name = 'forms' or  pack.name = 'pdc') ]         
+<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+           schemaLocation="../[getConfig('path.udt')/]"/>
+[/if]
+<!-- ============================================================ -->
+
+[/template]
+
+[template public generateAggregatingSchema(pack : Package) {version: String = '0.2';}]
+[comment {version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);}/]
+[if pack.name = 'pdc']
+[file (getConfig('path.core').concat(pack.name.concat('-AggregatedComponents-').concat(version).concat('.xsd')), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+	[generateImports(pack, version)/]
+	[for (packageableElement: PackageableElement | pack.packagedElement)]
+		[generatepackageableElement(packageableElement)/]
+	[/for]
+[endSchema(pack, version)/]
+[/file]
+[else]
+[file (getConfig('path.core').concat(pack.name.concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+	[generateImports(pack, version)/]
+	[for (packageableElement: PackageableElement | pack.packagedElement)]
+		[generatepackageableElement(packageableElement)/]	
+	[/for]
+[endSchema(pack, version)/]
+[/file]
+
+[/if]
+[/template]
+
+[template public generateCodeList(pack : Package, model : Model) {
+pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+version: String = '0.1';}]
+[file (getConfig('path.codelist').concat(model.name.concat('-codelist').concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+	[generateImports(pack, version)/]
+	[for (packageableElement: PackageableElement | pack.packagedElement)]
+		[if packageableElement.oclIsTypeOf(Enumeration)]
+			[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
+		[/if]
+	[/for]
+[endSchema(pack, version)/]
+[/file]
+ 
+[comment {version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);}/]
+
+[/template]
+
+[template public generatepackageableElement(packageableElement : PackageableElement)]
+[if packageableElement.oclIsTypeOf(Class)]
+[generateClass(packageableElement.oclAsType(Class))/]
+[/if]
+
+[if packageableElement.oclIsTypeOf(PrimitiveType)]
+[generatePrimitiveType(packageableElement.oclAsType(PrimitiveType))/]
+[/if]
+[/template]
+
+[template public generateClass(class : Class) { pack : Package = class.owner.oclAsType(Package);}]
+[if pack.name = 'cva']
+[generateAllElements(class)/][/if]
+[generateType(class)/]
+[/template]
+
+[template public generateAllElements(class : Class) { 
+pack : Package = class.owner.oclAsType(Package);}]
+[for (property: Property | class.ownedAttribute)]
+<xs:element name="[property.name/]" type="[property.name/][getConfig('suffix.type')/]"/>
+[/for]
+[/template]
+
+[comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
+[template public generateType(class : Class) { 
+NDR : String = 'useCoreVocsTypes';
+pack : Package = class.owner.oclAsType(Package);}]
+[if isGlobalElement(class)]
+<xs:element name = "[class.name/]" type="[class.name/][getConfig('suffix.type')/]"/>
+[else]
+	
+[/if]
+[if not isLocal(class)]
+[if(class.general->isEmpty())]
+[generateComplextype_ground(class, NDR)/][else]
+[generateComplextype_restriction_complexcontent(class, NDR)/][/if]
+[generatePropertyTypes(class)/][/if]
+[/template]
+
+
+[template public generatePropertyTypes(class : Class){ 
+pack : Package = class.owner.oclAsType(Package); }]
+[for (property: Property | class.ownedAttribute)]
+[if property.type.oclIsUndefined() and pack.getDependencies(property)->isEmpty()]
+[generateSimpleTypeForProperty(property.name)/]
+[/if][/for]
+[/template]
+
+[template public generateSimpleTypeForProperty(name: String)]
+
+<!-- ===GENERATED PROPERTY TYPE============================= -->
+<xs:simpleType name="[name/]Type">
+    <xs:restriction base="xs:string"/>
+</xs:simpleType>
+<!-- ======================================================= -->
+[/template]
+
+[template public generatePrimitiveType(primitiveType : PrimitiveType)]
+<!-- PrimitiveType [primitiveType.name/]-->
+[/template]
+
+[template public generateBasicComponents(model : Model){
+pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+version: String = '0.2'
+}]
+[comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
+[file (getConfig('path.core').concat(pack.name.concat('-').concat('BasicComponents').concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+	[generateImports(pack, version)/]
+	[for (packageableElement: PackageableElement | pack.packagedElement->select(oclIsTypeOf(Class)))]
+		[let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
+			[if not dependencies->isEmpty()]
+				[generateAnnotation1(packageableElement,  dependencies)/]
+				[generateBasicComponentsForClass(packageableElement.oclAsType(Class))/]
+			[/if]
+		[/let]
+	[/for]
+[endSchema(pack, version)/]
+[/file]
+[/template]
+
+[template public generateBasicComponentsForClass(class: Class){ 
+pack : Package = class.owner.oclAsType(Package); }]
+[for (property: Property | class.ownedAttribute)]
+[generateBasicComponentForProperty(class, property)/][/for]
+[/template]
+
+[template public generateBasicComponentForProperty(class: Class, prop: Property){
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierType         : Type          = supplier.type;
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+}]
+[if not pack.getDependencies(prop)->isEmpty() and (supplierType->isEmpty() or supplierType.oclIsTypeOf(PrimitiveType))]
+[generateClassForType(class, prop)/][/if]
+[if not pack.getDependencies(prop)->isEmpty() and (prop.type.oclIsTypeOf(Enumeration))]
+
+[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
+
+[/if]
+[if prop.oclIsTypeOf(PrimitiveType)]
+[generatePrimitiveTypeForType(class, prop)/][/if]
+[/template]
+
+[template public generateClassForType(class: Class, prop: Property) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+suffix: String = getConfig('suffix.type');
+}]
+[if prop.type.name = 'string']
+
+<xs:complexType name="[class.name/][prop.name/][suffix/]">
+	<xs:simpleContent>
+		<xs:restriction base="cvb:[supplierQualifiedName/][suffix/]">
+			<xs:minLength value="0"  />
+			<xs:maxLength value="255" />
+		</xs:restriction>
+	</xs:simpleContent>
+</xs:complexType>
+[/if]
+[if prop.type.name = 'date']
+
+<xs:complexType name="[class.name/][prop.name/][suffix/]">
+	<xs:simpleContent>
+		<xs:extension base="udt:DateType" />
+	</xs:simpleContent>
+</xs:complexType>
+
+[/if]
+[if prop.type.name = 'bool']
+
+<xs:complexType name="[class.name/][prop.name/][suffix/]">
+	<xs:simpleContent>
+		<xs:extension base="udt:IndicatorType" />
+	</xs:simpleContent>
+</xs:complexType>
+
+[/if]
+[/template]
+
+[template public generatePrimitiveTypeForType(class: Class, prop: Property) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierType         : Type          = supplier.type;
+supplierPackageName  : String        = supplier.type.owner.oclAsType(Package).name.toString();
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+}]
+[/template]
+
+

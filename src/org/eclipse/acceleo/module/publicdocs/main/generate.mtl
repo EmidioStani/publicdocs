@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::main::util/]
+[import org::eclipse::acceleo::module::publicdocs::main::aggregatingSchema /]
+[import org::eclipse::acceleo::module::publicdocs::main::generateDoc /]
+
+[template public main(model : Model)]
+[comment @main /]
+[comment Elements not contained in a package will not be generated, because only packages get a file!!/]
+[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+[generateAggregatingSchema(packageableElement.oclAsType(Package))/]
+[/for]		
+[generateBasicComponents(model)/]
+[generateCodeList(model)/]
+[generateDocs(model)/]
+[/template]

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================= -->
+<!--  pdc XML Schema File -->
+<!-- 
+    Schema agency: European Commission
+    Schema version: 0.1
+    Schema date: 
+    Copyright  (C) - 2016 
+-->
+<!-- ====================================================== -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://urn:ec:ejustice:publicdocuments/pdc"
+		   xmlns="http://urn:ec:ejustice:publicdocuments/pdc"
+				   xmlns:cvb ="http://www.w3.org/ns/corevocabulary/BasicComponents"
+				   xmlns:cva ="http://www.w3.org/ns/corevocabulary/AggregateComponents"	
+				   xmlns:forms ="http://urn:ec:ejustice:publicdocuments/forms"
+				   xmlns:udt ="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+>
+<xs:annotation>	
+	<xs:documentation xml:lang="en">
+        Public Documents XML schema 0.1
+        Copyright (C) European Union, 2017
+        Licensed under the ISA Open Metadata Licence
+        Original authors:
+        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+        Emidio Stani (emidio.stani@be.pwc.com),
+        Ioana Novacean (ioana.novacean@be.pwc.com)
+	</xs:documentation>
+	<xs:appinfo>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description rdf:about="http://data.europa.eu/xyz/0.1">
+                <dc:title>Public Documents XML schema</dc:title>
+                <dc:description>This schema defines terms for Public Document model based on the regulation ...</dc:description>
+                <dc:publisher>E-Justice Portal</dc:publisher>
+                <dc:creator>Suzanne Wigard (suzanne.wigard@ec.europa.eu)</dc:creator>
+                <dc:creator>Emidio Stani (emidio.stani@be.pwc.com)</dc:creator>
+                <dc:creator>Ioana Novacean (ioana.novacean@be.pwc.com)</dc:creator>
+                <dc:rights>Copyright (C) European Union, 2017</dc:rights>
+                <dc:license>https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11</dc:license>
+            </rdf:Description>
+        </rdf:RDF>
+	</xs:appinfo>
+</xs:annotation>
+	<!-- ===== Imports========================================= -->           
+	<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+	           schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+	<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+	           schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
+	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+	           schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ============================================================ -->
+	
+			<xs:complexType name="PersonConcernedType">
+			  <xs:complexContent>
+			    <xs:restriction base="pdc:CodeType">
+			      <xs:sequence>
+			        <xs:element name="content">
+			          <xs:simpleType>
+					    <xs:restriction base="xs:string">
+						 	<xs:enumeration value="НАИМЕНОВАНИЕ"/>
+						 	<xs:enumeration value="DENOMINACIÓN"/>
+						 	<xs:enumeration value="NÁZEV"/>
+						 	<xs:enumeration value="BETEGNELSE"/>
+						 	<xs:enumeration value="BEZEICHNUNG"/>
+						 	<xs:enumeration value="NIMETUS"/>
+						 	<xs:enumeration value="ΟΝΟΜΑΣΊΑ"/>
+						 	<xs:enumeration value="DESIGNATION"/>
+						 	<xs:enumeration value="DÉNOMINATION"/>
+						 	<xs:enumeration value="INMNIÚ"/>
+						 	<xs:enumeration value="NAZIV"/>
+						 	<xs:enumeration value="DENOMINAZIONE"/>
+						 	<xs:enumeration value="NOSAUKUMS"/>
+						 	<xs:enumeration value="PAVADINIMAS"/>
+						 	<xs:enumeration value="MEGNEVEZÉS"/>
+						 	<xs:enumeration value="TITLU"/>
+						 	<xs:enumeration value="BENAMING"/>
+						 	<xs:enumeration value="NAZWA"/>
+						 	<xs:enumeration value="DESIGNAÇÃO"/>
+						 	<xs:enumeration value="DENUMIRE"/>
+						 	<xs:enumeration value="NÁZOV"/>
+						 	<xs:enumeration value="IME"/>
+						 	<xs:enumeration value="NIMI"/>
+						 	<xs:enumeration value="NAMN"/>
+					    </xs:restriction>
+			            </xs:simpleType>
+			        </xs:element>
+			      </xs:sequence>
+			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+			    </xs:restriction>
+			  </xs:complexContent>
+			</xs:complexType>
+			
+			<xs:complexType name="CountryCodeType">
+			  <xs:complexContent>
+			    <xs:restriction base="pdc:CodeType">
+			      <xs:sequence>
+			        <xs:element name="content">
+			          <xs:simpleType>
+					    <xs:restriction base="xs:string">
+						 	<xs:enumeration value="IT"/>
+					    </xs:restriction>
+			            </xs:simpleType>
+			        </xs:element>
+			      </xs:sequence>
+			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+			    </xs:restriction>
+			  </xs:complexContent>
+			</xs:complexType>
+			
+			<xs:complexType name="SexType">
+			  <xs:complexContent>
+			    <xs:restriction base="pdc:CodeType">
+			      <xs:sequence>
+			        <xs:element name="content">
+			          <xs:simpleType>
+					    <xs:restriction base="xs:string">
+						 	<xs:enumeration value="female"/>
+						 	<xs:enumeration value="male"/>
+						 	<xs:enumeration value="undetermined"/>
+					    </xs:restriction>
+			            </xs:simpleType>
+			        </xs:element>
+			      </xs:sequence>
+			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+			    </xs:restriction>
+			  </xs:complexContent>
+			</xs:complexType>
+			
+</xs:schema>

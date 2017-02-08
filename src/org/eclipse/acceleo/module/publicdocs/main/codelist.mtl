@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[module codelist('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::main::util/]
+
+[template public generateCodelist(name: String, base: String, source : Enumeration)]
+[comment]
+<xsd:complexType name="[name/]Type">
+	<xsd:simpleContent>
+	    <xs:restriction base="[base/]">
+		[for (enumerationLiteral: EnumerationLiteral | source.ownedLiteral)]
+	    	<xs:enumeration value="[enumerationLiteral.name/]"/>
+		[/for]
+	    </xs:restriction>
+	</xs:simpleContent>
+</xs:complexType>
+[/comment]
+<xs:complexType name="[name/]Type">
+  <xs:complexContent>
+    <xs:restriction base="pdc:CodeType">
+      <xs:sequence>
+        <xs:element name="content">
+          <xs:simpleType>
+		    <xs:restriction base="[base/]">
+			[for (enumerationLiteral: EnumerationLiteral | source.ownedLiteral)]
+			 	<xs:enumeration value="[enumerationLiteral.name/]"/>
+			[/for]
+		    </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+[/template]
+
+[template public generateCodelistForType(class: Class, prop: Property) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+}]
+
+[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
+
+[/template]

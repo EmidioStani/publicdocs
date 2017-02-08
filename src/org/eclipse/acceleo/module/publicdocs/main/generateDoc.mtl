@@ -1,0 +1,431 @@
+[comment encoding = UTF-8 /]
+[module generateDoc('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::main::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::givedate /]
+[import org::eclipse::acceleo::module::publicdocs::common::giveconfiguration /]
+
+[template public generateDocs(model : Model)]
+[file (getConfig('path.doc').concat(model.name.concat('.htm')), false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en" content="en">
+	[includeHead(model)/]
+	[includeBody(model)/]
+</html>
+[/file]
+[/template]
+
+[template public includeHead(model : Model)]
+<head>
+	<title>Public Documents XML schema</title>
+	<meta name="description" content="=An XML schema for describing Public Documents Forms">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+	<style>
+		body{
+			color: black;
+    		background-color: white;
+    		background-position: top left;
+    		background-attachment: fixed;
+    		background-repeat: no-repeat;}
+		.generatedTable tr.even:hover{background-color: #cccccc;}
+		.generatedTable tr.odd:hover{background-color: #cccccc;}
+		.generatedTable {border: 1px solid #ddd;width:100% !important}
+		.generatedTable th{color: white; background-color: #3182CC;vertical-align: top !important;}
+		#namespaces {width:50% !important;}
+		h1, h2, h3 {color: #005A9C; background: white;}
+		h5 {font-weight: 700; color: darkgoldenrod; }
+		:visited {color: #609;background: transparent;}
+		:link {color: #00C;background: transparent;}
+		.modal {background-color: white;}
+		#generatedToC ul { list-style-type: none; }
+
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(204, 204, 204);
+    background: rgba(204, 204, 204, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    /* background: rgba(49, 130, 204, 0.9); */
+	background: rgba(0, 0, 0, 0.7);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+
+/* Extra Things */
+h3 i{color: #444;}
+	</style>
+</head>
+[/template]
+
+[template public includeBody(model : Model)]
+<body>
+	<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+		[includeStaticContent1(model)/]
+		[includeTOC(model)/]
+		[includeStaticContent2(model)/]
+		[includeGeneratedContent(model)/]
+		[includeStaticContent3(model)/]
+	</div>
+	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+	[includeJavascript(model)/]
+</body>
+[/template]
+
+[template public includeStaticContent1(model : Model)]
+  <h1 class="title p-name" id="title" property="dcterms:title">[model.name/]</h1>
+  <img src="https://e-justice.europa.eu/images/ejustice_logo.png" alt="e-Justice logo"/>
+  <img src="https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/images/isa_logo.png" alt="ISA logo"/>
+  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="[getDate('yyyy-MM-dd')/]">[getDate('yyyy')/]</time></h2>
+  <dl>
+    
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="http://www.w3.org/TR/2014/REC-vocab-dcat-20140116/">http://www.w3.org/TR/2014/REC-vocab-dcat-20140116/</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a></dd>
+    
+      <dt>Implementation report:</dt>
+      <dd><a href="http://www.w3.org/2011/gld/wiki/DCAT_Implementations">http://www.w3.org/2011/gld/wiki/DCAT_Implementations</a></dd>
+
+      <dt>Previous version:</dt>
+      <dd><a rel="dcterms:replaces" href="http://www.w3.org/TR/2013/PR-vocab-dcat-20131217/">http://www.w3.org/TR/2013/PR-vocab-dcat-20131217/</a></dd>
+    
+    
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Fadi Maali" href="mailto:fadi.maali@deri.org">Fadi Maali</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.deri.ie">DERI, NUI Galway</a></span>
+</dd>
+<dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="John Erickson" href="mailto:olyerickson@gmail.com">John Erickson</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://tw.rpi.edu/">Tetherless World Constellation (RPI)</a></span>
+</dd>
+          <dt>Contributors:</dt>
+          
+             
+                
+                  <dd>
+                    <a href="mailto:phila@w3.org">
+                      Phil Archer, <abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr>
+                    </a>
+                  </dd>
+  </dl>
+  
+    <p>
+      Please refer to the <a href="http://www.w3.org/2011/gld/dcat-errata"><strong>errata</strong></a>, a list of issues with this document discovered after publication.
+    </p>
+    <p>
+      
+        This document is also available in this non-normative format:
+      
+      <a rel="alternate" href="diff-20131217.html">diff to previous version</a>
+    </p>
+    <p>
+      The English version of this specification is the only normative version. Non-normative
+      <a href="http://www.w3.org/Consortium/Translation/">translations</a> may also be available.
+    </p>
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2012-2014
+        
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), 
+        
+        All Rights Reserved.
+        
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        
+          <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+        
+        rules apply.
+      </p>
+  <hr>
+
+<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
+	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
+	<p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. This document defines the schema and provides examples for its use.</p>
+	<p>By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation.</p>
+</section>
+
+<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="sotd" class="introductory">
+<h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
+
+        <p>
+          <em>This section describes the status of this document at the time of its publication.
+          Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the
+          latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+          http://www.w3.org/TR/.</em>
+        </p>
+
+  <p>This document has been reviewed by W3C Members, by software developers, and by other W3C groups and interested parties, and is endorsed by the Director as a W3C Recommendation. It is a stable document and may be used as reference material or cited from another document. W3C's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+
+    
+    
+  <p>The <a href="http://vocab.deri.ie/dcat">original DCAT vocabulary</a> was developed at DERI, refined by the <a href="http://www.w3.org/egov/">eGov Interest Group</a>, and then finally standardized by the <a href="http://www.w3.org/2011/gld/">Government Linked Data (GLD)</a> Working Group.</p>
+  <p>DCAT incorporates terms from pre-existing vocabularies, where stable terms with appropriate meanings could be found, such as foaf:homepage and dct:title.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.  Note that conformance to DCAT (Section 3) concerns usage of only the terms in the DCAT namespace itself, so possible changes to the external definitions will not affect conformance of DCAT implementations.</p>
+
+        <p>
+          This document was published by the <a href="http://www.w3.org/2011/gld/">Government Linked Data Working Group</a> as a Recommendation.
+          
+          
+            If you wish to make comments regarding this document, please send them to 
+            <a href="mailto:public-gld-comments@w3.org">public-gld-comments@w3.org</a> 
+            (<a href="mailto:public-gld-comments-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="http://lists.w3.org/Archives/Public/public-gld-comments/">archives</a>).
+
+            All comments are welcome.
+          
+        </p>
+        
+          <p>
+            Please see the Working Group's  <a href="http://www.w3.org/2011/gld/wiki/DCAT_Implementations">implementation
+            report</a>.
+          </p>
+
+        <p>
+          
+            This document was produced by a group operating under the 
+            <a id="sotd_patent" about="" rel="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+            Policy</a>.
+          
+          
+          
+            
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/47663/status" rel="disclosure">public list of any patent
+              disclosures</a> 
+            
+            made in connection with the deliverables of the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+        </p>
+</section>
+[/template]
+
+[template public includeTOC(model : Model)]
+<section id="generatedToC">
+	<h2 id="h2_toc" aria-level="1" class="introductory">Table of Contents</h2>
+	<ul id="toc"></ul>
+</section>
+[/template]
+
+[template public includeStaticContent2(model : Model)]
+<section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+	<h3 aria-level="1" id="intro">1. Introduction</h3>
+	<p><em>This section is non-normative.</em></p>
+	<p>Data can come in many formats, ranging from spreadsheets over XML and RDF to various speciality formats. DCAT does not make any assumptions about the format of the datasets described in a catalog. Other, complementary vocabularies may be used together with DCAT to provide more detailed format-specific information. For example, properties from the VoID vocabulary Void can be used to express various statistics about a DCAT-described dataset if that dataset is in RDF format.</p>
+	<p>This document does not prescribe any particular method of deploying data expressed in DCAT. DCAT is applicable in many contexts including RDF accessible via SPARQL endpoints, embedded in HTML pages as RDFa, or serialized as e.g. RDF/XML or Turtle. The examples in this document use Turtle simply because of Turtle's readability.</p>
+</section>
+
+<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
+	<h3 aria-level="1" id="ns">2. Namespaces</h3>
+	<p>The namespace for DCAT is <code>http://www.w3.org/ns/dcat#</code>. However,
+	it should be noted that DCAT makes extensive use of terms from other vocabularies,
+	in particular <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core</a>. DCAT itself defines a minimal set of classes and
+	properties of its own. A full set of namespaces and prefixes used in this
+	document is shown in the table below.</p>
+	
+	<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
+	  <thead>
+		<tr>
+			<th>Prefix</th>
+			<th>Namespace</th>
+		</tr>
+	  </thead>
+	  <tbody>
+	    <tr><td>dcat</td><td>http://www.w3.org/ns/dcat#</td></tr>
+	    <tr><td>dct</td><td>http://purl.org/dc/terms/</td></tr>
+	    <tr><td>dctype</td><td>http://purl.org/dc/dcmitype/</td></tr>
+	    <tr><td>foaf</td><td>http://xmlns.com/foaf/0.1/</td></tr>
+	    <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+	    <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+	    <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+	    <tr><td>vcard</td><td>http://www.w3.org/2006/vcard/ns#</td></tr>
+	    <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+	  </tbody>
+	</table>
+</section>
+
+<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+	<h3 aria-level="1" id="overview">3. Vocabulary Overview</h3><p><em>This section is non-normative.</em></p>
+	<p>DCAT is an RDF vocabulary well-suited to representing government data catalogs such as <a href="http://Data.gov">Data.gov</a> and <a href="http://data.gov.uk">data.gov.uk</a>. DCAT defines three main classes:</p>
+	<ul>
+		<li> <code><a href="#Class:_Catalog">dcat:Catalog</a></code> represents the catalog</li>
+		<li> <code><a href="#Class:_Dataset">dcat:Dataset</a></code> represents a dataset in a catalog. </li>
+		<li> <code><a href="#Class:_Distribution">dcat:Distribution</a></code> represents an accessible form of a dataset as for example a downloadable file, an RSS feed or a web service that provides the data.</li>
+	</ul>
+	<p>
+	Notice that a dataset in DCAT 
+	is defined as a "collection of data, published or curated by a single agent, and available for access or 
+	download in one or more formats". A dataset does not have to be available as a downloadable file.
+	For example, a dataset that is available via an API can be defined as an instance of dcat:Dataset and the  
+	API can be defined as an instance of dcat:Distribution. DCAT itself does not define properties specific to APIs description. 
+	These are considered out of the scope of this version of the vocabulary. Nevertheless, this can be defined as a profile of the DCAT vocabulary.
+	</p>
+	<p>Another important class in DCAT is <code><a href="#Class:_Catalog_record">dcat:CatalogRecord</a></code> which describes a dataset entry in the catalog. Notice that while dcat:Dataset represents the dataset itself, dcat:CatalogRecord represents the record that describes a dataset in the catalog. The use of the CatalogRecord is considered optional. It is used to capture provenance information about dataset entries in a catalog. If this distinction is not necessary then CatalogRecord can be safely ignored.</p>
+	
+	<p><img alt="UML model of DCAT classes and properties" src="pdc.png" width="100%"></p>
+	<p>All RDF examples in this document are written in Turtle syntax.</p>
+</section>
+[/template]
+
+[template public includeGeneratedContent(model : Model)]
+<section id="generatedContent">
+	<h3 id="VocabularySpecification">4. Vocabulary Specification</h3>
+	<div class="contentTables">
+		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+			[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
+		[/for]
+	</div>
+</section>
+[/template]
+
+[template public generatePackageDoc(pack : Package , j : Integer){version: String = '0.2';}]
+[comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);/]
+<h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
+[let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
+	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
+		[if packageableElement.oclIsTypeOf(Class)]
+			[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
+		[/if]
+	[/for]
+[/let]
+[/template]
+
+[template public generateClassDoc(class : Class, j : Integer, i : Integer)]
+<h5 id="[class.name/]">4.[j/].[i/] Class [class.name/]</h5>
+<p><b>Definition:</b>[class.ownedComment._body/]</p>
+<table class="generatedTable table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Property Name</th>
+			<th>Definition</th>
+			<th>Cardinality</th>
+			<th>Data Type</th>
+		</tr>
+	</thead>
+	<tbody>
+	[for (property: Property | class.ownedAttribute)]
+		<tr>
+			<td>[property.name/]</td>
+			<td>[property.ownedComment._body/]</td>
+			<td>[property.lower/]..[if (property.upper = -1) ]*[else][property.upper/][/if]</td>
+			<td>[property.type.namespace.name/]:[property.type.name/]</td>
+		</tr>
+	[/for]
+	</tbody>
+</table>
+[/template]
+
+[template public includeStaticContent3(model : Model)]
+<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
+	<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
+	<p>This document contains a significant contribution from Richard Cyganiak. Richard Cyganiak 
+	is one of the initiators of the DCAT work and 
+	significantly contributed to the work on this specification as it made its way through the <abbr title="World Wide Web Consortium">W3C</abbr> process.</p>
+	<p>The editors would like to thank Vassilios Peristeras for his comments and support for the original DCAT work. Vassilios Peristeras is also one of the initiators of the DCAT work. We would also like to thank Rufus Pollock for his significant input and comments.</p>
+	<p>This document has benefited from inputs from many members of the Government Linked Data Working Group. 
+	Specific thanks are due to Ghislain Atemezing, Martin Alvarez and Makx Dekkers.</p>
+</section>
+
+<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
+	<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
+	
+	<p>Changes since  <a href="http://www.w3.org/TR/2013/PR-vocab-dcat-20131217/"> the <abbr title="World Wide Web Consortium">W3C</abbr> Proposed Recommendation 17 December 2013</a>: None.</p>
+	
+	<p> Changes since <a href="http://www.w3.org/TR/2013/CR-vocab-dcat-20131105/"> the <abbr title="World Wide Web Consortium">W3C</abbr> Candidate Recommendation 05 November 2013</a>: </p>
+	<ul>
+		<li>Section 5.4 Property: download URL; usage note added to clarify the relationship to dcat:accessURL</li>
+		<li>Section 5.1: A domain row is added to the table describing dcat:themeTaxonomy property </li>
+		<li>Section 5.3: A domain row is added to the tables describing dcat:theme, dcat:keyword and dcat:contactPoint properties </li>
+		<li>Section 5.4: A domain row is added to the table describing dcat:accessURL, dcat:downloadURL, dcat:byteSize and dcat:mediaType properties </li>
+		<li>Section 5: clarified that this spec is non-normative concerning terms outside the DCAT namespace, and added normative references for those terms.</li>
+	</ul>
+	
+	<p> Changes since <a href="http://www.w3.org/TR/2013/WD-vocab-dcat-20130801/"> the second <abbr title="World Wide Web Consortium">W3C</abbr> Last Call working Draft 01 August 2013</a>: </p>
+	<ul>
+		<li> Section 4.1: the provided example is extended with example usage of properties dct:spatial, dct:temporal and dcat:contactPoint</li>
+		<li>Section 5.4 Property: access URL; definition and usage note texts clarified</li>
+		<li>Section 5.4 Property: download URL; usage note saying "this value is a URL" is removed as it is confusing given that the range is rdfs:Resource  </li>
+		<li>Section 5.3 Property: contact point; change range from vcard:VCard to vcard:Kind. These two classes are equivalent however vcard:VCard is deprecated. </li>
+		<li>Section 5.3 Property: language; usage note is expanded to describe the case of multiple language datasets.</li>
+		<li>Section 4. Clarification text regarding versioning is added: "DCAT itself does not define properties specific to APIs description. These are considered out of the scope of this version of the vocabulary. Nevertheless, this can be defined as a profile of the DCAT vocabulary."</li>
+	</ul>
+	
+	<p> Changes since <a href="http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/"><abbr title="World Wide Web Consortium">W3C</abbr> Last Call working Draft 12 March 2013</a>: </p>
+	<ul>
+		<li> Section 4: diagram updated with new properties</li>
+		<li> Section 4: add text to clarify describing datasets available via API</li>
+		<li> Section 5.1: description of properties <code>dct:issued</code> and <code>dct:modified</code> updated</li>
+		<li> Section 5.1: <code>dct:rights</code> added</li>
+		<li> Section 5.2: description of properties <code>dct:issued</code> and <code>dct:modified</code> updated</li>
+		<li> Section 5.3: description of properties <code>dct:issued</code> and <code>dct:modified</code> updated</li>
+		<li> Section 5.3: <code>dcat:contactPoint</code> added</li>
+		<li> Section 5.4: description of properties <code>dct:issued</code> and <code>dct:modified</code> updated</li>
+		<li> Section 5.4: <code>dct:rights</code> added</li>
+		<li> Section 5.5: split into two sections 5.5 and 5.6</li>
+	</ul>
+</section>
+
+<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
+<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+
+	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
+		<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+	</section>
+
+	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
+		<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
+	</section>
+</section>
+[/template]
+
+[template public includeJavascript(model : Model)]
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src='jquery.toc.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+<script src='initialize.js'></script>
+[/template]
