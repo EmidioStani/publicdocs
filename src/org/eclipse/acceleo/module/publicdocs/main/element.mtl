@@ -3,7 +3,7 @@
 
 [import org::eclipse::acceleo::module::publicdocs::main::util/]
 [import org::eclipse::acceleo::module::publicdocs::main::annotation/]
-[import org::eclipse::acceleo::module::publicdocs::common::giveconfiguration /]
+[import org::eclipse::acceleo::module::publicdocs::main::giveconfiguration /]
 
 [template public generateElements(class: Class, NDR: String){
 pack : Package = class.owner.oclAsType(Package);}]
@@ -87,7 +87,11 @@ useUnqualifiedDataTypes: Boolean = true}]
 		[if (typeName = 'xs:boolean')]
 			[generateElement(property, 'udt:IndicatorType')/]
 		[else]
-			[generateElement(property, typeName)/]
+			[if (typeName = 'xs:any')]
+				[generateElement(property, 'cec:UBLExtensionsType')/]
+			[else]
+				[generateElement(property, typeName)/]
+			[/if]
 		[/if]
 	[/if]
 [/if]

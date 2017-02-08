@@ -5,8 +5,8 @@
 [import org::eclipse::acceleo::module::publicdocs::main::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::main::complextype /]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
-[import org::eclipse::acceleo::module::publicdocs::common::givedate /]
-[import org::eclipse::acceleo::module::publicdocs::common::giveconfiguration /]
+[import org::eclipse::acceleo::module::publicdocs::main::givedate /]
+[import org::eclipse::acceleo::module::publicdocs::main::giveconfiguration /]
 
 
 [template public beginSchema(pack : Package, version: String)]
@@ -24,7 +24,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
            targetNamespace="[pack.URI/]"
 		   xmlns="[pack.URI/]"
-[for (packName : String | Sequence{'pdc', 'cvb', 'cva', 'forms', 'udt'})]
+[for (packName : String | Sequence{'pdc', 'cvb', 'cva', 'forms', 'udt', 'cec'})]
 	[if packName <> pack.name]
 		[if packName = 'cva']
 				   xmlns:[packName/] ="[getConfig('url.cva')/]"	
@@ -32,8 +32,11 @@
 				   xmlns:[packName/] ="[getConfig('url.cvb')/]"
 				[else][if packName = 'udt']
 				   xmlns:[packName/] ="[getConfig('url.udt')/]"
-					  [else]
-				   xmlns:[packName/] ="[getConfig('url.pdc')/][packName/]"
+					  [else][if packName = 'cec']
+						xmlns:[packName/] ="[getConfig('url.cec')/]"
+							[else]
+				   				xmlns:[packName/] ="[getConfig('url.pdc')/][packName/]"
+							[/if]
 					 [/if]
 			  [/if]
 		[/if]
@@ -94,8 +97,13 @@
 [/comment]
 [/if]
 [if(pack.name = 'forms' or  pack.name = 'pdc') ]         
-<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+<xs:import namespace="[getConfig('url.udt')/]"
            schemaLocation="../[getConfig('path.udt')/]"/>
+[/if]
+
+[if(pack.name = 'forms') ]         
+<xs:import namespace="[getConfig('url.cec')/]"
+           schemaLocation="../[getConfig('path.cec')/]"/>
 [/if]
 <!-- ============================================================ -->
 
