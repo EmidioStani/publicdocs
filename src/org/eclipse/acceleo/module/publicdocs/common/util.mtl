@@ -1,5 +1,6 @@
 [comment encoding = UTF-8 /]
 [module util('http://www.eclipse.org/uml2/5.0.0/UML')]
+[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
@@ -41,5 +42,106 @@
 
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
 =  getFilename(path, name, suffix, version, '.xsd')/]
+
+
+[template public beginSchema(pack : Package, version: String)]
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================= -->
+<!--  [pack.name/] XML Schema File -->
+<!-- 
+    Schema agency: European Commission
+    Schema version: [version/]
+    Schema date: 
+    Copyright  (C) - 2016 
+-->
+<!-- ====================================================== -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="[pack.URI/]"
+		   xmlns="[pack.URI/]"
+[for (packName : String | Sequence{'pdc', 'cvb', 'cva', 'forms', 'udt', 'cec'})]
+	[if packName <> pack.name]
+		[if packName = 'cva']
+				   xmlns:[packName/] ="[getConfig('url.cva')/]"	
+		[else][if packName = 'cvb']
+				   xmlns:[packName/] ="[getConfig('url.cvb')/]"
+				[else][if packName = 'udt']
+				   xmlns:[packName/] ="[getConfig('url.udt')/]"
+					  [else][if packName = 'cec']
+						xmlns:[packName/] ="[getConfig('url.cec')/]"
+							[else]
+				   				xmlns:[packName/] ="[getConfig('url.pdc')/][packName/]"
+							[/if]
+					 [/if]
+			  [/if]
+		[/if]
+	[/if]
+[/for]
+[comment]
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+[/comment]
+>
+<xs:annotation>	
+	<xs:documentation xml:lang="en">
+        Public Documents XML schema [version/]
+        Copyright (C) European Union, [getDate('yyyy')/]
+        Licensed under the ISA Open Metadata Licence
+        Original authors:
+        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+        Emidio Stani (emidio.stani@be.pwc.com),
+        Ioana Novacean (ioana.novacean@be.pwc.com)
+	</xs:documentation>
+	<xs:appinfo>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description rdf:about="http://data.europa.eu/xyz/[version/]">
+                <dc:title>Public Documents XML schema</dc:title>
+                <dc:description>This schema defines terms for Public Document model based on the regulation ...</dc:description>
+                <dc:publisher>E-Justice Portal</dc:publisher>
+                <dc:creator>Suzanne Wigard (suzanne.wigard@ec.europa.eu)</dc:creator>
+                <dc:creator>Emidio Stani (emidio.stani@be.pwc.com)</dc:creator>
+                <dc:creator>Ioana Novacean (ioana.novacean@be.pwc.com)</dc:creator>
+                <dc:rights>Copyright (C) European Union, 2017</dc:rights>
+                <dc:license>https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11</dc:license>
+            </rdf:Description>
+        </rdf:RDF>
+	</xs:appinfo>
+</xs:annotation>
+[/template]
+
+[template public endSchema(pack : Package, version: String)]
+</xs:schema>
+[/template]
+
+[template public generateImports(pack : Package, version: String)]
+[if(pack.name <> 'pdc')]
+<!-- ===== Imports======================================== -->                                                                  
+<xs:import namespace="http://urn:ec:ejustice:publicdocuments/pdc"
+           schemaLocation="pdc-AggregatedComponents-[version/].xsd"/>
+[else]
+<!-- ===== Imports========================================= -->           
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+           schemaLocation="../[getConfig('path.cvb')/]"/>
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+           schemaLocation="../[getConfig('path.cva')/]"/>
+[comment]
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+           schemaLocation="CoreVocabularies-BasicComponents-1.1.xsd"/>
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+           schemaLocation="CoreVocabularies-AggregateComponents-1.1.xsd"/>
+[/comment]
+[/if]
+[if(pack.name = 'forms' or  pack.name = 'pdc') ]         
+<xs:import namespace="[getConfig('url.udt')/]"
+           schemaLocation="../[getConfig('path.udt')/]"/>
+[/if]
+
+[if(pack.name = 'forms') ]         
+<xs:import namespace="[getConfig('url.cec')/]"
+           schemaLocation="../[getConfig('path.cec')/]"/>
+[/if]
+<!-- ============================================================ -->
+
+[/template]
+
 
 
