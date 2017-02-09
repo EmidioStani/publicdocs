@@ -3,6 +3,25 @@
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 
+[template public generateCodeList( model : Model, version : String) {
+pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+}]
+[file (getFilenameXSD('path.codelist', pack.name, '-codelist-', version), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+[generateImports(pack, version)/]
+[generateContentCodeList(pack)/]
+[endSchema(pack, version)/]
+[/file]
+[/template]
+
+[template public generateContentCodeList(pack : Package)]
+[for (packageableElement: PackageableElement | pack.packagedElement)]
+	[if packageableElement.oclIsTypeOf(Enumeration)]
+		[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
+	[/if]
+[/for]
+[/template]
+
 [template public generateCodelist(name: String, base: String, source : Enumeration)]
 [comment]
 <xsd:complexType name="[name/]Type">

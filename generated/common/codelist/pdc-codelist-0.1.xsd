@@ -52,81 +52,81 @@
 
 <!-- ============================================================ -->
 
-			<xs:complexType name="CountryCodeType">
-			  <xs:complexContent>
-			    <xs:restriction base="pdc:CodeType">
-			      <xs:sequence>
-			        <xs:element name="content">
-			          <xs:simpleType>
-					    <xs:restriction base="xs:string">
-						 	<xs:enumeration value="IT"/>
-					    </xs:restriction>
-			            </xs:simpleType>
-			        </xs:element>
-			      </xs:sequence>
-			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
-			    </xs:restriction>
-			  </xs:complexContent>
-			</xs:complexType>
-			
-			<xs:complexType name="PersonConcernedType">
-			  <xs:complexContent>
-			    <xs:restriction base="pdc:CodeType">
-			      <xs:sequence>
-			        <xs:element name="content">
-			          <xs:simpleType>
-					    <xs:restriction base="xs:string">
-						 	<xs:enumeration value="НАИМЕНОВАНИЕ"/>
-						 	<xs:enumeration value="DENOMINACIÓN"/>
-						 	<xs:enumeration value="NÁZEV"/>
-						 	<xs:enumeration value="BETEGNELSE"/>
-						 	<xs:enumeration value="BEZEICHNUNG"/>
-						 	<xs:enumeration value="NIMETUS"/>
-						 	<xs:enumeration value="ΟΝΟΜΑΣΊΑ"/>
-						 	<xs:enumeration value="DESIGNATION"/>
-						 	<xs:enumeration value="DÉNOMINATION"/>
-						 	<xs:enumeration value="INMNIÚ"/>
-						 	<xs:enumeration value="NAZIV"/>
-						 	<xs:enumeration value="DENOMINAZIONE"/>
-						 	<xs:enumeration value="NOSAUKUMS"/>
-						 	<xs:enumeration value="PAVADINIMAS"/>
-						 	<xs:enumeration value="MEGNEVEZÉS"/>
-						 	<xs:enumeration value="TITLU"/>
-						 	<xs:enumeration value="BENAMING"/>
-						 	<xs:enumeration value="NAZWA"/>
-						 	<xs:enumeration value="DESIGNAÇÃO"/>
-						 	<xs:enumeration value="DENUMIRE"/>
-						 	<xs:enumeration value="NÁZOV"/>
-						 	<xs:enumeration value="IME"/>
-						 	<xs:enumeration value="NIMI"/>
-						 	<xs:enumeration value="NAMN"/>
-					    </xs:restriction>
-			            </xs:simpleType>
-			        </xs:element>
-			      </xs:sequence>
-			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
-			    </xs:restriction>
-			  </xs:complexContent>
-			</xs:complexType>
-			
-			<xs:complexType name="SexType">
-			  <xs:complexContent>
-			    <xs:restriction base="pdc:CodeType">
-			      <xs:sequence>
-			        <xs:element name="content">
-			          <xs:simpleType>
-					    <xs:restriction base="xs:string">
-						 	<xs:enumeration value="female"/>
-						 	<xs:enumeration value="male"/>
-						 	<xs:enumeration value="undetermined"/>
-					    </xs:restriction>
-			            </xs:simpleType>
-			        </xs:element>
-			      </xs:sequence>
-			      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
-			    </xs:restriction>
-			  </xs:complexContent>
-			</xs:complexType>
-			
+		<xs:complexType name="CountryCodeType">
+		  <xs:complexContent>
+		    <xs:restriction base="pdc:CodeType">
+		      <xs:sequence>
+		        <xs:element name="content">
+		          <xs:simpleType>
+				    <xs:restriction base="xs:string">
+					 	<xs:enumeration value="IT"/>
+				    </xs:restriction>
+		            </xs:simpleType>
+		        </xs:element>
+		      </xs:sequence>
+		      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+		    </xs:restriction>
+		  </xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="PersonConcernedType">
+		  <xs:complexContent>
+		    <xs:restriction base="pdc:CodeType">
+		      <xs:sequence>
+		        <xs:element name="content">
+		          <xs:simpleType>
+				    <xs:restriction base="xs:string">
+					 	<xs:enumeration value="НАИМЕНОВАНИЕ"/>
+					 	<xs:enumeration value="DENOMINACIÓN"/>
+					 	<xs:enumeration value="NÁZEV"/>
+					 	<xs:enumeration value="BETEGNELSE"/>
+					 	<xs:enumeration value="BEZEICHNUNG"/>
+					 	<xs:enumeration value="NIMETUS"/>
+					 	<xs:enumeration value="ΟΝΟΜΑΣΊΑ"/>
+					 	<xs:enumeration value="DESIGNATION"/>
+					 	<xs:enumeration value="DÉNOMINATION"/>
+					 	<xs:enumeration value="INMNIÚ"/>
+					 	<xs:enumeration value="NAZIV"/>
+					 	<xs:enumeration value="DENOMINAZIONE"/>
+					 	<xs:enumeration value="NOSAUKUMS"/>
+					 	<xs:enumeration value="PAVADINIMAS"/>
+					 	<xs:enumeration value="MEGNEVEZÉS"/>
+					 	<xs:enumeration value="TITLU"/>
+					 	<xs:enumeration value="BENAMING"/>
+					 	<xs:enumeration value="NAZWA"/>
+					 	<xs:enumeration value="DESIGNAÇÃO"/>
+					 	<xs:enumeration value="DENUMIRE"/>
+					 	<xs:enumeration value="NÁZOV"/>
+					 	<xs:enumeration value="IME"/>
+					 	<xs:enumeration value="NIMI"/>
+					 	<xs:enumeration value="NAMN"/>
+				    </xs:restriction>
+		            </xs:simpleType>
+		        </xs:element>
+		      </xs:sequence>
+		      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+		    </xs:restriction>
+		  </xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="SexType">
+		  <xs:complexContent>
+		    <xs:restriction base="pdc:CodeType">
+		      <xs:sequence>
+		        <xs:element name="content">
+		          <xs:simpleType>
+				    <xs:restriction base="xs:string">
+					 	<xs:enumeration value="female"/>
+					 	<xs:enumeration value="male"/>
+					 	<xs:enumeration value="undetermined"/>
+				    </xs:restriction>
+		            </xs:simpleType>
+		        </xs:element>
+		      </xs:sequence>
+		      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+		    </xs:restriction>
+		  </xs:complexContent>
+		</xs:complexType>
+		
 
 </xs:schema>
