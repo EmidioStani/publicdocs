@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module util('http://www.eclipse.org/uml2/5.0.0/UML')]
-
+[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and 
@@ -27,7 +27,19 @@
 [query public hasStereotype (packageableElement : PackageableElement, name: String) : Boolean 
 = packageableElement.getAppliedStereotype(name)->notEmpty()/]
 
+[query public hasStereotypeISA(packageableElement : PackageableElement) : Boolean 
+= hasStereotype(packageableElement, 'isa::xsdSchema')/]
+
 [query public hasStereotype (property : Property, name: String) : Boolean 
 = property.getAppliedStereotype(name)->notEmpty()/]
+
+[query public getFilename (path : String, name: String, suffix : String, version : String, extension : String ) : String
+= getConfig(path).concat(name).concat(suffix).concat(version).concat(extension)/]
+
+[query public getFilenameHTM (path : String, name: String, suffix : String, version : String ) : String
+= getFilename(path, name, suffix, version, '.htm')/]
+
+[query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
+=  getFilename(path, name, suffix, version, '.xsd')/]
 
 

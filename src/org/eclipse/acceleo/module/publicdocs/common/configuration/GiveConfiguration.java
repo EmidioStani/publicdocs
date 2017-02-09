@@ -1,4 +1,4 @@
-package org.eclipse.acceleo.module.publicdocs.main;
+package org.eclipse.acceleo.module.publicdocs.common.configuration;
 
 import java.io.File;
 import org.apache.commons.configuration2.Configuration;

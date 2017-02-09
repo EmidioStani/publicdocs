@@ -1,12 +1,12 @@
 [comment encoding = UTF-8 /]
 [module aggregatingSchema('http://www.eclipse.org/uml2/5.0.0/UML')]
 
-[import org::eclipse::acceleo::module::publicdocs::main::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::main::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::main::complextype /]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
-[import org::eclipse::acceleo::module::publicdocs::main::givedate /]
-[import org::eclipse::acceleo::module::publicdocs::main::giveconfiguration /]
+[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
+[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 
 [template public beginSchema(pack : Package, version: String)]
@@ -108,50 +108,52 @@
 <!-- ============================================================ -->
 
 [/template]
+[template public generateXSDContent(pack : Package, contentCondition : String )]
+[for (packageableElement: PackageableElement | pack.packagedElement)]
+		[if contentCondition = 'elementsOnly']
+			[generatePackageableElement(packageableElement)/]
+		[/if]
+		[if contentCondition = 'codelist' and packageableElement.oclIsTypeOf(Enumeration)]
+			[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
+		[/if]
+		[if contentCondition = 'basiccomponents'] 
+			[if packageableElement.oclIsTypeOf(Class)]
+				[let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
+					[if not dependencies->isEmpty()]
+						[generateAnnotationDependency(packageableElement,  dependencies)/]
+						[generateBasicComponentsForClass(packageableElement.oclAsType(Class))/]
+					[/if]
+				[/let]
+			[/if]
+		[/if]	
+	[/for]
+[/template]
 
-[template public generateAggregatingSchema(pack : Package) {version: String = '0.2';}]
+[template public generateXSDFile(path : String, pack : Package, suffix : String, version: String, contentCondition : String )]
+[file (getFilenameXSD(path, pack.name, suffix, version), false, 'UTF-8')]
+[beginSchema(pack, version)/]
+[generateImports(pack, version)/]
+[generateXSDContent (pack, contentCondition)/]
+[endSchema(pack, version)/]
+[/file]
+[/template]
+
+[template public generateAggregatingSchema(pack : Package, version: String)]
 [comment {version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);}/]
 [if pack.name = 'pdc']
-[file (getConfig('path.core').concat(pack.name.concat('-AggregatedComponents-').concat(version).concat('.xsd')), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-	[generateImports(pack, version)/]
-	[for (packageableElement: PackageableElement | pack.packagedElement)]
-		[generatepackageableElement(packageableElement)/]
-	[/for]
-[endSchema(pack, version)/]
-[/file]
-[else]
-[file (getConfig('path.core').concat(pack.name.concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-	[generateImports(pack, version)/]
-	[for (packageableElement: PackageableElement | pack.packagedElement)]
-		[generatepackageableElement(packageableElement)/]	
-	[/for]
-[endSchema(pack, version)/]
-[/file]
-
+[generateXSDFile('path.core', pack, '-AggregatedComponents-', version, 'elementsOnly')/]
+[else] 
+[generateXSDFile('path.core', pack, '-', version, 'elementsOnly')/]
 [/if]
 [/template]
 
-[template public generateCodeList(pack : Package, model : Model) {
+[template public generateCodeList( model : Model, version : String) {
 pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
-version: String = '0.1';}]
-[file (getConfig('path.codelist').concat(model.name.concat('-codelist').concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-	[generateImports(pack, version)/]
-	[for (packageableElement: PackageableElement | pack.packagedElement)]
-		[if packageableElement.oclIsTypeOf(Enumeration)]
-			[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
-		[/if]
-	[/for]
-[endSchema(pack, version)/]
-[/file]
- 
-[comment {version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);}/]
-
+}]
+[generateXSDFile('path.codelist', pack, '-codelist-', version, 'codelist')/]
 [/template]
 
-[template public generatepackageableElement(packageableElement : PackageableElement)]
+[template public generatePackageableElement(packageableElement : PackageableElement)]
 [if packageableElement.oclIsTypeOf(Class)]
 [generateClass(packageableElement.oclAsType(Class))/]
 [/if]
@@ -167,6 +169,7 @@ version: String = '0.1';}]
 [generateType(class)/]
 [/template]
 
+[comment template not used/]
 [template public generateAllElements(class : Class) { 
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
@@ -176,7 +179,7 @@ pack : Package = class.owner.oclAsType(Package);}]
 
 [comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
 [template public generateType(class : Class) { 
-NDR : String = 'useCoreVocsTypes';
+NDR : String = getConfig('ndr.usecorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
 [if isGlobalElement(class)]
 <xs:element name = "[class.name/]" type="[class.name/][getConfig('suffix.type')/]"/>
@@ -199,8 +202,8 @@ pack : Package = class.owner.oclAsType(Package); }]
 [/if][/for]
 [/template]
 
+[comment template not used/]
 [template public generateSimpleTypeForProperty(name: String)]
-
 <!-- ===GENERATED PROPERTY TYPE============================= -->
 <xs:simpleType name="[name/]Type">
     <xs:restriction base="xs:string"/>
@@ -212,24 +215,11 @@ pack : Package = class.owner.oclAsType(Package); }]
 <!-- PrimitiveType [primitiveType.name/]-->
 [/template]
 
-[template public generateBasicComponents(model : Model){
+[template public generateBasicComponents(model : Model, version : String){
 pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
-version: String = '0.2'
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
-[file (getConfig('path.core').concat(pack.name.concat('-').concat('BasicComponents').concat('-').concat(version).concat('.xsd')), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-	[generateImports(pack, version)/]
-	[for (packageableElement: PackageableElement | pack.packagedElement->select(oclIsTypeOf(Class)))]
-		[let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
-			[if not dependencies->isEmpty()]
-				[generateAnnotation1(packageableElement,  dependencies)/]
-				[generateBasicComponentsForClass(packageableElement.oclAsType(Class))/]
-			[/if]
-		[/let]
-	[/for]
-[endSchema(pack, version)/]
-[/file]
+[generateXSDFile('path.core', pack, '-BasicComponents-', version, 'basiccomponents')/]
 [/template]
 
 [template public generateBasicComponentsForClass(class: Class){ 

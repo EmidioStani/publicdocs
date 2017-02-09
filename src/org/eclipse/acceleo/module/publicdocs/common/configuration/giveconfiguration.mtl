@@ -2,6 +2,6 @@
 [module giveconfiguration('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
 [query public getConfig(arg0 : String) : String
-	= invoke('org.eclipse.acceleo.module.publicdocs.main.GiveConfiguration', 'getConfig(java.lang.String)', Sequence{arg0})
+	= invoke('org.eclipse.acceleo.module.publicdocs.common.configuration.GiveConfiguration', 'getConfig(java.lang.String)', Sequence{arg0})
 /]
 

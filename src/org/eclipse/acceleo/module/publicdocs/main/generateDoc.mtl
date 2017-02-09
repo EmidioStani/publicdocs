@@ -1,12 +1,12 @@
 [comment encoding = UTF-8 /]
 [module generateDoc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
-[import org::eclipse::acceleo::module::publicdocs::main::util/]
-[import org::eclipse::acceleo::module::publicdocs::main::givedate /]
-[import org::eclipse::acceleo::module::publicdocs::main::giveconfiguration /]
+[import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
+[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
-[template public generateDocs(model : Model)]
-[file (getConfig('path.doc').concat(model.name.concat('.htm')), false, 'UTF-8')]
+[template public generateDocs(model : Model, version : String)]
+[file (getFilenameHTM('path.doc', model.name, '-', version), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
 	[includeHead(model)/]

@@ -1,4 +1,4 @@
-package org.eclipse.acceleo.module.publicdocs.main;
+package org.eclipse.acceleo.module.publicdocs.common.date;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
