@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="http://urn:ec:ejustice:publicdocuments/pdc"
+	xmlns="http://urn:ec:ejustice:publicdocuments/pdc"
+	xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"	
+	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
+	xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:forms="http://urn:ec:ejustice:publicdocuments/forms"	
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.1">
+	<xs:annotation>	
+		<xs:documentation xml:lang="en">
+	        Public Documents XML schema 0.1
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com)
+		</xs:documentation>
+	</xs:annotation>
+<!-- ===== Imports======================================== -->  
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+<!-- ============================================================ -->
+<xs:complexType name="SexType">
+  <xs:complexContent>
+    <xs:restriction base="pdc:CodeType">
+      <xs:sequence>
+        <xs:element name="content">
+          <xs:simpleType>
+		    <xs:restriction base="xs:string">
+			 	<xs:enumeration value="female"/>
+			 	<xs:enumeration value="male"/>
+			 	<xs:enumeration value="undetermined"/>
+		    </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+</xs:schema>

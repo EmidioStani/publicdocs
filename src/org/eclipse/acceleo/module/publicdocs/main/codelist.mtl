@@ -2,23 +2,26 @@
 [module codelist('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::schema/]
+[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
-[template public generateCodeList( model : Model, version : String) {
+[template public generateCodeList( model : Model) {
 pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+version: String = getConfig('version.xsd');
 }]
-[file (getFilenameXSD('path.codelist', pack.name, '-codelist-', version), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-[generateImports(pack, version)/]
-[generateContentCodeList(pack)/]
-[endSchema(pack, version)/]
-[/file]
+[generateContentCodeList(pack, version)/]
 [/template]
 
-[template public generateContentCodeList(pack : Package)]
+[template public generateContentCodeList(pack : Package, version: String)]
 [for (packageableElement: PackageableElement | pack.packagedElement)]
-	[if packageableElement.oclIsTypeOf(Enumeration)]
-		[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
-	[/if]
+[if packageableElement.oclIsTypeOf(Enumeration)]
+[file (getFilenameXSD('path.codelist', pack.name, '-codelist-'.concat(packageableElement.name).concat('-'), version), false, 'UTF-8')]
+[beginSchema('cva,cvb,cec,forms,xs,udt', pack, version)/]
+[importXSD('cva,cvb,udt')/]
+[generateCodelist(packageableElement.name, 'xs:string', packageableElement.oclAsType(Enumeration))/]
+[endSchema(pack, version)/]
+[/file]
+[/if]
 [/for]
 [/template]
 

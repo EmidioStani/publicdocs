@@ -2,18 +2,20 @@
 [module basicComponents('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::schema/]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 [import org::eclipse::acceleo::module::publicdocs::main::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 
-[template public generateBasicComponents(model : Model, version : String){
+[template public generateBasicComponents(model : Model){
 pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+version: String = getConfig('version.xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
 [file (getFilenameXSD('path.core', pack.name, '-BasicComponents-', version), false, 'UTF-8')]
-[beginSchema(pack, version)/]
-[generateImports(pack, version)/]
-[generateContentBasicComponents(pack)/]
+[beginSchema('cva,cvb,cec,forms,xs,udt', pack, version)/]
+	[importXSD('cva,cvb,udt')/]
+	[generateContentBasicComponents(pack)/]
 [endSchema(pack, version)/]
 [/file]
 [/template]

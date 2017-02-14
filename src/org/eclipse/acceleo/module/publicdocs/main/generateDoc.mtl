@@ -5,7 +5,9 @@
 [import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
-[template public generateDocs(model : Model, version : String)]
+[template public generateDocs(model : Model){
+version: String = getConfig('version.xsd');
+}]
 [file (getFilenameHTM('path.doc', model.name, '-', version), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
@@ -17,7 +19,7 @@
 
 [template public includeHead(model : Model)]
 <head>
-	<title>Public Documents XML schema</title>
+	<title>[getConfig('title.model')/]</title>
 	<meta name="description" content="=An XML schema for describing Public Documents Forms">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

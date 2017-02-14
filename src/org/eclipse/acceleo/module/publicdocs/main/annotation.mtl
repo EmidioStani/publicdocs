@@ -4,8 +4,6 @@
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
-
-
 [template public generateAnnotation(class : Class){
 pack : Package = class.owner.oclAsType(Package);
 dependencies: Set(Dependency) = pack.getDirectDependencies(class);
