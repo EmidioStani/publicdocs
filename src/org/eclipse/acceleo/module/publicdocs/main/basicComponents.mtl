@@ -48,7 +48,7 @@ supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.n
 [if not pack.getDependencies(prop)->isEmpty() and (supplierType->isEmpty() or supplierType.oclIsTypeOf(PrimitiveType))]
 [generateClassForType(class, prop)/][/if]
 [if not pack.getDependencies(prop)->isEmpty() and (prop.type.oclIsTypeOf(Enumeration))]
-[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
+[comment[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
 [/if]
 [if prop.oclIsTypeOf(PrimitiveType)]
 [generatePrimitiveTypeForType(class, prop)/][/if]

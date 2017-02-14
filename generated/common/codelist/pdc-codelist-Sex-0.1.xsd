@@ -30,16 +30,6 @@
 <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 <!-- ============================================================ -->
-<xs:complexType name="contentGender">
-  <xs:simpleContent>
-    <xs:restriction base="cvb:PersonGenderCodeType">
-    <xs:enumeration value="female"/>
-	<xs:enumeration value="male"/>
-	<xs:enumeration value="undetermined"/>
-    </xs:restriction>
-  </xs:simpleContent>
-</xs:complexType>
-
 <xs:complexType name="SexType">
   <xs:complexContent>
     <xs:restriction base="pdc:CodeType">
