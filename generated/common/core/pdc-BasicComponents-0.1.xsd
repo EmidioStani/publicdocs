@@ -29,6 +29,7 @@
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xs:include schemaLocation="../codelist/pdc-codelist-Sex-0.1.xsd"/>
 	<!-- ============================================================ -->
 					<!-- ============================================================ -->
 					<!-- Address-->
@@ -118,17 +119,9 @@
 					
 					<xs:complexType name="PersonSexType">
 					  <xs:complexContent>
-					    <xs:restriction base="pdc:CodeType">
+					    <xs:restriction base="CodeType">
 					      <xs:sequence>
-					        <xs:element name="content">
-					          <xs:simpleType>
-							    <xs:restriction base="cvb:PersonGenderCodeType">
-								 	<xs:enumeration value="female"/>
-								 	<xs:enumeration value="male"/>
-								 	<xs:enumeration value="undetermined"/>
-							    </xs:restriction>
-					            </xs:simpleType>
-					        </xs:element>
+					        <xs:element name="content" type="contentGender" minOccurs="1" maxOccurs="1" />
 					      </xs:sequence>
 					      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
 					    </xs:restriction>
@@ -142,7 +135,7 @@
 					<!-- ============================================================ -->
 					<xs:complexType name="CountryCodeType">
 					  <xs:complexContent>
-					    <xs:restriction base="pdc:CodeType">
+					    <xs:restriction base="CodeType">
 					      <xs:sequence>
 					        <xs:element name="content">
 					          <xs:simpleType>

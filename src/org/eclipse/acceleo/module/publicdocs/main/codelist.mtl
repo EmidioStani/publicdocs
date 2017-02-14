@@ -36,6 +36,27 @@ version: String = getConfig('version.xsd');
 	    </xs:restriction>
 	</xs:simpleContent>
 </xs:complexType>
+
+Correct schema
+<xs:complexType name="contentGender">
+  <xs:simpleContent>
+    <xs:restriction base="cvb:PersonGenderCodeType">
+    <xs:enumeration value="female"/>
+	<xs:enumeration value="male"/>
+	<xs:enumeration value="undetermined"/>
+    </xs:restriction>
+  </xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="PersonSexType">
+  <xs:complexContent>
+    <xs:restriction base="CodeType">
+      <xs:sequence>
+        <xs:element name="content" type="contentGender" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+      <xs:attribute name="listVersionID" type="xs:string" use="required" fixed="0.2" />
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
 [/comment]
 <xs:complexType name="[name/]Type">
   <xs:complexContent>
