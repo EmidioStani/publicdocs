@@ -2,7 +2,6 @@
 [module annotation('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
-[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 [template public generateAnnotation(class : Class){
 pack : Package = class.owner.oclAsType(Package);
@@ -37,7 +36,7 @@ stereotypes : Set(Stereotype) = class.getAppliedStereotypes();}]
 [for (dependency: Dependency | dependencies)]
 [let supplierTypeName : String = dependency.supplier->any(true).name]
 [if supplierTypeName = 'Location' or supplierTypeName = 'Address'or supplierTypeName = 'Business' or supplierTypeName = 'Person' or supplierTypeName = 'PublicService']
-<!-- uses [getConfig('suffix.core')/] [supplierTypeName/] --> 
+<!-- uses [getSuffix('core')/] [supplierTypeName/] --> 
 [else] 
  <!-- uses [supplierTypeName/] --> 
 [/if]

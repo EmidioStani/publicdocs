@@ -22,184 +22,19 @@
 	        Ioana Novacean (ioana.novacean@be.pwc.com)
 		</xs:documentation>
 	</xs:annotation>
-	<!-- ===== Imports======================================== -->  
+	<!-- ===== Imports======================================== -->
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
-	<!-- ============================================================ -->
-	
-	
-	
-	
-		
-	<xs:complexType name="MarriageOrRegisteredPartnershipPersonType">
-			<xs:annotation>
-			    <xs:documentation>
-				This class contains elements related to the marriage or registered partnership of a person.
-			    </xs:documentation>
-			</xs:annotation>
-			<xs:complexContent>
-				<xs:restriction base="PersonType">
-				<xs:sequence>
-								<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the surname of the person at the time of his/her birth.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the forename (i.e. the first name or given name) of the person.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the date of birth of the person.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-									<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-										<xs:annotation>
-										    <xs:documentation>
-												This property contains the previous surname(s) of the person.
-										    </xs:documentation>
-										</xs:annotation>
-									</xs:element>
-							
-						
-									<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-										<xs:annotation>
-										    <xs:documentation>
-												This property contains the future surname(s) of the person.
-										    </xs:documentation>
-										</xs:annotation>
-									</xs:element>
-							
-						
-					
-				</xs:sequence>
-				</xs:restriction>
-			</xs:complexContent>
-	</xs:complexType>
-	
-	
-	
-	
-		
-		<xs:complexType name="CountryType">
-				<xs:annotation>
-				    <xs:documentation>
-					This class contains elements related to a country.
-							<!-- Dependency Country->Location -->
-							Stereotype cvABIE
-				    </xs:documentation>
-				</xs:annotation>
-			<xs:sequence>
-							<xs:element name="Code" type="cvb:LocationGeographicIDType" minOccurs="0" maxOccurs="1"/>
-					
-							<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the name of the country.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-					
-				
-			</xs:sequence>
-			
-		</xs:complexType>
+	<!-- ===================================================== -->
 	
 	
 	
 	
 	
-		
-	<xs:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
-			<xs:annotation>
-			    <xs:documentation>
-				This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
-			    </xs:documentation>
-			</xs:annotation>
-			<xs:complexContent>
-				<xs:restriction base="PersonType">
-				<xs:sequence>
-								<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the surname (i.e. the last name or family name) of the person.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the forename (i.e. the first name or given name) of the person.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-									<xs:annotation>
-									    <xs:documentation>
-											This property contains the date of birth of the person.
-									    </xs:documentation>
-									</xs:annotation>
-								</xs:element>
-						
-								<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-								<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-								<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-								<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-						
-						
-					
-				</xs:sequence>
-				</xs:restriction>
-			</xs:complexContent>
-	</xs:complexType>
-	
-	
-	
-	
-		
-		<xs:complexType name="NationalityType">
-				<xs:annotation>
-				    <xs:documentation>
-					This class contains elements related to a nationality.
-							<!-- Dependency Nationality->Jurisdiction -->
-							Stereotype cvABIE
-				    </xs:documentation>
-				</xs:annotation>
-			<xs:sequence>
-							<xs:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the name of the nationality.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-					
-				
-			</xs:sequence>
-			
-		</xs:complexType>
 	
 	
 	
@@ -282,200 +117,6 @@
 								    
 		
 								
-								    <xs:complexType name="OfficialType">
-								
-								    		<xs:annotation>
-								
-								    		    <xs:documentation>
-								
-								    			
-								
-								    		    </xs:documentation>
-								
-								    		</xs:annotation>
-								
-								    		<xs:complexContent>
-								
-								    			<xs:restriction base="PersonType">
-								
-								    			<xs:sequence>
-								
-								    							<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-								
-								    								<xs:annotation>
-								
-								    								    <xs:documentation>
-								
-								    										cvb:PersonFamilyName
-								
-								    								    </xs:documentation>
-								
-								    								</xs:annotation>
-								
-								    							</xs:element>
-								
-								    					
-								
-								    							<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-								
-								    								<xs:annotation>
-								
-								    								    <xs:documentation>
-								
-								    										cvb:PersonGivenName
-								
-								    								    </xs:documentation>
-								
-								    								</xs:annotation>
-								
-								    							</xs:element>
-								
-								    					
-								
-								    				
-								
-								    			</xs:sequence>
-								
-								    			</xs:restriction>
-								
-								    		</xs:complexContent>
-								
-								    </xs:complexType>
-								
-								    
-								
-								    
-	
-								
-								    
-		
-								
-								    	<xs:complexType name="CanMarryType">
-								
-								    			<xs:annotation>
-								
-								    			    <xs:documentation>
-								
-								    				This class contains elements related to the capacity to marry of a person.
-								
-								    			    </xs:documentation>
-								
-								    			</xs:annotation>
-								
-								    		<xs:sequence>
-								
-								    									<xs:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    										<xs:annotation>
-								
-								    										    <xs:documentation>
-								
-								    												The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
-								
-								    										    </xs:documentation>
-								
-								    										</xs:annotation>
-								
-								    									</xs:element>
-								
-								    							
-								
-								    				
-								
-								    									<xs:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    										<xs:annotation>
-								
-								    										    <xs:documentation>
-								
-								    												The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
-								
-								    										    </xs:documentation>
-								
-								    										</xs:annotation>
-								
-								    									</xs:element>
-								
-								    							
-								
-								    				
-								
-								    									<xs:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    										<xs:annotation>
-								
-								    										    <xs:documentation>
-								
-								    												There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
-								
-								    										    </xs:documentation>
-								
-								    										</xs:annotation>
-								
-								    									</xs:element>
-								
-								    							
-								
-								    				
-								
-								    									<xs:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    										<xs:annotation>
-								
-								    										    <xs:documentation>
-								
-								    												There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-								
-								    										    </xs:documentation>
-								
-								    										</xs:annotation>
-								
-								    									</xs:element>
-								
-								    							
-								
-								    				
-								
-								    									<xs:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    										<xs:annotation>
-								
-								    										    <xs:documentation>
-								
-								    												There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-								
-								    										    </xs:documentation>
-								
-								    										</xs:annotation>
-								
-								    									</xs:element>
-								
-								    							
-								
-								    				
-								
-								    			
-								
-								    		</xs:sequence>
-								
-								    		
-								
-								    	</xs:complexType>
-								
-								    
-								
-								    
-								
-								    
-		
-								
-								    
-								
-								    
-								
-								    
-		
-								
 								    <xs:complexType name="BirthPersonType">
 								
 								    		<xs:annotation>
@@ -551,6 +192,384 @@
 								    					
 								
 								    							<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    				
+								
+								    			</xs:sequence>
+								
+								    			</xs:restriction>
+								
+								    		</xs:complexContent>
+								
+								    </xs:complexType>
+								
+								    
+								
+								    
+	
+								
+								    
+		
+								
+								    	<xs:complexType name="PlaceType">
+								
+								    			<xs:annotation>
+								
+								    			    <xs:documentation>
+								
+								    				This class contains elements related to a place.
+								
+								    						<!-- Dependency Place->Location -->
+								
+								    						Stereotype cvABIE
+								
+								    			    </xs:documentation>
+								
+								    			</xs:annotation>
+								
+								    		<xs:sequence>
+								
+								    						<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+								
+								    							<xs:annotation>
+								
+								    							    <xs:documentation>
+								
+								    									This property contains the name of the place (geographic location).
+								
+								    							    </xs:documentation>
+								
+								    							</xs:annotation>
+								
+								    						</xs:element>
+								
+								    				
+								
+								    			
+								
+								    		</xs:sequence>
+								
+								    		
+								
+								    	</xs:complexType>
+								
+								    
+								
+								    
+								
+								    
+	
+								
+								    
+	
+								
+								    
+		
+								
+								    <xs:complexType name="DeathPersonType">
+								
+								    		<xs:annotation>
+								
+								    		    <xs:documentation>
+								
+								    			This class contains elements related to the death of a person.
+								
+								    		    </xs:documentation>
+								
+								    		</xs:annotation>
+								
+								    		<xs:complexContent>
+								
+								    			<xs:restriction base="PersonType">
+								
+								    			<xs:sequence>
+								
+								    							<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the surname (i.e. the last name or family name) of the person. 
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the forename (i.e. the first name or given name) of the person.
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the date of birth of the person.
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the date of death of the person.
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    				
+								
+								    			</xs:sequence>
+								
+								    			</xs:restriction>
+								
+								    		</xs:complexContent>
+								
+								    </xs:complexType>
+								
+								    
+								
+								    
+	
+								
+								    
+		
+								
+								    <xs:complexType name="OfficialType">
+								
+								    		<xs:annotation>
+								
+								    		    <xs:documentation>
+								
+								    			
+								
+								    		    </xs:documentation>
+								
+								    		</xs:annotation>
+								
+								    		<xs:complexContent>
+								
+								    			<xs:restriction base="PersonType">
+								
+								    			<xs:sequence>
+								
+								    							<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										cvb:PersonFamilyName
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										cvb:PersonGivenName
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    				
+								
+								    			</xs:sequence>
+								
+								    			</xs:restriction>
+								
+								    		</xs:complexContent>
+								
+								    </xs:complexType>
+								
+								    
+								
+								    
+		
+								
+								    <xs:complexType name="AbsenceOfCriminalRecordPersonType">
+								
+								    		<xs:annotation>
+								
+								    		    <xs:documentation>
+								
+								    			This class contains elements related to the absence of a criminal record for a person.
+								
+								    		    </xs:documentation>
+								
+								    		</xs:annotation>
+								
+								    		<xs:complexContent>
+								
+								    			<xs:restriction base="PersonType">
+								
+								    			<xs:sequence>
+								
+								    							<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the surname (i.e. last name or family name) of the person.
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the forename (i.e. the first name or given name) of the person. 
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xs:annotation>
+								
+								    								    <xs:documentation>
+								
+								    										This property contains the date of birth of the person.
+								
+								    								    </xs:documentation>
+								
+								    								</xs:annotation>
+								
+								    							</xs:element>
+								
+								    					
+								
+								    							<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+								
+								    					
+								
+								    							<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+								
+								    					
+								
+								    					
+								
+								    								<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+								
+								    									<xs:annotation>
+								
+								    									    <xs:documentation>
+								
+								    											This property contains the previous surname(s) of the person.
+								
+								    									    </xs:documentation>
+								
+								    									</xs:annotation>
+								
+								    								</xs:element>
+								
+								    						
+								
+								    					
+								
+								    								<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+								
+								    									<xs:annotation>
+								
+								    									    <xs:documentation>
+								
+								    											This property contains the previous forename(s) of the person.
+								
+								    									    </xs:documentation>
+								
+								    									</xs:annotation>
+								
+								    								</xs:element>
+								
+								    						
 								
 								    					
 								
@@ -722,9 +741,6 @@
 								    </xs:complexType>
 								
 								    
-								
-								    
-	
 								
 								    
 		
@@ -1430,74 +1446,6 @@
 								    
 								
 								    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
 		
 								
 								    							
@@ -1514,90 +1462,7 @@
 								
 								    							
 								
-								    							    				    					    
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-		
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    	<xs:complexType name="CodeType">
+								    							    				    					    	<xs:complexType name="CountryType">
 								
 								    							
 								
@@ -1645,7 +1510,39 @@
 								
 								    							
 								
-								    							    				    					    				This class contains elements related to code lists.
+								    							    				    					    				This class contains elements related to a country.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    						<!-- Dependency Country->Location -->
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    						Stereotype cvABIE
 								
 								    							
 								
@@ -1709,7 +1606,7 @@
 								
 								    							
 								
-								    							    				    					    							<xs:element name="content" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								    							    				    					    						<xs:element name="Code" type="cvb:LocationGeographicIDType" minOccurs="0" maxOccurs="1"/>
 								
 								    							
 								
@@ -1725,7 +1622,7 @@
 								
 								    							
 								
-								    							    				    					    								<xs:annotation>
+								    							    				    					    				
 								
 								    							
 								
@@ -1741,7 +1638,7 @@
 								
 								    							
 								
-								    							    				    					    								    <xs:documentation>
+								    							    				    					    						<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
 								
 								    							
 								
@@ -1757,7 +1654,7 @@
 								
 								    							
 								
-								    							    				    					    										
+								    							    				    					    							<xs:annotation>
 								
 								    							
 								
@@ -1773,7 +1670,7 @@
 								
 								    							
 								
-								    							    				    					    								    </xs:documentation>
+								    							    				    					    							    <xs:documentation>
 								
 								    							
 								
@@ -1789,7 +1686,7 @@
 								
 								    							
 								
-								    							    				    					    								</xs:annotation>
+								    							    				    					    									This property contains the name of the country.
 								
 								    							
 								
@@ -1805,7 +1702,7 @@
 								
 								    							
 								
-								    							    				    					    							</xs:element>
+								    							    				    					    							    </xs:documentation>
 								
 								    							
 								
@@ -1821,7 +1718,23 @@
 								
 								    							
 								
-								    							    				    					    					
+								    							    				    					    							</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    						</xs:element>
 								
 								    							
 								
@@ -1870,134 +1783,6 @@
 								    							
 								
 								    							    				    					    		</xs:sequence>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listAgencyID" type="xs:string" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listAgencyName" type="xs:string" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listName" type="xs:string" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listVersionID" type="xs:string" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="name" type="xs:string" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="languageID" type="xs:language" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listURI" type="xs:anyURI" use="optional"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    			<xs:attribute name="listSchemeURI" type="xs:anyURI" use="optional"/>
 								
 								    							
 								
@@ -2111,6 +1896,23 @@
 								    							
 								
 								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
 								
 								    							
 								
@@ -2529,123 +2331,6 @@
 								    							
 								
 								    							    				    					    
-		
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
 	
 								
 								    							
@@ -2679,7 +2364,7 @@
 								
 								    							
 								
-								    							    				    					    	<xs:complexType name="PlaceType">
+								    							    				    					    	<xs:complexType name="NationalityType">
 								
 								    							
 								
@@ -2727,7 +2412,7 @@
 								
 								    							
 								
-								    							    				    					    				This class contains elements related to a place.
+								    							    				    					    				This class contains elements related to a nationality.
 								
 								    							
 								
@@ -2743,7 +2428,7 @@
 								
 								    							
 								
-								    							    				    					    						<!-- Dependency Place->Location -->
+								    							    				    					    						<!-- Dependency Nationality->Jurisdiction -->
 								
 								    							
 								
@@ -2823,7 +2508,7 @@
 								
 								    							
 								
-								    							    				    					    						<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+								    							    				    					    						<xs:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
 								
 								    							
 								
@@ -2871,7 +2556,7 @@
 								
 								    							
 								
-								    							    				    					    									This property contains the name of the place (geographic location).
+								    							    				    					    									This property contains the name of the nationality.
 								
 								    							
 								
@@ -3048,108 +2733,6 @@
 								    							
 								
 								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
-	
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    
 		
 								
 								    							
@@ -3166,7 +2749,7 @@
 								
 								    							
 								
-								    							    				    					    <xs:complexType name="DeathPersonType">
+								    							    				    					    <xs:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 								
 								    							
 								
@@ -3214,7 +2797,7 @@
 								
 								    							
 								
-								    							    				    					    			This class contains elements related to the death of a person.
+								    							    				    					    			This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
 								
 								    							
 								
@@ -3358,7 +2941,7 @@
 								
 								    							
 								
-								    							    				    					    										This property contains the surname (i.e. the last name or family name) of the person. 
+								    							    				    					    										This property contains the surname (i.e. the last name or family name) of the person.
 								
 								    							
 								
@@ -3758,199 +3341,55 @@
 								
 								    							
 								
-								    							    				    					    							<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    								<xs:annotation>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    								    <xs:documentation>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    										This property contains the date of death of the person.
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    								    </xs:documentation>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    								</xs:annotation>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    							</xs:element>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    							<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    							<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
 								    							    				    					    							<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    					
 								
 								    							
 								
@@ -4079,6 +3518,1019 @@
 								    							
 								
 								    							    				    					    
+		
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    	<xs:complexType name="CanMarryType">
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    			<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    			    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				This class contains elements related to the capacity to marry of a person.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    			    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    			</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    		<xs:sequence>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									<xs:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    												The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									</xs:element>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									<xs:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    												The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									</xs:element>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									<xs:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    												There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									</xs:element>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									<xs:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    												There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									</xs:element>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									<xs:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										<xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    <xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    												There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										    </xs:documentation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    										</xs:annotation>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    									</xs:element>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    							
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    				
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    			
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    		</xs:sequence>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    		
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    	</xs:complexType>
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
 	
 								
 								    							
@@ -4112,7 +4564,56 @@
 								
 								    							
 								
-								    							    				    					    <xs:complexType name="AbsenceOfCriminalRecordPersonType">
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+		
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    <xs:complexType name="MarriageOrRegisteredPartnershipPersonType">
 								
 								    							
 								
@@ -4160,7 +4661,7 @@
 								
 								    							
 								
-								    							    				    					    			This class contains elements related to the absence of a criminal record for a person.
+								    							    				    					    			This class contains elements related to the marriage or registered partnership of a person.
 								
 								    							
 								
@@ -4256,7 +4757,7 @@
 								
 								    							
 								
-								    							    				    					    							<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+								    							    				    					    							<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
 								
 								    							
 								
@@ -4304,7 +4805,7 @@
 								
 								    							
 								
-								    							    				    					    										This property contains the surname (i.e. last name or family name) of the person.
+								    							    				    					    										This property contains the surname of the person at the time of his/her birth.
 								
 								    							
 								
@@ -4432,7 +4933,7 @@
 								
 								    							
 								
-								    							    				    					    										This property contains the forename (i.e. the first name or given name) of the person. 
+								    							    				    					    										This property contains the forename (i.e. the first name or given name) of the person.
 								
 								    							
 								
@@ -4640,70 +5141,6 @@
 								
 								    							
 								
-								    							    				    					    							<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    							<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
 								    							    				    					    							<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
 								
 								    							
@@ -4736,55 +5173,7 @@
 								
 								    							
 								
-								    							    				    					    							<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					
-								
-								    							
-								
-								    							    				
-								
-								    							
-								
-								    							    				    					    								<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+								    							    				    					    								<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 								
 								    							
 								
@@ -4928,7 +5317,7 @@
 								
 								    							
 								
-								    							    				    					    								<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+								    							    				    					    								<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 								
 								    							
 								
@@ -4976,7 +5365,7 @@
 								
 								    							
 								
-								    							    				    					    											This property contains the previous forename(s) of the person.
+								    							    				    					    											This property contains the future surname(s) of the person.
 								
 								    							
 								
@@ -5153,6 +5542,257 @@
 								    							
 								
 								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+		
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+		
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					
+								
+								    							
+								
+								    							    				
+								
+								    							
+								
+								    							    				    					    
+	
 								
 								    							
 								

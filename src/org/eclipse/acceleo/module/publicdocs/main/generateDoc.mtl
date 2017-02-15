@@ -2,11 +2,9 @@
 [module generateDoc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
-[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
-[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 [template public generateDocs(model : Model){
-version: String = getConfig('version.xsd');
+version: String = getVersion('xsd');
 }]
 [file (getFilenameHTM('path.doc', model.name, '-', version), false, 'UTF-8')]
 <!DOCTYPE html>
@@ -19,7 +17,7 @@ version: String = getConfig('version.xsd');
 
 [template public includeHead(model : Model)]
 <head>
-	<title>[getConfig('title.model')/]</title>
+	<title>[getConf('title.model')/]</title>
 	<meta name="description" content="=An XML schema for describing Public Documents Forms">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -113,7 +111,7 @@ h3 i{color: #444;}
   <h1 class="title p-name" id="title" property="dcterms:title">[model.name/]</h1>
   <img src="https://e-justice.europa.eu/images/ejustice_logo.png" alt="e-Justice logo"/>
   <img src="https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/images/isa_logo.png" alt="ISA logo"/>
-  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="[getDate('yyyy-MM-dd')/]">[getDate('yyyy')/]</time></h2>
+  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="[getTodayDate('yyyy-MM-dd')/]">[getTodayDate('yyyy')/]</time></h2>
   <dl>
     
       <dt>This version:</dt>
