@@ -3,13 +3,12 @@
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::schema/]
-[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 [import org::eclipse::acceleo::module::publicdocs::main::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 
 [template public generateBasicComponents(model : Model){
 pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
-version: String = getConfig('version.xsd');
+version: String = getVersion('xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
 [file (getFilenameXSD('path.core', pack.name, '-BasicComponents-', version), false, 'UTF-8')]
@@ -58,7 +57,7 @@ supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.n
 pack                 : Package       = class.owner.oclAsType(Package);
 supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
 supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
-suffix: String = getConfig('suffix.type');
+suffix: String = getSuffix('complexType');
 }]
 [if prop.type.name = 'string']
 

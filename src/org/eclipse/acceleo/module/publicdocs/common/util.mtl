@@ -1,6 +1,7 @@
 [comment encoding = UTF-8 /]
 [module util('http://www.eclipse.org/uml2/5.0.0/UML')]
 
+[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
@@ -38,16 +39,44 @@
 = name.concat(suffix).concat(version).concat(extension)/]
 
 [query public getFullFilename (path : String, name: String, suffix : String, version : String, extension : String ) : String
-= getConfig(path).concat(getFilename(name, suffix, version, extension))/]
+= getConf(path).concat(getFilename(name, suffix, version, extension))/]
 
 [query public getFilenameHTM (path : String, name: String, suffix : String, version : String ) : String
 = getFullFilename(path, name, suffix, version, '.htm')/]
 
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
-=  getFullFilename(path, name, suffix, version, '.xsd')/]
+= getFullFilename(path, name, suffix, version, '.xsd')/]
+
+[query public getFQDN(class: Class) : String
+= class.namespace.name.concat(':').concat(class.name)/]
+
+[query public getConf(config: String) : String
+= getConfig(config)/]
+
+[query public getTodayDate(format: String) : String
+= getDate(format)/]
 
 [query public getURIFromPackName(packname: String) : String
-=  getConfig('url.'.concat(packname))/]
+= getConf('url.'.concat(packname))/]
 
 [query public getPathFromPackName(packname: String) : String
-=  getConfig('path.'.concat(packname))/]
+= getConf('path.'.concat(packname))/]
+
+[query public getSuffix(type: String) : String
+= getConf('suffix.'.concat(type))/]
+
+[query public getVersion(name: String) : String
+= getConf('version.'.concat(name))/]
+
+[query public getName(name: String) : String
+= getConf('name.'.concat(name))/]
+
+[query public getEmail(name: String) : String
+= getConf('email.'.concat(name))/]
+
+[query public getNDR(name: String) : String
+= getConf('ndr.'.concat(name))/]
+
+
+
+

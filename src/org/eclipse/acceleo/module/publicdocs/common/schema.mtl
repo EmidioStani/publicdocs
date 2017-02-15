@@ -2,16 +2,6 @@
 [module schema('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util /]
-[import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
-[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
-
-[template public insertXmlns(namespace : String, url: String)]
-xmlns:[namespace/]="[url/]"	
-[/template]
-
-[template public importNamespace(packName : String)]
-[insertXmlns(packName, getURIFromPackName(packName))/]
-[/template]
 
 [template public beginSchema(list : String, pack : Package, version: String)]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,15 +18,39 @@ xmlns:[namespace/]="[url/]"
 	version="[version/]">
 	<xs:annotation>	
 		<xs:documentation xml:lang="en">
-	        [getConfig('title.model')/] [version/]
-	        Copyright (C) European Union, [getDate('yyyy')/]
-	        Licensed under the [getConfig('licence.model')/]
+	        [getConf('title.model')/] [version/]
+	        Copyright (C) European Union, [getTodayDate('yyyy')/]
+	        Licensed under the [getConf('licence.model')/]
 	        Original authors:
-	        [getConfig('author1.name')/] ([getConfig('author1.email')/]),
-	        [getConfig('author2.name')/] ([getConfig('author2.email')/]),
-	        [getConfig('author3.name')/] ([getConfig('author3.email')/])
+	        [addAuthor('author1')/],
+	        [addAuthor('author2')/],
+	        [addAuthor('author3')/]
 		</xs:documentation>
 	</xs:annotation>
+[/template]
+
+[template public addAuthor(author : String)]
+[getName(author)/] ([getEmail(author)/])
+[/template]
+
+[template public importNamespace(packName : String)]
+[insertXmlns(packName, getURIFromPackName(packName))/]
+[/template]
+
+[template public insertXmlns(namespace : String, url: String)]
+xmlns:[namespace/]="[url/]"	
+[/template]
+
+[template public importXSD(list : String)]
+<!-- ===== Imports======================================== -->
+[for (packName: String | list.tokenize(','))]
+[importPack(packName)/]
+[/for]  
+<!-- ===================================================== -->
+[/template]
+
+[template public importPack(packName : String)]
+[insertImport(getURIFromPackName(packName), getPathFromPackName(packName))/]
 [/template]
 
 [template public insertImport(url : String, location: String)]
@@ -44,16 +58,20 @@ xmlns:[namespace/]="[url/]"
 		   schemaLocation="[location/]"/>
 [/template]
 
-[template public importPack(packName : String)]
-[insertImport(getURIFromPackName(packName), getPathFromPackName(packName))/]
+[template public includeXSD(list : String)]
+<!-- ===== Includes======================================= -->
+[for (packName: String | list.tokenize(','))]
+[includePack(packName)/]
+[/for]  
+<!-- ===================================================== -->
 [/template]
 
-[template public importXSD(list : String)]
-<!-- ===== Imports======================================== -->  
-[for (packName: String | list.tokenize(','))]
-[importPack(packName)/]
-[/for]  
-<!-- ============================================================ -->
+[template public includePack(packName : String)]
+[insertInclude(getPathFromPackName(packName))/]
+[/template]
+
+[template public insertInclude(location: String)]
+<xs:include schemaLocation="[location/]"/>
 [/template]
 
 [template public endSchema(pack : Package, version: String)]

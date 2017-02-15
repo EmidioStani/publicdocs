@@ -3,11 +3,10 @@
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::schema/]
-[import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 [import org::eclipse::acceleo::module::publicdocs::main::complextype /]
 
 [template public generateAggregatingSchema(model : Model){
-version: String = getConfig('version.xsd');
+version: String = getVersion('xsd');
 }]
 [comment {version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);}/]
 [for (pack:PackageableElement | model.packagedElement->select(oclIsTypeOf(Package) and hasStereotypeISA()))]
@@ -61,16 +60,16 @@ version: String = getConfig('version.xsd');
 [template public generateAllElements(class : Class) { 
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
-[generateElement(property.name, getConfig('suffix.type'))/]
+[generateElement(property.name, getSuffix('elementType'))/]
 [/for]
 [/template]
 
 [comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
 [template public generateType(class : Class) { 
-NDR : String = getConfig('ndr.usecorevocstypes');
+NDR : String = getNDR('usecorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
 [if isGlobalElement(class)]
-[generateElement(class.name, getConfig('suffix.type'))/]
+[generateElement(class.name, getSuffix('elementType'))/]
 [else]
 	
 [/if]

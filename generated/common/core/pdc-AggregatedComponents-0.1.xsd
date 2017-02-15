@@ -22,19 +22,17 @@
 	        Ioana Novacean (ioana.novacean@be.pwc.com)
 		</xs:documentation>
 	</xs:annotation>
-	<!-- ===== Imports======================================== -->  
+	<!-- ===== Imports======================================== -->
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
-	<xs:include schemaLocation="../codelist/pdc-codelist-Sex-0.1"></xs:include>
-	<!-- ============================================================ -->
+	<!-- ===================================================== -->
 	
 	
-
-
+		
 		<xs:complexType name="CodeType">
 				<xs:annotation>
 				    <xs:documentation>
@@ -42,7 +40,7 @@
 				    </xs:documentation>
 				</xs:annotation>
 			<xs:sequence>
-								<xs:element name="content" type="contentGender" minOccurs="1" maxOccurs="1" >
+								<xs:element name="content" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 									<xs:annotation>
 									    <xs:documentation>
 											
