@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-	targetNamespace="http://urn:ec:ejustice:publicdocuments/pdc"
-	xmlns="http://urn:ec:ejustice:publicdocuments/pdc"
+	targetNamespace="http://data.europa.eu/xyz/pdc"
+	xmlns="http://data.europa.eu/xyz/pdc"
 	xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"	
 	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
 	xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	xmlns:forms="http://urn:ec:ejustice:publicdocuments/forms"	
+	xmlns:forms="http://data.europa.eu/xyz/forms"	
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	elementFormDefault="qualified"
@@ -28,8 +28,63 @@
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
 			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
-			   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+			   schemaLocation="../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
+					<!-- ============================================================ -->
+					<!-- Address-->
+					<!-- uses Core Address --> 
+					<!-- ============================================================ -->
+					
+					<xs:complexType name="AddressStreetPOBoxType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:AddressThoroughfareType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
+					<xs:complexType name="AddressPlaceType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:AddressPostNameType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
+					<xs:complexType name="AddressCountryType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:AddressAdminUnitLocationOneType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
+					<xs:complexType name="AddressPostalCodeType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:AddressPostNameType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
+					<!-- ============================================================ -->
+					<!-- Place-->
+					<!-- uses Core Location --> 
+					<!-- ============================================================ -->
+					
+					<xs:complexType name="PlaceNameType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:LocationGeographicNameType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
 					<!-- ============================================================ -->
 					<!-- Person-->
 					<!-- uses Core Person --> 
@@ -77,34 +132,6 @@
 					
 					
 					<!-- ============================================================ -->
-					<!-- Place-->
-					<!-- uses Core Location --> 
-					<!-- ============================================================ -->
-					
-					<xs:complexType name="PlaceNameType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:LocationGeographicNameType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<!-- ============================================================ -->
-					<!-- Nationality-->
-					 <!-- uses Jurisdiction --> 
-					<!-- ============================================================ -->
-					
-					<xs:complexType name="NationalityNameType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:JurisdictionNameType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<!-- ============================================================ -->
 					<!-- Country-->
 					<!-- uses Core Location --> 
 					<!-- ============================================================ -->
@@ -119,47 +146,6 @@
 					</xs:complexType>
 					
 					<!-- ============================================================ -->
-					<!-- Address-->
-					<!-- uses Core Address --> 
-					<!-- ============================================================ -->
-					
-					<xs:complexType name="AddressStreetPOBoxType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:AddressThoroughfareType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<xs:complexType name="AddressPlaceType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:AddressPostNameType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<xs:complexType name="AddressCountryType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:AddressAdminUnitLocationOneType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<xs:complexType name="AddressPostalCodeType">
-						<xs:simpleContent>
-							<xs:restriction base="cvb:AddressPostNameType">
-								<xs:minLength value="0"  />
-								<xs:maxLength value="255" />
-							</xs:restriction>
-						</xs:simpleContent>
-					</xs:complexType>
-					
-					<!-- ============================================================ -->
 					<!-- Authority-->
 					 <!-- uses LegalEntity --> 
 					<!-- ============================================================ -->
@@ -167,6 +153,20 @@
 					<xs:complexType name="AuthorityDesignationType">
 						<xs:simpleContent>
 							<xs:restriction base="cvb:LegalEntityLegalNameType">
+								<xs:minLength value="0"  />
+								<xs:maxLength value="255" />
+							</xs:restriction>
+						</xs:simpleContent>
+					</xs:complexType>
+					
+					<!-- ============================================================ -->
+					<!-- Nationality-->
+					 <!-- uses Jurisdiction --> 
+					<!-- ============================================================ -->
+					
+					<xs:complexType name="NationalityNameType">
+						<xs:simpleContent>
+							<xs:restriction base="cvb:JurisdictionNameType">
 								<xs:minLength value="0"  />
 								<xs:maxLength value="255" />
 							</xs:restriction>
