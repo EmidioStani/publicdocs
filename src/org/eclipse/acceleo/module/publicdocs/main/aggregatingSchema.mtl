@@ -69,9 +69,7 @@ pack : Package = class.owner.oclAsType(Package);}]
 NDR : String = getNDR('usecorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
 [if isGlobalElement(class)]
-[generateElement(class.name, getSuffix('elementType'))/]
-[else]
-	
+[generateElement(class.name, getSuffix('elementType'))/]	
 [/if]
 [if not isLocal(class)]
 [if(class.general->isEmpty())]

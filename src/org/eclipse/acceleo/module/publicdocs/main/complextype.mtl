@@ -7,31 +7,31 @@
 
 [template public generateComplextype_ground(class : Class, NDR : String)]
 [if not  class.ownedAttribute->isEmpty()]
-	<xs:complexType name="[class.name/]Type">
-		[generateAnnotation(class)/]
-	[if isChoice(class)]
-		<xs:choice>
+<xs:complexType name="[class.name/]Type">
+	[generateAnnotation(class)/]
+[if isChoice(class)]
+	<xs:choice>
 		[generateElements(class, NDR)/]
-		</xs:choice>
-	[else]
-		<xs:sequence>
-			[generateElements(class, NDR)/]
-		</xs:sequence>
-		[generateAttributes(class, NDR)/]
-	[/if]
-	</xs:complexType>
+	</xs:choice>
 [else]
-	<xs:complexType/>
+	<xs:sequence>
+		[generateElements(class, NDR)/]
+	</xs:sequence>
+	[generateAttributes(class, NDR)/]
+[/if]
+</xs:complexType>
+[else]
+<xs:complexType/>
 [/if]
 [/template]
 
 [template public generateComplextype_restriction_complexcontent(class : Class, NDR : String)]
 <xs:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
-	[for (base: Classifier | class.general)]
-		<xs:complexContent>
-			<xs:restriction base="[base.name/]Type">
-	[/for]
+[for (base: Classifier | class.general)]
+	<xs:complexContent>
+		<xs:restriction base="[base.name/]Type">
+[/for]
 	[if not  class.ownedAttribute->isEmpty()]
 		[if isChoice(class)]
 			<xs:choice>
@@ -43,9 +43,9 @@
 			</xs:sequence>
 		[/if]
 	[/if]
-	[for (base: Classifier | class.general)]
-			</xs:restriction>
-		</xs:complexContent>
-	[/for]
+[for (base: Classifier | class.general)]
+		</xs:restriction>
+	</xs:complexContent>
+[/for]
 </xs:complexType>
 [/template]

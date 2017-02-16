@@ -7,19 +7,19 @@
 pack : Package = class.owner.oclAsType(Package);
 dependencies: Set(Dependency) = pack.getDirectDependencies(class);
 stereotypes : Set(Stereotype) = class.getAppliedStereotypes();}]
-	<xs:annotation>
-	    <xs:documentation>
-		[class.ownedComment._body/]
-		[if not dependencies->isEmpty() or not stereotypes->isEmpty()]
-			[for (dependency: Dependency | dependencies)]
-				<!-- Dependency [class.name/]->[dependency.supplier->any(true).name/] -->
-			[/for]
-			[for (stereotype: Stereotype | stereotypes)]
-				Stereotype [stereotype.name/]
-			[/for]
-		[/if]
-	    </xs:documentation>
-	</xs:annotation>
+<xs:annotation>
+    <xs:documentation>
+	[class.ownedComment._body/]
+	[if not dependencies->isEmpty() or not stereotypes->isEmpty()]
+		[for (dependency: Dependency | dependencies)]
+			<!-- Dependency [class.name/]->[dependency.supplier->any(true).name/] -->
+		[/for]
+		[for (stereotype: Stereotype | stereotypes)]
+			Stereotype [stereotype.name/]
+		[/for]
+	[/if]
+    </xs:documentation>
+</xs:annotation>
 [/template]
 
 [template public generateAnnotation(property: Property)]

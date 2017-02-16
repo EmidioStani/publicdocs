@@ -4,6 +4,9 @@
 [import org::eclipse::acceleo::module::publicdocs::common::date::givedate /]
 [import org::eclipse::acceleo::module::publicdocs::common::configuration::giveconfiguration /]
 
+[query public getPackageWithName(model: Model, namePackage : String) : Package 
+= model.packagedElement->select(oclIsTypeOf(Package) and name = namePackage)->any(true).oclAsType(Package) /]
+
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and 
   (oclAsType(Dependency).client->any(true) = prop or not prop.owner.oclAsType(Class).general->isEmpty() and oclAsType(Dependency).client->any(true) = prop.getParentProperty()))/]
@@ -77,6 +80,7 @@
 [query public getNDR(name: String) : String
 = getConf('ndr.'.concat(name))/]
 
-
-
-
+[template public debug(text : String)]
+[file ('stdout', false)]DEBUG:[text/]
+[/file]
+[/template]

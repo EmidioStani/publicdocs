@@ -1,19 +1,20 @@
     $("#toc").toc({content: "#mybody", headings: "h3,h4,h5"});
-    
+    anchors.add("h3,h4,h5");
 
-
+    $toc_elem = $('#h2_toc');
+    $return_top_elem = $('#return-to-top');
  // ===== Scroll to Top ==== 
     $(window).scroll(function() {
-        if ($(this).scrollTop() >= $('#h2_toc').offset().top ) {        // If page is scrolled more than 50px
-            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        if ($(this).scrollTop() >= $toc_elem.offset().top ) {        // If page is scrolled more than 50px
+        	$return_top_elem.fadeIn(200);    // Fade in the arrow
         } else {
-            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        	$return_top_elem.fadeOut(200);   // Else fade out the arrow
         }
     });
-    $('#return-to-top').click(function() {      // When arrow is clicked
+    $return_top_elem.click(function() {      // When arrow is clicked
         $('body,html').animate({
         	
-            scrollTop : $('#h2_toc').offset().top                       // Scroll to top of body
+            scrollTop : $toc_elem.offset().top                       // Scroll to top of body
         }, 500);
     });
     

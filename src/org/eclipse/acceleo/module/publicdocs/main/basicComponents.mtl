@@ -7,7 +7,7 @@
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 
 [template public generateBasicComponents(model : Model){
-pack:Package = model.packagedElement->select(oclIsTypeOf(Package) and name = 'pdc')->any(true).oclAsType(Package);
+pack:Package = getPackageWithName(model, 'pdc');
 version: String = getVersion('xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 

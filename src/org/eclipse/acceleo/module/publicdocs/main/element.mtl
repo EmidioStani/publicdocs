@@ -8,7 +8,7 @@
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
 [if not property.hasStereotype('isa::xsdAttribute')]
-[generatePropertyElement  (property, pack, NDR)/][/if]
+[generatePropertyElement(property, pack, NDR)/][/if]
 [/for]
 [/template]
 
@@ -64,10 +64,12 @@ useUnqualifiedDataTypes: Boolean = true}]
 <xs:complexType>
 	[if isChoice(type.oclAsType(Class))]
 	<xs:choice>
-	[generateElements(type.oclAsType(Class), NDR)/]</xs:choice>
+		[generateElements(type.oclAsType(Class), NDR)/]
+	</xs:choice>
 	[else]
 	<xs:sequence>
-	[generateElements(type.oclAsType(Class), NDR)/]</xs:sequence>
+		[generateElements(type.oclAsType(Class), NDR)/]
+	</xs:sequence>
 	[/if]
 </xs:complexType>
 [else]
@@ -99,19 +101,19 @@ useUnqualifiedDataTypes: Boolean = true}]
 [template public generateElement(property: Property, typeName: String)]
 [if (property.upper = -1)]
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-		<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
-			[generateAnnotation(property)/]
-		</xs:element>
+<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
+	[generateAnnotation(property)/]
+</xs:element>
 	[else] 
-		<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
+<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
 	[/if]
 [else]
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-		<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
-			[generateAnnotation(property)/]
-		</xs:element>
+<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
+	[generateAnnotation(property)/]
+</xs:element>
 	[else] 
-		<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
+<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
 	[/if]
 [/if]
 [/template]
