@@ -30,6 +30,14 @@ stereotypes : Set(Stereotype) = class.getAppliedStereotypes();}]
 </xs:annotation>
 [/template]
 
+[template public generateAnnotation(enumerationLiteral: EnumerationLiteral)]
+<xs:annotation>
+    <xs:documentation>
+		[enumerationLiteral.ownedComment._body/]
+    </xs:documentation>
+</xs:annotation>
+[/template]
+
 [template public generateAnnotationDependency(packageableElement: PackageableElement,  dependencies: Set(Dependency))]
 <!-- ============================================================ -->
 <!-- [packageableElement.name/]-->

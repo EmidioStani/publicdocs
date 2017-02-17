@@ -80,7 +80,7 @@
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
 			  <img src="https://e-justice.europa.eu/images/ejustice_logo.png" alt="e-Justice logo"/>
 			  <img src="https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/images/isa_logo.png" alt="ISA logo"/>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-02-16">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-02-17">2017</time></h2>
 			  <dl>
 			    
 			      <dt>This version:</dt>
@@ -732,7 +732,7 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>DateOfMarriage</td>
+												<td>DateOfMarriageOrRegisteredPartnership</td>
 												<td>This property contains the date of marriage.</td>
 												<td>1..1</td>
 												<td>xs:date</td>
@@ -836,7 +836,7 @@
 										</tbody>
 									</table>
 									<h5 id="NotMarriedChoice">4.1.15 Class NotMarriedChoice</h5>
-									<p><b>Definition:</b></p>
+									<p><b>Definition:</b>This class contains elements related to the specific situation of not-married individuals.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
 											<tr>
@@ -1087,8 +1087,8 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="AdministrativeDocument">4.2.2 Class AdministrativeDocument</h5>
-												<p><b>Definition:</b></p>
+												<h5 id="AdministrativeDocumentChoice">4.2.2 Class AdministrativeDocumentChoice</h5>
+												<p><b>Definition:</b>This class contains elements related to the different types of administrative documents. </p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
 														<tr>
@@ -1101,31 +1101,31 @@
 													<tbody>
 														<tr>
 															<td>Certificate</td>
-															<td></td>
+															<td>This property refers to the class Certificate.</td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:Certificate</td>
 														</tr>
 														<tr>
 															<td>ExtractFromTheCivilStatusRegister</td>
-															<td></td>
+															<td>This property refers to the class ExtractFromTheCivilStatus</td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:ExtractFromTheCivilStatusRegister</td>
 														</tr>
 														<tr>
 															<td>ExtractFromThePopulationRegister</td>
-															<td></td>
+															<td>This property refers to the class ExtractFromThePopulationRegister.</td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:ExtractFromThePopulationRegister</td>
 														</tr>
 														<tr>
 															<td>VerbatimCopyOfCivilStatusRecords</td>
-															<td></td>
+															<td>This property refers to the class VerbatimCopyOfCivilStatusRecords. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:VerbatimCopyOfCivilStatusRecords</td>
 														</tr>
 														<tr>
 															<td>Other</td>
-															<td></td>
+															<td>This property contains the string value referring to another type of administrative document. </td>
 															<td>1..1</td>
 															<td>xs:string</td>
 														</tr>
@@ -1148,12 +1148,6 @@
 															<td>This property refers to the class BirthPerson.</td>
 															<td>1..1</td>
 															<td>pdc:BirthPerson</td>
-														</tr>
-														<tr>
-															<td>ExtensionBirth</td>
-															<td></td>
-															<td>1..1</td>
-															<td>xs:any</td>
 														</tr>
 													</tbody>
 												</table>
@@ -1221,8 +1215,8 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="CheckBox">4.2.6 Class CheckBox</h5>
-												<p><b>Definition:</b></p>
+												<h5 id="Certificate">4.2.6 Class Certificate</h5>
+												<p><b>Definition:</b>This class contains elements related to certificates.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
 														<tr>
@@ -1251,13 +1245,13 @@
 															<td>DocumentFromCourtOrTribunal</td>
 															<td>This property refers to the class ListOrOther.</td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>invalid:invalid</td>
 														</tr>
 														<tr>
 															<td>AdministrativeDocument</td>
 															<td>This property refers to the class ListOrOther.</td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>invalid:invalid</td>
 														</tr>
 														<tr>
 															<td>NotarialAct</td>
@@ -1279,7 +1273,21 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Death">4.2.8 Class Death</h5>
+												<h5 id="CourtDecision">4.2.8 Class CourtDecision</h5>
+												<p><b>Definition:</b>This class contains elements related to court decisions. </p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="Death">4.2.9 Class Death</h5>
 												<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1299,8 +1307,64 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DocumentFromCourtOrTribunalChoice">4.2.9 Class DocumentFromCourtOrTribunalChoice</h5>
-												<p><b>Definition:</b></p>
+												<h5 id="DocumentDrawnUpByDiplomaticOrConsularAgent">4.2.10 Class DocumentDrawnUpByDiplomaticOrConsularAgent</h5>
+												<p><b>Definition:</b>This class contains elements related to documents drawn up by a diplomatic or consular agent.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="DocumentEmanatingFromAClerkOfACourt">4.2.11 Class DocumentEmanatingFromAClerkOfACourt</h5>
+												<p><b>Definition:</b>This class contains elements related to documents emanating from a clerk of a court.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="DocumentEmanatingFromAJudicialOfficer">4.2.12 Class DocumentEmanatingFromAJudicialOfficer</h5>
+												<p><b>Definition:</b>This class contains elements related to documents emanating from a judicial officer. </p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="DocumentEmanatingFromAPublicProsecutor">4.2.13 Class DocumentEmanatingFromAPublicProsecutor</h5>
+												<p><b>Definition:</b>This class contains elements related to documents emanating from a public prosecutor.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="DocumentFromCourtOrTribunalChoice">4.2.14 Class DocumentFromCourtOrTribunalChoice</h5>
+												<p><b>Definition:</b>This class contains elements related to the choice between different types of documents emanating from a court or tribunal.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
 														<tr>
@@ -1313,37 +1377,37 @@
 													<tbody>
 														<tr>
 															<td>CourtDecision</td>
-															<td></td>
+															<td>This property refers to the class CourtDecision. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:CourtDecision</td>
 														</tr>
 														<tr>
 															<td>DocumentEmanatingFromAPublicProsecutor</td>
-															<td></td>
+															<td>This property refers to the class DocumentEmanatingFromAPublicProsecutor. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:DocumentEmanatingFromAPublicProsecutor</td>
 														</tr>
 														<tr>
 															<td>DocumentEmanatingFromAClerkOfACourt</td>
-															<td></td>
+															<td>This property refers to the class DocumentEmanatingFromAClerkOfACourt. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:DocumentEmanatingFromAClerkOfACourt</td>
 														</tr>
 														<tr>
 															<td>DocumentEmanatingFromAJudicialOfficer</td>
-															<td></td>
+															<td>This property refers to the class DocumentEmanatingFromAJudicialOfficer. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:DocumentEmanatingFromAJudicialOfficer</td>
 														</tr>
 														<tr>
 															<td>Other</td>
-															<td></td>
+															<td>This property contains the string value referring to another type of document coming from court or tribunal.</td>
 															<td>1..1</td>
 															<td>xs:string</td>
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DocumentInfo">4.2.10 Class DocumentInfo</h5>
+												<h5 id="DocumentInfo">4.2.15 Class DocumentInfo</h5>
 												<p><b>Definition:</b>This class contains elements related to information about a document. </p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1376,7 +1440,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DocumentKindChoice">4.2.11 Class DocumentKindChoice</h5>
+												<h5 id="DocumentKindChoice">4.2.16 Class DocumentKindChoice</h5>
 												<p><b>Definition:</b>This class contains elements related to the choice between different types of documents.see also Apéndice 18. Esquema de valores de los documentos.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1390,37 +1454,37 @@
 													<tbody>
 														<tr>
 															<td>DocumentFromCourtOrTribunal</td>
-															<td>This property refers to the class ListOrOther.</td>
+															<td>This property refers to the class DocumentFromCourtOrTribunalChoice. </td>
 															<td>1..1</td>
 															<td>forms:DocumentFromCourtOrTribunalChoice</td>
 														</tr>
 														<tr>
 															<td>AdministrativeDocument</td>
-															<td>This property refers to the class ListOrOther.</td>
+															<td>This property refers to the class AdministrativeDocumentChoice. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:AdministrativeDocumentChoice</td>
 														</tr>
 														<tr>
 															<td>NotarialAct</td>
-															<td>This property contains the checkbox for whether the document is a notarial act.</td>
+															<td>This property refers to the class NotarialAct. </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:NotarialAct</td>
 														</tr>
 														<tr>
 															<td>OfficialCertificateOnDocumentSignedByPerson</td>
-															<td>This property contains the checkbox for whether the document is an official certificate on document signed by the person it concerns.</td>
+															<td>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </td>
 															<td>1..1</td>
-															<td>forms:CheckBox</td>
+															<td>forms:OfficialCertificateOnDocumentSignedByPerson</td>
 														</tr>
 														<tr>
 															<td>DocumentDrawnUpByDiplomaticOrConsularAgent</td>
-															<td>This property contains a checkbox on whether the document is a document drawn up by a diplomatic or consular agent.</td>
+															<td>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </td>
 															<td>1..1</td>
-															<td>xs:boolean</td>
+															<td>forms:DocumentDrawnUpByDiplomaticOrConsularAgent</td>
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DomicileAndOrResidence">4.2.12 Class DomicileAndOrResidence</h5>
+												<h5 id="DomicileAndOrResidence">4.2.17 Class DomicileAndOrResidence</h5>
 												<p><b>Definition:</b>This class contains elements related to the domicile and/or residence of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1452,7 +1516,35 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="FormHeader">4.2.13 Class FormHeader</h5>
+												<h5 id="ExtractFromTheCivilStatusRegister">4.2.18 Class ExtractFromTheCivilStatusRegister</h5>
+												<p><b>Definition:</b>This class contains elements related to extracts from the civil status register. </p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="ExtractFromThePopulationRegister">4.2.19 Class ExtractFromThePopulationRegister</h5>
+												<p><b>Definition:</b>This class contains elements related to extracts from the Population Register.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="FormHeader">4.2.20 Class FormHeader</h5>
 												<p><b>Definition:</b>This class contains elements related to the form header of a form.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1496,13 +1588,13 @@
 														</tr>
 														<tr>
 															<td>ExtensionHeader</td>
-															<td></td>
+															<td>This property contains potential future extensions to the header of each form. </td>
 															<td>1..1</td>
 															<td>xs:any</td>
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="IDTypeAndNo">4.2.14 Class IDTypeAndNo</h5>
+												<h5 id="IDTypeAndNo">4.2.21 Class IDTypeAndNo</h5>
 												<p><b>Definition:</b>This class contains elements related to the type of ID used to identify a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1516,31 +1608,31 @@
 													<tbody>
 														<tr>
 															<td>NationalIdentityCardNo</td>
-															<td>This property contains the number of the national identity card.</td>
+															<td>This property contains the string value of the number of the national identity card.</td>
 															<td>1..1</td>
 															<td>xs:string</td>
 														</tr>
 														<tr>
 															<td>PassportNo</td>
-															<td>This property contains the passport number.</td>
+															<td>This property contains the string value of the passport number.</td>
 															<td>1..1</td>
 															<td>xs:string</td>
 														</tr>
 														<tr>
 															<td>DrivingLicenceNo</td>
-															<td>This property contains the driving licence number.</td>
+															<td>This property contains the string value of the driving licence number.</td>
 															<td>1..1</td>
 															<td>xs:string</td>
 														</tr>
 														<tr>
 															<td>OtherIDType</td>
-															<td>This property contains the name of another possible ID type.</td>
+															<td>This property refers to the class OtherIDType.</td>
 															<td>1..1</td>
-															<td>invalid:invalid</td>
+															<td>forms:OtherIDType</td>
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Life">4.2.15 Class Life</h5>
+												<h5 id="Life">4.2.22 Class Life</h5>
 												<p><b>Definition:</b>This class contains elements related to the life of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1572,7 +1664,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MaritalStatus">4.2.16 Class MaritalStatus</h5>
+												<h5 id="MaritalStatus">4.2.23 Class MaritalStatus</h5>
 												<p><b>Definition:</b>This class contains elements related to the marital status of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1598,7 +1690,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Marriage">4.2.17 Class Marriage</h5>
+												<h5 id="Marriage">4.2.24 Class Marriage</h5>
 												<p><b>Definition:</b>This class contains elements related to a marriage.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1636,7 +1728,35 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="OtherIDType">4.2.18 Class OtherIDType</h5>
+												<h5 id="NotarialAct">4.2.25 Class NotarialAct</h5>
+												<p><b>Definition:</b>This class contains elements related to notarial acts.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="OfficialCertificateOnDocumentSignedByPerson">4.2.26 Class OfficialCertificateOnDocumentSignedByPerson</h5>
+												<p><b>Definition:</b>This class contains elements related to official certificates on documents signed by concerned persons.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="OtherIDType">4.2.27 Class OtherIDType</h5>
 												<p><b>Definition:</b>This class contains elements related to ID types other than national identity cards, passports, or driving licences.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1662,33 +1782,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="RegisteredPartnerShipStatus">4.2.19 Class RegisteredPartnerShipStatus</h5>
-												<p><b>Definition:</b>This class contains elements related to the registered partnership status of a person.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Person</td>
-															<td>This property refers to the class MaritalOrRegisteredPartnershipStatusPerson.</td>
-															<td>1..1</td>
-															<td>pdc:MaritalOrRegisteredPartnershipStatusPerson</td>
-														</tr>
-														<tr>
-															<td>RegisteredPartnershipStatus</td>
-															<td>This property refers to the class MaritalStatusChoice.</td>
-															<td>1..1</td>
-															<td>pdc:MaritalStatusChoice</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="RegisteredPartnership">4.2.20 Class RegisteredPartnership</h5>
+												<h5 id="RegisteredPartnership">4.2.28 Class RegisteredPartnership</h5>
 												<p><b>Definition:</b>This class contains elements related to a registered partnership.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1726,7 +1820,33 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="SignatureInfo">4.2.21 Class SignatureInfo</h5>
+												<h5 id="RegisteredPartnershipStatus">4.2.29 Class RegisteredPartnershipStatus</h5>
+												<p><b>Definition:</b>This class contains elements related to the registered partnership status of a person.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Person</td>
+															<td>This property refers to the class MaritalOrRegisteredPartnershipStatusPerson.</td>
+															<td>1..1</td>
+															<td>pdc:MaritalOrRegisteredPartnershipStatusPerson</td>
+														</tr>
+														<tr>
+															<td>RegisteredPartnershipStatus</td>
+															<td>This property refers to the class MaritalStatusChoice.</td>
+															<td>1..1</td>
+															<td>pdc:MaritalStatusChoice</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="SignatureInfo">4.2.30 Class SignatureInfo</h5>
 												<p><b>Definition:</b>This class contains elements related to the signature of the official handling the document.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1770,7 +1890,21 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmAbsenceOfCriminalRecord">4.2.22 Class frmAbsenceOfCriminalRecord</h5>
+												<h5 id="VerbatimCopyOfCivilStatusRecords">4.2.31 Class VerbatimCopyOfCivilStatusRecords</h5>
+												<p><b>Definition:</b>This class contains elements related to verbatim copies of civil status records.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+												<h5 id="frmAbsenceOfCriminalRecord">4.2.32 Class frmAbsenceOfCriminalRecord</h5>
 												<p><b>Definition:</b>This class contains elements related to the form AbsenceOfCriminalRecord.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1796,7 +1930,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmBirth">4.2.23 Class frmBirth</h5>
+												<h5 id="frmBirth">4.2.33 Class frmBirth</h5>
 												<p><b>Definition:</b> This class contains elements related to the form Birth.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1822,7 +1956,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmCapacityToEnterRegisteredPartnerShip">4.2.24 Class frmCapacityToEnterRegisteredPartnerShip</h5>
+												<h5 id="frmCapacityToEnterRegisteredPartnerShip">4.2.34 Class frmCapacityToEnterRegisteredPartnerShip</h5>
 												<p><b>Definition:</b>This class contains elements related to the form CapacityToEnterRegisteredPartnership.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1848,7 +1982,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmCapacityToMarry">4.2.25 Class frmCapacityToMarry</h5>
+												<h5 id="frmCapacityToMarry">4.2.35 Class frmCapacityToMarry</h5>
 												<p><b>Definition:</b>This class contains elements related to the form CapacityToMarry.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1874,7 +2008,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmDeath">4.2.26 Class frmDeath</h5>
+												<h5 id="frmDeath">4.2.36 Class frmDeath</h5>
 												<p><b>Definition:</b>This class contains elements related to the form Death. </p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1900,7 +2034,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmDomicileAndOrResidence">4.2.27 Class frmDomicileAndOrResidence</h5>
+												<h5 id="frmDomicileAndOrResidence">4.2.37 Class frmDomicileAndOrResidence</h5>
 												<p><b>Definition:</b>This class contains elements related to the form DomicileAndOrResidence.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1926,7 +2060,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmLife">4.2.28 Class frmLife</h5>
+												<h5 id="frmLife">4.2.38 Class frmLife</h5>
 												<p><b>Definition:</b>This class contains elements related to the form Life.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1952,7 +2086,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmMaritalStatus">4.2.29 Class frmMaritalStatus</h5>
+												<h5 id="frmMaritalStatus">4.2.39 Class frmMaritalStatus</h5>
 												<p><b>Definition:</b>This class contains elements related to the form MaritalStatus.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1978,7 +2112,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmMarriage">4.2.30 Class frmMarriage</h5>
+												<h5 id="frmMarriage">4.2.40 Class frmMarriage</h5>
 												<p><b>Definition:</b>This class contains elements related to the form Marriage.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2004,7 +2138,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmRegisteredPartnerShip">4.2.31 Class frmRegisteredPartnerShip</h5>
+												<h5 id="frmRegisteredPartnerShip">4.2.41 Class frmRegisteredPartnerShip</h5>
 												<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnership.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2030,7 +2164,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="frmRegisteredPartnerShipStatus">4.2.32 Class frmRegisteredPartnerShipStatus</h5>
+												<h5 id="frmRegisteredPartnerShipStatus">4.2.42 Class frmRegisteredPartnerShipStatus</h5>
 												<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnershipStatus.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2052,7 +2186,7 @@
 															<td>Body</td>
 															<td>This property refers to the class RegisteredPartnershipStatus.</td>
 															<td>1..1</td>
-															<td>forms:RegisteredPartnerShipStatus</td>
+															<td>forms:RegisteredPartnershipStatus</td>
 														</tr>
 													</tbody>
 												</table>

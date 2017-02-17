@@ -2,10 +2,6 @@
 <xs:schema
 	targetNamespace="http://data.europa.eu/xyz/pdc"
 	xmlns="http://data.europa.eu/xyz/pdc"
-	xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"	
-	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
-	xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	xmlns:forms="http://data.europa.eu/xyz/forms"	
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	elementFormDefault="qualified"
@@ -23,10 +19,6 @@
 		</xs:documentation>
 	</xs:annotation>
 <!-- ===== Imports======================================== -->
-<xs:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents"
-		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
-<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
-		   schemaLocation="../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
 <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 		   schemaLocation="../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 <!-- ===================================================== -->
@@ -34,7 +26,13 @@
 <xs:complexType name="CountryCodeCodeListType">
   <xs:simpleContent>
 	<xs:restriction base="udt:CodeType">
-	 	<xs:enumeration value="IT"/>
+	 	<xs:enumeration value="IT">
+			<xs:annotation>
+			    <xs:documentation>
+					This property is an example of the country codes enumerated by the class CountryCode.
+			    </xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
     </xs:restriction>
   </xs:simpleContent>
 </xs:complexType>
