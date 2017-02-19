@@ -29,6 +29,7 @@
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
+	
 	<xs:complexType name="AbsenceOfCriminalRecordPersonType">
 		<xs:annotation>
 		    <xs:documentation>
@@ -38,57 +39,57 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the surname (i.e. last name or family name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the forename (i.e. the first name or given name) of the person. 
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of birth of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-						
-						
-							<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the previous surname(s) of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
-							<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the previous forename(s) of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the surname (i.e. last name or family name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the forename (i.e. the first name or given name) of the person. 
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of birth of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+					
+					
+					<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the previous surname(s) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the previous forename(s) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -105,39 +106,39 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="StreetPOBox" type="cvb:AddressThoroughfareType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains contains the Street PO Box details of the address.
-					
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
+			<xs:element name="StreetPOBox" type="cvb:AddressThoroughfareType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains contains the Street PO Box details of the address.
 				
-				<xs:element name="Place" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the location specification of the address.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
-				<xs:element name="Country" type="cvb:AddressAdminUnitLocationOneType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the name of the country.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
-				<xs:element name="PostalCode" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the postal code of the address
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Place" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the location specification of the address.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Country" type="cvb:AddressAdminUnitLocationOneType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the name of the country.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="PostalCode" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the postal code of the address
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			
 		</xs:sequence>
 		
@@ -154,14 +155,14 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="Designation" type="cvb:LegalEntityLegalNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the designation of the authority.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
+			<xs:element name="Designation" type="cvb:LegalEntityLegalNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the designation of the authority.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			
 		</xs:sequence>
 		
@@ -178,36 +179,36 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the person's surname.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the forename (first name or given name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of birth of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the person's surname.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the forename (first name or given name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of birth of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -222,51 +223,51 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-							<xs:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-				
-							<xs:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-				
-							<xs:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-				
-							<xs:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-				
-							<xs:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xs:annotation>
-								    <xs:documentation>
-										There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-				
+			<xs:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
 			
 		</xs:sequence>
 		
@@ -283,39 +284,39 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the surname (i.e. the last name or family name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the forename (i.e. the first name or given name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of birth of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-						
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the surname (i.e. the last name or family name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the forename (i.e. the first name or given name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of birth of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+					
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -332,16 +333,16 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="Code" type="cvb:LocationGeographicIDType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the name of the country.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
+			<xs:element name="Code" type="cvb:LocationGeographicIDType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the name of the country.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			
 		</xs:sequence>
 		
@@ -360,48 +361,48 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the surname (i.e. the last name or family name) of the person. 
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the forename (i.e. the first name or given name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of birth of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of death of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the surname (i.e. the last name or family name) of the person. 
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the forename (i.e. the first name or given name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of birth of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of death of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -418,65 +419,65 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the surname (i.e. the last name or family name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the person's surname at the time of his/her birth.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the person's forename (i.e. first name or given name).
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the person's date of birth.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-						<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-						
-						
-							<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the previous surname of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
-							<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the future surname of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the surname (i.e. the last name or family name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the person's surname at the time of his/her birth.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the person's forename (i.e. first name or given name).
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the person's date of birth.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+					
+					
+					<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the previous surname of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the future surname of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -496,50 +497,50 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the surname of the person at the time of his/her birth.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the forename (i.e. the first name or given name) of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
-							<xs:annotation>
-							    <xs:documentation>
-									This property contains the date of birth of the person.
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-						
-							<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the previous surname(s) of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
-							<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-								<xs:annotation>
-								    <xs:documentation>
-										This property contains the future surname(s) of the person.
-								    </xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							
-						
+					<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the surname of the person at the time of his/her birth.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the forename (i.e. the first name or given name) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the date of birth of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+					
+					<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the previous surname(s) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the future surname(s) of the person.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -556,14 +557,14 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the name of the nationality.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
+			<xs:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the name of the nationality.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			
 		</xs:sequence>
 		
@@ -586,22 +587,22 @@
 		<xs:complexContent>
 			<xs:restriction base="PersonType">
 				<xs:sequence>
-						<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									cvb:PersonFamilyName
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
-						<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
-							<xs:annotation>
-							    <xs:documentation>
-									cvb:PersonGivenName
-							    </xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						
+					<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								cvb:PersonFamilyName
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+						    <xs:documentation>
+								cvb:PersonGivenName
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
 					
 				</xs:sequence>
 			</xs:restriction>
@@ -618,102 +619,102 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="0" maxOccurs="unbounded">
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the person's last name.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
+			<xs:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the person's last name.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the person's last name at the time of his/her birth.
 				
-				<xs:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="0" maxOccurs="unbounded">
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the person's last name at the time of his/her birth.
-					
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the person's first name or given name.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="0" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the person's date of birth.
 				
-				<xs:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the person's first name or given name.
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the person's date of death (if applicable).
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+			
+			
+			<xs:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
+			
+			<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the past surname of the person (if applicable)
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the future surname of the person (if applicable)
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the previous surname of the person (if applicable)
 				
-				<xs:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="0" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the person's date of birth.
-					
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
-				<xs:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the person's date of death (if applicable).
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
-				<xs:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-				
-				
-				<xs:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
-				
-				<xs:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
-				
-					<xs:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-						    <xs:documentation>
-								This property contains the past surname of the person (if applicable)
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					
-				
-					<xs:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-						    <xs:documentation>
-								This property contains the future surname of the person (if applicable)
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					
-				
-					<xs:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-						    <xs:documentation>
-								This property contains the previous surname of the person (if applicable)
-						
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					
-				
-					<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-						    <xs:documentation>
-								This property contains the previous forename (first name) of the person (if applicable). 
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					
-				
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			<xs:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the previous forename (first name) of the person (if applicable). 
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
 			
 		</xs:sequence>
 		
@@ -730,19 +731,18 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-				<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
-					<xs:annotation>
-					    <xs:documentation>
-							This property contains the name of the place (geographic location).
-					    </xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				
+			<xs:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the name of the place (geographic location).
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			
 		</xs:sequence>
 		
 	</xs:complexType>
-	
 	
 	
 	
