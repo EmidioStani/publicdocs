@@ -35,8 +35,6 @@
 		<xs:complexContent>
 			<xs:restriction base="ReferenceNumberType">
 				<xs:sequence>
-					
-					
 					<xs:element name="Zwazok" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xs:annotation>
 						    <xs:documentation>
@@ -44,7 +42,6 @@
 						    </xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					
 					
 					
 					<xs:element name="Rocnik" type="udt:TextType" minOccurs="1" maxOccurs="1" >
@@ -56,7 +53,6 @@
 					</xs:element>
 					
 					
-					
 					<xs:element name="Strana" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xs:annotation>
 						    <xs:documentation>
@@ -66,6 +62,9 @@
 					</xs:element>
 					
 					
+					<xs:element name="referencenumber" minOccurs="1" maxOccurs="1">
+					<xs:complexType/>
+					</xs:element>
 					
 				</xs:sequence>
 			</xs:restriction>

@@ -6,7 +6,6 @@
 
 [template public generateElements(class: Class, NDR: String){
 pack : Package = class.owner.oclAsType(Package);}]
-[debug(pack.name+class.name)/]
 [for (property: Property | class.ownedAttribute)]
 [if not property.hasStereotype('isa::xsdAttribute')]
 [generatePropertyElement(property, pack, NDR)/][/if]
@@ -45,7 +44,6 @@ isPrimitive: Boolean = property.type.oclIsTypeOf(PrimitiveType);
 useUnqualifiedDataTypes: Boolean = true}]
 [if not isLocal(type)]
 [if isPrimitive]
-[debug(type.name)/]
 [if typePackName=pack.name]
 [generateElement(property, property.type.name)/][else]
 [if useUnqualifiedDataTypes]

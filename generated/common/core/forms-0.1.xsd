@@ -35,9 +35,7 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
-			
 			
 			<xs:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xs:annotation>
@@ -51,8 +49,6 @@
 			<xs:element name="IDTypeAndNo" minOccurs="1" maxOccurs="1">
 			<xs:complexType>
 				<xs:choice>
-					
-					
 					<xs:element name="NationalIdentityCardNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xs:annotation>
 						    <xs:documentation>
@@ -62,7 +58,6 @@
 					</xs:element>
 					
 					
-					
 					<xs:element name="PassportNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xs:annotation>
 						    <xs:documentation>
@@ -70,7 +65,6 @@
 						    </xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					
 					
 					
 					<xs:element name="DrivingLicenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
@@ -88,7 +82,6 @@
 				</xs:choice>
 			</xs:complexType>
 			</xs:element>
-			
 			<xs:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xs:annotation>
 				    <xs:documentation>
@@ -106,6 +99,7 @@
 	
 	
 	
+	
 	<xs:complexType name="BirthType">
 		<xs:annotation>
 		    <xs:documentation>
@@ -113,7 +107,6 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 			
 			
@@ -129,7 +122,6 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 			
 			<xs:element name="IntendedPartner" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
@@ -149,7 +141,6 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 			
 			<xs:element name="IntendedSpouse" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
@@ -168,6 +159,9 @@
 	
 	
 	
+	
+	
+	
 	<xs:complexType name="DeathType">
 		<xs:annotation>
 		    <xs:documentation>
@@ -175,13 +169,17 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Person" type="pdc:DeathPersonType" minOccurs="1" maxOccurs="1"/>
 			
 			
 		</xs:sequence>
 		
 	</xs:complexType>
+	
+	
+	
+	
+	
 	
 	
 	
@@ -201,15 +199,12 @@
 		    </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			
 			<xs:element name="Kind" minOccurs="1" maxOccurs="1">
 			<xs:complexType>
 				<xs:choice>
-					
 					<xs:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1">
 					<xs:complexType>
 						<xs:choice>
-							
 							<xs:element name="CourtDecision" minOccurs="1" maxOccurs="1">
 							<xs:complexType/>
 							</xs:element>
@@ -222,7 +217,6 @@
 							<xs:element name="DocumentEmanatingFromAJudicialOfficer" minOccurs="1" maxOccurs="1">
 							<xs:complexType/>
 							</xs:element>
-							
 							<xs:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 								<xs:annotation>
 								    <xs:documentation>
@@ -239,7 +233,6 @@
 					<xs:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1">
 					<xs:complexType>
 						<xs:choice>
-							
 							<xs:element name="Certificate" minOccurs="1" maxOccurs="1">
 							<xs:complexType/>
 							</xs:element>
@@ -252,7 +245,6 @@
 							<xs:element name="VerbatimCopyOfCivilStatusRecords" minOccurs="1" maxOccurs="1">
 							<xs:complexType/>
 							</xs:element>
-							
 							<xs:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 								<xs:annotation>
 								    <xs:documentation>
@@ -279,7 +271,6 @@
 				</xs:choice>
 			</xs:complexType>
 			</xs:element>
-			
 			<xs:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xs:annotation>
 				    <xs:documentation>
@@ -305,6 +296,8 @@
 	
 				
 				    
+				
+				    
 	<xs:complexType name="DomicileAndOrResidenceType">
 				
 				    	<xs:annotation>
@@ -318,8 +311,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 				
@@ -347,7 +338,11 @@
 	
 				
 				    
+				
+				    
 	
+				
+				    
 				
 				    
 	<xs:complexType name="FormHeaderType">
@@ -363,8 +358,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
 				
@@ -383,8 +376,6 @@
 				    		
 				
 				    		<xs:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
 				
 				    		
 				
@@ -435,8 +426,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -473,8 +462,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
@@ -513,8 +500,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -551,8 +536,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
@@ -591,8 +574,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -629,8 +610,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
@@ -669,8 +648,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -707,8 +684,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
@@ -747,8 +722,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -785,8 +758,6 @@
 				    	</xs:annotation>
 				
 				    	<xs:sequence>
-				
-				    		
 				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
@@ -825,8 +796,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -849,6 +818,8 @@
 	
 				
 				    
+				
+				    
 	<xs:complexType name="LifeType">
 				
 				    	<xs:annotation>
@@ -863,15 +834,11 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
 				
 				    		<xs:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
 				
 				    		
 				
@@ -918,8 +885,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -929,10 +894,6 @@
 				    		<xs:complexType>
 				
 				    			<xs:choice>
-				
-				    				
-				
-				    				
 				
 				    				<xs:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -958,15 +919,11 @@
 				
 				    					<xs:choice>
 				
-				    						
-				
 				    						<xs:element name="NeverMarried" minOccurs="1" maxOccurs="1">
 				
 				    						<xs:complexType/>
 				
 				    						</xs:element>
-				
-				    						
 				
 				    						<xs:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -981,8 +938,6 @@
 				    							</xs:annotation>
 				
 				    						</xs:element>
-				
-				    						
 				
 				    						
 				
@@ -1053,15 +1008,11 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="SpouseA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
 				
 				    		<xs:element name="SpouseB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
 				
 				    		
 				
@@ -1101,7 +1052,11 @@
 	
 				
 				    
+				
+				    
 	
+				
+				    
 				
 				    
 	<xs:complexType name="OtherIDTypeType">
@@ -1118,10 +1073,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
-				    		
-				
 				    		<xs:element name="IDType" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xs:annotation>
@@ -1135,8 +1086,6 @@
 				    			</xs:annotation>
 				
 				    		</xs:element>
-				
-				    		
 				
 				    		
 				
@@ -1174,6 +1123,8 @@
 	
 				
 				    
+				
+				    
 	<xs:complexType name="RegisteredPartnershipType">
 				
 				    	<xs:annotation>
@@ -1188,15 +1139,11 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="PartnerA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
 				
 				    		<xs:element name="PartnerB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
 				
 				    		
 				
@@ -1247,8 +1194,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
 				    		<xs:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
@@ -1258,10 +1203,6 @@
 				    		<xs:complexType>
 				
 				    			<xs:choice>
-				
-				    				
-				
-				    				
 				
 				    				<xs:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -1287,15 +1228,11 @@
 				
 				    					<xs:choice>
 				
-				    						
-				
 				    						<xs:element name="NeverMarried" minOccurs="1" maxOccurs="1">
 				
 				    						<xs:complexType/>
 				
 				    						</xs:element>
-				
-				    						
 				
 				    						<xs:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -1310,8 +1247,6 @@
 				    							</xs:annotation>
 				
 				    						</xs:element>
-				
-				    						
 				
 				    						
 				
@@ -1382,10 +1317,6 @@
 				
 				    	<xs:sequence>
 				
-				    		
-				
-				    		
-				
 				    		<xs:element name="SurnameForenameOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xs:annotation>
@@ -1399,8 +1330,6 @@
 				    			</xs:annotation>
 				
 				    		</xs:element>
-				
-				    		
 				
 				    		
 				
@@ -1424,8 +1353,6 @@
 				
 				    		
 				
-				    		
-				
 				    		<xs:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xs:annotation>
@@ -1444,8 +1371,6 @@
 				
 				    		
 				
-				    		
-				
 				    		<xs:element name="Signature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xs:annotation>
@@ -1459,8 +1384,6 @@
 				    			</xs:annotation>
 				
 				    		</xs:element>
-				
-				    		
 				
 				    		
 				
@@ -1496,6 +1419,8 @@
 				
 				    
 	
+				
+				    
 				
 				    
 	

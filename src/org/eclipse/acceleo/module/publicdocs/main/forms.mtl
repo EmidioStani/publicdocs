@@ -38,7 +38,7 @@ version: String = getVersion('xsd');
 [comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
 [template public generateType(class : Class) { 
 NDR : String = getNDR('usecorevocstypes');
-pack : Package = class.owner.oclAsType(Package);}]
+}]
 [if isGlobalElement(class)]
 [generateElement(class.name, getSuffix('elementType'))/]
 [/if]
@@ -46,6 +46,8 @@ pack : Package = class.owner.oclAsType(Package);}]
 [if(class.general->isEmpty())]
 [generateComplextype_ground(class, NDR)/][else]
 [generateComplextype_restriction_complexcontent(class, NDR)/][/if]
+[else]
+[generateEmptyTypeWithDependency(class)/]
 [/if]
 [/template]
 
@@ -53,4 +55,12 @@ pack : Package = class.owner.oclAsType(Package);}]
 <xs:element name="[name/]" type="[name/][type/]"/>
 [/template]
 
+[template public generateEmptyTypeWithDependency(aClass: Class) 
+{
+	pack : Package = aClass.owner.oclAsType(Package);
+}]
+    [for (a: String | aClass.generalization.specific.name)]
+[debug(a)/]
+    [/for]
+[/template]
 
