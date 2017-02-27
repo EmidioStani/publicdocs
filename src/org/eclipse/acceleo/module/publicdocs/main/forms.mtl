@@ -16,27 +16,27 @@ version: String = getVersion('xsd');
 [file (getFilenameXSD(path, pack.name, suffix, version), false, 'UTF-8')]
 [beginSchema('cec,forms,pdc,udt,xs', pack, version)/]
 	[importXSD('pdc,cec,udt')/]
-	[generateContentAggregatedComponents(pack)/]
+	[generateContentAggregatedComponents(model, pack)/]
 [endSchema(pack, version)/]
 [/file]
 [/template]
 
-[template public generateContentAggregatedComponents(pack : Package)]
+[template public generateContentAggregatedComponents(model: Model, pack : Package)]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]
-[generatePackageableElement(packageableElement)/]
+[generatePackageableElement(model, packageableElement)/]
 [/for]
 [/let]
 [/template]
 
-[template public generatePackageableElement(packageableElement : PackageableElement)]
+[template public generatePackageableElement(model: Model, packageableElement : PackageableElement)]
 [if packageableElement.oclIsTypeOf(Class)]
-[generateType(packageableElement.oclAsType(Class))/]
+[generateType(model, packageableElement.oclAsType(Class))/]
 [/if]
 [/template]
 
 [comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
-[template public generateType(class : Class) { 
+[template public generateType(model: Model, class : Class) { 
 NDR : String = getNDR('usecorevocstypes');
 }]
 [if isGlobalElement(class)]
@@ -47,7 +47,7 @@ NDR : String = getNDR('usecorevocstypes');
 [generateComplextype_ground(class, NDR)/][else]
 [generateComplextype_restriction_complexcontent(class, NDR)/][/if]
 [else]
-[generateEmptyTypeWithDependency(class)/]
+[generateEmptyTypeWithDependency(model, class)/]
 [/if]
 [/template]
 
@@ -55,12 +55,13 @@ NDR : String = getNDR('usecorevocstypes');
 <xs:element name="[name/]" type="[name/][type/]"/>
 [/template]
 
-[template public generateEmptyTypeWithDependency(aClass: Class) 
+[template public generateEmptyTypeWithDependency(model: Model, aClass: Class) 
 {
 	pack : Package = aClass.owner.oclAsType(Package);
 }]
-    [for (a: String | aClass.generalization.specific.name)]
-[debug(a)/]
+    [for (a: Generalization | model.getDerivationsOf(aClass))]
+[debug(a.specific.name)/]
     [/for]
+
 [/template]
 
