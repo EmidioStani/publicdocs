@@ -5,17 +5,17 @@
 [import org::eclipse::acceleo::module::publicdocs::common::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::common::element/]
 
-[template public generateComplextype_ground(class : Class, NDR : String)]
+[template public generateComplextype_ground(class : Class, NDR : String, model : Model)]
 [if not  class.ownedAttribute->isEmpty()]
 <xs:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [if isChoice(class)]
 	<xs:choice>
-		[generateElements(class, NDR)/]
+		[generateElements(class, NDR, model)/]
 	</xs:choice>
 [else]
 	<xs:sequence>
-		[generateElements(class, NDR)/]
+		[generateElements(class, NDR, model)/]
 	</xs:sequence>
 	[generateAttributes(class, NDR)/]
 [/if]
@@ -31,61 +31,26 @@
 </xs:complexType>
 [/template]
 
-[template public generateComplextype_restriction_complexcontent(class : Class, NDR : String)]
+[template public generateComplextype_restriction_complexcontent(class : Class, NDR : String, model : Model)]
 <xs:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
 	<xs:complexContent>
-		[if class.belongSamePackage(base.oclAsType(Class))]
-			<xs:restriction base="[base.name/]Type">
-			[else]
-			[debug('Different:'+class.name+'-'+base.name)/]
-			<xs:restriction base="[getFQDN(base.oclAsType(Class))/]Type">
-		[/if]
+		<xs:restriction base="[base.name/]Type">
 [/for]
 	[if not  class.ownedAttribute->isEmpty()]
 		[if isChoice(class)]
 			<xs:choice>
-				[generateElements(class, NDR)/]
+				[generateElements(class, NDR, model)/]
 			</xs:choice>
 		[else]
 			<xs:sequence>
-				[generateElements(class, NDR)/]
+				[generateElements(class, NDR, model)/]
 			</xs:sequence>
 		[/if]
 	[/if]
 [for (base: Classifier | class.general)]
 		</xs:restriction>
-	</xs:complexContent>
-[/for]
-</xs:complexType>
-[/template]
-
-[template public generateComplextype_extension_complexcontent(class : Class, NDR : String)]
-<xs:complexType name="[class.name/]Type">
-	[generateAnnotation(class)/]
-[for (base: Classifier | class.general)]
-	<xs:complexContent>
-		[if class.belongSamePackage(base.oclAsType(Class))]
-			<xs:extension base="[base.name/]Type">
-			[else]
-			[debug('Different:'+class.name+'-'+base.name)/]
-			<xs:extension base="[getFQDN(base.oclAsType(Class))/]Type">
-		[/if]
-[/for]
-	[if not  class.ownedAttribute->isEmpty()]
-		[if isChoice(class)]
-			<xs:choice>
-				[generateElements(class, NDR)/]
-			</xs:choice>
-		[else]
-			<xs:sequence>
-				[generateElements(class, NDR)/]
-			</xs:sequence>
-		[/if]
-	[/if]
-[for (base: Classifier | class.general)]
-		</xs:extension>
 	</xs:complexContent>
 [/for]
 </xs:complexType>
