@@ -17,7 +17,6 @@
 [query public getDerivationsOf (model: Model, elt: Element) : Set(Generalization) 
 = model.allOwnedElements()->select(oclIsTypeOf(Generalization) and oclAsType(Generalization).target->any(true) = elt)/]
 
-
 [query public getParentProperty (prop: Property) : Property 
 = prop.owner.oclAsType(Class).general->any(true).oclAsType(Class).ownedAttribute->select(name = prop.name)->any(true).oclAsType(Property) /]
 

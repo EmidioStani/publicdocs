@@ -5,17 +5,17 @@
 [import org::eclipse::acceleo::module::publicdocs::common::annotation/]
 [import org::eclipse::acceleo::module::publicdocs::common::element/]
 
-[template public generateComplextype_ground(class : Class, NDR : String)]
+[template public generateComplextype_ground(class : Class, NDR : String, model : Model)]
 [if not  class.ownedAttribute->isEmpty()]
 <xs:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [if isChoice(class)]
 	<xs:choice>
-		[generateElements(class, NDR)/]
+		[generateElements(class, NDR, model)/]
 	</xs:choice>
 [else]
 	<xs:sequence>
-		[generateElements(class, NDR)/]
+		[generateElements(class, NDR, model)/]
 	</xs:sequence>
 	[generateAttributes(class, NDR)/]
 [/if]
@@ -25,7 +25,13 @@
 [/if]
 [/template]
 
-[template public generateComplextype_restriction_complexcontent(class : Class, NDR : String)]
+[template public generateComplextype(class : Class)]
+<xs:complexType name="[class.name/]Type">
+	[generateAnnotation(class)/]
+</xs:complexType>
+[/template]
+
+[template public generateComplextype_restriction_complexcontent(class : Class, NDR : String, model : Model)]
 <xs:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
@@ -35,11 +41,11 @@
 	[if not  class.ownedAttribute->isEmpty()]
 		[if isChoice(class)]
 			<xs:choice>
-				[generateElements(class, NDR)/]
+				[generateElements(class, NDR, model)/]
 			</xs:choice>
 		[else]
 			<xs:sequence>
-				[generateElements(class, NDR)/]
+				[generateElements(class, NDR, model)/]
 			</xs:sequence>
 		[/if]
 	[/if]

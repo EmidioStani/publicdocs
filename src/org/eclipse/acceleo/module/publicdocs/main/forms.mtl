@@ -61,7 +61,7 @@ NDR : String = getNDR('usecorevocstypes');
 }]
     [for (a: Generalization | model.getDerivationsOf(aClass))]
 [debug(a.specific.name)/]
+[generateComplextype(aClass)/]
     [/for]
-
 [/template]
 
