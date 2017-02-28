@@ -4,11 +4,11 @@
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::annotation/]
 
-[template public generateElements(class: Class, NDR: String, model: Model){
+[template public generateElements(class: Class, NDR: String){
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
 [if not property.hasStereotype('isa::xsdAttribute')]
-[generatePropertyElement(property, pack, NDR, model)/][/if]
+[generatePropertyElement(property, pack, NDR)/][/if]
 [/for]
 [/template]
 
@@ -21,10 +21,10 @@ pack : Package = class.owner.oclAsType(Package);}]
 [/template]
 
 
-[template public generatePropertyElement(property : Property, pack: Package, NDR: String, model: Model)]
+[template public generatePropertyElement(property : Property, pack: Package, NDR: String)]
 [if NDR = 'CommentsOnly' or pack.getDependencies(property)->isEmpty()]
 [if not property.type->isEmpty()]
-[generateElementInternalOrExternal(property, pack, NDR, model)/]
+[generateElementInternalOrExternal(property, pack, NDR)/]
 [else][comment]Just a quick fix for properties not yet defined[/comment]
 [generateElement(property, property.name.concat('Type'))/]
 [/if]
@@ -37,26 +37,45 @@ pack : Package = class.owner.oclAsType(Package);}]
 <xs:attribute name="[property.name/]" type="xs:[property.type.name/]" use="optional"/>
 [/template]
 
-[template public generateElementInternalOrExternal(property : Property, pack: Package, NDR: String, model: Model){
+[template public generateElementInternalOrExternal(property : Property, pack: Package, NDR: String){
 type : PackageableElement = property.type;
 typePackName: String = type.owner.oclAsType(Package).name;
 isPrimitive: Boolean = property.type.oclIsTypeOf(PrimitiveType);
 useUnqualifiedDataTypes: Boolean = true}]
 [if not isLocal(type)]
-[if isPrimitive]
-[if typePackName=pack.name]
-[generateElement(property, property.type.name)/][else]
-[if useUnqualifiedDataTypes]
-[generateElementWithUnqualifiedDataTypes(property, typePackName.concat(':').concat(property.type.name))/][else]
-[generateElement(property, typePackName.concat(':').concat(property.type.name))/][/if][/if][else]
-[if typePackName=pack.name]
-[generateElement(property, property.type.name.concat('Type'))/][else]
-[generateElement(property, typePackName.concat(':').concat(property.type.name.concat('Type')))/][/if][/if][else]
-[generateElementWithLocalType(property, property.type, NDR, model)/][/if]
+	[if isPrimitive]
+		[if typePackName=pack.name]
+[generateElement(property, property.type.name)/]
+		[else]
+			[if useUnqualifiedDataTypes]
+[generateElementWithUnqualifiedDataTypes(property, typePackName.concat(':').concat(property.type.name))/]
+			[else]
+[generateElement(property, typePackName.concat(':').concat(property.type.name))/]
+			[/if]
+		[/if]
+	[else]
+		[if typePackName=pack.name]
+[generateElement(property, property.type.name.concat('Type'))/]
+		[else]
+[generateElement(property, typePackName.concat(':').concat(property.type.name.concat('Type')))/]
+		[/if]
+	[/if]
+[else]
+[generateElementWithLocalType(property, NDR)/]
+[/if]
 [/template]
 
-[template public generateElementWithLocalType(property: Property, type: Type, NDR: String, model: Model)]
-[if type.oclAsType(Class).ownedAttribute->isEmpty()]
+[template public generateElementWithLocalType(property: Property, NDR: String){
+model: Model = property.getModel();
+type: Type = property.type;
+globalType: String = property.type.name.concat('Type');
+}]
+[if type.oclAsType(Class).ownedAttribute->isEmpty() and model.hasDerivations(type.oclAsType(Class))]
+	[if(property.upper = -1)]
+<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded" type="[globalType/]"/>
+	[else]
+<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" type="[globalType/]"/>
+	[/if]
 [else]
 [if(property.upper = -1)]
 <xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded">[else]
@@ -66,16 +85,15 @@ useUnqualifiedDataTypes: Boolean = true}]
 <xs:complexType>
 	[if isChoice(type.oclAsType(Class))]
 	<xs:choice>
-		[generateElements(type.oclAsType(Class), NDR, model)/]
+		[generateElements(type.oclAsType(Class), NDR)/]
 	</xs:choice>
 	[else]
 	<xs:sequence>
-		[generateElements(type.oclAsType(Class), NDR, model)/]
+		[generateElements(type.oclAsType(Class), NDR)/]
 	</xs:sequence>
 	[/if]
 </xs:complexType>
 [else]
-[debug(property.name)/]
 <xs:complexType/>
 [/if]
 </xs:element>
