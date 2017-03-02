@@ -17,7 +17,7 @@ version: String = getVersion('xsd');
 
 [template public includeHead(model : Model)]
 <head>
-	<title>[getConf('title.model')/]</title>
+	<title>[getConf('title_model')/]</title>
 	<meta name="description" content="=An XML schema for describing Public Documents Forms">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -421,12 +421,12 @@ h3 i{color: #444;}
 
 [template public includeJavascript(model : Model)]
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src='jquery.toc.min.js'></script>
+<script src='[getConf('path_doc')/]jquery.toc.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
 <script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
 <script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
 <script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
-<script src='initialize.js'></script>
+<script src='[getConf('path_doc')/]initialize.js'></script>
 [/template]
