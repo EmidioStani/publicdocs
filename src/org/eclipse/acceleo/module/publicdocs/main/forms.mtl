@@ -9,7 +9,7 @@
 pack:PackageableElement = model.getPackageWithName('forms');
 version: String = getVersion('xsd');
 }]
-[generateXSDFile(model, 'path.core', pack.oclAsType(Package), '-', version)/]
+[generateXSDFile(model, 'path_core', pack.oclAsType(Package), '-', version)/]
 [/template]
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]

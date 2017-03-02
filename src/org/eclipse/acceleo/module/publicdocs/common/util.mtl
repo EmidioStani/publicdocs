@@ -8,6 +8,9 @@
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and 
   (oclAsType(Dependency).client->any(true) = prop or not prop.owner.oclAsType(Class).general->isEmpty() and oclAsType(Dependency).client->any(true) = prop.getParentProperty()))/]
 
+[query public getPropertyDependencies (prop: Property, type : String) : Set(Dependency) 
+= prop.getModel().getPackageWithName('xs').packagedElement->select(oclIsTypeOf(Dependency) and (oclAsType(Dependency).client->any(true).name) = type)/]
+
 [query public getDerivationsOf (model: Model, elt: Element) : Set(Generalization) 
 = model.allOwnedElements()->select(oclIsTypeOf(Generalization) and oclAsType(Generalization).target->any(true) = elt)/]
 
@@ -64,6 +67,12 @@
 [query public getFQDN (class: Class) : String
 = class.namespace.name.concat(':').concat(class.name)/]
 
+[query public getFQDN2 (el: NamedElement) : String
+= el.namespace.name.concat(':').concat(el.name)/]
+
+[query public getFQDN3 (prop: Property) : String
+= prop.type.owner.oclAsType(Package).name.concat(':').concat(prop.type.name)/]
+
 [query public getTodayDate (format: String) : String
 = getDate(format)/]
 
@@ -71,25 +80,25 @@
 = getConfig(config)/]
 
 [query public getURIFromPackName (packname: String) : String
-= getConf('url.'.concat(packname))/]
+= getConf('url_'.concat(packname))/]
 
 [query public getPathFromPackName (packname: String) : String
-= getConf('path.'.concat(packname))/]
+= getConf('path_'.concat(packname))/]
 
 [query public getSuffix (type: String) : String
-= getConf('suffix.'.concat(type))/]
+= getConf('suffix_'.concat(type))/]
 
 [query public getVersion (name: String) : String
-= getConf('version.'.concat(name))/]
+= getConf('version_'.concat(name))/]
 
 [query public getName (name: String) : String
-= getConf('name.'.concat(name))/]
+= getConf('name_'.concat(name))/]
 
 [query public getEmail (name: String) : String
-= getConf('email.'.concat(name))/]
+= getConf('email_'.concat(name))/]
 
 [query public getNDR (name: String) : String
-= getConf('ndr.'.concat(name))/]
+= getConf('ndr_'.concat(name))/]
 
 [template public debug(text : String)]
 [file ('stdout', false)]DEBUG:[text/]

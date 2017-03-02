@@ -9,7 +9,7 @@
 pack:PackageableElement = model.getPackageWithName('pdc');
 version: String = getVersion('xsd');
 }]
-[generateXSDFile(model, 'path.core', pack.oclAsType(Package), '-AggregatedComponents-', version)/]
+[generateXSDFile(model, 'path_core', pack.oclAsType(Package), '-AggregatedComponents-', version)/]
 [/template]
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]

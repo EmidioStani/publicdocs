@@ -6,7 +6,7 @@
 [template public generateDocs(model : Model){
 version: String = getVersion('xsd');
 }]
-[file (getFilenameHTM('path.doc', model.name, '-', version), false, 'UTF-8')]
+[file (getFilenameHTM('path_doc', model.name, '-', version), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
 	[includeHead(model)/]

@@ -48,7 +48,7 @@ useUnqualifiedDataTypes: Boolean = true}]
 [generateElement(property, property.type.name)/]
 		[else]
 			[if useUnqualifiedDataTypes]
-[generateElementWithUnqualifiedDataTypes(property, typePackName.concat(':').concat(property.type.name))/]
+[generateElementWithUnqualifiedDataTypes2(property)/]
 			[else]
 [generateElement(property, typePackName.concat(':').concat(property.type.name))/]
 			[/if]
@@ -117,6 +117,19 @@ globalType: String = property.type.name.concat('Type');
 			[/if]
 		[/if]
 	[/if]
+[/if]
+[/template]
+
+[template public generateElementWithUnqualifiedDataTypes2(property: Property){
+typeName : String = property.type.name;
+deps : Set(Dependency) =  getPropertyDependencies(property, typeName);
+}]
+[if deps->size()>0]
+[for (sup : NamedElement | deps.supplier->any(true))]
+[generateElement(property, getFQDN2(sup))/]
+[/for]
+[else] 
+[generateElement(property,  getFQDN3(property))/]
 [/if]
 [/template]
 

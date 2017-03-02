@@ -17,7 +17,7 @@ version: String = getVersion('xsd');
 [let dependencies: Set(Dependency) 		 = pack.getDirectDependencies(packageableElement)]
 
 [if packageableElement.oclIsTypeOf(Enumeration)]
-[file (getFilenameXSD('path.codelist', pack.name, '-codelist-'.concat(packageableElement.name).concat('-'), version), false, 'UTF-8')]
+[file (getFilenameXSD('path_codelist', pack.name, '-codelist-'.concat(packageableElement.name).concat('-'), version), false, 'UTF-8')]
 [if dependencies->isEmpty()]
 [beginSchema('xs,udt', pack, version)/]
 [importXSD('udt')/]
