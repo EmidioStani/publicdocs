@@ -6,7 +6,7 @@
 [template public generateDocs(model : Model){
 version: String = getVersion('xsd');
 }]
-[file (getFilenameHTM('path_doc', model.name, '-', version), false, 'UTF-8')]
+[file (getFilename2('path_doc', model.name, '.htm'), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
 	[includeHead(model)/]
@@ -303,10 +303,17 @@ h3 i{color: #444;}
 	</p>
 	<p>Another important class in DCAT is <code><a href="#Class:_Catalog_record">dcat:CatalogRecord</a></code> which describes a dataset entry in the catalog. Notice that while dcat:Dataset represents the dataset itself, dcat:CatalogRecord represents the record that describes a dataset in the catalog. The use of the CatalogRecord is considered optional. It is used to capture provenance information about dataset entries in a catalog. If this distinction is not necessary then CatalogRecord can be safely ignored.</p>
 	
-	<p><img alt="UML model of DCAT classes and properties" src="pdc.png" width="100%"></p>
+	
 	<p>All RDF examples in this document are written in Turtle syntax.</p>
+<p><img alt="UML model of DCAT classes and properties" src="[getConf('path_doc')/]pdc.png" width="100%"></p>
 </section>
 [/template]
+
+
+
+
+
+
 
 [template public includeGeneratedContent(model : Model)]
 <section id="generatedContent">

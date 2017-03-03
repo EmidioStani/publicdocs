@@ -58,8 +58,8 @@
 [query public getFullFilename (path : String, name: String, suffix : String, version : String, extension : String ) : String
 = getConf(path).concat(getFilename(name, suffix, version, extension))/]
 
-[query public getFilenameHTM (path : String, name: String, suffix : String, version : String ) : String
-= getFullFilename(path, name, suffix, version, '.htm')/]
+[query public getFilename2 (path : String, name: String, extension : String ) : String
+= getConf(path).concat(name).concat('.htm')/]
 
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
 = getFullFilename(path, name, suffix, version, '.xsd')/]
