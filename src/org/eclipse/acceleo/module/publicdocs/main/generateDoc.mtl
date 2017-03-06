@@ -153,7 +153,7 @@ h3 i{color: #444;}
         
 <section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
  	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
- 		<p>The Regulation on Public Documents foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+ 		<p align="justify">The <a href="[getConf('reg_website')/]">Regulation on Public Documents</a> foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
 This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
 In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.
 		</p>
@@ -163,12 +163,12 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 <h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
 
         
-  <p>This document has been reviewed by <a href="[getConf('isa_website')/]">ISA</a> staff members and <a href="[getConf('dgjust_website')/]">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+  <p align="justify">This document has been reviewed by <a href="[getConf('isa_website')/]">ISA</a> staff members and <a href="[getConf('dgjust_website')/]">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
 
     
     
-  <p>The original Public Documents XML schemas were developed at <a href="[getConf('isa_website')/]">ISA</a>.</p>
-  <p>The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="[getConf('cv_website')/]">Core Vocabularies</a> and <a href="[getConf('ubl_website')/]">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
+  <p align="justify">The original Public Documents XML schemas were developed at <a href="[getConf('isa_website')/]">ISA</a>.</p>
+  <p align="justify">The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="[getConf('cv_website')/]">Core Vocabularies</a> and <a href="[getConf('ubl_website')/]">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
 </section>
 [/template]
 
@@ -257,17 +257,10 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 </section>
 [/template]
 
-[template public generatePackageDoc(pack : Package , j : Integer){version: String = '0.2';}]
-[comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);/]
+[template public generatePackageDoc(pack : Package , j : Integer)]
 <h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
-[if] [pack.name/]="pdc"
-	<img alt="UML model of pdc package" src="pdc.png" width = 100%> UML class diagram </img>
-[else] [if] pack.name = "forms"
-	<img alt = "UML model of forms package" src = "forms.png" width = 100%> UML class diagram</img>
-[else]
-	<img alt = "UML model of formSlovakia" src = "slovakia.png" width = 100%> UML class diagram </img>
-[/if]
-[/if]
+<img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
+
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
 		[if packageableElement.oclIsTypeOf(Class)]
@@ -316,6 +309,18 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
 		<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+			<dl about class = "bibliography">
+				<dt id : "bib-PD">Public Documents Regulation</dt>
+				<dd rel = "dcterms: requires ">
+				"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+					<a href="[getConf('reg_website')/]"> 
+					<cite>Public Documents Regulation</cite>	 				
+					</a>
+				. July 2016. EU Regulation. URL:
+					<a href="[getConf('reg_website')/]">[getConf('reg_website')/]</a>
+				</dd>
+				</dt>
+			</dl>
 	</section>
 
 	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">

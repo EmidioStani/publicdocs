@@ -122,7 +122,7 @@
 			        
 			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
 			 	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
-			 		<p>The Regulation on Public Documents foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			 		<p align="justify">The <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">Regulation on Public Documents</a> foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
 			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
 			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.
 					</p>
@@ -132,12 +132,12 @@
 			<h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
 			
 			        
-			  <p>This document has been reviewed by <a href="https://ec.europa.eu/isa2/home_en">ISA</a> staff members and <a href="http://ec.europa.eu/justice/index_en.htm">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+			  <p align="justify">This document has been reviewed by <a href="https://ec.europa.eu/isa2/home_en">ISA</a> staff members and <a href="http://ec.europa.eu/justice/index_en.htm">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
 			
 			    
 			    
-			  <p>The original Public Documents XML schemas were developed at <a href="https://ec.europa.eu/isa2/home_en">ISA</a>.</p>
-			  <p>The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
+			  <p align="justify">The original Public Documents XML schemas were developed at <a href="https://ec.europa.eu/isa2/home_en">ISA</a>.</p>
+			  <p align="justify">The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
 			</section>
 			<section id="generatedToC">
 				<h2 id="h2_toc" aria-level="1" class="introductory">Table of Contents</h2>
@@ -205,7 +205,8 @@
 				<h3 id="VocabularySpecification">4. Vocabulary Specification</h3>
 				<div class="contentTables">
 						<h4 id="pdc">4.1 Package pdc</h4>
-							<img alt = "UML model of formSlovakia" src = "slovakia.png" width = 100%> UML class diagram </img>
+						<img alt="UML model of pdc package" src="pdc.png" width = 100%> UML class diagram </img>
+						
 									<h5 id="AbsenceOfCriminalRecordPerson">4.1.1 Class AbsenceOfCriminalRecordPerson</h5>
 									<p><b>Definition:</b>This class contains elements related to the absence of a criminal record for a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
@@ -982,7 +983,8 @@
 									</table>
 						
 						<h4 id="formSlovakia">4.2 Package formSlovakia</h4>
-										<img alt = "UML model of formSlovakia" src = "slovakia.png" width = 100%> UML class diagram </img>
+									<img alt="UML model of formSlovakia package" src="formSlovakia.png" width = 100%> UML class diagram </img>
+									
 												<h5 id="ExtractFromTheCivilStatusRegister">4.2.1 Class ExtractFromTheCivilStatusRegister</h5>
 												<p><b>Definition:</b>This class contains elements related to extracts from the civil status register. </p>
 												<table class="generatedTable table table-striped table-bordered">
@@ -1071,7 +1073,8 @@
 												</table>
 									
 						<h4 id="forms">4.3 Package forms</h4>
-										<img alt = "UML model of formSlovakia" src = "slovakia.png" width = 100%> UML class diagram </img>
+									<img alt="UML model of forms package" src="forms.png" width = 100%> UML class diagram </img>
+									
 												<h5 id="AbsenceOfCriminalRecord">4.3.1 Class AbsenceOfCriminalRecord</h5>
 												<p><b>Definition:</b>This class contains elements related to the absence of a criminal record of a person. </p>
 												<table class="generatedTable table table-striped table-bordered">
@@ -2217,6 +2220,18 @@
 												
 													<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
 														<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+															<dl about class = "bibliography">
+																<dt id : "bib-PD">Public Documents Regulation</dt>
+																<dd rel = "dcterms: requires ">
+																"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+																	<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
+																	<cite>Public Documents Regulation</cite>	 				
+																	</a>
+																. July 2016. EU Regulation. URL:
+																	<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
+																</dd>
+																</dt>
+															</dl>
 													</section>
 												
 													<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
