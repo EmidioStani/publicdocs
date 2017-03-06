@@ -260,6 +260,14 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [template public generatePackageDoc(pack : Package , j : Integer){version: String = '0.2';}]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String);/]
 <h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
+[if] [pack.name/]="pdc"
+	<img alt="UML model of pdc package" src="pdc.png" width = 100%> UML class diagram </img>
+[else] [if] pack.name = "forms"
+	<img alt = "UML model of forms package" src = "forms.png" width = 100%> UML class diagram</img>
+[else]
+	<img alt = "UML model of formSlovakia" src = "slovakia.png" width = 100%> UML class diagram </img>
+[/if]
+[/if]
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
 		[if packageableElement.oclIsTypeOf(Class)]
