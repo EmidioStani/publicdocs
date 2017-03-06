@@ -182,17 +182,31 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [template public includeStaticContent2(model : Model)]
 <section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
 	<h3 aria-level="1" id="intro">1. Introduction</h3>
-	<p><em>This section is non-normative.</em></p>
-	<p>Data can come in many formats, ranging from spreadsheets over XML and RDF to various speciality formats. DCAT does not make any assumptions about the format of the datasets described in a catalog. Other, complementary vocabularies may be used together with DCAT to provide more detailed format-specific information. For example, properties from the VoID vocabulary Void can be used to express various statistics about a DCAT-described dataset if that dataset is in RDF format.</p>
-	<p>This document does not prescribe any particular method of deploying data expressed in DCAT. DCAT is applicable in many contexts including RDF accessible via SPARQL endpoints, embedded in HTML pages as RDFa, or serialized as e.g. RDF/XML or Turtle. The examples in this document use Turtle simply because of Turtle's readability.</p>
+	<p align="justify">The Regulation of the European Parliament and of the Council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.</p>
+
+	<h3 aria-level="1" id="intro">2. Standards used</h3>
+	<p align="justify">The XML schemas generated contain the <a href="[getConf('cv_website')/]">Core Vocabularies</a> and the <a href="[getConf('ubl_website')/]">UBL</a> standards. </p> 
+
+	<h3 aria-level="1" id="intro">3. Tools used</h3>
+	<p align="justify">The following tools are being used in the context of this project:</p>
+	<ul>
+		<li>Modelling: <a href = "https://eclipse.org/papyrus/">Papyrus;</a></li>
+		<li>Transformation: <a href = "http://www.eclipse.org/acceleo/">Acceleo;</a></li>
+		<li>XSD Validation:</li>
+			<ul>
+				<li><a href = "http://xml.coverpages.org/IBM-SQC211-CommandUse.html">SQC;</a></li>
+				<li><a href = "http://www.ltg.ed.ac.uk/~ht/xsv-status.html">XSV;</a></li>
+				<li><a href="http://www.oracle.com/technetwork/articles/javase/index-140168.html">JAXB</a> - Check is performed only if the Java objects are generated. </li>
+			</ul>
+	</ul>
+				
 </section>
 
 <section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
-	<h3 aria-level="1" id="ns">2. Namespaces</h3>
-	<p>The namespace for DCAT is <code>http://www.w3.org/ns/dcat#</code>. However,
-	it should be noted that DCAT makes extensive use of terms from other vocabularies,
-	in particular <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core</a>. DCAT itself defines a minimal set of classes and
-	properties of its own. A full set of namespaces and prefixes used in this
+	<h3 aria-level="1" id="ns">4. Namespaces</h3>
+	<p align = "justify">The namespace for the Public Documents XML schemas is <code>http://e-documents.semic.eu/publicdocuments/</code>. However, it should be noted that the schemas make extensive use of terms from other vocabularies. A full set of namespaces and prefixes used in this
 	document is shown in the table below.</p>
 	
 	<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
@@ -203,47 +217,26 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 		</tr>
 	  </thead>
 	  <tbody>
-	    <tr><td>dcat</td><td>http://www.w3.org/ns/dcat#</td></tr>
-	    <tr><td>dct</td><td>http://purl.org/dc/terms/</td></tr>
-	    <tr><td>dctype</td><td>http://purl.org/dc/dcmitype/</td></tr>
-	    <tr><td>foaf</td><td>http://xmlns.com/foaf/0.1/</td></tr>
-	    <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
-	    <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
-	    <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
-	    <tr><td>vcard</td><td>http://www.w3.org/2006/vcard/ns#</td></tr>
-	    <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+	    <tr><td>Core Vocabularies Aggregated Components</td><td>[getConf('url_cva')/]</td></tr>
+	    <tr><td>Core Vocabularies Aggregated Components</td><td>[getConf('url_cvb')/]</td></tr>
+	    <tr><td>UBL Unqualified Data Types</td><td>[getConf('url_udt')/]</td></tr>
+	    <tr><td>UBL Common Extension Points</td><td>[getConf('url_cec')/]</td></tr>
+	    <tr><td>W3C XML Schema</td><td>[getConf('url_xs')/]</td></tr>
 	  </tbody>
 	</table>
 </section>
 
 <section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
-	<h3 aria-level="1" id="overview">3. Vocabulary Overview</h3><p><em>This section is non-normative.</em></p>
-	<p>DCAT is an RDF vocabulary well-suited to representing government data catalogs such as <a href="http://Data.gov">Data.gov</a> and <a href="http://data.gov.uk">data.gov.uk</a>. DCAT defines three main classes:</p>
+	<h3 aria-level="1" id="overview">3. Vocabulary Overview</h3>
+	<p align="justify">The XML schemas are based on a UML class diagram. Currently, three main packages distinguish themselves within the class diagram:</p>
 	<ul>
-		<li> <code><a href="#Class:_Catalog">dcat:Catalog</a></code> represents the catalog</li>
-		<li> <code><a href="#Class:_Dataset">dcat:Dataset</a></code> represents a dataset in a catalog. </li>
-		<li> <code><a href="#Class:_Distribution">dcat:Distribution</a></code> represents an accessible form of a dataset as for example a downloadable file, an RSS feed or a web service that provides the data.</li>
+		<li><a href="[getConf('url_pdc')/]">pdc</a>;</li>
+		<li><a href="[getConf('url_forms')/]">forms</a>;</li>
+		<li><a href="[getConf('url_formSlovakia')/]">form Slovakia</a>.</li>
 	</ul>
-	<p>
-	Notice that a dataset in DCAT 
-	is defined as a "collection of data, published or curated by a single agent, and available for access or 
-	download in one or more formats". A dataset does not have to be available as a downloadable file.
-	For example, a dataset that is available via an API can be defined as an instance of dcat:Dataset and the  
-	API can be defined as an instance of dcat:Distribution. DCAT itself does not define properties specific to APIs description. 
-	These are considered out of the scope of this version of the vocabulary. Nevertheless, this can be defined as a profile of the DCAT vocabulary.
-	</p>
-	<p>Another important class in DCAT is <code><a href="#Class:_Catalog_record">dcat:CatalogRecord</a></code> which describes a dataset entry in the catalog. Notice that while dcat:Dataset represents the dataset itself, dcat:CatalogRecord represents the record that describes a dataset in the catalog. The use of the CatalogRecord is considered optional. It is used to capture provenance information about dataset entries in a catalog. If this distinction is not necessary then CatalogRecord can be safely ignored.</p>
-	
-	
-	<p>All RDF examples in this document are written in Turtle syntax.</p>
-<p><img alt="UML model of DCAT classes and properties" src="pdc.png" width="100%"></p>
-</section>
+	<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
+	</section>
 [/template]
-
-
-
-
-
 
 
 [template public includeGeneratedContent(model : Model)]
