@@ -188,26 +188,12 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 	<h3 aria-level="1" id="intro">2. Standards used</h3>
 	<p align="justify">The XML schemas generated contain the <a href="[getConf('cv_website')/]">Core Vocabularies</a> and the <a href="[getConf('ubl_website')/]">UBL</a> standards. </p> 
-
-	<h3 aria-level="1" id="intro">3. Tools used</h3>
-	<p align="justify">The following tools are being used in the context of this project:</p>
-	<ul>
-		<li>Modelling: <a href = "https://eclipse.org/papyrus/">Papyrus;</a></li>
-		<li>Transformation: <a href = "http://www.eclipse.org/acceleo/">Acceleo;</a></li>
-		<li>XSD Validation:</li>
-			<ul>
-				<li><a href = "[getConf('sqc_website')/]">SQC;</a></li>
-				<li><a href = "[getConf('xsv_website')/]">XSV;</a></li>
-				<li><a href="[getConf('jaxb_website')/]">JAXB</a> - Check is performed only if the Java objects are generated. </li>
-			</ul>
-	</ul>
 				
 </section>
 
 <section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
-	<h3 aria-level="1" id="ns">4. Namespaces</h3>
-	<p align = "justify">The namespace for the Public Documents XML schemas is <code>http://e-documents.semic.eu/publicdocuments/</code>. However, it should be noted that the schemas make extensive use of terms from other vocabularies. A full set of namespaces and prefixes used in this
-	document is shown in the table below.</p>
+	<h3 aria-level="1" id="ns">3. Namespaces</h3>
+	<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
 	
 	<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
 	  <thead>
@@ -217,11 +203,13 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 		</tr>
 	  </thead>
 	  <tbody>
-	    <tr><td>Core Vocabularies Aggregated Components</td><td>[getConf('url_cva')/]</td></tr>
-	    <tr><td>Core Vocabularies Aggregated Components</td><td>[getConf('url_cvb')/]</td></tr>
-	    <tr><td>UBL Unqualified Data Types</td><td>[getConf('url_udt')/]</td></tr>
-	    <tr><td>UBL Common Extension Points</td><td>[getConf('url_cec')/]</td></tr>
-	    <tr><td>W3C XML Schema</td><td>[getConf('url_xs')/]</td></tr>
+		<tr><td>pdc</td><td>[getConf('url_pdc')/]</td></tr>
+		<tr><td>forms</td><td>[getConf('url_forms')/]</td></tr>
+	    <tr><td>cva</td><td>[getConf('url_cva')/]</td></tr>
+	    <tr><td>cvb</td><td>[getConf('url_cvb')/]</td></tr>
+	    <tr><td>udt</td><td>[getConf('url_udt')/]</td></tr>
+	    <tr><td>cec</td><td>[getConf('url_cec')/]</td></tr>
+	    <tr><td>xs</td><td>[getConf('url_xs')/]</td></tr>
 	  </tbody>
 	</table>
 </section>

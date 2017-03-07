@@ -80,7 +80,7 @@
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
 			  <img src="https://e-justice.europa.eu/images/ejustice_logo.png" alt="e-Justice logo"/>
 			  <img src="https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/images/isa_logo.png" alt="ISA logo"/>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-03-06">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-03-07">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/0.1/doc">http://e-documents.semic.eu/publicdocuments/0.1/doc</a></dd>
@@ -151,26 +151,12 @@
 			
 				<h3 aria-level="1" id="intro">2. Standards used</h3>
 				<p align="justify">The XML schemas generated contain the <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and the <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a> standards. </p> 
-			
-				<h3 aria-level="1" id="intro">3. Tools used</h3>
-				<p align="justify">The following tools are being used in the context of this project:</p>
-				<ul>
-					<li>Modelling: <a href = "https://eclipse.org/papyrus/">Papyrus;</a></li>
-					<li>Transformation: <a href = "http://www.eclipse.org/acceleo/">Acceleo;</a></li>
-					<li>XSD Validation:</li>
-						<ul>
-							<li><a href = "http://xml.coverpages.org/IBM-SQC211-CommandUse.html">SQC;</a></li>
-							<li><a href = "http://www.ltg.ed.ac.uk/~ht/xsv-status.html">XSV;</a></li>
-							<li><a href="http://www.oracle.com/technetwork/articles/javase/index-140168.html">JAXB</a> - Check is performed only if the Java objects are generated. </li>
-						</ul>
-				</ul>
 							
 			</section>
 			
 			<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
-				<h3 aria-level="1" id="ns">4. Namespaces</h3>
-				<p align = "justify">The namespace for the Public Documents XML schemas is <code>http://e-documents.semic.eu/publicdocuments/</code>. However, it should be noted that the schemas make extensive use of terms from other vocabularies. A full set of namespaces and prefixes used in this
-				document is shown in the table below.</p>
+				<h3 aria-level="1" id="ns">3. Namespaces</h3>
+				<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
 				
 				<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
 				  <thead>
@@ -180,11 +166,13 @@
 					</tr>
 				  </thead>
 				  <tbody>
-				    <tr><td>Core Vocabularies Aggregated Components</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
-				    <tr><td>Core Vocabularies Aggregated Components</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
-				    <tr><td>UBL Unqualified Data Types</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
-				    <tr><td>UBL Common Extension Points</td><td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td></tr>
-				    <tr><td>W3C XML Schema</td><td>http://www.w3.org/2001/XMLSchema</td></tr>
+					<tr><td>pdc</td><td>http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc</td></tr>
+					<tr><td>forms</td><td>http://e-documents.semic.eu/publicdocuments/0.1/ns/forms</td></tr>
+				    <tr><td>cva</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
+				    <tr><td>cvb</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
+				    <tr><td>udt</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
+				    <tr><td>cec</td><td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td></tr>
+				    <tr><td>xs</td><td>http://www.w3.org/2001/XMLSchema</td></tr>
 				  </tbody>
 				</table>
 			</section>
