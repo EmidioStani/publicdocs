@@ -111,7 +111,7 @@ globalType: String = property.type.name.concat('Type');
 [generateElement(property, 'udt:IndicatorType')/]
 		[else]
 			[if (typeName = 'xs:any')]
-[generateElement(property, 'cec:UBLExtensionsType')/]
+[generateElement(property, 'ext:UBLExtensionsType')/]
 			[else]
 [generateElement(property, typeName)/]
 			[/if]

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-	targetNamespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
-	xmlns="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
+	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
+	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
 	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
-	version="0.1">
+	version="1.0">
 	<xs:annotation>	
 		<xs:documentation xml:lang="en">
-	        Public Documents XML schema 0.1
+	        Public Documents XML schema 1.0
 	        Copyright (C) European Union, 2017
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
@@ -83,6 +83,7 @@
 	<!-- ============================================================ -->
 	<!-- Country-->
 	<!-- uses Core Location --> 
+	 <!-- uses ISOTwoletterCountryCodeIdentifierContentType --> 
 	<!-- ============================================================ -->
 	
 	<xs:complexType name="CountryNameType">

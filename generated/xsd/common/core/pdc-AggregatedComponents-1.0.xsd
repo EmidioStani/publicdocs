@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-	targetNamespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
-	xmlns="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
-	xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
+	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
 	xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"	
 	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
-	version="0.1">
+	version="1.0">
 	<xs:annotation>	
 		<xs:documentation xml:lang="en">
-	        Public Documents XML schema 0.1
+	        Public Documents XML schema 1.0
 	        Copyright (C) European Union, 2017
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
@@ -26,6 +27,8 @@
 			   schemaLocation="../../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-AggregateComponents-1.1.xsd"/>
 	<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
 			   schemaLocation="../../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+	<xs:import namespace="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+			   schemaLocation="http://www.unece.org/fileadmin/DAM//uncefact/standard/ISO_ISOTwoletterCountryCode_SecondEdition2006.xsd"/>
 	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
@@ -533,6 +536,8 @@
 				
 				    				<!-- Dependency Country->Location -->
 				
+				    				<!-- Dependency Country->ISOTwoletterCountryCodeIdentifierContentType -->
+				
 				    				Stereotype cvABIE
 				
 				    	    </xs:documentation>
@@ -541,7 +546,9 @@
 				
 				    	<xs:sequence>
 				
-				    		<xs:element name="Code" type="cvb:LocationGeographicIDType" minOccurs="0" maxOccurs="1"/>
+				    		<xs:element name="Code" type="CountryCodeType" minOccurs="0" maxOccurs="1"/>
+				
+				    		
 				
 				    		
 				
