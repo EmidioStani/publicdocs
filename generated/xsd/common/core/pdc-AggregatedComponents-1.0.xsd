@@ -526,6 +526,41 @@
 				    </xs:complexType>
 				
 				    
+	<xs:complexType name="CopyOf_CountryType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Country" minOccurs="1" maxOccurs="1">
+				
+				    		<xs:complexType/>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
 	<xs:complexType name="CountryType">
 				
 				    	<xs:annotation>
@@ -536,8 +571,6 @@
 				
 				    				<!-- Dependency Country->Location -->
 				
-				    				<!-- Dependency Country->ISOTwoletterCountryCodeIdentifierContentType -->
-				
 				    				Stereotype cvABIE
 				
 				    	    </xs:documentation>
@@ -546,9 +579,7 @@
 				
 				    	<xs:sequence>
 				
-				    		<xs:element name="Code" type="CountryCodeType" minOccurs="0" maxOccurs="1"/>
-				
-				    		
+				    		<xs:element name="Code" type="cvb:AddressPostNameType" minOccurs="0" maxOccurs="1"/>
 				
 				    		
 				
