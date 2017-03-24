@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
+<xsd:schema
 	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia"
 	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia"
 	xmlns:forms="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
 	version="1.0">
-	<xs:annotation>	
-		<xs:documentation xml:lang="en">
+	<xsd:annotation>	
+		<xsd:documentation xml:lang="en">
 	        Public Documents XML schema 1.0
 	        Copyright (C) European Union, 2017
 	        Licensed under the ISA Open Metadata Licence
@@ -17,38 +17,38 @@
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
 	        Emidio Stani (emidio.stani@be.pwc.com),
 	        Ioana Novacean (ioana.novacean@be.pwc.com)
-		</xs:documentation>
-	</xs:annotation>
+		</xsd:documentation>
+	</xsd:annotation>
 	<!-- ===== Imports======================================== -->
-	<xs:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
+	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
 			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
-	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
-			   schemaLocation="../xsd/common/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
 	
-	<xs:complexType name="ExtractFromTheCivilStatusRegisterType">
-		<xs:annotation>
-		    <xs:documentation>
+	<xsd:complexType name="ExtractFromTheCivilStatusRegisterType">
+		<xsd:annotation>
+		    <xsd:documentation>
 			This class contains elements related to extracts from the civil status register. 
 					Stereotype xsdChoice
-		    </xs:documentation>
-		</xs:annotation>
-		<xs:choice>
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
 				
-			<xs:element name="RodnyList" minOccurs="1" maxOccurs="1">
-			<xs:complexType/>
-			</xs:element>
+			<xsd:element name="RodnyList" minOccurs="1" maxOccurs="1">
+			<xsd:complexType/>
+			</xsd:element>
 			
 			
 				
-			<xs:element name="KnihaNarodeni" minOccurs="1" maxOccurs="1">
-			<xs:complexType/>
-			</xs:element>
+			<xsd:element name="KnihaNarodeni" minOccurs="1" maxOccurs="1">
+			<xsd:complexType/>
+			</xsd:element>
 			
 			
 			
-		</xs:choice>
-	</xs:complexType>
+		</xsd:choice>
+	</xsd:complexType>
 	
 	
 	
@@ -59,51 +59,51 @@
 	
 	
 			
-	<xs:complexType name="ReferenceNumberTestType">
-		<xs:annotation>
-		    <xs:documentation>
+	<xsd:complexType name="ReferenceNumberTestType">
+		<xsd:annotation>
+		    <xsd:documentation>
 			This class contains elements related to a document's reference number. 
-		    </xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
 				
-				<xs:extension base="forms:ReferenceNumberType">
-				<xs:sequence>
-					<xs:element name="Zwazok" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xs:annotation>
-						    <xs:documentation>
+				<xsd:extension base="forms:ReferenceNumberType">
+				<xsd:sequence>
+					<xsd:element name="Zwazok" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation>
 								
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					
 					
 					
-					<xs:element name="Rocnik" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xs:annotation>
-						    <xs:documentation>
+					<xsd:element name="Rocnik" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation>
 								
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					
 					
 					
-					<xs:element name="Strana" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xs:annotation>
-						    <xs:documentation>
+					<xsd:element name="Strana" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation>
 								
-						    </xs:documentation>
-						</xs:annotation>
-					</xs:element>
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					
 					
 					
 					
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	
 	
 	
@@ -112,4 +112,4 @@
 	
 	
 	
-	</xs:schema>
+	</xsd:schema>

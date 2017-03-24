@@ -5,7 +5,7 @@
 
 [template public beginSchema(list : String, pack : Package, version: String)]
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
+<[getNS('xs')/]:schema
 	targetNamespace="[getURIFromPackName(pack.name)/]"
 	xmlns="[getURIFromPackName(pack.name)/]"
 	[for (packName: String | list.tokenize(','))]
@@ -13,11 +13,12 @@
 	[importNamespace(packName)/]
 	[/if]
 	[/for]
+	xmlns:[getNS('xs')/]="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
 	version="[version/]">
-	<xs:annotation>	
-		<xs:documentation xml:lang="en">
+	<[getNS('xs')/]:annotation>	
+		<[getNS('xs')/]:documentation xml:lang="en">
 	        [getConf('title_model')/] [version/]
 	        Copyright (C) European Union, [getTodayDate('yyyy')/]
 	        Licensed under the [getConf('licence_model')/]
@@ -25,8 +26,8 @@
 	        [addAuthor('author1')/],
 	        [addAuthor('author2')/],
 	        [addAuthor('author3')/]
-		</xs:documentation>
-	</xs:annotation>
+		</[getNS('xs')/]:documentation>
+	</[getNS('xs')/]:annotation>
 [/template]
 
 [template public addAuthor(author : String)]
@@ -54,7 +55,7 @@ xmlns:[namespace/]="[url/]"
 [/template]
 
 [template public insertImport(url : String, location: String)]
-<xs:import namespace="[url/]"
+<[getNS('xs')/]:import namespace="[url/]"
 		   schemaLocation="[location/]"/>
 [/template]
 
@@ -71,10 +72,10 @@ xmlns:[namespace/]="[url/]"
 [/template]
 
 [template public insertInclude(location: String)]
-<xs:include schemaLocation="[location/]"/>
+<[getNS('xs')/]:include schemaLocation="[location/]"/>
 [/template]
 
 
 [template public endSchema(pack : Package, version: String)]
-</xs:schema>
+</[getNS('xs')/]:schema>
 [/template]

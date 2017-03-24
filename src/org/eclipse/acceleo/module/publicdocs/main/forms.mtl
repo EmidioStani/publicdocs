@@ -14,7 +14,7 @@ version: String = getVersion('xsd');
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
 [file (getFilenameXSD(path, pack.name, suffix, version), false, 'UTF-8')]
-[beginSchema('ext,forms,pdc,udt,xs', pack, version)/]
+[beginSchema('ext,forms,pdc,udt', pack, version)/]
 	[importXSD('pdc,ext,udt')/]
 	[generateContentAggregatedComponents(model, pack)/]
 [endSchema(pack, version)/]
@@ -54,7 +54,7 @@ NDR : String = getNDR('usecorevocstypes');
 [/template]
 
 [template public generateElement(name : String, type: String)]
-<xs:element name="[name/]" type="[name/][type/]"/>
+<[getNS('xs')/]:element name="[name/]" type="[name/][type/]"/>
 [/template]
 
 [template public generateEmptyTypeWithDependency(model: Model, aClass: Class) 

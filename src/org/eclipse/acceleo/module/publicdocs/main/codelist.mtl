@@ -19,11 +19,11 @@ version: String = getVersion('xsd');
 [if packageableElement.oclIsTypeOf(Enumeration)]
 [file (getFilenameXSD('path_codelist', pack.name, '-codelist-'.concat(packageableElement.name).concat('-'), version), false, 'UTF-8')]
 [if dependencies->isEmpty()]
-[beginSchema('xs,udt', pack, version)/]
+[beginSchema('udt', pack, version)/]
 [importXSD('udt')/]
 [else]
 [let suppliernamespace             : String      = dependencies->any(true).supplier->any(true).oclAsType(Class).namespace.name]
-[beginSchema('xs,'.concat(suppliernamespace), pack, version)/]
+[beginSchema(''.concat(suppliernamespace), pack, version)/]
 [importXSD(suppliernamespace)/]
 [/let]
 [/if]
@@ -41,25 +41,25 @@ dependencies: Set(Dependency) 		 = pack.getDirectDependencies(source);
 supplier             : Class      = dependencies->any(true).supplier->any(true).oclAsType(Class);
 }]
 
-<xs:complexType name="[name/]CodeListType">
-  <xs:simpleContent>
-	<xs:restriction base="[if dependencies->isEmpty()][base/][else][getFQDN(supplier)/][/if]">
+<[getNS('xs')/]:complexType name="[name/]CodeListType">
+  <[getNS('xs')/]:simpleContent>
+	<[getNS('xs')/]:restriction base="[if dependencies->isEmpty()][base/][else][getFQDN(supplier)/][/if]">
 	[for (enumerationLiteral: EnumerationLiteral | source.ownedLiteral)]
-	 	<xs:enumeration value="[enumerationLiteral.name/]">
+	 	<[getNS('xs')/]:enumeration value="[enumerationLiteral.name/]">
 			[generateAnnotation(enumerationLiteral)/]
-		</xs:enumeration>
+		</[getNS('xs')/]:enumeration>
 	[/for]
-    </xs:restriction>
-  </xs:simpleContent>
-</xs:complexType>
+    </[getNS('xs')/]:restriction>
+  </[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
 
-<xs:complexType name="[name/][getSuffix('complexType')/]">
-  <xs:complexContent>
-    <xs:restriction base="[name/]CodeListType">
-      <xs:attribute name="listVersionID" type="xs:normalizedString" use="required" fixed="[getVersion(name)/]" />
-    </xs:restriction>
-  </xs:complexContent>
-</xs:complexType>
+<[getNS('xs')/]:complexType name="[name/][getSuffix('complexType')/]">
+  <[getNS('xs')/]:complexContent>
+    <[getNS('xs')/]:restriction base="[name/]CodeListType">
+      <[getNS('xs')/]:attribute name="listVersionID" type="[getNS('xs')/]:normalizedString" use="required" fixed="[getVersion(name)/]" />
+    </[getNS('xs')/]:restriction>
+  </[getNS('xs')/]:complexContent>
+</[getNS('xs')/]:complexType>
 [/template]
 
 [template public generateCodelistForType(class: Class, prop: Property) { 

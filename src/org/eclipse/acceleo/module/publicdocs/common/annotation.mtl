@@ -7,8 +7,8 @@
 pack : Package = class.owner.oclAsType(Package);
 dependencies: Set(Dependency) = pack.getDirectDependencies(class);
 stereotypes : Set(Stereotype) = class.getAppliedStereotypes();}]
-<xs:annotation>
-    <xs:documentation>
+<[getNS('xs')/]:annotation>
+    <[getNS('xs')/]:documentation>
 	[class.ownedComment._body/]
 	[if not dependencies->isEmpty() or not stereotypes->isEmpty()]
 		[for (dependency: Dependency | dependencies)]
@@ -18,24 +18,24 @@ stereotypes : Set(Stereotype) = class.getAppliedStereotypes();}]
 			Stereotype [stereotype.name/]
 		[/for]
 	[/if]
-    </xs:documentation>
-</xs:annotation>
+    </[getNS('xs')/]:documentation>
+</[getNS('xs')/]:annotation>
 [/template]
 
 [template public generateAnnotation(property: Property)]
-<xs:annotation>
-    <xs:documentation>
+<[getNS('xs')/]:annotation>
+    <[getNS('xs')/]:documentation>
 		[property.ownedComment._body/]
-    </xs:documentation>
-</xs:annotation>
+    </[getNS('xs')/]:documentation>
+</[getNS('xs')/]:annotation>
 [/template]
 
 [template public generateAnnotation(enumerationLiteral: EnumerationLiteral)]
-<xs:annotation>
-    <xs:documentation>
+<[getNS('xs')/]:annotation>
+    <[getNS('xs')/]:documentation>
 		[enumerationLiteral.ownedComment._body/]
-    </xs:documentation>
-</xs:annotation>
+    </[getNS('xs')/]:documentation>
+</[getNS('xs')/]:annotation>
 [/template]
 
 [template public generateAnnotationDependency(packageableElement: PackageableElement,  dependencies: Set(Dependency))]

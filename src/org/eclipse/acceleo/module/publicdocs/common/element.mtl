@@ -34,7 +34,7 @@ pack : Package = class.owner.oclAsType(Package);}]
 [/template]
 
 [template public generatePropertyAttribute(property : Property, pack: Package, NDR: String)]
-<xs:attribute name="[property.name/]" type="xs:[property.type.name/]" use="optional"/>
+<[getNS('xs')/]:attribute name="[property.name/]" type="xs:[property.type.name/]" use="optional"/>
 [/template]
 
 [template public generateElementInternalOrExternal(property : Property, pack: Package, NDR: String){
@@ -82,31 +82,31 @@ globalType: String = property.type.name.concat('Type');
 }]
 [if type.oclAsType(Class).ownedAttribute->isEmpty() and model.hasDerivations(type.oclAsType(Class))]
 	[if(property.upper = -1)]
-<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded" type="[globalType/]"/>
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded" type="[globalType/]"/>
 	[else]
-<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" type="[globalType/]"/>
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" type="[globalType/]"/>
 	[/if]
 [else]
 [if(property.upper = -1)]
-<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded">[else]
-<xs:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]">
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded">[else]
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]">
 [/if]
 [if not  type.oclAsType(Class).ownedAttribute->isEmpty()]
-<xs:complexType>
+<[getNS('xs')/]:complexType>
 	[if isChoice(type.oclAsType(Class))]
-	<xs:choice>
+	<[getNS('xs')/]:choice>
 		[generateElements(type.oclAsType(Class), NDR)/]
-	</xs:choice>
+	</[getNS('xs')/]:choice>
 	[else]
-	<xs:sequence>
+	<[getNS('xs')/]:sequence>
 		[generateElements(type.oclAsType(Class), NDR)/]
-	</xs:sequence>
+	</[getNS('xs')/]:sequence>
 	[/if]
-</xs:complexType>
+</[getNS('xs')/]:complexType>
 [else]
-<xs:complexType/>
+<[getNS('xs')/]:complexType/>
 [/if]
-</xs:element>
+</[getNS('xs')/]:element>
 [/if]
 [/template]
 
@@ -146,27 +146,27 @@ deps : Set(Dependency) =  getPropertyDependencies(property, typeName);
 [template public generateElement(property: Property, typeName: String)]
 [if (property.upper = -1)]
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
 	[generateAnnotation(property)/]
-</xs:element>
+</[getNS('xs')/]:element>
 	[else] 
-<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
 	[/if]
 [else]
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
 	[generateAnnotation(property)/]
-</xs:element>
+</[getNS('xs')/]:element>
 	[else] 
-<xs:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
 	[/if]
 [/if]
 [/template]
 
 [template public generateReference(property: Property, elementname: String)]
 [if (property.upper = -1)]
-<xs:element ref="[elementname/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>[else] 
-<xs:element ref="[elementname/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>[/if]
+<[getNS('xs')/]:element ref="[elementname/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>[else] 
+<[getNS('xs')/]:element ref="[elementname/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>[/if]
 [/template]
 
 [template public generateCoreVocsElement(prop: Property, pack : Package, NDR: String) 

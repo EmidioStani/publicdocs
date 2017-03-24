@@ -100,6 +100,9 @@
 [query public getNDR (name: String) : String
 = getConf('ndr_'.concat(name))/]
 
+[query public getNS (name: String) : String
+= getConf('ns_'.concat(name))/]
+
 [template public debug(text : String)]
 [file ('stdout', false)]DEBUG:[text/]
 [/file]

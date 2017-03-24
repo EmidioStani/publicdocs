@@ -12,7 +12,7 @@ version: String = getVersion('xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
 [file (getFilenameXSD('path_core', pack.name, '-BasicComponents-', version), false, 'UTF-8')]
-[beginSchema('cvb,xs,udt', pack, version)/]
+[beginSchema('cvb,udt', pack, version)/]
 	[importXSD('cvb,udt')/]
 	[generateContentBasicComponents(pack)/]
 [endSchema(pack, version)/]
@@ -65,31 +65,31 @@ suffix: String = getSuffix('complexType');
 }]
 [if prop.type.name = 'string']
 
-<xs:complexType name="[class.name/][prop.name/][suffix/]">
-	<xs:simpleContent>
-		<xs:restriction base="cvb:[supplierQualifiedName/][suffix/]">
-			<xs:minLength value="0"  />
-			<xs:maxLength value="255" />
-		</xs:restriction>
-	</xs:simpleContent>
-</xs:complexType>
+<[getNS('xs')/]:complexType name="[class.name/][prop.name/][suffix/]">
+	<[getNS('xs')/]:simpleContent>
+		<[getNS('xs')/]:restriction base="cvb:[supplierQualifiedName/][suffix/]">
+			<[getNS('xs')/]:minLength value="0"  />
+			<[getNS('xs')/]:maxLength value="255" />
+		</[getNS('xs')/]:restriction>
+	</[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
 [/if]
 [if prop.type.name = 'date']
 
-<xs:complexType name="[class.name/][prop.name/][suffix/]">
-	<xs:simpleContent>
-		<xs:extension base="udt:DateType" />
-	</xs:simpleContent>
-</xs:complexType>
+<[getNS('xs')/]:complexType name="[class.name/][prop.name/][suffix/]">
+	<[getNS('xs')/]:simpleContent>
+		<[getNS('xs')/]:extension base="udt:DateType" />
+	</[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
 
 [/if]
 [if prop.type.name = 'bool']
 
-<xs:complexType name="[class.name/][prop.name/][suffix/]">
-	<xs:simpleContent>
-		<xs:extension base="udt:IndicatorType" />
-	</xs:simpleContent>
-</xs:complexType>
+<[getNS('xs')/]:complexType name="[class.name/][prop.name/][suffix/]">
+	<[getNS('xs')/]:simpleContent>
+		<[getNS('xs')/]:extension base="udt:IndicatorType" />
+	</[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
 
 [/if]
 [/template]
