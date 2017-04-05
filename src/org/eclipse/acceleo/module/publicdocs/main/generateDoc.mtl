@@ -238,10 +238,8 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generatePackageDoc(pack : Package , j : Integer)]
-[if pack.name = 'pdc' or pack.name = 'forms']
 <h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
 <img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
-
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
 		[if packageableElement.oclIsTypeOf(Class)]
@@ -249,7 +247,6 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 		[/if]
 	[/for]
 [/let]
-[/if]
 [/template]
 
 [template public generateClassDoc(class : Class, j : Integer, i : Integer)]

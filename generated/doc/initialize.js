@@ -30,7 +30,7 @@
 	    		      return this.substr(position, searchString.length) === searchString;
 	    		  };
 	    	  }
-	    	  if ( (celltext.startsWith("pdc:")) || (celltext.startsWith("forms:")) ) {
+	    	  if ( (celltext.startsWith("pdc:")) || (celltext.startsWith("forms:")) || (celltext.startsWith("formSlovakia:")) || (celltext.startsWith("formAustria:")) ) {
 	    		  cellvalue = celltext.split(":")[1];
 	    		  $( this ).html("<a href='#"+cellvalue+"'>"+celltext+"</a>");
 	    	  }
