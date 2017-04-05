@@ -108,9 +108,6 @@
 	
 	
 	
-	
-	
-	
 	<xsd:complexType name="BirthType">
 		<xsd:annotation>
 		    <xsd:documentation>
@@ -268,44 +265,12 @@
 					
 					
 						
-					<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1">
-					<xsd:complexType>
-						<xsd:choice>
-								
-							<xsd:element name="Certificate" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-								
-							<xsd:element name="ExtractFromTheCivilStatusRegister" minOccurs="1" maxOccurs="1" type="ExtractFromTheCivilStatusRegisterType"/>
-							
-							
-								
-							<xsd:element name="ExtractFromThePopulationRegister" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-								
-							<xsd:element name="VerbatimCopyOfCivilStatusRecords" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-							<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation>
-										This property contains the string value referring to another type of administrative document. 
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							
-							
-							
-						</xsd:choice>
-					</xsd:complexType>
+					<xsd:element name="AdministrativeDocument" type="PublicDocuments:AdministrativeDocumentChoice" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation>
+								This property refers to the class AdministrativeDocumentChoice. 
+						    </xsd:documentation>
+						</xsd:annotation>
 					</xsd:element>
 					
 					

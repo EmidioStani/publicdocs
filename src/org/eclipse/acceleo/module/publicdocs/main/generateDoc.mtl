@@ -2,6 +2,7 @@
 [module generateDoc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::element/]
 
 [template public generateDocs(model : Model){
 version: String = getVersion('xsd');
@@ -237,6 +238,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generatePackageDoc(pack : Package , j : Integer)]
+[if pack.name = 'pdc' or pack.name = 'forms']
 <h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
 <img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
 
@@ -247,6 +249,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 		[/if]
 	[/for]
 [/let]
+[/if]
 [/template]
 
 [template public generateClassDoc(class : Class, j : Integer, i : Integer)]
@@ -267,7 +270,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 			<td>[property.name/]</td>
 			<td>[property.ownedComment._body/]</td>
 			<td>[property.lower/]..[if (property.upper = -1) ]*[else][property.upper/][/if]</td>
-			<td>[property.type.namespace.name/]:[property.type.name/]</td>
+			<td>[generateUnqualifiedDataType(property)/]</td>
 		</tr>
 	[/for]
 	</tbody>

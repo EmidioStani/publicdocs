@@ -130,9 +130,22 @@ globalType: String = property.type.name.concat('Type');
 [/if]
 [/template]
 
-[template public generateElementWithUnqualifiedDataTypes2(property: Property){
-typeName : String = property.type.name;
-deps : Set(Dependency) =  getPropertyDependencies(property, typeName);
+
+[template public generateUnqualifiedDataType(property: Property){
+deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
+}]
+[if deps->size()>0]
+[for (sup : NamedElement | deps.supplier->any(true))]
+[getFQDN2(sup)/]
+[debug('prop:'+property.name)/]
+[/for]
+[else] 
+[getFQDN3(property)/]
+[/if]
+[/template]
+
+[template public generateElementWithUnqualifiedDataTypes2(property: Property)
+{deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 }]
 [if deps->size()>0]
 [for (sup : NamedElement | deps.supplier->any(true))]

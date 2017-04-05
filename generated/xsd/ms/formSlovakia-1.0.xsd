@@ -26,6 +26,10 @@
 			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
 	
+	
+	
+	
+	
 	<xsd:complexType name="ExtractFromTheCivilStatusRegisterType">
 		<xsd:annotation>
 		    <xsd:documentation>
@@ -35,13 +39,13 @@
 		</xsd:annotation>
 		<xsd:choice>
 				
-			<xsd:element name="RodnyList" minOccurs="1" maxOccurs="1">
+			<xsd:element name="BirthCertificate" minOccurs="1" maxOccurs="1">
 			<xsd:complexType/>
 			</xsd:element>
 			
 			
 				
-			<xsd:element name="KnihaNarodeni" minOccurs="1" maxOccurs="1">
+			<xsd:element name="RegisterOfBirths" minOccurs="1" maxOccurs="1">
 			<xsd:complexType/>
 			</xsd:element>
 			
@@ -49,10 +53,6 @@
 			
 		</xsd:choice>
 	</xsd:complexType>
-	
-	
-	
-	
 	
 	
 	
@@ -69,7 +69,7 @@
 				
 				<xsd:extension base="forms:ReferenceNumberType">
 				<xsd:sequence>
-					<xsd:element name="Zwazok" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Volume" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation>
 								
@@ -79,7 +79,7 @@
 					
 					
 					
-					<xsd:element name="Rocnik" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Year" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation>
 								
@@ -89,7 +89,7 @@
 					
 					
 					
-					<xsd:element name="Strana" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Page" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation>
 								
