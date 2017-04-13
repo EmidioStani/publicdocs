@@ -61,6 +61,9 @@
 [query public getFilename2 (path : String, name: String, extension : String ) : String
 = getConf(path).concat(name).concat('.htm')/]
 
+[query public getFilename2 (path : String, name: String, pack: String, extension : String ) : String
+= getConf(path).concat(name).concat('/').concat(pack).concat('.htm')/]
+
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
 = getFullFilename(path, name, suffix, version, '.xsd')/]
 

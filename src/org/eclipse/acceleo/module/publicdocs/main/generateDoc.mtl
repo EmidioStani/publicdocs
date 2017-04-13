@@ -7,11 +7,32 @@
 [template public generateDocs(model : Model){
 version: String = getVersion('xsd');
 }]
+[generateMainDoc(model)/]
+[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+	[generatePackageDoc(model, packageableElement)/]
+[/for]
+[/template]
+
+[template public generateMainDoc(model : Model){
+version: String = getVersion('xsd');
+}]
 [file (getFilename2('path_doc', model.name, '.htm'), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
 	[includeHead(model)/]
-	[includeBody(model)/]
+	[includeMainBody(model)/]
+</html>
+[/file]
+[/template]
+
+[template public generatePackageDoc(model : Model, packageableElement: PackageableElement){
+version: String = getVersion('xsd');
+}]
+[file (getFilename2('path_doc', model.name, packageableElement.name, '.htm'), false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en" content="en">
+	[includeHead(model)/]
+	[includePackageBody(model, packageableElement)/]
 </html>
 [/file]
 [/template]
@@ -101,6 +122,48 @@ h3 i{color: #444;}
 		[includeTOC(model)/]
 		[includeStaticContent2(model)/]
 		[includeGeneratedContent(model)/]
+		[includeStaticContent3(model)/]
+	</div>
+	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+	[includeJavascript(model)/]
+</body>
+[/template]
+
+[template public includeMainBody(model : Model)]
+<body>
+	<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+		[includeStaticContent1(model)/]
+		[includeTOC(model)/]
+		[includeStaticContent2(model)/]
+		<section id="generatedContent">
+			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
+			<div class="contentTables">
+			[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+				[if packageableElement.name = 'forms' or packageableElement.name = 'pdc']
+					[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
+				[/if]
+			[/for]
+			</div>
+		</section>
+		[includeStaticContent3(model)/]
+	</div>
+	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+	[includeJavascript(model)/]
+</body>
+[/template]
+
+[template public includePackageBody(model : Model, pack: PackageableElement)]
+<body>
+	<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+		[includeStaticContent1(model)/]
+		[includeTOC(model)/]
+		[includeStaticContent2(model)/]
+		<section id="generatedContent">
+			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
+			<div class="contentTables">
+			[generatePackageDoc(pack.oclAsType(Package), 1)/]
+			</div>
+		</section>
 		[includeStaticContent3(model)/]
 	</div>
 	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
@@ -214,12 +277,12 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 </section>
 
 <section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
-	<h3 aria-level="1" id="overview">3. Vocabulary Overview</h3>
-	<p align="justify">The XML schemas are based on a UML class diagram. Currently, three main packages distinguish themselves within the class diagram:</p>
+	<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
+	<p align="justify">The XML schemas are based on a UML class diagram. Currently, the follwoing main packages distinguish themselves within the class diagram:</p>
 	<ul>
-		<li><a href="[getConf('url_pdc')/]">pdc</a>;</li>
-		<li><a href="[getConf('url_forms')/]">forms</a>;</li>
-		<li><a href="[getConf('url_formSlovakia')/]">form Slovakia</a>.</li>
+		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+			<li><a href="[getConf('url_'.concat(packageableElement.name))/]">[packageableElement.name/]</a>;</li>
+		[/for]
 	</ul>
 	<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 	</section>
@@ -228,7 +291,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 [template public includeGeneratedContent(model : Model)]
 <section id="generatedContent">
-	<h3 id="VocabularySpecification">4. Vocabulary Specification</h3>
+	<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 	<div class="contentTables">
 		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
 			[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
@@ -238,7 +301,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generatePackageDoc(pack : Package , j : Integer)]
-<h4 id="[pack.name/]">4.[j/] Package [pack.name/]</h4>
+<h4 id="[pack.name/]">5.[j/] Package [pack.name/]</h4>
 <img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
@@ -250,7 +313,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generateClassDoc(class : Class, j : Integer, i : Integer)]
-<h5 id="[class.name/]">4.[j/].[i/] Class [class.name/]</h5>
+<h5 id="[class.name/]">5.[j/].[i/] Class [class.name/]</h5>
 <p><b>Definition:</b>[class.ownedComment._body/]</p>
 <table class="generatedTable table table-striped table-bordered">
 	<thead>
@@ -263,12 +326,15 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 	</thead>
 	<tbody>
 	[for (property: Property | class.ownedAttribute)]
+		[if property.name = 'FormerSpouseOrPartner']
+		[else]
 		<tr>
 			<td>[property.name/]</td>
 			<td>[property.ownedComment._body/]</td>
 			<td>[property.lower/]..[if (property.upper = -1) ]*[else][property.upper/][/if]</td>
 			<td>[generateUnqualifiedDataType(property)/]</td>
 		</tr>
+		[/if]
 	[/for]
 	</tbody>
 </table>
