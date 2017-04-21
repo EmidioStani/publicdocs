@@ -278,7 +278,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 <section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
 	<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
-	<p align="justify">The XML schemas are based on a UML class diagram. Currently, the follwoing main packages distinguish themselves within the class diagram:</p>
+	<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 	<ul>
 		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
 			<li><a href="[getConf('url_'.concat(packageableElement.name))/]">[packageableElement.name/]</a>;</li>
