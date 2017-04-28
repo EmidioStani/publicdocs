@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-04-19">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-04-28">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -177,22 +177,22 @@
 			
 			<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
-				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the follwoing main packages distinguish themselves within the class diagram:</p>
+				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
+						<li><a href="http://e-documents.semic.eu/publicdocuments//formslovakia/">formSlovakia</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms">forms</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc">pdc</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/formFinland/">formFinland</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/formFrance/">formFrance</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments//formslovakia/">formSlovakia</a>;</li>
+						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc">pdc</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
 			<section id="generatedContent">
 				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 				<div class="contentTables">
-						<h4 id="forms">5.1 Package forms</h4>
+						<h4 id="forms">5.2 Package forms</h4>
 						<img alt="UML model of forms package" src="forms.png" width = 100%> UML class diagram </img>
-									<h5 id="AbsenceOfCriminalRecord">5.1.1 Class AbsenceOfCriminalRecord</h5>
+									<h5 id="AbsenceOfCriminalRecord">5.2.1 Class AbsenceOfCriminalRecord</h5>
 									<p><b>Definition:</b>This class contains elements related to the absence of a criminal record of a person. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -234,7 +234,56 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="Birth">5.1.2 Class Birth</h5>
+									<h5 id="AdministrativeDocumentChoice">5.2.2 Class AdministrativeDocumentChoice</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice between the different types of administrative documents. </p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Certificate</td>
+												<td>This property refers to the class Certificate.</td>
+												<td>1..1</td>
+												<td>forms:Certificate
+												</td>
+											</tr>
+											<tr>
+												<td>ExtractFromTheCivilStatusRegister</td>
+												<td>This property refers to the class ExtractFromTheCivilStatus</td>
+												<td>1..1</td>
+												<td>forms:ExtractFromTheCivilStatusRegister
+												</td>
+											</tr>
+											<tr>
+												<td>ExtractFromThePopulationRegister</td>
+												<td>This property refers to the class ExtractFromThePopulationRegister.</td>
+												<td>1..1</td>
+												<td>forms:ExtractFromThePopulationRegister
+												</td>
+											</tr>
+											<tr>
+												<td>VerbatimCopyOfCivilStatusRecords</td>
+												<td>This property refers to the class VerbatimCopyOfCivilStatusRecords. </td>
+												<td>1..1</td>
+												<td>forms:VerbatimCopyOfCivilStatusRecords
+												</td>
+											</tr>
+											<tr>
+												<td>Other</td>
+												<td>This property contains the string value referring to another type of administrative document. </td>
+												<td>1..1</td>
+												<td>udt:TextType
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Birth">5.2.3 Class Birth</h5>
 									<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -255,7 +304,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="CapacityToEnterRegisteredPartnership">5.1.3 Class CapacityToEnterRegisteredPartnership</h5>
+									<h5 id="CapacityToEnterRegisteredPartnership">5.2.4 Class CapacityToEnterRegisteredPartnership</h5>
 									<p><b>Definition:</b>This class contains elements related to the capacity to enter into a registered partnership of a couple.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -290,7 +339,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="CapacityToMarry">5.1.4 Class CapacityToMarry</h5>
+									<h5 id="CapacityToMarry">5.2.5 Class CapacityToMarry</h5>
 									<p><b>Definition:</b>This class contains elements related to the capacity to marry of a couple.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -325,7 +374,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="Certificate">5.1.5 Class Certificate</h5>
+									<h5 id="Certificate">5.2.6 Class Certificate</h5>
 									<p><b>Definition:</b>This class contains elements related to certificates.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -339,7 +388,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="CourtDecision">5.1.6 Class CourtDecision</h5>
+									<h5 id="CourtDecision">5.2.7 Class CourtDecision</h5>
 									<p><b>Definition:</b>This class contains elements related to court decisions. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -353,7 +402,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="Death">5.1.7 Class Death</h5>
+									<h5 id="Death">5.2.8 Class Death</h5>
 									<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -374,7 +423,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="DocumentDrawnUpByDiplomaticOrConsularAgent">5.1.8 Class DocumentDrawnUpByDiplomaticOrConsularAgent</h5>
+									<h5 id="DocumentDrawnUpByDiplomaticOrConsularAgent">5.2.9 Class DocumentDrawnUpByDiplomaticOrConsularAgent</h5>
 									<p><b>Definition:</b>This class contains elements related to documents drawn up by a diplomatic or consular agent.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -388,7 +437,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="DocumentEmanatingFromAClerkOfACourt">5.1.9 Class DocumentEmanatingFromAClerkOfACourt</h5>
+									<h5 id="DocumentEmanatingFromAClerkOfACourt">5.2.10 Class DocumentEmanatingFromAClerkOfACourt</h5>
 									<p><b>Definition:</b>This class contains elements related to documents emanating from a clerk of a court.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -402,7 +451,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="DocumentEmanatingFromAJudicialOfficer">5.1.10 Class DocumentEmanatingFromAJudicialOfficer</h5>
+									<h5 id="DocumentEmanatingFromAJudicialOfficer">5.2.11 Class DocumentEmanatingFromAJudicialOfficer</h5>
 									<p><b>Definition:</b>This class contains elements related to documents emanating from a judicial officer. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -416,7 +465,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="DocumentEmanatingFromAPublicProsecutor">5.1.11 Class DocumentEmanatingFromAPublicProsecutor</h5>
+									<h5 id="DocumentEmanatingFromAPublicProsecutor">5.2.12 Class DocumentEmanatingFromAPublicProsecutor</h5>
 									<p><b>Definition:</b>This class contains elements related to documents emanating from a public prosecutor.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -430,7 +479,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="DocumentFromCourtOrTribunalChoice">5.1.12 Class DocumentFromCourtOrTribunalChoice</h5>
+									<h5 id="DocumentFromCourtOrTribunalChoice">5.2.13 Class DocumentFromCourtOrTribunalChoice</h5>
 									<p><b>Definition:</b>This class contains elements related to the choice between different types of documents emanating from a court or tribunal.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -479,7 +528,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="DocumentInfo">5.1.13 Class DocumentInfo</h5>
+									<h5 id="DocumentInfo">5.2.14 Class DocumentInfo</h5>
 									<p><b>Definition:</b>This class contains elements related to information about a document. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -495,7 +544,7 @@
 												<td>Kind</td>
 												<td>This property refers to the class DocumentKindChoice.</td>
 												<td>1..1</td>
-												<td>forms:DocumentKindChoice
+												<td>PublicDocuments:DocumentKindChoice
 												</td>
 											</tr>
 											<tr>
@@ -515,56 +564,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="DocumentKindChoice">5.1.14 Class DocumentKindChoice</h5>
-									<p><b>Definition:</b>This class contains elements related to the choice between different types of documents.</p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>DocumentFromCourtOrTribunal</td>
-												<td>This property refers to the class DocumentFromCourtOrTribunalChoice. </td>
-												<td>1..1</td>
-												<td>forms:DocumentFromCourtOrTribunalChoice
-												</td>
-											</tr>
-											<tr>
-												<td>AdministrativeDocument</td>
-												<td>This property refers to the class AdministrativeDocumentChoice. </td>
-												<td>1..1</td>
-												<td>PublicDocuments:AdministrativeDocumentChoice
-												</td>
-											</tr>
-											<tr>
-												<td>NotarialAct</td>
-												<td>This property refers to the class NotarialAct. </td>
-												<td>1..1</td>
-												<td>forms:NotarialAct
-												</td>
-											</tr>
-											<tr>
-												<td>OfficialCertificateOnDocumentSignedByPerson</td>
-												<td>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </td>
-												<td>1..1</td>
-												<td>forms:OfficialCertificateOnDocumentSignedByPerson
-												</td>
-											</tr>
-											<tr>
-												<td>DocumentDrawnUpByDiplomaticOrConsularAgent</td>
-												<td>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </td>
-												<td>1..1</td>
-												<td>forms:DocumentDrawnUpByDiplomaticOrConsularAgent
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<h5 id="DomicileAndOrResidence">5.1.15 Class DomicileAndOrResidence</h5>
+									<h5 id="DomicileAndOrResidence">5.2.15 Class DomicileAndOrResidence</h5>
 									<p><b>Definition:</b>This class contains elements related to the domicile and/or residence of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -599,7 +599,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="ExtractFromTheCivilStatusRegister">5.1.16 Class ExtractFromTheCivilStatusRegister</h5>
+									<h5 id="ExtractFromTheCivilStatusRegister">5.2.16 Class ExtractFromTheCivilStatusRegister</h5>
 									<p><b>Definition:</b>This class contains elements related to extracts from the civil status register. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -613,7 +613,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="ExtractFromThePopulationRegister">5.1.17 Class ExtractFromThePopulationRegister</h5>
+									<h5 id="ExtractFromThePopulationRegister">5.2.17 Class ExtractFromThePopulationRegister</h5>
 									<p><b>Definition:</b>This class contains elements related to extracts from the Population Register.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -627,7 +627,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="FormHeader">5.1.18 Class FormHeader</h5>
+									<h5 id="FormHeader">5.2.18 Class FormHeader</h5>
 									<p><b>Definition:</b>This class contains elements related to the form header of a form.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -704,7 +704,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmAbsenceOfCriminalRecord">5.1.19 Class FrmAbsenceOfCriminalRecord</h5>
+									<h5 id="FrmAbsenceOfCriminalRecord">5.2.19 Class FrmAbsenceOfCriminalRecord</h5>
 									<p><b>Definition:</b>This class contains elements related to the form AbsenceOfCriminalRecord.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -732,7 +732,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmBirth">5.1.20 Class FrmBirth</h5>
+									<h5 id="FrmBirth">5.2.20 Class FrmBirth</h5>
 									<p><b>Definition:</b> This class contains elements related to the form Birth.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -760,7 +760,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmCapacityToEnterRegisteredPartnerShip">5.1.21 Class FrmCapacityToEnterRegisteredPartnerShip</h5>
+									<h5 id="FrmCapacityToEnterRegisteredPartnerShip">5.2.21 Class FrmCapacityToEnterRegisteredPartnerShip</h5>
 									<p><b>Definition:</b>This class contains elements related to the form CapacityToEnterRegisteredPartnership.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -788,7 +788,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmCapacityToMarry">5.1.22 Class FrmCapacityToMarry</h5>
+									<h5 id="FrmCapacityToMarry">5.2.22 Class FrmCapacityToMarry</h5>
 									<p><b>Definition:</b>This class contains elements related to the form CapacityToMarry.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -816,7 +816,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmDeath">5.1.23 Class FrmDeath</h5>
+									<h5 id="FrmDeath">5.2.23 Class FrmDeath</h5>
 									<p><b>Definition:</b>This class contains elements related to the form Death. </p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -844,7 +844,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmDomicileAndOrResidence">5.1.24 Class FrmDomicileAndOrResidence</h5>
+									<h5 id="FrmDomicileAndOrResidence">5.2.24 Class FrmDomicileAndOrResidence</h5>
 									<p><b>Definition:</b>This class contains elements related to the form DomicileAndOrResidence.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -872,7 +872,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmLife">5.1.25 Class FrmLife</h5>
+									<h5 id="FrmLife">5.2.25 Class FrmLife</h5>
 									<p><b>Definition:</b>This class contains elements related to the form Life.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -900,7 +900,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmMaritalStatus">5.1.26 Class FrmMaritalStatus</h5>
+									<h5 id="FrmMaritalStatus">5.2.26 Class FrmMaritalStatus</h5>
 									<p><b>Definition:</b>This class contains elements related to the form MaritalStatus.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -928,7 +928,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmMarriage">5.1.27 Class FrmMarriage</h5>
+									<h5 id="FrmMarriage">5.2.27 Class FrmMarriage</h5>
 									<p><b>Definition:</b>This class contains elements related to the form Marriage.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -956,7 +956,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmRegisteredPartnerShip">5.1.28 Class FrmRegisteredPartnerShip</h5>
+									<h5 id="FrmRegisteredPartnerShip">5.2.28 Class FrmRegisteredPartnerShip</h5>
 									<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnership.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -984,7 +984,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FrmRegisteredPartnerShipStatus">5.1.29 Class FrmRegisteredPartnerShipStatus</h5>
+									<h5 id="FrmRegisteredPartnerShipStatus">5.2.29 Class FrmRegisteredPartnerShipStatus</h5>
 									<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnershipStatus.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1012,7 +1012,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="IDTypeAndNo">5.1.30 Class IDTypeAndNo</h5>
+									<h5 id="IDTypeAndNo">5.2.30 Class IDTypeAndNo</h5>
 									<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1054,7 +1054,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="Life">5.1.31 Class Life</h5>
+									<h5 id="Life">5.2.31 Class Life</h5>
 									<p><b>Definition:</b>This class contains elements related to the life of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1089,7 +1089,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="MaritalStatus">5.1.32 Class MaritalStatus</h5>
+									<h5 id="MaritalStatus">5.2.32 Class MaritalStatus</h5>
 									<p><b>Definition:</b>This class contains elements related to the marital status of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1117,7 +1117,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="Marriage">5.1.33 Class Marriage</h5>
+									<h5 id="Marriage">5.2.33 Class Marriage</h5>
 									<p><b>Definition:</b>This class contains elements related to a marriage.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1159,7 +1159,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="NotarialAct">5.1.34 Class NotarialAct</h5>
+									<h5 id="NotarialAct">5.2.34 Class NotarialAct</h5>
 									<p><b>Definition:</b>This class contains elements related to notarial acts.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1173,7 +1173,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="OfficialCertificateOnDocumentSignedByPerson">5.1.35 Class OfficialCertificateOnDocumentSignedByPerson</h5>
+									<h5 id="OfficialCertificateOnDocumentSignedByPerson">5.2.35 Class OfficialCertificateOnDocumentSignedByPerson</h5>
 									<p><b>Definition:</b>This class contains elements related to official certificates on documents signed by concerned persons.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1187,7 +1187,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="OtherIDType">5.1.36 Class OtherIDType</h5>
+									<h5 id="OtherIDType">5.2.36 Class OtherIDType</h5>
 									<p><b>Definition:</b>This class contains elements related to ID types other than national identity cards, passports, or driving licences.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1215,7 +1215,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="ReferenceNumber">5.1.37 Class ReferenceNumber</h5>
+									<h5 id="ReferenceNumber">5.2.37 Class ReferenceNumber</h5>
 									<p><b>Definition:</b>This class contains elements related to a document's reference number.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1229,7 +1229,7 @@
 										<tbody>
 										</tbody>
 									</table>
-									<h5 id="RegisteredPartnership">5.1.38 Class RegisteredPartnership</h5>
+									<h5 id="RegisteredPartnership">5.2.38 Class RegisteredPartnership</h5>
 									<p><b>Definition:</b>This class contains elements related to a registered partnership.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1271,7 +1271,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="RegisteredPartnershipStatus">5.1.39 Class RegisteredPartnershipStatus</h5>
+									<h5 id="RegisteredPartnershipStatus">5.2.39 Class RegisteredPartnershipStatus</h5>
 									<p><b>Definition:</b>This class contains elements related to the registered partnership status of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1299,7 +1299,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="SignatureInfo">5.1.40 Class SignatureInfo</h5>
+									<h5 id="SignatureInfo">5.2.40 Class SignatureInfo</h5>
 									<p><b>Definition:</b>This class contains elements related to the signature of the official handling the document.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1348,7 +1348,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="VerbatimCopyOfCivilStatusRecords">5.1.41 Class VerbatimCopyOfCivilStatusRecords</h5>
+									<h5 id="VerbatimCopyOfCivilStatusRecords">5.2.41 Class VerbatimCopyOfCivilStatusRecords</h5>
 									<p><b>Definition:</b>This class contains elements related to verbatim copies of civil status records.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
@@ -1363,9 +1363,9 @@
 										</tbody>
 									</table>
 						
-						<h4 id="pdc">5.2 Package pdc</h4>
+						<h4 id="pdc">5.5 Package pdc</h4>
 									<img alt="UML model of pdc package" src="pdc.png" width = 100%> UML class diagram </img>
-												<h5 id="AbsenceOfCriminalRecordPerson">5.2.1 Class AbsenceOfCriminalRecordPerson</h5>
+												<h5 id="AbsenceOfCriminalRecordPerson">5.5.1 Class AbsenceOfCriminalRecordPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the absence of a criminal record for a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1442,7 +1442,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Address">5.2.2 Class Address</h5>
+												<h5 id="Address">5.5.2 Class Address</h5>
 												<p><b>Definition:</b>This class contains elements related to an address.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1485,7 +1485,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Authority">5.2.3 Class Authority</h5>
+												<h5 id="Authority">5.5.3 Class Authority</h5>
 												<p><b>Definition:</b>This class contains elements related to the designation of an authority.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1506,7 +1506,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="BirthPerson">5.2.4 Class BirthPerson</h5>
+												<h5 id="BirthPerson">5.5.4 Class BirthPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1562,7 +1562,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="CanMarry">5.2.5 Class CanMarry</h5>
+												<h5 id="CanMarry">5.5.5 Class CanMarry</h5>
 												<p><b>Definition:</b>This class contains elements related to the capacity to marry of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1611,7 +1611,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.2.6 Class CapacityToMarryOrEnterRegisteredPartnershipPerson</h5>
+												<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.5.6 Class CapacityToMarryOrEnterRegisteredPartnershipPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the capacity to marry or enter into a registered partnership of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1674,7 +1674,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Country">5.2.7 Class Country</h5>
+												<h5 id="Country">5.5.7 Class Country</h5>
 												<p><b>Definition:</b>This class contains elements related to a country.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1702,7 +1702,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DeathPerson">5.2.8 Class DeathPerson</h5>
+												<h5 id="DeathPerson">5.5.8 Class DeathPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1780,7 +1780,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.2.9 Class MaritalOrRegisteredPartnershipStatusPerson</h5>
+												<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.5.9 Class MaritalOrRegisteredPartnershipStatusPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the marital or registered partnership status of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1864,7 +1864,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MaritalStatusChoice">5.2.10 Class MaritalStatusChoice</h5>
+												<h5 id="MaritalStatusChoice">5.5.10 Class MaritalStatusChoice</h5>
 												<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1899,7 +1899,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MarriageOrRegisteredPartnershipPerson">5.2.11 Class MarriageOrRegisteredPartnershipPerson</h5>
+												<h5 id="MarriageOrRegisteredPartnershipPerson">5.5.11 Class MarriageOrRegisteredPartnershipPerson</h5>
 												<p><b>Definition:</b>This class contains elements related to the marriage or registered partnership of a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1955,7 +1955,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Nationality">5.2.12 Class Nationality</h5>
+												<h5 id="Nationality">5.5.12 Class Nationality</h5>
 												<p><b>Definition:</b>This class contains elements related to a nationality.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1976,7 +1976,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="NeverMarried">5.2.13 Class NeverMarried</h5>
+												<h5 id="NeverMarried">5.5.13 Class NeverMarried</h5>
 												<p><b>Definition:</b></p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -1990,7 +1990,7 @@
 													<tbody>
 													</tbody>
 												</table>
-												<h5 id="NotMarriedChoice">5.2.14 Class NotMarriedChoice</h5>
+												<h5 id="NotMarriedChoice">5.5.14 Class NotMarriedChoice</h5>
 												<p><b>Definition:</b>This class contains elements related to the specific situation of not-married individuals.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2025,7 +2025,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Official">5.2.15 Class Official</h5>
+												<h5 id="Official">5.5.15 Class Official</h5>
 												<p><b>Definition:</b></p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2053,7 +2053,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Person">5.2.16 Class Person</h5>
+												<h5 id="Person">5.5.16 Class Person</h5>
 												<p><b>Definition:</b>This class contains elements related to a person.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2190,7 +2190,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Place">5.2.17 Class Place</h5>
+												<h5 id="Place">5.5.17 Class Place</h5>
 												<p><b>Definition:</b>This class contains elements related to a place.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
@@ -2211,7 +2211,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Undetermined">5.2.19 Class Undetermined</h5>
+												<h5 id="Undetermined">5.5.19 Class Undetermined</h5>
 												<p><b>Definition:</b></p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>

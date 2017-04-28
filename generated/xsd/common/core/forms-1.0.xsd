@@ -108,6 +108,9 @@
 	
 	
 	
+	
+	
+	
 	<xsd:complexType name="BirthType">
 		<xsd:annotation>
 		    <xsd:documentation>
@@ -217,84 +220,12 @@
 		</xsd:annotation>
 		<xsd:sequence>
 				
-			<xsd:element name="Kind" minOccurs="1" maxOccurs="1">
-			<xsd:complexType>
-				<xsd:choice>
-						
-					<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1">
-					<xsd:complexType>
-						<xsd:choice>
-								
-							<xsd:element name="CourtDecision" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-								
-							<xsd:element name="DocumentEmanatingFromAPublicProsecutor" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-								
-							<xsd:element name="DocumentEmanatingFromAClerkOfACourt" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-								
-							<xsd:element name="DocumentEmanatingFromAJudicialOfficer" minOccurs="1" maxOccurs="1">
-							<xsd:complexType/>
-							</xsd:element>
-							
-							
-							<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation>
-										This property contains the string value referring to another type of document coming from court or tribunal.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							
-							
-							
-						</xsd:choice>
-					</xsd:complexType>
-					</xsd:element>
-					
-					
-						
-					<xsd:element name="AdministrativeDocument" type="PublicDocuments:AdministrativeDocumentChoice" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation>
-								This property refers to the class AdministrativeDocumentChoice. 
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					
-						
-					<xsd:element name="NotarialAct" minOccurs="1" maxOccurs="1">
-					<xsd:complexType/>
-					</xsd:element>
-					
-					
-						
-					<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1">
-					<xsd:complexType/>
-					</xsd:element>
-					
-					
-						
-					<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1">
-					<xsd:complexType/>
-					</xsd:element>
-					
-					
-					
-				</xsd:choice>
-			</xsd:complexType>
+			<xsd:element name="Kind" type="PublicDocuments:DocumentKindChoice" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation>
+						This property refers to the class DocumentKindChoice.
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
 			
 			
@@ -324,11 +255,6 @@
 	
 	
 	
-	
-				
-				    
-				
-				    
 	<xsd:complexType name="DomicileAndOrResidenceType">
 				
 				    	<xsd:annotation>

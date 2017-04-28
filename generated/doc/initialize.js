@@ -30,9 +30,12 @@
 	    		      return this.substr(position, searchString.length) === searchString;
 	    		  };
 	    	  }
-	    	  if ( (celltext.startsWith("pdc:")) || (celltext.startsWith("forms:")) || (celltext.startsWith("formSlovakia:")) || (celltext.startsWith("formAustria:")) || (celltext.startsWith("formFrance:")) || (celltext.startsWith("formFinland:"))) {
-	    		  cellvalue = celltext.split(":")[1];
-	    		  $( this ).html("<a href='#"+cellvalue+"'>"+celltext+"</a>");
+	    	  var cellprefix = celltext.split(":")[0];
+	    	  var cellvalue = celltext.split(":")[1];
+	    	  var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
+	    	  array={pdc: base_url+"pdc",forms:base_url+"forms",formFrance:"",formFinland:"",formSpain:"",formSlowakia:"",formAustria:""};
+	    	  if(!(array[cellprefix] == null)) {
+	    		  $( this ).html("<a href='" + array[cellprefix] + "#"+cellvalue+"'>"+celltext+"</a>");
 	    	  }
 	    	});
 	    

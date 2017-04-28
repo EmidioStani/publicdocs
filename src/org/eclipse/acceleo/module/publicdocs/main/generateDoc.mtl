@@ -9,7 +9,9 @@ version: String = getVersion('xsd');
 }]
 [generateMainDoc(model)/]
 [for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
-	[generatePackageDoc(model, packageableElement)/]
+	[if not (packageableElement.name = 'forms' or packageableElement.name = 'pdc')]
+		[generatePackageDoc(model, packageableElement)/]
+	[/if]
 [/for]
 [/template]
 
@@ -28,7 +30,7 @@ version: String = getVersion('xsd');
 [template public generatePackageDoc(model : Model, packageableElement: PackageableElement){
 version: String = getVersion('xsd');
 }]
-[file (getFilename2('path_doc', model.name, packageableElement.name, '.htm'), false, 'UTF-8')]
+[file (getFilename2('path_doc', packageableElement.name, '.htm'), false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en" content="en">
 	[includeHead(model)/]
