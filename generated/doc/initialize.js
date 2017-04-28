@@ -33,7 +33,7 @@
 	    	  var cellprefix = celltext.split(":")[0];
 	    	  var cellvalue = celltext.split(":")[1];
 	    	  var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
-	    	  array={pdc: base_url+"pdc",forms:base_url+"forms",formFrance:"",formFinland:"",formSpain:"",formSlowakia:"",formAustria:""};
+	    	  array={pdc: base_url+"pdc",forms:base_url+"forms",formFrance:"",formFinland:"",formSpain:"",formSlovakia:"",formAustria:""};
 	    	  if(!(array[cellprefix] == null)) {
 	    		  $( this ).html("<a href='" + array[cellprefix] + "#"+cellvalue+"'>"+celltext+"</a>");
 	    	  }
