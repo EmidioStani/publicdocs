@@ -54,11 +54,11 @@ supplier             : Class      = dependencies->any(true).supplier->any(true).
 </[getNS('xs')/]:complexType>
 
 <[getNS('xs')/]:complexType name="[name/][getSuffix('complexType')/]">
-  <[getNS('xs')/]:complexContent>
+  <[getNS('xs')/]:simpleContent>
     <[getNS('xs')/]:restriction base="[name/]CodeListType">
       <[getNS('xs')/]:attribute name="listVersionID" type="[getNS('xs')/]:normalizedString" use="required" fixed="[getVersion(name)/]" />
     </[getNS('xs')/]:restriction>
-  </[getNS('xs')/]:complexContent>
+  </[getNS('xs')/]:simpleContent>
 </[getNS('xs')/]:complexType>
 [/template]
 

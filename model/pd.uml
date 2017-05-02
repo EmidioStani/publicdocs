@@ -671,8 +671,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__Tasg5aOEea9ZepAMlE8tQ" value="*"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_OeqD0KzZEeavqeoXyZUI0Q" name="NeverMarried"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_LbfQAK6VEeavbt_KlNQYCw" name="Undetermined"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_J__e8K8wEeavbt_KlNQYCw" name="CanMarry">
         <ownedComment xmi:type="uml:Comment" xmi:id="_NAyR8OFuEear-8wQOKPlcA">
           <body>This class contains elements related to the capacity to marry of a person.</body>
@@ -717,20 +715,22 @@
             <body>This property refers to the class NotMarriedChoice.</body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jaAHgKdWEeauqJvmq6BC-Q" name="Undetermined" type="_LbfQAK6VEeavbt_KlNQYCw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jaAHgKdWEeauqJvmq6BC-Q" name="Undetermined" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_qAXtQN8qEeaVhrycqBWd1w">
             <body>This property refers to the class Undetermined.</body>
           </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_crCdYC8XEeezDM0o_Vxv7Q" value="true"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_rFeI8KdXEeauqJvmq6BC-Q" name="NotMarriedChoice">
         <ownedComment xmi:type="uml:Comment" xmi:id="_AkTc8PUTEea1-YzoDKj3EQ">
           <body>This class contains elements related to the specific situation of not-married individuals.</body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_6NLu8KdXEeauqJvmq6BC-Q" name="NeverMarried" type="_OeqD0KzZEeavqeoXyZUI0Q">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6NLu8KdXEeauqJvmq6BC-Q" name="NeverMarried" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_s9SKUN8qEeaVhrycqBWd1w">
             <body>This property refers to the class NeverMarried.</body>
           </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_tWh_wC8WEeezDM0o_Vxv7Q" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_DoS-gKdYEeauqJvmq6BC-Q" name="DivorceDate" type="_O31ispPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_vPUeYN8qEeaVhrycqBWd1w">
@@ -1076,7 +1076,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_-UUoEOFuEear-8wQOKPlcA">
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qumaEJaNEea9ZepAMlE8tQ" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qumaEJaNEea9ZepAMlE8tQ" name="Kind" type="_oknRQC8IEeezDM0o_Vxv7Q">
           <ownedComment xmi:type="uml:Comment" xmi:id="_7OeGEN8sEeaVhrycqBWd1w">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -1459,6 +1459,37 @@
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_oknRQC8IEeezDM0o_Vxv7Q" name="DocumentKindChoice">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oknRQS8IEeezDM0o_Vxv7Q">
+          <body>This class contains elements related to the choice between different types of documents.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_oknRQi8IEeezDM0o_Vxv7Q" name="DocumentFromCourtOrTribunal" type="_HqDYYOcBEeaniKDsuGWb9g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oknRQy8IEeezDM0o_Vxv7Q">
+            <body>This property refers to the class DocumentFromCourtOrTribunalChoice. </body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_oknRRC8IEeezDM0o_Vxv7Q" name="AdministrativeDocument" type="_a9hPUOcQEeaniKDsuGWb9g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oknRRS8IEeezDM0o_Vxv7Q">
+            <body>This property refers to the class AdministrativeDocumentChoice. </body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_oknRRi8IEeezDM0o_Vxv7Q" name="NotarialAct" type="_w0G2cPUZEea1-YzoDKj3EQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oknRRy8IEeezDM0o_Vxv7Q">
+            <body>This property refers to the class NotarialAct. </body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oknRSC8IEeezDM0o_Vxv7Q" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_oknRSS8IEeezDM0o_Vxv7Q" name="OfficialCertificateOnDocumentSignedByPerson" type="__xxIkPUZEea1-YzoDKj3EQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oknRSi8IEeezDM0o_Vxv7Q">
+            <body>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_oknRSy8IEeezDM0o_Vxv7Q" name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="_H1yCUPUaEea1-YzoDKj3EQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oknRTC8IEeezDM0o_Vxv7Q">
+            <body>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_rPOdMJn2EeahIo2b8TyqvQ" name="udt" URI="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2">
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_SIE9IJn3EeahIo2b8TyqvQ" name="TextType"/>
@@ -1534,7 +1565,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_9FoVMSZrEee5hdNE4-i21g">
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_9FoVMiZrEee5hdNE4-i21g" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9FoVMiZrEee5hdNE4-i21g" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_9FoVMyZrEee5hdNE4-i21g">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -1867,7 +1898,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_6CNtgAP7EeeuD5tlaeLiNg" name="ids5ISO316612A" URI="">
-      <packagedElement xmi:type="uml:Class" xmi:id="_6CNtgQP7EeeuD5tlaeLiNg" name="ISOTwoLetterCountryCodeIdentifierContentType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6CNtgQP7EeeuD5tlaeLiNg" name="ISOTwoletterCountryCodeIdentifierContentType"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_SKGGIBB2EeeOZJtJre35Ig" name="formFrance" URI="http://urn:ec:ejustice:publicdocuments/forms">
       <packagedElement xmi:type="uml:Class" xmi:id="_rh18EBB3EeeOZJtJre35Ig" name="DocumentInfo">
@@ -1875,7 +1906,7 @@
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_dkTSEBCWEeeOZJtJre35Ig" general="_cz4ysJaNEea9ZepAMlE8tQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_rh18EhB3EeeOZJtJre35Ig" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rh18EhB3EeeOZJtJre35Ig" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_rh18ExB3EeeOZJtJre35Ig">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -2743,7 +2774,7 @@
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_WzwmoxLsEeeJebmV7IiLvw" general="_cz4ysJaNEea9ZepAMlE8tQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_WzwmpBLsEeeJebmV7IiLvw" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_WzwmpBLsEeeJebmV7IiLvw" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_WzwmpRLsEeeJebmV7IiLvw">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -3163,7 +3194,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_CyWUgRLxEeeJebmV7IiLvw">
           <body>This class contains elements related to the specific situation of not-married individuals.</body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_CyWUghLxEeeJebmV7IiLvw" name="NeverMarried" type="_OeqD0KzZEeavqeoXyZUI0Q">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CyWUghLxEeeJebmV7IiLvw" name="NeverMarried">
           <ownedComment xmi:type="uml:Comment" xmi:id="_CyWUgxLxEeeJebmV7IiLvw">
             <body>This property refers to the class NeverMarried.</body>
           </ownedComment>
@@ -3828,7 +3859,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_6HKf4RqtEeevBc6EJXfXqQ">
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_6HKf4hqtEeevBc6EJXfXqQ" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6HKf4hqtEeevBc6EJXfXqQ" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_6HKf4xqtEeevBc6EJXfXqQ">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -3977,37 +4008,6 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_eaTd0BraEeevBc6EJXfXqQ" name="IssuingAuthority" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_hxOWUBraEeevBc6EJXfXqQ" name="IssuingState" type="_4HgnoK7FEeavbt_KlNQYCw"/>
       </packagedElement>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_rW93EJaMEea9ZepAMlE8tQ" name="DocumentKindChoice">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_mPuNUOFzEear-8wQOKPlcA">
-        <body>This class contains elements related to the choice between different types of documents.</body>
-      </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_3XPLAJaMEea9ZepAMlE8tQ" name="DocumentFromCourtOrTribunal" type="_HqDYYOcBEeaniKDsuGWb9g">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_5YKAIOFaEear-8wQOKPlcA">
-          <body>This property refers to the class DocumentFromCourtOrTribunalChoice. </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_6djbsJaMEea9ZepAMlE8tQ" name="AdministrativeDocument" type="_a9hPUOcQEeaniKDsuGWb9g">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_8ev9oOFaEear-8wQOKPlcA">
-          <body>This property refers to the class AdministrativeDocumentChoice. </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_B0kskJaNEea9ZepAMlE8tQ" name="NotarialAct" type="_w0G2cPUZEea1-YzoDKj3EQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_GNZ0QOFbEear-8wQOKPlcA">
-          <body>This property refers to the class NotarialAct. </body>
-        </ownedComment>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_azj9AJd6Eeah6OlECeK7TQ" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Iw928JaNEea9ZepAMlE8tQ" name="OfficialCertificateOnDocumentSignedByPerson" type="__xxIkPUZEea1-YzoDKj3EQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_McIAUOFbEear-8wQOKPlcA">
-          <body>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_NgUiAJaNEea9ZepAMlE8tQ" name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="_H1yCUPUaEea1-YzoDKj3EQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_SlADEOFbEear-8wQOKPlcA">
-          <body>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </body>
-        </ownedComment>
-      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_u4dFACaQEeedE6lAQ4ldDg" name="formBelgium1">
       <packagedElement xmi:type="uml:Class" xmi:id="_9NfQ4CaQEeedE6lAQ4ldDg" name="Person">
@@ -4184,7 +4184,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_veTx0SaVEeedE6lAQ4ldDg">
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_veTx0iaVEeedE6lAQ4ldDg" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_veTx0iaVEeedE6lAQ4ldDg" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_veTx0yaVEeedE6lAQ4ldDg">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -4227,7 +4227,7 @@
             <body>This property refers to the class NotMarriedChoice.</body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Yw_liaYEeedE6lAQ4ldDg" name="Undetermined" type="_LbfQAK6VEeavbt_KlNQYCw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Yw_liaYEeedE6lAQ4ldDg" name="Undetermined">
           <ownedComment xmi:type="uml:Comment" xmi:id="_3Yw_lyaYEeedE6lAQ4ldDg">
             <body>This property refers to the class Undetermined.</body>
           </ownedComment>
@@ -4486,7 +4486,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_xToWsSjwEeexvrdZ-EZD1g">
           <body>This class contains elements related to the specific situation of not-married individuals.</body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xToWsijwEeexvrdZ-EZD1g" name="NeverMarried" type="_OeqD0KzZEeavqeoXyZUI0Q">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xToWsijwEeexvrdZ-EZD1g" name="NeverMarried">
           <ownedComment xmi:type="uml:Comment" xmi:id="_xToWsyjwEeexvrdZ-EZD1g">
             <body>This property refers to the class NeverMarried.</body>
           </ownedComment>
@@ -4570,7 +4570,7 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_r1KoECtPEee8qptDsvpEkQ">
           <body>This class contains elements related to information about a document. </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_r1KoEStPEee8qptDsvpEkQ" name="Kind" type="_rW93EJaMEea9ZepAMlE8tQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_r1KoEStPEee8qptDsvpEkQ" name="Kind">
           <ownedComment xmi:type="uml:Comment" xmi:id="_r1KoEitPEee8qptDsvpEkQ">
             <body>This property refers to the class DocumentKindChoice.</body>
           </ownedComment>
@@ -5053,7 +5053,6 @@
   </uml:Model>
   <isa:cvABIE xmi:id="_zKk8gKy1EeaZGL3UPlWdjA" base_Class="_O31ioJPcEeaaQdure8LlEA"/>
   <isa:xsdGlobalElement xmi:id="_4_pScKy1EeaZGL3UPlWdjA" base_Class="_9mbs0Ja7Eea9ZepAMlE8tQ"/>
-  <isa:xsdChoice xmi:id="_O2PfYKzDEeaZGL3UPlWdjA" base_Class="_rW93EJaMEea9ZepAMlE8tQ"/>
   <isa:xsdChoice xmi:id="_tA1UEKzWEeavqeoXyZUI0Q" base_Class="_bGEEsJR5EeaPKuyhkF_CdQ"/>
   <isa:xsdChoice xmi:id="_z6G5AKzWEeavqeoXyZUI0Q" base_Class="_rFeI8KdXEeauqJvmq6BC-Q"/>
   <isa:xsdGlobalElement xmi:id="_bOpyQKzeEeaJou1G6awO7g" base_Class="_Yp7IUJa8Eea9ZepAMlE8tQ"/>
@@ -5119,4 +5118,5 @@
   <isa:xsdChoice xmi:id="_gDpboCj7EeexvrdZ-EZD1g" base_Class="_gDoNgCj7EeexvrdZ-EZD1g"/>
   <isa:cvABIE xmi:id="_CXDgoCtQEee8qptDsvpEkQ" base_Class="_CRJs8CtQEee8qptDsvpEkQ"/>
   <isa:cvABIE xmi:id="_wiavcCtREee8qptDsvpEkQ" base_Class="_wiaIYCtREee8qptDsvpEkQ"/>
+  <isa:xsdChoice xmi:id="_oktX4C8IEeezDM0o_Vxv7Q" base_Class="_oknRQC8IEeezDM0o_Vxv7Q"/>
 </xmi:XMI>
