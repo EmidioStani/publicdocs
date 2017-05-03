@@ -232,6 +232,10 @@
 	
 	
 				
+				    <xsd:complexType name="BirthCertificateType"/>
+				
+				    
+				
 				    
 				
 				    
@@ -425,6 +429,10 @@
 				    
 	
 				
+				    <xsd:complexType name="DeathCertificateType"/>
+				
+				    
+				
 				    
 				
 				    
@@ -450,7 +458,7 @@
 				
 				    	<xsd:sequence>
 				
-				    		<xsd:element name="Kind" type="PublicDocuments:DocumentKindChoice" minOccurs="1" maxOccurs="1" >
+				    		<xsd:element name="Kind" type="KindType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
 				
@@ -463,8 +471,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
 				
 				    		
 				
@@ -490,7 +496,11 @@
 				
 				    		
 				
-				    		<xsd:element name="ReferenceNumber" type="forms:ReferenceNumber" minOccurs="1" maxOccurs="1"/>
+				    		
+				
+				    			
+				
+				    			    <xsd:element name="ReferenceNumber" type="forms:ReferenceNumberType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -941,7 +951,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="DocumentFromCourtOrTribunal" type="forms:DocumentFromCourtOrTribunalChoice" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="DocumentFromCourtOrTribunal" type="forms:DocumentFromCourtOrTribunalChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -953,7 +967,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="AdministrativeDocument" type="forms:AdministrativeDocumentChoice" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="AdministrativeDocument" type="forms:AdministrativeDocumentChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -965,7 +983,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="NotarialAct" type="forms:NotarialAct" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="NotarialAct" type="forms:NotarialActType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -977,7 +999,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="forms:OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="forms:OfficialCertificateOnDocumentSignedByPersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -989,7 +1015,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="forms:DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="forms:DocumentDrawnUpByDiplomaticOrConsularAgentType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -1387,16 +1417,11 @@
 				
 				    			
 				
-				    			    
+				    			    <xsd:complexType name="ExractFromBirthsRegisterType"/>
 				
 				    			
 				
 				    			    
-				
-				    			
-				
-				    			    
-	
 				
 				    			
 				
@@ -1410,6 +1435,35 @@
 				
 				    			    
 	
+				
+				    			
+				
+				    			    <xsd:complexType name="ExtractFromDeathsRegisterType"/>
+				
+				    			
+				
+				    			    
+				
+				    			
+				
+				    			    
+				
+				    			
+				
+				    			    
+				
+				    			
+				
+				    			    
+	
+				
+				    			
+				
+				    			    <xsd:complexType name="ExtractFromMarriagesRegisterType"/>
+				
+				    			
+				
+				    			    
 				
 				    			
 				
@@ -1792,7 +1846,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="GroomMaritalStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="GroomMaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -1828,7 +1886,11 @@
 				
 				    			
 				
-				    			    		<xsd:element name="BrideCivilStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
+				    			    		
+				
+				    			
+				
+				    			    		<xsd:element name="BrideCivilStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -1974,6 +2036,14 @@
 				
 				    			    
 	
+				
+				    			
+				
+				    			    <xsd:complexType name="MarriageCertificateType"/>
+				
+				    			
+				
+				    			    
 				
 				    			
 				
@@ -2184,6 +2254,14 @@
 				
 				    			    
 	
+				
+				    			
+				
+				    			    <xsd:complexType name="PermanentStayType"/>
+				
+				    			
+				
+				    			    
 				
 				    			
 				
@@ -6547,6 +6625,70 @@
 				
 				    			
 				
+				    			    			    	    	    <xsd:complexType name="RegisterOfBirthsType"/>
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	    
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
 				    			    			    	    	    
 				
 				    			
@@ -6613,6 +6755,70 @@
 				
 				    			    			    	    	    
 	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	    <xsd:complexType name="TemporaryStayType"/>
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	
+				
+				    			
+				
+				    			    			
+				
+				    			
+				
+				    			    			    	    	    
 				
 				    			
 				

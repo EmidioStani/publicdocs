@@ -30,10 +30,8 @@ version: String = getVersion('xsd');
 [/template]
 
 [template public generatePackageableElement(packageableElement : PackageableElement)]
-[if packageableElement.oclIsTypeOf(Class) or packageableElement.name = 'Sex']
+[if packageableElement.oclIsTypeOf(Class)]
 [generateType(packageableElement.oclAsType(Class))/]
-[else]
-[debug('PDC PackageableElement clIsNotTypeOf Class: ' +packageableElement.oclAsType(Enumeration))/]
 [/if]
 [/template]
 

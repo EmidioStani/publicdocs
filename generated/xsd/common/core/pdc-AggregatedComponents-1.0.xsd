@@ -641,7 +641,9 @@
 				
 				    	<xsd:sequence>
 				
-				    		<xsd:element name="Code" type="ids5ISO316612A:ISOTwoLetterCountryCodeIdentifierContentType" minOccurs="0" maxOccurs="1" >
+				    		
+				
+				    		<xsd:element name="Code" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentTypeType" minOccurs="0" maxOccurs="1" >
 				
 				    			<xsd:annotation>
 				
@@ -1064,11 +1066,21 @@
 				
 				    		
 				
-				    			
+				    		<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    		<xsd:element name="Undetermined" minOccurs="1" maxOccurs="1" type="UndeterminedType">
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation>
+				
+				    					This property refers to the class Undetermined.
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
+				
+				    		
 				
 				    		
 				
@@ -1281,13 +1293,6 @@
 				    
 				
 				    
-	<xsd:complexType name="NeverMarriedType"/>
-				
-				    
-				
-				    
-				
-				    
 	
 				
 				    <xsd:complexType name="NotMarriedChoiceType">
@@ -1306,11 +1311,21 @@
 				
 				    	<xsd:choice>
 				
-				    			
+				    		<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    		<xsd:element name="NeverMarried" minOccurs="1" maxOccurs="1" type="NeverMarriedType">
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation>
+				
+				    					This property refers to the class NeverMarried.
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
+				
+				    		
 				
 				    		
 				
@@ -2723,70 +2738,5 @@
 				
 				    			    	    	    
 	
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	    
-	<xsd:complexType name="UndeterminedType"/>
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	    
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	    
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	
-				
-				    			
-				
-				    			    	
-				
-				    			
-				
-				    			    	    	    
 	
 </xsd:schema>

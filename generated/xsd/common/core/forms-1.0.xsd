@@ -290,12 +290,8 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Kind" type="PublicDocuments:DocumentKindChoice" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation>
-						This property refers to the class DocumentKindChoice.
-				    </xsd:documentation>
-				</xsd:annotation>
+				
+			<xsd:element name="Kind" minOccurs="1" maxOccurs="1" type="DocumentKindChoiceType">
 			</xsd:element>
 			
 			
@@ -325,6 +321,87 @@
 	
 	
 	
+	
+				
+				    
+				
+				    <xsd:complexType name="DocumentKindChoiceType">
+				
+				    	<xsd:annotation>
+				
+				    	    <xsd:documentation>
+				
+				    		This class contains elements related to the choice between different types of documents.
+				
+				    				Stereotype xsdChoice
+				
+				    	    </xsd:documentation>
+				
+				    	</xsd:annotation>
+				
+				    	<xsd:choice>
+				
+				    			
+				
+				    		<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1" type="DocumentFromCourtOrTribunalChoiceType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1" type="AdministrativeDocumentChoiceType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="NotarialAct" minOccurs="1" maxOccurs="1" type="NotarialActType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1" type="OfficialCertificateOnDocumentSignedByPersonType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1" type="DocumentDrawnUpByDiplomaticOrConsularAgentType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xsd:choice>
+				
+				    </xsd:complexType>
+				
+				    
+				
+				    
+				
+				    
 	
 				
 				    
@@ -1256,7 +1333,9 @@
 				
 				    		
 				
-				    		<xsd:element name="MaritalStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
+				    		
+				
+				    		<xsd:element name="MaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
 				
@@ -1535,7 +1614,9 @@
 				
 				    		
 				
-				    		<xsd:element name="RegisteredPartnershipStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
+				    		
+				
+				    		<xsd:element name="RegisteredPartnershipStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
 				
 				    		
 				

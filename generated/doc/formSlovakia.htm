@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-05-02">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-05-03">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -179,11 +179,11 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia">formSlovakia</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms">forms</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/finland">formFinland</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/france">formFrance</a>;</li>
+						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia">formSlovakia</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/france">formFrance</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
@@ -211,77 +211,88 @@
 										<td>This property contains contains the Street PO Box details of the address.
 							</td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Place</td>
 										<td>This property contains the location specification of the address.</td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Country</td>
 										<td>This property contains the name of the country.</td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>PostalCode</td>
 										<td>This property contains the postal code of the address</td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>DomicilePartOfTheMunicipality</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Place
+										<td>
+							pdc:Place
 							</td>
 									</tr>
 									<tr>
 										<td>DomicileBuildingNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>DomicileFlatNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>DomicileDistrict</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>ResidencePartOfTheMunicipality</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Place
+										<td>
+							pdc:Place
 							</td>
 									</tr>
 									<tr>
 										<td>ResidenceBuildingNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>ResidenceFlatNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 								</tbody>
@@ -320,56 +331,64 @@
 										<td>Surname</td>
 										<td>This property contains the person's surname.</td>
 										<td>1..*</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>Forename</td>
 										<td>This property contains the forename (first name or given name) of the person.</td>
 										<td>1..*</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>DateOfBirth</td>
 										<td>This property contains the date of birth of the person.</td>
 										<td>1..1</td>
-										<td>udt:DateType
+										<td>
+										udt:DateType
 										</td>
 									</tr>
 									<tr>
 										<td>PlaceOfBirth</td>
 										<td>This property refers to the class Place.</td>
 										<td>1..1</td>
-										<td>pdc:Place
+										<td>
+										pdc:Place
 										</td>
 									</tr>
 									<tr>
 										<td>CountryOfBirth</td>
 										<td>This property refers to the class Country.</td>
 										<td>1..1</td>
-										<td>pdc:Country
+										<td>
+										pdc:Country
 										</td>
 									</tr>
 									<tr>
 										<td>Sex</td>
 										<td>This property refers to the class Sex.</td>
 										<td>1..1</td>
-										<td>pdc:Sex
+										<td>
+										pdc:Sex
 										</td>
 									</tr>
 									<tr>
 										<td>Father</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 									<tr>
 										<td>Mother</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 								</tbody>
@@ -392,14 +411,16 @@
 										<td>NaturalPerson</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:Person
+										<td>
+										formSlovakia:Person
 										</td>
 									</tr>
 									<tr>
 										<td>LegalPerson</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Authority
+										<td>
+										pdc:Authority
 										</td>
 									</tr>
 								</tbody>
@@ -438,7 +459,7 @@
 										<td>Kind</td>
 										<td>This property refers to the class DocumentKindChoice.</td>
 										<td>1..1</td>
-										<td>PublicDocuments:DocumentKindChoice
+										<td>
 										</td>
 									</tr>
 									<tr>
@@ -446,91 +467,104 @@
 										<td>This property contains the issue date of the document.
 							</td>
 										<td>1..1</td>
-										<td>udt:DateType
+										<td>
+							udt:DateType
 							</td>
 									</tr>
 									<tr>
 										<td>ReferenceNumber</td>
 										<td>This property contains the reference number of the document.</td>
 										<td>1..1</td>
-										<td>forms:ReferenceNumber
+										<td>
+							forms:ReferenceNumber
 							</td>
 									</tr>
 									<tr>
 										<td>IssuePlace</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Place
+										<td>
+							pdc:Place
 							</td>
 									</tr>
 									<tr>
 										<td>DocumentRegistrar</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+							pdc:Person
 							</td>
 									</tr>
 									<tr>
 										<td>DocumentSignature</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Volume</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>DocumentYear</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>DocumentPage</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Stamp</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>OfficialSignature</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>IssueTime</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TimeType
+										<td>
+							udt:TimeType
 							</td>
 									</tr>
 									<tr>
 										<td>ApplicationNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>NumberOfPages</td>
 										<td></td>
 										<td>1..1</td>
-										<td>xsd:number
+										<td>
+							xsd:number
 							</td>
 									</tr>
 								</tbody>
@@ -553,77 +587,88 @@
 										<td>DocumentFromCourtOrTribunal</td>
 										<td>This property refers to the class DocumentFromCourtOrTribunalChoice. </td>
 										<td>1..1</td>
-										<td>forms:DocumentFromCourtOrTribunalChoice
+										<td>
+										forms:DocumentFromCourtOrTribunalChoice
 										</td>
 									</tr>
 									<tr>
 										<td>AdministrativeDocument</td>
 										<td>This property refers to the class AdministrativeDocumentChoice. </td>
 										<td>1..1</td>
-										<td>forms:AdministrativeDocumentChoice
+										<td>
+										forms:AdministrativeDocumentChoice
 										</td>
 									</tr>
 									<tr>
 										<td>NotarialAct</td>
 										<td>This property refers to the class NotarialAct. </td>
 										<td>1..1</td>
-										<td>forms:NotarialAct
+										<td>
+										forms:NotarialAct
 										</td>
 									</tr>
 									<tr>
 										<td>OfficialCertificateOnDocumentSignedByPerson</td>
 										<td>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </td>
 										<td>1..1</td>
-										<td>forms:OfficialCertificateOnDocumentSignedByPerson
+										<td>
+										forms:OfficialCertificateOnDocumentSignedByPerson
 										</td>
 									</tr>
 									<tr>
 										<td>DocumentDrawnUpByDiplomaticOrConsularAgent</td>
 										<td>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </td>
 										<td>1..1</td>
-										<td>forms:DocumentDrawnUpByDiplomaticOrConsularAgent
+										<td>
+										forms:DocumentDrawnUpByDiplomaticOrConsularAgent
 										</td>
 									</tr>
 									<tr>
 										<td>BirthCertificate</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:BirthCertificate
+										<td>
+										formSlovakia:BirthCertificate
 										</td>
 									</tr>
 									<tr>
 										<td>ExtractFromBirthsRegister</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:ExractFromBirthsRegister
+										<td>
+										formSlovakia:ExractFromBirthsRegister
 										</td>
 									</tr>
 									<tr>
 										<td>DeathCertificate</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:DeathCertificate
+										<td>
+										formSlovakia:DeathCertificate
 										</td>
 									</tr>
 									<tr>
 										<td>ExtractFromDeathsRegister</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:ExtractFromDeathsRegister
+										<td>
+										formSlovakia:ExtractFromDeathsRegister
 										</td>
 									</tr>
 									<tr>
 										<td>MarriageCertificate</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:MarriageCertificate
+										<td>
+										formSlovakia:MarriageCertificate
 										</td>
 									</tr>
 									<tr>
 										<td>ExtractFromMarriagesRegister</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:ExtractFromMarriagesRegister
+										<td>
+										formSlovakia:ExtractFromMarriagesRegister
 										</td>
 									</tr>
 								</tbody>
@@ -646,63 +691,72 @@
 										<td>ConcernedPerson</td>
 										<td>This property refers to the class BirthPerson.</td>
 										<td>1..1</td>
-										<td>pdc:BirthPerson
+										<td>
+										pdc:BirthPerson
 										</td>
 									</tr>
 									<tr>
 										<td>Domicile</td>
 										<td>This property refers to the class Address.</td>
 										<td>0..1</td>
-										<td>pdc:Address
+										<td>
+										pdc:Address
 										</td>
 									</tr>
 									<tr>
 										<td>Residence</td>
 										<td>This property refers to the class Address.</td>
 										<td>0..1</td>
-										<td>pdc:Address
+										<td>
+										pdc:Address
 										</td>
 									</tr>
 									<tr>
 										<td>RegistrationOfficeNotes</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>PermanentTemporaryStay</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:PermanentTemporaryStayChoice
+										<td>
+										formSlovakia:PermanentTemporaryStayChoice
 										</td>
 									</tr>
 									<tr>
 										<td>FromStay</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:PermanentTemporaryStayChoice
+										<td>
+										formSlovakia:PermanentTemporaryStayChoice
 										</td>
 									</tr>
 									<tr>
 										<td>ToStay</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:PermanentTemporaryStayChoice
+										<td>
+										formSlovakia:PermanentTemporaryStayChoice
 										</td>
 									</tr>
 									<tr>
 										<td>ConfirmationIssuedFor</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:ConfirmationIssuedForChoice
+										<td>
+										formSlovakia:ConfirmationIssuedForChoice
 										</td>
 									</tr>
 									<tr>
 										<td>ConfirmationOfficial</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Official
+										<td>
+										pdc:Official
 										</td>
 									</tr>
 								</tbody>
@@ -773,14 +827,16 @@
 										<td>BirthCertificate</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:BirthCertificate
+										<td>
+										formSlovakia:BirthCertificate
 										</td>
 									</tr>
 									<tr>
 										<td>RegisterOfBirths</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:RegisterOfBirths
+										<td>
+										formSlovakia:RegisterOfBirths
 										</td>
 									</tr>
 								</tbody>
@@ -803,14 +859,16 @@
 										<td>LegalPersonName</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>RegisteredOffice</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 								</tbody>
@@ -833,84 +891,96 @@
 										<td>SpouseA</td>
 										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
 										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson
+										<td>
+										pdc:MarriageOrRegisteredPartnershipPerson
 										</td>
 									</tr>
 									<tr>
 										<td>SpouseB</td>
 										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
 										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson
+										<td>
+										pdc:MarriageOrRegisteredPartnershipPerson
 										</td>
 									</tr>
 									<tr>
 										<td>DateOfMarriage</td>
 										<td>This property contains the date of the marriage.</td>
 										<td>1..1</td>
-										<td>udt:DateType
+										<td>
+										udt:DateType
 										</td>
 									</tr>
 									<tr>
 										<td>PlaceOfMarriage</td>
 										<td>This property refers to the class Place.</td>
 										<td>1..1</td>
-										<td>pdc:Place
+										<td>
+										pdc:Place
 										</td>
 									</tr>
 									<tr>
 										<td>GroomMaritalStatus</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:MaritalStatusChoice
+										<td>
+										pdc:MaritalStatusChoice
 										</td>
 									</tr>
 									<tr>
 										<td>GroomFather</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 									<tr>
 										<td>GroomMother</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 									<tr>
 										<td>BrideCivilStatus</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:MaritalStatusChoice
+										<td>
+										pdc:MaritalStatusChoice
 										</td>
 									</tr>
 									<tr>
 										<td>BrideFather</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 									<tr>
 										<td>BrideMother</td>
 										<td></td>
 										<td>1..1</td>
-										<td>pdc:Person
+										<td>
+										pdc:Person
 										</td>
 									</tr>
 									<tr>
 										<td>SurnameSpousesChildren</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>Notes</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 								</tbody>
@@ -949,21 +1019,24 @@
 										<td>Surname</td>
 										<td>cvb:PersonFamilyName</td>
 										<td>1..*</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>Forename</td>
 										<td>cvb:PersonGivenName</td>
 										<td>1..*</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>TitleOfficial</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 								</tbody>
@@ -1002,14 +1075,16 @@
 										<td>PermanentStay</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:PermanentStay
+										<td>
+										formSlovakia:PermanentStay
 										</td>
 									</tr>
 									<tr>
 										<td>TemporaryStay</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formSlovakia:TemporaryStay
+										<td>
+										formSlovakia:TemporaryStay
 										</td>
 									</tr>
 								</tbody>
@@ -1032,7 +1107,8 @@
 										<td>Surname</td>
 										<td>This property contains the person's last name.</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
@@ -1040,14 +1116,16 @@
 										<td>This property contains the person's last name at the time of his/her birth.
 							</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Forename</td>
 										<td>This property contains the person's first name or given name.</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
@@ -1055,56 +1133,64 @@
 										<td>This property contains the person's date of birth.
 							</td>
 										<td>0..1</td>
-										<td>udt:DateType
+										<td>
+							udt:DateType
 							</td>
 									</tr>
 									<tr>
 										<td>PlaceOfBirth</td>
 										<td>This property refers to the class Place.</td>
 										<td>0..1</td>
-										<td>pdc:Place
+										<td>
+							pdc:Place
 							</td>
 									</tr>
 									<tr>
 										<td>CountryOfBirth</td>
 										<td>This property refers to the class Country.</td>
 										<td>0..1</td>
-										<td>pdc:Country
+										<td>
+							pdc:Country
 							</td>
 									</tr>
 									<tr>
 										<td>DateOfDeath</td>
 										<td>This property contains the person's date of death (if applicable).</td>
 										<td>0..1</td>
-										<td>udt:DateType
+										<td>
+							udt:DateType
 							</td>
 									</tr>
 									<tr>
 										<td>PlaceOfDeath</td>
 										<td>This property refers to the class Place.</td>
 										<td>0..1</td>
-										<td>pdc:Place
+										<td>
+							pdc:Place
 							</td>
 									</tr>
 									<tr>
 										<td>CountryOfDeath</td>
 										<td>This property refers to the class Country.</td>
 										<td>0..1</td>
-										<td>pdc:Country
+										<td>
+							pdc:Country
 							</td>
 									</tr>
 									<tr>
 										<td>Sex</td>
 										<td>This property contains the sex of the person</td>
 										<td>0..1</td>
-										<td>pdc:Sex
+										<td>
+							pdc:Sex
 							</td>
 									</tr>
 									<tr>
 										<td>Nationality</td>
 										<td>This property refers to the class Nationality.</td>
 										<td>0..*</td>
-										<td>pdc:Nationality
+										<td>
+							pdc:Nationality
 							</td>
 									</tr>
 									<tr>
@@ -1112,28 +1198,32 @@
 										<td>This property refers to the class Address.
 							</td>
 										<td>0..1</td>
-										<td>pdc:Address
+										<td>
+							pdc:Address
 							</td>
 									</tr>
 									<tr>
 										<td>Residence</td>
 										<td>This property refers to the class Address</td>
 										<td>0..1</td>
-										<td>pdc:Address
+										<td>
+							pdc:Address
 							</td>
 									</tr>
 									<tr>
 										<td>SurnameBefore</td>
 										<td>This property contains the past surname of the person (if applicable)</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>SurnameAfter</td>
 										<td>This property contains the future surname of the person (if applicable)</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
@@ -1141,35 +1231,40 @@
 										<td>This property contains the previous surname of the person (if applicable)
 							</td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>PreviousForename</td>
 										<td>This property contains the previous forename (first name) of the person (if applicable). </td>
 										<td>0..*</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>PersonalIdentificationNumber</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Notes</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 									<tr>
 										<td>Title</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+							udt:TextType
 							</td>
 									</tr>
 								</tbody>
@@ -1192,21 +1287,24 @@
 										<td>Volume</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 									<tr>
 										<td>Year</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:DateType
+										<td>
+										udt:DateType
 										</td>
 									</tr>
 									<tr>
 										<td>Page</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType
+										<td>
+										udt:TextType
 										</td>
 									</tr>
 								</tbody>
