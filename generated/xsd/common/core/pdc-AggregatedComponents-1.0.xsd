@@ -32,6 +32,7 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
+	
 	<xsd:complexType name="AbsenceOfCriminalRecordPersonType">
 		<xsd:annotation>
 		    <xsd:documentation>
@@ -109,6 +110,9 @@
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
+	
+	
+	
 	
 	<xsd:complexType name="AddressType">
 		<xsd:annotation>
@@ -196,7 +200,12 @@
 	</xsd:complexType>
 	
 	
-	<xsd:complexType name="AuthorityType">
+	
+	
+				
+				    
+				
+				    <xsd:complexType name="AuthorityType">
 				
 				    	<xsd:annotation>
 				
@@ -245,7 +254,11 @@
 				    
 				
 				    
-	<xsd:complexType name="BirthPersonType">
+				
+				    
+	
+				
+				    <xsd:complexType name="BirthPersonType">
 				
 				    	<xsd:annotation>
 				
@@ -354,7 +367,13 @@
 				    </xsd:complexType>
 				
 				    
-	<xsd:complexType name="CanMarryType">
+				
+				    
+	
+				
+				    
+				
+				    <xsd:complexType name="CanMarryType">
 				
 				    	<xsd:annotation>
 				
@@ -479,7 +498,11 @@
 				    
 				
 				    
-	<xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
+				
+				    
+	
+				
+				    <xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 				
 				    	<xsd:annotation>
 				
@@ -594,7 +617,13 @@
 				    </xsd:complexType>
 				
 				    
-	<xsd:complexType name="CountryType">
+				
+				    
+	
+				
+				    
+				
+				    <xsd:complexType name="CountryType">
 				
 				    	<xsd:annotation>
 				
@@ -611,8 +640,6 @@
 				    	</xsd:annotation>
 				
 				    	<xsd:sequence>
-				
-				    			
 				
 				    		<xsd:element name="Code" type="ids5ISO316612A:ISOTwoLetterCountryCodeIdentifierContentType" minOccurs="0" maxOccurs="1" >
 				
@@ -663,7 +690,11 @@
 				    
 				
 				    
-	<xsd:complexType name="DeathPersonType">
+				
+				    
+	
+				
+				    <xsd:complexType name="DeathPersonType">
 				
 				    	<xsd:annotation>
 				
@@ -804,7 +835,11 @@
 				    </xsd:complexType>
 				
 				    
-	<xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
+				
+				    
+	
+				
+				    <xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
 				
 				    	<xsd:annotation>
 				
@@ -979,10 +1014,80 @@
 				    </xsd:complexType>
 				
 				    
-	
 				
 				    
-	<xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
+	
+				
+				    <xsd:complexType name="MaritalStatusChoiceType">
+				
+				    	<xsd:annotation>
+				
+				    	    <xsd:documentation>
+				
+				    		This class contains elements related to the choice of marital status.
+				
+				    				Stereotype xsdChoice
+				
+				    	    </xsd:documentation>
+				
+				    	</xsd:annotation>
+				
+				    	<xsd:choice>
+				
+				    		<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation>
+				
+				    					This property contains the date of marriage.
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    			
+				
+				    		<xsd:element name="Undetermined" minOccurs="1" maxOccurs="1" type="UndeterminedType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xsd:choice>
+				
+				    </xsd:complexType>
+				
+				    
+				
+				    
+				
+				    
+	
+				
+				    <xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
 				
 				    	<xsd:annotation>
 				
@@ -1119,7 +1224,13 @@
 				    </xsd:complexType>
 				
 				    
-	<xsd:complexType name="NationalityType">
+				
+				    
+	
+				
+				    
+				
+				    <xsd:complexType name="NationalityType">
 				
 				    	<xsd:annotation>
 				
@@ -1168,13 +1279,97 @@
 				    
 				
 				    
-	
+				
+				    
+	<xsd:complexType name="NeverMarriedType"/>
+				
+				    
+				
+				    
 				
 				    
 	
 				
+				    <xsd:complexType name="NotMarriedChoiceType">
+				
+				    	<xsd:annotation>
+				
+				    	    <xsd:documentation>
+				
+				    		This class contains elements related to the specific situation of not-married individuals.
+				
+				    				Stereotype xsdChoice
+				
+				    	    </xsd:documentation>
+				
+				    	</xsd:annotation>
+				
+				    	<xsd:choice>
+				
+				    			
+				
+				    		<xsd:element name="NeverMarried" minOccurs="1" maxOccurs="1" type="NeverMarriedType">
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation>
+				
+				    					This property contains the date of the divorce.
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation>
+				
+				    					This property contains the date of widowship.
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
+				
+				    		</xsd:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xsd:choice>
+				
+				    </xsd:complexType>
+				
 				    
-	<xsd:complexType name="OfficialType">
+				
+				    
+				
+				    
+	
+				
+				    <xsd:complexType name="OfficialType">
 				
 				    	<xsd:annotation>
 				
@@ -1243,7 +1438,13 @@
 				    </xsd:complexType>
 				
 				    
-	<xsd:complexType name="PersonType">
+				
+				    
+	
+				
+				    
+				
+				    <xsd:complexType name="PersonType">
 				
 				    	<xsd:annotation>
 				
@@ -2086,7 +2287,41 @@
 				    
 				
 				    
-	<xsd:complexType name="PlaceType">
+				
+				    
+	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    <xsd:complexType name="PlaceType">
 				
 				    			
 				
@@ -2471,8 +2706,72 @@
 				    			
 				
 				    			    	    	    
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    
 	
-	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    
+	<xsd:complexType name="UndeterminedType"/>
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	
+				
+				    			
+				
+				    			    	
+				
+				    			
+				
+				    			    	    	    
 				
 				    			
 				

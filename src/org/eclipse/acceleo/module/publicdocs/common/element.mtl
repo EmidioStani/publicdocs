@@ -65,12 +65,16 @@ useUnqualifiedDataTypes: Boolean = true}]
 	[debug('samePack:'+property.name)/]
 [generateElementWithLocalType(property, NDR)/]
 	[else]
+	[comment]
 	[debug('diffPack:'+property.name)/]
 		[if typePackName = 'pdc']
 [generateElementWithLocalType(property, NDR)/]
 		[else]
+	[/comment]
 [generateElement(property, typePackName.concat(':').concat(property.type.name))/]
+[comment]
 		[/if]
+[/comment]
 	[/if]
 [/if]
 [/template]
@@ -79,6 +83,7 @@ useUnqualifiedDataTypes: Boolean = true}]
 model: Model = property.getModel();
 type: Type = property.type;
 globalType: String = property.type.name.concat('Type');
+class : Class = property.owner.oclAsType(Class);
 }]
 [if type.oclAsType(Class).ownedAttribute->isEmpty() and model.hasDerivations(type.oclAsType(Class))]
 	[if(property.upper = -1)]
@@ -88,16 +93,23 @@ globalType: String = property.type.name.concat('Type');
 	[/if]
 [else]
 [if(property.upper = -1)]
-<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded">[else]
-<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]">
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="unbounded" type="[globalType/]>[else]
+<[getNS('xs')/]:element name="[property.name/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" type="[globalType/]">
 [/if]
+</[getNS('xs')/]:element>
+[comment]
 [if not  type.oclAsType(Class).ownedAttribute->isEmpty()]
+[debug('Class name:' + class.name)/]
+[generateComplextype_ground(property,NDR)/]
+
 <[getNS('xs')/]:complexType>
 	[if isChoice(type.oclAsType(Class))]
+	[debug('Element with choice local type:' + property.name)/]
 	<[getNS('xs')/]:choice>
 		[generateElements(type.oclAsType(Class), NDR)/]
 	</[getNS('xs')/]:choice>
 	[else]
+	[debug('Element with sequence local type:' + property.name)/]
 	<[getNS('xs')/]:sequence>
 		[generateElements(type.oclAsType(Class), NDR)/]
 	</[getNS('xs')/]:sequence>
@@ -106,8 +118,25 @@ globalType: String = property.type.name.concat('Type');
 [else]
 <[getNS('xs')/]:complexType/>
 [/if]
-</[getNS('xs')/]:element>
+[/comment]
 [/if]
+[/template]
+
+[template public generateComplextype_ground(property : Property, NDR : String)]
+[debug('Complex type:' + property.name)/]
+<[getNS('xs')/]:complexType name="[property.name/]Type">
+	[generateAnnotation(type.oclAsType(Class))/]
+[if isChoice(type.oclAsType(Class))]
+	<[getNS('xs')/]:choice>
+		[generateElements(type.oclAsType(Class), NDR)/]
+	</[getNS('xs')/]:choice>
+[else]
+	<[getNS('xs')/]:sequence>
+		[generateElements(type.oclAsType(Class), NDR)/]
+	</[getNS('xs')/]:sequence>
+	[generateAttributes(type.oclAsType(Class), NDR)/]
+[/if]
+</[getNS('xs')/]:complexType>
 [/template]
 
 [template public generateElementWithUnqualifiedDataTypes(property: Property, typeName: String)]

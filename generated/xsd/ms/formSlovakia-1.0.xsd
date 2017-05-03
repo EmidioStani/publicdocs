@@ -2,6 +2,7 @@
 <xsd:schema
 	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia"
 	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia"
+	xmlns:pdc="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"	
 	xmlns:forms="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
@@ -20,6 +21,8 @@
 		</xsd:documentation>
 	</xsd:annotation>
 	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
 	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
 			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
@@ -27,6 +30,7 @@
 	<!-- ===================================================== -->
 	
 		
+	
 	<xsd:complexType name="AddressType">
 		<xsd:annotation>
 		    <xsd:documentation>
@@ -364,6 +368,8 @@
 				    
 	
 				
+				    
+				
 				    <xsd:complexType name="ConfirmationIssuedForChoiceType">
 				
 				    	<xsd:annotation>
@@ -428,6 +434,8 @@
 				
 				    	
 				
+				    
+				
 				    <xsd:complexType name="DocumentInfoType">
 				
 				    	<xsd:annotation>
@@ -441,8 +449,6 @@
 				    	</xsd:annotation>
 				
 				    	<xsd:sequence>
-				
-				    			
 				
 				    		<xsd:element name="Kind" type="PublicDocuments:DocumentKindChoice" minOccurs="1" maxOccurs="1" >
 				
@@ -484,11 +490,7 @@
 				
 				    		
 				
-				    			
-				
-				    			
-				
-				    			    <xsd:element name="ReferenceNumber" type="forms:ReferenceNumber" minOccurs="1" maxOccurs="1"/>
+				    		<xsd:element name="ReferenceNumber" type="forms:ReferenceNumber" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -903,6 +905,10 @@
 				
 				    			
 				
+				    			    
+				
+				    			
+				
 				    			    <xsd:complexType name="DocumentKindChoiceType">
 				
 				    			
@@ -935,10 +941,6 @@
 				
 				    			
 				
-				    			    			
-				
-				    			
-				
 				    			    		<xsd:element name="DocumentFromCourtOrTribunal" type="forms:DocumentFromCourtOrTribunalChoice" minOccurs="1" maxOccurs="1"/>
 				
 				    			
@@ -948,10 +950,6 @@
 				    			
 				
 				    			    		
-				
-				    			
-				
-				    			    			
 				
 				    			
 				
@@ -967,10 +965,6 @@
 				
 				    			
 				
-				    			    			
-				
-				    			
-				
 				    			    		<xsd:element name="NotarialAct" type="forms:NotarialAct" minOccurs="1" maxOccurs="1"/>
 				
 				    			
@@ -983,10 +977,6 @@
 				
 				    			
 				
-				    			    			
-				
-				    			
-				
 				    			    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="forms:OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1"/>
 				
 				    			
@@ -996,10 +986,6 @@
 				    			
 				
 				    			    		
-				
-				    			
-				
-				    			    			
 				
 				    			
 				
@@ -1019,11 +1005,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="BirthCertificate" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="BirthCertificate" minOccurs="1" maxOccurs="1" type="BirthCertificateType">
 				
 				    			
 				
@@ -1043,11 +1025,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="ExtractFromBirthsRegister" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="ExtractFromBirthsRegister" minOccurs="1" maxOccurs="1" type="ExractFromBirthsRegisterType">
 				
 				    			
 				
@@ -1067,11 +1045,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="DeathCertificate" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="DeathCertificate" minOccurs="1" maxOccurs="1" type="DeathCertificateType">
 				
 				    			
 				
@@ -1091,11 +1065,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="ExtractFromDeathsRegister" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="ExtractFromDeathsRegister" minOccurs="1" maxOccurs="1" type="ExtractFromDeathsRegisterType">
 				
 				    			
 				
@@ -1115,11 +1085,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="MarriageCertificate" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="MarriageCertificate" minOccurs="1" maxOccurs="1" type="MarriageCertificateType">
 				
 				    			
 				
@@ -1139,11 +1105,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="ExtractFromMarriagesRegister" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="ExtractFromMarriagesRegister" minOccurs="1" maxOccurs="1" type="ExtractFromMarriagesRegisterType">
 				
 				    			
 				
@@ -1189,6 +1151,10 @@
 				    			
 				
 				    			    	
+				
+				    			
+				
+				    			    
 				
 				    			
 				
@@ -1300,75 +1266,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="PermanentTemporaryStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="PermanentStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="TemporaryStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
+				    			    		<xsd:element name="PermanentTemporaryStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
 				
 				    			
 				
@@ -1388,75 +1286,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="FromStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="PermanentStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="TemporaryStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
+				    			    		<xsd:element name="FromStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
 				
 				    			
 				
@@ -1476,75 +1306,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="ToStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="PermanentStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="TemporaryStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
+				    			    		<xsd:element name="ToStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
 				
 				    			
 				
@@ -1564,75 +1326,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="ConfirmationIssuedFor" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    				<xsd:element name="NaturalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    					<xsd:annotation>
-				
-				    			
-				
-				    			    					    <xsd:documentation>
-				
-				    			
-				
-				    			    							
-				
-				    			
-				
-				    			    					    </xsd:documentation>
-				
-				    			
-				
-				    			    					</xsd:annotation>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				<xsd:element name="LegalPerson" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
+				    			    		<xsd:element name="ConfirmationIssuedFor" minOccurs="1" maxOccurs="1" type="ConfirmationIssuedForChoiceType">
 				
 				    			
 				
@@ -1732,6 +1426,10 @@
 				
 				    			
 				
+				    			    
+				
+				    			
+				
 				    			    <xsd:complexType name="ExtractFromTheCivilStatusRegisterType">
 				
 				    			
@@ -1768,11 +1466,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="BirthCertificate" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="BirthCertificate" minOccurs="1" maxOccurs="1" type="BirthCertificateType">
 				
 				    			
 				
@@ -1792,11 +1486,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="RegisterOfBirths" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="RegisterOfBirths" minOccurs="1" maxOccurs="1" type="RegisterOfBirthsType">
 				
 				    			
 				
@@ -1842,6 +1532,10 @@
 				    			
 				
 				    			    	
+				
+				    			
+				
+				    			    
 				
 				    			
 				
@@ -1990,6 +1684,10 @@
 				
 				    			
 				
+				    			    
+				
+				    			
+				
 				    			    <xsd:complexType name="MarriageType">
 				
 				    			
@@ -2094,243 +1792,7 @@
 				
 				    			
 				
-				    			    			
-				
-				    			
-				
-				    			    		<xsd:element name="GroomMaritalStatus" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    				<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    					<xsd:annotation>
-				
-				    			
-				
-				    			    					    <xsd:documentation>
-				
-				    			
-				
-				    			    							This property contains the date of marriage.
-				
-				    			
-				
-				    			    					    </xsd:documentation>
-				
-				    			
-				
-				    			    					</xsd:annotation>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType>
-				
-				    			
-				
-				    			    					<xsd:choice>
-				
-				    			
-				
-				    			    							
-				
-				    			
-				
-				    			    						<xsd:element name="NeverMarried" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    						<xsd:complexType/>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    							<xsd:annotation>
-				
-				    			
-				
-				    			    							    <xsd:documentation>
-				
-				    			
-				
-				    			    									This property contains the date of the divorce.
-				
-				    			
-				
-				    			    							    </xsd:documentation>
-				
-				    			
-				
-				    			    							</xsd:annotation>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    							<xsd:annotation>
-				
-				    			
-				
-				    			    							    <xsd:documentation>
-				
-				    			
-				
-				    			    									This property contains the date of widowship.
-				
-				    			
-				
-				    			    							    </xsd:documentation>
-				
-				    			
-				
-				    			    							</xsd:annotation>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    					</xsd:choice>
-				
-				    			
-				
-				    			    				</xsd:complexType>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="Undetermined" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
-				
-				    			
-				
-				    			    		</xsd:element>
+				    			    		<xsd:element name="GroomMaritalStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -2366,243 +1828,7 @@
 				
 				    			
 				
-				    			    			
-				
-				    			
-				
-				    			    		<xsd:element name="BrideCivilStatus" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType>
-				
-				    			
-				
-				    			    			<xsd:choice>
-				
-				    			
-				
-				    			    				<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    					<xsd:annotation>
-				
-				    			
-				
-				    			    					    <xsd:documentation>
-				
-				    			
-				
-				    			    							This property contains the date of marriage.
-				
-				    			
-				
-				    			    					    </xsd:documentation>
-				
-				    			
-				
-				    			    					</xsd:annotation>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType>
-				
-				    			
-				
-				    			    					<xsd:choice>
-				
-				    			
-				
-				    			    							
-				
-				    			
-				
-				    			    						<xsd:element name="NeverMarried" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    						<xsd:complexType/>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    							<xsd:annotation>
-				
-				    			
-				
-				    			    							    <xsd:documentation>
-				
-				    			
-				
-				    			    									This property contains the date of the divorce.
-				
-				    			
-				
-				    			    							    </xsd:documentation>
-				
-				    			
-				
-				    			    							</xsd:annotation>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			
-				
-				    			    							<xsd:annotation>
-				
-				    			
-				
-				    			    							    <xsd:documentation>
-				
-				    			
-				
-				    			    									This property contains the date of widowship.
-				
-				    			
-				
-				    			    							    </xsd:documentation>
-				
-				    			
-				
-				    			    							</xsd:annotation>
-				
-				    			
-				
-				    			    						</xsd:element>
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    						
-				
-				    			
-				
-				    			    					</xsd:choice>
-				
-				    			
-				
-				    			    				</xsd:complexType>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    					
-				
-				    			
-				
-				    			    				<xsd:element name="Undetermined" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    				<xsd:complexType/>
-				
-				    			
-				
-				    			    				</xsd:element>
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    				
-				
-				    			
-				
-				    			    			</xsd:choice>
-				
-				    			
-				
-				    			    		</xsd:complexType>
-				
-				    			
-				
-				    			    		</xsd:element>
+				    			    		<xsd:element name="BrideCivilStatus" type="pdc:MaritalStatusChoice" minOccurs="1" maxOccurs="1"/>
 				
 				    			
 				
@@ -2974,6 +2200,10 @@
 				
 				    			
 				
+				    			    
+				
+				    			
+				
 				    			    <xsd:complexType name="PermanentTemporaryStayChoiceType">
 				
 				    			
@@ -3010,11 +2240,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="PermanentStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="PermanentStay" minOccurs="1" maxOccurs="1" type="PermanentStayType">
 				
 				    			
 				
@@ -3034,11 +2260,7 @@
 				
 				    			
 				
-				    			    		<xsd:element name="TemporaryStay" minOccurs="1" maxOccurs="1">
-				
-				    			
-				
-				    			    		<xsd:complexType/>
+				    			    		<xsd:element name="TemporaryStay" minOccurs="1" maxOccurs="1" type="TemporaryStayType">
 				
 				    			
 				
@@ -3084,6 +2306,10 @@
 				    			
 				
 				    			    	
+				
+				    			
+				
+				    			    
 				
 				    			
 				

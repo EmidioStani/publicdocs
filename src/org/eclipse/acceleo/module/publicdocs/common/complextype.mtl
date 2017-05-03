@@ -7,6 +7,7 @@
 
 [template public generateComplextype_ground(class : Class, NDR : String)]
 [if not  class.ownedAttribute->isEmpty()]
+[debug('Complex type:' + class.name)/]
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [if isChoice(class)]
@@ -21,7 +22,7 @@
 [/if]
 </[getNS('xs')/]:complexType>
 [else]
-<[getNS('xs')/]:complexType/>
+<[getNS('xs')/]:complexType name="[class.name/]Type"/>
 [/if]
 [/template]
 
