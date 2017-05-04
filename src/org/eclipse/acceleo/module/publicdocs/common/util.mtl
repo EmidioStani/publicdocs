@@ -106,6 +106,9 @@
 [query public getNS (name: String) : String
 = getConf('ns_'.concat(name))/]
 
+[query public getLang (name: String) : String
+= getConf('language_'.concat(name))/]
+
 [template public debug(text : String)]
 [file ('stdout', false)]DEBUG:[text/]
 [/file]

@@ -7,7 +7,7 @@
 
 [template public generateComplextype_ground(class : Class, NDR : String)]
 [if not  class.ownedAttribute->isEmpty()]
-[debug('Complex type:' + class.name)/]
+[comment][debug('Complex type:' + class.name)/][/comment]
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [if isChoice(class)]
@@ -15,7 +15,7 @@
 		[generateElements(class, NDR)/]
 	</[getNS('xs')/]:choice>
 [else]
-	<[getNS('xs')/]:sequence>
+	<[getNS('xs')/]:sequence> 
 		[generateElements(class, NDR)/]
 	</[getNS('xs')/]:sequence>
 	[generateAttributes(class, NDR)/]
@@ -37,15 +37,14 @@
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
 	<[getNS('xs')/]:complexContent>
-		[if class.belongSamePackage(base.oclAsType(Class))]
-			<[getNS('xs')/]:restriction base="[base.name/]Type">
-			[else]
-			[debug('Different:'+class.name+'-'+base.name)/]
-			<[getNS('xs')/]:restriction base="[getFQDN(base.oclAsType(Class))/]Type">
-		[/if]
-[/for]
-	[if not  class.ownedAttribute->isEmpty()]
-		[if isChoice(class)]
+[if class.belongSamePackage(base.oclAsType(Class))]
+		<[getNS('xs')/]:restriction base="[base.name/]Type">
+[else]
+[comment][debug('Different:'+class.name+'-'+base.name)/][/comment]
+		<[getNS('xs')/]:restriction base="[getFQDN(base.oclAsType(Class))/]Type">
+[/if][/for]
+[if not  class.ownedAttribute->isEmpty()]
+[if isChoice(class)]
 			<[getNS('xs')/]:choice>
 				[generateElements(class, NDR)/]
 			</[getNS('xs')/]:choice>
@@ -53,13 +52,13 @@
 			<[getNS('xs')/]:sequence>
 				[generateElements(class, NDR)/]
 			</[getNS('xs')/]:sequence>
-		[/if]
-	[/if]
+[/if][/if]
 [for (base: Classifier | class.general)]
 		</[getNS('xs')/]:restriction>
 	</[getNS('xs')/]:complexContent>
 [/for]
 </[getNS('xs')/]:complexType>
+
 [/template]
 
 [template public generateComplextype_extension_complexcontent(class : Class, NDR : String)]
@@ -67,24 +66,22 @@
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
 	<[getNS('xs')/]:complexContent>
-		[if class.belongSamePackage(base.oclAsType(Class))]
-			<[getNS('xs')/]:extension base="[base.name/]Type">
-			[else]
-			[debug('Different:'+class.name+'-'+base.name)/]
-			<[getNS('xs')/]:extension base="[getFQDN(base.oclAsType(Class))/]Type">
-		[/if]
-[/for]
-	[if not  class.ownedAttribute->isEmpty()]
-		[if isChoice(class)]
+[if class.belongSamePackage(base.oclAsType(Class))]
+		<[getNS('xs')/]:extension base="[base.name/]Type">
+[else]
+[comment][debug('Different:'+class.name+'-'+base.name)/][/comment]
+		<[getNS('xs')/]:extension base="[getFQDN(base.oclAsType(Class))/]Type">
+		[/if][/for]
+[if not  class.ownedAttribute->isEmpty()]
+[if isChoice(class)]
 			<[getNS('xs')/]:choice>
 				[generateElements(class, NDR)/]
 			</[getNS('xs')/]:choice>
-		[else]
+[else]
 			<[getNS('xs')/]:sequence>
 				[generateElements(class, NDR)/]
 			</[getNS('xs')/]:sequence>
-		[/if]
-	[/if]
+[/if][/if]
 [for (base: Classifier | class.general)]
 		</[getNS('xs')/]:extension>
 	</[getNS('xs')/]:complexContent>

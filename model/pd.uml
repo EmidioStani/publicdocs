@@ -199,6 +199,7 @@
             <body>This property contains the sex of the person</body>
           </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3uIOIJR1EeaPKuyhkF_CdQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EpMi8DChEeee6do-V3huoQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_JcV8UJR2EeaPKuyhkF_CdQ" name="Nationality" type="_Dle2cK8sEeavbt_KlNQYCw">
           <ownedComment xmi:type="uml:Comment" xmi:id="_cCAjsN8kEeaVhrycqBWd1w">
@@ -743,33 +744,12 @@
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_O31iuZPcEeaaQdure8LlEA" name="Sex">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_zYjEwOFzEear-8wQOKPlcA">
-          <body>This class contains elements related to the sex of a person.</body>
-        </ownedComment>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31iupPcEeaaQdure8LlEA" name="female">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_AMApAN8rEeaVhrycqBWd1w">
-            <body>This property contains the female gender specification.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31iu5PcEeaaQdure8LlEA" name="male">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_CxUeYN8rEeaVhrycqBWd1w">
-            <body>This property contains the male gender specification.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31ivJPcEeaaQdure8LlEA" name="undetermined">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_FG5OoN8rEeaVhrycqBWd1w">
-            <body>This property contains the undetermined gender specification.</body>
-          </ownedComment>
-        </ownedLiteral>
-      </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_O3_TvpPcEeaaQdure8LlEA" name="Person" visibility="public" client="_O31ioJPcEeaaQdure8LlEA" supplier="_O3_TopPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_gHzQwJPrEea6tvZO1hAMlQ" name="Surname" visibility="public" client="_O31ioZPcEeaaQdure8LlEA" supplier="_O3_To5PcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_v_2FMJVkEeaY9sGFeWipFw" name="Forename" visibility="public" client="_O31io5PcEeaaQdure8LlEA" supplier="_O3_TppPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_WhF2EJVoEeaY9sGFeWipFw" name="SurnameAtBirth" visibility="public" client="_mbovcJRxEeaPKuyhkF_CdQ" supplier="_S-Rs8JRzEeaPKuyhkF_CdQ"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_1A8_4JVqEeaY9sGFeWipFw" name="DateOfBirth" visibility="public" client="_O31ipZPcEeaaQdure8LlEA" supplier="_O3_TqZPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_W7cIYJVrEeaY9sGFeWipFw" name="PlaceOfBirth" visibility="public" client="_O31ip5PcEeaaQdure8LlEA" supplier="_O3_TrJPcEeaaQdure8LlEA"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_eCbjwJVsEeaY9sGFeWipFw" name="Sex" visibility="public" client="_O31ir5PcEeaaQdure8LlEA" supplier="_O3_TupPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_4K0o8JVsEeaY9sGFeWipFw" name="DateOfDeath" visibility="public" client="_O31iqZPcEeaaQdure8LlEA" supplier="_O3_TsZPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_TR15kJVtEeaY9sGFeWipFw" name="PlaceOfDeath" visibility="public" client="_O31irJPcEeaaQdure8LlEA" supplier="_O3_TtJPcEeaaQdure8LlEA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_wx2a0JVtEeaY9sGFeWipFw" name="Nationality" visibility="public" client="_JcV8UJR2EeaPKuyhkF_CdQ" supplier="_0MSpoJR2EeaPKuyhkF_CdQ"/>
@@ -793,7 +773,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_iECkMJUNEeaY9sGFeWipFw" name="xsd" URI="">
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O31is5PcEeaaQdure8LlEA" name="string"/>
-      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O31itJPcEeaaQdure8LlEA" name="number"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O31itJPcEeaaQdure8LlEA" name="integer"/>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O31itZPcEeaaQdure8LlEA" name="boolean"/>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_O31ispPcEeaaQdure8LlEA" name="date"/>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_PIGIQLCQEeavbt_KlNQYCw" name="anyURI"/>
@@ -1898,7 +1878,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_6CNtgAP7EeeuD5tlaeLiNg" name="ids5ISO316612A" URI="">
-      <packagedElement xmi:type="uml:Class" xmi:id="_6CNtgQP7EeeuD5tlaeLiNg" name="ISOTwoletterCountryCodeIdentifierContentType"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6CNtgQP7EeeuD5tlaeLiNg" name="ISOTwoletterCountryCodeIdentifierContent"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_SKGGIBB2EeeOZJtJre35Ig" name="formFrance" URI="http://urn:ec:ejustice:publicdocuments/forms">
       <packagedElement xmi:type="uml:Class" xmi:id="_rh18EBB3EeeOZJtJre35Ig" name="DocumentInfo">
@@ -5042,6 +5022,28 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C5TqgitWEee8qptDsvpEkQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_MT7xwCtWEee8qptDsvpEkQ" name="PassportNumber" type="_WRZz4LJqEeaGvYnz3ewAEA"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_S7ImQDCbEeee6do-V3huoQ" name="cls" URI="">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_O31iuZPcEeaaQdure8LlEA" name="Sex">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zYjEwOFzEear-8wQOKPlcA">
+          <body>This class contains elements related to the sex of a person.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31iupPcEeaaQdure8LlEA" name="female">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_AMApAN8rEeaVhrycqBWd1w">
+            <body>This property contains the female gender specification.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31iu5PcEeaaQdure8LlEA" name="male">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CxUeYN8rEeaVhrycqBWd1w">
+            <body>This property contains the male gender specification.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O31ivJPcEeaaQdure8LlEA" name="undetermined">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FG5OoN8rEeaVhrycqBWd1w">
+            <body>This property contains the undetermined gender specification.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pL3jgLJOEeacavyzYL89Ug">

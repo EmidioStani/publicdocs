@@ -7,6 +7,7 @@
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
 	xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:cls="http://e-documents.semic.eu/publicdocuments/1.0/ns/codelist/sex"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -31,38 +32,32 @@
 			   schemaLocation="../../external//unece/ISO_ISOTwoletterCountryCode_SecondEdition2006.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/codelist/sex"
+			   schemaLocation="../../../xsd/common/codelist/cls-codelist-Sex-1.0.xsd"/>
 	<!-- ===================================================== -->
-	
 	<xsd:complexType name="AbsenceOfCriminalRecordPersonType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the absence of a criminal record for a person.
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-				<xsd:restriction base="PersonType">
+			<xsd:restriction base="PersonType">
 				<xsd:sequence>
-							
 					<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 						<xsd:annotation>
 						    <xsd:documentation>
 								This property contains the surname (i.e. last name or family name) of the person.
 						    </xsd:documentation>
 						</xsd:annotation>
-					</xsd:element>
-					
-					
-							
+					</xsd:element>	
 					<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 						<xsd:annotation>
 						    <xsd:documentation>
 								This property contains the forename (i.e. the first name or given name) of the person. 
 						    </xsd:documentation>
 						</xsd:annotation>
-					</xsd:element>
-					
-					
-							
+					</xsd:element>	
 					<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation>
@@ -70,60 +65,44 @@
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					
-					
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					
-					
 					<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					
-					
-							
-					<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
-					
-					
+					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation>
+								This property refers to the class Sex.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-					
-					
 					<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 						    <xsd:documentation>
 								This property contains the previous surname(s) of the person.
 						    </xsd:documentation>
 						</xsd:annotation>
-					</xsd:element>
-					
-					
-					
+					</xsd:element>	
 					<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 						    <xsd:documentation>
 								This property contains the previous forename(s) of the person.
 						    </xsd:documentation>
 						</xsd:annotation>
-					</xsd:element>
-					
-					
-					
+					</xsd:element>	
 					
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
-	
-	
-	
 	<xsd:complexType name="AddressType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to an address.
 					<!-- Dependency Address->Address -->
 					Stereotype cvABIE
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-					
+		<xsd:sequence> 
 			<xsd:element name="StreetPOBox" type="cvb:AddressThoroughfareType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -132,11 +111,7 @@
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			
-			
-					
-				
-				    <xsd:element name="Place" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
+			<xsd:element name="Place" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
 				
 				    	<xsd:annotation>
 				
@@ -149,12 +124,6 @@
 				    	</xsd:annotation>
 				
 				    </xsd:element>
-				
-				    
-				
-				    
-				
-				    		
 				
 				    <xsd:element name="Country" type="cvb:AddressAdminUnitLocationOneType" minOccurs="1" maxOccurs="1" >
 				
@@ -169,12 +138,6 @@
 				    	</xsd:annotation>
 				
 				    </xsd:element>
-				
-				    
-				
-				    
-				
-				    		
 				
 				    <xsd:element name="PostalCode" type="cvb:AddressPostNameType" minOccurs="1" maxOccurs="1" >
 				
@@ -191,25 +154,14 @@
 				    </xsd:element>
 				
 				    
-				
-				    
-				
-				    
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
-				
-				    
-				
-				    <xsd:complexType name="AuthorityType">
+	<xsd:complexType name="AuthorityType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the designation of an authority.
 				
@@ -221,9 +173,7 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
-				
-				    				
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Designation" type="cvb:LegalEntityLegalNameType" minOccurs="1" maxOccurs="1" >
 				
@@ -241,28 +191,17 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="BirthPersonType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the birth of a person.
 				
@@ -272,11 +211,9 @@
 				
 				    	<xsd:complexContent>
 				
-				    			<xsd:restriction base="PersonType">
+				    		<xsd:restriction base="PersonType">
 				
 				    			<xsd:sequence>
-				
-				    						
 				
 				    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -290,13 +227,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -310,13 +241,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 				
@@ -332,29 +257,23 @@
 				
 				    				</xsd:element>
 				
-				    				
-				
-				    				
-				
 				    				<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-				
-				    				
-				
-				    				
 				
 				    				<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    				
+				    				<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
 				
-				    				
+				    					<xsd:annotation>
 				
-				    						
+				    					    <xsd:documentation>
 				
-				    				<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+				    							This property refers to the class Sex.
 				
-				    				
+				    					    </xsd:documentation>
 				
-				    				
+				    					</xsd:annotation>
+				
+				    				</xsd:element>
 				
 				    				
 				
@@ -366,18 +285,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="CanMarryType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the capacity to marry of a person.
 				
@@ -385,7 +297,7 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
@@ -401,12 +313,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -420,12 +326,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
@@ -441,12 +341,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -460,12 +354,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
@@ -483,30 +371,17 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
 				
@@ -516,11 +391,9 @@
 				
 				    	<xsd:complexContent>
 				
-				    			<xsd:restriction base="PersonType">
+				    		<xsd:restriction base="PersonType">
 				
 				    			<xsd:sequence>
-				
-				    						
 				
 				    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -534,13 +407,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -554,13 +421,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 				
@@ -576,35 +437,25 @@
 				
 				    				</xsd:element>
 				
-				    				
-				
-				    				
-				
 				    				<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-				
-				    				
-				
-				    				
 				
 				    				<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    				
+				    				<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
 				
-				    				
+				    					<xsd:annotation>
 				
-				    						
+				    					    <xsd:documentation>
 				
-				    				<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+				    							This property refers to the class Sex.
 				
-				    				
+				    					    </xsd:documentation>
 				
-				    				
+				    					</xsd:annotation>
+				
+				    				</xsd:element>
 				
 				    				<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-				
-				    				
-				
-				    				
 				
 				    				
 				
@@ -616,18 +467,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="CountryType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to a country.
 				
@@ -639,11 +483,9 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
-				    		
-				
-				    		<xsd:element name="Code" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentTypeType" minOccurs="0" maxOccurs="1" >
+				    		<xsd:element name="Code" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType" minOccurs="0" maxOccurs="1" >
 				
 				    			<xsd:annotation>
 				
@@ -656,12 +498,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    				
 				
 				    		<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
 				
@@ -679,28 +515,17 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="DeathPersonType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the death of a person.
 				
@@ -710,11 +535,9 @@
 				
 				    	<xsd:complexContent>
 				
-				    			<xsd:restriction base="PersonType">
+				    		<xsd:restriction base="PersonType">
 				
 				    			<xsd:sequence>
-				
-				    						
 				
 				    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -728,13 +551,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 				
@@ -748,13 +565,7 @@
 				
 				    					</xsd:annotation>
 				
-				    				</xsd:element>
-				
-				    				
-				
-				    				
-				
-				    						
+				    				</xsd:element>	
 				
 				    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 				
@@ -770,23 +581,9 @@
 				
 				    				</xsd:element>
 				
-				    				
-				
-				    				
-				
 				    				<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    				
-				
-				    				
-				
 				    				<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-				
-				    				
-				
-				    				
-				
-				    						
 				
 				    				<xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
 				
@@ -802,29 +599,25 @@
 				
 				    				</xsd:element>
 				
-				    				
-				
-				    				
-				
 				    				<xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-				
-				    				
-				
-				    				
 				
 				    				<xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    				
+				    				<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
 				
-				    				
+				    					<xsd:annotation>
 				
-				    						
+				    					    <xsd:documentation>
 				
-				    				<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+				    							This property refers to the class Sex.
 				
-				    				
+				    					
 				
-				    				
+				    					    </xsd:documentation>
+				
+				    					</xsd:annotation>
+				
+				    				</xsd:element>
 				
 				    				
 				
@@ -835,1908 +628,2706 @@
 				    	</xsd:complexContent>
 				
 				    </xsd:complexType>
-				
-				    
-				
-				    
-	
 				
 				    <xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
 				
-				    	<xsd:annotation>
+				    					
 				
-				    	    <xsd:documentation>
+				    					    	<xsd:annotation>
 				
-				    		This class contains elements related to the marital or registered partnership status of a person.
+				    					
 				
-				    	    </xsd:documentation>
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    	</xsd:annotation>
+				    					
 				
-				    	<xsd:complexContent>
+				    					    		This class contains elements related to the marital or registered partnership status of a person.
 				
-				    			<xsd:restriction base="PersonType">
+				    					
 				
-				    			<xsd:sequence>
+				    					    	    </xsd:documentation>
 				
-				    						
+				    					
 				
-				    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+				    					    	</xsd:annotation>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    	<xsd:complexContent>
 				
-				    							This property contains the surname (i.e. the last name or family name) of the person.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    		<xsd:restriction base="PersonType">
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    			<xsd:sequence>
 				
-				    				
+				    					
 				
-				    				
+				    					    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    						
+				    					
 				
-				    				<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
+				    					    					<xsd:annotation>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    					    <xsd:documentation>
 				
-				    							This property contains the person's surname at the time of his/her birth.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    							This property contains the surname (i.e. the last name or family name) of the person.
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    					    </xsd:documentation>
 				
-				    				
+				    					
 				
-				    				
+				    					    					</xsd:annotation>
 				
-				    						
+				    					
 				
-				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
+				    					    				</xsd:element>	
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    				<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    							This property contains the person's forename (i.e. first name or given name).
+				    					
 				
-				    					    </xsd:documentation>
+				    					    					<xsd:annotation>
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    					    <xsd:documentation>
 				
-				    				
+				    					
 				
-				    				
+				    					    							This property contains the person's surname at the time of his/her birth.
 				
-				    						
+				    					
 				
-				    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+				    					    					    </xsd:documentation>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    					</xsd:annotation>
 				
-				    							This property contains the person's date of birth.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    				</xsd:element>	
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
 				
-				    				
+				    					
 				
-				    				
+				    					    					<xsd:annotation>
 				
-				    				<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+				    					
 				
-				    				
+				    					    					    <xsd:documentation>
 				
-				    				
+				    					
 				
-				    				<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+				    					    							This property contains the person's forename (i.e. first name or given name).
 				
-				    				
+				    					
 				
-				    				
+				    					    					    </xsd:documentation>
 				
-				    						
+				    					
 				
-				    				<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+				    					    					</xsd:annotation>
 				
-				    				
+				    					
 				
-				    				
+				    					    				</xsd:element>	
 				
-				    				<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+				    					
 				
-				    				
+				    					    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 				
-				    				
+				    					
 				
-				    				<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    					<xsd:annotation>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    					    <xsd:documentation>
 				
-				    							This property contains the previous surname of the person.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    							This property contains the person's date of birth.
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    					    </xsd:documentation>
 				
-				    				
+				    					
 				
-				    				
+				    					    					</xsd:annotation>
 				
-				    				
+				    					
 				
-				    				<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    				</xsd:element>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    				<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    							This property contains the future surname of the person.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    				<xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    				<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
 				
-				    				
+				    					
 				
-				    				
+				    					    					<xsd:annotation>
 				
-				    				
+				    					
 				
-				    				
+				    					    					    <xsd:documentation>
 				
-				    			</xsd:sequence>
+				    					
 				
-				    		</xsd:restriction>
+				    					    							This property refers to the class Sex.
 				
-				    	</xsd:complexContent>
+				    					
 				
-				    </xsd:complexType>
+				    					    					    </xsd:documentation>
 				
-				    
+				    					
 				
-				    
-	
+				    					    					</xsd:annotation>
 				
-				    <xsd:complexType name="MaritalStatusChoiceType">
+				    					
 				
-				    	<xsd:annotation>
+				    					    				</xsd:element>
 				
-				    	    <xsd:documentation>
+				    					
 				
-				    		This class contains elements related to the choice of marital status.
+				    					    				<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
 				
-				    				Stereotype xsdChoice
+				    					
 				
-				    	    </xsd:documentation>
+				    					    				<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    	</xsd:annotation>
+				    					
 				
-				    	<xsd:choice>
+				    					    					<xsd:annotation>
 				
-				    		<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    					
 				
-				    			<xsd:annotation>
+				    					    					    <xsd:documentation>
 				
-				    			    <xsd:documentation>
+				    					
 				
-				    					This property contains the date of marriage.
+				    					    							This property contains the previous surname of the person.
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    					    </xsd:documentation>
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    					</xsd:annotation>
 				
-				    		
+				    					
 				
-				    		
+				    					    				</xsd:element>	
 				
-				    			
+				    					
 				
-				    		<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+				    					    				<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    					<xsd:annotation>
 				
-				    		
+				    					
 				
-				    		<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    					    					    <xsd:documentation>
 				
-				    			<xsd:annotation>
+				    					
 				
-				    			    <xsd:documentation>
+				    					    							This property contains the future surname of the person.
 				
-				    					This property refers to the class Undetermined.
+				    					
 				
-				    			    </xsd:documentation>
+				    					    					    </xsd:documentation>
 				
-				    			</xsd:annotation>
+				    					
 				
-				    		</xsd:element>
+				    					    					</xsd:annotation>
 				
-				    		
+				    					
 				
-				    		
+				    					    				</xsd:element>	
 				
-				    		
+				    					
 				
-				    		
+				    					    				
 				
-				    	</xsd:choice>
+				    					
 				
-				    </xsd:complexType>
+				    					    			</xsd:sequence>
 				
-				    
+				    					
 				
-				    
+				    					    		</xsd:restriction>
 				
-				    
-	
+				    					
 				
-				    <xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
+				    					    	</xsd:complexContent>
 				
-				    	<xsd:annotation>
+				    					
 				
-				    	    <xsd:documentation>
+				    					    </xsd:complexType>
 				
-				    		This class contains elements related to the marriage or registered partnership of a person.
+				    					
 				
-				    	    </xsd:documentation>
+				    					    <xsd:complexType name="MaritalStatusChoiceType">
 				
-				    	</xsd:annotation>
+				    					
 				
-				    	<xsd:complexContent>
+				    					    	<xsd:annotation>
 				
-				    			<xsd:restriction base="PersonType">
+				    					
 				
-				    			<xsd:sequence>
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    						
+				    					
 				
-				    				<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
+				    					    		This class contains elements related to the choice of marital status.
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    				Stereotype xsdChoice
 				
-				    							This property contains the surname of the person at the time of his/her birth.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    	    </xsd:documentation>
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    	</xsd:annotation>
 				
-				    				
+				    					
 				
-				    				
+				    					    	<xsd:choice>
 				
-				    						
+				    					
 				
-				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+				    					    		<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    			<xsd:annotation>
 				
-				    							This property contains the forename (i.e. the first name or given name) of the person.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    			    <xsd:documentation>
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    					This property contains the date of marriage.
 				
-				    				
+				    					
 				
-				    				
+				    					    			    </xsd:documentation>
 				
-				    						
+				    					
 				
-				    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
+				    					    			</xsd:annotation>
 				
-				    					<xsd:annotation>
+				    					
 				
-				    					    <xsd:documentation>
+				    					    		</xsd:element>
 				
-				    							This property contains the date of birth of the person.
+				    					
 				
-				    					    </xsd:documentation>
+				    					    		<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
 				
-				    					</xsd:annotation>
+				    					
 				
-				    				</xsd:element>
+				    					    		</xsd:element>
 				
-				    				
+				    					
 				
-				    				
+				    					    		<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    						
+				    					
 				
-				    				<xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="1" maxOccurs="1"/>
+				    					    			<xsd:annotation>
 				
-				    				
+				    					
 				
-				    				
+				    					    			    <xsd:documentation>
 				
-				    				<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+				    					
 				
-				    					<xsd:annotation>
+				    					    					This property refers to the class Undetermined.
 				
-				    					    <xsd:documentation>
+				    					
 				
-				    							This property contains the previous surname(s) of the person.
+				    					    			    </xsd:documentation>
 				
-				    					    </xsd:documentation>
+				    					
 				
-				    					</xsd:annotation>
+				    					    			</xsd:annotation>
 				
-				    				</xsd:element>
+				    					
 				
-				    				
+				    					    		</xsd:element>
 				
-				    				
+				    					
 				
-				    				
+				    					    		
 				
-				    				<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+				    					
 				
-				    					<xsd:annotation>
+				    					    	</xsd:choice>
 				
-				    					    <xsd:documentation>
+				    					
 				
-				    							This property contains the future surname(s) of the person.
+				    					    </xsd:complexType>
 				
-				    					    </xsd:documentation>
+				    					
 				
-				    					</xsd:annotation>
+				    					    <xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
 				
-				    				</xsd:element>
+				    					
 				
-				    				
+				    					    	<xsd:annotation>
 				
-				    				
+				    					
 				
-				    				
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    				
+				    					
 				
-				    			</xsd:sequence>
+				    					    		This class contains elements related to the marriage or registered partnership of a person.
 				
-				    		</xsd:restriction>
+				    					
 				
-				    	</xsd:complexContent>
+				    					    	    </xsd:documentation>
 				
-				    </xsd:complexType>
+				    					
 				
-				    
+				    					    	</xsd:annotation>
 				
-				    
-	
+				    					
 				
-				    
+				    					    	<xsd:complexContent>
 				
-				    <xsd:complexType name="NationalityType">
+				    					
 				
-				    	<xsd:annotation>
+				    					    		<xsd:restriction base="PersonType">
 				
-				    	    <xsd:documentation>
+				    					
 				
-				    		This class contains elements related to a nationality.
+				    					    			<xsd:sequence>
 				
-				    				<!-- Dependency Nationality->Jurisdiction -->
+				    					
 				
-				    				Stereotype cvABIE
+				    					    				<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    	    </xsd:documentation>
+				    					
 				
-				    	</xsd:annotation>
+				    					    					<xsd:annotation>
 				
-				    	<xsd:sequence>
+				    					
 				
-				    				
+				    					    					    <xsd:documentation>
 				
-				    		<xsd:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
+				    					
 				
-				    			<xsd:annotation>
+				    					    							This property contains the surname of the person at the time of his/her birth.
 				
-				    			    <xsd:documentation>
+				    					
 				
-				    					This property contains the name of the nationality.
+				    					    					    </xsd:documentation>
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    					</xsd:annotation>
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    				</xsd:element>	
 				
-				    		
+				    					
 				
-				    		
+				    					    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    	</xsd:sequence>
+				    					
 				
-				    	
+				    					    					<xsd:annotation>
 				
-				    </xsd:complexType>
+				    					
 				
-				    
+				    					    					    <xsd:documentation>
 				
-				    
+				    					
 				
-				    
-	
+				    					    							This property contains the forename (i.e. the first name or given name) of the person.
 				
-				    <xsd:complexType name="NotMarriedChoiceType">
+				    					
 				
-				    	<xsd:annotation>
+				    					    					    </xsd:documentation>
 				
-				    	    <xsd:documentation>
+				    					
 				
-				    		This class contains elements related to the specific situation of not-married individuals.
+				    					    					</xsd:annotation>
 				
-				    				Stereotype xsdChoice
+				    					
 				
-				    	    </xsd:documentation>
+				    					    				</xsd:element>	
 				
-				    	</xsd:annotation>
+				    					
 				
-				    	<xsd:choice>
+				    					    				<xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="1" maxOccurs="1" >
 				
-				    		<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    					
 				
-				    			<xsd:annotation>
+				    					    					<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    					
 				
-				    					This property refers to the class NeverMarried.
+				    					    					    <xsd:documentation>
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    							This property contains the date of birth of the person.
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    					    </xsd:documentation>
 				
-				    		
+				    					
 				
-				    		
+				    					    					</xsd:annotation>
 				
-				    		<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    					
 				
-				    			<xsd:annotation>
+				    					    				</xsd:element>
 				
-				    			    <xsd:documentation>
+				    					
 				
-				    					This property contains the date of the divorce.
+				    					    				<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    					<xsd:annotation>
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    					    <xsd:documentation>
 				
-				    		
+				    					
 				
-				    		
+				    					    							This property refers to the class Sex.
 				
-				    		<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    					
 				
-				    			<xsd:annotation>
+				    					    					    </xsd:documentation>
 				
-				    			    <xsd:documentation>
+				    					
 				
-				    					This property contains the date of widowship.
+				    					    					</xsd:annotation>
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    				</xsd:element>
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    				<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				
-				    		
+				    					
 				
-				    		
+				    					    					<xsd:annotation>
 				
-				    		
+				    					
 				
-				    	</xsd:choice>
+				    					    					    <xsd:documentation>
 				
-				    </xsd:complexType>
+				    					
 				
-				    
+				    					    							This property contains the previous surname(s) of the person.
 				
-				    
+				    					
 				
-				    
-	
+				    					    					    </xsd:documentation>
 				
-				    <xsd:complexType name="OfficialType">
+				    					
 				
-				    	<xsd:annotation>
+				    					    					</xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    					
 				
-				    		
+				    					    				</xsd:element>	
 				
-				    	    </xsd:documentation>
+				    					
 				
-				    	</xsd:annotation>
+				    					    				<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				
-				    	<xsd:complexContent>
+				    					
 				
-				    			<xsd:restriction base="PersonType">
+				    					    					<xsd:annotation>
 				
-				    			<xsd:sequence>
+				    					
 				
-				    						
+				    					    					    <xsd:documentation>
 				
-				    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
+				    					
 				
-				    					<xsd:annotation>
+				    					    							This property contains the future surname(s) of the person.
 				
-				    					    <xsd:documentation>
+				    					
 				
-				    							cvb:PersonFamilyName
+				    					    					    </xsd:documentation>
 				
-				    					    </xsd:documentation>
+				    					
 				
-				    					</xsd:annotation>
+				    					    					</xsd:annotation>
 				
-				    				</xsd:element>
+				    					
 				
-				    				
+				    					    				</xsd:element>	
 				
-				    				
+				    					
 				
-				    						
+				    					    				
 				
-				    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
+				    					
 				
-				    					<xsd:annotation>
+				    					    			</xsd:sequence>
 				
-				    					    <xsd:documentation>
+				    					
 				
-				    							cvb:PersonGivenName
+				    					    		</xsd:restriction>
 				
-				    					    </xsd:documentation>
+				    					
 				
-				    					</xsd:annotation>
+				    					    	</xsd:complexContent>
 				
-				    				</xsd:element>
+				    					
 				
-				    				
+				    					    </xsd:complexType>
 				
-				    				
+				    					
 				
-				    				
+				    					    <xsd:complexType name="NationalityType">
 				
-				    			</xsd:sequence>
+				    					
 				
-				    		</xsd:restriction>
+				    					    	<xsd:annotation>
 				
-				    	</xsd:complexContent>
+				    					
 				
-				    </xsd:complexType>
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    
+				    					
 				
-				    
-	
+				    					    		This class contains elements related to a nationality.
 				
-				    
+				    					
 				
-				    <xsd:complexType name="PersonType">
+				    					    				<!-- Dependency Nationality->Jurisdiction -->
 				
-				    	<xsd:annotation>
+				    					
 				
-				    	    <xsd:documentation>
+				    					    				Stereotype cvABIE
 				
-				    		This class contains elements related to a person.
+				    					
 				
-				    				<!-- Dependency Person->Person -->
+				    					    	    </xsd:documentation>
 				
-				    				Stereotype cvABIE
+				    					
 				
-				    	    </xsd:documentation>
+				    					    	</xsd:annotation>
 				
-				    	</xsd:annotation>
+				    					
 				
-				    	<xsd:sequence>
+				    					    	<xsd:sequence> 
 				
-				    				
+				    					
 				
-				    		<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="0" maxOccurs="unbounded">
+				    					    		<xsd:element name="Name" type="cvb:JurisdictionNameType" minOccurs="1" maxOccurs="1" >
 				
-				    			<xsd:annotation>
+				    					
 				
-				    			    <xsd:documentation>
+				    					    			<xsd:annotation>
 				
-				    					This property contains the person's last name.
+				    					
 				
-				    			    </xsd:documentation>
+				    					    			    <xsd:documentation>
 				
-				    			</xsd:annotation>
+				    					
 				
-				    		</xsd:element>
+				    					    					This property contains the name of the nationality.
 				
-				    		
+				    					
 				
-				    		
+				    					    			    </xsd:documentation>
 				
-				    				
+				    					
 				
-				    		<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="0" maxOccurs="unbounded">
+				    					    			</xsd:annotation>
 				
-				    			<xsd:annotation>
+				    					
 				
-				    			    <xsd:documentation>
+				    					    		</xsd:element>
 				
-				    					This property contains the person's last name at the time of his/her birth.
+				    					
 				
-				    			
+				    					    		
 				
-				    			    </xsd:documentation>
+				    					
 				
-				    			</xsd:annotation>
+				    					    	</xsd:sequence>
 				
-				    		</xsd:element>
+				    					
 				
-				    		
+				    					    	
 				
-				    		
+				    					
 				
-				    				
+				    					    </xsd:complexType>
 				
-				    			
+				    					
 				
-				    			    <xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
+				    					    <xsd:complexType name="NotMarriedChoiceType">
 				
-				    			
+				    					
 				
-				    			    	<xsd:annotation>
+				    					    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    <xsd:documentation>
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    			
+				    					
 				
-				    			    			This property contains the person's first name or given name.
+				    					    		This class contains elements related to the specific situation of not-married individuals.
 				
-				    			
+				    					
 				
-				    			    	    </xsd:documentation>
+				    					    				Stereotype xsdChoice
 				
-				    			
+				    					
 				
-				    			    	</xsd:annotation>
+				    					    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    </xsd:element>
+				    					    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    
+				    					    	<xsd:choice>
 				
-				    			
+				    					
 				
-				    			    
+				    					    		<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    		
+				    					    			<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    <xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="0" maxOccurs="1" >
+				    					    			    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	<xsd:annotation>
+				    					    					This property refers to the class NeverMarried.
 				
-				    			
+				    					
 				
-				    			    	    <xsd:documentation>
+				    					    			    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    			This property contains the person's date of birth.
+				    					    			</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		</xsd:element>
 				
-				    			
+				    					
 				
-				    			    	    </xsd:documentation>
+				    					    		<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    	</xsd:annotation>
+				    					    			<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    </xsd:element>
+				    					    			    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    
+				    					    					This property contains the date of the divorce.
 				
-				    			
+				    					
 				
-				    			    
+				    					    			    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    <xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+				    					    			</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		</xsd:element>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    		<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					This property contains the date of widowship.
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+				    					    			    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    		</xsd:element>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    	</xsd:choice>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    </xsd:complexType>
 				
-				    			
+				    					
 				
-				    			    	    		
+				    					    <xsd:complexType name="OfficialType">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		
 				
-				    			
+				    					
 				
-				    			    	    	<xsd:annotation>
+				    					    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    <xsd:documentation>
+				    					    	<xsd:complexContent>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		<xsd:restriction base="PersonType">
 				
-				    			
+				    					
 				
-				    			    	    			This property contains the person's date of death (if applicable).
+				    					    			<xsd:sequence>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    				<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:documentation>
+				    					    					<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	</xsd:annotation>
+				    					    							cvb:PersonFamilyName
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    </xsd:element>
+				    					    					</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    				</xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    				<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="1" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    					    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    							cvb:PersonGivenName
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+				    					    					    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    				</xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    				
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			</xsd:sequence>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		</xsd:restriction>
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+				    					    	</xsd:complexContent>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    </xsd:complexType>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    <xsd:complexType name="PersonType">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    	    <xsd:documentation xml:lang = "en">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		This class contains elements related to a person.
 				
-				    			
+				    					
 				
-				    			    	    		
+				    					    				<!-- Dependency Person->Person -->
 				
-				    			
+				    					
 				
-				    			    	
+				    					    				Stereotype cvABIE
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="Sex" type="cvb:PersonGenderCodeType" minOccurs="0" maxOccurs="1"/>
+				    					    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    	<xsd:sequence> 
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		<xsd:element name="Surname" type="cvb:PersonFamilyNameType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+				    					    					This property contains the person's last name.
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		</xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    		<xsd:element name="SurnameAtBirth" type="cvb:PersonBirthNameType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
+				    					    			    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    					This property contains the person's last name at the time of his/her birth.
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    		</xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
+				    					    		<xsd:element name="Forename" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    			    			This property contains the person's first name or given name.
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	<xsd:annotation>
+				    					    			    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    <xsd:documentation>
+				    					    			    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    			This property contains the past surname of the person (if applicable)
+				    					    			    </xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:documentation>
+				    					    			    <xsd:element name="DateOfBirth" type="cvb:PersonBirthDateType" minOccurs="0" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	</xsd:annotation>
+				    					    			    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    </xsd:element>
+				    					    			    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    			This property contains the person's date of birth.
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    			    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	<xsd:annotation>
+				    					    			    </xsd:element>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    <xsd:documentation>
+				    					    			    <xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    			This property contains the future surname of the person (if applicable)
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:documentation>
+				    					    			    	    <xsd:element name="CountryOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	</xsd:annotation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    </xsd:element>
+				    					    			    	    <xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    			    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	<xsd:annotation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    <xsd:documentation>
+				    					    			    	    			This property contains the person's date of death (if applicable).
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    			This property contains the previous surname of the person (if applicable)
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:documentation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	</xsd:annotation>
+				    					    			    	    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    </xsd:element>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	    </xsd:element>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    
+				    					    			    	    <xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    <xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    <xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    	<xsd:annotation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    <xsd:element name="Sex" type="cls:SexType" minOccurs="0" maxOccurs="1" >
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    	    <xsd:documentation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    			This property contains the previous forename (first name) of the person (if applicable). 
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    	    </xsd:documentation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    			This property contains the sex of the person
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    	</xsd:annotation>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:element>
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    </xsd:element>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    <xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			    	    <xsd:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			    	
 				
-				    	</xsd:sequence>
+				    					
 				
-				    	
+				    					    			
 				
-				    </xsd:complexType>
+				    					
 				
-				    
+				    					    			    	    <xsd:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
 				
-				    
+				    					
 				
-				    
-	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    <xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    <xsd:complexType name="PlaceType">
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    	<xsd:annotation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    			This property contains the past surname of the person (if applicable)
 				
-				    			
+				    					
 				
-				    			    	    	    	    <xsd:documentation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    		This class contains elements related to a place.
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    				<!-- Dependency Place->Location -->
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    </xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    	    				Stereotype cvABIE
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    <xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    	    	    </xsd:documentation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    	</xsd:annotation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    	<xsd:sequence>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    			This property contains the future surname of the person (if applicable)
 				
-				    			
+				    					
 				
-				    			    	    	    				
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    		<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    			<xsd:annotation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    </xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    	    			    <xsd:documentation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    <xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    	    					This property contains the name of the place (geographic location).
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    			    </xsd:documentation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    			</xsd:annotation>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    			This property contains the previous surname of the person (if applicable)
 				
-				    			
+				    					
 				
-				    			    	    	    		</xsd:element>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	
 				
-				    			
+				    					
 				
-				    			    	    	    		
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    </xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    		
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	</xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    		
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    </xsd:element>	
 				
-				    			
+				    					
 				
-				    			    	    	    	</xsd:sequence>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    <xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
-				    			
+				    					
 				
-				    			    	    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	
 				
-				    			
+				    					
 				
-				    			    	    	    </xsd:complexType>
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    	<xsd:annotation>
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	
 				
-				    			
+				    					
 				
-				    			    	    	    
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	
 				
-				    			
+				    					
 				
-				    			    	    	
+				    					    			
 				
-				    			
+				    					
 				
-				    			    	
+				    					    			    	    	    	    <xsd:documentation>
 				
-				    			
+				    					
 				
-				    			    	    	    
-	
-	
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    			This property contains the previous forename (first name) of the person (if applicable). 
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	    </xsd:documentation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	</xsd:annotation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    </xsd:element>	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    
+				
+				    					
+				
+				    					    	</xsd:sequence>
+				
+				    					
+				
+				    					    	
+				
+				    					
+				
+				    					    </xsd:complexType>
+				
+				    					
+				
+				    					    <xsd:complexType name="PlaceType">
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	<xsd:annotation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	    <xsd:documentation xml:lang = "en">
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    		This class contains elements related to a place.
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    				<!-- Dependency Place->Location -->
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    				Stereotype cvABIE
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	    </xsd:documentation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	</xsd:annotation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	<xsd:sequence> 
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    		<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    			<xsd:annotation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    			    <xsd:documentation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    					This property contains the name of the place (geographic location).
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    			    </xsd:documentation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    			</xsd:annotation>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    		</xsd:element>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    		
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	</xsd:sequence>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    </xsd:complexType>
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	
+				
+				    					
+				
+				    					    			
+				
+				    					
+				
+				    					    			    	    	    
 </xsd:schema>

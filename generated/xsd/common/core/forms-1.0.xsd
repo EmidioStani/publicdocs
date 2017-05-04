@@ -28,18 +28,14 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<!-- ===================================================== -->
-	
-	
 	<xsd:complexType name="AbsenceOfCriminalRecordType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the absence of a criminal record of a person. 
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence> 
 			<xsd:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -47,14 +43,8 @@
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			
-			
-			
-				
 			<xsd:element name="IDTypeAndNo" minOccurs="1" maxOccurs="1" type="IDTypeAndNoType">
 			</xsd:element>
-			
-			
 			<xsd:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -63,44 +53,23 @@
 				</xsd:annotation>
 			</xsd:element>
 			
-			
-			
-			
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
-	
 	<xsd:complexType name="AdministrativeDocumentChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the choice between the different types of administrative documents. 
 					Stereotype xsdChoice
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-				
 			<xsd:element name="Certificate" minOccurs="1" maxOccurs="1" type="CertificateType">
 			</xsd:element>
-			
-			
-				
-			<xsd:element name="ExtractFromTheCivilStatusRegister" minOccurs="1" maxOccurs="1" type="ExtractFromTheCivilStatusRegisterType"/>
-			
-			
-				
-			<xsd:element name="ExtractFromThePopulationRegister" minOccurs="1" maxOccurs="1" type="ExtractFromThePopulationRegisterType">
+			<xsd:element name="ExtractFromTheCivilStatusRegister" minOccurs="1" maxOccurs="1" type="ExtractFromTheCivilStatusRegisterType"/><xsd:element name="ExtractFromThePopulationRegister" minOccurs="1" maxOccurs="1" type="ExtractFromThePopulationRegisterType">
 			</xsd:element>
-			
-			
-				
 			<xsd:element name="VerbatimCopyOfCivilStatusRecords" minOccurs="1" maxOccurs="1" type="VerbatimCopyOfCivilStatusRecordsType">
 			</xsd:element>
-			
-			
 			<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -109,162 +78,82 @@
 				</xsd:annotation>
 			</xsd:element>
 			
-			
-			
-			
 		</xsd:choice>
 	</xsd:complexType>
-	
-	
-	
-	
-	
 	<xsd:complexType name="BirthType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the birth of a person.
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence> 
 			<xsd:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
-	
 	<xsd:complexType name="CapacityToEnterRegisteredPartnershipType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the capacity to enter into a registered partnership of a couple.
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence> 
 			<xsd:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			<xsd:element name="IntendedPartner" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			<xsd:element name="CanEnterRegisteredPartnership" type="pdc:CanMarryType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
-	
 	<xsd:complexType name="CapacityToMarryType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the capacity to marry of a couple.
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence> 
 			<xsd:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			<xsd:element name="IntendedSpouse" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			<xsd:element name="CanMarry" type="pdc:CanMarryType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
 	<xsd:complexType name="CertificateType"/>
-	
-	
-	
-	
 	<xsd:complexType name="CourtDecisionType"/>
-	
-	
-	
-	
-	
 	<xsd:complexType name="DeathType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the death of a person.
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
+		<xsd:sequence> 
 			<xsd:element name="Person" type="pdc:DeathPersonType" minOccurs="1" maxOccurs="1"/>
-			
-			
 			
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
 	<xsd:complexType name="DocumentDrawnUpByDiplomaticOrConsularAgentType"/>
-	
-	
-	
-	
 	<xsd:complexType name="DocumentEmanatingFromAClerkOfACourtType"/>
-	
-	
-	
-	
 	<xsd:complexType name="DocumentEmanatingFromAJudicialOfficerType"/>
-	
-	
-	
-	
 	<xsd:complexType name="DocumentEmanatingFromAPublicProsecutorType"/>
-	
-	
-	
-	
-	
 	<xsd:complexType name="DocumentFromCourtOrTribunalChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to the choice between different types of documents emanating from a court or tribunal.
 					Stereotype xsdChoice
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-				
 			<xsd:element name="CourtDecision" minOccurs="1" maxOccurs="1" type="CourtDecisionType">
 			</xsd:element>
-			
-			
-				
 			<xsd:element name="DocumentEmanatingFromAPublicProsecutor" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAPublicProsecutorType">
 			</xsd:element>
-			
-			
-				
 			<xsd:element name="DocumentEmanatingFromAClerkOfACourt" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAClerkOfACourtType">
 			</xsd:element>
-			
-			
-				
 			<xsd:element name="DocumentEmanatingFromAJudicialOfficer" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAJudicialOfficerType">
 			</xsd:element>
-			
-			
 			<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -273,28 +162,17 @@
 				</xsd:annotation>
 			</xsd:element>
 			
-			
-			
-			
 		</xsd:choice>
 	</xsd:complexType>
-	
-	
-	
-	
-	
 	<xsd:complexType name="DocumentInfoType">
 		<xsd:annotation>
-		    <xsd:documentation>
+		    <xsd:documentation xml:lang = "en">
 			This class contains elements related to information about a document. 
 		    </xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-				
+		<xsd:sequence> 
 			<xsd:element name="Kind" minOccurs="1" maxOccurs="1" type="DocumentKindChoiceType">
 			</xsd:element>
-			
-			
 			<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation>
@@ -303,33 +181,15 @@
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			
-			
-			
-				
-				
-				    <xsd:element name="ReferenceNumber" minOccurs="1" maxOccurs="1" type="ReferenceNumberType"/>
-				
-				    
-				
-				    
-				
-				    
+			<xsd:element name="ReferenceNumber" minOccurs="1" maxOccurs="1" type="ReferenceNumberType"/>
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	
-	
-	
-	
-				
-				    
-				
-				    <xsd:complexType name="DocumentKindChoiceType">
+	<xsd:complexType name="DocumentKindChoiceType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the choice between different types of documents.
 				
@@ -341,47 +201,21 @@
 				
 				    	<xsd:choice>
 				
-				    			
-				
 				    		<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1" type="DocumentFromCourtOrTribunalChoiceType">
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    			
 				
 				    		<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1" type="AdministrativeDocumentChoiceType">
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    			
-				
 				    		<xsd:element name="NotarialAct" minOccurs="1" maxOccurs="1" type="NotarialActType">
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    			
-				
 				    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1" type="OfficialCertificateOnDocumentSignedByPersonType">
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    			
 				
 				    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1" type="DocumentDrawnUpByDiplomaticOrConsularAgentType">
 				
@@ -389,28 +223,15 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
 				    	</xsd:choice>
 				
 				    </xsd:complexType>
-				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
 				
 				    <xsd:complexType name="DomicileAndOrResidenceType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the domicile and/or residence of a person.
 				
@@ -418,25 +239,13 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -446,38 +255,15 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="ExtractFromTheCivilStatusRegisterType"/>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="ExtractFromThePopulationRegisterType"/>
-				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
 				
 				    <xsd:complexType name="FormHeaderType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form header of a form.
 				
@@ -485,37 +271,17 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="AuthorityIssuingForm" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="AuthorityIssuingDocument" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="ExtensionHeader" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
 				
@@ -531,12 +297,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -551,12 +311,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -570,12 +324,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -593,36 +341,17 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmAbsenceOfCriminalRecord" type="FrmAbsenceOfCriminalRecordType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmAbsenceOfCriminalRecordType">
+				    <xsd:element name="FrmAbsenceOfCriminalRecord" type="FrmAbsenceOfCriminalRecordType"/><xsd:complexType name="FrmAbsenceOfCriminalRecordType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form AbsenceOfCriminalRecord.
 				
@@ -632,19 +361,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -654,24 +375,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmBirth" type="FrmBirthType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmBirthType">
+				    <xsd:element name="FrmBirth" type="FrmBirthType"/><xsd:complexType name="FrmBirthType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		 This class contains elements related to the form Birth.
 				
@@ -681,19 +389,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -703,24 +403,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmCapacityToEnterRegisteredPartnerShip" type="FrmCapacityToEnterRegisteredPartnerShipType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmCapacityToEnterRegisteredPartnerShipType">
+				    <xsd:element name="FrmCapacityToEnterRegisteredPartnerShip" type="FrmCapacityToEnterRegisteredPartnerShipType"/><xsd:complexType name="FrmCapacityToEnterRegisteredPartnerShipType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form CapacityToEnterRegisteredPartnership.
 				
@@ -730,19 +417,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="CapacityToEnterRegisteredPartnershipType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -752,24 +431,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmCapacityToMarry" type="FrmCapacityToMarryType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmCapacityToMarryType">
+				    <xsd:element name="FrmCapacityToMarry" type="FrmCapacityToMarryType"/><xsd:complexType name="FrmCapacityToMarryType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form CapacityToMarry.
 				
@@ -779,19 +445,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -801,24 +459,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmDeath" type="FrmDeathType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmDeathType">
+				    <xsd:element name="FrmDeath" type="FrmDeathType"/><xsd:complexType name="FrmDeathType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form Death. 
 				
@@ -828,19 +473,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -850,24 +487,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmDomicileAndOrResidence" type="FrmDomicileAndOrResidenceType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmDomicileAndOrResidenceType">
+				    <xsd:element name="FrmDomicileAndOrResidence" type="FrmDomicileAndOrResidenceType"/><xsd:complexType name="FrmDomicileAndOrResidenceType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form DomicileAndOrResidence.
 				
@@ -877,19 +501,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -899,24 +515,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmLife" type="FrmLifeType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmLifeType">
+				    <xsd:element name="FrmLife" type="FrmLifeType"/><xsd:complexType name="FrmLifeType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form Life.
 				
@@ -926,19 +529,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -948,24 +543,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmMaritalStatus" type="FrmMaritalStatusType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmMaritalStatusType">
+				    <xsd:element name="FrmMaritalStatus" type="FrmMaritalStatusType"/><xsd:complexType name="FrmMaritalStatusType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form MaritalStatus.
 				
@@ -975,19 +557,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="MaritalStatusType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -997,24 +571,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmMarriage" type="FrmMarriageType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmMarriageType">
+				    <xsd:element name="FrmMarriage" type="FrmMarriageType"/><xsd:complexType name="FrmMarriageType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form Marriage.
 				
@@ -1024,19 +585,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1046,24 +599,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmRegisteredPartnerShip" type="FrmRegisteredPartnerShipType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmRegisteredPartnerShipType">
+				    <xsd:element name="FrmRegisteredPartnerShip" type="FrmRegisteredPartnerShipType"/><xsd:complexType name="FrmRegisteredPartnerShipType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form RegisteredPartnership.
 				
@@ -1073,19 +613,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1095,24 +627,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    <xsd:element name="FrmRegisteredPartnerShipStatus" type="FrmRegisteredPartnerShipStatusType"/>
-				
-				    
-				
-				    
-				
-				    <xsd:complexType name="FrmRegisteredPartnerShipStatusType">
+				    <xsd:element name="FrmRegisteredPartnerShipStatus" type="FrmRegisteredPartnerShipStatusType"/><xsd:complexType name="FrmRegisteredPartnerShipStatusType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the form RegisteredPartnershipStatus.
 				
@@ -1122,19 +641,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Body" type="RegisteredPartnershipStatusType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1144,20 +655,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="IDTypeAndNoType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the choice between the types of ID used to identify a person.
 				
@@ -1183,12 +685,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="PassportNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -1202,12 +698,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="DrivingLicenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -1223,17 +713,7 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="OtherIDType" type="OtherIDTypeType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1241,20 +721,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="LifeType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the life of a person.
 				
@@ -1262,19 +733,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="IsAlive" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
@@ -1292,32 +755,17 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="MaritalStatusType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the marital status of a person.
 				
@@ -1325,21 +773,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="MaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1349,20 +787,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="MarriageType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to a marriage.
 				
@@ -1370,19 +799,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="SpouseA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="SpouseB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -1398,17 +819,7 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1418,38 +829,15 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="NotarialActType"/>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="OfficialCertificateOnDocumentSignedByPersonType"/>
-				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
 				
 				    <xsd:complexType name="OtherIDTypeType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to ID types other than national identity cards, passports, or driving licences.
 				
@@ -1457,7 +845,7 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="IDType" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -1472,12 +860,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="IDNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -1495,41 +877,19 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="ReferenceNumberType"/>
-				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
 				
 				    <xsd:complexType name="RegisteredPartnershipType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to a registered partnership.
 				
@@ -1537,19 +897,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="PartnerA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="PartnerB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="DateOfRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -1565,17 +917,7 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="PlaceOfRegisteredPartnership" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1585,20 +927,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="RegisteredPartnershipStatusType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the registered partnership status of a person.
 				
@@ -1606,21 +939,11 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="RegisteredPartnershipStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
-				
-				    		
-				
-				    		
 				
 				    		
 				
@@ -1630,20 +953,11 @@
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
-				    
-				
 				    <xsd:complexType name="SignatureInfoType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation>
+				    	    <xsd:documentation xml:lang = "en">
 				
 				    		This class contains elements related to the signature of the official handling the document.
 				
@@ -1651,7 +965,7 @@
 				
 				    	</xsd:annotation>
 				
-				    	<xsd:sequence>
+				    	<xsd:sequence> 
 				
 				    		<xsd:element name="SurnameForenameOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -1667,12 +981,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="PositionOfOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -1686,12 +994,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
@@ -1707,12 +1009,6 @@
 				
 				    		</xsd:element>
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    		<xsd:element name="Signature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
@@ -1726,12 +1022,6 @@
 				    			</xsd:annotation>
 				
 				    		</xsd:element>
-				
-				    		
-				
-				    		
-				
-				    		
 				
 				    		<xsd:element name="SealOrStamp" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -1749,31 +1039,13 @@
 				
 				    		
 				
-				    		
-				
-				    		
-				
-				    		
-				
 				    	</xsd:sequence>
 				
 				    	
 				
 				    </xsd:complexType>
 				
-				    
-				
-				    
-				
-				    
-	
-				
 				    <xsd:complexType name="VerbatimCopyOfCivilStatusRecordsType"/>
 				
 				    
-				
-				    
-				
-				    
-	
 </xsd:schema>
