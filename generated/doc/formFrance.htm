@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-05-04">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-05-09">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -179,9 +179,9 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
+						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/france">formFrance</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms">forms</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia">formSlovakia</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/france">formFrance</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/finland">formFinland</a>;</li>
 						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc">pdc</a>;</li>
 				</ul>
@@ -332,7 +332,7 @@
 										<td>DeclaredByOther</td>
 										<td>This property relates to the class DeclaredByOtherChoice.</td>
 										<td>1..1</td>
-										<td>formFrance:DeclaredByOtherChoice</td>
+										<td>pdc:Person</td>
 									</tr>
 								</tbody>
 							</table>
@@ -428,7 +428,7 @@
 										<td>NoConsentNeeded</td>
 										<td>This class relates to the class NoConsentNeeded.</td>
 										<td>1..1</td>
-										<td>formFrance:NoConsentNeeded</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
@@ -571,99 +571,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DeclaredByFather">5.1.10 Class DeclaredByFather
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class DeclaredByParentChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="DeclaredByFatherAndMother">5.1.11 Class DeclaredByFatherAndMother
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class DeclaredByParentChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="DeclaredByMother">5.1.12 Class DeclaredByMother
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class DeclaredByParentChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="DeclaredByOther">5.1.13 Class DeclaredByOther
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>OtherDeclarer</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="DeclaredByOtherChoice">5.1.14 Class DeclaredByOtherChoice
-							(choice)
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the choice of the person that declared the birth of the person concerned by the form.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>DeclaredByOther</td>
-										<td>This property refers to the class DeclaredByOther.</td>
-										<td>1..1</td>
-										<td>formFrance:DeclaredByOther</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="DeclaredByParentChoice">5.1.15 Class DeclaredByParentChoice
+							<h5 id="DeclaredByParentChoice">5.1.10 Class DeclaredByParentChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of which parent declared the person concerned by the form.</p>
@@ -681,23 +589,23 @@
 										<td>DeclaredByFather</td>
 										<td>This property refers to the class DeclaredByFather.</td>
 										<td>1..1</td>
-										<td>formFrance:DeclaredByFather</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>DeclaredByMother</td>
 										<td>This property refers to the class DeclaredByMother.</td>
 										<td>1..1</td>
-										<td>formFrance:DeclaredByMother</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>DeclaredByFatherAndMother</td>
 										<td>This property relates to the class DeclaredByFatherAndMother.</td>
 										<td>1..1</td>
-										<td>formFrance:DeclaredByFatherAndMother</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Divorce">5.1.16 Class Divorce
+							<h5 id="Divorce">5.1.11 Class Divorce
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -737,7 +645,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DocumentInfo">5.1.17 Class DocumentInfo
+							<h5 id="DocumentInfo">5.1.12 Class DocumentInfo
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to information about a document. </p>
@@ -814,7 +722,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="FormerSpouseOrPartner">5.1.18 Class FormerSpouseOrPartner
+							<h5 id="FormerSpouseOrPartner">5.1.13 Class FormerSpouseOrPartner
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the former spouse or partner of the person concerned by the form. </p>
@@ -830,7 +738,7 @@
 								<tbody>
 								</tbody>
 							</table>
-							<h5 id="FormerSpouseOrPartnerChoice">5.1.19 Class FormerSpouseOrPartnerChoice
+							<h5 id="FormerSpouseOrPartnerChoice">5.1.14 Class FormerSpouseOrPartnerChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of whether the person concerned by the form has a former spouse or partner.</p>
@@ -848,11 +756,11 @@
 										<td>NoFormerOrPartnerSpouse</td>
 										<td>This property relates to the class NoFormerSpouseOrPartner.</td>
 										<td>1..1</td>
-										<td>formFrance:NoFormerSpouseOrPartner</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="KeyReferencesChoice">5.1.20 Class KeyReferencesChoice
+							<h5 id="KeyReferencesChoice">5.1.15 Class KeyReferencesChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
@@ -898,7 +806,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="LegalSeparation">5.1.21 Class LegalSeparation
+							<h5 id="LegalSeparation">5.1.16 Class LegalSeparation
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -938,7 +846,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Life">5.1.22 Class Life
+							<h5 id="Life">5.1.17 Class Life
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the life of a person.</p>
@@ -984,7 +892,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Marriage">5.1.23 Class Marriage
+							<h5 id="Marriage">5.1.18 Class Marriage
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to a marriage.</p>
@@ -1072,7 +980,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="MarriageAnnulment">5.1.24 Class MarriageAnnulment
+							<h5 id="MarriageAnnulment">5.1.19 Class MarriageAnnulment
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -1106,7 +1014,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="MarriageOrRegisteredPartnershipPerson">5.1.25 Class MarriageOrRegisteredPartnershipPerson
+							<h5 id="MarriageOrRegisteredPartnershipPerson">5.1.20 Class MarriageOrRegisteredPartnershipPerson
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the marriage or registered partnership of a person.</p>
@@ -1164,39 +1072,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="NoConsentNeeded">5.1.26 Class NoConsentNeeded
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of class ConsentNeededChoice. </p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="NoFormerSpouseOrPartner">5.1.27 Class NoFormerSpouseOrPartner
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class FormerSpouseOrPartnerChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="Person">5.1.28 Class Person
+							<h5 id="Person">5.1.21 Class Person
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to a person.</p>
@@ -1348,7 +1224,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnership">5.1.29 Class RegisteredPartnership
+							<h5 id="RegisteredPartnership">5.1.22 Class RegisteredPartnership
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to a registered partnership.</p>
@@ -1418,23 +1294,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnershipAnnulment">5.1.30 Class RegisteredPartnershipAnnulment
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class RegisteredPartnershipChangeChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="RegisteredPartnershipChange">5.1.31 Class RegisteredPartnershipChange
+							<h5 id="RegisteredPartnershipChange">5.1.23 Class RegisteredPartnershipChange
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -1474,7 +1334,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnershipChangeChoice">5.1.32 Class RegisteredPartnershipChangeChoice
+							<h5 id="RegisteredPartnershipChangeChoice">5.1.24 Class RegisteredPartnershipChangeChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of types of change of registered partnership.</p>
@@ -1492,7 +1352,7 @@
 										<td>RegisteredPartnershipModification</td>
 										<td>This property relates to the class RegisteredPartnershipModification.</td>
 										<td>1..1</td>
-										<td>formFrance:RegisteredPartnershipModification</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>RegisteredPartnershipDissolution</td>
@@ -1504,11 +1364,11 @@
 										<td>RegisteredPartnershipAnnulment</td>
 										<td>This property refers to the class RegisteredPartnershipAnnulment.</td>
 										<td>1..1</td>
-										<td>formFrance:RegisteredPartnershipAnnulment</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnershipDissolutionChoice">5.1.33 Class RegisteredPartnershipDissolutionChoice
+							<h5 id="RegisteredPartnershipDissolutionChoice">5.1.25 Class RegisteredPartnershipDissolutionChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of how the registered partnership of the person concerned by the form was dissolved.</p>
@@ -1526,87 +1386,23 @@
 										<td>RegisteredPartnershipDissolvedByDeath</td>
 										<td>This property relates to the class RegisteredPartnershipDissolvedByDeath.</td>
 										<td>1..1</td>
-										<td>formFrance:RegisteredPartnershipDissolvedByDeath</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>RegisteredPartnershipDissolvedByMarriage</td>
 										<td>This property refers to the class RegisteredPartnershipDissolvedByMarriage.</td>
 										<td>1..1</td>
-										<td>formFrance:RegisteredPartnershipDissolvedByMarriage</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>RegisteredPartnershipDissolvedByRequest</td>
 										<td>This property relates to the class RegisteredPartnershipDissolvedByRequest.</td>
 										<td>1..1</td>
-										<td>formFrance:RegisteredPartnershipDissolvedByRequest</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnershipDissolvedByDeath">5.1.34 Class RegisteredPartnershipDissolvedByDeath
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class RegisteredPartnershipDissolutionChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="RegisteredPartnershipDissolvedByMarriage">5.1.35 Class RegisteredPartnershipDissolvedByMarriage
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class RegisteredPartnershipDissolutionChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="RegisteredPartnershipDissolvedByRequest">5.1.36 Class RegisteredPartnershipDissolvedByRequest
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the class RegisteredPartnershipDissolutionChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="RegisteredPartnershipModification">5.1.37 Class RegisteredPartnershipModification
-							
-							</h5>
-							<p><b>Definition:</b>This empty class is one of the choices of the RegisteredPartnershipChangeChoice.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="SignatureInfo">5.1.38 Class SignatureInfo
+							<h5 id="SignatureInfo">5.1.26 Class SignatureInfo
 							
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the signature of the official handling the document.</p>
