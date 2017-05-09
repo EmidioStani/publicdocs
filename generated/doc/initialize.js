@@ -32,9 +32,8 @@
 	    	  }
 	    	  var cellprefix = celltext.split(":")[0];
 	    	  var cellvalue = celltext.split(":")[1];
-	    	  array={pdc: base_url+"pdc",forms:base_url+"forms",formFrance:"",formFinland:"",formSpain:"",formSlovakia:"",formAustria:""};
-	    	  if(!(array[cellprefix] == null)) {
-	    		  $( this ).html("<a href='" + array[cellprefix] + "#"+cellvalue+"'>"+celltext+"</a>");
+	    	  if(!(url_array[cellprefix] == null)) {
+	    		  $( this ).html("<a href='" + url_array[cellprefix] + "#"+cellvalue+"'>"+celltext+"</a>");
 	    	  }
 	    	});
 	    

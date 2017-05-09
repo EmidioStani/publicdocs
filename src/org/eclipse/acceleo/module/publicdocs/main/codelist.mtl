@@ -15,7 +15,6 @@ version: String = getVersion('xsd');
 [template public generateContentCodeList(pack : Package, version: String)]
 [for (packageableElement: PackageableElement | pack.packagedElement)]
 [let dependencies: Set(Dependency) 		 = pack.getDirectDependencies(packageableElement)]
-
 [if packageableElement.oclIsTypeOf(Enumeration)]
 [file (getFilenameXSD('path_codelist', pack.name, '-codelist-'.concat(packageableElement.name).concat('-'), version), false, 'UTF-8')]
 [if dependencies->isEmpty()]

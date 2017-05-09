@@ -169,7 +169,7 @@ h3 i{color: #444;}
 		[includeStaticContent3(model)/]
 	</div>
 	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
-	[includeJavascript(model)/]
+	[includeJavascript(pack)/]
 </body>
 [/template]
 
@@ -330,15 +330,12 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 	</thead>
 	<tbody>
 	[for (property: Property | class.ownedAttribute)]
-		[if property.name = 'FormerSpouseOrPartner' or property.name = 'Kind' or property.name = 'NeverMarried']
-		[else]
 		<tr>
 			<td>[property.name/]</td>
 			<td>[property.ownedComment._body/]</td>
 			<td>[property.lower/]..[if (property.upper = -1) ]*[else][property.upper/][/if]</td>
 			<td>[generateUnqualifiedDataType(property)/]</td>
 		</tr>
-		[/if]
 	[/for]
 	</tbody>
 </table>
@@ -389,6 +386,23 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
 <script type="text/javascript">
     var base_url = "[getConf('ws_latest_ns')/]";
+	var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex"};
+</script>
+<script src='initialize.js'></script>
+[/template]
+
+[template public includeJavascript(pack : PackageableElement)]
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src='jquery.toc.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
+<script type="text/javascript">
+    var base_url = "[getConf('ws_latest_ns')/]";
+	var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex","[pack.name/]":""};
 </script>
 <script src='initialize.js'></script>
 [/template]

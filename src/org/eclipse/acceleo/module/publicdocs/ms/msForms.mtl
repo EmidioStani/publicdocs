@@ -1,15 +1,18 @@
 [comment encoding = UTF-8 /]
-[module finland('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module msForms('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::schema/]
 [import org::eclipse::acceleo::module::publicdocs::common::complextype /]
 
-[template public generateFormFinland(model : Model){
-pack:PackageableElement = model.getPackageWithName('formFinland');
+[template public generateMSForms(model : Model){
 version: String = getVersion('xsd');
 }] 
-[generateXSDFile(model, 'path_ms', pack.oclAsType(Package), '-', version)/]
+[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+[debug('PackageableElement: '+packageableElement.name)/]
+[if not (packageableElement.name = 'forms' or packageableElement.name = 'pdc')]
+[generateXSDFile(model, 'path_ms', packageableElement.oclAsType(Package), '-', version)/][/if]
+[/for]
 [/template]
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
@@ -25,41 +28,23 @@ version: String = getVersion('xsd');
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]
 [generatePackageableElement(packageableElement)/]
-[/for]
-[/let]
+[/for][/let]
 [/template]
 
 [template public generatePackageableElement(packageableElement : PackageableElement)]
 [if packageableElement.oclIsTypeOf(Class)]
-[generateType(packageableElement.oclAsType(Class))/]
-[/if]
+[generateType(packageableElement.oclAsType(Class))/][/if]
 [/template]
 
 [template public generateType(class : Class) post (replaceAll('(.^\t*)\n', '').trim()){ 
 NDR : String = getNDR('usecorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
-[debug('Type:'+class.name)/]
 [if not isLocal(class)]
-	[if(class.general->isEmpty())]
-	[debug('Ground:'+class.name)/]
-[generateComplextype_ground(class, NDR)/]
-	[else]
-		[comment][if class.generalization.general.oclAsType(Class).ownedAttribute->isEmpty()]
-		[debug('ExtendedType:'+class.name)/][/comment]
-[generateComplextype_extension_complexcontent(class, NDR)/]
-		[comment][else]
-		[debug('RestrictedType:'+class.name)/]
-[generateComplextype_restriction_complexcontent(class, NDR)/]
-		[/if][/comment]
-	[/if]
-[else]
-	[if class.isChoice()]
-[generateComplextype_ground(class, NDR)/]
-	[else]
-		[if class.ownedAttribute->isEmpty()]
-[generateComplextype_ground(class, NDR)/]
-		[/if]
-	[/if]
-[/if]
-
+[if(class.general->isEmpty())]
+[generateComplextype_ground(class, NDR)/][else]
+[generateComplextype_extension_complexcontent(class, NDR)/]	[/if][else]
+[if class.isChoice()]
+[generateComplextype_ground(class, NDR)/][else]
+[if class.ownedAttribute->isEmpty()]
+[generateComplextype_ground(class, NDR)/][/if][/if][/if]
 [/template]
