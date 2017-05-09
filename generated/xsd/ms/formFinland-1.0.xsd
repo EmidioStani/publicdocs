@@ -38,7 +38,7 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="forms:AbsenceOfCriminalRecordType">
+			<xsd:extension base="forms:AbsenceOfCriminalRecordType">
 				<xsd:sequence>
 					<xsd:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
@@ -65,15 +65,13 @@
 					</xsd:element>
 					
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	
 	
 	
 	
-	
-			
 	<xsd:complexType name="BirthType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang = "en">
@@ -81,20 +79,18 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="forms:BirthType">
+			<xsd:extension base="forms:BirthType">
 				<xsd:sequence>
 					<xsd:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
 					
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	
 	
 	
 	
-	
-			
 	<xsd:complexType name="BirthPersonType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang = "en">
@@ -102,7 +98,7 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="pdc:PersonType">
+			<xsd:extension base="pdc:PersonType">
 				<xsd:sequence>
 					<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 						<xsd:annotation>
@@ -157,10 +153,9 @@
 					</xsd:element>
 					
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
 	
 	
 	
@@ -232,7 +227,6 @@
 	
 	
 	
-			
 	<xsd:complexType name="CapacityToMarryType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang = "en">
@@ -240,7 +234,7 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="forms:CapacityToMarryType">
+			<xsd:extension base="forms:CapacityToMarryType">
 				<xsd:sequence>
 					<xsd:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="IntendedSpouse" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
@@ -270,15 +264,13 @@
 					</xsd:element>
 					
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	
 	
 	
 	
-	
-			
 	<xsd:complexType name="DeathType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang = "en">
@@ -286,20 +278,18 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="forms:DeathType">
+			<xsd:extension base="forms:DeathType">
 				<xsd:sequence>
 					<xsd:element name="Person" type="pdc:DeathPersonType" minOccurs="1" maxOccurs="1"/>
 					
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	
 	
 	
 	
-	
-			
 	<xsd:complexType name="DocumentInfoType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang = "en">
@@ -307,7 +297,7 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:restriction base="forms:DocumentInfoType">
+			<xsd:extension base="forms:DocumentInfoType">
 				<xsd:sequence>
 					<xsd:element name="Kind" type="KindType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
@@ -422,10 +412,9 @@
 						
 						    
 				</xsd:sequence>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
 	
 	
 	
@@ -568,8 +557,6 @@
 						    
 	
 						
-						    		
-						
 						    <xsd:complexType name="LifeType">
 						
 						    	<xsd:annotation>
@@ -584,7 +571,7 @@
 						
 						    	<xsd:complexContent>
 						
-						    		<xsd:restriction base="forms:LifeType">
+						    		<xsd:extension base="forms:LifeType">
 						
 						    			<xsd:sequence>
 						
@@ -638,7 +625,7 @@
 						
 						    			</xsd:sequence>
 						
-						    		</xsd:restriction>
+						    		</xsd:extension>
 						
 						    	</xsd:complexContent>
 						
@@ -649,11 +636,7 @@
 						    
 						
 						    
-						
-						    
 	
-						
-						    		
 						
 						    <xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
 						
@@ -669,7 +652,7 @@
 						
 						    	<xsd:complexContent>
 						
-						    		<xsd:restriction base="pdc:PersonType">
+						    		<xsd:extension base="pdc:PersonType">
 						
 						    			<xsd:sequence>
 						
@@ -785,13 +768,11 @@
 						
 						    			</xsd:sequence>
 						
-						    		</xsd:restriction>
+						    		</xsd:extension>
 						
 						    	</xsd:complexContent>
 						
 						    </xsd:complexType>
-						
-						    
 						
 						    
 						
@@ -888,8 +869,6 @@
 						    
 	
 						
-						    		
-						
 						    <xsd:complexType name="MarriageType">
 						
 						    	<xsd:annotation>
@@ -904,7 +883,7 @@
 						
 						    	<xsd:complexContent>
 						
-						    		<xsd:restriction base="forms:MarriageType">
+						    		<xsd:extension base="forms:MarriageType">
 						
 						    			<xsd:sequence>
 						
@@ -984,13 +963,11 @@
 						
 						    			</xsd:sequence>
 						
-						    		</xsd:restriction>
+						    		</xsd:extension>
 						
 						    	</xsd:complexContent>
 						
 						    </xsd:complexType>
-						
-						    
 						
 						    
 						
@@ -3178,22 +3155,6 @@
 						
 						    			
 						
-						    			    	    	    		
-						
-						    			
-						
-						    			    	
-						
-						    			
-						
-						    			    	    	
-						
-						    			
-						
-						    			    	
-						
-						    			
-						
 						    			    	    	    <xsd:complexType name="RegisteredPartnershipType">
 						
 						    			
@@ -3306,7 +3267,7 @@
 						
 						    			
 						
-						    			    	    	    		<xsd:restriction base="forms:RegisteredPartnershipType">
+						    			    	    	    		<xsd:extension base="forms:RegisteredPartnershipType">
 						
 						    			
 						
@@ -4010,7 +3971,7 @@
 						
 						    			
 						
-						    			    	    	    		</xsd:restriction>
+						    			    	    	    		</xsd:extension>
 						
 						    			
 						
@@ -4043,22 +4004,6 @@
 						    			
 						
 						    			    	    	    </xsd:complexType>
-						
-						    			
-						
-						    			    	
-						
-						    			
-						
-						    			    	    	
-						
-						    			
-						
-						    			    	
-						
-						    			
-						
-						    			    	    	    
 						
 						    			
 						
