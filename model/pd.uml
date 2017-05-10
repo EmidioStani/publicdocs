@@ -144,8 +144,7 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mbovcJRxEeaPKuyhkF_CdQ" name="SurnameAtBirth" type="_O31is5PcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_dGstIN8fEeaVhrycqBWd1w">
-            <body>This property contains the person's last name at the time of his/her birth.&#xD;
-</body>
+            <body>This property contains the person's last name at the time of his/her birth.</body>
           </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p8FXYJRxEeaPKuyhkF_CdQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qgZlYJRxEeaPKuyhkF_CdQ" value="*"/>
@@ -1454,7 +1453,9 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_-KxG0DSZEeelo8Ns44bPUQ" name="DocumentKindChoice">
         <generalization xmi:type="uml:Generalization" xmi:id="_I3kAsDSaEeelo8Ns44bPUQ" general="_oknRQC8IEeezDM0o_Vxv7Q"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_FXdXADSaEeelo8Ns44bPUQ" name="ExtractFromMarriagesRegister" type="_O31itZPcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FXdXADSaEeelo8Ns44bPUQ" name="ExtractFromMarriagesRegister" type="_O31itZPcEeaaQdure8LlEA">
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_3CmHADVZEeelo8Ns44bPUQ" value="true"/>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_FXfMMDSaEeelo8Ns44bPUQ" name="ExtractFromBirthsRegister" type="_O31itZPcEeaaQdure8LlEA">
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_FXfMMTSaEeelo8Ns44bPUQ" value="true"/>
         </ownedAttribute>
@@ -1539,12 +1540,12 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_cOW00RCAEeeOZJtJre35Ig" name="SeparationPerson" type="_O31ioJPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_cOW00hCAEeeOZJtJre35Ig" name="SeparationDate" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_cOW00xCAEeeOZJtJre35Ig" name="NatureOfSeparationDecision" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_cOW01BCAEeeOZJtJre35Ig" name="RulingCourt" type="_Batq4KHtEeauHN1L-vdo7g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cOW01BCAEeeOZJtJre35Ig" name="RulingCourt" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_-4VgkBCAEeeOZJtJre35Ig" name="MarriageAnnulment">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_-4VgkhCAEeeOZJtJre35Ig" name="AnnulmentDate" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_-4VgkxCAEeeOZJtJre35Ig" name="NatureOfAnnulmentDecision" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_-4VglBCAEeeOZJtJre35Ig" name="RulingCourt" type="_Batq4KHtEeauHN1L-vdo7g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-4VglBCAEeeOZJtJre35Ig" name="RulingCourt" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ZJzCMBCBEeeOZJtJre35Ig" name="RegisteredPartnershipChangeChoice">
         <ownedComment xmi:type="uml:Comment" xmi:id="_ZJzCMRCBEeeOZJtJre35Ig">
@@ -1579,7 +1580,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_4YD1ABCBEeeOZJtJre35Ig" name="RegisteredPartnershipChange">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_4YD1ARCBEeeOZJtJre35Ig" name="RegisteredPartnershipChangeDate" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_4YD1AhCBEeeOZJtJre35Ig" name="RegisteredPartnershipChangePlace" type="_yBxYcK7FEeavbt_KlNQYCw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_4YD1AxCBEeeOZJtJre35Ig" name="RulingCourt" type="_Batq4KHtEeauHN1L-vdo7g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4YD1AxCBEeeOZJtJre35Ig" name="RulingCourt" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_7HC5EBCoEeeABux37CGACQ" name="RegisteredPartnershipChange" type="_ZJzCMBCBEeeOZJtJre35Ig"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_k7gF8BCSEeeOZJtJre35Ig" name="FormerSpouseOrPartnerChoice">
@@ -2065,7 +2066,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_6lZWQDTTEeelo8Ns44bPUQ" name="DomicileAndOrResidence">
         <generalization xmi:type="uml:Generalization" xmi:id="_AhdsEDTUEeelo8Ns44bPUQ" general="_3NJdcJR0EeaPKuyhkF_CdQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_8k5v4DTTEeelo8Ns44bPUQ" name="SecondaryResidence" type="_oAzasJYXEeaOzpR_bAjhAQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8k5v4DTTEeelo8Ns44bPUQ" name="SecondaryResidence" type="_O31ivZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_8k5v4TTTEeelo8Ns44bPUQ">
             <body>This property relates to the class Address.</body>
           </ownedComment>
@@ -2103,7 +2104,7 @@
             <body>This property refers to the class FormerSpouseOrPartnerChoice. </body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_DmXyEDTVEeelo8Ns44bPUQ" name="LastPlaceOfResidence" type="_oAzasJYXEeaOzpR_bAjhAQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DmXyEDTVEeelo8Ns44bPUQ" name="LastPlaceOfResidence" type="_O31ivZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_DmXyETTVEeelo8Ns44bPUQ">
             <body>This property relates to the class Address.</body>
           </ownedComment>
@@ -2166,7 +2167,9 @@
           <body>This class contains elements related to the choice between the types of ID used to identify a person.</body>
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_-RG3wiaVEeedE6lAQ4ldDg" name="AfterSeeingThePerson" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_bn39cCaWEeedE6lAQ4ldDg" name="OnTheBasisOfThePopulationRegister" type="_9uxBIDS2Eeelo8Ns44bPUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bn39cCaWEeedE6lAQ4ldDg" name="OnTheBasisOfThePopulationRegister" type="_O31itZPcEeaaQdure8LlEA">
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_kTVWEDVaEeelo8Ns44bPUQ" value="true"/>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_gBY7YCaWEeedE6lAQ4ldDg" name="OnTheBasisOfTheIDCard" type="_O31itZPcEeaaQdure8LlEA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_kYnnECamEeedE6lAQ4ldDg" name="ApplicationNewMainResidence">
@@ -2205,8 +2208,8 @@
           <body>This class contains elements related to the choice of marital status.</body>
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_qDYbMCj7EeexvrdZ-EZD1g" name="Article595" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_uPOwkCj7EeexvrdZ-EZD1g" name="Article596(1)" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xtfnMCj7EeexvrdZ-EZD1g" name="Article596(2)" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xtfnMCj7EeexvrdZ-EZD1g" name="Article596-2" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZtlC4DVbEeelo8Ns44bPUQ" name="Article596-1" type="_O31is5PcEeaaQdure8LlEA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_xsX-kDS8Eeelo8Ns44bPUQ" name="DeathPerson">
         <generalization xmi:type="uml:Generalization" xmi:id="_7YeQcDS8Eeelo8Ns44bPUQ" general="_O31i0pPcEeaaQdure8LlEA"/>
@@ -2223,6 +2226,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_32MnEDS9Eeelo8Ns44bPUQ" general="_uzE0IJR0EeaPKuyhkF_CdQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_xlYwUDS9Eeelo8Ns44bPUQ" name="Disclaimer" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_xlbzoDS9Eeelo8Ns44bPUQ" name="DateOfLegalSeparation" type="_O31ispPcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8h1hcDVaEeelo8Ns44bPUQ" name="SpouseOrEx" type="_O31ioJPcEeaaQdure8LlEA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_C2baUDS-Eeelo8Ns44bPUQ" name="Person">
         <generalization xmi:type="uml:Generalization" xmi:id="_KTwukDS-Eeelo8Ns44bPUQ" general="_O31ioJPcEeaaQdure8LlEA"/>
@@ -2235,17 +2239,13 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_F0o34DS-Eeelo8Ns44bPUQ" name="TimeOfBirth" type="_8Yy1oBB4EeeOZJtJre35Ig"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_F0rUIDS-Eeelo8Ns44bPUQ" name="NationalRegisterNo" type="_O31is5PcEeaaQdure8LlEA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_lsj2QDS_Eeelo8Ns44bPUQ" name="MaritalStatus">
-        <generalization xmi:type="uml:Generalization" xmi:id="_3e52gDS_Eeelo8Ns44bPUQ" general="_uzE0IJR0EeaPKuyhkF_CdQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_zwo1ADS_Eeelo8Ns44bPUQ" name="SpouseOrEx" type="_O31ioJPcEeaaQdure8LlEA"/>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_DACXYDTAEeelo8Ns44bPUQ" name="Birth">
         <generalization xmi:type="uml:Generalization" xmi:id="_ZFImQDTAEeelo8Ns44bPUQ" general="_O31izJPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG2bwDTAEeelo8Ns44bPUQ" name="Consent" type="_Ma3IECaTEeedE6lAQ4ldDg"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG4Q8DTAEeelo8Ns44bPUQ" name="AuthorityForWhichConsentWasGiven" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG44ADTAEeelo8Ns44bPUQ" name="DateOfConsent" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG6GIDTAEeelo8Ns44bPUQ" name="AcknowledgedBy" type="_Q2eF0CaVEeedE6lAQ4ldDg"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_HG8iYDTAEeelo8Ns44bPUQ" name="RollNumber"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HG8iYDTAEeelo8Ns44bPUQ" name="RollNumber" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG9wgDTAEeelo8Ns44bPUQ" name="JudicialBody" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HG_lsDTAEeelo8Ns44bPUQ" name="DocumentNoPrenatalAcknowledgementOfParentage" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HHBa4DTAEeelo8Ns44bPUQ" name="PlaceOfConsent" type="_yBxYcK7FEeavbt_KlNQYCw"/>
@@ -2376,6 +2376,12 @@
         <references xmi:type="ecore:EPackage" href="isa.uml#_Qd3DkbJMEeacavyzYL89Ug"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="isa.uml#_kMq3kKd3Eeas-9n4KOQ_cA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_JqyUsDVbEeelo8Ns44bPUQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jq0J4DVbEeelo8Ns44bPUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
   </uml:Model>
   <isa:cvABIE xmi:id="_zKk8gKy1EeaZGL3UPlWdjA" base_Class="_O31ioJPcEeaaQdure8LlEA"/>
