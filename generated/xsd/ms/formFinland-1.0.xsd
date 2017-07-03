@@ -5,7 +5,6 @@
 	xmlns:pdc="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"	
 	xmlns:forms="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	xmlns:cls="http://e-documents.semic.eu/publicdocuments/1.0/ns/codelist/sex"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -18,7 +17,8 @@
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
 	        Emidio Stani (emidio.stani@be.pwc.com),
-	        Ioana Novacean (ioana.novacean@be.pwc.com)
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com)
 		</xsd:documentation>
 	</xsd:annotation>
 	<!-- ===== Imports======================================== -->
@@ -28,12 +28,10 @@
 			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
-	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/codelist/sex"
-			   schemaLocation="../../xsd/common/codelist/cls-codelist-Sex-1.0.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:complexType name="BirthPersonType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -42,14 +40,14 @@
 				<xsd:sequence>
 					<xsd:element name="MotherIdentityAscertained" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="MaternityHospital" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -61,7 +59,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="CanMarryType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -70,7 +68,7 @@
 				<xsd:sequence>
 					<xsd:element name="CanMarryRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -78,7 +76,7 @@
 					<xsd:element name="CanMarryRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="CanMarryRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -90,7 +88,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="CapacityToMarryType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -99,7 +97,7 @@
 				<xsd:sequence>
 					<xsd:element name="InfoReligiousWedding" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -113,7 +111,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="DocumentInfoType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -129,7 +127,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="DomicileAndOrResidenceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -138,7 +136,7 @@
 				<xsd:sequence>
 					<xsd:element name="RemovalDateResidence" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -150,7 +148,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="ForeignIntendedSpouseType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -162,7 +160,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="ForeignIntendedSpouseChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 					Stereotype xsdChoice
 		    </xsd:documentation>
@@ -170,14 +168,14 @@
 		<xsd:choice>
 			<xsd:element name="NotForeignIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -187,7 +185,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -203,7 +201,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="MaritalStatusChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 					Stereotype xsdChoice
 		    </xsd:documentation>
@@ -212,7 +210,7 @@
 			<xsd:element name="NotMarried" type="pdc:NotMarriedChoiceType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the date of marriage.
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -222,7 +220,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="NotMarriedChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 					Stereotype xsdChoice
 		    </xsd:documentation>
@@ -230,14 +228,14 @@
 		<xsd:choice>
 			<xsd:element name="DivorcedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="WidowedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -247,7 +245,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="PersonType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 					Stereotype cvABIE
 		    </xsd:documentation>
@@ -259,28 +257,28 @@
 					<xsd:element name="CountryOfResidence" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="DateOfDeath" type="udt:DateType" minOccurs="0" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								This property contains the person's date of death (if applicable).
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="Surname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								This property contains the person's last name.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>	
 					<xsd:element name="Forename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								This property contains the person's first name or given name.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>	
 					<xsd:element name="PersonalInfoDisclosureForbidden" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -288,21 +286,21 @@
 					<xsd:element name="TemporaryAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="NameNormallyUsed" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="SurnameAtBirth" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								This property contains the person's last name at the time of his/her birth.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>	
 					<xsd:element name="IsLiving" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -310,14 +308,14 @@
 					<xsd:element name="MainResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="PersonalIdentificationNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="MotherTongue" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -325,7 +323,7 @@
 					<xsd:element name="PostalAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 					<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
-						    <xsd:documentation>
+						    <xsd:documentation xml:lang="en">
 								
 						    </xsd:documentation>
 						</xsd:annotation>
@@ -337,28 +335,28 @@
 	</xsd:complexType>
 	<xsd:complexType name="RegisteredPartnershipType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence> 
 			<xsd:element name="DateOfModification" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="DateOfEntryIntoEffectOfDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="DateOfPartnershipDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -367,7 +365,7 @@
 			</xsd:element>
 			<xsd:element name="DateOfEntryIntoEffectOfModification" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -378,7 +376,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="RegisteredPartnershipDissolutionChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			
 					Stereotype xsdChoice
 		    </xsd:documentation>
@@ -386,21 +384,21 @@
 		<xsd:choice>
 			<xsd:element name="RegisteredPartnershipDissolvedByMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RegisteredPartnershipDissolvedByDeath" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="RegisteredPartnershipDissolvedByRequest" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						
 				    </xsd:documentation>
 				</xsd:annotation>

@@ -23,7 +23,6 @@
 [query public getParentProperty (prop: Property) : Property 
 = prop.owner.oclAsType(Class).general->any(true).oclAsType(Class).ownedAttribute->select(name = prop.name)->any(true).oclAsType(Property) /]
 
-
 [query public belongSamePackage (class1: Class, class2: Class) : Boolean
 = class1.namespace.name = class2.namespace.name/]
 
@@ -67,6 +66,12 @@
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
 = getFullFilename(path, name, suffix, version, '.xsd')/]
 
+[query public getMSFilenameXSD (path : String, country : String, name: String, suffix : String, version : String ) : String
+= getMSFullFilename(path, country, name, suffix, version, '.xsd')/]
+
+[query public getMSFullFilename (path : String, country : String,  name: String, suffix : String, version : String, extension : String ) : String
+= getConf(path).concat(country).concat('/').concat(getFilename(name, suffix, version, extension))/]
+
 [query public getFQDN (class: Class) : String
 = class.namespace.name.concat(':').concat(class.name)/]
 
@@ -78,6 +83,9 @@
 
 [query public getTodayDate (format: String) : String
 = getDate(format)/]
+
+[query public getForms (model: Model) : Sequence(String)
+= Sequence{'FrmBirth','FrmDeath'}/]
 
 [query public getConf (config: String) : String
 = getConfig(config)/]

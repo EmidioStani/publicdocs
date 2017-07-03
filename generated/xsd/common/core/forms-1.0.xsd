@@ -2,9 +2,9 @@
 <xsd:schema
 	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
 	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
-	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
 	xmlns:pdc="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -17,20 +17,21 @@
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
 	        Emidio Stani (emidio.stani@be.pwc.com),
-	        Ioana Novacean (ioana.novacean@be.pwc.com)
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com)
 		</xsd:documentation>
 	</xsd:annotation>
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
-	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
-			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:complexType name="AbsenceOfCriminalRecordType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the absence of a criminal record of a person. 
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -38,7 +39,7 @@
 			<xsd:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the identity number. 
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -47,7 +48,7 @@
 			</xsd:element>
 			<xsd:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the boolean value (true or false) regarding the absence of a criminal record.
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -58,21 +59,43 @@
 	</xsd:complexType>
 	<xsd:complexType name="AdministrativeDocumentChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the choice between the different types of administrative documents. 
 					Stereotype xsdChoice
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-			<xsd:element name="Certificate" minOccurs="1" maxOccurs="1" type="CertificateType">
+			<xsd:element name="Certificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class Certificate.
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ExtractFromTheCivilStatusRegister" minOccurs="1" maxOccurs="1" type="ExtractFromTheCivilStatusRegisterType"/><xsd:element name="ExtractFromThePopulationRegister" minOccurs="1" maxOccurs="1" type="ExtractFromThePopulationRegisterType">
+			<xsd:element name="ExtractFromTheCivilStatusRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class ExtractFromTheCivilStatus
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="VerbatimCopyOfCivilStatusRecords" minOccurs="1" maxOccurs="1" type="VerbatimCopyOfCivilStatusRecordsType">
+			<xsd:element name="ExtractFromThePopulationRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class ExtractFromThePopulationRegister.
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VerbatimCopyOfCivilStatusRecords" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class VerbatimCopyOfCivilStatusRecords. 
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the string value referring to another type of administrative document. 
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -82,7 +105,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="BirthType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the birth of a person.
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -94,7 +117,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="CapacityToEnterRegisteredPartnershipType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the capacity to enter into a registered partnership of a couple.
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -108,7 +131,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="CapacityToMarryType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the capacity to marry of a couple.
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -120,11 +143,9 @@
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	<xsd:complexType name="CertificateType"/>
-	<xsd:complexType name="CourtDecisionType"/>
 	<xsd:complexType name="DeathType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the death of a person.
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -134,29 +155,45 @@
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	<xsd:complexType name="DocumentDrawnUpByDiplomaticOrConsularAgentType"/>
-	<xsd:complexType name="DocumentEmanatingFromAClerkOfACourtType"/>
-	<xsd:complexType name="DocumentEmanatingFromAJudicialOfficerType"/>
-	<xsd:complexType name="DocumentEmanatingFromAPublicProsecutorType"/>
 	<xsd:complexType name="DocumentFromCourtOrTribunalChoiceType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to the choice between different types of documents emanating from a court or tribunal.
 					Stereotype xsdChoice
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-			<xsd:element name="CourtDecision" minOccurs="1" maxOccurs="1" type="CourtDecisionType">
+			<xsd:element name="CourtDecision" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class CourtDecision. 
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DocumentEmanatingFromAPublicProsecutor" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAPublicProsecutorType">
+			<xsd:element name="DocumentEmanatingFromAPublicProsecutor" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class DocumentEmanatingFromAPublicProsecutor. 
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DocumentEmanatingFromAClerkOfACourt" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAClerkOfACourtType">
+			<xsd:element name="DocumentEmanatingFromAClerkOfACourt" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class DocumentEmanatingFromAClerkOfACourt. 
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DocumentEmanatingFromAJudicialOfficer" minOccurs="1" maxOccurs="1" type="DocumentEmanatingFromAJudicialOfficerType">
+			<xsd:element name="DocumentEmanatingFromAJudicialOfficer" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						This property refers to the class DocumentEmanatingFromAJudicialOfficer. 
+				    </xsd:documentation>
+				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the string value referring to another type of document coming from court or tribunal.
 				    </xsd:documentation>
 				</xsd:annotation>
@@ -166,7 +203,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="DocumentInfoType">
 		<xsd:annotation>
-		    <xsd:documentation xml:lang = "en">
+		    <xsd:documentation xml:lang="en">
 			This class contains elements related to information about a document. 
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -175,13 +212,27 @@
 			</xsd:element>
 			<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
-				    <xsd:documentation>
+				    <xsd:documentation xml:lang="en">
 						This property contains the issue date of the document.
 				
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ReferenceNumber" minOccurs="1" maxOccurs="1" type="ReferenceNumberType"/>
+			<xsd:element name="ReferenceNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    	<xsd:annotation>
+				
+				    	    <xsd:documentation xml:lang="en">
+				
+				    			This property contains the reference number of the document.
+				
+				    	    </xsd:documentation>
+				
+				    	</xsd:annotation>
+				
+				    </xsd:element>
+				
+				    
 		</xsd:sequence>
 		
 	</xsd:complexType>
@@ -189,7 +240,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the choice between different types of documents.
 				
@@ -201,7 +252,17 @@
 				
 				    	<xsd:choice>
 				
-				    		<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1" type="DocumentFromCourtOrTribunalChoiceType">
+				    		<xsd:element name="DocumentFromCourtOrTribunal" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation xml:lang="en">
+				
+				    					This property refers to the class DocumentFromCourtOrTribunalChoice. 
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
 				
@@ -209,15 +270,45 @@
 				
 				    		</xsd:element>
 				
-				    		<xsd:element name="NotarialAct" minOccurs="1" maxOccurs="1" type="NotarialActType">
+				    		<xsd:element name="NotarialAct" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation xml:lang="en">
+				
+				    					This property refers to the class NotarialAct. 
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
 				
-				    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1" type="OfficialCertificateOnDocumentSignedByPersonType">
+				    		<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation xml:lang="en">
+				
+				    					This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
 				
-				    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1" type="DocumentDrawnUpByDiplomaticOrConsularAgentType">
+				    		<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xsd:annotation>
+				
+				    			    <xsd:documentation xml:lang="en">
+				
+				    					This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  
+				
+				    			    </xsd:documentation>
+				
+				    			</xsd:annotation>
 				
 				    		</xsd:element>
 				
@@ -231,7 +322,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the domicile and/or residence of a person.
 				
@@ -255,15 +346,11 @@
 				
 				    </xsd:complexType>
 				
-				    <xsd:complexType name="ExtractFromTheCivilStatusRegisterType"/>
-				
-				    <xsd:complexType name="ExtractFromThePopulationRegisterType"/>
-				
 				    <xsd:complexType name="FormHeaderType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form header of a form.
 				
@@ -287,7 +374,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains potential future extensions to the header of each form. 
 				
@@ -301,7 +388,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the title of the form, corresponding to the main subject or life area covered in the form. 
 				
@@ -315,7 +402,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains a notice on the purpose of the form. 
 				
@@ -329,7 +416,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains a note for the issuing authority regarding which information is to be mentioned. 
 				
@@ -351,7 +438,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form AbsenceOfCriminalRecord.
 				
@@ -379,7 +466,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		 This class contains elements related to the form Birth.
 				
@@ -407,7 +494,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form CapacityToEnterRegisteredPartnership.
 				
@@ -435,7 +522,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form CapacityToMarry.
 				
@@ -463,7 +550,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form Death. 
 				
@@ -491,7 +578,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form DomicileAndOrResidence.
 				
@@ -519,7 +606,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form Life.
 				
@@ -547,7 +634,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form MaritalStatus.
 				
@@ -575,7 +662,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form Marriage.
 				
@@ -603,7 +690,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form RegisteredPartnership.
 				
@@ -631,7 +718,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the form RegisteredPartnershipStatus.
 				
@@ -659,7 +746,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the choice between the types of ID used to identify a person.
 				
@@ -675,7 +762,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the string value of the number of the national identity card.
 				
@@ -689,7 +776,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the string value of the passport number.
 				
@@ -703,7 +790,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the string value of the driving licence number.
 				
@@ -725,7 +812,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the life of a person.
 				
@@ -743,7 +830,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the boolean value (true or false) for whether the person is alive.
 				
@@ -765,7 +852,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the marital status of a person.
 				
@@ -791,7 +878,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to a marriage.
 				
@@ -801,17 +888,17 @@
 				
 				    	<xsd:sequence> 
 				
-				    		<xsd:element name="SpouseA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				    		<xsd:element name="SpouseA" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
 				
-				    		<xsd:element name="SpouseB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				    		<xsd:element name="SpouseB" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
 				
 				    		<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
-				    					This property contains the date of the marriage.
+				    					
 				
 				    			    </xsd:documentation>
 				
@@ -829,15 +916,11 @@
 				
 				    </xsd:complexType>
 				
-				    <xsd:complexType name="NotarialActType"/>
-				
-				    <xsd:complexType name="OfficialCertificateOnDocumentSignedByPersonType"/>
-				
 				    <xsd:complexType name="OtherIDTypeType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to ID types other than national identity cards, passports, or driving licences.
 				
@@ -851,7 +934,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					
 				
@@ -865,7 +948,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					
 				
@@ -883,13 +966,11 @@
 				
 				    </xsd:complexType>
 				
-				    <xsd:complexType name="ReferenceNumberType"/>
-				
 				    <xsd:complexType name="RegisteredPartnershipType">
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to a registered partnership.
 				
@@ -907,7 +988,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the date the registered partnership is concluded.
 				
@@ -931,7 +1012,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the registered partnership status of a person.
 				
@@ -957,7 +1038,7 @@
 				
 				    	<xsd:annotation>
 				
-				    	    <xsd:documentation xml:lang = "en">
+				    	    <xsd:documentation xml:lang="en">
 				
 				    		This class contains elements related to the signature of the official handling the document.
 				
@@ -971,7 +1052,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the surname and forename of the official.
 				
@@ -985,7 +1066,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the position of the official.
 				
@@ -999,7 +1080,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					This property contains the issue data of the document.
 				
@@ -1013,7 +1094,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					Although the signature field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
 				
@@ -1027,7 +1108,7 @@
 				
 				    			<xsd:annotation>
 				
-				    			    <xsd:documentation>
+				    			    <xsd:documentation xml:lang="en">
 				
 				    					Although the seal or stamp field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
 				
@@ -1044,8 +1125,6 @@
 				    	
 				
 				    </xsd:complexType>
-				
-				    <xsd:complexType name="VerbatimCopyOfCivilStatusRecordsType"/>
 				
 				    
 </xsd:schema>
