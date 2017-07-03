@@ -14,8 +14,8 @@ version: String = getVersion('xsd');
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
 [file (getFilenameXSD(path, pack.name, suffix, version), false, 'UTF-8')]
-[beginSchema('forms,pdc,udt,ext', pack, version)/]
-	[importXSD('pdc,udt,ext')/]
+[beginSchema('ext,forms,pdc,udt', pack, version)/]
+	[importXSD('pdc,ext,udt')/]
 	[generateContentAggregatedComponents(model, pack)/]
 [endSchema(pack, version)/]
 [/file]

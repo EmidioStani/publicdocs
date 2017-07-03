@@ -46,16 +46,18 @@ version: String = getVersion('xsd');
 [/for]
 [/template]
 
+
+
 [template public generateContentAggregatedComponents(pack : Package) post(trim())]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
-[for (packageableElement: PackageableElement | pElements->select(hasStereotype('isa::xsdSchema')))]
+[for (packageableElement: PackageableElement | pElements->sortedBy(name))]
 [generatePackageableElement(packageableElement)/]
 [/for][/let]
 [/template]
 
 [template public generateFormContentAggregatedComponents(pack : Package, form: String) post(trim())]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
-[for (packageableElement: PackageableElement | pElements->sortedBy(name))]
+[for (packageableElement: PackageableElement | pElements->select(hasStereotype('isa::'.concat(form))))]
 [generatePackageableElement(packageableElement)/]
 [/for][/let]
 [/template]

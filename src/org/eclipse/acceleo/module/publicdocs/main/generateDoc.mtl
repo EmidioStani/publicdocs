@@ -20,7 +20,7 @@ version: String = getVersion('xsd');
 }]
 [file (getFilename2('path_doc', model.name, '.htm'), false, 'UTF-8')]
 <!DOCTYPE html>
-<html lang="[getLang('html')/]" content="[getLang('content')/]">
+<html lang="en" content="en">
 	[includeHead(model)/]
 	[includeMainBody(model)/]
 </html>
@@ -32,7 +32,7 @@ version: String = getVersion('xsd');
 }]
 [file (getFilename2('path_doc', packageableElement.name, '.htm'), false, 'UTF-8')]
 <!DOCTYPE html>
-<html lang="[getLang('html')/]" content="[getLang('content')/]">
+<html lang="en" content="en">
 	[includeHead(model)/]
 	[includePackageBody(model, packageableElement)/]
 </html>
@@ -140,8 +140,10 @@ h3 i{color: #444;}
 		<section id="generatedContent">
 			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 			<div class="contentTables">
-			[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')and(name = 'forms' or name = 'pdc')))]
-				[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
+			[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+				[if packageableElement.name = 'forms' or packageableElement.name = 'pdc']
+					[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
+				[/if]
 			[/for]
 			</div>
 		</section>
@@ -157,7 +159,7 @@ h3 i{color: #444;}
 	<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 		[includeStaticContent1(model)/]
 		[includeTOC(model)/]
-		[includeStaticContentBody2(model)/]
+		[includeStaticContent2(model)/]
 		<section id="generatedContent">
 			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 			<div class="contentTables">
@@ -194,11 +196,6 @@ h3 i{color: #444;}
 		<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
 			<span typeof="foaf:Person">
 				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author3')/]" href="mailto:[getConf('email_author3')/]">[getConf('name_author3')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author3')/]</a>
-			</span>
-		</dd>
-		<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
-			<span typeof="foaf:Person">
-				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author4')/]" href="mailto:[getConf('email_author4')/]">[getConf('name_author4')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author4')/]</a>
 			</span>
 		</dd>
     </dl>
@@ -276,51 +273,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 	    <tr><td>cvb</td><td>[getConf('url_cvb')/]</td></tr>
 	    <tr><td>udt</td><td>[getConf('url_udt')/]</td></tr>
 	    <tr><td>ext</td><td>[getConf('url_ext')/]</td></tr>
-		<tr><td>cls</td><td>[getConf('url_cls')/]</td></tr>
-	    <tr><td>xsd</td><td>[getConf('url_xs')/]</td></tr>
-	  </tbody>
-	</table>
-</section>
-
-<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
-	<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
-	<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
-	<ul>
-		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
-			<li><a href="[getConf('url_'.concat(packageableElement.name))/]">[packageableElement.name/]</a>;</li>
-		[/for]
-	</ul>
-	<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
-	</section>
-[/template]
-
-[template public includeStaticContentBody2(model : Model)]
-<section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
-	<h3 aria-level="1" id="intro">1. Introduction</h3>
-	<p align="justify">The Regulation of the European Parliament and of the Council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
-This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
-In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.</p>
-
-	<h3 aria-level="1" id="intro">2. Standards used</h3>
-	<p align="justify">The XML schemas generated contain the <a href="[getConf('cv_website')/]">Core Vocabularies</a> and the <a href="[getConf('ubl_website')/]">UBL</a> standards. </p> 
-				
-</section>
-
-<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
-	<h3 aria-level="1" id="ns">3. Namespaces</h3>
-	<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
-	
-	<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
-	  <thead>
-		<tr>
-			<th>Prefix</th>
-			<th>Namespace</th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr><td>pdc</td><td>[getConf('url_pdc')/]</td></tr>
-		<tr><td>forms</td><td>[getConf('url_forms')/]</td></tr>
-	    <tr><td>udt</td><td>[getConf('url_udt')/]</td></tr>
+	    <tr><td>xs</td><td>[getConf('url_xs')/]</td></tr>
 	  </tbody>
 	</table>
 </section>
