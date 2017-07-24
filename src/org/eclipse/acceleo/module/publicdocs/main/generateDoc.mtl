@@ -163,7 +163,13 @@ h3 i{color: #444;}
 		<section id="generatedContent">
 			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 			<div class="contentTables">
-			[generatePackageDoc(pack.oclAsType(Package), 1)/]
+			[if not (pack.oclAsType(Package).name = 'formCyprus')]
+			[generatePackageDoc(pack.oclAsType(Package), 1)/][else]
+[debug('OtherHTMLGenerated')/]
+			[generateCommonElementsDoc(pack.oclAsType(Package))/]
+			[for (form: String | getForms(model))]
+			[if not (form = 'commonPartFormCyprus')]
+			[generateFormDoc(pack.oclAsType(Package), i, form)/][/if][/for][/if]
 			</div>
 		</section>
 		[includeStaticContent3(model)/]
@@ -196,6 +202,11 @@ h3 i{color: #444;}
 		<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
 			<span typeof="foaf:Person">
 				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author3')/]" href="mailto:[getConf('email_author3')/]">[getConf('name_author3')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author3')/]</a>
+			</span>
+		</dd>
+		<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+			<span typeof="foaf:Person">
+				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author4')/]" href="mailto:[getConf('email_author4')/]">[getConf('name_author4')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author4')/]</a>
 			</span>
 		</dd>
     </dl>
@@ -314,13 +325,20 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/let]
 [/template]
 
-[template public generateCommonElementsDoc(pack : Package , j : Integer)]
+[template public generateCommonElementsDoc(pack : Package)]
 <h4 id="[pack.name/]">5.1 Common Elements</h4>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
-	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
-		[if packageableElement.oclIsTypeOf(Class)]
-			[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
-		[/if]
+	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype('isa::commonPartFormCyprus')))]
+		[generateClassDoc(packageableElement.oclAsType(Class), 1, i)/]
+	[/for]
+[/let]
+[/template]
+
+[template public generateFormDoc(pack : Package , j : Integer, form: String)]
+<h4 id="[pack.name/]">5.[j/] Form [form/]</h4>
+[let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
+	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype('isa::'.concat(form))))]
+		[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
 	[/for]
 [/let]
 [/template]
