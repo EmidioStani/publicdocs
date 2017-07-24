@@ -3,11 +3,11 @@
 
 [import org::eclipse::acceleo::module::publicdocs::common::util /]
 
-[template public beginSchema(list : String, pack : Package, version: String)]
+[template public beginSchema(list : String, pack : Package, version: String, namespace: String)]
 <?xml version="1.0" encoding="UTF-8"?>
 <[getNS('xs')/]:schema
-	targetNamespace="[getURIFromPackName(pack.name)/]"
-	xmlns="[getURIFromPackName(pack.name)/]"
+	targetNamespace="[getURIFromPackName(namespace)/]"
+	xmlns="[getURIFromPackName(namespace)/]"
 	[for (packName: String | list.tokenize(','))]
 	[if packName <> pack.name]
 	[importNamespace(packName)/]
@@ -25,7 +25,8 @@
 	        Original authors:
 	        [addAuthor('author1')/],
 	        [addAuthor('author2')/],
-	        [addAuthor('author3')/]
+	        [addAuthor('author3')/],
+	        [addAuthor('author4')/]
 		</[getNS('xs')/]:documentation>
 	</[getNS('xs')/]:annotation>
 [/template]

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<:schema
+	targetNamespace=""
+	xmlns=""
+	xmlns:pdc=""	
+	xmlns:forms=""	
+	xmlns:udt=""	
+	xmlns:="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="">
+	<:annotation>	
+		<:documentation xml:lang="en">
+	         
+	        Copyright (C) European Union, 2017
+	        Licensed under the 
+	        Original authors:
+	         (),
+	         (),
+	         ()
+		</:documentation>
+	</:annotation>
+	<!-- ===== Imports======================================== -->
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<!-- ===================================================== -->
+	<:complexType name="BirthPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:BirthPersonType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="CanMarryType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:CanMarryType">
+				<:sequence>
+					<:element name="CanMarryRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="CapacityToMarryType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:CapacityToMarryType">
+				<:sequence>
+					<:element name="ForeignIntendedSpouse" minOccurs="1" maxOccurs="1" type="ForeignIntendedSpouseChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DocumentInfoType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DocumentInfoType">
+				<:sequence>
+					<:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+					<:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DomicileAndOrResidenceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DomicileAndOrResidenceType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="ForeignIntendedSpouseType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="ForeignIntendedSpouse" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="ForeignIntendedSpouseChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:MarriageOrRegisteredPartnershipPersonType">
+				<:sequence>
+					<:element name="MaritalOrRegisteredPartnershipStatus" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="MaritalStatusChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="NotMarried" type="pdc:NotMarriedChoiceType" minOccurs="1" maxOccurs="1"/>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="NotMarriedChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="PersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype cvABIE
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:PersonType">
+				<:sequence>
+					<:element name="PlaceOfDeath" type="pdc:PlaceType" minOccurs="0" maxOccurs="1"/>
+					<:element name="CountryOfResidence" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+					<:element name="TemporaryAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+					<:element name="MainResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+					<:element name="PostalAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+					<:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<:annotation>
+						    <:documentation xml:lang="">
+								
+						    </:documentation>
+						</:annotation>
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="RegisteredPartnershipType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="ReasonForDissolution" minOccurs="1" maxOccurs="1" type="RegisteredPartnershipDissolutionChoiceType">
+			</:element>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="RegisteredPartnershipDissolutionChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	</:schema>

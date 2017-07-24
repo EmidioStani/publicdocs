@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-	targetNamespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/cyprus"
-	xmlns="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/cyprus"
-	xmlns:pdc="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"	
-	xmlns:forms="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"	
+	targetNamespace="http://data.europa.eu/edm/1.0/ns/forms/cyprus#capacityToEnterRegisteredPartnershipForm"
+	xmlns="http://data.europa.eu/edm/1.0/ns/forms/cyprus#capacityToEnterRegisteredPartnershipForm"
+	xmlns:pdc="http://data.europa.eu/edm/1.0/ns/pdc"	
+	xmlns:forms="http://data.europa.eu/edm/1.0/ns/forms"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:formCyprus_commonPartFormCyprus="http://data.europa.eu/edm/1.0/ns/forms/cyprus#commonPartFormCyprus"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -22,12 +24,16 @@
 		</xsd:documentation>
 	</xsd:annotation>
 	<!-- ===== Imports======================================== -->
-	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc"
-			   schemaLocation="../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
-	<xsd:import namespace="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms"
-			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1.0/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1.0/ns/forms"
+			   schemaLocation="../../../xsd/common/core/forms-1.0.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
-			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1.0/ns/forms/cyprus#commonPartFormCyprus"
+			   schemaLocation="commonPartFormCyprus-1.0.xsd"/>
 	<!-- ===================================================== -->
 	
 	</xsd:schema>

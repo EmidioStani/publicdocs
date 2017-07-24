@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<:schema
+	targetNamespace=""
+	xmlns=""
+	xmlns:pdc=""	
+	xmlns:forms=""	
+	xmlns:udt=""	
+	xmlns:="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="">
+	<:annotation>	
+		<:documentation xml:lang="en">
+	         
+	        Copyright (C) European Union, 2017
+	        Licensed under the 
+	        Original authors:
+	         (),
+	         (),
+	         ()
+		</:documentation>
+	</:annotation>
+	<!-- ===== Imports======================================== -->
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<!-- ===================================================== -->
+	<:complexType name="AddressType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype cvABIE
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:AddressType">
+				<:sequence>
+					<:element name="ResidencePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					<:element name="DomicilePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="BirthPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:BirthPersonType">
+				<:sequence>
+					<:element name="Mother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="Father" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="ConfirmationIssuedForChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice between the types of ID used to identify a person.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="NaturalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			<:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="DocumentInfoType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DocumentInfoType">
+				<:sequence>
+					<:element name="DocumentRegistrar" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="IssuePlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DocumentKindChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="DomicileAndOrResidenceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DomicileAndOrResidenceType">
+				<:sequence>
+					<:element name="ConfirmationIssuedFor" minOccurs="1" maxOccurs="1" type="ConfirmationIssuedForChoiceType">
+					</:element>
+					<:element name="ToStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
+					</:element>
+					<:element name="FromStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
+					</:element>
+					<:element name="PermanentTemporaryStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="ExtractFromTheCivilStatusRegisterType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to extracts from the civil status register. 
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="LegalPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="MarriageType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:MarriageType">
+				<:sequence>
+					<:element name="BrideFather" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="GroomFather" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="GroomMother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="BrideCivilStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
+					<:element name="BrideMother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="GroomMaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="OfficialType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:OfficialType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="PermanentTemporaryStayChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice between the types of ID used to identify a person.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="PersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:PersonType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	</:schema>

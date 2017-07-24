@@ -11,7 +11,7 @@
 = getConf(path).concat(country).concat('/').concat(getFilename(name, suffix, version, extension))/]
 
 [query public getForms (model: Model) : Sequence(String)
-= Sequence{'birthForm','lifeForm','marriageForm','maritalStatusForm','capacityToMarryForm','registeredPartnershipForm','capacityToEnterRegisteredPartnershipForm','deathForm','registeredPartnershipStatusForm','domicileAndOrResidenceForm','absenceOfCriminalRecordForm'}/]
+= Sequence{'commonPartFormCyprus','birthForm','lifeForm','marriageForm','maritalStatusForm','capacityToMarryForm','registeredPartnershipForm','capacityToEnterRegisteredPartnershipForm','deathForm','registeredPartnershipStatusForm','domicileAndOrResidenceForm','absenceOfCriminalRecordForm'}/]
 
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and  
@@ -93,6 +93,9 @@
 
 [query public getURIFromPackName (packname: String) : String
 = getConf('url_'.concat(packname))/]
+
+[query public getURIFromFormandPackName (packname: String, form: String) : String
+= getConf('url_'.concat(packname).concat('_').concat(form))/]
 
 [query public getPathFromPackName (packname: String) : String
 = getConf('path_'.concat(packname))/]

@@ -12,7 +12,7 @@ version: String = getVersion('xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
 [file (getFilenameXSD('path_core', pack.name, '-BasicComponents-', version), false, 'UTF-8')]
-[beginSchema('cvb,udt', pack, version)/]
+[beginSchema('cvb,udt', pack, version, pack.name)/]
 	[importXSD('cvb,udt')/]
 	[generateContentBasicComponents(pack)/]
 [endSchema(pack, version)/]

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<:schema
+	targetNamespace=""
+	xmlns=""
+	xmlns:pdc=""	
+	xmlns:forms=""	
+	xmlns:udt=""	
+	xmlns:="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="">
+	<:annotation>	
+		<:documentation xml:lang="en">
+	         
+	        Copyright (C) European Union, 2017
+	        Licensed under the 
+	        Original authors:
+	         (),
+	         (),
+	         ()
+		</:documentation>
+	</:annotation>
+	<!-- ===== Imports======================================== -->
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<!-- ===================================================== -->
+	<:complexType name="AbsenceOfCriminalRecordType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:AbsenceOfCriminalRecordType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="BirthType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:BirthType">
+				<:sequence>
+					<:element name="KeyReferences" minOccurs="1" maxOccurs="1" type="KeyReferencesChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="BirthPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:BirthPersonType">
+				<:sequence>
+					<:element name="DeclaredByOther" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="DeclaredByParent" minOccurs="1" maxOccurs="1" type="DeclaredByParentChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="CapacityToMarryType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:CapacityToMarryType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="ConsentNeededChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of whether consent is needed.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="DeathDeclarerType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the person declaring a death. 
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="Person" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="DeathPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:DeathPersonType">
+				<:sequence>
+					<:element name="FormerSpouseOrPartner" minOccurs="1" maxOccurs="1" type="FormerSpouseOrPartnerChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DeclaredByParentChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of which parent declared the person concerned by the form.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="DivorceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="DivorcePerson" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+			<:element name="DivorceAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="DocumentInfoType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DocumentInfoType">
+				<:sequence>
+					<:element name="CertificateOfficial" type="pdc:OfficialType" minOccurs="1" maxOccurs="1"/>
+					<:element name="AuthorisationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+					<:element name="DecisionAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="FormerSpouseOrPartnerType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the former spouse or partner of the person concerned by the form. 
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="FormerSpouseOrPartner" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="FormerSpouseOrPartnerChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of whether the person concerned by the form has a former spouse or partner.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="FormerSpouseOrPartner" type="FormerSpouseOrPartnerType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="KeyReferencesChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of marital status.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="Marriage" type="forms:MarriageType" minOccurs="1" maxOccurs="1"/>
+			<:element name="Divorce" type="DivorceType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			<:element name="LegalSeparation" type="LegalSeparationType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			<:element name="RegisteredPartnershipChange" type="RegisteredPartnershipChangeType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			<:element name="MarriageAnnulment" type="MarriageAnnulmentType" minOccurs="1" maxOccurs="1" >
+				<:annotation>
+				    <:documentation xml:lang="">
+						
+				    </:documentation>
+				</:annotation>
+			</:element>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="LegalSeparationType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="SeparationPerson" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+			<:element name="RulingCourt" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="LifeType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:LifeType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="MarriageType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:MarriageType">
+				<:sequence>
+					<:element name="FourthWitness" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="FirstWitness" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="SecondWitness" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="ThirdWitness" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="MarriageContractNotaryPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="MarriageAnnulmentType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="RulingCourt" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="MarriageOrRegisteredPartnershipPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
+				<:sequence>
+					<:element name="FormerSpouseOrPartner" minOccurs="1" maxOccurs="1" type="FormerSpouseOrPartnerChoiceType">
+					</:element>
+					<:element name="ConsentNeededForConcernedPerson" minOccurs="1" maxOccurs="1" type="ConsentNeededChoiceType">
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="PersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype cvABIE
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:PersonType">
+				<:sequence>
+					<:element name="Father" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="Mother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					<:element name="AdoptiveParent" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="RegisteredPartnershipType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="ReasonForDissolution" minOccurs="1" maxOccurs="1" type="RegisteredPartnershipDissolutionChoiceType">
+			</:element>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="RegisteredPartnershipChangeType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			<:element name="RegisteredPartnershipChangePlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+			<:element name="RulingCourt" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+			<:element name="RegisteredPartnershipChange" minOccurs="1" maxOccurs="1" type="RegisteredPartnershipChangeChoiceType">
+			</:element>
+			
+		</:sequence>
+		
+	</:complexType>
+	<:complexType name="RegisteredPartnershipChangeChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of types of change of registered partnership.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			<:element name="RegisteredPartnershipDissolution" minOccurs="1" maxOccurs="1" type="RegisteredPartnershipDissolutionChoiceType">
+			</:element>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="RegisteredPartnershipDissolutionChoiceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			This class contains elements related to the choice of how the registered partnership of the person concerned by the form was dissolved.
+					Stereotype xsdChoice
+		    </:documentation>
+		</:annotation>
+		<:choice>
+			
+		</:choice>
+	</:complexType>
+	<:complexType name="SignatureInfoType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:SignatureInfoType">
+				<:sequence>
+					<:element name="SignaturePlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	</:schema>

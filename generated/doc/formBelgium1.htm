@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-05-09">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-07-24">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -164,8 +164,8 @@
 					</tr>
 				  </thead>
 				  <tbody>
-					<tr><td>pdc</td><td>http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc</td></tr>
-					<tr><td>forms</td><td>http://e-documents.semic.eu/publicdocuments/1.0/ns/forms</td></tr>
+					<tr><td>pdc</td><td>http://data.europa.eu/edm/1.0/ns/pdc</td></tr>
+					<tr><td>forms</td><td>http://data.europa.eu/edm/1.0/ns/forms</td></tr>
 				    <tr><td>cva</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
 				    <tr><td>cvb</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
 				    <tr><td>udt</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
@@ -179,14 +179,20 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/france">formFrance</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/spain">formSpain</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
 						<li><a href="">formBelgium1</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/slovakia">formSlovakia</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/finland">formFinland</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/forms/austria">formAustria</a>;</li>
-						<li><a href="http://e-documents.semic.eu/publicdocuments/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
@@ -198,7 +204,7 @@
 							<h5 id="AbsenceOfCriminalRecord">5.1.1 Class AbsenceOfCriminalRecord
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the absence of a criminal record of a person. </p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -210,52 +216,10 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Person</td>
-										<td>This property refers to the class AbsenceOfCriminalRecordPerson.</td>
-										<td>1..1</td>
-										<td>pdc:AbsenceOfCriminalRecordPerson</td>
-									</tr>
-									<tr>
-										<td>IdentityNumber</td>
-										<td>This property contains the identity number. </td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>IDTypeAndNo</td>
-										<td>This property refers to the class IDTypeAndNo</td>
-										<td>1..1</td>
-										<td>forms:IDTypeAndNo</td>
-									</tr>
-									<tr>
-										<td>AbsenceOfACriminalRecord</td>
-										<td>This property contains the boolean value (true or false) regarding the absence of a criminal record.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
 										<td>TypeOfExtract</td>
 										<td></td>
 										<td>1..1</td>
 										<td>formBelgium1:TypeOfExtractChoice</td>
-									</tr>
-									<tr>
-										<td>ApplicantReference</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>ReasonForApplication</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>Applicant</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:Person</td>
 									</tr>
 								</tbody>
 							</table>
@@ -293,105 +257,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="AcknowledgementAndConsent">5.1.3 Class AcknowledgementAndConsent
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>DocumentNumberPrenatalAcknowledgementOfParentage</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>AcknowledgedBy</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:AcknowledgedByChoice</td>
-									</tr>
-									<tr>
-										<td>DateOfAcknowledgement</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>Consent</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:ConsentChoice</td>
-									</tr>
-									<tr>
-										<td>DateOfConsent</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfConsent</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>AuthorityForWhichConsentWasGiven</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-									<tr>
-										<td>JudicialDecisionConsent</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>JudicialBody</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-									<tr>
-										<td>DateOfDecision</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>RollNumber</td>
-										<td></td>
-										<td>1..1</td>
-										<td>forms:ReferenceNumber</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="AfterSeeingThePerson">5.1.4 Class AfterSeeingThePerson
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="ApplicationNewMainResidence">5.1.5 Class ApplicationNewMainResidence
+							<h5 id="ApplicationNewMainResidence">5.1.3 Class ApplicationNewMainResidence
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -419,10 +285,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Birth">5.1.6 Class Birth
+							<h5 id="Birth">5.1.4 Class Birth
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -434,23 +300,77 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Person</td>
-										<td>This property refers to the class BirthPerson.</td>
-										<td>1..1</td>
-										<td>pdc:BirthPerson</td>
-									</tr>
-									<tr>
-										<td>Acknowledgement</td>
+										<td>Consent</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formBelgium1:AcknowledgementAndConsent</td>
+										<td>formBelgium1:ConsentChoice</td>
+									</tr>
+									<tr>
+										<td>AuthorityForWhichConsentWasGiven</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+									<tr>
+										<td>DateOfConsent</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>AcknowledgedBy</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formBelgium1:AcknowledgedByChoice</td>
+									</tr>
+									<tr>
+										<td>RollNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>JudicialBody</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+									<tr>
+										<td>DocumentNoPrenatalAcknowledgementOfParentage</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>PlaceOfConsent</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+									<tr>
+										<td>JudicialDecisionConsent</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DateOfAcknowledgement</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>DateOfDecision</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="CanMarry">5.1.7 Class CanMarry
+							<h5 id="CanMarry">5.1.5 Class CanMarry
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the capacity to marry of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -461,36 +381,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>HasCapacityToMarry</td>
-										<td>The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
-										<td>AppearsToHaveNoMarriage</td>
-										<td>The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
-										<td>NoKnownImpediment</td>
-										<td>There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
-										<td>NoKnownImpedimentIntendedSpouse</td>
-										<td>There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
-										<td>NoOppositionknown</td>
-										<td>There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
 									<tr>
 										<td>NoStatementOnCapacityToMarry</td>
 										<td></td>
@@ -499,10 +389,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="CapacityToMarry">5.1.8 Class CapacityToMarry
+							<h5 id="CapacityToMarry">5.1.6 Class CapacityToMarry
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the capacity to marry of a couple.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -514,38 +404,20 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Person</td>
-										<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-										<td>1..1</td>
-										<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>IntendedSpouse</td>
-										<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-										<td>1..1</td>
-										<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>CanMarry</td>
-										<td>This property refers to the class CanMarry</td>
-										<td>1..1</td>
-										<td>pdc:CanMarry</td>
-									</tr>
-									<tr>
 										<td>Validity</td>
 										<td></td>
 										<td>1..1</td>
-										<td>udt:TextType</td>
+										<td>udt:DateType</td>
 									</tr>
 									<tr>
 										<td>CivilStatus</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formBelgium1:MaritalStatusChoice</td>
+										<td>formBelgium1:MaritalStatus</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="ConfidentialAddress">5.1.9 Class ConfidentialAddress
+							<h5 id="ConfidentialAddress">5.1.7 Class ConfidentialAddress
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -579,7 +451,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="ConsentChoice">5.1.10 Class ConsentChoice
+							<h5 id="ConsentChoice">5.1.8 Class ConsentChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
@@ -625,10 +497,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Death">5.1.11 Class Death
+							<h5 id="Death">5.1.9 Class Death
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -639,12 +511,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Person</td>
-										<td>This property refers to the class DeathPerson.</td>
-										<td>1..1</td>
-										<td>pdc:DeathPerson</td>
-									</tr>
 									<tr>
 										<td>PlaceOfDiscoveryOfDeadBody</td>
 										<td></td>
@@ -665,10 +531,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DeathPerson">5.1.12 Class DeathPerson
+							<h5 id="DeathPerson">5.1.10 Class DeathPerson
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -680,61 +546,6 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Surname</td>
-										<td>This property contains the surname (i.e. the last name or family name) of the person. </td>
-										<td>1..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>Forename</td>
-										<td>This property contains the forename (i.e. the first name or given name) of the person.</td>
-										<td>1..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>DateOfBirth</td>
-										<td>This property contains the date of birth of the person.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfBirth</td>
-										<td>This property refers to the class Place.</td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>CountryOfBirth</td>
-										<td>This property refers to the class Country.</td>
-										<td>1..1</td>
-										<td>pdc:Country</td>
-									</tr>
-									<tr>
-										<td>DateOfDeath</td>
-										<td>This property contains the date of death of the person.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfDeath</td>
-										<td>This property refers to the class Place. </td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>CountryOfDeath</td>
-										<td>This property refers to the class Country.</td>
-										<td>1..1</td>
-										<td>pdc:Country</td>
-									</tr>
-									<tr>
-										<td>Sex</td>
-										<td>This property refers to the class Sex.
-							</td>
-										<td>1..1</td>
-										<td>cls:Sex</td>
-									</tr>
-									<tr>
 										<td>TimeOfDeath</td>
 										<td></td>
 										<td>1..1</td>
@@ -742,7 +553,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DeclarationOfDeparture">5.1.13 Class DeclarationOfDeparture
+							<h5 id="DeclarationOfDeparture">5.1.11 Class DeclarationOfDeparture
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -770,7 +581,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DeclaredAddressAbroad">5.1.14 Class DeclaredAddressAbroad
+							<h5 id="DeclaredAddressAbroad">5.1.12 Class DeclaredAddressAbroad
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -798,10 +609,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DocumentInfo">5.1.15 Class DocumentInfo
+							<h5 id="DocumentInfo">5.1.13 Class DocumentInfo
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to information about a document. </p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -813,25 +624,6 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Kind</td>
-										<td>This property refers to the class DocumentKindChoice.</td>
-										<td>1..1</td>
-										<td>forms:DocumentKindChoice</td>
-									</tr>
-									<tr>
-										<td>IssueDate</td>
-										<td>This property contains the issue date of the document.
-							</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>ReferenceNumber</td>
-										<td>This property contains the reference number of the document.</td>
-										<td>1..1</td>
-										<td>forms:ReferenceNumber</td>
-									</tr>
-									<tr>
 										<td>DocumentIssued</td>
 										<td></td>
 										<td>1..1</td>
@@ -839,7 +631,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DocumentIssuedChoice">5.1.16 Class DocumentIssuedChoice
+							<h5 id="DocumentIssuedChoice">5.1.14 Class DocumentIssuedChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
@@ -857,26 +649,26 @@
 										<td>AfterSeeingThePerson</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formBelgium1:AfterSeeingThePerson</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>OnTheBasisOfThePopulationRegister</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formBelgium1:OnTheBasisOfThePopulationRegister</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 									<tr>
 										<td>OnTheBasisOfTheIDCard</td>
 										<td></td>
 										<td>1..1</td>
-										<td>formBelgium1:OnTheBasisOfTheIDCard</td>
+										<td>udt:IndicatorType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DomicileAndOrResidence">5.1.17 Class DomicileAndOrResidence
+							<h5 id="DomicileAndOrResidence">5.1.15 Class DomicileAndOrResidence
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the domicile and/or residence of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -887,60 +679,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>ConcernedPerson</td>
-										<td>This property refers to the class BirthPerson.</td>
-										<td>1..1</td>
-										<td>pdc:BirthPerson</td>
-									</tr>
-									<tr>
-										<td>Domicile</td>
-										<td>This property refers to the class Address.</td>
-										<td>0..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>Residence</td>
-										<td>This property refers to the class Address.</td>
-										<td>0..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>Disclaimer</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>DomicileReferenceAddress</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>DateOfDomiciliationInTerritoryOfConsularPost</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>ResidenceReferenceAddress</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>ApplicationNewMainResidence</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:ApplicationNewMainResidence</td>
-									</tr>
-									<tr>
-										<td>DeclaredAddressAbroad</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:DeclaredAddressAbroad</td>
-									</tr>
 									<tr>
 										<td>DeclarationOfDeparture</td>
 										<td></td>
@@ -954,25 +692,31 @@
 										<td>formBelgium1:ResidenceAbroad</td>
 									</tr>
 									<tr>
-										<td>POBoxAbroad</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:POBoxAbroad</td>
-									</tr>
-									<tr>
-										<td>TemporaryAbsence</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
 										<td>LegalDomicile</td>
 										<td></td>
 										<td>1..1</td>
 										<td>pdc:Address</td>
 									</tr>
 									<tr>
-										<td>ProlongedDisappearance</td>
+										<td>ResidenceReferenceAddress</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Address</td>
+									</tr>
+									<tr>
+										<td>POBoxAddressForCorrespondence</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Address</td>
+									</tr>
+									<tr>
+										<td>Disclaimer</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>TemporaryAbsence</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:DateType</td>
@@ -984,23 +728,53 @@
 										<td>formBelgium1:ConfidentialAddress</td>
 									</tr>
 									<tr>
-										<td>POBoxAddressForCorrespondence</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
 										<td>PreviousDomicileOrResidence</td>
 										<td></td>
 										<td>1..1</td>
 										<td>formBelgium1:PreviousDomicileOrResidence</td>
 									</tr>
+									<tr>
+										<td>ProlongedDisappearance</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>DeclaredAddressAbroad</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formBelgium1:DeclaredAddressAbroad</td>
+									</tr>
+									<tr>
+										<td>ApplicationNewMainResidence</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formBelgium1:ApplicationNewMainResidence</td>
+									</tr>
+									<tr>
+										<td>DomicileReferenceAddress</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Address</td>
+									</tr>
+									<tr>
+										<td>POBoxAbroad</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formBelgium1:POBoxAbroad</td>
+									</tr>
+									<tr>
+										<td>DateOfDomiciliationInTerritoryOfConsularPost</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
 								</tbody>
 							</table>
-							<h5 id="MaritalStatus">5.1.18 Class MaritalStatus
+							<h5 id="MaritalStatus">5.1.16 Class MaritalStatus
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the marital status of a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -1011,18 +785,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Person</td>
-										<td>This property refers to the class MaritalOrRegisteredPartnershipStatusPerson.</td>
-										<td>1..1</td>
-										<td>pdc:MaritalOrRegisteredPartnershipStatusPerson</td>
-									</tr>
-									<tr>
-										<td>MaritalStatus</td>
-										<td>This property refers to the class MaritalStatusChoice.</td>
-										<td>1..1</td>
-										<td>pdc:MaritalStatusChoice</td>
-									</tr>
 									<tr>
 										<td>Disclaimer</td>
 										<td></td>
@@ -1036,46 +798,6 @@
 										<td>udt:DateType</td>
 									</tr>
 									<tr>
-										<td>Spouse</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formBelgium1:Person</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="MaritalStatusChoice">5.1.19 Class MaritalStatusChoice
-							(choice)
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>DateOfMarriageOrRegisteredPartnership</td>
-										<td>This property contains the date of marriage.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>NotMarried</td>
-										<td>This property refers to the class NotMarriedChoice.</td>
-										<td>1..1</td>
-										<td>pdc:NotMarriedChoice</td>
-									</tr>
-									<tr>
-										<td>Undetermined</td>
-										<td>This property refers to the class Undetermined.</td>
-										<td>1..1</td>
-										<td></td>
-									</tr>
-									<tr>
 										<td>SpouseOrEx</td>
 										<td></td>
 										<td>1..1</td>
@@ -1083,10 +805,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Marriage">5.1.20 Class Marriage
+							<h5 id="Marriage">5.1.17 Class Marriage
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to a marriage.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -1098,43 +820,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>SpouseA</td>
-										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
-										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>SpouseB</td>
-										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
-										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>DateOfMarriage</td>
-										<td>This property contains the date of the marriage.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfMarriage</td>
-										<td>This property refers to the class Place.</td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>Witness1</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
-									</tr>
-									<tr>
 										<td>Witness2</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
-									</tr>
-									<tr>
-										<td>Witness3</td>
 										<td></td>
 										<td>1..1</td>
 										<td>pdc:Person</td>
@@ -1145,12 +831,24 @@
 										<td>1..1</td>
 										<td>pdc:Person</td>
 									</tr>
+									<tr>
+										<td>Witness1</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>Witness3</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
 								</tbody>
 							</table>
-							<h5 id="NotMarriedChoice">5.1.21 Class NotMarriedChoice
+							<h5 id="NotMarriedChoice">5.1.18 Class NotMarriedChoice
 							(choice)
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to the specific situation of not-married individuals.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -1161,24 +859,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>NeverMarried</td>
-										<td>This property refers to the class NeverMarried.</td>
-										<td>1..1</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>DivorceDate</td>
-										<td>This property contains the date of the divorce.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>WidowshipDate</td>
-										<td>This property contains the date of widowship.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
 									<tr>
 										<td>DissolutionOfRegisteredPartnershipDate</td>
 										<td></td>
@@ -1187,39 +867,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="OnTheBasisOfTheIDCard">5.1.22 Class OnTheBasisOfTheIDCard
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="OnTheBasisOfThePopulationRegister">5.1.23 Class OnTheBasisOfThePopulationRegister
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="POBoxAbroad">5.1.24 Class POBoxAbroad
+							<h5 id="POBoxAbroad">5.1.19 Class POBoxAbroad
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -1247,10 +895,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Person">5.1.25 Class Person
+							<h5 id="Person">5.1.20 Class Person
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to a person.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -1262,128 +910,10 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Surname</td>
-										<td>This property contains the person's last name.</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>SurnameAtBirth</td>
-										<td>This property contains the person's last name at the time of his/her birth.
-							</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>Forename</td>
-										<td>This property contains the person's first name or given name.</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>DateOfBirth</td>
-										<td>This property contains the person's date of birth.
-							</td>
-										<td>0..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfBirth</td>
-										<td>This property refers to the class Place.</td>
-										<td>0..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>CountryOfBirth</td>
-										<td>This property refers to the class Country.</td>
-										<td>0..1</td>
-										<td>pdc:Country</td>
-									</tr>
-									<tr>
-										<td>DateOfDeath</td>
-										<td>This property contains the person's date of death (if applicable).</td>
-										<td>0..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfDeath</td>
-										<td>This property refers to the class Place.</td>
-										<td>0..1</td>
-										<td>pdc:Place</td>
-									</tr>
-									<tr>
-										<td>CountryOfDeath</td>
-										<td>This property refers to the class Country.</td>
-										<td>0..1</td>
-										<td>pdc:Country</td>
-									</tr>
-									<tr>
-										<td>Sex</td>
-										<td>This property contains the sex of the person</td>
-										<td>0..1</td>
-										<td>cls:Sex</td>
-									</tr>
-									<tr>
-										<td>Nationality</td>
-										<td>This property refers to the class Nationality.</td>
-										<td>0..*</td>
-										<td>pdc:Nationality</td>
-									</tr>
-									<tr>
-										<td>Domicile</td>
-										<td>This property refers to the class Address.
-							</td>
-										<td>0..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>Residence</td>
-										<td>This property refers to the class Address</td>
-										<td>0..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>SurnameBefore</td>
-										<td>This property contains the past surname of the person (if applicable)</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>SurnameAfter</td>
-										<td>This property contains the future surname of the person (if applicable)</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>PreviousSurname</td>
-										<td>This property contains the previous surname of the person (if applicable)
-							</td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>PreviousForename</td>
-										<td>This property contains the previous forename (first name) of the person (if applicable). </td>
-										<td>0..*</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
 										<td>NobilityTitle</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>TimeOfBirth</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TimeType</td>
-									</tr>
-									<tr>
-										<td>Mother</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
 									</tr>
 									<tr>
 										<td>Father</td>
@@ -1392,7 +922,13 @@
 										<td>pdc:Person</td>
 									</tr>
 									<tr>
-										<td>CoMother</td>
+										<td>DateOfRegistration</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>Mother</td>
 										<td></td>
 										<td>1..1</td>
 										<td>pdc:Person</td>
@@ -1404,20 +940,26 @@
 										<td>udt:TextType</td>
 									</tr>
 									<tr>
+										<td>CoMother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>TimeOfBirth</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TimeType</td>
+									</tr>
+									<tr>
 										<td>NationalRegisterNo</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
 									</tr>
-									<tr>
-										<td>DateOfRegistration</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
 								</tbody>
 							</table>
-							<h5 id="PreviousDomicileOrResidence">5.1.26 Class PreviousDomicileOrResidence
+							<h5 id="PreviousDomicileOrResidence">5.1.21 Class PreviousDomicileOrResidence
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -1451,10 +993,10 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="RegisteredPartnership">5.1.27 Class RegisteredPartnership
+							<h5 id="RegisteredPartnership">5.1.22 Class RegisteredPartnership
 							
 							</h5>
-							<p><b>Definition:</b>This class contains elements related to a registered partnership.</p>
+							<p><b>Definition:</b></p>
 							<table class="generatedTable table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -1465,30 +1007,6 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>PartnerA</td>
-										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
-										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>PartnerB</td>
-										<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
-										<td>1..1</td>
-										<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>DateOfRegisteredPartnership</td>
-										<td>This property contains the date the registered partnership is concluded.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfRegisteredPartnership</td>
-										<td>This property refers to the class Place.</td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
 									<tr>
 										<td>DateOfRegisteredPartnershipDeclaration</td>
 										<td></td>
@@ -1503,7 +1021,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="ResidenceAbroad">5.1.28 Class ResidenceAbroad
+							<h5 id="ResidenceAbroad">5.1.23 Class ResidenceAbroad
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -1537,7 +1055,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="TypeOfExtractChoice">5.1.29 Class TypeOfExtractChoice
+							<h5 id="TypeOfExtractChoice">5.1.24 Class TypeOfExtractChoice
 							(choice)
 							</h5>
 							<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
@@ -1558,13 +1076,13 @@
 										<td>udt:TextType</td>
 									</tr>
 									<tr>
-										<td>Article596(1)</td>
+										<td>Article596-2</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
 									</tr>
 									<tr>
-										<td>Article596(2)</td>
+										<td>Article596-1</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
@@ -1575,50 +1093,50 @@
 				</div>
 			</section>
 			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
-								<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
-							</section>
-							
-							<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
-								<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
-							</section>
-							
-							<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
-							<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
-							
-								<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
-									<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
-										<dl about class = "bibliography">
-											<dt id : "bib-PD">Public Documents Regulation</dt>
-											<dd rel = "dcterms: requires ">
-											"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
-												<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
-												<cite>Regulation (EU) 2016/1191</cite>	 				
-												</a>
-											. July 2016. EU Regulation. URL:
-												<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
-											</dd>
-											</dt>
-										</dl>
-								</section>
-							
-								<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
-									<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
-								</section>
-							</section>
+				<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
+				<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
+			<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
+					<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+						<dl about class = "bibliography">
+							<dt id : "bib-PD">Public Documents Regulation</dt>
+							<dd rel = "dcterms: requires ">
+							"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
+								<cite>Regulation (EU) 2016/1191</cite>	 				
+								</a>
+							. July 2016. EU Regulation. URL:
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
+							</dd>
+							</dt>
+						</dl>
+				</section>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
+					<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
+				</section>
+			</section>
 		</div>
 		<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-							<script src='jquery.toc.min.js'></script>
-							<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-							<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
-							<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
-							<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
-							<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
-							<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
-							<script type="text/javascript">
-							    var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
-								var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex","formBelgium1":""};
-							</script>
-							<script src='initialize.js'></script>
+		<script src='jquery.toc.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
+		<script type="text/javascript">
+		    var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
+			var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex","formBelgium1":""};
+		</script>
+		<script src='initialize.js'></script>
 	</body>
 </html>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<:schema
+	targetNamespace=""
+	xmlns=""
+	xmlns:pdc=""	
+	xmlns:forms=""	
+	xmlns:udt=""	
+	xmlns:="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="">
+	<:annotation>	
+		<:documentation xml:lang="en">
+	         
+	        Copyright (C) European Union, 2017
+	        Licensed under the 
+	        Original authors:
+	         (),
+	         (),
+	         ()
+		</:documentation>
+	</:annotation>
+	<!-- ===== Imports======================================== -->
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<:import namespace=""
+			   schemaLocation=""/>
+	<!-- ===================================================== -->
+	<:complexType name="AbsenceOfCriminalRecordPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:AbsenceOfCriminalRecordPersonType">
+				<:sequence>
+					<:element name="PassportNumber" type="forms:IDTypeAndNoType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="BirthPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:BirthPersonType">
+				<:sequence>
+					<:element name="MarriageOfParents" type="forms:MarriageType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="CapacityToMarryType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:CapacityToMarryType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DeathPersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:DeathPersonType">
+				<:sequence>
+					<:element name="LastDomicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+					<:element name="PlaceOfBurial" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="DocumentInfoSpainType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:DocumentInfoType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="FormHeaderType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:FormHeaderType">
+				<:sequence>
+					<:element name="MinistryOfJustice" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="MarriageType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="forms:MarriageType">
+				<:sequence>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="PersonType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype cvABIE
+		    </:documentation>
+		</:annotation>
+		<:complexContent>
+			<:extension base="pdc:PersonType">
+				<:sequence>
+					<:element name="MaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
+					<:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<:annotation>
+						    <:documentation xml:lang="">
+								
+						    </:documentation>
+						</:annotation>
+					</:element>
+					<:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<:annotation>
+						    <:documentation xml:lang="">
+								
+						    </:documentation>
+						</:annotation>
+					</:element>
+					
+				</:sequence>
+			</:extension>
+		</:complexContent>
+	</:complexType>
+	<:complexType name="PlaceType">
+		<:annotation>
+		    <:documentation xml:lang="">
+			
+					Stereotype cvABIE
+		    </:documentation>
+		</:annotation>
+		<:sequence> 
+			
+		</:sequence>
+		
+	</:complexType>
+	</:schema>

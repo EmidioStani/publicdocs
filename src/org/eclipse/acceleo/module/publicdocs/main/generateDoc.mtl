@@ -314,6 +314,17 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/let]
 [/template]
 
+[template public generateCommonElementsDoc(pack : Package , j : Integer)]
+<h4 id="[pack.name/]">5.1 Common Elements</h4>
+[let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
+	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
+		[if packageableElement.oclIsTypeOf(Class)]
+			[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
+		[/if]
+	[/for]
+[/let]
+[/template]
+
 [template public generateClassDoc(class : Class, j : Integer, i : Integer)]
 <h5 id="[class.name/]">5.[j/].[i/] Class [class.name/]
 [if isChoice(class)](choice)[/if]

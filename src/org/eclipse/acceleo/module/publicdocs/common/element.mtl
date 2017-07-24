@@ -7,8 +7,11 @@
 [template public generateElements(class: Class, NDR: String){
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
+[if property.hasStereotype('isa::commonPartFormCyprus')]
+[debug('Property has stereotype isa::commonPartFormCyprus : '.concat(property.name))/]
+[generatePropertyElement(property, pack, NDR)/][else]
 [if not property.hasStereotype('isa::xsdAttribute')]
-[generatePropertyElement(property, pack, NDR)/][/if][/for]
+[generatePropertyElement(property, pack, NDR)/][/if][/if][/for]
 [/template]
 
 [template public generateAttributes(class: Class, NDR: String){
