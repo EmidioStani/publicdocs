@@ -326,7 +326,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generateCommonElementsDoc(pack : Package)]
-<h4 id="[pack.name/]">5.1 Common Elements</h4>
+<h4 id="CommonElements">5.1 Common Elements</h4>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype('isa::commonPartFormCyprus')))]
 		[generateClassDoc(packageableElement.oclAsType(Class), 1, i)/]
@@ -335,7 +335,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generateFormDoc(pack : Package , j : Integer, form: String)]
-<h4 id="[pack.name/]">5.[j/] Form [form/]</h4>
+<h4 id="[form/]">5.[j/] Form [form/]</h4>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype('isa::'.concat(form))))]
 		[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
