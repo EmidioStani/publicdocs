@@ -1086,7 +1086,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Iu4YILJsEeaGvYnz3ewAEA" name="IDType" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_QjgyELJsEeaGvYnz3ewAEA" name="IDNumber" type="_O31is5PcEeaaQdure8LlEA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_WRZz4LJqEeaGvYnz3ewAEA" name="IDTypeAndNo">
+      <packagedElement xmi:type="uml:Class" xmi:id="_WRZz4LJqEeaGvYnz3ewAEA" name="IDTypeAndNoChoice">
         <ownedComment xmi:type="uml:Comment" xmi:id="_idhHAOFzEear-8wQOKPlcA">
           <body>This class contains elements related to the choice between the types of ID used to identify a person.</body>
         </ownedComment>
@@ -2474,7 +2474,7 @@
             <body>This property refers to the class DocumentInfo. </body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_yuuDCk-wEeedmq_nqOiJPw" name="SignatureInfo" type="_E-sacE-xEeedmq_nqOiJPw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_yuuDCk-wEeedmq_nqOiJPw" name="SignatureInfo" type="_Vv1rsJaOEea9ZepAMlE8tQ">
           <ownedComment xmi:type="uml:Comment" xmi:id="_yuuDC0-wEeedmq_nqOiJPw">
             <body>This property refers to the class SignatureInfo.</body>
           </ownedComment>
@@ -2513,36 +2513,6 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_E-p-Nk-xEeedmq_nqOiJPw" name="ReferenceNumber" type="_O31is5PcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_E-p-N0-xEeedmq_nqOiJPw">
             <body>This property contains the reference number of the document.</body>
-          </ownedComment>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_E-sacE-xEeedmq_nqOiJPw" name="SignatureInfo">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_E-sacU-xEeedmq_nqOiJPw">
-          <body>This class contains elements related to the signature of the official handling the document.</body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E-sack-xEeedmq_nqOiJPw" name="SurnameForenameOfficial" type="_O31is5PcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_E-tBgE-xEeedmq_nqOiJPw">
-            <body>This property contains the surname and forename of the official.</body>
-          </ownedComment>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E-tBgU-xEeedmq_nqOiJPw" name="PositionOfOfficial" type="_O31is5PcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_E-tBgk-xEeedmq_nqOiJPw">
-            <body>This property contains the position of the official.</body>
-          </ownedComment>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E-tBg0-xEeedmq_nqOiJPw" name="IssueDate" type="_O31ispPcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_E-tBhE-xEeedmq_nqOiJPw">
-            <body>This property contains the issue data of the document.</body>
-          </ownedComment>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E-tBhU-xEeedmq_nqOiJPw" name="Signature" type="_O31is5PcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_E-tBhk-xEeedmq_nqOiJPw" annotatedElement="_E-tBhU-xEeedmq_nqOiJPw">
-            <body>Although the signature field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  </body>
-          </ownedComment>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E-tBh0-xEeedmq_nqOiJPw" name="SealOrStamp" type="_O31is5PcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_E-tBiE-xEeedmq_nqOiJPw" annotatedElement="_E-tBh0-xEeedmq_nqOiJPw">
-            <body>Although the seal or stamp field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  </body>
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
@@ -2973,5 +2943,5 @@
   <isa:commonPartFormCyprus xmi:id="_aNpPsFEKEeeCAusTgrAxWA" base_Class="_yuuDAE-wEeedmq_nqOiJPw"/>
   <isa:commonPartFormCyprus xmi:id="_buFHsFEKEeeCAusTgrAxWA" base_Class="_KlwwoE-xEeedmq_nqOiJPw"/>
   <isa:commonPartFormCyprus xmi:id="_d7UbUFEKEeeCAusTgrAxWA" base_Class="_E-p-ME-xEeedmq_nqOiJPw"/>
-  <isa:commonPartFormCyprus xmi:id="_fiwTMFEKEeeCAusTgrAxWA" base_Class="_E-sacE-xEeedmq_nqOiJPw"/>
+  <isa:commonPartFormCyprus xmi:id="_4fSDMHzxEeeWNsmxTU5FHQ" base_Class="_hW1csDbvEeeCFMbbB5Zt1g"/>
 </xmi:XMI>
