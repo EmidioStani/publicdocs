@@ -34,7 +34,9 @@
 	<!-- ===================================================== -->
 	<!-- ===== Includes======================================= -->
 	<xsd:include schemaLocation="commonPartFormCyprus-1.0.xsd"/>
-	<!-- ===================================================== -->	<xsd:complexType name="FrmDeathCyprusType">
+	<!-- ===================================================== -->
+	<xsd:element name="FrmDeathCyprus" type="FrmDeathCyprusType" />
+	<xsd:complexType name="FrmDeathCyprusType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
 			
@@ -61,4 +63,4 @@
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	</xsd:schema>
+</xsd:schema>

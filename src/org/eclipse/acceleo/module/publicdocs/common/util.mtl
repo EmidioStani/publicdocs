@@ -11,7 +11,14 @@
 = getConf(path).concat(country).concat('/').concat(getFilename(name, suffix, version, extension))/]
 
 [query public getForms (model: Model) : Sequence(String)
-= Sequence{'commonPartFormCyprus','birthForm','lifeForm','marriageForm','maritalStatusForm','capacityToMarryForm','registeredPartnershipForm','capacityToEnterRegisteredPartnershipForm','deathForm','registeredPartnershipStatusForm','domicileAndOrResidenceForm','absenceOfCriminalRecordForm'}/]
+= Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPartFormCyprus','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
+
+[query public getForms (string: String) : Sequence(String)
+= Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPartFormCyprus','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
+
+
+[query public getForms(pack:Package) : Sequence(String)
+= getForms('abc')->select(form|((pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form))))->notEmpty())/]
 
 [query public getDependencies (pack : Package, prop: Property) : Set(Dependency) 
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and  
@@ -31,7 +38,6 @@
 
 [query public getParentProperty (prop: Property) : Property 
 = prop.owner.oclAsType(Class).general->any(true).oclAsType(Class).ownedAttribute->select(name = prop.name)->any(true).oclAsType(Property) /]
-
 
 [query public belongSamePackage (class1: Class, class2: Class) : Boolean
 = class1.namespace.name = class2.namespace.name/]

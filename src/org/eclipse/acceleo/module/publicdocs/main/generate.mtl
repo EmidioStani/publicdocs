@@ -6,8 +6,6 @@
 [import org::eclipse::acceleo::module::publicdocs::main::generateDoc /]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 [import org::eclipse::acceleo::module::publicdocs::main::forms /]
-[import org::eclipse::acceleo::module::publicdocs::ms::slovakia /]
-[import org::eclipse::acceleo::module::publicdocs::ms::finland /]
 [import org::eclipse::acceleo::module::publicdocs::ms::msForms /]
 
 [template public main(model : Model)]
@@ -18,8 +16,6 @@
 [generateBasicComponents(model)/]
 [generateCodeList(model)/]
 [generateDocs(model)/]
-[comment][generateFormSlovakia(model)/]
-[generateFormFinland(model)/][/comment]
 [generateMSForms(model)/]
 [generateMSSeparateForms(model)/]
 [/template]

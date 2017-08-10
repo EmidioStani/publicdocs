@@ -167,9 +167,10 @@ h3 i{color: #444;}
 			[generatePackageDoc(pack.oclAsType(Package), 1)/][else]
 [debug('OtherHTMLGenerated')/]
 			[generateCommonElementsDoc(pack.oclAsType(Package))/]
-			[for (form: String | getForms(model))]
-			[if not (form = 'commonPartFormCyprus')]
-			[generateFormDoc(pack.oclAsType(Package), i, form)/][/if][/for][/if]
+			[for (form: String | getForms(pack.oclAsType(Package)))]
+			[let pElements : Sequence(Class) = (pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form)))]
+			[if (not (form = 'commonPartFormCyprus')) and (not pElements->isEmpty())]
+			[generateFormDoc(pack.oclAsType(Package), i, form)/][/if][/let][/for][/if]
 			</div>
 		</section>
 		[includeStaticContent3(model)/]
@@ -335,8 +336,8 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public generateFormDoc(pack : Package , j : Integer, form: String)]
-<h4 id="[form/]">5.[j/] Form [form/]</h4>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
+<h4 id="[form/]">5.[j/] Form [form/]</h4>
 	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype('isa::'.concat(form))))]
 		[generateClassDoc(packageableElement.oclAsType(Class), j, i)/]
 	[/for]

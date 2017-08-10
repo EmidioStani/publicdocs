@@ -4,6 +4,8 @@
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::schema/]
 [import org::eclipse::acceleo::module::publicdocs::common::complextype /]
+[import org::eclipse::acceleo::module::publicdocs::common::element /]
+
 
 [template public generateMSForms(model : Model){
 version: String = getVersion('xsd');
@@ -34,14 +36,14 @@ version: String = getVersion('xsd');
 [/template]
 
 [template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String, version: String )]
-[for (form: String | getForms(model))]
+[for (form: String | getForms(pack))]
 [file (getMSFilenameXSD(path, pack.name, form, suffix, version), false, 'UTF-8')]
 [beginSchema('pdc,forms,udt,ext', pack, version, pack.name.concat('_').concat(form))/]
 	[importXSD('ms_pdc1,ms_forms1,udt-ms1,ext')/]
 [if not (form = 'commonPartFormCyprus')]
 	[includeXSD(pack.name.concat('_commonPartFormCyprus'))/][/if]
-	[generateFormContentAggregatedComponents(pack,form)/]
-	[endSchema(pack, version)/]
+[generateFormContentAggregatedComponents(pack,form)/]
+[endSchema(pack, version)/]
 [/file]
 [/for]
 [/template]
@@ -56,7 +58,12 @@ version: String = getVersion('xsd');
 [template public generateFormContentAggregatedComponents(pack : Package, form: String) post(trim())]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->select(hasStereotype('isa::'.concat(form))))]
+[let elementName : String = packageableElement.name]
+[if elementName.startsWith('Frm') and not form.startsWith('commonPart')]
+[generateGlobalElement(packageableElement, packageableElement.name.concat('Type'))/]
+[/if]
 [generatePackageableElement(packageableElement)/]
+[/let]
 [/for][/let]
 [/template]
 

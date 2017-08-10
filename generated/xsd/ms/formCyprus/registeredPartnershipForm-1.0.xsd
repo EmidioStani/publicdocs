@@ -34,7 +34,9 @@
 	<!-- ===================================================== -->
 	<!-- ===== Includes======================================= -->
 	<xsd:include schemaLocation="commonPartFormCyprus-1.0.xsd"/>
-	<!-- ===================================================== -->	<xsd:complexType name="FrmRegisteredPartnershipType">
+	<!-- ===================================================== -->
+	<xsd:element name="FrmRegisteredPartnership" type="FrmRegisteredPartnershipType" />
+	<xsd:complexType name="FrmRegisteredPartnershipType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
 			
@@ -61,4 +63,4 @@
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	</xsd:schema>
+</xsd:schema>

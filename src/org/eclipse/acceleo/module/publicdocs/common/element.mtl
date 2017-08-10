@@ -165,6 +165,10 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 [/if][/if]
 [/template]
 
+[template public generateGlobalElement(pack : PackageableElement, typeName: String)]
+<[getNS('xs')/]:element name="[pack.name/]" type="[typeName/]" />
+[/template]
+
 [template public generateReference(property: Property, elementname: String)]
 [if (property.upper = -1)]
 <[getNS('xs')/]:element ref="[elementname/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>

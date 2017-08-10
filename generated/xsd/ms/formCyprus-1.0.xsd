@@ -33,6 +33,7 @@
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
 			
+					Stereotype commonPartFormCyprus
 					Stereotype xsdChoice
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -317,19 +318,7 @@
 				
 				    		</xsd:element>
 				
-				    		<xsd:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					This property refers to the class SignatureInfo.
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
+				    		<xsd:element name="SignatureInfo" type="forms:SignatureInfoType" minOccurs="1" maxOccurs="1"/>
 				
 				    		<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 				
@@ -737,99 +726,6 @@
 				    			    <xsd:documentation xml:lang="en">
 				
 				    					
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
-				
-				    		
-				
-				    	</xsd:sequence>
-				
-				    	
-				
-				    </xsd:complexType>
-	<xsd:complexType name="SignatureInfoType">
-				
-				    	<xsd:annotation>
-				
-				    	    <xsd:documentation xml:lang="en">
-				
-				    		This class contains elements related to the signature of the official handling the document.
-				
-				    				Stereotype commonPartFormCyprus
-				
-				    	    </xsd:documentation>
-				
-				    	</xsd:annotation>
-				
-				    	<xsd:sequence> 
-				
-				    		<xsd:element name="SurnameForenameOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					This property contains the surname and forename of the official.
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
-				
-				    		<xsd:element name="PositionOfOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					This property contains the position of the official.
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
-				
-				    		<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					This property contains the issue data of the document.
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
-				
-				    		<xsd:element name="Signature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					Although the signature field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
-				
-				    			    </xsd:documentation>
-				
-				    			</xsd:annotation>
-				
-				    		</xsd:element>
-				
-				    		<xsd:element name="SealOrStamp" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-				
-				    			<xsd:annotation>
-				
-				    			    <xsd:documentation xml:lang="en">
-				
-				    					Although the seal or stamp field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
 				
 				    			    </xsd:documentation>
 				

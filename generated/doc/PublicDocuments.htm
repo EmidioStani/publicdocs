@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-08-01">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-08-10">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -185,19 +185,19 @@
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
 						<li><a href="">formBelgium1</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/slovakia#">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
@@ -236,7 +236,7 @@
 												<td>IDTypeAndNo</td>
 												<td>This property refers to the class IDTypeAndNo</td>
 												<td>1..1</td>
-												<td>forms:IDTypeAndNo</td>
+												<td>forms:IDTypeAndNoChoice</td>
 											</tr>
 											<tr>
 												<td>AbsenceOfACriminalRecord</td>
@@ -937,7 +937,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="IDTypeAndNo">5.4.23 Class IDTypeAndNo
+									<h5 id="IDTypeAndNoChoice">5.4.23 Class IDTypeAndNoChoice
 									(choice)
 									</h5>
 									<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
@@ -1222,9 +1222,9 @@
 										</tbody>
 									</table>
 						
-						<h4 id="pdc">5.13 Package pdc</h4>
+						<h4 id="pdc">5.14 Package pdc</h4>
 									<img alt="UML model of pdc package" src="pdc.png" width = 100%> UML class diagram </img>
-												<h5 id="AbsenceOfCriminalRecordPerson">5.13.1 Class AbsenceOfCriminalRecordPerson
+												<h5 id="AbsenceOfCriminalRecordPerson">5.14.1 Class AbsenceOfCriminalRecordPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the absence of a criminal record for a person.</p>
@@ -1294,7 +1294,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Address">5.13.2 Class Address
+												<h5 id="Address">5.14.2 Class Address
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to an address.</p>
@@ -1335,7 +1335,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Authority">5.13.3 Class Authority
+												<h5 id="Authority">5.14.3 Class Authority
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the designation of an authority.</p>
@@ -1357,7 +1357,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="BirthPerson">5.13.4 Class BirthPerson
+												<h5 id="BirthPerson">5.14.4 Class BirthPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
@@ -1409,7 +1409,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="CanMarry">5.13.5 Class CanMarry
+												<h5 id="CanMarry">5.14.5 Class CanMarry
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the capacity to marry of a person.</p>
@@ -1455,7 +1455,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.13.6 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
+												<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.14.6 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the capacity to marry or enter into a registered partnership of a person.</p>
@@ -1513,7 +1513,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Country">5.13.7 Class Country
+												<h5 id="Country">5.14.7 Class Country
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to a country.</p>
@@ -1541,7 +1541,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DeathPerson">5.13.8 Class DeathPerson
+												<h5 id="DeathPerson">5.14.8 Class DeathPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
@@ -1612,7 +1612,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.13.9 Class MaritalOrRegisteredPartnershipStatusPerson
+												<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.14.9 Class MaritalOrRegisteredPartnershipStatusPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the marital or registered partnership status of a person.</p>
@@ -1688,7 +1688,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MaritalStatusChoice">5.13.10 Class MaritalStatusChoice
+												<h5 id="MaritalStatusChoice">5.14.10 Class MaritalStatusChoice
 												(choice)
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
@@ -1722,7 +1722,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="MarriageOrRegisteredPartnershipPerson">5.13.11 Class MarriageOrRegisteredPartnershipPerson
+												<h5 id="MarriageOrRegisteredPartnershipPerson">5.14.11 Class MarriageOrRegisteredPartnershipPerson
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the marriage or registered partnership of a person.</p>
@@ -1774,7 +1774,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Nationality">5.13.12 Class Nationality
+												<h5 id="Nationality">5.14.12 Class Nationality
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to a nationality.</p>
@@ -1796,7 +1796,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="NotMarriedChoice">5.13.13 Class NotMarriedChoice
+												<h5 id="NotMarriedChoice">5.14.13 Class NotMarriedChoice
 												(choice)
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to the specific situation of not-married individuals.</p>
@@ -1830,7 +1830,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Official">5.13.14 Class Official
+												<h5 id="Official">5.14.14 Class Official
 												
 												</h5>
 												<p><b>Definition:</b></p>
@@ -1858,7 +1858,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Person">5.13.15 Class Person
+												<h5 id="Person">5.14.15 Class Person
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to a person.</p>
@@ -1979,7 +1979,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="Place">5.13.16 Class Place
+												<h5 id="Place">5.14.16 Class Place
 												
 												</h5>
 												<p><b>Definition:</b>This class contains elements related to a place.</p>
