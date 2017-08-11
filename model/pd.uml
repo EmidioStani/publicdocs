@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:isa="http://tempuri.org/isa" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://tempuri.org/isa isa.uml#_aV8UYE97Eeedmq_nqOiJPw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:isa="http://tempuri.org/isa" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://tempuri.org/isa isa.uml#_KsoogH5zEeepG8WNQIQIkQ">
   <uml:Model xmi:id="_x1vz0JPYEea8WcU2IuteNg" name="PublicDocuments">
     <packagedElement xmi:type="uml:Package" xmi:id="_O3_ToZPcEeaaQdure8LlEA" name="cva" URI="http://www.w3.org/ns/corevocabulary/AggegrateComponents">
       <packagedElement xmi:type="uml:Class" xmi:id="_O3_TopPcEeaaQdure8LlEA" name="Person">
@@ -2410,42 +2410,103 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LKWo4DbuEeeCFMbbB5Zt1g" name="formCyprus">
-      <packagedElement xmi:type="uml:Class" xmi:id="_lr9fUDbuEeeCFMbbB5Zt1g" name="Authority">
+      <packagedElement xmi:type="uml:Class" xmi:id="_lr9fUDbuEeeCFMbbB5Zt1g" name="AuthorityChoice">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_tJoUQH6LEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the choice between types of authority in Cyprus. </body>
+        </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_UgxwQDbvEeeCFMbbB5Zt1g" general="_LDV0IJaLEea9ZepAMlE8tQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_INCtwDbvEeeCFMbbB5Zt1g" name="DistrictAdministrations" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_gqKAEDbzEeeCFMbbB5Zt1g" name="TownHalls" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_78lPcDbzEeeCFMbbB5Zt1g" name="CivilRegistryAndMigrationDept" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_OHnAADb1EeeCFMbbB5Zt1g" name="CriminalRecordOffice" type="_O31is5PcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TQY3sDb1EeeCFMbbB5Zt1g" name="DistrictPoliceDirectorate" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_INCtwDbvEeeCFMbbB5Zt1g" name="DistrictAdministrations" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xsgpkH6LEeeEzZmtSaBFtg">
+            <body>This property contains the name of a District Administration in Cyprus.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gqKAEDbzEeeCFMbbB5Zt1g" name="TownHalls" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_03h0EH6LEeeEzZmtSaBFtg">
+            <body>This property contains the name of a town hall in Cyprus.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_78lPcDbzEeeCFMbbB5Zt1g" name="CivilRegistryAndMigrationDept" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-DIA8H6LEeeEzZmtSaBFtg">
+            <body>This property contains the name of the Civil Registry and Migration Department in Cyprus.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_OHnAADb1EeeCFMbbB5Zt1g" name="CriminalRecordOffice" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_A4RpIH6MEeeEzZmtSaBFtg">
+            <body>This property contains the name of the Criminal Record Office in Cyprus.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TQY3sDb1EeeCFMbbB5Zt1g" name="DistrictPoliceDirectorate" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EhS-QH6MEeeEzZmtSaBFtg">
+            <body>This property contains the name of a District Police Directorate. </body>
+          </ownedComment>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_hW1csDbvEeeCFMbbB5Zt1g" name="AdministrativeDocumentChoice">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_LgPtYH6MEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the choice between the different types of administrative documents. </body>
+        </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_v3bbgDbzEeeCFMbbB5Zt1g" general="_a9hPUOcQEeaniKDsuGWb9g"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_qXu1cDbvEeeCFMbbB5Zt1g" name="BirthCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_00mxAH6NEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of birth certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_qXu1cTbvEeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_O_swgDbzEeeCFMbbB5Zt1g" name="DeathCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_32P9EH6NEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of death certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_O_swgTbzEeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_rHrH0DbzEeeCFMbbB5Zt1g" name="MarriageCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_7hW84H6NEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of marriage certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_rHrH0TbzEeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_NgP6gDb0EeeCFMbbB5Zt1g" name="CapacityToMarryCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__cy3sH6NEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of capacity to marry certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_NgP6gTb0EeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_k4CgUDb0EeeCFMbbB5Zt1g" name="CivilPartnershipCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Ev_2sH6OEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of civil partnership certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_k4CgUTb0EeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_0uliQDb0EeeCFMbbB5Zt1g" name="PermanentResidenceCertificate" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IFfL0H6OEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of permanent residence certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_0uliQTb0EeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_kF-UwDb1EeeCFMbbB5Zt1g" name="CertificateOfAbsenceOfCriminalRecord" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MpzrkH6OEeeEzZmtSaBFtg">
+            <body>This property corresponds to the choice of absence of criminal record certificate.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_kF-UwTb1EeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_q-S70E99Eeedmq_nqOiJPw" name="FrmBirthCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_vzAoAE99Eeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xdcJgE99Eeedmq_nqOiJPw" name="Body" type="_O31izJPcEeaaQdure8LlEA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_mJZ9UH6MEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Birth.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vzAoAE99Eeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ol7DEH6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xdcJgE99Eeedmq_nqOiJPw" name="Body" type="_O31izJPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rL6N4H6MEeeEzZmtSaBFtg">
+            <body>This class refers to the class Birth.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_zTco4E99Eeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_utmzAH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LRTzQFEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LSCzEFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
@@ -2461,12 +2522,12 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yuuDBE-wEeedmq_nqOiJPw" name="AuthorityIssuingForm" type="_lr9fUDbuEeeCFMbbB5Zt1g">
           <ownedComment xmi:type="uml:Comment" xmi:id="_yuuDBU-wEeedmq_nqOiJPw">
-            <body>This property refers to the class Authority.</body>
+            <body>This property refers to the class AuthorityChoice.</body>
           </ownedComment>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yuuDBk-wEeedmq_nqOiJPw" name="AuthorityIssuingDocument" type="_lr9fUDbuEeeCFMbbB5Zt1g">
           <ownedComment xmi:type="uml:Comment" xmi:id="_yuuDB0-wEeedmq_nqOiJPw">
-            <body>This property refers to the class Authority.</body>
+            <body>This property refers to the class AuthorityChoice.</body>
           </ownedComment>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yuuDCE-wEeedmq_nqOiJPw" name="DocumentInfo" type="_E-p-ME-xEeedmq_nqOiJPw">
@@ -2522,7 +2583,7 @@
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Klwwok-xEeedmq_nqOiJPw" name="DocumentFromCourtOrTribunal" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_Klwwo0-xEeedmq_nqOiJPw">
-            <body>This property refers to the class DocumentFromCourtOrTribunalChoice. </body>
+            <body>This property corresponds to the choice of a document from a court or tribunal.</body>
           </ownedComment>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_KlwwpE-xEeedmq_nqOiJPw" name="AdministrativeDocument" type="_hW1csDbvEeeCFMbbB5Zt1g">
@@ -2532,65 +2593,149 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Klwwpk-xEeedmq_nqOiJPw" name="NotarialAct" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_Klwwp0-xEeedmq_nqOiJPw">
-            <body>This property refers to the class NotarialAct. </body>
+            <body>This property refers to the choice of a notarial act. </body>
           </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KlwwqE-xEeedmq_nqOiJPw" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_KlwwqU-xEeedmq_nqOiJPw" name="OfficialCertificateOnDocumentSignedByPerson" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_Klwwqk-xEeedmq_nqOiJPw">
-            <body>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </body>
+            <body>This property corresponds to the choice of an official certificate on a document signed by the concerned person.</body>
           </ownedComment>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Klwwq0-xEeedmq_nqOiJPw" name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="_O31itZPcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_KlwwrE-xEeedmq_nqOiJPw">
-            <body>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </body>
+            <body>This property corresponds to the choice of a document drawn up by a diplomatic or consular agent</body>
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_7AWskE-xEeedmq_nqOiJPw" name="FrmDeathCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BmDOME-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_EHbl0E-yEeedmq_nqOiJPw" name="Body" type="_O31i3ZPcEeaaQdure8LlEA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ywOzkH6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Death.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BmDOME-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FQAo8H6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EHbl0E-yEeedmq_nqOiJPw" name="Body" type="_O31i3ZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_58UuMH6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class Death.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_ICHSsE-yEeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_w5YHAH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qtxb8FEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qt1tYFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_VubRsE-yEeedmq_nqOiJPw" name="FrmMarriageCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z7r8UE-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_cp-ukE-yEeedmq_nqOiJPw" name="Body" type="_x_LgkJRwEeaPKuyhkF_CdQ"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xKe9wH6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Marriage. </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z7r8UE-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Ebgp4H6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cp-ukE-yEeedmq_nqOiJPw" name="Body" type="_x_LgkJRwEeaPKuyhkF_CdQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3cpmwH6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class Marriage. </body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_eYkXUE-yEeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wKJpgH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PfwwsFEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pf2QQFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_uhlpUE-yEeedmq_nqOiJPw" name="FrmCapacityToMarryCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_zDbc0E-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_2FHFIE-yEeedmq_nqOiJPw" name="Body" type="_rCLVYJR0EeaPKuyhkF_CdQ"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_07LBIH6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Capacity to Marry. </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_zDbc0E-yEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GGgMEH6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2FHFIE-yEeedmq_nqOiJPw" name="Body" type="_rCLVYJR0EeaPKuyhkF_CdQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_7-5C4H6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class CapacityToMarry.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_6XdEEE-yEeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xyJiEH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RnTsAFEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RnX9cFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_LKx3UE-zEeedmq_nqOiJPw" name="FrmRegisteredPartnership">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_W_y9gE-zEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z0kyQE-zEeedmq_nqOiJPw" name="Body" type="_tIl2AJR5EeaPKuyhkF_CdQ"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_200qYH6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Registered Partnership. </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_W_y9gE-zEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HbSNsH6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z0kyQE-zEeedmq_nqOiJPw" name="Body" type="_tIl2AJR5EeaPKuyhkF_CdQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9rS6UH6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class RegisteredPartnership.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_cVczkE-zEeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_y5lrQH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sra0YFEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SrfF0FEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_0yxeEE-zEeedmq_nqOiJPw" name="FrmDomicileAndORResidenceCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_7zhkAE-zEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_-zYAUE-zEeedmq_nqOiJPw" name="Body" type="_3NJdcJR0EeaPKuyhkF_CdQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0yxeEE-zEeedmq_nqOiJPw" name="FrmDomicileAndOrResidenceCyprus">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_853WAH6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Domicile and/or Residence. </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7zhkAE-zEeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JTzOgH6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-zYAUE-zEeedmq_nqOiJPw" name="Body" type="_3NJdcJR0EeaPKuyhkF_CdQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CSV98H6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class DomicileAndOrResidence</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_AzQNYE-0Eeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_0y9AoH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U9_T8FEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U-CXQFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_O5jZsE-0Eeedmq_nqOiJPw" name="FrmAbsenceOfCriminalRecordCyprus">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UDbdkE-0Eeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_XC6tgE-0Eeedmq_nqOiJPw" name="Body" type="_-ySC0JR0EeaPKuyhkF_CdQ"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_5fgH8H6PEeeEzZmtSaBFtg">
+          <body>This class contains elements related to the form Absence of a Criminal Record.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_UDbdkE-0Eeedmq_nqOiJPw" name="Header" type="_yuuDAE-wEeedmq_nqOiJPw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IT4poH6NEeeEzZmtSaBFtg">
+            <body>This property refers to the class FormHeader.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_XC6tgE-0Eeedmq_nqOiJPw" name="Body" type="_-ySC0JR0EeaPKuyhkF_CdQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__gm2IH6MEeeEzZmtSaBFtg">
+            <body>This property refers to the class AbsenceOfCriminalRecord.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Y8tgsE-0Eeedmq_nqOiJPw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zlcrsH6MEeeEzZmtSaBFtg">
+            <body>This property can contain any type of information. </body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UCyP8FEKEeeCAusTgrAxWA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UC16UFEKEeeCAusTgrAxWA" value="1"/>
         </ownedAttribute>
@@ -2830,15 +2975,15 @@
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pL3jgLJOEeacavyzYL89Ug">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_i4rxgE97Eeedmq_nqOiJPw" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4rxgU97Eeedmq_nqOiJPw" key="Version" value="0.0.9"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4rxgk97Eeedmq_nqOiJPw" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4rxg097Eeedmq_nqOiJPw" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4rxhE97Eeedmq_nqOiJPw" key="Date" value="2017-06-12"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4rxhU97Eeedmq_nqOiJPw" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hf1PUH56EeeEzZmtSaBFtg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PUX56EeeEzZmtSaBFtg" key="Version" value="0.0.10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PUn56EeeEzZmtSaBFtg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PU356EeeEzZmtSaBFtg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PVH56EeeEzZmtSaBFtg" key="Date" value="2017-08-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PVX56EeeEzZmtSaBFtg" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pL3jgbJOEeacavyzYL89Ug" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="isa.uml#_aV8UYE97Eeedmq_nqOiJPw"/>
+        <references xmi:type="ecore:EPackage" href="isa.uml#_KsoogH5zEeepG8WNQIQIkQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="isa.uml#_kMq3kKd3Eeas-9n4KOQ_cA"/>
     </profileApplication>
@@ -2931,7 +3076,7 @@
   <isa:xsdSchema xmi:id="_dkZcIDcLEeeCFMbbB5Zt1g" base_Package="_bd5psDcLEeeCFMbbB5Zt1g"/>
   <isa:xsdChoice xmi:id="_DxVw8DcPEeeCFMbbB5Zt1g" base_Class="__HZKUDcOEeeCFMbbB5Zt1g"/>
   <isa:xsdChoice xmi:id="_EP5tgDcVEeeCFMbbB5Zt1g" base_Class="_EP34UDcVEeeCFMbbB5Zt1g"/>
-  <isa:commonPartFormCyprus xmi:id="_lqubUE97Eeedmq_nqOiJPw" base_Class="_lr9fUDbuEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_lqubUE97Eeedmq_nqOiJPw" base_Class="_lr9fUDbuEeeCFMbbB5Zt1g"/>
   <isa:xsdChoice xmi:id="_Klx-wE-xEeedmq_nqOiJPw" base_Class="_KlwwoE-xEeedmq_nqOiJPw"/>
   <isa:deathForm xmi:id="_-GbFoE-xEeedmq_nqOiJPw" base_Class="_7AWskE-xEeedmq_nqOiJPw"/>
   <isa:birthForm xmi:id="_iHVvIE-yEeedmq_nqOiJPw" base_Class="_q-S70E99Eeedmq_nqOiJPw"/>
@@ -2940,8 +3085,9 @@
   <isa:registeredPartnershipForm xmi:id="_UZRAIE-zEeedmq_nqOiJPw" base_Class="_LKx3UE-zEeedmq_nqOiJPw"/>
   <isa:domicileAndOrResidenceForm xmi:id="_5qurgE-zEeedmq_nqOiJPw" base_Class="_0yxeEE-zEeedmq_nqOiJPw"/>
   <isa:absenceOfCriminalRecordForm xmi:id="_aRzrYE-0Eeedmq_nqOiJPw" base_Class="_O5jZsE-0Eeedmq_nqOiJPw"/>
-  <isa:commonPartFormCyprus xmi:id="_aNpPsFEKEeeCAusTgrAxWA" base_Class="_yuuDAE-wEeedmq_nqOiJPw"/>
-  <isa:commonPartFormCyprus xmi:id="_buFHsFEKEeeCAusTgrAxWA" base_Class="_KlwwoE-xEeedmq_nqOiJPw"/>
-  <isa:commonPartFormCyprus xmi:id="_d7UbUFEKEeeCAusTgrAxWA" base_Class="_E-p-ME-xEeedmq_nqOiJPw"/>
-  <isa:commonPartFormCyprus xmi:id="_4fSDMHzxEeeWNsmxTU5FHQ" base_Class="_hW1csDbvEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_aNpPsFEKEeeCAusTgrAxWA" base_Class="_yuuDAE-wEeedmq_nqOiJPw"/>
+  <isa:commonPart xmi:id="_buFHsFEKEeeCAusTgrAxWA" base_Class="_KlwwoE-xEeedmq_nqOiJPw"/>
+  <isa:commonPart xmi:id="_d7UbUFEKEeeCAusTgrAxWA" base_Class="_E-p-ME-xEeedmq_nqOiJPw"/>
+  <isa:commonPart xmi:id="_4fSDMHzxEeeWNsmxTU5FHQ" base_Class="_hW1csDbvEeeCFMbbB5Zt1g"/>
+  <isa:xsdChoice xmi:id="_lJePgH56EeeEzZmtSaBFtg" base_Class="_lr9fUDbuEeeCFMbbB5Zt1g"/>
 </xmi:XMI>
