@@ -163,14 +163,13 @@ h3 i{color: #444;}
 		<section id="generatedContent">
 			<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 			<div class="contentTables">
-			[if not (pack.oclAsType(Package).name = 'formCyprus')]
+			[if not (getCountriesSeparateXSD('')->includes(pack.oclAsType(Package).name))]
 			[generatePackageDoc(pack.oclAsType(Package), 1)/][else]
 [debug('OtherHTMLGenerated')/]
 			[generateCommonElementsDoc(pack.oclAsType(Package))/]
-			[for (form: String | getForms(pack.oclAsType(Package)))]
-			[let pElements : Sequence(Class) = (pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form)))]
-			[if (not (form = 'commonPartFormCyprus')) and (not pElements->isEmpty())]
-			[generateFormDoc(pack.oclAsType(Package), i, form)/][/if][/let][/for][/if]
+			[for (form: String | (getForms(pack.oclAsType(Package)))->select(f|not f.startsWith('commonPart')))]
+			[let j:Integer = i+1]
+			[generateFormDoc(pack.oclAsType(Package), j, form)/][/let][/for][/if]
 			</div>
 		</section>
 		[includeStaticContent3(model)/]
