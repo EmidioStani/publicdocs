@@ -16,7 +16,6 @@
 [query public getCountriesSeparateXSD (string: String) : Sequence(String)
 = Sequence{'formCyprus'}/]
 
-
 [query public getForms(pack:Package) : Sequence(String)
 = getForms('abc')->select(form|((pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form))))->notEmpty())/]
 
