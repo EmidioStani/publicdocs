@@ -11,10 +11,10 @@
 = getConf(path).concat(country).concat('/').concat(getFilename(name, suffix, version, extension))/]
 
 [query public getForms (string: String) : Sequence(String)
-= Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPartFormCyprus','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
+= Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPartFormCyprus','commonPartFormRomania','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
 
 [query public getCountriesSeparateXSD (string: String) : Sequence(String)
-= Sequence{'formCyprus'}/]
+= Sequence{'formCyprus','formRomania'}/]
 
 [query public getForms(pack:Package) : Sequence(String)
 = getForms('abc')->select(form|((pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form))))->notEmpty())/]
