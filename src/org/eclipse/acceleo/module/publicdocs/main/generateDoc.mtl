@@ -315,7 +315,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 [template public generatePackageDoc(pack : Package , j : Integer)]
 <h4 id="[pack.name/]">5.[j/] Package [pack.name/]</h4>
-<img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
+<img alt="UML model of [pack.name/] package" src="[pack.name/].jpeg" width = 100%> UML class diagram </img>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
 		[if packageableElement.oclIsTypeOf(Class)]
