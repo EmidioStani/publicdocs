@@ -1955,6 +1955,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_xKVw4DSuEeelo8Ns44bPUQ" name="DomicileAndOrResidence">
         <generalization xmi:type="uml:Generalization" xmi:id="_4WqNoDSuEeelo8Ns44bPUQ" general="_3NJdcJR0EeaPKuyhkF_CdQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_zUrhgDSuEeelo8Ns44bPUQ" name="RemovalDateResidence" type="_O31ispPcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sjPzIJE2EeeWapaVZSephw" name="MainPlaceOfResidence" type="_O31ivZPcEeaaQdure8LlEA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_zZtOoDSyEeelo8Ns44bPUQ" name="ExaminationOfImpedimentsToMarriage">
         <generalization xmi:type="uml:Generalization" xmi:id="__N0V4DSyEeelo8Ns44bPUQ" general="_J__e8K8wEeavbt_KlNQYCw"/>
@@ -2062,7 +2063,14 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_kFTU0I8lEeeWapaVZSephw" name="Body" type="_CmJdcI8lEeeWapaVZSephw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mO43gI8lEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_QaFucI8lEeeWapaVZSephw" name="RegisteredPartnershipStatus"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QaFucI8lEeeWapaVZSephw" name="RegisteredPartnershipStatus">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2RrAQJE2EeeWapaVZSephw" name="Person" type="_n5b4IDSsEeelo8Ns44bPUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="__afbYJE1EeeWapaVZSephw" name="FrmDomicileAndOrResidenceFinland">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_H6KWYJE2EeeWapaVZSephw" name="Header" type="_c38FII73EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZtktoJE2EeeWapaVZSephw" name="Body" type="_xKVw4DSuEeelo8Ns44bPUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bk8e8JE2EeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_qxWMcBqtEeevBc6EJXfXqQ" name="formAustria">
       <packagedElement xmi:type="uml:Class" xmi:id="_7NJl0BrUEeevBc6EJXfXqQ" name="FormerSpouseOrPartnerChoice">
@@ -3664,33 +3672,30 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_7ioxgDcLEeeCFMbbB5Zt1g" name="Person">
         <generalization xmi:type="uml:Generalization" xmi:id="_7ioxgTcLEeeCFMbbB5Zt1g" general="_O31ioJPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_7ioxgjcLEeeCFMbbB5Zt1g" name="DataOnParents" type="_APosIDcMEeeCFMbbB5Zt1g"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_bSBUYDcMEeeCFMbbB5Zt1g" name="IdentityNumber" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_dsucQDcMEeeCFMbbB5Zt1g" name="ForeignIdentityNumber" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_o-TeMDcMEeeCFMbbB5Zt1g" name="CorrespondingForeignCountry" type="_4HgnoK7FEeavbt_KlNQYCw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_xUgUIDcMEeeCFMbbB5Zt1g" name="EthnicGroup" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_0R-K0DcMEeeCFMbbB5Zt1g" name="CitizenshipCountry" type="_4HgnoK7FEeavbt_KlNQYCw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_E9yRwDcWEeeCFMbbB5Zt1g" name="DeathTime" type="_8Yy1oBB4EeeOZJtJre35Ig"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_APosIDcMEeeCFMbbB5Zt1g" name="Parents">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_APosITcMEeeCFMbbB5Zt1g" name="Mother" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_APosIjcMEeeCFMbbB5Zt1g" name="Father" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_koX_kJE8EeeWapaVZSephw" name="InfoOnPersonalID" type="_5IsXQDcOEeeCFMbbB5Zt1g"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_MI8ccDcMEeeCFMbbB5Zt1g" name="BirthPerson">
         <generalization xmi:type="uml:Generalization" xmi:id="_S6CVwDcMEeeCFMbbB5Zt1g" general="_O31iw5PcEeaaQdure8LlEA"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_OeIK8JE8EeeWapaVZSephw" general="_7ioxgDcLEeeCFMbbB5Zt1g"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_PkCqUDcMEeeCFMbbB5Zt1g" name="BirthTime" type="_8Yy1oBB4EeeOZJtJre35Ig"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JIQH4JE7EeeWapaVZSephw" name="DataOnParents" type="_Ug4pgJE6EeeWapaVZSephw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_J-FR8DcNEeeCFMbbB5Zt1g" name="Life">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_O4ldEDcNEeeCFMbbB5Zt1g" name="FeesPaid" type="_O31itZPcEeaaQdure8LlEA">
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_O4ldETcNEeeCFMbbB5Zt1g" value="true"/>
         </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0jTLMJE8EeeWapaVZSephw" name="Person" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5IsXQDcOEeeCFMbbB5Zt1g" name="IDInfo">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_ZTtGMDcPEeeCFMbbB5Zt1g" name="IDType" type="__HZKUDcOEeeCFMbbB5Zt1g"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_ouNFUDcPEeeCFMbbB5Zt1g" name="IssuingAuthority" type="_LDV0IJaLEea9ZepAMlE8tQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_saPSMDcPEeeCFMbbB5Zt1g" name="IssueDate" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_y8Q0wDcPEeeCFMbbB5Zt1g" name="DocumentNumber" type="_O31is5PcEeaaQdure8LlEA"/>
-        <nestedClassifier xmi:type="uml:Class" xmi:id="_7PLioDcOEeeCFMbbB5Zt1g" name="IDInfo"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="__HZKUDcOEeeCFMbbB5Zt1g" name="IDTypeChoice">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_K1UKADcPEeeCFMbbB5Zt1g" name="Passport" type="_O31itZPcEeaaQdure8LlEA">
@@ -3729,6 +3734,92 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_yUlQEDcXEeeCFMbbB5Zt1g" name="CurrentJudicialRecord">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_2s57MDcXEeeCFMbbB5Zt1g" name="PeriodForEachExtract" type="_O31is5PcEeaaQdure8LlEA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ifXzEJE5EeeWapaVZSephw" name="FormHeader">
+        <generalization xmi:type="uml:Generalization" xmi:id="_vryKAJE5EeeWapaVZSephw" general="_861BUJaKEea9ZepAMlE8tQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rp-hcJE5EeeWapaVZSephw" name="DocumentInfo" type="_fK9xUDcLEeeCFMbbB5Zt1g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4NlzAJE5EeeWapaVZSephw" name="FrmBirthLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ABLrIJE6EeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wZmnYJE7EeeWapaVZSephw" name="Body" type="_cwUToJE7EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_yjZlcJE7EeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3-8qUJFKEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3-_toJFKEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ug4pgJE6EeeWapaVZSephw" name="Parents">
+        <generalization xmi:type="uml:Generalization" xmi:id="_EcPEsJE7EeeWapaVZSephw" general="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5D_aEJE6EeeWapaVZSephw" name="FatherForename" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7EkKsJE6EeeWapaVZSephw" name="FatherSurname" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-mCGUJE6EeeWapaVZSephw" name="MotherForename" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_AsbyIJE7EeeWapaVZSephw" name="MotherSurname" type="_O31is5PcEeaaQdure8LlEA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_cwUToJE7EeeWapaVZSephw" name="Birth">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_hrxhAJE7EeeWapaVZSephw" name="Person" type="_MI8ccDcMEeeCFMbbB5Zt1g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_42KHgJE8EeeWapaVZSephw" name="FrmLifeLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-7o4AJE8EeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BRmp0JE9EeeWapaVZSephw" name="Body" type="_J-FR8DcNEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DFaw0JE9EeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4saNQJFKEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4sdQkJFKEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_UJ5IAJFJEeeWapaVZSephw" name="DeathPerson">
+        <generalization xmi:type="uml:Generalization" xmi:id="_b7-kQJFJEeeWapaVZSephw" general="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_E9yRwDcWEeeCFMbbB5Zt1g" name="DeathTime" type="_8Yy1oBB4EeeOZJtJre35Ig"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_iHbZ4JFJEeeWapaVZSephw" name="Death">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_o5gKoJFJEeeWapaVZSephw" name="Person" type="_UJ5IAJFJEeeWapaVZSephw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2ts6UJFJEeeWapaVZSephw" name="FrmDeathLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7wA9oJFJEeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="__Ic5EJFJEeeWapaVZSephw" name="Body" type="_iHbZ4JFJEeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_A0Ab8JFKEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5lGv0JFKEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5lJzIJFKEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_JhAoUJFKEeeWapaVZSephw" name="Marriage">
+        <generalization xmi:type="uml:Generalization" xmi:id="_dl4r4JFKEeeWapaVZSephw" general="_x_LgkJRwEeaPKuyhkF_CdQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_QW6JIJFKEeeWapaVZSephw" name="SpouseA" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_SJVwEJFKEeeWapaVZSephw" name="SpouseB" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_qlbEcJFKEeeWapaVZSephw" name="FrmMarriageLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wWNXUJFKEeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_zQv10JFKEeeWapaVZSephw" name="Body" type="_JhAoUJFKEeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1HFFUJFKEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6TT5oJFKEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6TW88JFKEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AdqjEJFLEeeWapaVZSephw" name="MaritalStatus">
+        <generalization xmi:type="uml:Generalization" xmi:id="_JhcQsJFLEeeWapaVZSephw" general="_uzE0IJR0EeaPKuyhkF_CdQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_F221UJFLEeeWapaVZSephw" name="Person" type="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QtJCYJFLEeeWapaVZSephw" name="FrmMaritalStatusLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YmXocJFLEeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bDJz8JFLEeeWapaVZSephw" name="Body" type="_AdqjEJFLEeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cnhJsJFLEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fEQR4JFLEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fEVKYJFLEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_KFRyAJFVEeeWapaVZSephw" name="FrmDomicileAndOrResidenceLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RBMbQJFVEeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Yq5XkJFVEeeWapaVZSephw" name="Body" type="_wAjNYDcWEeeCFMbbB5Zt1g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bPkTwJFVEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IwZ0UJFWEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IweFwJFWEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_W7NtMJFWEeeWapaVZSephw" name="FrmAbsenceOfCriminalRecordLatvia">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_c6uYkJFWEeeWapaVZSephw" name="Header" type="_ifXzEJE5EeeWapaVZSephw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_d8DSsJFWEeeWapaVZSephw" name="Body" type="_-ySC0JR0EeaPKuyhkF_CdQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_f7R_gJFWEeeWapaVZSephw" name="Extension" type="_LzhxAO4ZEeakX6GTURsWlQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jGhMcJFWEeeWapaVZSephw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jGk20JFWEeeWapaVZSephw" value="1"/>
+        </ownedAttribute>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_9uxBIDS2Eeelo8Ns44bPUQ" name="Person">
@@ -3975,4 +4066,33 @@
   <isa:registeredPartnershipForm xmi:id="_wnOBcI8eEeeWapaVZSephw" base_Class="_sr8esI8eEeeWapaVZSephw"/>
   <isa:registeredPartnershipForm xmi:id="_Ru-FcI8fEeeWapaVZSephw" base_Class="_yrKRIDSzEeelo8Ns44bPUQ"/>
   <isa:registeredPartnershipStatusForm xmi:id="_Ij5OQI8lEeeWapaVZSephw" base_Class="_CmJdcI8lEeeWapaVZSephw"/>
+  <isa:domicileAndOrResidenceForm xmi:id="_DNOtMJE2EeeWapaVZSephw" base_Class="__afbYJE1EeeWapaVZSephw"/>
+  <isa:domicileAndOrResidenceForm xmi:id="_WCqiIJE2EeeWapaVZSephw" base_Class="_xKVw4DSuEeelo8Ns44bPUQ"/>
+  <isa:commonPart xmi:id="_4hWj4JE2EeeWapaVZSephw" base_Class="_n5b4IDSsEeelo8Ns44bPUQ"/>
+  <isa:commonPart xmi:id="_Va7sYJE5EeeWapaVZSephw" base_Class="_fK9xUDcLEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_Z7XKoJE5EeeWapaVZSephw" base_Class="_nLX9cDcLEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_lQUQsJE5EeeWapaVZSephw" base_Class="_ifXzEJE5EeeWapaVZSephw"/>
+  <isa:birthForm xmi:id="_63z9kJE5EeeWapaVZSephw" base_Class="_4NlzAJE5EeeWapaVZSephw"/>
+  <isa:birthForm xmi:id="_wRebkJE6EeeWapaVZSephw" base_Class="_MI8ccDcMEeeCFMbbB5Zt1g"/>
+  <isa:birthForm xmi:id="_j75wkJE7EeeWapaVZSephw" base_Class="_cwUToJE7EeeWapaVZSephw"/>
+  <isa:commonPart xmi:id="_BzH38JE8EeeWapaVZSephw" base_Class="_2faycDcPEeeCFMbbB5Zt1g"/>
+  <isa:lifeForm xmi:id="_FjVaMJE8EeeWapaVZSephw" base_Class="_J-FR8DcNEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_TIvf8JE8EeeWapaVZSephw" base_Class="_7ioxgDcLEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_pc5egJE8EeeWapaVZSephw" base_Class="_Ug4pgJE6EeeWapaVZSephw"/>
+  <isa:commonPart xmi:id="_rhOGsJE8EeeWapaVZSephw" base_Class="_5IsXQDcOEeeCFMbbB5Zt1g"/>
+  <isa:lifeForm xmi:id="_7yZ2MJE8EeeWapaVZSephw" base_Class="_42KHgJE8EeeWapaVZSephw"/>
+  <isa:commonPart xmi:id="_QmyrIJE9EeeWapaVZSephw" base_Class="__HZKUDcOEeeCFMbbB5Zt1g"/>
+  <isa:commonPart xmi:id="_lQQpgJE9EeeWapaVZSephw" base_Class="_EP34UDcVEeeCFMbbB5Zt1g"/>
+  <isa:deathForm xmi:id="_OaxpEJFJEeeWapaVZSephw" base_Class="_hWb-0DcVEeeCFMbbB5Zt1g"/>
+  <isa:deathForm xmi:id="_WYBzgJFJEeeWapaVZSephw" base_Class="_UJ5IAJFJEeeWapaVZSephw"/>
+  <isa:deathForm xmi:id="_kXHkkJFJEeeWapaVZSephw" base_Class="_iHbZ4JFJEeeWapaVZSephw"/>
+  <isa:deathForm xmi:id="_5WapAJFJEeeWapaVZSephw" base_Class="_2ts6UJFJEeeWapaVZSephw"/>
+  <isa:marriageForm xmi:id="_MOp6UJFKEeeWapaVZSephw" base_Class="_JhAoUJFKEeeWapaVZSephw"/>
+  <isa:marriageForm xmi:id="_t7OioJFKEeeWapaVZSephw" base_Class="_qlbEcJFKEeeWapaVZSephw"/>
+  <isa:maritalStatusForm xmi:id="_N9iokJFLEeeWapaVZSephw" base_Class="_AdqjEJFLEeeWapaVZSephw"/>
+  <isa:maritalStatusForm xmi:id="_UfZzEJFLEeeWapaVZSephw" base_Class="_QtJCYJFLEeeWapaVZSephw"/>
+  <isa:domicileAndOrResidenceForm xmi:id="_lKXUgJFLEeeWapaVZSephw" base_Class="_wAjNYDcWEeeCFMbbB5Zt1g"/>
+  <isa:domicileAndOrResidenceForm xmi:id="_OP70kJFVEeeWapaVZSephw" base_Class="_KFRyAJFVEeeWapaVZSephw"/>
+  <isa:absenceOfCriminalRecordForm xmi:id="_1nRnUJFVEeeWapaVZSephw" base_Class="_yUlQEDcXEeeCFMbbB5Zt1g"/>
+  <isa:absenceOfCriminalRecordForm xmi:id="_afGqsJFWEeeWapaVZSephw" base_Class="_W7NtMJFWEeeWapaVZSephw"/>
 </xmi:XMI>
