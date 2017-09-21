@@ -38,7 +38,7 @@ version: String = getVersion('xsd');
 [template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String, version: String )]
 [for (form: String | getForms(pack))]
 [file (getMSFilenameXSD(path, pack.name, form, suffix, version), false, 'UTF-8')]
-[beginSchema('pdc,forms,udt,ext', pack, version, pack.name.concat('_').concat(form))/]
+[beginSchema('pdc,forms,udt,ext', pack, version, pack.name)/]
 	[importXSD('ms_pdc1,ms_forms1,udt-ms1,ext')/]
 [if not (form.startsWith('commonPart'))]
 	[includeXSD(pack.name.concat('_commonPart'))/][/if]

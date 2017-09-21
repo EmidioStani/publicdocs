@@ -187,7 +187,7 @@
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
 						<li><a href="">formBelgium1</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
@@ -204,833 +204,600 @@
 			<section id="generatedContent">
 				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 				<div class="contentTables">
-				<h4 id="formAustria">5.1 Package formAustria</h4>
-				<img alt="UML model of formAustria package" src="formAustria.jpeg" width = 100%> UML class diagram </img>
-							<h5 id="Birth">5.1.1 Class Birth
-							
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Person</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:BirthPerson</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="BirthPerson">5.1.2 Class BirthPerson
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>OtherNames</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>DataOnParents</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Parents</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="CapacityToEnterRegisteredPartnership">5.1.3 Class CapacityToEnterRegisteredPartnership
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>LastMarriageOrRegisteredPartnership</td>
-										<td>This property refers to the class LastMarriageOrRegisteredPartnership.</td>
-										<td>1..1</td>
-										<td>formAustria:Dissolved</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="CapacityToMarry">5.1.4 Class CapacityToMarry
-							
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the capacity to marry of a couple.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Person</td>
-										<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-										<td>1..1</td>
-										<td>formAustria:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>IntendedSpouse</td>
-										<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-										<td>1..1</td>
-										<td>formAustria:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-									</tr>
-									<tr>
-										<td>CanMarry</td>
-										<td>This property refers to the class CanMarry</td>
-										<td>1..1</td>
-										<td>pdc:CanMarry</td>
-									</tr>
-									<tr>
-										<td>LastMarriage</td>
-										<td></td>
-										<td>0..1</td>
-										<td>formAustria:LastMarriage</td>
-									</tr>
-									<tr>
-										<td>LastRegisteredPartnership</td>
-										<td></td>
-										<td>0..1</td>
-										<td>formAustria:LastRegisteredPartnership</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.1.5 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
-							
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the capacity to marry or enter into a registered partnership of a person.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>OtherNames</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="Death">5.1.6 Class Death
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Person</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:DeathPerson</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="DeathPerson">5.1.7 Class DeathPerson
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>LastPlaceOfResidence</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>LastMariageOrRegisteredPartnership</td>
-										<td></td>
-										<td>1..1</td>
-										<td>forms:MaritalStatus</td>
-									</tr>
-									<tr>
-										<td>FormerSpouseOrPartner</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:FormerSpouseOrPartnerChoice</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="Dissolved">5.1.8 Class Dissolved
-							
-							</h5>
-							<p><b>Definition:</b>This class contains information about the last marriage or registered partnership of the person concerned by the form.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>DissolvedBy</td>
-										<td>This property relates to the class Authority.</td>
-										<td>1..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-									<tr>
-										<td>DissolvedOn</td>
-										<td>This property contains the date on which the last marriage or registered partnership of the person concerned by the form was dissolved.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>DissolvedIn</td>
-										<td>This property refers to the class Place.</td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="DocumentInfo">5.1.9 Class DocumentInfo
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>CourtOfIssue</td>
-										<td>This property is related to the class Authority.</td>
-										<td>1..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="DomicileAndOrResidence">5.1.10 Class DomicileAndOrResidence
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>SecondaryResidence</td>
-										<td>This property relates to the class Address.</td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>RegisteredSince</td>
-										<td>This property contains the date on which the domicile and/or residence of the person concerned by the form was registered.</td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FormHeader">5.1.11 Class FormHeader
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>CourtOfIssue</td>
-										<td></td>
-										<td>0..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FormerSpouseOrPartnerChoice">5.1.12 Class FormerSpouseOrPartnerChoice
-							(choice)
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>FormerSpouseOrPartner</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:SpouseOrPartner</td>
-									</tr>
-									<tr>
-										<td>NoFormerOrPartnerSpouse</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FrmBirthAustria">5.1.13 Class FrmBirthAustria
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Header</td>
-										<td>This property refers to the class FormHeader. </td>
-										<td>1..1</td>
-										<td>forms:FormHeader</td>
-									</tr>
-									<tr>
-										<td>Body</td>
-										<td>This property refers to the class Birth.</td>
-										<td>1..1</td>
-										<td>formAustria:Birth</td>
-									</tr>
-									<tr>
-										<td>Extension</td>
-										<td>This property can contain any type of information. </td>
-										<td>0..1</td>
-										<td>ext:UBLExtensionsType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FrmCapacityToMarryAustria">5.1.14 Class FrmCapacityToMarryAustria
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Header</td>
-										<td></td>
-										<td>1..1</td>
-										<td>forms:FormHeader</td>
-									</tr>
-									<tr>
-										<td>Body</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:CapacityToMarry</td>
-									</tr>
-									<tr>
-										<td>Extension</td>
-										<td></td>
-										<td>1..1</td>
-										<td>ext:UBLExtensionsType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FrmDeathAustria">5.1.15 Class FrmDeathAustria
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Header</td>
-										<td>This property refers to the class FormHeader. </td>
-										<td>1..1</td>
-										<td>formAustria:FormHeader</td>
-									</tr>
-									<tr>
-										<td>Body</td>
-										<td>This property relates to the class Death.</td>
-										<td>1..1</td>
-										<td>formAustria:Death</td>
-									</tr>
-									<tr>
-										<td>Extension</td>
-										<td>This property can contain any type of information. </td>
-										<td>0..1</td>
-										<td>ext:UBLExtensionsType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="FrmMarriageAustria">5.1.16 Class FrmMarriageAustria
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Header</td>
-										<td></td>
-										<td>1..1</td>
-										<td>forms:FormHeader</td>
-									</tr>
-									<tr>
-										<td>Body</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Marriage</td>
-									</tr>
-									<tr>
-										<td>Extension</td>
-										<td></td>
-										<td>1..1</td>
-										<td>ext:UBLExtensionsType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="IDTypeAndNo">5.1.17 Class IDTypeAndNo
-							(choice)
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>IssuingAuthority</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Authority</td>
-									</tr>
-									<tr>
-										<td>ExpiryDate</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>DateOfIssue</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>IssuingState</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Country</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="LastMarriage">5.1.18 Class LastMarriage
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>To</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:MaritalStatus</td>
-									</tr>
-									<tr>
-										<td>Dissolved</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Dissolved</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="LastRegisteredPartnership">5.1.19 Class LastRegisteredPartnership
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>With</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:MaritalStatus</td>
-									</tr>
-									<tr>
-										<td>Dissolved</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Dissolved</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="MaritalStatus">5.1.20 Class MaritalStatus
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-							<h5 id="Marriage">5.1.21 Class Marriage
-							
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to a marriage.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>SpouseA</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:SpouseOrPartner</td>
-									</tr>
-									<tr>
-										<td>SpouseB</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:SpouseOrPartner</td>
-									</tr>
-									<tr>
-										<td>DateOfMarriage</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:DateType</td>
-									</tr>
-									<tr>
-										<td>PlaceOfMarriage</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:Place</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="Parent">5.1.22 Class Parent
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>OtherNames</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="Parents">5.1.23 Class Parents
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Mother</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Parent</td>
-									</tr>
-									<tr>
-										<td>Father</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formAustria:Parent</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="Person">5.1.24 Class Person
-							
-							</h5>
-							<p><b>Definition:</b></p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td>This property contains academic qualifications or professional titles held by the concerned person. </td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>LastMarriageOrRegisteredPartnership</td>
-										<td>This property relates to the class MaritalStatus.</td>
-										<td>1..1</td>
-										<td>formAustria:MaritalStatus</td>
-									</tr>
-									<tr>
-										<td>AcademicTitlePrefix</td>
-										<td>This property contains the academic title prefix of the concerned person. </td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>FormerSpouseOrPartner</td>
-										<td>This property refers to the class FormerSpouseOrPartnerChoice. </td>
-										<td>1..1</td>
-										<td>formAustria:FormerSpouseOrPartnerChoice</td>
-									</tr>
-									<tr>
-										<td>LastPlaceOfResidence</td>
-										<td>This property relates to the class Address.</td>
-										<td>1..1</td>
-										<td>pdc:Address</td>
-									</tr>
-									<tr>
-										<td>RegistrationOfBirth</td>
-										<td>This property refers to the class ReferenceNumber. </td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>Mother</td>
-										<td>This property relates to the class Person.</td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
-									</tr>
-									<tr>
-										<td>Father</td>
-										<td>This property relates to the class Person. </td>
-										<td>1..1</td>
-										<td>pdc:Person</td>
-									</tr>
-									<tr>
-										<td>AcademicTitleSuffix</td>
-										<td>This property contains the academic title suffix of the concerned person. </td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>OtherNames</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="SpouseOrPartner">5.1.25 Class SpouseOrPartner
-							
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the former spouse or partner of the person concerned by the form.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>OtherNames</td>
-										<td>This property refers to the class Person.</td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-									<tr>
-										<td>AcademicQualificationsOrProfessionalTitles</td>
-										<td></td>
-										<td>1..1</td>
-										<td>udt:TextType</td>
-									</tr>
-								</tbody>
-							</table>
-							<h5 id="TravelDocumentChoice">5.1.26 Class TravelDocumentChoice
-							(choice)
-							</h5>
-							<p><b>Definition:</b>This class contains elements related to the choice of travel document.</p>
-							<table class="generatedTable table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Property Name</th>
-										<th>Definition</th>
-										<th>Cardinality</th>
-										<th>Data Type</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>AustrianCitizenNoDocument</td>
-										<td>This property relates to the class AustrianCitizenNoDocument.</td>
-										<td>1..1</td>
-										<td>udt:IndicatorType</td>
-									</tr>
-									<tr>
-										<td>TravelDocument</td>
-										<td>This property relates to class IDTypeAndNo.</td>
-										<td>1..1</td>
-										<td>formAustria:IDTypeAndNo</td>
-									</tr>
-								</tbody>
-							</table>
-							</div>
+	
+				<h4 id="CommonElements">5.1 Common Elements</h4>
+				
+				<h4 id="birthForm">5.2 Form birthForm</h4>
+						<h5 id="BirthPerson">5.2.1 Class BirthPerson
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>OtherNames</td>
+									<td></td>
+									<td>1..1</td>
+									<td>udt:TextType</td>
+								</tr>
+								<tr>
+									<td>AcademicQualificationsOrProfessionalTitles</td>
+									<td></td>
+									<td>1..1</td>
+									<td>udt:TextType</td>
+								</tr>
+								<tr>
+									<td>DataOnParents</td>
+									<td></td>
+									<td>1..1</td>
+									<td>formAustria:Parents</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="Birth">5.2.2 Class Birth
+						
+						</h5>
+						<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Person</td>
+									<td></td>
+									<td>1..1</td>
+									<td>formAustria:BirthPerson</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="FrmBirthAustria">5.2.3 Class FrmBirthAustria
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Header</td>
+									<td>This property refers to the class FormHeader. </td>
+									<td>1..1</td>
+									<td>forms:FormHeader</td>
+								</tr>
+								<tr>
+									<td>Body</td>
+									<td>This property refers to the class Birth.</td>
+									<td>1..1</td>
+									<td>formAustria:Birth</td>
+								</tr>
+								<tr>
+									<td>Extension</td>
+									<td>This property can contain any type of information. </td>
+									<td>0..1</td>
+									<td>ext:UBLExtensionsType</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="Parent">5.2.4 Class Parent
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>OtherNames</td>
+									<td></td>
+									<td>1..1</td>
+									<td>udt:TextType</td>
+								</tr>
+								<tr>
+									<td>AcademicQualificationsOrProfessionalTitles</td>
+									<td></td>
+									<td>1..1</td>
+									<td>udt:TextType</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="Parents">5.2.5 Class Parents
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Mother</td>
+									<td></td>
+									<td>1..1</td>
+									<td>formAustria:Parent</td>
+								</tr>
+								<tr>
+									<td>Father</td>
+									<td></td>
+									<td>1..1</td>
+									<td>formAustria:Parent</td>
+								</tr>
+							</tbody>
+						</table>
+							<h4 id="capacityToMarryForm">5.3 Form capacityToMarryForm</h4>
+									<h5 id="FrmCapacityToMarryAustria">5.3.1 Class FrmCapacityToMarryAustria
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td></td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td></td>
+												<td>1..1</td>
+												<td>formAustria:CapacityToMarry</td>
+											</tr>
+											<tr>
+												<td>Extension</td>
+												<td></td>
+												<td>1..1</td>
+												<td>ext:UBLExtensionsType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="LastRegisteredPartnership">5.3.2 Class LastRegisteredPartnership
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>With</td>
+												<td></td>
+												<td>1..1</td>
+												<td>formAustria:MaritalStatus</td>
+											</tr>
+											<tr>
+												<td>Dissolved</td>
+												<td></td>
+												<td>1..1</td>
+												<td>formAustria:Dissolved</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToMarry">5.3.3 Class CapacityToMarry
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to marry of a couple.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+												<td>1..1</td>
+												<td>formAustria:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>IntendedSpouse</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+												<td>1..1</td>
+												<td>formAustria:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>CanMarry</td>
+												<td>This property refers to the class CanMarry</td>
+												<td>1..1</td>
+												<td>pdc:CanMarry</td>
+											</tr>
+											<tr>
+												<td>LastMarriage</td>
+												<td></td>
+												<td>0..1</td>
+												<td>formAustria:LastMarriage</td>
+											</tr>
+											<tr>
+												<td>LastRegisteredPartnership</td>
+												<td></td>
+												<td>0..1</td>
+												<td>formAustria:LastRegisteredPartnership</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToEnterRegisteredPartnership">5.3.4 Class CapacityToEnterRegisteredPartnership
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>LastMarriageOrRegisteredPartnership</td>
+												<td>This property refers to the class LastMarriageOrRegisteredPartnership.</td>
+												<td>1..1</td>
+												<td>formAustria:Dissolved</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="LastMarriage">5.3.5 Class LastMarriage
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>To</td>
+												<td></td>
+												<td>1..1</td>
+												<td>formAustria:MaritalStatus</td>
+											</tr>
+											<tr>
+												<td>Dissolved</td>
+												<td></td>
+												<td>1..1</td>
+												<td>formAustria:Dissolved</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Dissolved">5.3.6 Class Dissolved
+									
+									</h5>
+									<p><b>Definition:</b>This class contains information about the last marriage or registered partnership of the person concerned by the form.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>DissolvedBy</td>
+												<td>This property relates to the class Authority.</td>
+												<td>1..1</td>
+												<td>pdc:Authority</td>
+											</tr>
+											<tr>
+												<td>DissolvedOn</td>
+												<td>This property contains the date on which the last marriage or registered partnership of the person concerned by the form was dissolved.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>DissolvedIn</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.3.7 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to marry or enter into a registered partnership of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>OtherNames</td>
+												<td></td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>AcademicQualificationsOrProfessionalTitles</td>
+												<td></td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+										<h4 id="deathForm">5.4 Form deathForm</h4>
+												<h5 id="DeathPerson">5.4.1 Class DeathPerson
+												
+												</h5>
+												<p><b>Definition:</b></p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>AcademicQualificationsOrProfessionalTitles</td>
+															<td></td>
+															<td>1..1</td>
+															<td>udt:TextType</td>
+														</tr>
+														<tr>
+															<td>LastPlaceOfResidence</td>
+															<td></td>
+															<td>1..1</td>
+															<td>pdc:Address</td>
+														</tr>
+														<tr>
+															<td>LastMariageOrRegisteredPartnership</td>
+															<td></td>
+															<td>1..1</td>
+															<td>forms:MaritalStatus</td>
+														</tr>
+														<tr>
+															<td>FormerSpouseOrPartner</td>
+															<td></td>
+															<td>1..1</td>
+															<td>formAustria:FormerSpouseOrPartnerChoice</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="Death">5.4.2 Class Death
+												
+												</h5>
+												<p><b>Definition:</b></p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Person</td>
+															<td></td>
+															<td>1..1</td>
+															<td>formAustria:DeathPerson</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="FormerSpouseOrPartnerChoice">5.4.3 Class FormerSpouseOrPartnerChoice
+												(choice)
+												</h5>
+												<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>FormerSpouseOrPartner</td>
+															<td></td>
+															<td>1..1</td>
+															<td>formAustria:SpouseOrPartner</td>
+														</tr>
+														<tr>
+															<td>NoFormerOrPartnerSpouse</td>
+															<td></td>
+															<td>1..1</td>
+															<td>udt:IndicatorType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="FormHeader">5.4.4 Class FormHeader
+												
+												</h5>
+												<p><b>Definition:</b></p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>CourtOfIssue</td>
+															<td></td>
+															<td>0..1</td>
+															<td>pdc:Authority</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="FrmDeathAustria">5.4.5 Class FrmDeathAustria
+												
+												</h5>
+												<p><b>Definition:</b></p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Header</td>
+															<td>This property refers to the class FormHeader. </td>
+															<td>1..1</td>
+															<td>formAustria:FormHeader</td>
+														</tr>
+														<tr>
+															<td>Body</td>
+															<td>This property relates to the class Death.</td>
+															<td>1..1</td>
+															<td>formAustria:Death</td>
+														</tr>
+														<tr>
+															<td>Extension</td>
+															<td>This property can contain any type of information. </td>
+															<td>0..1</td>
+															<td>ext:UBLExtensionsType</td>
+														</tr>
+													</tbody>
+												</table>
+													<h4 id="marriageForm">5.5 Form marriageForm</h4>
+															<h5 id="FrmMarriageAustria">5.5.1 Class FrmMarriageAustria
+															
+															</h5>
+															<p><b>Definition:</b></p>
+															<table class="generatedTable table table-striped table-bordered">
+																<thead>
+																	<tr>
+																		<th>Property Name</th>
+																		<th>Definition</th>
+																		<th>Cardinality</th>
+																		<th>Data Type</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Header</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>forms:FormHeader</td>
+																	</tr>
+																	<tr>
+																		<td>Body</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>formAustria:Marriage</td>
+																	</tr>
+																	<tr>
+																		<td>Extension</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>ext:UBLExtensionsType</td>
+																	</tr>
+																</tbody>
+															</table>
+															<h5 id="Marriage">5.5.2 Class Marriage
+															
+															</h5>
+															<p><b>Definition:</b>This class contains elements related to a marriage.</p>
+															<table class="generatedTable table table-striped table-bordered">
+																<thead>
+																	<tr>
+																		<th>Property Name</th>
+																		<th>Definition</th>
+																		<th>Cardinality</th>
+																		<th>Data Type</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>SpouseA</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>formAustria:SpouseOrPartner</td>
+																	</tr>
+																	<tr>
+																		<td>SpouseB</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>formAustria:SpouseOrPartner</td>
+																	</tr>
+																	<tr>
+																		<td>DateOfMarriage</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>udt:DateType</td>
+																	</tr>
+																	<tr>
+																		<td>PlaceOfMarriage</td>
+																		<td></td>
+																		<td>1..1</td>
+																		<td>pdc:Place</td>
+																	</tr>
+																</tbody>
+															</table>
+																</div>
 			</section>
 			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
 				<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
