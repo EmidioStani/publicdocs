@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-08-11">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-09-21">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -184,20 +184,20 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
-						<li><a href="">formBelgium1</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/slovakia#">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="">formBelgium1</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
@@ -205,7 +205,7 @@
 				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 				<div class="contentTables">
 				<h4 id="formSpain">5.1 Package formSpain</h4>
-				<img alt="UML model of formSpain package" src="formSpain.png" width = 100%> UML class diagram </img>
+				<img alt="UML model of formSpain package" src="formSpain.jpeg" width = 100%> UML class diagram </img>
 							<h5 id="AbsenceOfCriminalRecordPerson">5.1.1 Class AbsenceOfCriminalRecordPerson
 							
 							</h5>
@@ -228,7 +228,29 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="BirthPerson">5.1.2 Class BirthPerson
+							<h5 id="Birth">5.1.2 Class Birth
+							
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Person</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:BirthPerson</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="BirthPerson">5.1.3 Class BirthPerson
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -256,7 +278,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="CapacityToMarry">5.1.3 Class CapacityToMarry
+							<h5 id="CapacityToMarry">5.1.4 Class CapacityToMarry
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -278,7 +300,29 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DeathPerson">5.1.4 Class DeathPerson
+							<h5 id="Death">5.1.5 Class Death
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Person</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:DeathPerson</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DeathPerson">5.1.6 Class DeathPerson
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -312,7 +356,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="DocumentInfoSpain">5.1.5 Class DocumentInfoSpain
+							<h5 id="DocumentInfo">5.1.7 Class DocumentInfo
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -332,9 +376,37 @@
 										<td>1..1</td>
 										<td>udt:TextType</td>
 									</tr>
+									<tr>
+										<td>RefNoAuthenticInstrument</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
 								</tbody>
 							</table>
-							<h5 id="FormHeader">5.1.6 Class FormHeader
+							<h5 id="DocumentKindChoice">5.1.8 Class DocumentKindChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>VerbatimCopyOfCriminalRecord</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FormHeader">5.1.9 Class FormHeader
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -351,12 +423,250 @@
 									<tr>
 										<td>MinistryOfJustice</td>
 										<td></td>
-										<td>1..1</td>
+										<td>0..1</td>
 										<td>pdc:Authority</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Marriage">5.1.7 Class Marriage
+							<h5 id="FrmAbsenceOfCriminalRecordSpain">5.1.10 Class FrmAbsenceOfCriminalRecordSpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td></td>
+										<td>1..1</td>
+										<td>forms:AbsenceOfCriminalRecord</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td></td>
+										<td>1..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmBirthSpain">5.1.11 Class FrmBirthSpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td>This property refers to the class FormHeader. </td>
+										<td>1..1</td>
+										<td>forms:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td>This property refers to the class Birth.</td>
+										<td>1..1</td>
+										<td>formSpain:Birth</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td>This property can contain any type of information. </td>
+										<td>0..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmCapacityToMarrySpain">5.1.12 Class FrmCapacityToMarrySpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:CapacityToMarry</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td></td>
+										<td>1..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmDeathSpain">5.1.13 Class FrmDeathSpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td>This property refers to the class FormHeader. </td>
+										<td>1..1</td>
+										<td>forms:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td>This property relates to the class Death.</td>
+										<td>1..1</td>
+										<td>formSpain:Death</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td>This property can contain any type of information. </td>
+										<td>0..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmLifeSpain">5.1.14 Class FrmLifeSpain
+							
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the form Life.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td>This property refers to the class FormHeader. </td>
+										<td>1..1</td>
+										<td>forms:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td>This property relates to the class Life.</td>
+										<td>1..1</td>
+										<td>forms:Life</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td>This property can contain any type of information. </td>
+										<td>0..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmMaritalStatusSpain">5.1.15 Class FrmMaritalStatusSpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td></td>
+										<td>1..1</td>
+										<td>forms:MaritalStatus</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td></td>
+										<td>1..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FrmMarriageSpain">5.1.16 Class FrmMarriageSpain
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Header</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:FormHeader</td>
+									</tr>
+									<tr>
+										<td>Body</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:Marriage</td>
+									</tr>
+									<tr>
+										<td>Extension</td>
+										<td></td>
+										<td>1..1</td>
+										<td>ext:UBLExtensionsType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Marriage">5.1.17 Class Marriage
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -378,7 +688,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Person">5.1.8 Class Person
+							<h5 id="Parent">5.1.18 Class Parent
 							
 							</h5>
 							<p><b>Definition:</b></p>
@@ -393,38 +703,48 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>MaritalStatus</td>
-										<td></td>
-										<td>1..1</td>
-										<td>pdc:MaritalStatusChoice</td>
-									</tr>
-									<tr>
-										<td>NationalIdentityCard</td>
+										<td>ForenameSurnameParentsFather</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
 									</tr>
 									<tr>
-										<td>Father</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formSpain:Person</td>
-									</tr>
-									<tr>
-										<td>Mother</td>
-										<td></td>
-										<td>1..1</td>
-										<td>formSpain:Person</td>
-									</tr>
-									<tr>
-										<td>NameSurnameFatherParents</td>
+										<td>ForenameSurnameParentsMother</td>
 										<td></td>
 										<td>1..1</td>
 										<td>udt:TextType</td>
 									</tr>
 								</tbody>
 							</table>
-							<h5 id="Place">5.1.9 Class Place
+							<h5 id="Parents">5.1.19 Class Parents
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:Parent</td>
+									</tr>
+									<tr>
+										<td>Father</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSpain:Parent</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Place">5.1.20 Class Place
 							
 							</h5>
 							<p><b>Definition:</b></p>

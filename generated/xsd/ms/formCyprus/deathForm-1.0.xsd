@@ -33,13 +33,13 @@
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
 	<!-- ===== Includes======================================= -->
-	<xsd:include schemaLocation="commonPartFormCyprus-1.0.xsd"/>
+	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:element name="FrmDeathCyprus" type="FrmDeathCyprusType" />
 	<xsd:complexType name="FrmDeathCyprusType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
-			
+			This class contains elements related to the form Death.
 					Stereotype deathForm
 		    </xsd:documentation>
 		</xsd:annotation>
@@ -47,7 +47,7 @@
 			<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
-						
+						This property refers to the class FormHeader.
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -55,7 +55,7 @@
 			<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
-						
+						This property can contain any type of information. 
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>

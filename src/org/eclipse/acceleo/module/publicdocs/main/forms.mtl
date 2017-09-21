@@ -4,12 +4,14 @@
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::schema/]
 [import org::eclipse::acceleo::module::publicdocs::common::complextype /]
+[import org::eclipse::acceleo::module::publicdocs::common::element /]
 
 [template public generateForms(model : Model){
 pack:PackageableElement = model.getPackageWithName('forms');
 version: String = getVersion('xsd');
 }]
-[generateXSDFile(model, 'path_core', pack.oclAsType(Package), '-', version)/]
+[comment [generateXSDFile(model, 'path_core', pack.oclAsType(Package), '-', version)/]
+[generateXSDFiles(model, 'path_core', pack.oclAsType(Package), '-', version)/]
 [/template]
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
@@ -21,10 +23,33 @@ version: String = getVersion('xsd');
 [/file]
 [/template]
 
+[template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String, version: String )]
+[for (form: String | getForms(pack))]
+[file (getMSFilenameXSD(path, pack.name, form, suffix, version), false, 'UTF-8')]
+[beginSchema('pdc,forms,udt', pack, version, pack.name)/]
+	[importXSD('pdc1,udt1')/]
+[if not (form.startsWith('commonPart'))]
+	[includeXSD(pack.name.concat('_commonPart'))/][/if]
+[generateFormContentAggregatedComponents(model, pack,form)/]
+[endSchema(pack, version)/]
+[/file]
+[/for]
+[/template]
+
+
 [template public generateContentAggregatedComponents(model: Model, pack : Package)]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]
 [generatePackageableElement(model, packageableElement)/][/for][/let]
+[/template]
+
+[template public generateFormContentAggregatedComponents(model: Model, pack : Package, form: String) post(trim())]
+[let pElements : Sequence(Class) = pack.ownedType->asSequence()]
+[for (packageableElement: PackageableElement | pElements->select(hasStereotype('isa::'.concat(form))))]
+[let elementName : String = packageableElement.name]
+[generatePackageableElement(model, packageableElement)/]
+[/let]
+[/for][/let]
 [/template]
 
 [template public generatePackageableElement(model: Model, packageableElement : PackageableElement)]
@@ -41,7 +66,7 @@ NDR : String = getNDR('usecorevocstypes');
 [if not isLocal(class)]
 [if(class.general->isEmpty())]
 [generateComplextype_ground(class, NDR)/]	[else]
-[generateComplextype_restriction_complexcontent(class, NDR)/][/if][else]
+[generateComplextype_extension_complexcontent(class, NDR)/][/if][else]
 [if isChoice(class)]
 [generateComplextype_ground(class, NDR)/][else]
 [if class.ownedAttribute->isEmpty()]
@@ -51,6 +76,7 @@ NDR : String = getNDR('usecorevocstypes');
 
 [template public generateElement(name : String, type: String)]
 <[getNS('xs')/]:element name="[name/]" type="[name/][type/]"/>
+
 [/template]
 
 [template public generateEmptyTypeWithDependency(model: Model, aClass: Class) {
