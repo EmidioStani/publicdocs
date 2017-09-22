@@ -9,10 +9,10 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
-	version="1.0">
+	version="1.5">
 	<xsd:annotation>	
 		<xsd:documentation xml:lang="en">
-	        Public Documents XML schema 1.0
+	        Public Documents XML schema 1.5
 	        Copyright (C) European Union, 2017
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
@@ -35,17 +35,24 @@
 	<!-- ===== Includes======================================= -->
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-	<xsd:complexType name="DeathPersonType">
+	<xsd:complexType name="BirthPersonType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
 			
-					Stereotype deathForm
+					Stereotype birthForm
 		    </xsd:documentation>
 		</xsd:annotation>
 		
 		<xsd:complexContent>
-			<xsd:extension base="pdc:DeathPersonType">
+			<xsd:extension base="pdc:BirthPersonType">
 				<xsd:sequence>
+					<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="AcademicQualificationsOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
@@ -53,24 +60,27 @@
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="LastPlaceOfResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="LastMariageOrRegisteredPartnership" type="forms:MaritalStatusType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="FormerSpouseOrPartner" minOccurs="1" maxOccurs="1" type="FormerSpouseOrPartnerChoiceType">
+					<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
 					</xsd:element>
 					
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="DeathType">
+	<xsd:complexType name="BirthType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
-			
-					Stereotype deathForm
+			This class contains elements related to the birth of a person.
+					Stereotype birthForm
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence> 
-			<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
+			<xsd:element name="Person" type="BirthPersonType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
 						
@@ -81,69 +91,20 @@
 		</xsd:sequence>
 		
 	</xsd:complexType>
-	<xsd:complexType name="FormerSpouseOrPartnerChoiceType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			This class contains elements related to the choice of marital status.
-					Stereotype deathForm
-					Stereotype xsdChoice
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:choice>
-			<xsd:element name="FormerSpouseOrPartner" type="SpouseOrPartnerType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="NoFormerOrPartnerSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			
-		</xsd:choice>
-	</xsd:complexType>
-	<xsd:complexType name="FormHeaderType">
+	<xsd:element name="FrmBirthAustria" type="FrmBirthAustriaType" />
+	<xsd:complexType name="FrmBirthAustriaType">
 		<xsd:annotation>
 		    <xsd:documentation xml:lang="en">
 			
-					Stereotype deathForm
-		    </xsd:documentation>
-		</xsd:annotation>
-		
-		<xsd:complexContent>
-			<xsd:extension base="forms:FormHeaderType">
-				<xsd:sequence>
-					<xsd:element name="CourtOfIssue" type="pdc:AuthorityType" minOccurs="0" maxOccurs="1"/>
-					
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:element name="FrmDeathAustria" type="FrmDeathAustriaType" />
-	<xsd:complexType name="FrmDeathAustriaType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			
-					Stereotype deathForm
+					Stereotype birthForm
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence> 
-			<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+			<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
-						This property refers to the class FormHeader. 
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property relates to the class Death.
+						This property refers to the class Birth.
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -151,6 +112,62 @@
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
 						This property can contain any type of information. 
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="ParentType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+					Stereotype birthForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		
+		<xsd:complexContent>
+			<xsd:extension base="pdc:PersonType">
+				<xsd:sequence>
+					<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="AcademicQualificationsOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParentsType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+					Stereotype birthForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+			<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						
 				    </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>

@@ -16,13 +16,11 @@ version: String = getVersion('xsd');
 [/for]
 [/template]
 
-[template public generateMSSeparateForms(model : Model){
-version: String = getVersion('xsd');
-}] 
+[template public generateMSSeparateForms(model : Model)] 
 [for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
 [if not (packageableElement.name = 'forms' or packageableElement.name = 'pdc')]
 [if getCountriesSeparateXSD('')->includes(packageableElement.name)]
-[generateXSDFiles(model, 'path_ms', packageableElement.oclAsType(Package), '-', version)/][/if][/if]
+[generateXSDFiles(model, 'path_ms', packageableElement.oclAsType(Package), '-')/][/if][/if]
 [/for]
 [/template]
 
@@ -35,15 +33,15 @@ version: String = getVersion('xsd');
 [/file]
 [/template]
 
-[template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String, version: String )]
+[template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String )]
 [for (form: String | getForms(pack))]
-[file (getMSFilenameXSD(path, pack.name, form, suffix, version), false, 'UTF-8')]
-[beginSchema('pdc,forms,udt,ext', pack, version, pack.name)/]
+[file (getMSFilenameXSD(path, pack.name, form, suffix, getVersion('xsd_'+pack.name+'_'+form)), false, 'UTF-8')]
+[beginSchema('pdc,forms,udt,ext', pack, getVersion('xsd_'+pack.name+'_'+form), pack.name)/]
 	[importXSD('ms_pdc1,ms_forms1,udt-ms1,ext')/]
 [if not (form.startsWith('commonPart'))]
 	[includeXSD(pack.name.concat('_commonPart'))/][/if]
 [generateFormContentAggregatedComponents(pack,form)/]
-[endSchema(pack, version)/]
+[endSchema(pack, getVersion('xsd_'+pack.name+'_'+form))/]
 [/file]
 [/for]
 [/template]

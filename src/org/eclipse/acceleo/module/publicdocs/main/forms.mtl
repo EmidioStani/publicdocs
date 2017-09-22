@@ -11,7 +11,7 @@ pack:PackageableElement = model.getPackageWithName('forms');
 version: String = getVersion('xsd');
 }]
 [comment [generateXSDFile(model, 'path_core', pack.oclAsType(Package), '-', version)/]
-[generateXSDFiles(model, 'path_core', pack.oclAsType(Package), '-', version)/]
+[generateXSDFiles(model, 'path_core', pack.oclAsType(Package), '-')/]
 [/template]
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
@@ -23,15 +23,15 @@ version: String = getVersion('xsd');
 [/file]
 [/template]
 
-[template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String, version: String )]
+[template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String )]
 [for (form: String | getForms(pack))]
-[file (getMSFilenameXSD(path, pack.name, form, suffix, version), false, 'UTF-8')]
-[beginSchema('pdc,forms,udt', pack, version, pack.name)/]
+[file (getMSFilenameXSD(path, pack.name, form, suffix, getVersion('xsd_'+pack.name+'_'+form)), false, 'UTF-8')]
+[beginSchema('pdc,forms,udt', pack, getVersion('xsd_'+pack.name+'_'+form), pack.name)/]
 	[importXSD('pdc1,udt1')/]
 [if not (form.startsWith('commonPart'))]
 	[includeXSD(pack.name.concat('_commonPart'))/][/if]
 [generateFormContentAggregatedComponents(model, pack,form)/]
-[endSchema(pack, version)/]
+[endSchema(pack, getVersion('xsd_'+pack.name+'_'+form))/]
 [/file]
 [/for]
 [/template]
