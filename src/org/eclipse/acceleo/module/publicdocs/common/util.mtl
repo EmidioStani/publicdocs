@@ -14,7 +14,7 @@
 = Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPart','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
 
 [query public getCountriesSeparateXSD (string: String) : Sequence(String)
-= Sequence{'formAustria','formCyprus','formCzechRepublic','formFinland','formLatvia','formPoland','formRomania','formSpain'}/]
+= Sequence{'formAustria','formCyprus','formCzechRepublic','formFinland','formLatvia', 'formLithuania', 'formNetherlands','formPoland','formRomania','formSpain'}/]
 
 [query public getForms(pack:Package) : Sequence(String)
 = getForms('abc')->select(form|((pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form))))->notEmpty())/]

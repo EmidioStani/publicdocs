@@ -74,7 +74,9 @@ xmlns:[namespace/]="[url/]"
 [/template]
 
 [template public insertInclude(location: String)]
+[if location <> 'null']
 <[getNS('xs')/]:include schemaLocation="[location/]"/>
+[/if]
 [/template]
 
 
