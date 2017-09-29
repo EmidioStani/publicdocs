@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:isa="http://tempuri.org/isa" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://tempuri.org/isa isa.uml#_KsoogH5zEeepG8WNQIQIkQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:isa="http://tempuri.org/isa" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://tempuri.org/isa isa.uml#_VFHw0KLGEeep4cJQgW5Wjw">
   <uml:Model xmi:id="_x1vz0JPYEea8WcU2IuteNg" name="PublicDocuments">
     <packagedElement xmi:type="uml:Package" xmi:id="_O3_ToZPcEeaaQdure8LlEA" name="cva" URI="http://www.w3.org/ns/corevocabulary/AggegrateComponents">
       <packagedElement xmi:type="uml:Class" xmi:id="_O3_TopPcEeaaQdure8LlEA" name="Person">
@@ -2694,8 +2694,8 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_MOnyADbdEeeCFMbbB5Zt1g" name="SpouseOrPartner" type="_O31ioJPcEeaaQdure8LlEA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_U4tWIDWREeelo8Ns44bPUQ" name="Parents">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_lIMcgDWREeelo8Ns44bPUQ" name="Father" type="_BV3eEDWQEeelo8Ns44bPUQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_nWPocDWREeelo8Ns44bPUQ" name="Mother" type="_BV3eEDWQEeelo8Ns44bPUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lIMcgDWREeelo8Ns44bPUQ" name="Father" type="_YBlXMKUREeeotK0lnHuQmw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nWPocDWREeelo8Ns44bPUQ" name="Mother" type="_YBlXMKUREeeotK0lnHuQmw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_2-pgsDWREeelo8Ns44bPUQ" name="BirthPerson">
         <generalization xmi:type="uml:Generalization" xmi:id="_7Q28wDWREeelo8Ns44bPUQ" general="_O31iw5PcEeaaQdure8LlEA"/>
@@ -2739,6 +2739,13 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ibykgDbtEeeCFMbbB5Zt1g" name="AbsenceOfACriminalRecord">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mxc9MDbtEeeCFMbbB5Zt1g" name="PurposeForIssuance" type="_O31is5PcEeaaQdure8LlEA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_YBlXMKUREeeotK0lnHuQmw" name="Parent">
+        <generalization xmi:type="uml:Generalization" xmi:id="_aIYEkKUREeeotK0lnHuQmw" general="_BV3eEDWQEeelo8Ns44bPUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lMbn4KUREeeotK0lnHuQmw" name="FatherSurname" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nhc-gKUREeeotK0lnHuQmw" name="FatherForename" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_pgzAEKUREeeotK0lnHuQmw" name="MotherSurname" type="_O31is5PcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rl8usKUREeeotK0lnHuQmw" name="MotherForename" type="_O31is5PcEeaaQdure8LlEA"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LKWo4DbuEeeCFMbbB5Zt1g" name="formCyprus" URI="">
@@ -4004,15 +4011,15 @@
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pL3jgLJOEeacavyzYL89Ug">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hf1PUH56EeeEzZmtSaBFtg" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PUX56EeeEzZmtSaBFtg" key="Version" value="0.0.10"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PUn56EeeEzZmtSaBFtg" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PU356EeeEzZmtSaBFtg" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PVH56EeeEzZmtSaBFtg" key="Date" value="2017-08-11"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hf1PVX56EeeEzZmtSaBFtg" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C6QYIKUREeeotK0lnHuQmw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6QYIaUREeeotK0lnHuQmw" key="Version" value="0.0.12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6QYIqUREeeotK0lnHuQmw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6QYI6UREeeotK0lnHuQmw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6QYJKUREeeotK0lnHuQmw" key="Date" value="2017-09-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6QYJaUREeeotK0lnHuQmw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pL3jgbJOEeacavyzYL89Ug" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="isa.uml#_KsoogH5zEeepG8WNQIQIkQ"/>
+        <references xmi:type="ecore:EPackage" href="isa.uml#_VFHw0KLGEeep4cJQgW5Wjw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="isa.uml#_kMq3kKd3Eeas-9n4KOQ_cA"/>
     </profileApplication>
