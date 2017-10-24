@@ -3,6 +3,7 @@
 
 [import org::eclipse::acceleo::module::publicdocs::main::aggregatingSchema /]
 [import org::eclipse::acceleo::module::publicdocs::main::basicComponents /]
+[import org::eclipse::acceleo::module::publicdocs::main::stringLengthComponents /]
 [import org::eclipse::acceleo::module::publicdocs::main::generateDoc /]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 [import org::eclipse::acceleo::module::publicdocs::main::forms /]
@@ -14,8 +15,9 @@
 [generateAggregatingSchema(model)/]
 [generateForms(model)/]
 [generateBasicComponents(model)/]
+[generateStringLengthComponents(model)/]
 [generateCodeList(model)/]
 [generateDocs(model)/]
-[generateMSForms(model)/]
+[comment generateMSForms(model) /]
 [generateMSSeparateForms(model)/]
 [/template]

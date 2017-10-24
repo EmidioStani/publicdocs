@@ -17,18 +17,28 @@
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
 	version="[version/]">
-	<[getNS('xs')/]:annotation>	
-		<[getNS('xs')/]:documentation xml:lang="en">
-	        [getConf('title_model')/] [version/]
-	        Copyright (C) European Union, [getTodayDate('yyyy')/]
-	        Licensed under the [getConf('licence_model')/]
-	        Original authors:
-	        [addAuthor('author1')/],
-	        [addAuthor('author2')/],
-	        [addAuthor('author3')/],
-	        [addAuthor('author4')/]
-		</[getNS('xs')/]:documentation>
-	</[getNS('xs')/]:annotation>
+[/template]
+
+[template public beginSchemaForms(list : String, path : String, suffix : String,  pack : Package, version: String, namespace: String)]
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: [getFilenameXSD(path, pack.name, suffix, version)/]
+    Generated On: [getTodayDate('dd/MM/yyyy HH:mm')/] 
+-->
+<!-- ===================================================== -->
+<[getNS('xs')/]:schema
+	targetNamespace="[getURIFromPackName(namespace)/]"
+	xmlns="[getURIFromPackName(namespace)/]"
+	[for (packName: String | list.tokenize(','))]
+	[if packName <> pack.name]
+	[importNamespace(packName)/]
+	[/if]
+	[/for]
+	xmlns:[getNS('xs')/]="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="[version/]">
 [/template]
 
 [template public addAuthor(author : String)]
@@ -66,8 +76,8 @@ xmlns:[namespace/]="[url/]"
 [includePack(packName)/]
 [/for]  
 <!-- ===================================================== -->
-
 [/template]
+
 
 [template public includePack(packName : String)]
 [insertInclude(getPathFromPackName(packName))/]
@@ -82,4 +92,18 @@ xmlns:[namespace/]="[url/]"
 
 [template public endSchema(pack : Package, version: String)]
 </[getNS('xs')/]:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        [getConf('title_model')/] [version/]
+	        Copyright (C) European Union, [getTodayDate('yyyy')/]
+	        Licensed under the [getConf('licence_model')/]
+	        Original authors:
+	        [addAuthor('author1')/],
+	        [addAuthor('author2')/],
+	        [addAuthor('author3')/],
+	        [addAuthor('author4')/],
+			[addAuthor('author5')/]
+-->
+<!-- ===================================================== -->
 [/template]

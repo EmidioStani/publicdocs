@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/pdc"
+	xmlns="http://data.europa.eu/edm/1/ns/pdc"
+	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+			   schemaLocation="../../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	<!-- ============================================================ -->
+	<!-- Address-->
+	<!-- uses Core Address --> 
+	<!-- ============================================================ -->
+	
+	<xsd:complexType name="AddressCountryType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:AddressAdminUnitLocationOneType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AddressPlaceType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:AddressPostNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AddressPostalCodeType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:AddressPostNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AddressStreetPOBoxType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:AddressThoroughfareType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<!-- ============================================================ -->
+	<!-- Authority-->
+	 <!-- uses LegalEntity --> 
+	<!-- ============================================================ -->
+	
+	<xsd:complexType name="AuthorityDesignationType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LegalEntityLegalNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<!-- ============================================================ -->
+	<!-- Nationality-->
+	 <!-- uses Jurisdiction --> 
+	<!-- ============================================================ -->
+	
+	<xsd:complexType name="NationalityNameType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:JurisdictionNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<!-- ============================================================ -->
+	<!-- Person-->
+	<!-- uses Core Person --> 
+	<!-- ============================================================ -->
+	
+	<xsd:complexType name="PersonDateOfBirthType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="PersonDateOfDeathType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="PersonForenameType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:PersonGivenNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="PersonSurnameType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:PersonFamilyNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="PersonSurnameAtBirthType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:PersonBirthNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<!-- ============================================================ -->
+	<!-- Place-->
+	<!-- uses Core Location --> 
+	<!-- ============================================================ -->
+	
+	<xsd:complexType name="PlaceNameType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LocationGeographicNameType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+</xsd:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com),
+			Arne De Proft (arne.de.proft@be.pwc.com)
+-->
+<!-- ===================================================== -->

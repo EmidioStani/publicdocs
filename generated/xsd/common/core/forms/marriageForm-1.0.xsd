@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/common/core/forms-1.0.xsd
+    Generated On: 24/10/2017 17:21 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/frmmarriage#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/frmmarriage#"
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
+			   schemaLocation="../../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="commonPart-1.0.xsd"/>
+	<!-- ===================================================== -->
+<xsd:complexType name="MarriageType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to a marriage.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+		<xsd:element name="SpouseA" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="SpouseB" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+			<xsd:annotation>
+			    <xsd:documentation xml:lang="en">
+					The value of this property is of date type.
+			    </xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+
+<xsd:element name="FrmMarriage" type="FrmMarriageType"/>
+<xsd:complexType name="FrmMarriageType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Marriage.
+				Stereotype xsdGlobalElement
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"/>
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+</xsd:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com),
+			Arne De Proft (arne.de.proft@be.pwc.com)
+-->
+<!-- ===================================================== -->

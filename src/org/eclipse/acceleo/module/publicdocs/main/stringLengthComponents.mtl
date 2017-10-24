@@ -1,0 +1,98 @@
+[comment encoding = UTF-8 /]
+[module stringLengthComponents('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::schema/]
+[import org::eclipse::acceleo::module::publicdocs::common::annotation/]
+[import org::eclipse::acceleo::module::publicdocs::main::codelist /]
+
+[template public generateStringLengthComponents(model : Model){
+pack:Package = getPackageWithName(model, 'pdc');
+version: String = getVersion('xsd');
+}]
+[comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
+[file (getFilenameXSD('path_core', pack.name, '-LengthComponents-', version), false, 'UTF-8')]
+[beginSchema('udt', pack, version, pack.name)/]
+	[importXSD('udt')/]
+	[generateContentLengthComponents(pack)/]
+[endSchema(pack, version)/]
+[/file]
+[/template]
+
+[template public generateContentLengthComponents(pack : Package)]
+[let pElements : Sequence(Class) = pack.ownedType->asSequence()]
+[for (packageableElement: PackageableElement | pElements->sortedBy(name))]
+[if packageableElement.oclIsTypeOf(Class)]
+[let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
+[comment if not dependencies->isEmpty()/]
+[generateAnnotationDependency(packageableElement,  dependencies)/]
+[generateBasicComponentsForClass(packageableElement.oclAsType(Class))/]
+[comment /if /]
+[/let]
+[/if]
+[/for]
+[/let]
+[/template]
+
+[template public generateBasicComponentsForClass(class: Class){ 
+pack : Package = class.owner.oclAsType(Package); }]
+[let pProperty : Sequence(Property) = class.ownedAttribute->asSequence()]
+[for (property: Property | pProperty->sortedBy(name))]
+[generateBasicComponentForProperty(class, property)/][/for]
+[/let]
+[/template]
+
+[template public generateBasicComponentForProperty(class: Class, prop: Property){
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierType         : Type          = supplier.type;
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+}]
+[comment if not pack.getDependencies(prop)->isEmpty() and (supplierType->isEmpty() or supplierType.oclIsTypeOf(PrimitiveType))/]
+[generateClassForType(class, prop)/][comment /if /]
+[if not pack.getDependencies(prop)->isEmpty() and (prop.type.oclIsTypeOf(Enumeration))]
+[comment[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
+[/if]
+[if prop.oclIsTypeOf(PrimitiveType)]
+[generatePrimitiveTypeForType(class, prop)/][/if]
+[/template]
+
+[template public generateClassForType(class: Class, prop: Property) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+suffix: String = getSuffix('complexType');
+}]
+[if prop.type.name = 'stringMaxLength50']
+
+<[getNS('xs')/]:complexType name="[class.name/][prop.name/][suffix/]">
+	<[getNS('xs')/]:simpleContent>
+		<[getNS('xs')/]:restriction base="cvb:[supplierQualifiedName/][suffix/]">
+			<[getNS('xs')/]:minLength value="0"  />
+			<[getNS('xs')/]:maxLength value="50" />
+		</[getNS('xs')/]:restriction>
+	</[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
+[/if]
+[if prop.type.name = 'stringMaxLength255']
+
+<[getNS('xs')/]:complexType name="[class.name/][prop.name/][suffix/]">
+	<[getNS('xs')/]:simpleContent>
+		<[getNS('xs')/]:restriction base="cvb:[supplierQualifiedName/][suffix/]">
+			<[getNS('xs')/]:minLength value="0"  />
+			<[getNS('xs')/]:maxLength value="255" />
+		</[getNS('xs')/]:restriction>
+	</[getNS('xs')/]:simpleContent>
+</[getNS('xs')/]:complexType>
+[/if]
+
+[/template]
+
+[template public generatePrimitiveTypeForType(class: Class, prop: Property) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+supplier             : Property      = pack.getDependencies(prop)->any(true).supplier->any(true).oclAsType(Property);
+supplierType         : Type          = supplier.type;
+supplierPackageName  : String        = supplier.type.owner.oclAsType(Package).name.toString();
+supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
+}]
+[/template]

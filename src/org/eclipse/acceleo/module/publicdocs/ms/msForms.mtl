@@ -26,7 +26,7 @@ version: String = getVersion('xsd');
 
 [template public generateXSDFile(model: Model, path : String, pack : Package, suffix : String, version: String )]
 [file (getFilenameXSD(path, pack.name, suffix, version), false, 'UTF-8')]
-[beginSchema('pdc,forms,udt', pack, version, pack.name)/]
+[beginSchemaForms('pdc,forms,udt',path,suffix, pack, version, pack.name)/]
 	[importXSD('ms_pdc,ms_forms,udt-ms')/]
 	[generateContentAggregatedComponents(pack)/]
 	[endSchema(pack, version)/]
@@ -36,7 +36,7 @@ version: String = getVersion('xsd');
 [template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String )]
 [for (form: String | getForms(pack))]
 [file (getMSFilenameXSD(path, pack.name, form, suffix, getVersion('xsd_'+pack.name+'_'+form)), false, 'UTF-8')]
-[beginSchema('pdc,forms,udt,ext', pack, getVersion('xsd_'+pack.name+'_'+form), pack.name)/]
+[beginSchemaForms('pdc,forms,udt,ext',path,suffix, pack, getVersion('xsd_'+pack.name+'_'+form), pack.name)/]
 	[importXSD('ms_pdc1,ms_forms1,udt-ms1,ext')/]
 [if not (form.startsWith('commonPart'))]
 	[includeXSD(pack.name.concat('_commonPart'))/][/if]
