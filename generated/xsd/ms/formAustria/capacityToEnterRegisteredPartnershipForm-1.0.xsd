@@ -1,13 +1,13 @@
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!-- ===== Schema Header ================================= -->
 	<!--	
-		Document Type: xsd/ms/formLatvia-1.0.xsd
+		Document Type: xsd/ms/formAustria-1.0.xsd
 	    Generated On: 30/10/2017 14:27 
 	-->
 	<!-- ===================================================== -->
 	<xsd:schema
-		targetNamespace="http://data.europa.eu/edm/1/ns/forms/latvia#"
-		xmlns="http://data.europa.eu/edm/1/ns/forms/latvia#"
+		targetNamespace="http://data.europa.eu/edm/1/ns/forms/austria#"
+		xmlns="http://data.europa.eu/edm/1/ns/forms/austria#"
 		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
 		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 		xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
@@ -26,60 +26,28 @@
 	<xsd:import namespace=""
 			   schemaLocation="commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="FormMaritalStatusLatviaType">
+<xsd:complexType name="FormCapacityToEnterRegisteredPartnerShipAustriaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
-				Stereotype maritalStatusForm
+		This class contains elements related to the form CapacityToEnterRegisteredPartnership.
+				Stereotype capacityToEnterRegisteredPartnershipForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class FormHeader.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-								<xsd:element name="Body" type="MaritalStatusType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class MaritalStatus.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of any type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
+					<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+					
+					<xsd:element name="Body" type="forms:CapacityToMarryType" minOccurs="1" maxOccurs="1"/>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of any type.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
 	</xsd:sequence>
 	
-</xsd:complexType>
-<xsd:complexType name="MaritalStatusType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype maritalStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="forms:MaritalStatusType">
-			<xsd:sequence>
-							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

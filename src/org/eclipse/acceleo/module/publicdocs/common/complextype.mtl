@@ -65,7 +65,7 @@
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
-	[debug(' ComplexType With Extention ' + class.name + ' with base ' + base.name)/]
+	[comment debug(' ComplexType With Extention ' + class.name + ' with base ' + base.name)/]
 	<[getNS('xs')/]:complexContent>
 [if class.belongSamePackage(base.oclAsType(Class))]
 		<[getNS('xs')/]:extension base="[base.name/]Type">

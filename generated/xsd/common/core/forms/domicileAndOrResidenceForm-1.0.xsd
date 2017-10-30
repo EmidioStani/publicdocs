@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 24/10/2017 17:21 
+    Generated On: 30/10/2017 14:27 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -31,9 +31,12 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-		<xsd:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
-		<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
-		<xsd:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+					
+					<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+					
+					<xsd:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+					
 		
 	</xsd:sequence>
 	
@@ -49,9 +52,9 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
-		<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
-		
+					<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+								<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
+								
 	</xsd:sequence>
 	
 </xsd:complexType>

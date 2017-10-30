@@ -1,78 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- ===== Schema Header ================================= -->
-<!--	
-	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 24/10/2017 17:21 
--->
-<!-- ===================================================== -->
-<xsd:schema
-	targetNamespace="http://data.europa.eu/edm/1/ns/forms/latvia#"
-	xmlns="http://data.europa.eu/edm/1/ns/forms/latvia#"
-	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
-	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-	elementFormDefault="qualified"
-	attributeFormDefault="unqualified"
-	version="1.0">
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!-- ===== Schema Header ================================= -->
+	<!--	
+		Document Type: xsd/ms/formLatvia-1.0.xsd
+	    Generated On: 30/10/2017 14:27 
+	-->
+	<!-- ===================================================== -->
+	<xsd:schema
+		targetNamespace="http://data.europa.eu/edm/1/ns/forms/latvia#"
+		xmlns="http://data.europa.eu/edm/1/ns/forms/latvia#"
+		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
-	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms"
-			   schemaLocation="../../../xsd/common/core/forms-1.0.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="PersonType">
+<xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
-	
 	<xsd:complexContent>
-		<xsd:extension base="pdc:PersonType">
+		<xsd:extension base="forms:DocumentInfoType">
 			<xsd:sequence>
-				<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="ForeignIdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="CorrespondingForeignCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-				<xsd:element name="EthnicGroup" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="CitizenshipCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-				<xsd:element name="InfoOnPersonalID" type="IDInfoType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class IDInfo.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
+							<xsd:element name="RegisterInfo" type="RegisterInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class RegisterInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+											<xsd:element name="IssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="IDInfoType">
+<xsd:complexType name="RegisterInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -80,24 +60,23 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-		<xsd:element name="IDType" minOccurs="1" maxOccurs="1" type="IDTypeChoiceType">
-		</xsd:element>
-		<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-		<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
+					<xsd:element name="RegisteringAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
 					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		
+						<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="RegistryEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -108,78 +87,67 @@
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
-	
 	<xsd:complexContent>
 		<xsd:extension base="forms:SignatureInfoType">
 			<xsd:sequence>
-				<xsd:element name="FormIssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
+								<xsd:element name="FormIssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="FormHeaderType">
+<xsd:complexType name="PersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
-	
 	<xsd:complexContent>
-		<xsd:extension base="forms:FormHeaderType">
+		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-				<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class DocumentInfo.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
+								<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="ForeignIdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+															<xsd:element name="CorrespondingForeignCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+															
+																<xsd:element name="EthnicGroup" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>
+																			<xsd:element name="CitizenshipCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+																			
+																			<xsd:element name="InfoOnPersonalID" type="IDInfoType" minOccurs="1" maxOccurs="1" >
+																				<xsd:annotation>
+																				    <xsd:documentation xml:lang="en">
+																						The value of this property is of the class IDInfo.
+																				    </xsd:documentation>
+																				</xsd:annotation>
+																			</xsd:element>
+																			
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="DocumentAttestingToInformationType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-		<xsd:element name="DeathCertificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="DocumentIssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-		
-	</xsd:sequence>
-	
 </xsd:complexType>
 <xsd:complexType name="CurrentJudicialRecordType">
 	<xsd:annotation>
@@ -189,81 +157,80 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-		<xsd:element name="PeriodForEachExtract" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		
+						<xsd:element name="PeriodForEachExtract" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
+<xsd:complexType name="FormHeaderType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
-	
 	<xsd:complexContent>
-		<xsd:extension base="forms:DocumentInfoType">
+		<xsd:extension base="forms:FormHeaderType">
 			<xsd:sequence>
-				<xsd:element name="RegisterInfo" type="RegisterInfoType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class RegisterInfo.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="IssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
+							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DocumentInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
 							
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="IDTypeChoiceType">
+<xsd:complexType name="AdministrativeDocumentChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
-				Stereotype commonPart
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-		<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="IdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		
+					<xsd:element name="DocumentAttestingToInformation" type="DocumentAttestingToInformationType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+								<xsd:element name="CurrentJudicialRecordDatabaseOrArchive" type="CurrentJudicialRecordType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="ExtractFromCurrentJudicialDatabase" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+																<xsd:element name="ExtractFromJudicialArchives" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>
+																
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="RegisterInfoType">
+<xsd:complexType name="DocumentAttestingToInformationType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -271,63 +238,95 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-		<xsd:element name="RegisteringAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-		<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="RegistryEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		
+						<xsd:element name="DeathCertificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+														<xsd:element name="DocumentIssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																	<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+																	
+														
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="AdministrativeDocumentChoiceType">
+<xsd:complexType name="IDInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
 				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+				
+				<xsd:element name="IDType" minOccurs="1" maxOccurs="1" type="IDTypeChoiceType">
+				</xsd:element>
+							<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+							
+								<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="IDTypeChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-		<xsd:element name="DocumentAttestingToInformation" type="DocumentAttestingToInformationType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="CurrentJudicialRecordDatabaseOrArchive" type="CurrentJudicialRecordType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="ExtractFromCurrentJudicialDatabase" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="ExtractFromJudicialArchives" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-			<xsd:annotation>
-			    <xsd:documentation xml:lang="en">
-					
-			    </xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		
+						<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="IdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+														<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														
 	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>

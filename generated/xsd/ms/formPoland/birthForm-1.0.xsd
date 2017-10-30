@@ -1,84 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- ===== Schema Header ================================= -->
-<!--	
-	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 24/10/2017 17:21 
--->
-<!-- ===================================================== -->
-<xsd:schema
-	targetNamespace="http://data.europa.eu/edm/1/ns/forms/poland#"
-	xmlns="http://data.europa.eu/edm/1/ns/forms/poland#"
-	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
-	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-	elementFormDefault="qualified"
-	attributeFormDefault="unqualified"
-	version="1.0">
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!-- ===== Schema Header ================================= -->
+	<!--	
+		Document Type: xsd/ms/formPoland-1.0.xsd
+	    Generated On: 30/10/2017 14:27 
+	-->
+	<!-- ===================================================== -->
+	<xsd:schema
+		targetNamespace="http://data.europa.eu/edm/1/ns/forms/poland#"
+		xmlns="http://data.europa.eu/edm/1/ns/forms/poland#"
+		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+		xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
+		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
-	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms"
-			   schemaLocation="../../../xsd/common/core/forms-1.0.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace=""
+			   schemaLocation="commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-	<!-- ===== Includes======================================= -->
-	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
-	
-	<!-- ===================================================== --><xsd:complexType name="BirthType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			
-					Stereotype birthForm
-		    </xsd:documentation>
-		</xsd:annotation>
+<xsd:complexType name="BirthType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
 		
-		<xsd:complexContent>
-			<xsd:extension base="forms:BirthType">
-				<xsd:sequence>
-					<xsd:element name="BirthCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="forms:BirthType">
+			<xsd:sequence>
+								<xsd:element name="BirthCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FormBirthPolandType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+					
+					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								
+								The value of this property is of the class Birth.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="FormBirthPolandType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			
-					Stereotype birthForm
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence> 
-			<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-			<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The value of this property is of the class Birth.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property can contain any type of information.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			
-		</xsd:sequence>
-		
-	</xsd:complexType>
+									<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property can contain any type of information.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

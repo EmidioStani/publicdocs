@@ -55,30 +55,31 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-					<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the previous surname(s) of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the previous forename(s) of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					
+								<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
+											<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The value of this property is of the class Sex.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+								<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+												<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains the previous surname(s) of the person.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>	
+																<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains the previous forename(s) of the person.
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>	
+																
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -176,15 +177,16 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
+								<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
+											<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The value of this property is of the class Sex.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+								
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -196,42 +198,42 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence> 
-			<xsd:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			
+							<xsd:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+											<xsd:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+															<xsd:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																<xsd:annotation>
+																    <xsd:documentation xml:lang="en">
+																		There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
+																    </xsd:documentation>
+																</xsd:annotation>
+															</xsd:element>
+																			<xsd:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																				<xsd:annotation>
+																				    <xsd:documentation xml:lang="en">
+																						There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+																				    </xsd:documentation>
+																				</xsd:annotation>
+																			</xsd:element>
+																							<xsd:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																								<xsd:annotation>
+																								    <xsd:documentation xml:lang="en">
+																										There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+																								    </xsd:documentation>
+																								</xsd:annotation>
+																							</xsd:element>
+																							
 		</xsd:sequence>
 		
 	</xsd:complexType>
@@ -266,16 +268,17 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-					
+								<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
+											<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The value of this property is of the class Sex.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+								<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+								
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -288,13 +291,15 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence> 
-			<xsd:element name="Code" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType" minOccurs="0" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The value of this property is of the class CountryCode.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+					
+					<xsd:element name="Code" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType" minOccurs="0" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class CountryCode.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 			<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
 				<xsd:annotation>
 				    <xsd:documentation xml:lang="en">
@@ -337,25 +342,26 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the date of death of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
+								<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
+								<xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains the date of death of the person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+								<xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
+											<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The value of this property is of the class Sex.
+												
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+								
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -398,30 +404,31 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-					<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the previous surname of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the future surname of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					
+								<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="1" maxOccurs="1"/>
+											<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														The value of this property is of the class Sex.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+								<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
+												<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains the previous surname of the person.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>	
+																<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains the future surname of the person.
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>	
+																
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -434,23 +441,24 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-			<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the date of marriage.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
-			</xsd:element>
-			<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The marital status of the concerned person is undetermined.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			
+							<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the date of marriage.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+									
+									<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+									</xsd:element>
+													<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																The marital status of the concerned person is undetermined.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>
+													
 		</xsd:choice>
 	</xsd:complexType>
 	<xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
@@ -483,28 +491,29 @@
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Sex.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the previous surname(s) of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								This property contains the future surname(s) of the person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>	
-					
+								<xsd:element name="Sex" type="cls:SexType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class Sex.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+									<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the previous surname(s) of the person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>	
+													<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																This property contains the future surname(s) of the person.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>	
+													
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -537,28 +546,28 @@
 		    </xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-			<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						The concerned person has never been married.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the date of the divorce.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the date of widowship.
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			
+							<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The concerned person has never been married.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+											<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														This property contains the date of the divorce.
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+															<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																<xsd:annotation>
+																    <xsd:documentation xml:lang="en">
+																		This property contains the date of widowship.
+																    </xsd:documentation>
+																</xsd:annotation>
+															</xsd:element>
+															
 		</xsd:choice>
 	</xsd:complexType>
 	<xsd:complexType name="OfficialType">
@@ -628,56 +637,57 @@
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PlaceOfBirth" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the person's date of death (if applicable).
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="Sex" type="cls:SexType" minOccurs="0" maxOccurs="1" >
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the sex of the person
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
-			<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the past surname of the person (if applicable)
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>	
-			<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the future surname of the person (if applicable)
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>	
-			<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the previous surname of the person (if applicable)
-				
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>	
-			<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-				    <xsd:documentation xml:lang="en">
-						This property contains the previous forename (first name) of the person (if applicable). 
-				    </xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>	
-			
+						<xsd:element name="CountryOfBirth" type="CountryType" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DateOfDeath" type="cvb:PersonDeathDateType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains the person's date of death (if applicable).
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="PlaceOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CountryOfDeath" type="cva:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+									<xsd:element name="Sex" type="cls:SexType" minOccurs="0" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the sex of the person
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+						<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="Domicile" type="AddressType" minOccurs="0" maxOccurs="1"/>
+												<xsd:element name="Residence" type="AddressType" minOccurs="0" maxOccurs="1"/>
+																<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains the past surname of the person (if applicable)
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>	
+																				<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																					<xsd:annotation>
+																					    <xsd:documentation xml:lang="en">
+																							This property contains the future surname of the person (if applicable)
+																					    </xsd:documentation>
+																					</xsd:annotation>
+																				</xsd:element>	
+																								<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																									<xsd:annotation>
+																									    <xsd:documentation xml:lang="en">
+																											This property contains the previous surname of the person (if applicable)
+																									
+																									    </xsd:documentation>
+																									</xsd:annotation>
+																								</xsd:element>	
+																												<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+																													<xsd:annotation>
+																													    <xsd:documentation xml:lang="en">
+																															This property contains the previous forename (first name) of the person (if applicable). 
+																													    </xsd:documentation>
+																													</xsd:annotation>
+																												</xsd:element>	
+																												
 		</xsd:sequence>
 		
 	</xsd:complexType>
