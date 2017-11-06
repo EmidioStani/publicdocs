@@ -1,20 +1,23 @@
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!-- ===== Schema Header ================================= -->
-	<!--	
-		Document Type: xsd/ms/formRomania-1.0.xsd
-	    Generated On: 30/10/2017 14:27 
-	-->
-	<!-- ===================================================== -->
-	<xsd:schema
-		targetNamespace="http://data.europa.eu/edm/1/ns/forms/romania#"
-		xmlns="http://data.europa.eu/edm/1/ns/forms/romania#"
-		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified"
-		version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formRomania-1.0.xsd
+    Generated On: 06/11/2017 17:41 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/romania#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/romania#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
@@ -31,13 +34,16 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Parent.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
+					
+				<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+					<xsd:annotation>
+					    <xsd:documentation xml:lang="en">
+							The value of this property is of the class Parent.
+					    </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				
+				
 								<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
 									<xsd:annotation>
 									    <xsd:documentation xml:lang="en">
@@ -46,38 +52,39 @@
 									</xsd:annotation>
 								</xsd:element>
 								
+					
 	</xsd:sequence>
 	
 </xsd:complexType>
 <xsd:complexType name="ParentType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:PersonType">
-			<xsd:sequence>
-								<xsd:element name="ParentSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
 											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
+													Stereotype commonPart
+										    </xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexContent>
+											<xsd:extension base="pdc:PersonType">
+												<xsd:sequence>
+																	<xsd:element name="ParentSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																		<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																				<xsd:annotation>
+																				    <xsd:documentation xml:lang="en">
+																						
+																				    </xsd:documentation>
+																				</xsd:annotation>
+																			</xsd:element>
+																			
+												</xsd:sequence>
+											</xsd:extension>
+										</xsd:complexContent>
+									</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -93,3 +100,6 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
+
+
+

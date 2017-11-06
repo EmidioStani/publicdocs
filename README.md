@@ -57,6 +57,14 @@ If you experience the error:
 * In compiler compliance level select 1.5 (at least)
 * Repeat the launch of Acceleo as explained before
 
+If you experience the error:
+"Caused by: org.eclipse.emf.ecore.xmi.PackageNotFoundException: Package with uri 'http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile' not found."
+* In "Project Explorer" right click on the pd.uml file and open with "Text Editor"
+* Delete the following tags:
+* "xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" on line 2
+* "<ActionLanguage:TextualRepresentation .../>" at the end of the file
+* Save the file and rerun Acceleo
+
 # Model
 The model is composed by 2 parts:
 * isa.uml, used as profile containing stereotypes

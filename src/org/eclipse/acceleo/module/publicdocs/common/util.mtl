@@ -14,7 +14,7 @@
 = Sequence{'absenceOfCriminalRecordForm','birthForm','capacityToEnterRegisteredPartnershipForm','capacityToMarryForm','commonPart','deathForm','domicileAndOrResidenceForm','lifeForm','maritalStatusForm','marriageForm','registeredPartnershipForm','registeredPartnershipStatusForm'}/]
 
 [query public getCountriesSeparateXSD (string: String) : Sequence(String)
-= Sequence{'formAustria','formCyprus','formCzechRepublic','formFinland','formLatvia', 'formLithuania', 'formNetherlands','formPoland','formRomania','formSpain'}/]
+= Sequence{'formAustria','formCyprus','formCzechRepublic','formFinland','formLatvia', 'formLithuania', 'formNetherlands','formPoland','formRomania','formSpain','formSlovakia','formFrance','formBelgium','formCroatia','formIreland','formDenmark','formMalta','formSweden','formSlovenia','formLuxembourg'}/]
 
 [query public getForms(pack:Package) : Sequence(String)
 = getForms('abc')->select(form|((pack.oclAsType(Package).ownedType->asSequence())->select(hasStereotype('isa::'.concat(form))))->notEmpty())/]
@@ -56,6 +56,9 @@
 [query public hasStereotypesArneTest3 (pack : Package, form: String) : Set(Type) 
 = pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).ownedAttribute.type->select(_package.name = 'forms' )/]
 
+[query public hasCLS (pack : Package, form: String) : Set(Type) 
+= pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).ownedAttribute.type->select(_package.name = 'cls' )/]
+
 [query public hasStereotypesArneTest4 (pack : Package, form: String) : Set(Stereotype) 
 = hasStereotypesArneTest3(pack, form).getAppliedStereotypes()->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' )/]
 
@@ -72,6 +75,12 @@
 [template public hasFormsExtensions (pack : Package, form: String) post(trim())]
 [if hasStereotypesArneTest5(pack, form)->size() > 0]
 	['ms2forms_'+(hasStereotypesArneTest5(pack, form))/]
+[/if]
+[/template]
+
+[template public hasCLSDependencies (pack : Package, form: String) post(trim())]
+[if hasCLS(pack, form)->size() > 0]
+	['ms2forms_cls'/]
 [/if]
 [/template]
 

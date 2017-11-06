@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formSlovenia-1.0.xsd
+    Generated On: 06/11/2017 17:41 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/slovenia#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/slovenia#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	
+	xmlns:ms2forms_deathForm="http://data.europa.eu/edm/1/ns/forms/death#"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/death#"
+			   schemaLocation="../../../xsd/common/core/forms/deathForm-1.0.xsd"/>
+	<!-- ===================================================== -->
+	<!-- ===== Includes======================================= -->
+	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
+	
+	<!-- ===================================================== -->
+<xsd:complexType name="FormDeathSloveniaType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+					
+				
+				<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
+					<xsd:annotation>
+					    <xsd:documentation xml:lang="en">
+							The value of this property is of the class Death.
+					    </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				
+					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property can contain any type of information.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="DeathPersonType">
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+												
+														Stereotype deathForm
+											    </xsd:documentation>
+											</xsd:annotation>
+											<xsd:sequence> 
+																<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																<xsd:annotation>
+																    <xsd:documentation xml:lang="en">
+																		
+																    </xsd:documentation>
+																</xsd:annotation>
+															</xsd:element>
+																							<xsd:element name="LastPlaceOfDomicile" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+																								
+																
+											</xsd:sequence>
+											
+										</xsd:complexType>
+<xsd:complexType name="DeathType">
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																		
+																				Stereotype deathForm
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																	<xsd:complexContent>
+																		<xsd:extension base="ms2forms_deathForm:DeathType">
+																			<xsd:sequence>
+																							
+																				<xsd:element name="DeathPerson" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
+																					<xsd:annotation>
+																					    <xsd:documentation xml:lang="en">
+																							The value of this property is of the class DeathPerson.
+																					    </xsd:documentation>
+																					</xsd:annotation>
+																				</xsd:element>
+																				
+																				
+																								<xsd:element name="Partner" type="PartnerType" minOccurs="1" maxOccurs="1" >
+																									<xsd:annotation>
+																									    <xsd:documentation xml:lang="en">
+																											The value of this property is of the class Partner.
+																									    </xsd:documentation>
+																									</xsd:annotation>
+																								</xsd:element>
+																								
+																					
+																			</xsd:sequence>
+																		</xsd:extension>
+																	</xsd:complexContent>
+																</xsd:complexType>
+<xsd:complexType name="PartnerType">
+																										<xsd:annotation>
+																										    <xsd:documentation xml:lang="en">
+																											
+																													Stereotype deathForm
+																										    </xsd:documentation>
+																										</xsd:annotation>
+																										<xsd:sequence> 
+																																			<xsd:element name="Person" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+																																		
+																														<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																															<xsd:annotation>
+																															    <xsd:documentation xml:lang="en">
+																																	
+																															    </xsd:documentation>
+																															</xsd:annotation>
+																														</xsd:element>
+																														
+																										</xsd:sequence>
+																										
+																									</xsd:complexType>
+</xsd:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com),
+			Arne De Proft (arne.de.proft@be.pwc.com)
+-->
+<!-- ===================================================== -->
+
+
+

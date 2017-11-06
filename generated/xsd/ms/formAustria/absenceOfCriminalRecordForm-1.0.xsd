@@ -1,21 +1,25 @@
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!-- ===== Schema Header ================================= -->
-	<!--	
-		Document Type: xsd/ms/formAustria-1.0.xsd
-	    Generated On: 30/10/2017 14:27 
-	-->
-	<!-- ===================================================== -->
-	<xsd:schema
-		targetNamespace="http://data.europa.eu/edm/1/ns/forms/austria#"
-		xmlns="http://data.europa.eu/edm/1/ns/forms/austria#"
-		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-		xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
-		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified"
-		version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formAustria-1.0.xsd
+    Generated On: 06/11/2017 17:41 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/austria#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/austria#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
@@ -23,8 +27,12 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
-	<xsd:import namespace=""
-			   schemaLocation="commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
+	<!-- ===================================================== -->
+	<!-- ===== Includes======================================= -->
+	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
+	
 	<!-- ===================================================== -->
 <xsd:complexType name="FormAbsenceOfCriminalRecordAustriaType">
 	<xsd:annotation>
@@ -34,16 +42,18 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 					
-					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class AbsenceOfCriminalRecord.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+				
+				<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
+					<xsd:annotation>
+					    <xsd:documentation xml:lang="en">
+							The value of this property is of the class AbsenceOfCriminalRecord.
+					    </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				
+					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of any type.
@@ -55,27 +65,29 @@
 	
 </xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:AbsenceOfCriminalRecordPersonType">
-			<xsd:sequence>
-							<xsd:element name="Academic" type="QualificationType" minOccurs="1" maxOccurs="unbounded">
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Qualification.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>	
-							
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+												
+														Stereotype absenceOfCriminalRecordForm
+											    </xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexContent>
+												<xsd:extension base="pdc:AbsenceOfCriminalRecordPersonType">
+													<xsd:sequence>
+																	
+														<xsd:element name="Academic" type="QualificationType" minOccurs="1" maxOccurs="unbounded">
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	The value of this property is of the class Qualification.
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>	
+														
+											
+													</xsd:sequence>
+												</xsd:extension>
+											</xsd:complexContent>
+										</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -91,3 +103,6 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
+
+
+

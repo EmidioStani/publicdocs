@@ -1,21 +1,27 @@
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!-- ===== Schema Header ================================= -->
-	<!--	
-		Document Type: xsd/ms/formPoland-1.0.xsd
-	    Generated On: 30/10/2017 14:27 
-	-->
-	<!-- ===================================================== -->
-	<xsd:schema
-		targetNamespace="http://data.europa.eu/edm/1/ns/forms/poland#"
-		xmlns="http://data.europa.eu/edm/1/ns/forms/poland#"
-		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-		xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
-		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified"
-		version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formPoland-1.0.xsd
+    Generated On: 06/11/2017 17:41 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/poland#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/poland#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	
+	xmlns:ms2forms_marriageForm="http://data.europa.eu/edm/1/ns/forms/frmmarriage#"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
@@ -23,8 +29,14 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
-	<xsd:import namespace=""
-			   schemaLocation="commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmmarriage#"
+			   schemaLocation="../../../xsd/common/core/forms/marriageForm-1.0.xsd"/>
+	<!-- ===================================================== -->
+	<!-- ===== Includes======================================= -->
+	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
+	
 	<!-- ===================================================== -->
 <xsd:complexType name="ProofOfNonexistenceOfMarriageType">
 	<xsd:annotation>
@@ -35,13 +47,13 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+									<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
 													
@@ -49,366 +61,386 @@
 											</xsd:annotation>
 										</xsd:element>
 														<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="MarriageAnnulmentType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="LegalSeparationType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="MarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="forms:MarriageType">
-			<xsd:sequence>
-								<xsd:element name="SurnameChildren" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="MarriageCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-															<xsd:element name="SpouseA" type="MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
 																<xsd:annotation>
 																    <xsd:documentation xml:lang="en">
-																		The value of this property is of the class MarriageOrRegisteredPartnershipPerson.
+																		
 																    </xsd:documentation>
 																</xsd:annotation>
 															</xsd:element>
-																		<xsd:element name="SpouseB" type="MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					The value of this property is of the class MarriageOrRegisteredPartnershipPerson.
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																				
-																				<xsd:element name="MarriageDissolutionNote" minOccurs="1" maxOccurs="1" type="MarriageDissolutionChoiceType">
-																				</xsd:element>
-																				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MarriageDissolutionChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="SpouseDeath" type="SpouseDeathType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class SpouseDeath.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-								<xsd:element name="Divorce" type="DivorceType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class Divorce.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-											<xsd:element name="Annulment" type="MarriageAnnulmentType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class MarriageAnnulment.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-														<xsd:element name="LegalSeparation" type="LegalSeparationType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	The value of this property is of the class LegalSeparation.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																	<xsd:element name="TerminationOfSeparation" type="TerminationOfSeparationType" minOccurs="1" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				The value of this property is of the class TerminationOfSeparation.
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																				<xsd:element name="ProofOfNonexistenceOfMarriage" type="ProofOfNonexistenceOfMarriageType" minOccurs="1" maxOccurs="1" >
+																			<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 																					<xsd:annotation>
 																					    <xsd:documentation xml:lang="en">
-																							The value of this property is of the class ProofOfNonexistenceOfMarriage.
+																							
 																					    </xsd:documentation>
 																					</xsd:annotation>
 																				</xsd:element>
 																				
-	</xsd:choice>
+	</xsd:sequence>
+	
 </xsd:complexType>
+<xsd:complexType name="MarriageAnnulmentType">
+																						<xsd:annotation>
+																						    <xsd:documentation xml:lang="en">
+																							
+																									Stereotype marriageForm
+																						    </xsd:documentation>
+																						</xsd:annotation>
+																						<xsd:sequence> 
+																											<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																											<xsd:annotation>
+																											    <xsd:documentation xml:lang="en">
+																													
+																											    </xsd:documentation>
+																											</xsd:annotation>
+																										</xsd:element>
+																														<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																<xsd:annotation>
+																																    <xsd:documentation xml:lang="en">
+																																		
+																																    </xsd:documentation>
+																																</xsd:annotation>
+																															</xsd:element>
+																																			<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																					<xsd:annotation>
+																																					    <xsd:documentation xml:lang="en">
+																																							
+																																					    </xsd:documentation>
+																																					</xsd:annotation>
+																																				</xsd:element>
+																																								<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																										<xsd:annotation>
+																																										    <xsd:documentation xml:lang="en">
+																																												
+																																										    </xsd:documentation>
+																																										</xsd:annotation>
+																																									</xsd:element>
+																																									
+																						</xsd:sequence>
+																						
+																					</xsd:complexType>
+<xsd:complexType name="LegalSeparationType">
+																																											<xsd:annotation>
+																																											    <xsd:documentation xml:lang="en">
+																																												
+																																														Stereotype marriageForm
+																																											    </xsd:documentation>
+																																											</xsd:annotation>
+																																											<xsd:sequence> 
+																																																<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																<xsd:annotation>
+																																																    <xsd:documentation xml:lang="en">
+																																																		
+																																																    </xsd:documentation>
+																																																</xsd:annotation>
+																																															</xsd:element>
+																																																			<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																					<xsd:annotation>
+																																																					    <xsd:documentation xml:lang="en">
+																																																							
+																																																					    </xsd:documentation>
+																																																					</xsd:annotation>
+																																																				</xsd:element>
+																																																								<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																										<xsd:annotation>
+																																																										    <xsd:documentation xml:lang="en">
+																																																												
+																																																										    </xsd:documentation>
+																																																										</xsd:annotation>
+																																																									</xsd:element>
+																																																													<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																															<xsd:annotation>
+																																																															    <xsd:documentation xml:lang="en">
+																																																																	
+																																																															    </xsd:documentation>
+																																																															</xsd:annotation>
+																																																														</xsd:element>
+																																																														
+																																											</xsd:sequence>
+																																											
+																																										</xsd:complexType>
+<xsd:complexType name="MarriageType">
+																																																																<xsd:annotation>
+																																																																    <xsd:documentation xml:lang="en">
+																																																																	
+																																																																			Stereotype marriageForm
+																																																																    </xsd:documentation>
+																																																																</xsd:annotation>
+																																																																<xsd:complexContent>
+																																																																	<xsd:extension base="ms2forms_marriageForm:MarriageType">
+																																																																		<xsd:sequence>
+																																																																							<xsd:element name="SurnameChildren" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																					<xsd:annotation>
+																																																																					    <xsd:documentation xml:lang="en">
+																																																																							
+																																																																					    </xsd:documentation>
+																																																																					</xsd:annotation>
+																																																																				</xsd:element>
+																																																																								<xsd:element name="MarriageCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																										<xsd:annotation>
+																																																																										    <xsd:documentation xml:lang="en">
+																																																																												
+																																																																										    </xsd:documentation>
+																																																																										</xsd:annotation>
+																																																																									</xsd:element>
+																																																																												
+																																																																													<xsd:element name="SpouseA" type="MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
+																																																																														<xsd:annotation>
+																																																																														    <xsd:documentation xml:lang="en">
+																																																																																The value of this property is of the class MarriageOrRegisteredPartnershipPerson.
+																																																																														    </xsd:documentation>
+																																																																														</xsd:annotation>
+																																																																													</xsd:element>
+																																																																													
+																																																																													
+																																																																																	<xsd:element name="SpouseB" type="MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
+																																																																																		<xsd:annotation>
+																																																																																		    <xsd:documentation xml:lang="en">
+																																																																																				The value of this property is of the class MarriageOrRegisteredPartnershipPerson.
+																																																																																		    </xsd:documentation>
+																																																																																		</xsd:annotation>
+																																																																																	</xsd:element>
+																																																																																	
+																																																																																<xsd:element name="MarriageDissolutionNote" minOccurs="1" maxOccurs="1" type="MarriageDissolutionChoiceType">
+																																																																																				</xsd:element>
+																																																																																				
+																																																																																		
+																																																																		</xsd:sequence>
+																																																																	</xsd:extension>
+																																																																</xsd:complexContent>
+																																																															</xsd:complexType>
+<xsd:complexType name="MarriageDissolutionChoiceType">
+																																																																																			<xsd:annotation>
+																																																																																			    <xsd:documentation xml:lang="en">
+																																																																																				
+																																																																																						Stereotype xsdChoice
+																																																																																						Stereotype marriageForm
+																																																																																			    </xsd:documentation>
+																																																																																			</xsd:annotation>
+																																																																																			<xsd:choice>
+																																																																																							
+																																																																																						<xsd:element name="SpouseDeath" type="SpouseDeathType" minOccurs="1" maxOccurs="1" >
+																																																																																							<xsd:annotation>
+																																																																																							    <xsd:documentation xml:lang="en">
+																																																																																									The value of this property is of the class SpouseDeath.
+																																																																																							    </xsd:documentation>
+																																																																																							</xsd:annotation>
+																																																																																						</xsd:element>
+																																																																																						
+																																																																																						
+																																																																																										<xsd:element name="Divorce" type="DivorceType" minOccurs="1" maxOccurs="1" >
+																																																																																											<xsd:annotation>
+																																																																																											    <xsd:documentation xml:lang="en">
+																																																																																													The value of this property is of the class Divorce.
+																																																																																											    </xsd:documentation>
+																																																																																											</xsd:annotation>
+																																																																																										</xsd:element>
+																																																																																										
+																																																																																										
+																																																																																														<xsd:element name="Annulment" type="MarriageAnnulmentType" minOccurs="1" maxOccurs="1" >
+																																																																																															<xsd:annotation>
+																																																																																															    <xsd:documentation xml:lang="en">
+																																																																																																	The value of this property is of the class MarriageAnnulment.
+																																																																																															    </xsd:documentation>
+																																																																																															</xsd:annotation>
+																																																																																														</xsd:element>
+																																																																																														
+																																																																																														
+																																																																																																		<xsd:element name="LegalSeparation" type="LegalSeparationType" minOccurs="1" maxOccurs="1" >
+																																																																																																			<xsd:annotation>
+																																																																																																			    <xsd:documentation xml:lang="en">
+																																																																																																					The value of this property is of the class LegalSeparation.
+																																																																																																			    </xsd:documentation>
+																																																																																																			</xsd:annotation>
+																																																																																																		</xsd:element>
+																																																																																																		
+																																																																																																		
+																																																																																																						<xsd:element name="TerminationOfSeparation" type="TerminationOfSeparationType" minOccurs="1" maxOccurs="1" >
+																																																																																																							<xsd:annotation>
+																																																																																																							    <xsd:documentation xml:lang="en">
+																																																																																																									The value of this property is of the class TerminationOfSeparation.
+																																																																																																							    </xsd:documentation>
+																																																																																																							</xsd:annotation>
+																																																																																																						</xsd:element>
+																																																																																																						
+																																																																																																						
+																																																																																																										<xsd:element name="ProofOfNonexistenceOfMarriage" type="ProofOfNonexistenceOfMarriageType" minOccurs="1" maxOccurs="1" >
+																																																																																																											<xsd:annotation>
+																																																																																																											    <xsd:documentation xml:lang="en">
+																																																																																																													The value of this property is of the class ProofOfNonexistenceOfMarriage.
+																																																																																																											    </xsd:documentation>
+																																																																																																											</xsd:annotation>
+																																																																																																										</xsd:element>
+																																																																																																										
+																																																																																																							
+																																																																																			</xsd:choice>
+																																																																																		</xsd:complexType>
 <xsd:complexType name="TerminationOfSeparationType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-	</xsd:sequence>
-	
-</xsd:complexType>
+																																																																																																												<xsd:annotation>
+																																																																																																												    <xsd:documentation xml:lang="en">
+																																																																																																													
+																																																																																																															Stereotype marriageForm
+																																																																																																												    </xsd:documentation>
+																																																																																																												</xsd:annotation>
+																																																																																																												<xsd:sequence> 
+																																																																																																																	<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																																																																																	<xsd:annotation>
+																																																																																																																	    <xsd:documentation xml:lang="en">
+																																																																																																																			
+																																																																																																																	    </xsd:documentation>
+																																																																																																																	</xsd:annotation>
+																																																																																																																</xsd:element>
+																																																																																																																				<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																																																																						<xsd:annotation>
+																																																																																																																						    <xsd:documentation xml:lang="en">
+																																																																																																																								
+																																																																																																																						    </xsd:documentation>
+																																																																																																																						</xsd:annotation>
+																																																																																																																					</xsd:element>
+																																																																																																																									<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																																																																																											<xsd:annotation>
+																																																																																																																											    <xsd:documentation xml:lang="en">
+																																																																																																																													
+																																																																																																																											    </xsd:documentation>
+																																																																																																																											</xsd:annotation>
+																																																																																																																										</xsd:element>
+																																																																																																																														<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																<xsd:annotation>
+																																																																																																																																    <xsd:documentation xml:lang="en">
+																																																																																																																																		
+																																																																																																																																    </xsd:documentation>
+																																																																																																																																</xsd:annotation>
+																																																																																																																															</xsd:element>
+																																																																																																																															
+																																																																																																												</xsd:sequence>
+																																																																																																												
+																																																																																																											</xsd:complexType>
 <xsd:complexType name="FormMarriagePolandType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="Header" type="forms:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-					
-					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Marriage.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property can contain any type of information.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-	</xsd:sequence>
-	
-</xsd:complexType>
+																																																																																																																																	<xsd:annotation>
+																																																																																																																																	    <xsd:documentation xml:lang="en">
+																																																																																																																																		
+																																																																																																																																				Stereotype marriageForm
+																																																																																																																																	    </xsd:documentation>
+																																																																																																																																	</xsd:annotation>
+																																																																																																																																	<xsd:sequence> 
+																																																																																																																																						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+																																																																																																																																					
+																																																																																																																																				
+																																																																																																																																				<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																					<xsd:annotation>
+																																																																																																																																					    <xsd:documentation xml:lang="en">
+																																																																																																																																							The value of this property is of the class Marriage.
+																																																																																																																																					    </xsd:documentation>
+																																																																																																																																					</xsd:annotation>
+																																																																																																																																				</xsd:element>
+																																																																																																																																				
+																																																																																																																																					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+																																																																																																																																										<xsd:annotation>
+																																																																																																																																										    <xsd:documentation xml:lang="en">
+																																																																																																																																												This property can contain any type of information.
+																																																																																																																																										    </xsd:documentation>
+																																																																																																																																										</xsd:annotation>
+																																																																																																																																									</xsd:element>
+																																																																																																																																									
+																																																																																																																																	</xsd:sequence>
+																																																																																																																																	
+																																																																																																																																</xsd:complexType>
 <xsd:complexType name="DivorceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-	</xsd:sequence>
-	
-</xsd:complexType>
+																																																																																																																																											<xsd:annotation>
+																																																																																																																																											    <xsd:documentation xml:lang="en">
+																																																																																																																																												
+																																																																																																																																														Stereotype marriageForm
+																																																																																																																																											    </xsd:documentation>
+																																																																																																																																											</xsd:annotation>
+																																																																																																																																											<xsd:sequence> 
+																																																																																																																																																<xsd:element name="CourtDesignation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																<xsd:annotation>
+																																																																																																																																																    <xsd:documentation xml:lang="en">
+																																																																																																																																																		
+																																																																																																																																																    </xsd:documentation>
+																																																																																																																																																</xsd:annotation>
+																																																																																																																																															</xsd:element>
+																																																																																																																																																			<xsd:element name="CourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																					<xsd:annotation>
+																																																																																																																																																					    <xsd:documentation xml:lang="en">
+																																																																																																																																																							
+																																																																																																																																																					    </xsd:documentation>
+																																																																																																																																																					</xsd:annotation>
+																																																																																																																																																				</xsd:element>
+																																																																																																																																																								<xsd:element name="CaseReferenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																										<xsd:annotation>
+																																																																																																																																																										    <xsd:documentation xml:lang="en">
+																																																																																																																																																												
+																																																																																																																																																										    </xsd:documentation>
+																																																																																																																																																										</xsd:annotation>
+																																																																																																																																																									</xsd:element>
+																																																																																																																																																													<xsd:element name="FinalCourtDecisionDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																															<xsd:annotation>
+																																																																																																																																																															    <xsd:documentation xml:lang="en">
+																																																																																																																																																																	
+																																																																																																																																																															    </xsd:documentation>
+																																																																																																																																																															</xsd:annotation>
+																																																																																																																																																														</xsd:element>
+																																																																																																																																																														
+																																																																																																																																											</xsd:sequence>
+																																																																																																																																											
+																																																																																																																																										</xsd:complexType>
 <xsd:complexType name="SpouseDeathType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="WifeDeath" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="HusbandDeath" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-													<xsd:element name="DeathDates" type="DeathType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is of the class Death.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-	</xsd:sequence>
-	
-</xsd:complexType>
+																																																																																																																																																																<xsd:annotation>
+																																																																																																																																																																    <xsd:documentation xml:lang="en">
+																																																																																																																																																																	
+																																																																																																																																																																			Stereotype marriageForm
+																																																																																																																																																																    </xsd:documentation>
+																																																																																																																																																																</xsd:annotation>
+																																																																																																																																																																<xsd:sequence> 
+																																																																																																																																																																					<xsd:element name="WifeDeath" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																																					<xsd:annotation>
+																																																																																																																																																																					    <xsd:documentation xml:lang="en">
+																																																																																																																																																																							
+																																																																																																																																																																					    </xsd:documentation>
+																																																																																																																																																																					</xsd:annotation>
+																																																																																																																																																																				</xsd:element>
+																																																																																																																																																																								<xsd:element name="HusbandDeath" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																																										<xsd:annotation>
+																																																																																																																																																																										    <xsd:documentation xml:lang="en">
+																																																																																																																																																																												
+																																																																																																																																																																										    </xsd:documentation>
+																																																																																																																																																																										</xsd:annotation>
+																																																																																																																																																																									</xsd:element>
+																																																																																																																																																																												
+																																																																																																																																																																													<xsd:element name="DeathDates" type="DeathType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																																														<xsd:annotation>
+																																																																																																																																																																														    <xsd:documentation xml:lang="en">
+																																																																																																																																																																																The value of this property is of the class Death.
+																																																																																																																																																																														    </xsd:documentation>
+																																																																																																																																																																														</xsd:annotation>
+																																																																																																																																																																													</xsd:element>
+																																																																																																																																																																													
+																																																																																																																																																																										
+																																																																																																																																																																</xsd:sequence>
+																																																																																																																																																																
+																																																																																																																																																															</xsd:complexType>
 <xsd:complexType name="MarriageOrRegisteredPartnershipPersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
-			<xsd:sequence>
-								<xsd:element name="SurnameIfDifferentFromMarriedName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
+																																																																																																																																																																															<xsd:annotation>
+																																																																																																																																																																															    <xsd:documentation xml:lang="en">
+																																																																																																																																																																																
+																																																																																																																																																																																		Stereotype marriageForm
+																																																																																																																																																																															    </xsd:documentation>
+																																																																																																																																																																															</xsd:annotation>
+																																																																																																																																																																															<xsd:complexContent>
+																																																																																																																																																																																<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
+																																																																																																																																																																																	<xsd:sequence>
+																																																																																																																																																																																						<xsd:element name="SurnameIfDifferentFromMarriedName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																																																																																																																																																																																				<xsd:annotation>
+																																																																																																																																																																																				    <xsd:documentation xml:lang="en">
+																																																																																																																																																																																						
+																																																																																																																																																																																				    </xsd:documentation>
+																																																																																																																																																																																				</xsd:annotation>
+																																																																																																																																																																																			</xsd:element>
+																																																																																																																																																																																			
+																																																																																																																																																																																	</xsd:sequence>
+																																																																																																																																																																																</xsd:extension>
+																																																																																																																																																																															</xsd:complexContent>
+																																																																																																																																																																														</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -424,3 +456,6 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
+
+
+

@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-10-30">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-06">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -184,17 +184,17 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovenia#">formSlovenia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovenia#">formSlovenia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/pdc">pdc</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/ireland#">formIreland</a>;</li>
@@ -205,7 +205,7 @@
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/spain#">formSpain</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
@@ -274,69 +274,7 @@
 							</tbody>
 						</table>
 							<h4 id="birthForm">5.3 Form birthForm</h4>
-									<h5 id="BirthPerson">5.3.1 Class BirthPerson
-									
-									</h5>
-									<p><b>Definition:</b></p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>OtherNames</td>
-												<td>The value of this property is of string type.</td>
-												<td>1..1</td>
-												<td>udt:TextType</td>
-											</tr>
-											<tr>
-												<td>AcademicQualificationsOrProfessionalTitles</td>
-												<td>The value of this property is of string type.</td>
-												<td>1..1</td>
-												<td>udt:TextType</td>
-											</tr>
-											<tr>
-												<td>DataOnParents</td>
-												<td>The value of this property is of the class Parents.</td>
-												<td>1..1</td>
-												<td>formAustria:Parents</td>
-											</tr>
-										</tbody>
-									</table>
-									<h5 id="Parents">5.3.2 Class Parents
-									
-									</h5>
-									<p><b>Definition:</b></p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Mother</td>
-												<td>The value of this property is of the class Parent.</td>
-												<td>1..1</td>
-												<td>formAustria:Parent</td>
-											</tr>
-											<tr>
-												<td>Father</td>
-												<td>The value of this property is of the class Parent.</td>
-												<td>1..1</td>
-												<td>formAustria:Parent</td>
-											</tr>
-										</tbody>
-									</table>
-									<h5 id="Birth">5.3.3 Class Birth
+									<h5 id="Birth">5.3.1 Class Birth
 									
 									</h5>
 									<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
@@ -358,7 +296,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="Parent">5.3.4 Class Parent
+									<h5 id="Parent">5.3.2 Class Parent
 									
 									</h5>
 									<p><b>Definition:</b></p>
@@ -386,7 +324,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FormBirthAustria">5.3.5 Class FormBirthAustria
+									<h5 id="FormBirthAustria">5.3.3 Class FormBirthAustria
 									
 									</h5>
 									<p><b>Definition:</b></p>
@@ -420,6 +358,68 @@
 											</tr>
 										</tbody>
 									</table>
+									<h5 id="Parents">5.3.4 Class Parents
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Mother</td>
+												<td>The value of this property is of the class Parent.</td>
+												<td>1..1</td>
+												<td>formAustria:Parent</td>
+											</tr>
+											<tr>
+												<td>Father</td>
+												<td>The value of this property is of the class Parent.</td>
+												<td>1..1</td>
+												<td>formAustria:Parent</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="BirthPerson">5.3.5 Class BirthPerson
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>OtherNames</td>
+												<td>The value of this property is of string type.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>AcademicQualificationsOrProfessionalTitles</td>
+												<td>The value of this property is of string type.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DataOnParents</td>
+												<td>The value of this property is of the class Parents.</td>
+												<td>1..1</td>
+												<td>formAustria:Parents</td>
+											</tr>
+										</tbody>
+									</table>
 										<h4 id="capacityToEnterRegisteredPartnershipForm">5.4 Form capacityToEnterRegisteredPartnershipForm</h4>
 												<h5 id="FormCapacityToEnterRegisteredPartnerShipAustria">5.4.1 Class FormCapacityToEnterRegisteredPartnerShipAustria
 												
@@ -445,7 +445,7 @@
 															<td>Body</td>
 															<td>The value of this property is of the class CapacityToEnterRegisteredPartnership.</td>
 															<td>1..1</td>
-															<td>forms:CapacityToMarry</td>
+															<td>formAustria:CapacityToMarry</td>
 														</tr>
 														<tr>
 															<td>Extension</td>
@@ -531,51 +531,7 @@
 																				</tr>
 																			</tbody>
 																		</table>
-																		<h5 id="Death">5.6.2 Class Death
-																		
-																		</h5>
-																		<p><b>Definition:</b></p>
-																		<table class="generatedTable table table-striped table-bordered">
-																			<thead>
-																				<tr>
-																					<th>Property Name</th>
-																					<th>Definition</th>
-																					<th>Cardinality</th>
-																					<th>Data Type</th>
-																				</tr>
-																			</thead>
-																			<tbody>
-																				<tr>
-																					<td>Person</td>
-																					<td>The value of this property is of the class DeathPerson.</td>
-																					<td>1..1</td>
-																					<td>formAustria:DeathPerson</td>
-																				</tr>
-																			</tbody>
-																		</table>
-																		<h5 id="FormHeader">5.6.3 Class FormHeader
-																		
-																		</h5>
-																		<p><b>Definition:</b></p>
-																		<table class="generatedTable table table-striped table-bordered">
-																			<thead>
-																				<tr>
-																					<th>Property Name</th>
-																					<th>Definition</th>
-																					<th>Cardinality</th>
-																					<th>Data Type</th>
-																				</tr>
-																			</thead>
-																			<tbody>
-																				<tr>
-																					<td>CourtOfIssue</td>
-																					<td>The value of this property is of the class Authority.</td>
-																					<td>0..1</td>
-																					<td>pdc:Authority</td>
-																				</tr>
-																			</tbody>
-																		</table>
-																		<h5 id="FormerSpouseOrPartnerChoice">5.6.4 Class FormerSpouseOrPartnerChoice
+																		<h5 id="FormerSpouseOrPartnerChoice">5.6.2 Class FormerSpouseOrPartnerChoice
 																		(choice)
 																		</h5>
 																		<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
@@ -603,7 +559,29 @@
 																				</tr>
 																			</tbody>
 																		</table>
-																		<h5 id="FormDeathAustria">5.6.5 Class FormDeathAustria
+																		<h5 id="Death">5.6.3 Class Death
+																		
+																		</h5>
+																		<p><b>Definition:</b></p>
+																		<table class="generatedTable table table-striped table-bordered">
+																			<thead>
+																				<tr>
+																					<th>Property Name</th>
+																					<th>Definition</th>
+																					<th>Cardinality</th>
+																					<th>Data Type</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>Person</td>
+																					<td>The value of this property is of the class DeathPerson.</td>
+																					<td>1..1</td>
+																					<td>formAustria:DeathPerson</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<h5 id="FormDeathAustria">5.6.4 Class FormDeathAustria
 																		
 																		</h5>
 																		<p><b>Definition:</b></p>
@@ -634,6 +612,28 @@
 																					<td>The value of this property is of any type.</td>
 																					<td>0..1</td>
 																					<td>ext:UBLExtensionsType</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<h5 id="FormHeader">5.6.5 Class FormHeader
+																		
+																		</h5>
+																		<p><b>Definition:</b></p>
+																		<table class="generatedTable table table-striped table-bordered">
+																			<thead>
+																				<tr>
+																					<th>Property Name</th>
+																					<th>Definition</th>
+																					<th>Cardinality</th>
+																					<th>Data Type</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>CourtOfIssue</td>
+																					<td>The value of this property is of the class Authority.</td>
+																					<td>0..1</td>
+																					<td>pdc:Authority</td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -712,7 +712,35 @@
 																							</tr>
 																						</tbody>
 																					</table>
-																					<h5 id="IDTypeAndNo">5.7.3 Class IDTypeAndNo
+																					<h5 id="TravelDocumentChoice">5.7.3 Class TravelDocumentChoice
+																					(choice)
+																					</h5>
+																					<p><b>Definition:</b>This class contains elements related to the choice of travel document.</p>
+																					<table class="generatedTable table table-striped table-bordered">
+																						<thead>
+																							<tr>
+																								<th>Property Name</th>
+																								<th>Definition</th>
+																								<th>Cardinality</th>
+																								<th>Data Type</th>
+																							</tr>
+																						</thead>
+																						<tbody>
+																							<tr>
+																								<td>AustrianCitizenNoDocument</td>
+																								<td>The value of this property is of boolean type.</td>
+																								<td>1..1</td>
+																								<td>udt:IndicatorType</td>
+																							</tr>
+																							<tr>
+																								<td>Document</td>
+																								<td>The value of this property is of the class IDTypeAndNo.</td>
+																								<td>1..1</td>
+																								<td>formAustria:IDTypeAndNo</td>
+																							</tr>
+																						</tbody>
+																					</table>
+																					<h5 id="IDTypeAndNo">5.7.4 Class IDTypeAndNo
 																					(choice)
 																					</h5>
 																					<p><b>Definition:</b></p>
@@ -749,34 +777,6 @@
 																								<td>The value of this property is of the class Country.</td>
 																								<td>1..1</td>
 																								<td>pdc:Country</td>
-																							</tr>
-																						</tbody>
-																					</table>
-																					<h5 id="TravelDocumentChoice">5.7.4 Class TravelDocumentChoice
-																					(choice)
-																					</h5>
-																					<p><b>Definition:</b>This class contains elements related to the choice of travel document.</p>
-																					<table class="generatedTable table table-striped table-bordered">
-																						<thead>
-																							<tr>
-																								<th>Property Name</th>
-																								<th>Definition</th>
-																								<th>Cardinality</th>
-																								<th>Data Type</th>
-																							</tr>
-																						</thead>
-																						<tbody>
-																							<tr>
-																								<td>AustrianCitizenNoDocument</td>
-																								<td>The value of this property is of boolean type.</td>
-																								<td>1..1</td>
-																								<td>udt:IndicatorType</td>
-																							</tr>
-																							<tr>
-																								<td>Document</td>
-																								<td>The value of this property is of the class IDTypeAndNo.</td>
-																								<td>1..1</td>
-																								<td>formAustria:IDTypeAndNo</td>
 																							</tr>
 																						</tbody>
 																					</table>
@@ -915,7 +915,7 @@
 																																	<td>Body</td>
 																																	<td>The value of this property is of the class RegisteredPartnership.</td>
 																																	<td>1..1</td>
-																																	<td>forms:RegisteredPartnership</td>
+																																	<td>formAustria:RegisteredPartnership</td>
 																																</tr>
 																																<tr>
 																																	<td>Extension</td>

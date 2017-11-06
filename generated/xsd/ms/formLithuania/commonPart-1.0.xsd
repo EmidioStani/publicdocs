@@ -1,20 +1,23 @@
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!-- ===== Schema Header ================================= -->
-	<!--	
-		Document Type: xsd/ms/formLithuania-1.0.xsd
-	    Generated On: 30/10/2017 14:27 
-	-->
-	<!-- ===================================================== -->
-	<xsd:schema
-		targetNamespace="http://data.europa.eu/edm/1/ns/forms/lithuania#"
-		xmlns="http://data.europa.eu/edm/1/ns/forms/lithuania#"
-		xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-		xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-		xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified"
-		version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formLithuania-1.0.xsd
+    Generated On: 06/11/2017 17:41 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/lithuania#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/lithuania#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
 			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
@@ -32,43 +35,43 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="InstitutionCode" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="DateRecordEntered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+									<xsd:element name="DateRecordEntered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
 													
 											    </xsd:documentation>
 											</xsd:annotation>
 										</xsd:element>
-													<xsd:element name="RecordDrawnPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-													
-														<xsd:element name="RecordNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="Remarks" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																						<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="0" maxOccurs="1" >
-																							<xsd:annotation>
-																							    <xsd:documentation xml:lang="en">
+																		<xsd:element name="RecordDrawnPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+																			
+															<xsd:element name="RecordNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																<xsd:annotation>
+																    <xsd:documentation xml:lang="en">
+																		
+																    </xsd:documentation>
+																</xsd:annotation>
+															</xsd:element>
+																			<xsd:element name="Remarks" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																					<xsd:annotation>
+																					    <xsd:documentation xml:lang="en">
+																							
+																					    </xsd:documentation>
+																					</xsd:annotation>
+																				</xsd:element>
+																								<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="0" maxOccurs="1" >
+																										<xsd:annotation>
+																										    <xsd:documentation xml:lang="en">
+																												
+																										    </xsd:documentation>
+																										</xsd:annotation>
+																									</xsd:element>
 																									
-																							    </xsd:documentation>
-																							</xsd:annotation>
-																						</xsd:element>
-																						
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -87,3 +90,6 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
+
+
+

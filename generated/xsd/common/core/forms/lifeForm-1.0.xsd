@@ -2,14 +2,18 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 30/10/2017 14:27 
+    Generated On: 06/11/2017 17:41 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/frmlife#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/frmlife#"
+	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
 	xmlns:forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -31,36 +35,39 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+									
+					<xsd:element name="IsAlive" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of boolean type.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					
-						<xsd:element name="IsAlive" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of boolean type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
 	</xsd:sequence>
 	
 </xsd:complexType>
 
 <xsd:element name="FrmLife" type="FrmLifeType"/>
-<xsd:complexType name="FrmLifeType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form Life.
-				Stereotype xsdGlobalElement
-				Stereotype lifeForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
-								<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"/>
-								
-	</xsd:sequence>
-	
-</xsd:complexType>
+						<xsd:complexType name="FrmLifeType">
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+								This class contains elements related to the form Life.
+										Stereotype lifeForm
+										Stereotype xsdGlobalElement
+							    </xsd:documentation>
+							</xsd:annotation>
+							<xsd:sequence> 
+												<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+											
+										
+										<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"/>
+										
+							
+							</xsd:sequence>
+							
+						</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
