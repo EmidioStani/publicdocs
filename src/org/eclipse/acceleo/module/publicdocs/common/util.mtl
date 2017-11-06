@@ -47,6 +47,44 @@
 [query public hasStereotype (packageableElement : PackageableElement, name: String) : Boolean 
 = packageableElement.getAppliedStereotype(name)->notEmpty()/]
 
+[query public getStereotypes (packageableElement : PackageableElement) : Bag(String)  
+= packageableElement.getApplicableStereotypes().name/]
+
+[query public hasStereotypesArneTest (pack : Package, form: String) : Set(Stereotype) 
+= pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).ownedAttribute.type.getAppliedStereotypes()->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' and name <> form)/]
+
+[query public hasStereotypesArneTest3 (pack : Package, form: String) : Set(Type) 
+= pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).ownedAttribute.type->select(_package.name = 'forms' )/]
+
+[query public hasStereotypesArneTest4 (pack : Package, form: String) : Set(Stereotype) 
+= hasStereotypesArneTest3(pack, form).getAppliedStereotypes()->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' )/]
+
+
+[query public hasStereotypesArneTest2 (pack : Package, form: String) : Sequence(String) 
+= (((hasStereotypesArneTest4(pack, form).name)->sep(',ms2forms_')).toString())/]
+
+[template public hasFormsDependencies (pack : Package, form: String) post(trim())]
+[if hasStereotypesArneTest2(pack, form)->size() > 0]
+	['ms2forms_'+(hasStereotypesArneTest2(pack, form))/]
+[/if]
+[/template]
+
+[template public hasFormsExtensions (pack : Package, form: String) post(trim())]
+[if hasStereotypesArneTest5(pack, form)->size() > 0]
+	['ms2forms_'+(hasStereotypesArneTest5(pack, form))/]
+[/if]
+[/template]
+
+[query public hasStereotypesArneTest5 (pack : Package, form: String) : Sequence(String) 
+= (((hasStereotypesArneTest6(pack, form).name)->sep(',ms2forms_')).toString())/]
+
+[query public hasStereotypesArneTest6 (pack : Package, form: String) : Set(Stereotype) 
+= hasStereotypesArneTest7(pack, form).getAppliedStereotypes()->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' )/]
+
+[query public hasStereotypesArneTest7 (pack : Package, form: String) : Set(Class) 
+= pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).general.oclAsType(Class)->select(_package.name = 'forms' )/]
+
+
 [query public hasStereotypeISA (packageableElement : PackageableElement) : Boolean 
 = hasStereotype(packageableElement, 'isa::xsdSchema')/]
 
@@ -89,6 +127,9 @@
 
 [query public getFQDN3 (prop: Property) : String
 = prop.type.owner.oclAsType(Package).name.concat(':').concat(prop.type.name)/]
+
+[query public getFQDN4 (class: Class) : String
+= if (class.namespace.name = 'forms') then 'ms2forms_'+class.getAppliedStereotypes().name+':'.concat(class.name) else class.namespace.name.concat(':').concat(class.name) endif/]
 
 [query public getTodayDate (format: String) : String
 = getDate(format)/]

@@ -39,7 +39,6 @@ version: String = getVersion('xsd');
 [/for]
 [/template]
 
-
 [template public generateContentAggregatedComponents(model: Model, pack : Package)]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]

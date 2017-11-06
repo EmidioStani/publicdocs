@@ -47,6 +47,16 @@ The XML schemas generated contain the following standards:
 * Click Run
 * In the console you might see different debug messages (in black)
 
+If you experience the error:
+"Error: Could not find or load main class org.eclipse.acceleo.module.publicdocs.main.Generate"
+* In "Project Explorer" right click on the project folder "publicdocs"
+* From the contextual menu select "Properties" and search for "Java Build Path"
+* Select "Library" tab and you should see an error next to JRE System Library [JavaSE-1.8] (unbound)
+* Select the JRE System Library and click "Edit" and select "Workspace default JRE"
+* In the menu "Window" -> "Preferences", search for "Java" -> "Compiler"
+* In compiler compliance level select 1.5 (at least)
+* Repeat the launch of Acceleo as explained before
+
 # Model
 The model is composed by 2 parts:
 * isa.uml, used as profile containing stereotypes
@@ -58,15 +68,7 @@ The model is composed by 2 parts:
 
 
 
-If you experience the error:
-"Error: Could not find or load main class org.eclipse.acceleo.module.publicdocs.main.Generate"
-* In "Project Explorer" right click on the project folder "publicdocs"
-* From the contextual menu select "Properties" and search for "Java Build Path"
-* Select "Library" tab and you should see an error next to JRE System Library [JavaSE-1.8] (unbound)
-* Select the JRE System Library and click "Edit" and select "Workspace default JRE"
-* In the menu "Window" -> "Preferences", search for "Java" -> "Compiler"
-* In compiler compliance level select 1.5 (at least)
-* Repeat the launch of Acceleo as explained before
+
 
 
 # Licence

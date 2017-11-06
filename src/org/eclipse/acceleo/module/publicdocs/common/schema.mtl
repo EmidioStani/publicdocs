@@ -8,16 +8,21 @@
 <[getNS('xs')/]:schema
 	targetNamespace="[getURIFromPackName(namespace)/]"
 	xmlns="[getURIFromPackName(namespace)/]"
-	[for (packName: String | list.tokenize(','))]
+	[let packages: OrderedSet(String) = (list.tokenize(','))->asOrderedSet()]
+	[for (packName: String | packages)]
+	[debug('EMIDIO package'+packName)/]
 	[if packName <> pack.name]
 	[importNamespace(packName)/]
 	[/if]
 	[/for]
+	[/let]
 	xmlns:[getNS('xs')/]="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
 	version="[version/]">
 [/template]
+
+
 
 [template public beginSchemaForms(list : String, path : String, suffix : String,  pack : Package, version: String, namespace: String)]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -30,7 +35,8 @@
 <[getNS('xs')/]:schema
 	targetNamespace="[getURIFromPackName(namespace)/]"
 	xmlns="[getURIFromPackName(namespace)/]"
-	[for (packName: String | list.tokenize(','))]
+	[for (packName: String | list.tokenize(',')->asOrderedSet())]
+	[debug('EMIDIO package'+packName)/]
 	[if packName <> pack.name]
 	[importNamespace(packName)/]
 	[/if]
@@ -55,7 +61,7 @@ xmlns:[namespace/]="[url/]"
 
 [template public importXSD(list : String)]
 <!-- ===== Imports======================================== -->
-[for (packName: String | list.tokenize(','))]
+[for (packName: String | list.tokenize(',')->asOrderedSet())]
 [importPack(packName)/]
 [/for]  
 <!-- ===================================================== -->

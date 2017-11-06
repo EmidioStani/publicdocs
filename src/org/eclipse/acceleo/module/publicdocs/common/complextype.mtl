@@ -71,7 +71,7 @@
 		<[getNS('xs')/]:extension base="[base.name/]Type">
 [else]
 [comment][debug('Different:'+class.name+'-'+base.name)/][/comment]
-		<[getNS('xs')/]:extension base="[getFQDN(base.oclAsType(Class))/]Type">
+		<[getNS('xs')/]:extension base="[getFQDN4(base.oclAsType(Class))/]Type">
 		[/if][/for]
 [if not  class.ownedAttribute->isEmpty()]
 [if isChoice(class)]
