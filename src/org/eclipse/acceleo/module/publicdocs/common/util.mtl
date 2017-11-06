@@ -84,7 +84,6 @@
 [query public hasStereotypesArneTest7 (pack : Package, form: String) : Set(Class) 
 = pack.packagedElement->select(hasStereotype('isa::'.concat(form))).oclAsType(Class).general.oclAsType(Class)->select(_package.name = 'forms' )/]
 
-
 [query public hasStereotypeISA (packageableElement : PackageableElement) : Boolean 
 = hasStereotype(packageableElement, 'isa::xsdSchema')/]
 
