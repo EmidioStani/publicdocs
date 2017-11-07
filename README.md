@@ -80,5 +80,5 @@ The model is composed by 2 parts:
 
 
 # Licence
-* The XML schemas are released under ISA Open Metadata Licence v1.1 (https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11)
-* The code is released under EUPL v1.1 (https://joinup.ec.europa.eu/community/eupl/og_page/european-union-public-licence-eupl-v11)
+* The XML schemas are released under ISA Open Metadata Licence v1.1 (https://joinup.ec.europa.eu/licence/isa-open-metadata-licence-v11)
+* The code is released under EUPL v1.2 (https://joinup.ec.europa.eu/page/eupl-text-11-12)
