@@ -9,7 +9,7 @@
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 
 [template public generateStringLengthComponents(model : Model){
-pack:Package = getPackageWithName(model, 'pdc');
+pack:Package = getPackageWithName(model, 'qdt');
 version: String = getVersion('xsd');
 }]
 [comment version: String = pack.getValue(pack.getAppliedStereotype('isa::xsdSchema'), 'version').oclAsType(String); /] 
@@ -22,13 +22,17 @@ version: String = getVersion('xsd');
 [/template]
 
 [template public generateContentLengthComponents(pack : Package)]
-[let pElements : Sequence(Class) = pack.ownedType->asSequence()]
+[let pElements : Sequence(PrimitiveType) = pack.ownedType->asSequence()]
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]
-[if packageableElement.oclIsTypeOf(Class)]
+[if packageableElement.oclIsTypeOf(PrimitiveType)]
+[debug('Arne max string: '+ packageableElement.name) /]
 [let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
 [comment if not dependencies->isEmpty()/]
 [generateAnnotationDependency(packageableElement,  dependencies)/]
-[generateBasicComponentsForClass(packageableElement.oclAsType(Class))/]
+
+[generatePrimitiveForType(packageableElement.oclAsType(PrimitiveType))/]
+
+[comment generateBasicComponentsForClass(packageableElement.oclAsType(PrimitiveType))/]
 [comment /if /]
 [/let]
 [/if]
@@ -57,6 +61,35 @@ supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.n
 [/if]
 [if prop.oclIsTypeOf(PrimitiveType)]
 [generatePrimitiveTypeForType(class, prop)/][/if]
+[/template]
+
+[template public generateElementWithUnqualifiedDataTypes2(prim: PrimitiveType) post(trim())
+{deps : Set(Dependency) =  getPrimitiveDependencies(prim, prim.name);
+}]
+[if deps->size()>0]
+	[for (sup : NamedElement | deps.supplier->any(true))]
+		[getFQDN2(sup)/]
+	[/for]
+[else] 
+	[getFQDN5(prim)/]
+[/if]
+[/template]
+
+[template public generatePrimitiveForType(class: PrimitiveType) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+maxLength			 : String		= class.name.substring('StringMaxLength'.size()+1);
+suffix: String = getSuffix('complexType');
+}]
+[comment put the two functions as 'variables' and adapt the code from simpletype to complex/]
+<[getNS('xs')/]:simpleType name="[class.name/][suffix/]">
+	[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
+			<[getNS('xs')/]:restriction base="[generateElementWithUnqualifiedDataTypes2(base)/]">
+	[/for]
+			<[getNS('xs')/]:minLength value="0"  />
+			<[getNS('xs')/]:maxLength value="[maxLength/]" />
+		</[getNS('xs')/]:restriction>
+</[getNS('xs')/]:simpleType>
+
 [/template]
 
 [template public generateClassForType(class: Class, prop: Property) { 

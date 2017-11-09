@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace=""
+	xmlns=""
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	
+	<!-- ============================================================ -->
+	<!-- StringMaxLength255-->
+	<!-- ============================================================ -->
+	
+	
+	<xsd:complexType name="StringMaxLength255Type">
+	<xsd:simpleContent>
+				<xsd:restriction base="udt:TextType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+			</xsd:simpleContent>
+	</xsd:complexType>
+	
+	
+	
+	<!-- ============================================================ -->
+	<!-- StringMaxLength50-->
+	<!-- ============================================================ -->
+	
+	
+	<xsd:simpleType name="StringMaxLength50Type">
+				<xsd:restriction base="udt:TextType">
+				<xsd:minLength value="0"  />
+				<xsd:maxLength value="50" />
+			</xsd:restriction>
+	</xsd:simpleType>
+	
+	
+	
+</xsd:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com),
+			Arne De Proft (arne.de.proft@be.pwc.com)
+-->
+<!-- ===================================================== -->
