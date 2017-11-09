@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -37,7 +37,7 @@
 <xsd:complexType name="MarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a marriage.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -45,64 +45,64 @@
 		<xsd:extension base="ms2forms_marriageForm:MarriageType">
 			<xsd:sequence>
 							
-				<xsd:element name="SpouseA" type="PersonType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class Person.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
+							<xsd:element name="SpouseA" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							
+							<xsd:element name="SpouseB" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
-				
-								<xsd:element name="SpouseB" type="PersonType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class Person.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-					
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="FormMarriageLatviaType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a marriage form.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
-											
-													Stereotype marriageForm
+												The value of this property is of the class FormHeader.
 										    </xsd:documentation>
 										</xsd:annotation>
-										<xsd:sequence> 
-																		<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				The value of this property is of the class FormHeader.
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																	
-													
-																					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																								The value of this property is of the class Marriage.
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																					</xsd:element>
-																					
-																						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													The value of this property is of any type.
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-										</xsd:sequence>
-										
-									</xsd:complexType>
+									</xsd:element>
+									
+					
+					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Marriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of any type.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

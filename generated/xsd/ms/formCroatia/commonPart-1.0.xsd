@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formCroatia-1.0.xsd
+    Generated On: 09/11/2017 15:26 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/croatia#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/croatia#"
+	
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	
+	xmlns:ms2forms_maritalStatusForm="http://data.europa.eu/edm/1/ns/forms/frmmaritalstatus#"	
+	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmmaritalstatus#"
+			   schemaLocation="../../../xsd/common/core/forms/maritalStatusForm-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
+	<!-- ===================================================== -->
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the header of a form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class DocumentInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="NotesCommentsAdditions" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains notes, comments, or other additions of string type.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="PersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+								<xsd:element name="PersonalIdentificationNumberOIB" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type string concerning a person's personal identification number.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="Ethnicity" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains information of type string concerning a person's ethnicity.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+																<xsd:element name="Occupation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains information of type string concerning a person's occupation.
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>
+																			
+																			<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+																				<xsd:annotation>
+																				    <xsd:documentation xml:lang="en">
+																						The value of this property is that of class Parents.
+																				    </xsd:documentation>
+																				</xsd:annotation>
+																			</xsd:element>
+																			
+																								<xsd:element name="HomeAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+																								
+																									
+																						<xsd:element name="MaritalStatus" type="ms2forms_maritalStatusForm:MaritalStatusType" minOccurs="1" maxOccurs="1"/>
+																						
+																								<xsd:element name="SpouseOrPartner" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+																								
+																
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a document.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+												<xsd:element name="RegistrationPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+								<xsd:element name="RegistrationYear" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type date concerning the year a document was registered.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="RegistrationSequenceNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains information of type string concerning the registration sequence number of a document.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+																<xsd:element name="RegistrationDateOfBirth" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains information of type date concerning the registration date of a birth.
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>
+																
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ParentType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's parent.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+								<xsd:element name="FatherSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type string concerning the surname of a person's father.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="FatherForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains information of type string concerning the forename of a person's father.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+																<xsd:element name="MotherSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																	<xsd:annotation>
+																	    <xsd:documentation xml:lang="en">
+																			This property contains information of type string concerning the surname of a person's mother.
+																	    </xsd:documentation>
+																	</xsd:annotation>
+																</xsd:element>
+																				<xsd:element name="MotherForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																					<xsd:annotation>
+																					    <xsd:documentation xml:lang="en">
+																							This property contains information of type string concerning the forename of a person's mother.
+																					    </xsd:documentation>
+																					</xsd:annotation>
+																				</xsd:element>
+																				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ParentsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's parents.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+</xsd:schema>
+
+<!-- ===== Copyright Notice ============================== -->
+<!--
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com),
+			Arne De Proft (arne.de.proft@be.pwc.com)
+-->
+<!-- ===================================================== -->
+
+
+

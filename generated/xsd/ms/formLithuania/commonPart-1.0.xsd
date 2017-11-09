@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,52 +26,71 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a document.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="StampConfirmation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains information of type string concerning a stamp that the extract confirming the birth record is correct.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="RecordInformationType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to the record information concerning a document.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="InstitutionCode" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="DateRecordEntered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains information of type string concerning an institution code.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="DateRecordEntered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
-													
+													This property contains information of type date concerning the date a record was entered.
 											    </xsd:documentation>
 											</xsd:annotation>
 										</xsd:element>
 																		<xsd:element name="RecordDrawnPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																			
-															<xsd:element name="RecordNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
 																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																			<xsd:element name="Remarks" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="0" maxOccurs="1" >
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																												
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																									</xsd:element>
-																									
+														<xsd:element name="RecordNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	This property contains information of type string concerning a record number.
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																		<xsd:element name="Remarks" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																			<xsd:annotation>
+																			    <xsd:documentation xml:lang="en">
+																					This property contains information of type string containing remarks about a record.
+																			    </xsd:documentation>
+																			</xsd:annotation>
+																		</xsd:element>
+																						<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="0" maxOccurs="1" >
+																							<xsd:annotation>
+																							    <xsd:documentation xml:lang="en">
+																									This property contains information of type string concerning a person's personal identification code.
+																							    </xsd:documentation>
+																							</xsd:annotation>
+																						</xsd:element>
+																						
 	</xsd:sequence>
 	
 </xsd:complexType>

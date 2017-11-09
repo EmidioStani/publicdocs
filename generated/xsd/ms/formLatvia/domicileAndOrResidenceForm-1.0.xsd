@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -34,73 +34,82 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="DomicileAndOrResidenceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's domicile and/or residence.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+			<xsd:sequence>
+								<xsd:element name="ResidenceDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains the date of declaration of a residence.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+																<xsd:element name="DomicileOtherAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+																
+												<xsd:element name="OtherAddressReachability" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															This property contains information of type string about the period during which the person can be reached at the other address.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+															
+															<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+																<xsd:annotation>
+																    <xsd:documentation xml:lang="en">
+																		The value of this property is that of class Person.
+																    </xsd:documentation>
+																</xsd:annotation>
+															</xsd:element>
+															
+												
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="FormDomicileAndOrResidenceLatviaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a domicile and/or residence form.
 				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class FormHeader.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-				
-												<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of the class DomicileAndOrResidence.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
-													<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				The value of this property is of any type.
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																	
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DomicileAndOrResidence.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of any type.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="DomicileAndOrResidenceType">
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																				
-																						Stereotype domicileAndOrResidenceForm
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																			<xsd:complexContent>
-																				<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
-																					<xsd:sequence>
-																										<xsd:element name="ResidenceDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																								<xsd:annotation>
-																								    <xsd:documentation xml:lang="en">
-																										
-																								    </xsd:documentation>
-																								</xsd:annotation>
-																							</xsd:element>
-																															<xsd:element name="DomicileOtherAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-																																
-																												<xsd:element name="OtherAddressReachability" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																													<xsd:annotation>
-																													    <xsd:documentation xml:lang="en">
-																															
-																													    </xsd:documentation>
-																													</xsd:annotation>
-																												</xsd:element>
-																												
-																					</xsd:sequence>
-																				</xsd:extension>
-																			</xsd:complexContent>
-																		</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

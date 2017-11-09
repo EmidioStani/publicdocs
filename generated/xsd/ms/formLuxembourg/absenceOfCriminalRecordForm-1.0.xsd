@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -34,7 +34,7 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
+<xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -42,147 +42,147 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-					
-				
-				<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class AbsenceOfCriminalRecord.
-					    </xsd:documentation>
-					</xsd:annotation>
+				<xsd:element name="PersonKind" minOccurs="1" maxOccurs="1" type="PersonChoiceType">
 				</xsd:element>
 				
-					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property can contain any type of information.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+						<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains a note to the receiving authority stating:Criminal Records Bulletin issued:
+							
+							A. For natural persons:
+							
+							□ Bulletin 3 provides information on the criminal record of convictions for criminal and correctional offenses involving the same person, not including:
+							(1) sentences of up to twenty-four months' imprisonment with a simple or probationary sentence, unless the stay is suspended or revoked,
+							(2) a sentence of a fine with a simple stay of probation, unless the stay is suspended or revoked,
+							(3) decisions ordering the simple or evidentiary suspension of the pronouncement of the sentence,
+							(4) convictions with the benefit of a simple or probationary stay where they are considered as null and void,
+							(5) convictions to a fine of not more than 25000 euros or several fines totalling less than 25000 euros,
+							(6) decisions rendered by default and not notified to anyone,
+							(7) convictions for community service work.
+							
+							Convictions for a correctional fine are no longer entered in Bulletin N ° 3 after a period of five years from the day on which the conviction has become res judicata.
+							
+							A single sentence of imprisonment of 12 months or less is no longer entered in Bulletin 3 from the day it was executed or, if the person concerned was released on parole or early release, from the day the test time expired without having been revoked.
+							
+							□ Bulletin N ° 4 provides information on the decisions in Bulletin N ° 3, as well as all convictions that prohibit driving. The latter are no longer entered in the bulletin N ° 4 after a period of three years running either from the end of the execution of the prohibition to drive, or for convictions accompanied by the benefit of the simple or probation suspension from the date on which they are considered to be invalid.
+							
+							□ Bulletin N ° 5 establishes the statement of all convictions for acts committed by the same physical person against a minor or involving a minor, provided that these facts constitute the offense or aggravate the offense. penalty, as well as all decisions prohibiting the exercise of activities involving regular contact with minors.
+							
+							B. For legal persons:
+							
+							□ Bulletin 3 provides information on criminal record decisions that have passed criminal and correctional sentences for the same corporation, excluding:
+							(1) a sentence of fine with a simple stay of probation, unless the stay is suspended or revoked,
+							(2) decisions ordering the simple or evidentiary suspension of the pronouncement of the sentence,
+							(3) convictions with the benefit of a simple or probationary stay where they are considered as null and void,
+							(4) sentences of a fine of up to EUR 25,000 or several fine totalling up to EUR 25,000,
+							(5) rendered by default and not notified to anyone.
+							
+							
+							Information on the extracts of the criminal record is available on the web portal of Justice of Luxembourg
+							(http://www.justice.public.lu/fr/affaires-penales/casier-judiciaire/)
+							
+							The public document to which this form is attached is automatically generated with no signature.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
 	</xsd:sequence>
 	
 </xsd:complexType>
 <xsd:complexType name="PersonChoiceType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-												This choice class contains the options regarding the type of person (natural or legal).
-														Stereotype xsdChoice
-														Stereotype absenceOfCriminalRecordForm
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:choice>
-															
-														<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	The value of this property is that of class Person.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-														
-														
-																		<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					The value of this property is that of class LegalPerson.
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																		
-															
-											</xsd:choice>
-										</xsd:complexType>
-<xsd:complexType name="AbsenceOfCriminalRecordType">
-																				<xsd:annotation>
-																				    <xsd:documentation xml:lang="en">
-																					
-																							Stereotype absenceOfCriminalRecordForm
-																				    </xsd:documentation>
-																				</xsd:annotation>
-																				<xsd:sequence> 
-																							<xsd:element name="PersonKind" minOccurs="1" maxOccurs="1" type="PersonChoiceType">
-																						</xsd:element>
-																						
-																								<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																									<xsd:annotation>
-																									    <xsd:documentation xml:lang="en">
-																											This property contains a note to the receiving authority stating:Criminal Records Bulletin issued:
-																									
-																									A. For natural persons:
-																									
-																									□ Bulletin 3 provides information on the criminal record of convictions for criminal and correctional offenses involving the same person, not including:
-																									(1) sentences of up to twenty-four months' imprisonment with a simple or probationary sentence, unless the stay is suspended or revoked,
-																									(2) a sentence of a fine with a simple stay of probation, unless the stay is suspended or revoked,
-																									(3) decisions ordering the simple or evidentiary suspension of the pronouncement of the sentence,
-																									(4) convictions with the benefit of a simple or probationary stay where they are considered as null and void,
-																									(5) convictions to a fine of not more than 25000 euros or several fines totalling less than 25000 euros,
-																									(6) decisions rendered by default and not notified to anyone,
-																									(7) convictions for community service work.
-																									
-																									Convictions for a correctional fine are no longer entered in Bulletin N ° 3 after a period of five years from the day on which the conviction has become res judicata.
-																									
-																									A single sentence of imprisonment of 12 months or less is no longer entered in Bulletin 3 from the day it was executed or, if the person concerned was released on parole or early release, from the day the test time expired without having been revoked.
-																									
-																									□ Bulletin N ° 4 provides information on the decisions in Bulletin N ° 3, as well as all convictions that prohibit driving. The latter are no longer entered in the bulletin N ° 4 after a period of three years running either from the end of the execution of the prohibition to drive, or for convictions accompanied by the benefit of the simple or probation suspension from the date on which they are considered to be invalid.
-																									
-																									□ Bulletin N ° 5 establishes the statement of all convictions for acts committed by the same physical person against a minor or involving a minor, provided that these facts constitute the offense or aggravate the offense. penalty, as well as all decisions prohibiting the exercise of activities involving regular contact with minors.
-																									
-																									B. For legal persons:
-																									
-																									□ Bulletin 3 provides information on criminal record decisions that have passed criminal and correctional sentences for the same corporation, excluding:
-																									(1) a sentence of fine with a simple stay of probation, unless the stay is suspended or revoked,
-																									(2) decisions ordering the simple or evidentiary suspension of the pronouncement of the sentence,
-																									(3) convictions with the benefit of a simple or probationary stay where they are considered as null and void,
-																									(4) sentences of a fine of up to EUR 25,000 or several fine totalling up to EUR 25,000,
-																									(5) rendered by default and not notified to anyone.
-																									
-																									
-																									Information on the extracts of the criminal record is available on the web portal of Justice of Luxembourg
-																									(http://www.justice.public.lu/fr/affaires-penales/casier-judiciaire/)
-																									
-																									The public document to which this form is attached is automatically generated with no signature.
-																									    </xsd:documentation>
-																									</xsd:annotation>
-																								</xsd:element>
-																								
-																				</xsd:sequence>
-																				
-																			</xsd:complexType>
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+									This choice class contains the options regarding the type of person (natural or legal).
+											Stereotype absenceOfCriminalRecordForm
+											Stereotype xsdChoice
+								    </xsd:documentation>
+								</xsd:annotation>
+								<xsd:choice>
+												
+												<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															The value of this property is that of class Person.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+												
+												<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															The value of this property is that of class LegalPerson.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+									
+								</xsd:choice>
+							</xsd:complexType>
+<xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+									
+											Stereotype absenceOfCriminalRecordForm
+								    </xsd:documentation>
+								</xsd:annotation>
+								<xsd:sequence> 
+													<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+													
+												
+												<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															The value of this property is of the class AbsenceOfCriminalRecord.
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+													<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																This property can contain any type of information.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>
+													
+								</xsd:sequence>
+								
+							</xsd:complexType>
 <xsd:complexType name="LegalPersonType">
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																											This class contains information about a legal person.
-																													Stereotype absenceOfCriminalRecordForm
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																										<xsd:sequence> 
-																															<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																															<xsd:annotation>
-																															    <xsd:documentation xml:lang="en">
-																																	This property contains the denomination of a legal person.
-																															    </xsd:documentation>
-																															</xsd:annotation>
-																														</xsd:element>
-																																		<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																				<xsd:annotation>
-																																				    <xsd:documentation xml:lang="en">
-																																						This property contains the social form of the legal person.
-																																				    </xsd:documentation>
-																																				</xsd:annotation>
-																																			</xsd:element>
-																																							<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																									<xsd:annotation>
-																																									    <xsd:documentation xml:lang="en">
-																																											This property contains information about the headquarters of the legal person.
-																																									    </xsd:documentation>
-																																									</xsd:annotation>
-																																								</xsd:element>
-																																								
-																										</xsd:sequence>
-																										
-																									</xsd:complexType>
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+									This class contains information about a legal person.
+											Stereotype absenceOfCriminalRecordForm
+								    </xsd:documentation>
+								</xsd:annotation>
+								<xsd:sequence> 
+													<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																This property contains the denomination of a legal person.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>
+																	<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																		<xsd:annotation>
+																		    <xsd:documentation xml:lang="en">
+																				This property contains the social form of the legal person.
+																		    </xsd:documentation>
+																		</xsd:annotation>
+																	</xsd:element>
+																					<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																						<xsd:annotation>
+																						    <xsd:documentation xml:lang="en">
+																								This property contains information about the headquarters of the legal person.
+																						    </xsd:documentation>
+																						</xsd:annotation>
+																					</xsd:element>
+																					
+								</xsd:sequence>
+								
+							</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

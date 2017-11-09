@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formMalta-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,7 +26,64 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="DeclarationType">
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a document.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="ProgressiveEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains information of type string concerning the progressive number of an entry.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="DirectorSignature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													This property contains information of type string concerning the signature of the Director or other Officer authorised to act in his stead.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+														<xsd:element name="OfficerInCharge" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	This property contains information of type string concerning the officer in charge.
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="SpouseType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+												<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+								<xsd:element name="MaidenSurnameMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ParentType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -34,106 +91,86 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="ProgressiveEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="DirectorSignature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
 													
 											    </xsd:documentation>
 											</xsd:annotation>
 										</xsd:element>
-														<xsd:element name="OfficerInCharge" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
+														<xsd:element name="IdentificationDocument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																		<xsd:element name="Years" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+																			<xsd:annotation>
+																			    <xsd:documentation xml:lang="en">
+																					
+																			    </xsd:documentation>
+																			</xsd:annotation>
+																		</xsd:element>
+																										<xsd:element name="PlaceOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+																										
+																										<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+																										
+																						<xsd:element name="Alive" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																							<xsd:annotation>
+																							    <xsd:documentation xml:lang="en">
+																									
+																							    </xsd:documentation>
+																							</xsd:annotation>
+																						</xsd:element>
+																						
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="ParentNameType">
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																		
-																				Stereotype commonPart
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																	<xsd:sequence> 
-																						<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																								
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																					</xsd:element>
-																									<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-																	</xsd:sequence>
-																	
-																</xsd:complexType>
-<xsd:complexType name="SpouseParticularsType">
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																													
-																															Stereotype commonPart
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																												<xsd:sequence> 
-																																					<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																																				
-																																<xsd:element name="SurnameFather" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																	<xsd:annotation>
-																																	    <xsd:documentation xml:lang="en">
-																																			
-																																	    </xsd:documentation>
-																																	</xsd:annotation>
-																																</xsd:element>
-																																				<xsd:element name="SurnameMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																						<xsd:annotation>
-																																						    <xsd:documentation xml:lang="en">
-																																								
-																																						    </xsd:documentation>
-																																						</xsd:annotation>
-																																					</xsd:element>
-																																									<xsd:element name="NameFather" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																											<xsd:annotation>
-																																											    <xsd:documentation xml:lang="en">
-																																													
-																																											    </xsd:documentation>
-																																											</xsd:annotation>
-																																										</xsd:element>
-																																														<xsd:element name="NameMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																<xsd:annotation>
-																																																    <xsd:documentation xml:lang="en">
-																																																		
-																																																    </xsd:documentation>
-																																																</xsd:annotation>
-																																															</xsd:element>
-																																																			<xsd:element name="MaidenSurnameMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																					<xsd:annotation>
-																																																					    <xsd:documentation xml:lang="en">
-																																																							
-																																																					    </xsd:documentation>
-																																																					</xsd:annotation>
-																																																				</xsd:element>
-																																																				
-																												</xsd:sequence>
-																												
-																											</xsd:complexType>
+<xsd:complexType name="PersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="IdentificationDocument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property contains information of type string concerning the identification document of a person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSpain-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,6 +30,110 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="DocumentKindChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+						<xsd:element name="VerbatimCopyOfCriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="PlaceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Country" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="Province" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="ParentsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="ParentType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+								<xsd:element name="ForenameSurnameParentsFather" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="ForenameSurnameParentsMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="FormHeaderType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -41,145 +145,41 @@
 		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
 			<xsd:sequence>
 												<xsd:element name="MinistryOfJustice" type="pdc:AuthorityType" minOccurs="0" maxOccurs="1"/>
-									
-	
+												
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="DocumentInfoType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			
-					Stereotype commonPart
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-				<xsd:sequence>
-									<xsd:element name="CivilRegisterEntryVolumePage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="RefNoAuthenticInstrument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+								<xsd:element name="CivilRegisterEntryVolumePage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
 											
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-<xsd:complexType name="DocumentKindChoiceType">
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="RefNoAuthenticInstrument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 													<xsd:annotation>
 													    <xsd:documentation xml:lang="en">
-														
-																Stereotype xsdChoice
-																Stereotype commonPart
+															
 													    </xsd:documentation>
 													</xsd:annotation>
-													<xsd:choice>
-																		<xsd:element name="VerbatimCopyOfCriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																	
-													</xsd:choice>
-												</xsd:complexType>
-<xsd:complexType name="ParentsType">
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																				
-																						Stereotype commonPart
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																			<xsd:sequence> 
-																							
-																						<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-																							<xsd:annotation>
-																							    <xsd:documentation xml:lang="en">
-																									
-																							    </xsd:documentation>
-																							</xsd:annotation>
-																						</xsd:element>
-																						
-																						
-																										<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-																							
-																			</xsd:sequence>
-																			
-																		</xsd:complexType>
-<xsd:complexType name="ParentType">
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																													
-																															Stereotype commonPart
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																												<xsd:complexContent>
-																													<xsd:extension base="pdc:PersonType">
-																														<xsd:sequence>
-																																			<xsd:element name="ForenameSurnameParentsFather" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																	<xsd:annotation>
-																																	    <xsd:documentation xml:lang="en">
-																																			
-																																	    </xsd:documentation>
-																																	</xsd:annotation>
-																																</xsd:element>
-																																				<xsd:element name="ForenameSurnameParentsMother" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																						<xsd:annotation>
-																																						    <xsd:documentation xml:lang="en">
-																																								
-																																						    </xsd:documentation>
-																																						</xsd:annotation>
-																																					</xsd:element>
-																																					
-																														</xsd:sequence>
-																													</xsd:extension>
-																												</xsd:complexContent>
-																											</xsd:complexType>
-<xsd:complexType name="PlaceType">
-																																							<xsd:annotation>
-																																							    <xsd:documentation xml:lang="en">
-																																								
-																																										Stereotype commonPart
-																																							    </xsd:documentation>
-																																							</xsd:annotation>
-																																							<xsd:sequence> 
-																																												<xsd:element name="Country" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																												<xsd:annotation>
-																																												    <xsd:documentation xml:lang="en">
-																																														
-																																												    </xsd:documentation>
-																																												</xsd:annotation>
-																																											</xsd:element>
-																																															<xsd:element name="Province" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																	<xsd:annotation>
-																																																	    <xsd:documentation xml:lang="en">
-																																																			
-																																																	    </xsd:documentation>
-																																																	</xsd:annotation>
-																																																</xsd:element>
-																																																
-																																							</xsd:sequence>
-																																							
-																																						</xsd:complexType>
+												</xsd:element>
+												
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

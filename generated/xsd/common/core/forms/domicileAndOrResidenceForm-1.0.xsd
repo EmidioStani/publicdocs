@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -36,35 +36,35 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 										<xsd:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
-									
-									<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
-									
-									<xsd:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
-									
-	
+										
+										<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+										
+										<xsd:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+										
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
 
 <xsd:element name="FrmDomicileAndOrResidence" type="FrmDomicileAndOrResidenceType"/>
-	<xsd:complexType name="FrmDomicileAndOrResidenceType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			This class contains elements related to the form DomicileAndOrResidence.
-					Stereotype xsdGlobalElement
-					Stereotype domicileAndOrResidenceForm
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence> 
-							<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+<xsd:complexType name="FrmDomicileAndOrResidenceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form DomicileAndOrResidence.
+				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 						
 					
 					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
 					
 		
-		</xsd:sequence>
-		
-	</xsd:complexType>
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

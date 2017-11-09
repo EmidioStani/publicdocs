@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -37,23 +37,71 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="FormLifeNetherlandsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Life.
+				Stereotype lifeForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					
+					<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Life.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property can contain any type of information.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="LifeType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Life.
+				Stereotype lifeForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_lifeForm:LifeType">
+			<xsd:sequence>
+						<xsd:element name="LifeCheckChoice" minOccurs="1" maxOccurs="1" type="LifeCheckChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="LifeCheckChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
-				Stereotype xsdChoice
 				Stereotype lifeForm
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
 						<xsd:element name="NationalIdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
 													
@@ -61,91 +109,43 @@
 											</xsd:annotation>
 										</xsd:element>
 														<xsd:element name="DrivingLicense" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																			<xsd:element name="ResidencePermit" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="MunicipalRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																												
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																									</xsd:element>
-																													<xsd:element name="ConsularRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																		<xsd:element name="ResidencePermit" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																			<xsd:annotation>
+																			    <xsd:documentation xml:lang="en">
+																					
+																			    </xsd:documentation>
+																			</xsd:annotation>
+																		</xsd:element>
+																						<xsd:element name="MunicipalRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																							<xsd:annotation>
+																							    <xsd:documentation xml:lang="en">
+																									
+																							    </xsd:documentation>
+																							</xsd:annotation>
+																						</xsd:element>
+																										<xsd:element name="ConsularRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+																											<xsd:annotation>
+																											    <xsd:documentation xml:lang="en">
+																													
+																											    </xsd:documentation>
+																											</xsd:annotation>
+																										</xsd:element>
+																														<xsd:element name="OtherProofOfIdentity" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 																															<xsd:annotation>
 																															    <xsd:documentation xml:lang="en">
 																																	
 																															    </xsd:documentation>
 																															</xsd:annotation>
 																														</xsd:element>
-																																		<xsd:element name="OtherProofOfIdentity" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																				<xsd:annotation>
-																																				    <xsd:documentation xml:lang="en">
-																																						
-																																				    </xsd:documentation>
-																																				</xsd:annotation>
-																																			</xsd:element>
-																																			
+																														
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="LifeType">
-																																					<xsd:annotation>
-																																					    <xsd:documentation xml:lang="en">
-																																						This class contains elements related to the form Life.
-																																								Stereotype lifeForm
-																																					    </xsd:documentation>
-																																					</xsd:annotation>
-																																					<xsd:complexContent>
-																																						<xsd:extension base="ms2forms_lifeForm:LifeType">
-																																							<xsd:sequence>
-																																										<xsd:element name="LifeCheckChoice" minOccurs="1" maxOccurs="1" type="LifeCheckChoiceType">
-																																							</xsd:element>
-																																							
-																																					
-																																							</xsd:sequence>
-																																						</xsd:extension>
-																																					</xsd:complexContent>
-																																				</xsd:complexType>
-<xsd:complexType name="FormLifeNetherlandsType">
-																																						<xsd:annotation>
-																																						    <xsd:documentation xml:lang="en">
-																																							This class contains elements related to the form Life.
-																																									Stereotype lifeForm
-																																						    </xsd:documentation>
-																																						</xsd:annotation>
-																																						<xsd:sequence> 
-																																											<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-																																										
-																																									
-																																									<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1" >
-																																										<xsd:annotation>
-																																										    <xsd:documentation xml:lang="en">
-																																												The value of this property is of the class Life.
-																																										    </xsd:documentation>
-																																										</xsd:annotation>
-																																									</xsd:element>
-																																									
-																																										<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																																															<xsd:annotation>
-																																															    <xsd:documentation xml:lang="en">
-																																																	This property can contain any type of information.
-																																															    </xsd:documentation>
-																																															</xsd:annotation>
-																																														</xsd:element>
-																																														
-																																						</xsd:sequence>
-																																						
-																																					</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

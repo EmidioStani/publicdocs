@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,71 +38,71 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="CapacityToMarryType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's capacity to marry.
+				Stereotype capacityToMarryForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_capacityToMarryForm:CapacityToMarryType">
+			<xsd:sequence>
+												<xsd:element name="Addressee" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+							
+							<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class RecordInformation.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+												<xsd:element name="Residence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+								<xsd:element name="FamilyStatus" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type string concerning a person's family status.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="FormCapacityToMarryLithuaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a capacity to marry form.
 				Stereotype capacityToMarryForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
 					
-				
-				<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class CapacityToMarry.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property can contain any type of information.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+					<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class CapacityToMarry.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property can contain any type of information.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="CapacityToMarryType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-												
-														Stereotype capacityToMarryForm
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:complexContent>
-												<xsd:extension base="ms2forms_capacityToMarryForm:CapacityToMarryType">
-													<xsd:sequence>
-																						<xsd:element name="Addressee" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																			
-														
-														<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	The value of this property is of the class RecordInformation.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-														
-																			<xsd:element name="Residence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																							
-																			<xsd:element name="FamilyStatus" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																				<xsd:annotation>
-																				    <xsd:documentation xml:lang="en">
-																						
-																				    </xsd:documentation>
-																				</xsd:annotation>
-																			</xsd:element>
-																			
-													</xsd:sequence>
-												</xsd:extension>
-											</xsd:complexContent>
-										</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -41,19 +41,19 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
-				Stereotype xsdChoice
 				Stereotype registeredPartnershipForm
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
 						<xsd:element name="DateRegisteredPartnershipConvertedIntoMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-									<xsd:element name="DateRegisteredPartnershipEnded" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+										<xsd:element name="DateRegisteredPartnershipEnded" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 											<xsd:annotation>
 											    <xsd:documentation xml:lang="en">
 													
@@ -61,70 +61,70 @@
 											</xsd:annotation>
 										</xsd:element>
 														<xsd:element name="DateRegisteredPartnershipDissolved" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
+															<xsd:annotation>
+															    <xsd:documentation xml:lang="en">
+																	
+															    </xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+																		<xsd:element name="DateRegisteredPartnershipAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+																			<xsd:annotation>
+																			    <xsd:documentation xml:lang="en">
+																					
+																			    </xsd:documentation>
+																			</xsd:annotation>
+																		</xsd:element>
 																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																			<xsd:element name="DateRegisteredPartnershipAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																				
 	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="FormRegisteredPartnershipNetherlandsType">
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																							This class contains elements related to the form RegisteredPartnership.
-																									Stereotype registeredPartnershipForm
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																						<xsd:sequence> 
-																											<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-																										
-																									
-																									<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1" >
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																												The value of this property is of the class RegisteredPartnership.
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																									</xsd:element>
-																									
-																										<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																															<xsd:annotation>
-																															    <xsd:documentation xml:lang="en">
-																																	This property can contain any type of information.
-																															    </xsd:documentation>
-																															</xsd:annotation>
-																														</xsd:element>
-																														
-																						</xsd:sequence>
-																						
-																					</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form RegisteredPartnership.
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					
+					<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class RegisteredPartnership.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									This property can contain any type of information.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="RegisteredPartnershipType">
-																																<xsd:annotation>
-																																    <xsd:documentation xml:lang="en">
-																																	This class contains elements related to the partnership of a person.
-																																			Stereotype registeredPartnershipForm
-																																    </xsd:documentation>
-																																</xsd:annotation>
-																																<xsd:complexContent>
-																																	<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
-																																		<xsd:sequence>
-																																					<xsd:element name="PartnershipAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="PartnershipAmendmentsAndSubsequentEntriesType">
-																																		</xsd:element>
-																																		
-																																
-																																		</xsd:sequence>
-																																	</xsd:extension>
-																																</xsd:complexContent>
-																															</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the partnership of a person.
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
+			<xsd:sequence>
+						<xsd:element name="PartnershipAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="PartnershipAmendmentsAndSubsequentEntriesType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

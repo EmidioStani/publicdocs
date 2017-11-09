@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formRomania-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 09/11/2017 15:26 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,6 +26,35 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="ParentType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+								<xsd:element name="ParentSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+												<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+													<xsd:annotation>
+													    <xsd:documentation xml:lang="en">
+															
+													    </xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="ParentsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -35,56 +64,27 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 					
-				<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class Parent.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-				
-								<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class Parent.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					
+					
+					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="ParentType">
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-											
-													Stereotype commonPart
-										    </xsd:documentation>
-										</xsd:annotation>
-										<xsd:complexContent>
-											<xsd:extension base="pdc:PersonType">
-												<xsd:sequence>
-																	<xsd:element name="ParentSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																		<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																				<xsd:annotation>
-																				    <xsd:documentation xml:lang="en">
-																						
-																				    </xsd:documentation>
-																				</xsd:annotation>
-																			</xsd:element>
-																			
-												</xsd:sequence>
-											</xsd:extension>
-										</xsd:complexContent>
-									</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
