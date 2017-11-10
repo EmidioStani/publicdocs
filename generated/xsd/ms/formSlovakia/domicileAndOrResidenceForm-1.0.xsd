@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSlovakia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -59,14 +59,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -79,21 +80,23 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-						<xsd:element name="PermanentStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of type boolean concerning whether a person's stay at a given address is permanent.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="TemporaryStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													This property contains information of type boolean concerning whether a person's stay at a given address is temporary.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										
+							<xsd:element name="PermanentStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a person's stay at a given address is permanent.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="TemporaryStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a person's stay at a given address is temporary.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="AddressType">
@@ -108,44 +111,49 @@
 			<xsd:sequence>
 												<xsd:element name="ResidencePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 												
-								<xsd:element name="ResidenceFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains information of type string concerning the flat number of a residence.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="DomicilePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																
-												<xsd:element name="DomicileBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															This property contains information of type string concerning the building number of a domicile.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																<xsd:element name="DomicileDistrict" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			This property contains information of type string concerning the district of a domicile.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																				<xsd:element name="DomicileFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							This property contains information of type string concerning the flat number of a domicile.
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="ResidenceBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																									<xsd:annotation>
-																									    <xsd:documentation xml:lang="en">
-																											This property contains information of type string concerning the building number of a residence.
-																									    </xsd:documentation>
-																									</xsd:annotation>
-																								</xsd:element>
-																								
+									<xsd:element name="ResidenceFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the flat number of a residence.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="DomicilePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="DomicileBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the building number of a domicile.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DomicileDistrict" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the district of a domicile.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DomicileFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the flat number of a domicile.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ResidenceBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the building number of a residence.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -184,14 +192,15 @@
 						<xsd:element name="PermanentTemporaryStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
 						</xsd:element>
 						
-								<xsd:element name="RegistrationOfficeNotes" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains information of type string concerning notes from the registration office.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+									<xsd:element name="RegistrationOfficeNotes" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning notes from the registration office.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -234,21 +243,23 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="LegalPersonName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of type string concerning the name of a legal person.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="RegisteredOffice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													This property contains information of type string concerning the registered office of a legal person.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										
+							<xsd:element name="LegalPersonName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the name of a legal person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="RegisteredOffice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the registered office of a legal person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

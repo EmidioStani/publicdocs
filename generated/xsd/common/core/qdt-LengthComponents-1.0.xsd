@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-	targetNamespace=""
-	xmlns=""
+	targetNamespace="http://data.europa.eu/edm/1/ns/qdt"
+	xmlns="http://data.europa.eu/edm/1/ns/qdt"
 	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
@@ -17,29 +17,31 @@
 	<!-- StringMaxLength255-->
 	<!-- ============================================================ -->
 	
+		<xsd:complexType name="StringMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="udt:TextType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
 	
-	<xsd:complexType name="StringMaxLength255Type">
-	<xsd:simpleContent>
-				<xsd:restriction base="udt:TextType">
-				<xsd:minLength value="0"  />
-				<xsd:maxLength value="255" />
-			</xsd:restriction>
-			</xsd:simpleContent>
-	</xsd:complexType>
 	
 	
 	
 	<!-- ============================================================ -->
-	<!-- StringMaxLength50-->
+	<!-- StringMaxLength65535-->
 	<!-- ============================================================ -->
 	
+		<xsd:complexType name="StringMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="udt:TextType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
 	
-	<xsd:simpleType name="StringMaxLength50Type">
-				<xsd:restriction base="udt:TextType">
-				<xsd:minLength value="0"  />
-				<xsd:maxLength value="50" />
-			</xsd:restriction>
-	</xsd:simpleType>
 	
 	
 	

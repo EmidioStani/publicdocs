@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -40,23 +40,25 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_maritalStatusForm:MaritalStatusType">
 			<xsd:sequence>
-								<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="DateOfLegalSeparation" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of date type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																				<xsd:element name="SpouseOrEx" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																				
+									<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DateOfLegalSeparation" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="SpouseOrEx" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
 												
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -71,48 +73,53 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-								<xsd:element name="NobilityTitle" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="Father" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																
-												<xsd:element name="DateOfRegistration" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of date type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																				<xsd:element name="Mother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																				
-																<xsd:element name="Pseudonym" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of string type.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																								<xsd:element name="CoMother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																								
-																				<xsd:element name="TimeOfBirth" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							The value of this property is of time type.
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="NationalRegisterNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																									<xsd:annotation>
-																									    <xsd:documentation xml:lang="en">
-																											The value of this property is of string type.
-																									    </xsd:documentation>
-																									</xsd:annotation>
-																								</xsd:element>
-																								
+									<xsd:element name="NobilityTitle" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="Father" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="DateOfRegistration" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="Mother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="Pseudonym" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="CoMother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="TimeOfBirth" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of time type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="NationalRegisterNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

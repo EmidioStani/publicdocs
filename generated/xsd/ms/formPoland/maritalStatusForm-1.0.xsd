@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -48,14 +48,15 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_maritalStatusForm:MaritalStatusType">
 			<xsd:sequence>
-								<xsd:element name="ValidUntil" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+									<xsd:element name="ValidUntil" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -79,14 +80,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property can contain any type of information.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

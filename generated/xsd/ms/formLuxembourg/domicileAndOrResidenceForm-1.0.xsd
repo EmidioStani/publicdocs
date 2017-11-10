@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -48,14 +48,15 @@
 	<xsd:sequence> 
 										<xsd:element name="PreviousAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 										
-						<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains the period in which the concerned person resided at this address.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the period in which the concerned person resided at this address.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -105,21 +106,23 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-								<xsd:element name="OtherPreviousAddresses" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains any additional previous addresses.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															This property contains a note to the receiving authority stating: "Data extracted from the National Register of Physical Persons in accordance with Article 4 of the Grand-Ducal Regulation of 29 March 2016 concerning certain certificates issued on the basis of the data contained in the National Register of Physical Persons (Memorial No. 52 of 31 March 2016). These data are certified accurate unless indicated by asterisk on a light gray background (*) of the public document to which this form is attached."
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
+									<xsd:element name="OtherPreviousAddresses" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains any additional previous addresses.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains a note to the receiving authority stating: "Data extracted from the National Register of Physical Persons in accordance with Article 4 of the Grand-Ducal Regulation of 29 March 2016 concerning certain certificates issued on the basis of the data contained in the National Register of Physical Persons (Memorial No. 52 of 31 March 2016). These data are certified accurate unless indicated by asterisk on a light gray background (*) of the public document to which this form is attached."
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -143,14 +146,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property can contain any type of information.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

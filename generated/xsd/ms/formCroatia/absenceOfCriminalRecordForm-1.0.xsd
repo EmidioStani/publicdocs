@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCroatia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,23 +38,24 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="PurposeForIssuance" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of type string concerning the purpose for which a certificate of absence of criminal record was issued.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-									
-									<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is that of class Person. 
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-						
+							<xsd:element name="PurposeForIssuance" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the purpose for which a certificate of absence of criminal record was issued.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+					
+					<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person. 
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -83,14 +84,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

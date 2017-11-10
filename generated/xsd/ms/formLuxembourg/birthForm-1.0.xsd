@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -47,21 +47,23 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-						<xsd:element name="DeclarantIsTheFather" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property refers to the option that the declarant reconises being the father of the child.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="Other" type="udt:TextType" minOccurs="0" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													This property refers to the option that there are other statements being made about the birth of the child.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										
+							<xsd:element name="DeclarantIsTheFather" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property refers to the option that the declarant reconises being the father of the child.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Other" type="udt:TextType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property refers to the option that there are other statements being made about the birth of the child.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="FormBirthLuxembourgType">
@@ -83,14 +85,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property can contain any type of information.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -155,14 +158,15 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:BirthPersonType">
 			<xsd:sequence>
-								<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+									<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

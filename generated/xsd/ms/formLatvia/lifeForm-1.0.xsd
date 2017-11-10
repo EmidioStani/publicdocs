@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -44,23 +44,24 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_lifeForm:LifeType">
 			<xsd:sequence>
-								<xsd:element name="FeesPaid" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains information of type boolean about whether the fees for a life certificate have been paid.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-											
-											<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class Person.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-								
+									<xsd:element name="FeesPaid" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type boolean about whether the fees for a life certificate have been paid.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -90,14 +91,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formDenmark-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -34,23 +34,25 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of string type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													The value of this property is of string type.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-																		<xsd:element name="PlaceOfRegistrationOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																		
+							<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="PlaceOfRegistrationOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 										
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

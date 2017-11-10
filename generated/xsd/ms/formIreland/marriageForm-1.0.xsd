@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formIreland-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -48,38 +48,39 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_marriageForm:MarriageType">
 			<xsd:sequence>
-								<xsd:element name="AccordingTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="Witness1" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																
-																<xsd:element name="Witness2" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																
-																<xsd:element name="Solemniser" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-																
-											
-											<xsd:element name="CivilRegistrationAct" type="CivilRegistrationActType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class CivilRegistrationAct.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-											
-											<xsd:element name="Registrar" type="RegistrarType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class Registrar.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-								
+									<xsd:element name="AccordingTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="Witness1" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="Witness2" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="Solemniser" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+							
+							<xsd:element name="CivilRegistrationAct" type="CivilRegistrationActType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class CivilRegistrationAct.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							
+							<xsd:element name="Registrar" type="RegistrarType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Registrar.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -103,14 +104,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

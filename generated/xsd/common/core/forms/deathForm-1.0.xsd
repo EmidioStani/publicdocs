@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -15,6 +15,8 @@
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	
 	xmlns:forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	
+	xmlns:qdt="http://data.europa.eu/edm/1/ns/qdt"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -26,6 +28,8 @@
 			   schemaLocation="../../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/qdt"
+			   schemaLocation="../../../../xsd/common/core/qdt-LengthComponents-1.0.xsd"/>
 	<!-- ===================================================== -->
 <xsd:complexType name="DeathType">
 	<xsd:annotation>

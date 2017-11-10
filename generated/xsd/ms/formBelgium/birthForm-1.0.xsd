@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -99,56 +99,62 @@
 				
 										<xsd:element name="AuthorityForWhichConsentWasGiven" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
 										
-						<xsd:element name="DateOfConsent" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of date type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-								<xsd:element name="AcknowledgedBy" minOccurs="1" maxOccurs="1" type="AcknowledgedByChoiceType">
-								</xsd:element>
-								
-										<xsd:element name="RollNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													The value of this property is of string type.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-																		<xsd:element name="JudicialBody" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																		
-														<xsd:element name="DocumentNoPrenatalAcknowledgementOfParentage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	The value of this property is of string type.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																						<xsd:element name="PlaceOfConsent" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																						
-																		<xsd:element name="JudicialDecisionConsent" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																					The value of this property is of string type.
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																		</xsd:element>
-																						<xsd:element name="DateOfAcknowledgement" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																							<xsd:annotation>
-																							    <xsd:documentation xml:lang="en">
-																									The value of this property is of date type.
-																							    </xsd:documentation>
-																							</xsd:annotation>
-																						</xsd:element>
-																										<xsd:element name="DateOfDecision" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													The value of this property is of date type.
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
+							<xsd:element name="DateOfConsent" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				<xsd:element name="AcknowledgedBy" minOccurs="1" maxOccurs="1" type="AcknowledgedByChoiceType">
+				</xsd:element>
+				
+							<xsd:element name="RollNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="JudicialBody" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DocumentNoPrenatalAcknowledgementOfParentage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="PlaceOfConsent" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="JudicialDecisionConsent" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfAcknowledgement" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfDecision" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -165,14 +171,15 @@
 											
 								<xsd:element name="Body" type="ms2forms_birthForm:BirthType" minOccurs="1" maxOccurs="1"/>
 								
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

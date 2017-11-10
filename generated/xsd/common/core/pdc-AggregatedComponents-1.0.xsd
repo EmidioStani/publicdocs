@@ -74,21 +74,23 @@
 													</xsd:element>
 													
 					<xsd:element name="Nationality" type="cva:JurisdictionType" minOccurs="1" maxOccurs="unbounded"/>
-									<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains the previous surname(s) of the person.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>	
-													<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																This property contains the previous forename(s) of the person.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>	
-													
+										<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													This property contains the previous surname(s) of the person.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>	
+										
+										<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													This property contains the previous forename(s) of the person.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>	
+										
+					
 				</xsd:sequence>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -304,77 +306,87 @@
 				
 				    	<xsd:sequence> 
 				
-				    						<xsd:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    							<xsd:element name="HasCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    							<xsd:annotation>
+				    								<xsd:annotation>
 				
-				    							    <xsd:documentation xml:lang="en">
+				    								    <xsd:documentation xml:lang="en">
 				
-				    									The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
+				    										The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.
 				
-				    							    </xsd:documentation>
+				    								    </xsd:documentation>
 				
-				    							</xsd:annotation>
+				    								</xsd:annotation>
 				
-				    						</xsd:element>
+				    							</xsd:element>
 				
-				    										<xsd:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    							
 				
-				    											<xsd:annotation>
+				    							<xsd:element name="AppearsToHaveNoMarriage" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    											    <xsd:documentation xml:lang="en">
+				    								<xsd:annotation>
 				
-				    													The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
+				    								    <xsd:documentation xml:lang="en">
 				
-				    											    </xsd:documentation>
+				    										The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.
 				
-				    											</xsd:annotation>
+				    								    </xsd:documentation>
 				
-				    										</xsd:element>
+				    								</xsd:annotation>
 				
-				    														<xsd:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    							</xsd:element>
 				
-				    															<xsd:annotation>
+				    							
 				
-				    															    <xsd:documentation xml:lang="en">
+				    							<xsd:element name="NoKnownImpediment" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    																	There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
+				    								<xsd:annotation>
 				
-				    															    </xsd:documentation>
+				    								    <xsd:documentation xml:lang="en">
 				
-				    															</xsd:annotation>
+				    										There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.
 				
-				    														</xsd:element>
+				    								    </xsd:documentation>
 				
-				    																		<xsd:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    								</xsd:annotation>
 				
-				    																			<xsd:annotation>
+				    							</xsd:element>
 				
-				    																			    <xsd:documentation xml:lang="en">
+				    							
 				
-				    																					There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+				    							<xsd:element name="NoKnownImpedimentIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    																			    </xsd:documentation>
+				    								<xsd:annotation>
 				
-				    																			</xsd:annotation>
+				    								    <xsd:documentation xml:lang="en">
 				
-				    																		</xsd:element>
+				    										There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
 				
-				    																						<xsd:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    								    </xsd:documentation>
 				
-				    																							<xsd:annotation>
+				    								</xsd:annotation>
 				
-				    																							    <xsd:documentation xml:lang="en">
+				    							</xsd:element>
 				
-				    																									There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+				    							
 				
-				    																							    </xsd:documentation>
+				    							<xsd:element name="NoOppositionknown" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
-				    																							</xsd:annotation>
+				    								<xsd:annotation>
 				
-				    																						</xsd:element>
+				    								    <xsd:documentation xml:lang="en">
 				
-				    																						
+				    										There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.
+				
+				    								    </xsd:documentation>
+				
+				    								</xsd:annotation>
+				
+				    							</xsd:element>
+				
+				    							
+				
+				    		
 				
 				    	</xsd:sequence>
 				
@@ -846,63 +858,71 @@
 				
 				    													
 				
-				    													    								<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    													    									<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
 				    													
 				
-				    													    									<xsd:annotation>
+				    													    										<xsd:annotation>
 				
 				    													
 				
-				    													    									    <xsd:documentation xml:lang="en">
+				    													    										    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    											This property contains the previous surname of the person.
+				    													    												This property contains the previous surname of the person.
 				
 				    													
 				
-				    													    									    </xsd:documentation>
+				    													    										    </xsd:documentation>
 				
 				    													
 				
-				    													    									</xsd:annotation>
+				    													    										</xsd:annotation>
 				
 				    													
 				
-				    													    								</xsd:element>	
+				    													    									</xsd:element>	
 				
 				    													
 				
-				    													    												<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    													    									
 				
 				    													
 				
-				    													    													<xsd:annotation>
+				    													    									<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
 				    													
 				
-				    													    													    <xsd:documentation xml:lang="en">
+				    													    										<xsd:annotation>
 				
 				    													
 				
-				    													    															This property contains the future surname of the person.
+				    													    										    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    													    </xsd:documentation>
+				    													    												This property contains the future surname of the person.
 				
 				    													
 				
-				    													    													</xsd:annotation>
+				    													    										    </xsd:documentation>
 				
 				    													
 				
-				    													    												</xsd:element>	
+				    													    										</xsd:annotation>
 				
 				    													
 				
-				    													    												
+				    													    									</xsd:element>	
+				
+				    													
+				
+				    													    									
+				
+				    													
+				
+				    													    				
 				
 				    													
 				
@@ -954,75 +974,83 @@
 				
 				    													
 				
-				    													    						<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    													    							<xsd:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
-				    													    							<xsd:annotation>
+				    													    								<xsd:annotation>
 				
 				    													
 				
-				    													    							    <xsd:documentation xml:lang="en">
+				    													    								    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    									This property contains the date of marriage.
+				    													    										This property contains the date of marriage.
 				
 				    													
 				
-				    													    							    </xsd:documentation>
+				    													    								    </xsd:documentation>
 				
 				    													
 				
-				    													    							</xsd:annotation>
+				    													    								</xsd:annotation>
 				
 				    													
 				
-				    													    						</xsd:element>
+				    													    							</xsd:element>
 				
 				    													
 				
-				    													    								<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+				    													    							
 				
 				    													
 				
-				    													    								</xsd:element>
+				    													    				<xsd:element name="NotMarried" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
 				
 				    													
 				
-				    													    								
+				    													    				</xsd:element>
 				
 				    													
 				
-				    													    										<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    													    				
 				
 				    													
 				
-				    													    											<xsd:annotation>
+				    													    							<xsd:element name="Undetermined" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
-				    													    											    <xsd:documentation xml:lang="en">
+				    													    								<xsd:annotation>
 				
 				    													
 				
-				    													    													The marital status of the concerned person is undetermined.
+				    													    								    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    											    </xsd:documentation>
+				    													    										The marital status of the concerned person is undetermined.
 				
 				    													
 				
-				    													    											</xsd:annotation>
+				    													    								    </xsd:documentation>
 				
 				    													
 				
-				    													    										</xsd:element>
+				    													    								</xsd:annotation>
 				
 				    													
 				
-				    													    										
+				    													    							</xsd:element>
+				
+				    													
+				
+				    													    							
+				
+				    													
+				
+				    													    		
 				
 				    													
 				
@@ -1186,63 +1214,71 @@
 				
 				    													
 				
-				    													    								<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+				    													    									<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				
 				    													
 				
-				    													    									<xsd:annotation>
+				    													    										<xsd:annotation>
 				
 				    													
 				
-				    													    									    <xsd:documentation xml:lang="en">
+				    													    										    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    											This property contains the previous surname(s) of the person.
+				    													    												This property contains the previous surname(s) of the person.
 				
 				    													
 				
-				    													    									    </xsd:documentation>
+				    													    										    </xsd:documentation>
 				
 				    													
 				
-				    													    									</xsd:annotation>
+				    													    										</xsd:annotation>
 				
 				    													
 				
-				    													    								</xsd:element>	
+				    													    									</xsd:element>	
 				
 				    													
 				
-				    													    												<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+				    													    									
 				
 				    													
 				
-				    													    													<xsd:annotation>
+				    													    									<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				
 				    													
 				
-				    													    													    <xsd:documentation xml:lang="en">
+				    													    										<xsd:annotation>
 				
 				    													
 				
-				    													    															This property contains the future surname(s) of the person.
+				    													    										    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    													    </xsd:documentation>
+				    													    												This property contains the future surname(s) of the person.
 				
 				    													
 				
-				    													    													</xsd:annotation>
+				    													    										    </xsd:documentation>
 				
 				    													
 				
-				    													    												</xsd:element>	
+				    													    										</xsd:annotation>
 				
 				    													
 				
-				    													    												
+				    													    									</xsd:element>	
+				
+				    													
+				
+				    													    									
+				
+				    													
+				
+				    													    				
 				
 				    													
 				
@@ -1374,91 +1410,103 @@
 				
 				    													
 				
-				    													    						<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				    													    							<xsd:element name="NeverMarried" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
-				    													    							<xsd:annotation>
+				    													    								<xsd:annotation>
 				
 				    													
 				
-				    													    							    <xsd:documentation xml:lang="en">
+				    													    								    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    									The concerned person has never been married.
+				    													    										The concerned person has never been married.
 				
 				    													
 				
-				    													    							    </xsd:documentation>
+				    													    								    </xsd:documentation>
 				
 				    													
 				
-				    													    							</xsd:annotation>
+				    													    								</xsd:annotation>
 				
 				    													
 				
-				    													    						</xsd:element>
+				    													    							</xsd:element>
 				
 				    													
 				
-				    													    										<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    													    							
 				
 				    													
 				
-				    													    											<xsd:annotation>
+				    													    							<xsd:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
-				    													    											    <xsd:documentation xml:lang="en">
+				    													    								<xsd:annotation>
 				
 				    													
 				
-				    													    													This property contains the date of the divorce.
+				    													    								    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    											    </xsd:documentation>
+				    													    										This property contains the date of the divorce.
 				
 				    													
 				
-				    													    											</xsd:annotation>
+				    													    								    </xsd:documentation>
 				
 				    													
 				
-				    													    										</xsd:element>
+				    													    								</xsd:annotation>
 				
 				    													
 				
-				    													    														<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				    													    							</xsd:element>
 				
 				    													
 				
-				    													    															<xsd:annotation>
+				    													    							
 				
 				    													
 				
-				    													    															    <xsd:documentation xml:lang="en">
+				    													    							<xsd:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
-				    													    																	This property contains the date of widowship.
+				    													    								<xsd:annotation>
 				
 				    													
 				
-				    													    															    </xsd:documentation>
+				    													    								    <xsd:documentation xml:lang="en">
 				
 				    													
 				
-				    													    															</xsd:annotation>
+				    													    										This property contains the date of widowship.
 				
 				    													
 				
-				    													    														</xsd:element>
+				    													    								    </xsd:documentation>
 				
 				    													
 				
-				    													    														
+				    													    								</xsd:annotation>
+				
+				    													
+				
+				    													    							</xsd:element>
+				
+				    													
+				
+				    													    							
+				
+				    													
+				
+				    													    		
 				
 				    													
 				
@@ -1958,7 +2006,7 @@
 				
 				    													
 				
-				    													    			    				<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    													    			    					<xsd:element name="SurnameBefore" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
 				    													
 				
@@ -1966,7 +2014,7 @@
 				
 				    													
 				
-				    													    			    					<xsd:annotation>
+				    													    			    						<xsd:annotation>
 				
 				    													
 				
@@ -1974,7 +2022,7 @@
 				
 				    													
 				
-				    													    			    					    <xsd:documentation xml:lang="en">
+				    													    			    						    <xsd:documentation xml:lang="en">
 				
 				    													
 				
@@ -1982,7 +2030,7 @@
 				
 				    													
 				
-				    													    			    							This property contains the past surname of the person (if applicable)
+				    													    			    								This property contains the past surname of the person (if applicable)
 				
 				    													
 				
@@ -1990,7 +2038,7 @@
 				
 				    													
 				
-				    													    			    					    </xsd:documentation>
+				    													    			    						    </xsd:documentation>
 				
 				    													
 				
@@ -1998,7 +2046,7 @@
 				
 				    													
 				
-				    													    			    					</xsd:annotation>
+				    													    			    						</xsd:annotation>
 				
 				    													
 				
@@ -2006,95 +2054,7 @@
 				
 				    													
 				
-				    													    			    				</xsd:element>	
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    								<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					<xsd:annotation>
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					    <xsd:documentation xml:lang="en">
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    							This property contains the future surname of the person (if applicable)
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					    </xsd:documentation>
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					</xsd:annotation>
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    				</xsd:element>	
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    								<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					<xsd:annotation>
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					    <xsd:documentation xml:lang="en">
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    							This property contains the previous surname of the person (if applicable)
+				    													    			    					</xsd:element>	
 				
 				    													
 				
@@ -2110,7 +2070,7 @@
 				
 				    													
 				
-				    													    			    					    </xsd:documentation>
+				    													    			    					<xsd:element name="SurnameAfter" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
 				    													
 				
@@ -2118,7 +2078,7 @@
 				
 				    													
 				
-				    													    			    					</xsd:annotation>
+				    													    			    						<xsd:annotation>
 				
 				    													
 				
@@ -2126,7 +2086,7 @@
 				
 				    													
 				
-				    													    			    				</xsd:element>	
+				    													    			    						    <xsd:documentation xml:lang="en">
 				
 				    													
 				
@@ -2134,7 +2094,7 @@
 				
 				    													
 				
-				    													    			    								<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				    													    			    								This property contains the future surname of the person (if applicable)
 				
 				    													
 				
@@ -2142,7 +2102,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						    </xsd:documentation>
 				
 				    													
 				
@@ -2150,7 +2110,7 @@
 				
 				    													
 				
-				    													    			    					    					<xsd:annotation>
+				    													    			    						</xsd:annotation>
 				
 				    													
 				
@@ -2158,15 +2118,7 @@
 				
 				    													
 				
-				    													    			    					
-				
-				    													
-				
-				    													    			
-				
-				    													
-				
-				    													    			    					    					    <xsd:documentation xml:lang="en">
+				    													    			    					</xsd:element>	
 				
 				    													
 				
@@ -2182,7 +2134,63 @@
 				
 				    													
 				
-				    													    			    					    							This property contains the previous forename (first name) of the person (if applicable). 
+				    													    			    					<xsd:element name="PreviousSurname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						<xsd:annotation>
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    <xsd:documentation xml:lang="en">
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    								This property contains the previous surname of the person (if applicable)
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    </xsd:documentation>
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						</xsd:annotation>
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    					</xsd:element>	
 				
 				    													
 				
@@ -2198,7 +2206,7 @@
 				
 				    													
 				
-				    													    			    					    					    </xsd:documentation>
+				    													    			    					<xsd:element name="PreviousForename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
 				
 				    													
 				
@@ -2206,7 +2214,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2214,7 +2222,7 @@
 				
 				    													
 				
-				    													    			    					    					</xsd:annotation>
+				    													    			    						    						<xsd:annotation>
 				
 				    													
 				
@@ -2222,7 +2230,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2230,7 +2238,7 @@
 				
 				    													
 				
-				    													    			    					    				</xsd:element>	
+				    													    			    						    						    <xsd:documentation xml:lang="en">
 				
 				    													
 				
@@ -2238,7 +2246,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2246,7 +2254,87 @@
 				
 				    													
 				
-				    													    			    					    				
+				    													    			    						    								This property contains the previous forename (first name) of the person (if applicable). 
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    						    </xsd:documentation>
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    						</xsd:annotation>
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    					</xsd:element>	
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    					
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						
+				
+				    													
+				
+				    													    			
+				
+				    													
+				
+				    													    			    						    
 				
 				    													
 				
@@ -2270,7 +2358,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2278,7 +2366,7 @@
 				
 				    													
 				
-				    													    			    					    	<xsd:annotation>
+				    													    			    						    	<xsd:annotation>
 				
 				    													
 				
@@ -2286,7 +2374,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2294,7 +2382,7 @@
 				
 				    													
 				
-				    													    			    					    	    <xsd:documentation xml:lang="en">
+				    													    			    						    	    <xsd:documentation xml:lang="en">
 				
 				    													
 				
@@ -2302,7 +2390,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2310,7 +2398,7 @@
 				
 				    													
 				
-				    													    			    					    		This class contains elements related to a place.
+				    													    			    						    		This class contains elements related to a place.
 				
 				    													
 				
@@ -2318,7 +2406,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2326,7 +2414,7 @@
 				
 				    													
 				
-				    													    			    					    				<!-- Dependency Place->Location -->
+				    													    			    						    				<!-- Dependency Place->Location -->
 				
 				    													
 				
@@ -2334,7 +2422,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2342,7 +2430,7 @@
 				
 				    													
 				
-				    													    			    					    				Stereotype cvABIE
+				    													    			    						    				Stereotype cvABIE
 				
 				    													
 				
@@ -2350,7 +2438,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2358,7 +2446,7 @@
 				
 				    													
 				
-				    													    			    					    	    </xsd:documentation>
+				    													    			    						    	    </xsd:documentation>
 				
 				    													
 				
@@ -2366,7 +2454,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2374,7 +2462,7 @@
 				
 				    													
 				
-				    													    			    					    	</xsd:annotation>
+				    													    			    						    	</xsd:annotation>
 				
 				    													
 				
@@ -2382,7 +2470,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2390,7 +2478,7 @@
 				
 				    													
 				
-				    													    			    					    	<xsd:sequence> 
+				    													    			    						    	<xsd:sequence> 
 				
 				    													
 				
@@ -2398,7 +2486,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2406,7 +2494,7 @@
 				
 				    													
 				
-				    													    			    					    		<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
+				    													    			    						    		<xsd:element name="Name" type="cvb:LocationGeographicNameType" minOccurs="1" maxOccurs="1" >
 				
 				    													
 				
@@ -2414,7 +2502,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2422,7 +2510,7 @@
 				
 				    													
 				
-				    													    			    					    			<xsd:annotation>
+				    													    			    						    			<xsd:annotation>
 				
 				    													
 				
@@ -2430,7 +2518,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2438,7 +2526,7 @@
 				
 				    													
 				
-				    													    			    					    			    <xsd:documentation xml:lang="en">
+				    													    			    						    			    <xsd:documentation xml:lang="en">
 				
 				    													
 				
@@ -2446,7 +2534,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2454,7 +2542,7 @@
 				
 				    													
 				
-				    													    			    					    					This property contains the name of the place (geographic location).
+				    													    			    						    					This property contains the name of the place (geographic location).
 				
 				    													
 				
@@ -2462,7 +2550,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2470,7 +2558,7 @@
 				
 				    													
 				
-				    													    			    					    			    </xsd:documentation>
+				    													    			    						    			    </xsd:documentation>
 				
 				    													
 				
@@ -2478,7 +2566,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2486,7 +2574,7 @@
 				
 				    													
 				
-				    													    			    					    			</xsd:annotation>
+				    													    			    						    			</xsd:annotation>
 				
 				    													
 				
@@ -2494,7 +2582,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2502,7 +2590,7 @@
 				
 				    													
 				
-				    													    			    					    		</xsd:element>
+				    													    			    						    		</xsd:element>
 				
 				    													
 				
@@ -2510,7 +2598,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2518,7 +2606,7 @@
 				
 				    													
 				
-				    													    			    					    		
+				    													    			    						    		
 				
 				    													
 				
@@ -2526,7 +2614,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2534,7 +2622,7 @@
 				
 				    													
 				
-				    													    			    					    	</xsd:sequence>
+				    													    			    						    	</xsd:sequence>
 				
 				    													
 				
@@ -2542,7 +2630,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2550,7 +2638,7 @@
 				
 				    													
 				
-				    													    			    					    	
+				    													    			    						    	
 				
 				    													
 				
@@ -2558,7 +2646,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2566,7 +2654,7 @@
 				
 				    													
 				
-				    													    			    					    </xsd:complexType>
+				    													    			    						    </xsd:complexType>
 				
 				    													
 				
@@ -2574,7 +2662,7 @@
 				
 				    													
 				
-				    													    			    					
+				    													    			    						
 				
 				    													
 				
@@ -2582,7 +2670,7 @@
 				
 				    													
 				
-				    													    			    					    
+				    													    			    						    
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

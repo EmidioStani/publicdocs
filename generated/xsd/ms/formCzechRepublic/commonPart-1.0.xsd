@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCzechRepublic-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -39,14 +39,15 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-						<xsd:element name="TerminatedPartnership" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="TerminatedPartnership" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="DocumentInfoType">
@@ -59,14 +60,15 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
 			<xsd:sequence>
-								<xsd:element name="Note" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+									<xsd:element name="Note" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -81,34 +83,35 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-								<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-											
-											<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-											<xsd:element name="CivilStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
-											
-											
-											<xsd:element name="SpouseOrPartner" type="PersonType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-								
+									<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="CivilStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
+							
+							
+							<xsd:element name="SpouseOrPartner" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -141,28 +144,31 @@
 													
 										<xsd:element name="SignatureInfo" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"/>
 										
-								<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of string type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of string type. 
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																
+									<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -177,21 +183,23 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-								<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of string type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
+									<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

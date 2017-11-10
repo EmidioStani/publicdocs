@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -53,14 +53,15 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-								<xsd:element name="DeathCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
+									<xsd:element name="DeathCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -73,30 +74,33 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="DeathTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="TimeBodyDiscovered" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-																		<xsd:element name="PlaceBodyDiscovered" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																		
-														<xsd:element name="DateBodyDiscovered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-														
+							<xsd:element name="DeathTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="TimeBodyDiscovered" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="PlaceBodyDiscovered" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DateBodyDiscovered" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -110,37 +114,41 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
 			<xsd:sequence>
-								<xsd:element name="StampDutyInfo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="NotSubjectToStampDuty" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																<xsd:element name="ExemptyFromStampDuty" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																				<xsd:element name="StampDutyCollected" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																												<xsd:element name="PlaceOfIssue" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																												
-																				
+									<xsd:element name="StampDutyInfo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="NotSubjectToStampDuty" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ExemptyFromStampDuty" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="StampDutyCollected" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="PlaceOfIssue" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

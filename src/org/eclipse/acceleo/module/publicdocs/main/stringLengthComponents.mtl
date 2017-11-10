@@ -63,32 +63,42 @@ supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.n
 [generatePrimitiveTypeForType(class, prop)/][/if]
 [/template]
 
-[template public generateElementWithUnqualifiedDataTypes2(prim: PrimitiveType) post(trim())
+[template public generateElementWithUnqualifiedDataTypes2(prim: PrimitiveType, suffix : String, maxLength : String, name : String) post(trim())
 {deps : Set(Dependency) =  getPrimitiveDependencies(prim, prim.name);
 }]
 [if deps->size()>0]
-	[for (sup : NamedElement | deps.supplier->any(true))]
-		[getFQDN2(sup)/]
-	[/for]
+		<[getNS('xs')/]:complexType name="[name/][suffix/]">
+			<[getNS('xs')/]:simpleContent>
+				[for (sup : NamedElement | deps.supplier->any(true))]
+					<[getNS('xs')/]:restriction base="[getFQDN2(sup)/]">
+				[/for]
+					<[getNS('xs')/]:minLength value="0"  />
+					<[getNS('xs')/]:maxLength value="[maxLength/]" />
+				</[getNS('xs')/]:restriction>
+			</[getNS('xs')/]:simpleContent>
+		</[getNS('xs')/]:complexType>
 [else] 
-	[getFQDN5(prim)/]
-[/if]
-[/template]
-
-[template public generatePrimitiveForType(class: PrimitiveType) { 
-pack                 : Package       = class.owner.oclAsType(Package);
-maxLength			 : String		= class.name.substring('StringMaxLength'.size()+1);
-suffix: String = getSuffix('complexType');
-}]
-[comment put the two functions as 'variables' and adapt the code from simpletype to complex/]
-<[getNS('xs')/]:simpleType name="[class.name/][suffix/]">
-	[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
-			<[getNS('xs')/]:restriction base="[generateElementWithUnqualifiedDataTypes2(base)/]">
+<[getNS('xs')/]:simpleType name="[name/][suffix/]">
+	[for (base: PrimitiveType | prim.general.oclAsType(PrimitiveType))]
+			<[getNS('xs')/]:restriction base="[getFQDN5(prim)/]">
 	[/for]
 			<[getNS('xs')/]:minLength value="0"  />
 			<[getNS('xs')/]:maxLength value="[maxLength/]" />
 		</[getNS('xs')/]:restriction>
 </[getNS('xs')/]:simpleType>
+	
+[/if]
+[/template]
+
+[template public generatePrimitiveForType(class: PrimitiveType) { 
+pack                 : Package       = class.owner.oclAsType(Package);
+maxLength			 : String		= class.name.substring(getRestriction('StringMaxLength').size()+1);
+suffix				 : String 		= getSuffix('complexType');
+}]
+[comment put the two functions as 'variables' and adapt the code from simpletype to complex/]
+[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
+	[generateElementWithUnqualifiedDataTypes2(base, suffix, maxLength, class.name)/]
+[/for]
 
 [/template]
 

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formMalta-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -46,28 +46,31 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="OfficiatingMinisterSignature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of type string concerning the signature of an officiating minister.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="Church" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													This property contains information of type string concerning the name of a church.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="MinisterDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	This property contains information of type date concerning the date of marriage declared by a minister.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-														
+							<xsd:element name="OfficiatingMinisterSignature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the signature of an officiating minister.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Church" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the name of a church.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="MinisterDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the date of marriage declared by a minister.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -90,41 +93,42 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-								<xsd:element name="Church" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-											
-											<xsd:element name="Husband" type="SpouseType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class SpouseParticulars.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-											
-											<xsd:element name="Wife" type="SpouseType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class SpouseParticulars.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-											
-											<xsd:element name="Witness" type="MarriageWitnessType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														The value of this property is of the class MarriageWitness.
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-								
+									<xsd:element name="Church" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="Husband" type="SpouseType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class SpouseParticulars.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							
+							<xsd:element name="Wife" type="SpouseType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class SpouseParticulars.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							
+							<xsd:element name="Witness" type="MarriageWitnessType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class MarriageWitness.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -148,14 +152,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property can contain any type of information.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -167,30 +172,33 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="DateOfBirth" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-																						<xsd:element name="PlaceOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																						
-														
+							<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfBirth" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="PlaceOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

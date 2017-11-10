@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCroatia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -59,14 +59,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property contains information of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -80,16 +81,17 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
 			<xsd:sequence>
-								<xsd:element name="Witnesses" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains information of type string concerning the witnesses to a registered partnership.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="SwornTranslator" type="pdc:OfficialType" minOccurs="1" maxOccurs="1"/>
-																
-								
+									<xsd:element name="Witnesses" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the witnesses to a registered partnership.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="SwornTranslator" type="pdc:OfficialType" minOccurs="1" maxOccurs="1"/>
+												
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

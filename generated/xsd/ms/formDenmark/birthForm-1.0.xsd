@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formDenmark-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -46,21 +46,23 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of string type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-										<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													The value of this property is of string type.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										
+							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -83,14 +85,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -104,64 +107,69 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_birthForm:BirthType">
 			<xsd:sequence>
-								<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="PlaceWhereChildNamed" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																
-												<xsd:element name="DateWhenChildNamed" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of date type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																<xsd:element name="ChurchWhereBaptised" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of string type.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																				<xsd:element name="DateOfBaptism" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							The value of this property is of date type.
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																									<xsd:annotation>
-																									    <xsd:documentation xml:lang="en">
-																											The value of this property is of string type.
-																									    </xsd:documentation>
-																									</xsd:annotation>
-																								</xsd:element>
-																																<xsd:element name="PlaceRegistrationOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																																
-																											
-																											<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																														The value of this property is of the class Parent.
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																											</xsd:element>
-																											
-																											
-																											<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																														The value of this property is of the class Parent.
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																											</xsd:element>
-																											
-																								
+									<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="PlaceWhereChildNamed" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="DateWhenChildNamed" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ChurchWhereBaptised" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DateOfBaptism" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="PersonalIdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="PlaceRegistrationOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+							
+							<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Parent.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							
+							<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Parent.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

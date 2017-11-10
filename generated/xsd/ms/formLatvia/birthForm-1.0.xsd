@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -40,21 +40,23 @@
 	<xsd:complexContent>
 		<xsd:extension base="PersonType">
 			<xsd:sequence>
-								<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains information of type string concerning the forename of a person's parent.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															This property contains information of type string concerning the surname of a person's parent.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
+									<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the forename of a person's parent.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the surname of a person's parent.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -135,14 +137,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -157,39 +160,41 @@
 	<xsd:complexContent>
 		<xsd:extension base="PersonType">
 			<xsd:sequence>
-								<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
 	
-									<xsd:annotation>
+										<xsd:annotation>
 	
-									    <xsd:documentation xml:lang="en">
+										    <xsd:documentation xml:lang="en">
 	
-											This property contains information of type time concerning the time of a person's birth.
+												This property contains information of type time concerning the time of a person's birth.
 	
-									    </xsd:documentation>
+										    </xsd:documentation>
 	
-									</xsd:annotation>
+										</xsd:annotation>
 	
-								</xsd:element>
+									</xsd:element>
 	
-											
+									
 	
-											<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+							
 	
-												<xsd:annotation>
+							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
 	
-												    <xsd:documentation xml:lang="en">
+								<xsd:annotation>
 	
-														The value of this property is of the class Parents.
+								    <xsd:documentation xml:lang="en">
 	
-												    </xsd:documentation>
+										The value of this property is of the class Parents.
 	
-												</xsd:annotation>
+								    </xsd:documentation>
 	
-											</xsd:element>
+								</xsd:annotation>
 	
-											
+							</xsd:element>
 	
-								
+							
+	
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>

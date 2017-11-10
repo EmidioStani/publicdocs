@@ -169,6 +169,9 @@
 [query public getVersion (name: String) : String
 = getConf('version_'.concat(name))/]
 
+[query public getRestriction (name: String) : String
+= getConf('restriction_'.concat(name))/]
+
 [query public getName (name: String) : String
 = getConf('name_'.concat(name))/]
 

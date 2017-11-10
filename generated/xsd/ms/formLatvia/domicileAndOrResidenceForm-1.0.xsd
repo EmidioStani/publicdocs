@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -44,32 +44,34 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
 			<xsd:sequence>
-								<xsd:element name="ResidenceDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains the date of declaration of a residence.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="DomicileOtherAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-																
-												<xsd:element name="OtherAddressReachability" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															This property contains information of type string about the period during which the person can be reached at the other address.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-															
-															<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		The value of this property is that of class Person.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
+									<xsd:element name="ResidenceDeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the date of declaration of a residence.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="DomicileOtherAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 												
+									<xsd:element name="OtherAddressReachability" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string about the period during which the person can be reached at the other address.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -99,14 +101,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

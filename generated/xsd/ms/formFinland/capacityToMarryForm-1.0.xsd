@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -63,38 +63,42 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 			<xsd:sequence>
-								<xsd:element name="SurnameLastUsedBeforeFirstMarriage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-												<xsd:element name="PersonalIdentificationNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of string type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-																<xsd:element name="MarriageNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of string type.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																		<xsd:element name="CivilStatus" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
-																		</xsd:element>
-																		
-																				<xsd:element name="InformationForReligiousWedding" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							The value of this property is of string type.
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																				
+									<xsd:element name="SurnameLastUsedBeforeFirstMarriage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="PersonalIdentificationNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="MarriageNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+						<xsd:element name="CivilStatus" minOccurs="1" maxOccurs="1" type="NotMarriedChoiceType">
+						</xsd:element>
+						
+									<xsd:element name="InformationForReligiousWedding" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -109,23 +113,25 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:CanMarryType">
 			<xsd:sequence>
-								<xsd:element name="ExaminationRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of string type.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-																<xsd:element name="ExaminationRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																
-												<xsd:element name="ExaminationRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of date type.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
+									<xsd:element name="ExaminationRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="ExaminationRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 												
+									<xsd:element name="ExaminationRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -200,14 +206,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of any type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
@@ -220,23 +227,24 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
-						<xsd:element name="NotForeignIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									The value of this property is of boolean type.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-									
-									<xsd:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of the class ForeignIntendedSpouse.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-						
+							<xsd:element name="NotForeignIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+					
+					<xsd:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class ForeignIntendedSpouse.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
 	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 09/11/2017 16:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -48,23 +48,24 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_lifeForm:LifeType">
 			<xsd:sequence>
-								<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											This property contains a note to the authority receiving the form. The note states: "Data extracted from the National Register of Physical Persons in accordance with Article 4 of the Grand-Ducal Regulation of 29 March 2016 concerning certain certificates issued on the basis of the data contained in the National Register of Physical Persons (Memorial No. 52 of 31 March 2016). These data are certified accurate (unless indicated by asterisk on a light gray background (*)) of the public document to which this form is attached." 
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-											
-											<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-														
-												    </xsd:documentation>
-												</xsd:annotation>
-											</xsd:element>
-											
-								
+									<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains a note to the authority receiving the form. The note states: "Data extracted from the National Register of Physical Persons in accordance with Article 4 of the Grand-Ducal Regulation of 29 March 2016 concerning certain certificates issued on the basis of the data contained in the National Register of Physical Persons (Memorial No. 52 of 31 March 2016). These data are certified accurate (unless indicated by asterisk on a light gray background (*)) of the public document to which this form is attached." 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
@@ -88,14 +89,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-							<xsd:annotation>
-							    <xsd:documentation xml:lang="en">
-									This property can contain any type of information.
-							    </xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
