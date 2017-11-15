@@ -26,7 +26,11 @@
   (oclAsType(Dependency).client->any(true) = prop or not prop.owner.oclAsType(Class).general->isEmpty() and oclAsType(Dependency).client->any(true) = prop.getParentProperty()))/]
 
 [query public getPropertyDependencies (prop: Property, type : String) : Set(Dependency) 
-= prop.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and (oclAsType(Dependency).client->any(true).name) = type)/]
+= prop.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
+
+[query public getPrimitiveDependencies (prim: PrimitiveType, type : String) : Set(Dependency) 
+= prim.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
+
 
 [query public getDerivationsOf (model: Model, elt: Element) : Set(Generalization) 
 = model.allOwnedElements()->select(oclIsTypeOf(Generalization) and oclAsType(Generalization).target->any(true) = elt)/]
@@ -141,6 +145,9 @@
 [query public getFQDN4 (class: Class) : String
 = if (class.namespace.name = 'forms') then 'ms2forms_'+class.getAppliedStereotypes().name+':'.concat(class.name) else class.namespace.name.concat(':').concat(class.name) endif/]
 
+[query public getFQDN5 (class: PrimitiveType) : String
+= class.namespace.name.concat(':').concat(class.name)/]
+
 [query public getTodayDate (format: String) : String
 = getDate(format)/]
 
@@ -161,6 +168,9 @@
 
 [query public getVersion (name: String) : String
 = getConf('version_'.concat(name))/]
+
+[query public getRestriction (name: String) : String
+= getConf('restriction_'.concat(name))/]
 
 [query public getName (name: String) : String
 = getConf('name_'.concat(name))/]

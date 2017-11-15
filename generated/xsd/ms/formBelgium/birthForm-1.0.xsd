@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,201 +38,208 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="ConsentChoiceType">
+<xsd:complexType name="AcknowledgedByChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the choice between the types of ID used to identify a person.
-				Stereotype xsdChoice
 				Stereotype birthForm
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
 					
-				<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class Person.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-				
-								<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class Person.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-								
-												<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of the class Person.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
-												
-																<xsd:element name="Child" type="PersonType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of the class Person.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																
-																
-																				<xsd:element name="LegalRepresentative" type="PersonType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							The value of this property is of the class Person.
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																				
-																	
+					<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
 	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="BirthType">
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																							
-																									Stereotype birthForm
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																						<xsd:sequence> 
-																										
-																									<xsd:element name="BirthPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																												The value of this property is of the class Person.
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																									</xsd:element>
-																									
-																								<xsd:element name="Consent" minOccurs="1" maxOccurs="1" type="ConsentChoiceType">
-																												</xsd:element>
-																												
-																																		<xsd:element name="AuthorityForWhichConsentWasGiven" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																																		
-																														<xsd:element name="DateOfConsent" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																															<xsd:annotation>
-																															    <xsd:documentation xml:lang="en">
-																																	The value of this property is of date type.
-																															    </xsd:documentation>
-																															</xsd:annotation>
-																														</xsd:element>
-																																<xsd:element name="AcknowledgedBy" minOccurs="1" maxOccurs="1" type="AcknowledgedByChoiceType">
-																																	</xsd:element>
-																																	
-																																			<xsd:element name="RollNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																				<xsd:annotation>
-																																				    <xsd:documentation xml:lang="en">
-																																						The value of this property is of string type.
-																																				    </xsd:documentation>
-																																				</xsd:annotation>
-																																			</xsd:element>
-																																											<xsd:element name="JudicialBody" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																																												
-																																								<xsd:element name="DocumentNoPrenatalAcknowledgementOfParentage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																									<xsd:annotation>
-																																									    <xsd:documentation xml:lang="en">
-																																											The value of this property is of string type.
-																																									    </xsd:documentation>
-																																									</xsd:annotation>
-																																								</xsd:element>
-																																																<xsd:element name="PlaceOfConsent" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																																																	
-																																													<xsd:element name="JudicialDecisionConsent" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																														<xsd:annotation>
-																																														    <xsd:documentation xml:lang="en">
-																																																The value of this property is of string type.
-																																														    </xsd:documentation>
-																																														</xsd:annotation>
-																																													</xsd:element>
-																																																	<xsd:element name="DateOfAcknowledgement" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																																																			<xsd:annotation>
-																																																			    <xsd:documentation xml:lang="en">
-																																																					The value of this property is of date type.
-																																																			    </xsd:documentation>
-																																																			</xsd:annotation>
-																																																		</xsd:element>
-																																																						<xsd:element name="DateOfDecision" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																																																								<xsd:annotation>
-																																																								    <xsd:documentation xml:lang="en">
-																																																										The value of this property is of date type.
-																																																								    </xsd:documentation>
-																																																								</xsd:annotation>
-																																																							</xsd:element>
-																																																							
-																						</xsd:sequence>
-																						
-																					</xsd:complexType>
-<xsd:complexType name="AcknowledgedByChoiceType">
-																																																									<xsd:annotation>
-																																																									    <xsd:documentation xml:lang="en">
-																																																										This class contains elements related to the choice between the types of ID used to identify a person.
-																																																												Stereotype xsdChoice
-																																																												Stereotype birthForm
-																																																									    </xsd:documentation>
-																																																									</xsd:annotation>
-																																																									<xsd:choice>
-																																																													
-																																																												<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
-																																																													<xsd:annotation>
-																																																													    <xsd:documentation xml:lang="en">
-																																																															The value of this property is of the class Person.
-																																																													    </xsd:documentation>
-																																																													</xsd:annotation>
-																																																												</xsd:element>
-																																																												
-																																																												
-																																																																<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
-																																																																	<xsd:annotation>
-																																																																	    <xsd:documentation xml:lang="en">
-																																																																			The value of this property is of the class Person.
-																																																																	    </xsd:documentation>
-																																																																	</xsd:annotation>
-																																																																</xsd:element>
-																																																																
-																																																																
-																																																																				<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
-																																																																					<xsd:annotation>
-																																																																					    <xsd:documentation xml:lang="en">
-																																																																							The value of this property is of the class Person.
-																																																																					    </xsd:documentation>
-																																																																					</xsd:annotation>
-																																																																				</xsd:element>
-																																																																				
-																																																																	
-																																																									</xsd:choice>
-																																																								</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="BirthPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+				<xsd:element name="Consent" minOccurs="1" maxOccurs="1" type="ConsentChoiceType">
+				</xsd:element>
+				
+										<xsd:element name="AuthorityForWhichConsentWasGiven" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DateOfConsent" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				<xsd:element name="AcknowledgedBy" minOccurs="1" maxOccurs="1" type="AcknowledgedByChoiceType">
+				</xsd:element>
+				
+							<xsd:element name="RollNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="JudicialBody" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DocumentNoPrenatalAcknowledgementOfParentage" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="PlaceOfConsent" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="JudicialDecisionConsent" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfAcknowledgement" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfDecision" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="FormBirthBelgiumType">
-																																																																						<xsd:annotation>
-																																																																						    <xsd:documentation xml:lang="en">
-																																																																							This class contains elements related to the form Birth.
-																																																																									Stereotype birthForm
-																																																																						    </xsd:documentation>
-																																																																						</xsd:annotation>
-																																																																						<xsd:sequence> 
-																																																																											<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-																																																																										
-																																																																															
-																																																																												<xsd:element name="Body" type="ms2forms_birthForm:BirthType" minOccurs="1" maxOccurs="1"/>
-																																																																												
-																																																																										<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																																																																											<xsd:annotation>
-																																																																											    <xsd:documentation xml:lang="en">
-																																																																													The value of this property is of any type.
-																																																																											    </xsd:documentation>
-																																																																											</xsd:annotation>
-																																																																										</xsd:element>
-																																																																										
-																																																																						</xsd:sequence>
-																																																																						
-																																																																					</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Birth.
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+											
+								<xsd:element name="Body" type="ms2forms_birthForm:BirthType" minOccurs="1" maxOccurs="1"/>
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="ConsentChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the choice between the types of ID used to identify a person.
+				Stereotype birthForm
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					
+					<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="Child" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="LegalRepresentative" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:choice>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSweden-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -47,58 +47,60 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
 					
-				
-				<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class Death.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property can contain any type of information.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Death.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
 <xsd:complexType name="DeathType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_deathForm:DeathType">
+			<xsd:sequence>
+									<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
 												
-														Stereotype deathForm
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:complexContent>
-												<xsd:extension base="ms2forms_deathForm:DeathType">
-													<xsd:sequence>
-																		<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																		
-																			<xsd:element name="CivilRegistration" type="CivilRegistrationType" minOccurs="1" maxOccurs="1" >
-																				<xsd:annotation>
-																				    <xsd:documentation xml:lang="en">
-																						The value of this property is of the class CivilRegistration.
-																				    </xsd:documentation>
-																				</xsd:annotation>
-																			</xsd:element>
-																			
-																
-													</xsd:sequence>
-												</xsd:extension>
-											</xsd:complexContent>
-										</xsd:complexType>
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							
+							<xsd:element name="CivilRegistration" type="CivilRegistrationType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class CivilRegistration.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

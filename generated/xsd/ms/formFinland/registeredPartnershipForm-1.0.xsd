@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -43,64 +43,66 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class FormHeader.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-				
-												<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of the class RegisteredPartnership.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
-													<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				The value of this property is of any type.
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																	
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					
+					<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class RegisteredPartnership.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
 <xsd:complexType name="RegisteredPartnershipType">
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																				
-																						Stereotype registeredPartnershipForm
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																			<xsd:complexContent>
-																				<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
-																					<xsd:sequence>
-																									
-																						<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-																							<xsd:annotation>
-																							    <xsd:documentation xml:lang="en">
-																									The value of this property is of the class Person.
-																							    </xsd:documentation>
-																							</xsd:annotation>
-																						</xsd:element>
-																						
-																							<xsd:element name="SerialNumberRegisteredPartnership" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																														The value of this property is of string type.
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																											</xsd:element>
-																											
-																					</xsd:sequence>
-																				</xsd:extension>
-																			</xsd:complexContent>
-																		</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
+			<xsd:sequence>
+							
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="SerialNumberRegisteredPartnership" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

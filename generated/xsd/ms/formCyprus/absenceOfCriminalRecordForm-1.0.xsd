@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCyprus-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -37,30 +37,31 @@
 <xsd:complexType name="FormAbsenceOfCriminalRecordCyprusType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form Absence of a Criminal Record.
+		This class contains properties related to the form Absence of a Criminal Record.
 				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class FormHeader.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+											
+								<xsd:element name="Body" type="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"/>
 								
-										
-															<xsd:element name="Body" type="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"/>
-															
-													<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is of any type.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -47,125 +47,130 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
 					
-				
-				<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class DomicileAndOrResidence.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-					<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property can contain any type of information.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DomicileAndOrResidence.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="AddressDetailsType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-												
-														Stereotype domicileAndOrResidenceForm
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:sequence> 
-																				<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																			
-																			<xsd:element name="Province" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-																			
-											
-											</xsd:sequence>
-											
-										</xsd:complexType>
 <xsd:complexType name="DomicileAndOrResidenceType">
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-													
-															Stereotype domicileAndOrResidenceForm
-												    </xsd:documentation>
-												</xsd:annotation>
-												<xsd:complexContent>
-													<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
-														<xsd:sequence>
-																	<xsd:element name="Validity" minOccurs="1" maxOccurs="1" type="ValidityChoiceType">
-														</xsd:element>
-														
-														<xsd:element name="TypeOfResidence" minOccurs="1" maxOccurs="1" type="ResidenceChoiceType">
-														</xsd:element>
-														
-															
-															<xsd:element name="OtherDetailsOfAddress" type="AddressDetailsType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		The value of this property is of the class AddressDetails.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
-												
-														</xsd:sequence>
-													</xsd:extension>
-												</xsd:complexContent>
-											</xsd:complexType>
-<xsd:complexType name="ResidenceChoiceType">
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																		
-																				Stereotype xsdChoice
-																				Stereotype domicileAndOrResidenceForm
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																	<xsd:choice>
-																						<xsd:element name="Permanent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																								
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																					</xsd:element>
-																									<xsd:element name="TemporaryUntil" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-																	</xsd:choice>
-																</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+			<xsd:sequence>
+						<xsd:element name="Validity" minOccurs="1" maxOccurs="1" type="ValidityChoiceType">
+						</xsd:element>
+						
+						<xsd:element name="TypeOfResidence" minOccurs="1" maxOccurs="1" type="ResidenceChoiceType">
+						</xsd:element>
+						
+							
+							<xsd:element name="OtherDetailsOfAddress" type="AddressDetailsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class AddressDetails.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="AddressDetailsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="Province" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="ValidityChoiceType">
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																													
-																															Stereotype xsdChoice
-																															Stereotype domicileAndOrResidenceForm
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																												<xsd:choice>
-																																	<xsd:element name="UntiRegisteredResidenceChange" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																	<xsd:annotation>
-																																	    <xsd:documentation xml:lang="en">
-																																			
-																																	    </xsd:documentation>
-																																	</xsd:annotation>
-																																</xsd:element>
-																																				<xsd:element name="NoLaterThan" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																																						<xsd:annotation>
-																																						    <xsd:documentation xml:lang="en">
-																																								
-																																						    </xsd:documentation>
-																																						</xsd:annotation>
-																																					</xsd:element>
-																																					
-																												</xsd:choice>
-																											</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="UntiRegisteredResidenceChange" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="NoLaterThan" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="ResidenceChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="Permanent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="TemporaryUntil" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

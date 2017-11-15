@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,6 +38,42 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="TypeOfExtractChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype absenceOfCriminalRecordForm
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="Article595" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Article596-1" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Article596-2" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -49,22 +85,22 @@
 		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
 			<xsd:sequence>
 						<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
-			</xsd:element>
-			
-	
+						</xsd:element>
+						
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordBelgiumType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			This class contains elements related to the form Absence of a Criminal Record.
-					Stereotype absenceOfCriminalRecordForm
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence> 
-							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Absence of a Criminal Record.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 						
 					
 					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
@@ -75,50 +111,18 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-						<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													The value of this property is of any type.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										
-		</xsd:sequence>
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 		
-	</xsd:complexType>
-<xsd:complexType name="TypeOfExtractChoiceType">
-												<xsd:annotation>
-												    <xsd:documentation xml:lang="en">
-													
-															Stereotype xsdChoice
-															Stereotype absenceOfCriminalRecordForm
-												    </xsd:documentation>
-												</xsd:annotation>
-												<xsd:choice>
-																	<xsd:element name="Article595" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																	<xsd:annotation>
-																	    <xsd:documentation xml:lang="en">
-																			The value of this property is of string type.
-																	    </xsd:documentation>
-																	</xsd:annotation>
-																</xsd:element>
-																				<xsd:element name="Article596-1" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																								The value of this property is of string type.
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																					</xsd:element>
-																									<xsd:element name="Article596-2" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													The value of this property is of string type.
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-												</xsd:choice>
-											</xsd:complexType>
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

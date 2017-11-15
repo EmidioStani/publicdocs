@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -15,6 +15,8 @@
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	
 	xmlns:forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
+	
+	xmlns:qdt="http://data.europa.eu/edm/1/ns/qdt"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -26,6 +28,8 @@
 			   schemaLocation="../../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="commonPart-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/qdt"
+			   schemaLocation="../../../../xsd/common/core/qdt-LengthComponents-1.0.xsd"/>
 	<!-- ===================================================== -->
 <xsd:complexType name="DeathType">
 	<xsd:annotation>
@@ -36,31 +40,31 @@
 	</xsd:annotation>
 	<xsd:sequence> 
 										<xsd:element name="Person" type="pdc:DeathPersonType" minOccurs="1" maxOccurs="1"/>
-									
-	
+										
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
 
 <xsd:element name="FrmDeath" type="FrmDeathType"/>
-	<xsd:complexType name="FrmDeathType">
-		<xsd:annotation>
-		    <xsd:documentation xml:lang="en">
-			This class contains elements related to the form Death. 
-					Stereotype deathForm
-					Stereotype xsdGlobalElement
-		    </xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence> 
-							<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+<xsd:complexType name="FrmDeathType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Death. 
+				Stereotype xsdGlobalElement
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 						
 					
 					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"/>
 					
 		
-		</xsd:sequence>
-		
-	</xsd:complexType>
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,85 +30,87 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="DeathType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the death of a person.
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DeathPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="FormDeathLatviaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a death form.
 				Stereotype deathForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-											The value of this property is of the class FormHeader.
-									    </xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								
-				
-												<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
-													<xsd:annotation>
-													    <xsd:documentation xml:lang="en">
-															The value of this property is of the class Death.
-													    </xsd:documentation>
-													</xsd:annotation>
-												</xsd:element>
-												
-													<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																		<xsd:annotation>
-																		    <xsd:documentation xml:lang="en">
-																				The value of this property is of any type.
-																		    </xsd:documentation>
-																		</xsd:annotation>
-																	</xsd:element>
-																	
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					
+					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Death.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
 	</xsd:sequence>
 	
 </xsd:complexType>
 <xsd:complexType name="DeathPersonType">
-																			<xsd:annotation>
-																			    <xsd:documentation xml:lang="en">
-																				
-																						Stereotype deathForm
-																			    </xsd:documentation>
-																			</xsd:annotation>
-																			<xsd:complexContent>
-																				<xsd:extension base="pdc:DeathPersonType">
-																					<xsd:sequence>
-																										<xsd:element name="DeathTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-																								<xsd:annotation>
-																								    <xsd:documentation xml:lang="en">
-																										
-																								    </xsd:documentation>
-																								</xsd:annotation>
-																							</xsd:element>
-																							
-																					</xsd:sequence>
-																				</xsd:extension>
-																			</xsd:complexContent>
-																		</xsd:complexType>
-<xsd:complexType name="DeathType">
-																									<xsd:annotation>
-																									    <xsd:documentation xml:lang="en">
-																										
-																												Stereotype deathForm
-																									    </xsd:documentation>
-																									</xsd:annotation>
-																									<xsd:sequence> 
-																													
-																												<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
-																													<xsd:annotation>
-																													    <xsd:documentation xml:lang="en">
-																															The value of this property is of the class DeathPerson.
-																													    </xsd:documentation>
-																													</xsd:annotation>
-																												</xsd:element>
-																												
-																									
-																									</xsd:sequence>
-																									
-																								</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a deceased person.
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+									<xsd:element name="DeathTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is the hour of a person's death and is of type time.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,130 +38,212 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="FormBirthLithuaniaType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a birth form.
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					
+					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Birth.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="ParentType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person's parent.
 				Stereotype birthForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-								<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
+									<xsd:element name="ParentForename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning a parent's forename.
+										
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
 									<xsd:element name="ParentSurname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-														<xsd:element name="ParentDateOfBirth" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																			<xsd:element name="ParentNationality" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																								<xsd:element name="ParentCitizenship" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
-																										<xsd:annotation>
-																										    <xsd:documentation xml:lang="en">
-																												
-																										    </xsd:documentation>
-																										</xsd:annotation>
-																									</xsd:element>	
-																									
+										
+										    						<xsd:annotation>
+										
+										    						    <xsd:documentation xml:lang="en">
+										
+										    								This property contains information of type string concerning a parent's surname.
+										
+										    						    </xsd:documentation>
+										
+										    						</xsd:annotation>
+										
+										    					</xsd:element>
+										
+										    					
+										
+										    					<xsd:element name="ParentDateOfBirth" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										
+										    						<xsd:annotation>
+										
+										    						    <xsd:documentation xml:lang="en">
+										
+										    								This property contains information of type date concerning a parent's date of birth.
+										
+										    						    </xsd:documentation>
+										
+										    						</xsd:annotation>
+										
+										    					</xsd:element>
+										
+										    					
+										
+										    					<xsd:element name="ParentNationality" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										
+										    						<xsd:annotation>
+										
+										    						    <xsd:documentation xml:lang="en">
+										
+										    								This property contains information of type string that contains a parent's nationality.
+										
+										    						    </xsd:documentation>
+										
+										    						</xsd:annotation>
+										
+										    					</xsd:element>
+										
+										    					
+										
+										    					<xsd:element name="ParentCitizenship" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+										
+										    						<xsd:annotation>
+										
+										    						    <xsd:documentation xml:lang="en">
+										
+										    								This property contains information of type string concerning a parent's citizenship.
+										
+										    						    </xsd:documentation>
+										
+										    						</xsd:annotation>
+										
+										    					</xsd:element>	
+										
+										    					
+										
+										    
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="BirthType">
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																												
-																														Stereotype birthForm
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																											<xsd:complexContent>
-																												<xsd:extension base="ms2forms_birthForm:BirthType">
-																													<xsd:sequence>
-																																	
-																														<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
-																															<xsd:annotation>
-																															    <xsd:documentation xml:lang="en">
-																																	The value of this property is of the class RecordInformation.
-																															    </xsd:documentation>
-																															</xsd:annotation>
-																														</xsd:element>
-																														
-																														
-																																		<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-																																			<xsd:annotation>
-																																			    <xsd:documentation xml:lang="en">
-																																					The value of this property is of the class Parent.
-																																			    </xsd:documentation>
-																																			</xsd:annotation>
-																																		</xsd:element>
-																																		
-																																		
-																																						<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
-																																							<xsd:annotation>
-																																							    <xsd:documentation xml:lang="en">
-																																									The value of this property is of the class Parent.
-																																							    </xsd:documentation>
-																																							</xsd:annotation>
-																																						</xsd:element>
-																																						
-																																											<xsd:element name="BirthPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
-																																															
-																																							
-																													</xsd:sequence>
-																												</xsd:extension>
-																											</xsd:complexContent>
-																										</xsd:complexType>
-<xsd:complexType name="FormBirthLithuaniaType">
-																																								<xsd:annotation>
-																																								    <xsd:documentation xml:lang="en">
-																																									
-																																											Stereotype birthForm
-																																								    </xsd:documentation>
-																																								</xsd:annotation>
-																																								<xsd:sequence> 
-																																													<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-																																												
-																																											
-																																											<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
-																																												<xsd:annotation>
-																																												    <xsd:documentation xml:lang="en">
-																																														The value of this property is of the class Birth.
-																																												    </xsd:documentation>
-																																												</xsd:annotation>
-																																											</xsd:element>
-																																											
-																																												<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																																																	<xsd:annotation>
-																																																	    <xsd:documentation xml:lang="en">
-																																																			This property can contain any type of information.
-																																																	    </xsd:documentation>
-																																																	</xsd:annotation>
-																																																</xsd:element>
-																																																
-																																								</xsd:sequence>
-																																								
-																																							</xsd:complexType>
+										
+										    	<xsd:annotation>
+										
+										    	    <xsd:documentation xml:lang="en">
+										
+										    		This class contains properties related to the birth of a person.
+										
+										    				Stereotype birthForm
+										
+										    	    </xsd:documentation>
+										
+										    	</xsd:annotation>
+										
+										    	<xsd:complexContent>
+										
+										    		<xsd:extension base="ms2forms_birthForm:BirthType">
+										
+										    			<xsd:sequence>
+										
+										    							
+										
+										    							<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
+										
+										    								<xsd:annotation>
+										
+										    								    <xsd:documentation xml:lang="en">
+										
+										    										The value of this property is of the class RecordInformation.
+										
+										    								    </xsd:documentation>
+										
+										    								</xsd:annotation>
+										
+										    							</xsd:element>
+										
+										    							
+										
+										    							
+										
+										    							<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+										
+										    								<xsd:annotation>
+										
+										    								    <xsd:documentation xml:lang="en">
+										
+										    										The value of this property is of the class Parent.
+										
+										    								    </xsd:documentation>
+										
+										    								</xsd:annotation>
+										
+										    							</xsd:element>
+										
+										    							
+										
+										    							
+										
+										    							<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+										
+										    								<xsd:annotation>
+										
+										    								    <xsd:documentation xml:lang="en">
+										
+										    										The value of this property is of the class Parent.
+										
+										    								    </xsd:documentation>
+										
+										    								</xsd:annotation>
+										
+										    							</xsd:element>
+										
+										    							
+										
+										    												<xsd:element name="BirthPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+										
+										    												
+										
+										    				
+										
+										    			</xsd:sequence>
+										
+										    		</xsd:extension>
+										
+										    	</xsd:complexContent>
+										
+										    </xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

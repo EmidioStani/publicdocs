@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -41,7 +41,7 @@
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person's absence of a criminal record. 
 				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -49,58 +49,60 @@
 		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
 			<xsd:sequence>
 							
-				<xsd:element name="Recordinformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class RecordInformation.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-									<xsd:element name="Addressee" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
-													
+							<xsd:element name="Recordinformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class RecordInformation.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+												<xsd:element name="Addressee" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
+												
 									<xsd:element name="DateOfTheInformationFromTheRegisterOfSuspects" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
-												
+												This property contains information of type date concerning the date of the information from the register of suspects.
 										    </xsd:documentation>
 										</xsd:annotation>
 									</xsd:element>
 									
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordLithuaniaType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-												
-														Stereotype absenceOfCriminalRecordForm
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:sequence> 
-																<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-															
-														
-														<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
-															<xsd:annotation>
-															    <xsd:documentation xml:lang="en">
-																	The value of this property is of the class AbsenceOfCriminalRecord.
-															    </xsd:documentation>
-															</xsd:annotation>
-														</xsd:element>
-														
-															<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																				<xsd:annotation>
-																				    <xsd:documentation xml:lang="en">
-																						This property can contain any type of information.
-																				    </xsd:documentation>
-																				</xsd:annotation>
-																			</xsd:element>
-																			
-											</xsd:sequence>
-											
-										</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to an absence of criminal record form.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					
+					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class AbsenceOfCriminalRecord.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 06/11/2017 17:41 
+    Generated On: 10/11/2017 16:07 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,319 +33,430 @@
 <xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a document.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="RegisterInfo" type="RegisterInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class RegisterInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="IssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type time concerning the hour of issue of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				<xsd:element name="Kind" minOccurs="1" maxOccurs="1" type="DocumentKindChoiceType">
+				</xsd:element>
+				
+							<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the date of issue of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ReferenceNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the reference number of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="SignatureInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the signature on a document or form.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+		<xsd:extension base="ms2forms_commonPart:SignatureInfoType">
 			<xsd:sequence>
-							
-				<xsd:element name="RegisterInfo" type="RegisterInfoType" minOccurs="1" maxOccurs="1" >
-					<xsd:annotation>
-					    <xsd:documentation xml:lang="en">
-							The value of this property is of the class RegisterInfo.
-					    </xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				
-					<xsd:element name="IssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="FormIssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
-												
+												This property contains information of type time concerning the hour a form was issued.
 										    </xsd:documentation>
 										</xsd:annotation>
 									</xsd:element>
 									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DocumentAttestingToInformationType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a document attesting to information.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="DeathCertificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document is a death certificate.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string containing a document number.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DocumentIssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the issue date of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a form header.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					
+					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DocumentInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+										<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="AuthorityIssuingForm" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="AuthorityIssuingDocument" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+					
+					<xsd:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class SignatureInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="AdministrativeDocumentChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the possible kinds of administrative documents a form can refer to.
+				Stereotype commonPart
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					
+					<xsd:element name="DocumentAttestingToInformation" type="DocumentAttestingToInformationType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class DocumentAttestingToInformation.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					
+					<xsd:element name="CurrentJudicialRecordDatabaseOrArchive" type="CurrentJudicialRecordType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class CurrentJudicialRecord.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="ExtractFromCurrentJudicialDatabase" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document is an extract from the current judicial database.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ExtractFromJudicialArchives" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document is an extract from judicial archives.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="IDInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a person's ID.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+				<xsd:element name="IDType" minOccurs="1" maxOccurs="1" type="IDTypeChoiceType">
+				</xsd:element>
+				
+										<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date about the issue date of an ID.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the document number of an ID.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="IDTypeChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the choice between different kinds of ID a person can have.
+				Stereotype commonPart
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a person's ID is a passport.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="IdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a person's ID is an identity card.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning a person's ID that is neither a passport or an identity card.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="DocumentKindChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the choice between different types of documents.
+				Stereotype commonPart
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+				<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1" type="AdministrativeDocumentChoiceType">
+				</xsd:element>
+				
+					<xsd:element name="DocumentFromCourtOrTribunal" type="ms2forms_commonPart:DocumentFromCourtOrTribunalChoiceType" minOccurs="1" maxOccurs="1"/>
+					
+							<xsd:element name="NotarialAct" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document is a notarial act.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document is an official certificate on a document signed by a person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document has been drawn up by a diplomatic or consular agent.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="PersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+									<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the identity number of a person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ForeignIdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the foreign identity number of a person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="CorrespondingForeignCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="EthnicGroup" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the ethnic group of a person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="CitizenshipCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+												
+							
+							<xsd:element name="InfoOnPersonalID" type="IDInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class IDInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="RegisterInfoType">
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-												
-														Stereotype commonPart
-											    </xsd:documentation>
-											</xsd:annotation>
-											<xsd:sequence> 
-																				<xsd:element name="RegisteringAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																			
-															<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-																			<xsd:element name="RegistryEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																					<xsd:annotation>
-																					    <xsd:documentation xml:lang="en">
-																							
-																					    </xsd:documentation>
-																					</xsd:annotation>
-																				</xsd:element>
-																				
-											</xsd:sequence>
-											
-										</xsd:complexType>
-<xsd:complexType name="SignatureInfoType">
-																						<xsd:annotation>
-																						    <xsd:documentation xml:lang="en">
-																							
-																									Stereotype commonPart
-																						    </xsd:documentation>
-																						</xsd:annotation>
-																						<xsd:complexContent>
-																							<xsd:extension base="ms2forms_commonPart:SignatureInfoType">
-																								<xsd:sequence>
-																													<xsd:element name="FormIssueTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-																											<xsd:annotation>
-																											    <xsd:documentation xml:lang="en">
-																													
-																											    </xsd:documentation>
-																											</xsd:annotation>
-																										</xsd:element>
-																										
-																								</xsd:sequence>
-																							</xsd:extension>
-																						</xsd:complexContent>
-																					</xsd:complexType>
-<xsd:complexType name="PersonType">
-																												<xsd:annotation>
-																												    <xsd:documentation xml:lang="en">
-																													
-																															Stereotype commonPart
-																												    </xsd:documentation>
-																												</xsd:annotation>
-																												<xsd:complexContent>
-																													<xsd:extension base="pdc:PersonType">
-																														<xsd:sequence>
-																																			<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																	<xsd:annotation>
-																																	    <xsd:documentation xml:lang="en">
-																																			
-																																	    </xsd:documentation>
-																																	</xsd:annotation>
-																																</xsd:element>
-																																				<xsd:element name="ForeignIdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																						<xsd:annotation>
-																																						    <xsd:documentation xml:lang="en">
-																																								
-																																						    </xsd:documentation>
-																																						</xsd:annotation>
-																																					</xsd:element>
-																																													<xsd:element name="CorrespondingForeignCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-																																														
-																																										<xsd:element name="EthnicGroup" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																											<xsd:annotation>
-																																											    <xsd:documentation xml:lang="en">
-																																													
-																																											    </xsd:documentation>
-																																											</xsd:annotation>
-																																										</xsd:element>
-																																																		<xsd:element name="CitizenshipCountry" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-																																																			
-																																														
-																																														<xsd:element name="InfoOnPersonalID" type="IDInfoType" minOccurs="1" maxOccurs="1" >
-																																															<xsd:annotation>
-																																															    <xsd:documentation xml:lang="en">
-																																																	The value of this property is of the class IDInfo.
-																																															    </xsd:documentation>
-																																															</xsd:annotation>
-																																														</xsd:element>
-																																														
-																																											
-																														</xsd:sequence>
-																													</xsd:extension>
-																												</xsd:complexContent>
-																											</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a register.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="RegisteringAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the registration date of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="RegistryEntryNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the registry entry number of a document.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="CurrentJudicialRecordType">
-																																																<xsd:annotation>
-																																																    <xsd:documentation xml:lang="en">
-																																																	
-																																																			Stereotype commonPart
-																																																    </xsd:documentation>
-																																																</xsd:annotation>
-																																																<xsd:sequence> 
-																																																					<xsd:element name="PeriodForEachExtract" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																					<xsd:annotation>
-																																																					    <xsd:documentation xml:lang="en">
-																																																							
-																																																					    </xsd:documentation>
-																																																					</xsd:annotation>
-																																																				</xsd:element>
-																																																				
-																																																</xsd:sequence>
-																																																
-																																															</xsd:complexType>
-<xsd:complexType name="FormHeaderType">
-																																																						<xsd:annotation>
-																																																						    <xsd:documentation xml:lang="en">
-																																																							
-																																																									Stereotype commonPart
-																																																						    </xsd:documentation>
-																																																						</xsd:annotation>
-																																																						<xsd:complexContent>
-																																																							<xsd:extension base="ms2forms_commonPart:FormHeaderType">
-																																																								<xsd:sequence>
-																																																												
-																																																									<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
-																																																										<xsd:annotation>
-																																																										    <xsd:documentation xml:lang="en">
-																																																												The value of this property is of the class DocumentInfo.
-																																																										    </xsd:documentation>
-																																																										</xsd:annotation>
-																																																									</xsd:element>
-																																																									
-																																																						
-																																																								</xsd:sequence>
-																																																							</xsd:extension>
-																																																						</xsd:complexContent>
-																																																					</xsd:complexType>
-<xsd:complexType name="AdministrativeDocumentChoiceType">
-																																																											<xsd:annotation>
-																																																											    <xsd:documentation xml:lang="en">
-																																																												
-																																																														Stereotype xsdChoice
-																																																														Stereotype commonPart
-																																																											    </xsd:documentation>
-																																																											</xsd:annotation>
-																																																											<xsd:choice>
-																																																															
-																																																														<xsd:element name="DocumentAttestingToInformation" type="DocumentAttestingToInformationType" minOccurs="1" maxOccurs="1" >
-																																																															<xsd:annotation>
-																																																															    <xsd:documentation xml:lang="en">
-																																																																	
-																																																															    </xsd:documentation>
-																																																															</xsd:annotation>
-																																																														</xsd:element>
-																																																														
-																																																														
-																																																																		<xsd:element name="CurrentJudicialRecordDatabaseOrArchive" type="CurrentJudicialRecordType" minOccurs="1" maxOccurs="1" >
-																																																																			<xsd:annotation>
-																																																																			    <xsd:documentation xml:lang="en">
-																																																																					
-																																																																			    </xsd:documentation>
-																																																																			</xsd:annotation>
-																																																																		</xsd:element>
-																																																																		
-																																																																			<xsd:element name="ExtractFromCurrentJudicialDatabase" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																																																								<xsd:annotation>
-																																																																								    <xsd:documentation xml:lang="en">
-																																																																										
-																																																																								    </xsd:documentation>
-																																																																								</xsd:annotation>
-																																																																							</xsd:element>
-																																																																											<xsd:element name="ExtractFromJudicialArchives" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																																																													<xsd:annotation>
-																																																																													    <xsd:documentation xml:lang="en">
-																																																																															
-																																																																													    </xsd:documentation>
-																																																																													</xsd:annotation>
-																																																																												</xsd:element>
-																																																																												
-																																																											</xsd:choice>
-																																																										</xsd:complexType>
-<xsd:complexType name="DocumentAttestingToInformationType">
-																																																																														<xsd:annotation>
-																																																																														    <xsd:documentation xml:lang="en">
-																																																																															
-																																																																																	Stereotype commonPart
-																																																																														    </xsd:documentation>
-																																																																														</xsd:annotation>
-																																																																														<xsd:sequence> 
-																																																																																			<xsd:element name="DeathCertificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																																																																			<xsd:annotation>
-																																																																																			    <xsd:documentation xml:lang="en">
-																																																																																					
-																																																																																			    </xsd:documentation>
-																																																																																			</xsd:annotation>
-																																																																																		</xsd:element>
-																																																																																						<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																																																								<xsd:annotation>
-																																																																																								    <xsd:documentation xml:lang="en">
-																																																																																										
-																																																																																								    </xsd:documentation>
-																																																																																								</xsd:annotation>
-																																																																																							</xsd:element>
-																																																																																											<xsd:element name="DocumentIssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																																																																																													<xsd:annotation>
-																																																																																													    <xsd:documentation xml:lang="en">
-																																																																																															
-																																																																																													    </xsd:documentation>
-																																																																																													</xsd:annotation>
-																																																																																												</xsd:element>
-																																																																																																				<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																																																																																																					
-																																																																																													
-																																																																														</xsd:sequence>
-																																																																														
-																																																																													</xsd:complexType>
-<xsd:complexType name="IDInfoType">
-																																																																																														<xsd:annotation>
-																																																																																														    <xsd:documentation xml:lang="en">
-																																																																																															
-																																																																																																	Stereotype commonPart
-																																																																																														    </xsd:documentation>
-																																																																																														</xsd:annotation>
-																																																																																														<xsd:sequence> 
-																																																																																																	<xsd:element name="IDType" minOccurs="1" maxOccurs="1" type="IDTypeChoiceType">
-																																																																																																</xsd:element>
-																																																																																																
-																																																																																																						<xsd:element name="IssuingAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-																																																																																																						
-																																																																																																		<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-																																																																																																			<xsd:annotation>
-																																																																																																			    <xsd:documentation xml:lang="en">
-																																																																																																					
-																																																																																																			    </xsd:documentation>
-																																																																																																			</xsd:annotation>
-																																																																																																		</xsd:element>
-																																																																																																						<xsd:element name="DocumentNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																																																																								<xsd:annotation>
-																																																																																																								    <xsd:documentation xml:lang="en">
-																																																																																																										
-																																																																																																								    </xsd:documentation>
-																																																																																																								</xsd:annotation>
-																																																																																																							</xsd:element>
-																																																																																																							
-																																																																																														</xsd:sequence>
-																																																																																														
-																																																																																													</xsd:complexType>
-<xsd:complexType name="IDTypeChoiceType">
-																																																																																																									<xsd:annotation>
-																																																																																																									    <xsd:documentation xml:lang="en">
-																																																																																																										
-																																																																																																												Stereotype xsdChoice
-																																																																																																												Stereotype commonPart
-																																																																																																									    </xsd:documentation>
-																																																																																																									</xsd:annotation>
-																																																																																																									<xsd:choice>
-																																																																																																														<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																																																																																														<xsd:annotation>
-																																																																																																														    <xsd:documentation xml:lang="en">
-																																																																																																																
-																																																																																																														    </xsd:documentation>
-																																																																																																														</xsd:annotation>
-																																																																																																													</xsd:element>
-																																																																																																																	<xsd:element name="IdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-																																																																																																																			<xsd:annotation>
-																																																																																																																			    <xsd:documentation xml:lang="en">
-																																																																																																																					
-																																																																																																																			    </xsd:documentation>
-																																																																																																																			</xsd:annotation>
-																																																																																																																		</xsd:element>
-																																																																																																																						<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																																																																																																																								<xsd:annotation>
-																																																																																																																								    <xsd:documentation xml:lang="en">
-																																																																																																																										
-																																																																																																																								    </xsd:documentation>
-																																																																																																																								</xsd:annotation>
-																																																																																																																							</xsd:element>
-																																																																																																																							
-																																																																																																									</xsd:choice>
-																																																																																																								</xsd:complexType>
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a current judicial record.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="PeriodForEachExtract" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string containing the time period for each extract the document covers.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
