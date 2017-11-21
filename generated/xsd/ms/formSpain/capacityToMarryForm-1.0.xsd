@@ -2,19 +2,15 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSpain-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/spain#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/spain#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_capacityToMarryForm="http://data.europa.eu/edm/1/ns/forms/frmcapacitytomarry#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -37,7 +33,7 @@
 <xsd:complexType name="CapacityToMarryType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person's capacity to marry.
 				Stereotype capacityToMarryForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -47,11 +43,19 @@
 									<xsd:element name="CertificateValidity" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
-												
+												This property contains information of type date concerning the validity of a certificate.
 										    </xsd:documentation>
 										</xsd:annotation>
 									</xsd:element>
 									
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
 			</xsd:sequence>
 		</xsd:extension>
@@ -60,7 +64,7 @@
 <xsd:complexType name="FormCapacityToMarrySpainType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a capacity to marry form.
 				Stereotype capacityToMarryForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -73,7 +77,6 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-					
 					<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
@@ -109,6 +112,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

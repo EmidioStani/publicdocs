@@ -2,19 +2,15 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/finland#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/finland#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -117,6 +113,50 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
+			<xsd:sequence>
+							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DocumentInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="NotMarriedChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -145,51 +185,6 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="FormHeaderType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
-			<xsd:sequence>
-							
-							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DocumentInfo.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-			<xsd:sequence>
-												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -205,6 +200,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

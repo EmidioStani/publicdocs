@@ -2,21 +2,16 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/luxembourg#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/luxembourg#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
-	
 	xmlns:ms2forms_domicileAndOrResidenceForm="http://data.europa.eu/edm/1/ns/forms/frmdomicileandorresidence#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -38,28 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="PreviousAddressType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information about the previous address of a person.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="PreviousAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the period in which the concerned person resided at this address.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="DomicileAndOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -70,7 +43,6 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
 			<xsd:sequence>
-							
 							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -78,7 +50,6 @@
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
-							
 							
 							<xsd:element name="PreviousAddress1" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
@@ -88,7 +59,6 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							
 							<xsd:element name="PreviousAddress2" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -96,7 +66,6 @@
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
-							
 							
 							<xsd:element name="PreviousAddress3" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
@@ -127,6 +96,28 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="PreviousAddressType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about the previous address of a person.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="PreviousAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the period in which the concerned person resided at this address.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="FormDomicileAndOrResidenceLuxembourgType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -137,7 +128,6 @@
 	<xsd:sequence> 
 						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 						
-					
 					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
@@ -173,6 +163,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

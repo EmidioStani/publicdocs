@@ -25,11 +25,14 @@
 = pack.packagedElement->select(oclIsTypeOf(Dependency) and  
   (oclAsType(Dependency).client->any(true) = prop or not prop.owner.oclAsType(Class).general->isEmpty() and oclAsType(Dependency).client->any(true) = prop.getParentProperty()))/]
 
+[query public getGeneralization (prim: PrimitiveType) : Bag(PrimitiveType) 
+= prim.generalization.oclAsType(PrimitiveType)/]
+
 [query public getPropertyDependencies (prop: Property, type : String) : Set(Dependency) 
 = prop.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
 
-[query public getPrimitiveDependencies (prim: PrimitiveType, type : String) : Set(Dependency) 
-= prim.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
+[query public getPrimitiveDependencies (prim: PrimitiveType, type : String, packageName : String) : Set(Dependency) 
+= prim.getModel().getPackageWithName(getNS(packageName)).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
 
 
 [query public getDerivationsOf (model: Model, elt: Element) : Set(Generalization) 

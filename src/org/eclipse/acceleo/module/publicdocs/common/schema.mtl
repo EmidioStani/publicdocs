@@ -12,7 +12,7 @@
 	xmlns="[getURIFromPackName(namespace)/]"
 	[let packages: OrderedSet(String) = (list.tokenize(','))->asOrderedSet()]
 	[for (packName: String | packages)]
-	[debug('EMIDIO package'+packName)/]
+	[comment debug('EMIDIO package'+packName)/]
 	[if packName <> pack.name]
 	[importNamespace(packName)/]
 	[/if]
@@ -38,7 +38,7 @@
 	targetNamespace="[getURIFromPackName(namespace)/]"
 	xmlns="[getURIFromPackName(namespace)/]"
 	[for (packName: String | list.tokenize(',')->asOrderedSet())]
-	[debug('EMIDIO package'+packName)/]
+	[comment debug('EMIDIO package'+packName)/]
 	[if packName <> pack.name]
 	[importNamespace(packName)/]
 	[/if]

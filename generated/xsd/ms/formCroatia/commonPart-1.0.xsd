@@ -2,21 +2,16 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCroatia-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/croatia#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/croatia#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_maritalStatusForm="http://data.europa.eu/edm/1/ns/forms/frmmaritalstatus#"	
-	
 	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -34,31 +29,30 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="FormHeaderType">
+<xsd:complexType name="ParentsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the header of a form.
+		This class contains properties related to a person's parents.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					
-					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class DocumentInfo.
+								The value of this property is that of class Parent.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="NotesCommentsAdditions" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains notes, comments, or other additions of string type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
+					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 		
 	</xsd:sequence>
 	
@@ -97,7 +91,6 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-							
 							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -108,7 +101,6 @@
 							
 												<xsd:element name="HomeAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
 												
-													
 										<xsd:element name="MaritalStatus" type="ms2forms_maritalStatusForm:MaritalStatusType" minOccurs="1" maxOccurs="1"/>
 										
 												<xsd:element name="SpouseOrPartner" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
@@ -206,32 +198,30 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="ParentsType">
+<xsd:complexType name="FormHeaderType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's parents.
+		This class contains properties related to the header of a form.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					
-					<xsd:element name="Father" type="ParentType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Parent.
+								The value of this property is that of class DocumentInfo.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					
-					
-					<xsd:element name="Mother" type="ParentType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Parent.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
+							<xsd:element name="NotesCommentsAdditions" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains notes, comments, or other additions of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 		
 	</xsd:sequence>
 	
@@ -251,6 +241,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

@@ -2,19 +2,15 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/finland#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/finland#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_capacityToMarryForm="http://data.europa.eu/edm/1/ns/forms/frmcapacitytomarry#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -34,7 +30,7 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="ForeignIntendedSpouseType">
+<xsd:complexType name="ExaminationOfImpedimentsToMarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -42,12 +38,26 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="PersonType">
+		<xsd:extension base="pdc:CanMarryType">
 			<xsd:sequence>
-												<xsd:element name="Nationality" type="pdc:NationalityType" minOccurs="1" maxOccurs="1"/>
+									<xsd:element name="ExaminationRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="ExaminationRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 												
-												<xsd:element name="CountryOfResidence" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-												
+									<xsd:element name="ExaminationRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
 				
 			</xsd:sequence>
 		</xsd:extension>
@@ -103,39 +113,6 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="ExaminationOfImpedimentsToMarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype capacityToMarryForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:CanMarryType">
-			<xsd:sequence>
-									<xsd:element name="ExaminationRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-												<xsd:element name="ExaminationRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-												
-									<xsd:element name="ExaminationRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="CapacityToMarryType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -149,7 +126,6 @@
 						<xsd:element name="ForeignIntendedSpouse" minOccurs="1" maxOccurs="1" type="ForeignIntendedSpouseChoiceType">
 						</xsd:element>
 						
-							
 							<xsd:element name="IntendedSpouseA" type="CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -158,7 +134,6 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							
 							<xsd:element name="IntendedSpouseB" type="CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -166,7 +141,6 @@
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
-							
 							
 							<xsd:element name="ExaminationOfImpediments" type="ExaminationOfImpedimentsToMarriageType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
@@ -180,6 +154,53 @@
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ForeignIntendedSpouseType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype capacityToMarryForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+												<xsd:element name="Nationality" type="pdc:NationalityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="CountryOfResidence" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ForeignIntendedSpouseChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype capacityToMarryForm
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="NotForeignIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+					<xsd:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class ForeignIntendedSpouse.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="FormCapacityToMarryFinlandType">
 	<xsd:annotation>
@@ -197,7 +218,6 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-					
 					<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
@@ -218,35 +238,6 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="ForeignIntendedSpouseChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype xsdChoice
-				Stereotype capacityToMarryForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="NotForeignIntendedSpouse" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of boolean type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-					
-					<xsd:element name="ForeignIntendedSpouse" type="ForeignIntendedSpouseType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class ForeignIntendedSpouse.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:choice>
-</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -262,6 +253,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

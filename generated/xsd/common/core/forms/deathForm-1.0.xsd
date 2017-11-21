@@ -2,20 +2,15 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/death#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/death#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
-	
 	xmlns:qdt="http://data.europa.eu/edm/1/ns/qdt"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -51,14 +46,13 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the form Death. 
-				Stereotype xsdGlobalElement
 				Stereotype deathForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
 						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
 						
-					
 					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"/>
 					
 		

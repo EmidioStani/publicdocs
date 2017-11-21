@@ -2,23 +2,17 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/austria#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/austria#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
-	
 	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
-	
 	xmlns:ms2forms_domicileAndOrResidenceForm="http://data.europa.eu/edm/1/ns/forms/frmdomicileandorresidence#"	
-	
 	xmlns:ms2forms_absenceOfCriminalRecordForm="http://data.europa.eu/edm/1/ns/forms/frmabsenceofcriminalrecord#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -42,12 +36,72 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="IDTypeAndNoType">
+<xsd:complexType name="DomicileAndOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
 				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+			<xsd:sequence>
+												<xsd:element name="SecondaryResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="unbounded"/>
+												
+									<xsd:element name="RegisteredSince" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="Academic" type="QualificationType" minOccurs="1" maxOccurs="unbounded">
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Qualification.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>	
+							
+						<xsd:element name="TravelDocument" minOccurs="1" maxOccurs="1" type="TravelDocumentChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FormDomicileAndOrResidenceAustriaType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form DomicileAndOrResidence.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+								<xsd:element name="Body" type="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="IDTypeAndNoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
 				Stereotype xsdChoice
+				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -74,49 +128,12 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="DomicileAndOrResidenceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
-			<xsd:sequence>
-												<xsd:element name="SecondaryResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="unbounded"/>
-												
-									<xsd:element name="RegisteredSince" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-							
-							<xsd:element name="Academic" type="QualificationType" minOccurs="1" maxOccurs="unbounded">
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Qualification.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>	
-							
-						<xsd:element name="TravelDocument" minOccurs="1" maxOccurs="1" type="TravelDocumentChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="TravelDocumentChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the choice of travel document.
-				Stereotype domicileAndOrResidenceForm
 				Stereotype xsdChoice
+				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -134,31 +151,6 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="FormDomicileAndOrResidenceAustriaType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form DomicileAndOrResidence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-											
-								<xsd:element name="Body" type="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
-								
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of any type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
@@ -174,6 +166,4 @@
 			Arne De Proft (arne.de.proft@be.pwc.com)
 -->
 <!-- ===================================================== -->
-
-
 

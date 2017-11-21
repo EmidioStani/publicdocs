@@ -37,7 +37,7 @@ version: String = getVersion('xsd');
 
 [template public generateXSDFiles(model: Model, path : String, pack : Package, suffix : String )]
 [for (form: String | getForms(pack))]
-[debug('EMIDIO extension'+hasFormsExtensions(pack,form))/]
+[comment debug('EMIDIO extension'+hasFormsExtensions(pack,form))/]
 [file (getMSFilenameXSD(path, pack.name, form, suffix, getVersion('xsd_'+pack.name+'_'+form)), false, 'UTF-8')]
 [if not (form.startsWith('commonPart'))]
 [beginSchemaForms('pdc,udt,ext,'+hasCLSDependencies(pack, form)+','+hasFormsDependencies(pack, form)+','+hasFormsExtensions(pack,form),path,suffix, pack, getVersion('xsd_'+pack.name+'_'+form), pack.name)/]
@@ -59,8 +59,8 @@ version: String = getVersion('xsd');
 
 [template public generateStereotypes(pack : Package, form: String)]
 [let pElements : Sequence(Class) = pack.ownedType->asSequence()]
-[debug('EMIDIO print test: ' + pack.name)/]
-[debug('EMIDIO print test: ' + hasStereotypesArneTest2(pack, form))/]
+[comment debug('EMIDIO print test: ' + pack.name)/]
+[comment debug('EMIDIO print test: ' + hasStereotypesArneTest2(pack, form))/]
 [/let]
 [/template]
 

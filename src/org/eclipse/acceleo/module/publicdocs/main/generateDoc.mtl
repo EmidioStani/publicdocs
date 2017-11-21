@@ -167,7 +167,7 @@ h3 i{color: #444;}
 			<div class="contentTables">
 			[if not (getCountriesSeparateXSD('')->includes(pack.oclAsType(Package).name))]
 			[generatePackageDoc(pack.oclAsType(Package), 1)/][else]
-[debug('OtherHTMLGenerated')/]
+[comment debug('OtherHTMLGenerated')/]
 			[generateCommonElementsDoc(pack.oclAsType(Package))/]
 			[for (form: String | (getForms(pack.oclAsType(Package)))->select(f|not f.startsWith('commonPart')))]
 			[let j:Integer = i+1]

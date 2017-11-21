@@ -2,18 +2,14 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 10/11/2017 16:07 
+    Generated On: 21/11/2017 13:22 
 -->
 <!-- ===================================================== -->
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 	xmlns="http://data.europa.eu/edm/1/ns/forms/commonpart#"
-	
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
-	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
-	
 	xmlns:qdt="http://data.europa.eu/edm/1/ns/qdt"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -80,6 +76,106 @@
 	</xsd:choice>
 </xsd:complexType>
 
+<xsd:complexType name="AdministrativeDocumentChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the choice between the different types of administrative documents. 
+				Stereotype commonPart
+				Stereotype xsdChoice
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="Certificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ExtractFromTheCivilStatusRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ExtractFromThePopulationRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="VerbatimCopyOfCivilStatusRecords" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type. 
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form header of a form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="AuthorityIssuingForm" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="AuthorityIssuingDocument" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1"/>
+					
+					<xsd:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1"/>
+					
+							<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+
 <xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -121,293 +217,6 @@
 	
 </xsd:complexType>
 
-<xsd:complexType name="DocumentKindChoiceType">
-								
-								    	<xsd:annotation>
-								
-								    	    <xsd:documentation xml:lang="en">
-								
-								    		This class contains elements related to the choice between different types of documents.
-								
-								    				Stereotype commonPart
-								
-								    				Stereotype xsdChoice
-								
-								    	    </xsd:documentation>
-								
-								    	</xsd:annotation>
-								
-								    	<xsd:choice>
-								
-								    				<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1" type="DocumentFromCourtOrTribunalChoiceType">
-								
-								    				</xsd:element>
-								
-								    				
-								
-								    				<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1" type="AdministrativeDocumentChoiceType">
-								
-								    				</xsd:element>
-								
-								    				
-								
-								    							<xsd:element name="NotarialAct" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    		
-								
-								    	</xsd:choice>
-								
-								    </xsd:complexType>
-								
-								    
-<xsd:complexType name="FormHeaderType">
-								
-								    	<xsd:annotation>
-								
-								    	    <xsd:documentation xml:lang="en">
-								
-								    		This class contains elements related to the form header of a form.
-								
-								    				Stereotype commonPart
-								
-								    	    </xsd:documentation>
-								
-								    	</xsd:annotation>
-								
-								    	<xsd:sequence> 
-								
-								    										<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-								
-								    										
-								
-								    										<xsd:element name="AuthorityIssuingForm" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-								
-								    										
-								
-								    										<xsd:element name="AuthorityIssuingDocument" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-								
-								    										
-								
-								    					
-								
-								    					<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1"/>
-								
-								    					
-								
-								    					
-								
-								    					<xsd:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1"/>
-								
-								    					
-								
-								    							<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of string type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of string type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of string type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    		
-								
-								    	</xsd:sequence>
-								
-								    	
-								
-								    </xsd:complexType>
-								
-								    
-<xsd:complexType name="AdministrativeDocumentChoiceType">
-								
-								    	<xsd:annotation>
-								
-								    	    <xsd:documentation xml:lang="en">
-								
-								    		This class contains elements related to the choice between the different types of administrative documents. 
-								
-								    				Stereotype commonPart
-								
-								    				Stereotype xsdChoice
-								
-								    	    </xsd:documentation>
-								
-								    	</xsd:annotation>
-								
-								    	<xsd:choice>
-								
-								    							<xsd:element name="Certificate" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="ExtractFromTheCivilStatusRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="ExtractFromThePopulationRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="VerbatimCopyOfCivilStatusRecords" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of boolean type.
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    							<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    								<xsd:annotation>
-								
-								    								    <xsd:documentation xml:lang="en">
-								
-								    										The value of this property is of string type. 
-								
-								    								    </xsd:documentation>
-								
-								    								</xsd:annotation>
-								
-								    							</xsd:element>
-								
-								    							
-								
-								    		
-								
-								    	</xsd:choice>
-								
-								    </xsd:complexType>
-								
-								    
 <xsd:complexType name="SignatureInfoType">
 								
 								    	<xsd:annotation>
@@ -509,6 +318,91 @@
 								    	</xsd:sequence>
 								
 								    	
+								
+								    </xsd:complexType>
+								
+								    
+<xsd:complexType name="DocumentKindChoiceType">
+								
+								    	<xsd:annotation>
+								
+								    	    <xsd:documentation xml:lang="en">
+								
+								    		This class contains elements related to the choice between different types of documents.
+								
+								    				Stereotype commonPart
+								
+								    				Stereotype xsdChoice
+								
+								    	    </xsd:documentation>
+								
+								    	</xsd:annotation>
+								
+								    	<xsd:choice>
+								
+								    				<xsd:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1" type="DocumentFromCourtOrTribunalChoiceType">
+								
+								    				</xsd:element>
+								
+								    				
+								
+								    				<xsd:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1" type="AdministrativeDocumentChoiceType">
+								
+								    				</xsd:element>
+								
+								    				
+								
+								    							<xsd:element name="NotarialAct" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xsd:annotation>
+								
+								    								    <xsd:documentation xml:lang="en">
+								
+								    										The value of this property is of boolean type.
+								
+								    								    </xsd:documentation>
+								
+								    								</xsd:annotation>
+								
+								    							</xsd:element>
+								
+								    							
+								
+								    							<xsd:element name="OfficialCertificateOnDocumentSignedByPerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xsd:annotation>
+								
+								    								    <xsd:documentation xml:lang="en">
+								
+								    										The value of this property is of boolean type.
+								
+								    								    </xsd:documentation>
+								
+								    								</xsd:annotation>
+								
+								    							</xsd:element>
+								
+								    							
+								
+								    							<xsd:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    								<xsd:annotation>
+								
+								    								    <xsd:documentation xml:lang="en">
+								
+								    										The value of this property is of boolean type.
+								
+								    								    </xsd:documentation>
+								
+								    								</xsd:annotation>
+								
+								    							</xsd:element>
+								
+								    							
+								
+								    		
+								
+								    	</xsd:choice>
 								
 								    </xsd:complexType>
 </xsd:schema>

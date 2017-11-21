@@ -2,9 +2,7 @@
 <xsd:schema
 	targetNamespace="http://data.europa.eu/edm/1/ns/pdc"
 	xmlns="http://data.europa.eu/edm/1/ns/pdc"
-	
 	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
-	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -31,15 +29,6 @@
 	</xsd:complexType>
 	
 	<xsd:complexType name="AddressPlaceType">
-		<xsd:simpleContent>
-			<xsd:restriction base="cvb:AddressPostNameType">
-				<xsd:minLength value="0"  />
-				<xsd:maxLength value="255" />
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	
-	<xsd:complexType name="AddressPostalCodeType">
 		<xsd:simpleContent>
 			<xsd:restriction base="cvb:AddressPostNameType">
 				<xsd:minLength value="0"  />
