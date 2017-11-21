@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -37,8 +37,8 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains information about the status of the concerned registered partnership.
-				Stereotype registeredPartnershipStatusForm
 				Stereotype xsdChoice
+				Stereotype registeredPartnershipStatusForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -68,6 +68,36 @@
 							
 		
 	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="FormRegisteredPartnershipStatusLuxembourgType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype registeredPartnershipStatusForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					<xsd:element name="Body" type="RegisteredPartnershipStatusType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class RegisteredPartnershipStatus.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 <xsd:complexType name="RegisteredPartnershipStatusType">
 	<xsd:annotation>
@@ -110,36 +140,6 @@
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="FormRegisteredPartnershipStatusLuxembourgType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype registeredPartnershipStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="RegisteredPartnershipStatusType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class RegisteredPartnershipStatus.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property can contain any type of information.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
 </xsd:complexType>
 </xsd:schema>
 

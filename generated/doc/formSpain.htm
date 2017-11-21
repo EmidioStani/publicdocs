@@ -184,29 +184,29 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/spain#">formSpain</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/pdc">pdc</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/qdt">qdt</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovenia#">formSlovenia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/ireland#">formIreland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/spain#">formSpain</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/ireland#">formIreland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/qdt">qdt</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
 				</section>
@@ -319,7 +319,35 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FormBirthSpain">5.3.2 Class FormBirthSpain
+									<h5 id="BirthPerson">5.3.2 Class BirthPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains properties related to a person being born.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TimeOfBirth</td>
+												<td>This property contains information of type time concerning the time of a person's birth.</td>
+												<td>1..1</td>
+												<td>udt:TimeType</td>
+											</tr>
+											<tr>
+												<td>MarriageOfParents</td>
+												<td>The value of this property is of the class Marriage.</td>
+												<td>1..1</td>
+												<td>forms:Marriage</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FormBirthSpain">5.3.3 Class FormBirthSpain
 									
 									</h5>
 									<p><b>Definition:</b>This class contains properties related to a birth form.</p>
@@ -350,34 +378,6 @@
 												<td>This property can contain any type of information. </td>
 												<td>0..1</td>
 												<td>ext:UBLExtensionsType</td>
-											</tr>
-										</tbody>
-									</table>
-									<h5 id="BirthPerson">5.3.3 Class BirthPerson
-									
-									</h5>
-									<p><b>Definition:</b>This class contains properties related to a person being born.</p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>TimeOfBirth</td>
-												<td>This property contains information of type time concerning the time of a person's birth.</td>
-												<td>1..1</td>
-												<td>udt:TimeType</td>
-											</tr>
-											<tr>
-												<td>MarriageOfParents</td>
-												<td>The value of this property is of the class Marriage.</td>
-												<td>1..1</td>
-												<td>forms:Marriage</td>
 											</tr>
 										</tbody>
 									</table>
@@ -445,29 +445,7 @@
 													</tbody>
 												</table>
 													<h4 id="deathForm">5.5 Form deathForm</h4>
-															<h5 id="Death">5.5.1 Class Death
-															
-															</h5>
-															<p><b>Definition:</b>This class contains properties related to information about a person's death.</p>
-															<table class="generatedTable table table-striped table-bordered">
-																<thead>
-																	<tr>
-																		<th>Property Name</th>
-																		<th>Definition</th>
-																		<th>Cardinality</th>
-																		<th>Data Type</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Person</td>
-																		<td>The value of this property is of the class DeathPerson.</td>
-																		<td>1..1</td>
-																		<td>formSpain:DeathPerson</td>
-																	</tr>
-																</tbody>
-															</table>
-															<h5 id="FormDeathSpain">5.5.2 Class FormDeathSpain
+															<h5 id="FormDeathSpain">5.5.1 Class FormDeathSpain
 															
 															</h5>
 															<p><b>Definition:</b>This class contains properties related to a life form.</p>
@@ -498,6 +476,28 @@
 																		<td>This property can contain any type of information. </td>
 																		<td>0..1</td>
 																		<td>ext:UBLExtensionsType</td>
+																	</tr>
+																</tbody>
+															</table>
+															<h5 id="Death">5.5.2 Class Death
+															
+															</h5>
+															<p><b>Definition:</b>This class contains properties related to information about a person's death.</p>
+															<table class="generatedTable table table-striped table-bordered">
+																<thead>
+																	<tr>
+																		<th>Property Name</th>
+																		<th>Definition</th>
+																		<th>Cardinality</th>
+																		<th>Data Type</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Person</td>
+																		<td>The value of this property is of the class DeathPerson.</td>
+																		<td>1..1</td>
+																		<td>formSpain:DeathPerson</td>
 																	</tr>
 																</tbody>
 															</table>
@@ -571,7 +571,29 @@
 																			</tbody>
 																		</table>
 																			<h4 id="maritalStatusForm">5.7 Form maritalStatusForm</h4>
-																					<h5 id="FormMaritalStatusSpain">5.7.1 Class FormMaritalStatusSpain
+																					<h5 id="MaritalStatus">5.7.1 Class MaritalStatus
+																					
+																					</h5>
+																					<p><b>Definition:</b>This class contains properties related to a person's marital status.</p>
+																					<table class="generatedTable table table-striped table-bordered">
+																						<thead>
+																							<tr>
+																								<th>Property Name</th>
+																								<th>Definition</th>
+																								<th>Cardinality</th>
+																								<th>Data Type</th>
+																							</tr>
+																						</thead>
+																						<tbody>
+																							<tr>
+																								<td>Person</td>
+																								<td>The value of this property is that of class Person.</td>
+																								<td>1..1</td>
+																								<td>formSpain:Person</td>
+																							</tr>
+																						</tbody>
+																					</table>
+																					<h5 id="FormMaritalStatusSpain">5.7.2 Class FormMaritalStatusSpain
 																					
 																					</h5>
 																					<p><b>Definition:</b>This class contains properties related to a marital status form.</p>
@@ -605,58 +627,8 @@
 																							</tr>
 																						</tbody>
 																					</table>
-																					<h5 id="MaritalStatus">5.7.2 Class MaritalStatus
-																					
-																					</h5>
-																					<p><b>Definition:</b>This class contains properties related to a person's marital status.</p>
-																					<table class="generatedTable table table-striped table-bordered">
-																						<thead>
-																							<tr>
-																								<th>Property Name</th>
-																								<th>Definition</th>
-																								<th>Cardinality</th>
-																								<th>Data Type</th>
-																							</tr>
-																						</thead>
-																						<tbody>
-																							<tr>
-																								<td>Person</td>
-																								<td>The value of this property is that of class Person.</td>
-																								<td>1..1</td>
-																								<td>formSpain:Person</td>
-																							</tr>
-																						</tbody>
-																					</table>
 																						<h4 id="marriageForm">5.8 Form marriageForm</h4>
-																								<h5 id="Marriage">5.8.1 Class Marriage
-																								
-																								</h5>
-																								<p><b>Definition:</b>This class contains properties related to information about a marriage.</p>
-																								<table class="generatedTable table table-striped table-bordered">
-																									<thead>
-																										<tr>
-																											<th>Property Name</th>
-																											<th>Definition</th>
-																											<th>Cardinality</th>
-																											<th>Data Type</th>
-																										</tr>
-																									</thead>
-																									<tbody>
-																										<tr>
-																											<td>TimeOfMarriage</td>
-																											<td></td>
-																											<td>1..1</td>
-																											<td>udt:TimeType</td>
-																										</tr>
-																										<tr>
-																											<td>Person</td>
-																											<td>The value of this property is that of class Person.</td>
-																											<td>1..1</td>
-																											<td>formSpain:Person</td>
-																										</tr>
-																									</tbody>
-																								</table>
-																								<h5 id="FormMarriageSpain">5.8.2 Class FormMarriageSpain
+																								<h5 id="FormMarriageSpain">5.8.1 Class FormMarriageSpain
 																								
 																								</h5>
 																								<p><b>Definition:</b>This class contains properties related to a marriage form.</p>
@@ -687,6 +659,34 @@
 																											<td>This property can contain any type of information.</td>
 																											<td>1..1</td>
 																											<td>ext:UBLExtensionsType</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																								<h5 id="Marriage">5.8.2 Class Marriage
+																								
+																								</h5>
+																								<p><b>Definition:</b>This class contains properties related to information about a marriage.</p>
+																								<table class="generatedTable table table-striped table-bordered">
+																									<thead>
+																										<tr>
+																											<th>Property Name</th>
+																											<th>Definition</th>
+																											<th>Cardinality</th>
+																											<th>Data Type</th>
+																										</tr>
+																									</thead>
+																									<tbody>
+																										<tr>
+																											<td>TimeOfMarriage</td>
+																											<td></td>
+																											<td>1..1</td>
+																											<td>udt:TimeType</td>
+																										</tr>
+																										<tr>
+																											<td>Person</td>
+																											<td>The value of this property is that of class Person.</td>
+																											<td>1..1</td>
+																											<td>formSpain:Person</td>
 																										</tr>
 																									</tbody>
 																								</table>

@@ -123,20 +123,19 @@ maxLength			 : String		= class.name.substring(class.name.index(getRestriction('M
 classname			 : String		= class.name.substring(1, class.name.size()-(('MaxLength'.concat(maxLength)).size()));
 suffix				 : String 		= getSuffix('complexType');
 }]
-[comment put the two functions as 'variables' and adapt the code from simpletype to complex/]
-[debug('CLASSNAME: ' + classname +' ' + class.name.size() + ' ' + ('MaxLength'.concat(maxLength)).size() + ' ' + maxLength)/]
+
 [if classname = 'String']
-[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
-
-		[generateElementWithUnqualifiedDataTypes2(base, suffix, maxLength, class.name)/]
-
-[/for]
+	[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
+			[debug('arne123 ') + base.name + ' ' + suffix + ' ' + maxLength + ' ' + class.name/]
+			[generateElementWithUnqualifiedDataTypes2(base, suffix, maxLength, class.name)/]
+	
+	[/for]
 [else]
-[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
-
-		[generateElementWithUnqualifiedDataTypes3(base, suffix, class.name, maxLength)/]
-
-[/for]
+	[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
+	
+			[generateElementWithUnqualifiedDataTypes3(base, suffix, class.name, maxLength)/]
+	
+	[/for]
 [/if]
 
 [/template]

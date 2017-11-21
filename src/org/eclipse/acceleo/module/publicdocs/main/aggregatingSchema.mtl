@@ -36,7 +36,7 @@ version: String = getVersion('xsd');
 
 [comment NDR Values: commentsOnly, useCoreVocsTypes, useCoreVocsElements, restrictCoreVocsTypes /]
 [template public generateType(class : Class) { 
-NDR : String = getNDR('usecorevocselements');
+NDR : String = getNDR('usecorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
 [if not isLocal(class)]
 [comment][debug('PDC: Global classes: '+class.name)/][/comment]

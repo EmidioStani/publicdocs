@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,30 +33,12 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="AbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
-			<xsd:sequence>
-						<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="TypeOfExtractChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
-				Stereotype absenceOfCriminalRecordForm
 				Stereotype xsdChoice
+				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -86,6 +68,24 @@
 							
 		
 	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="AbsenceOfCriminalRecordType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
+			<xsd:sequence>
+						<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordBelgiumType">
 	<xsd:annotation>

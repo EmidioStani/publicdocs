@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSpain-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,6 +30,26 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="MaritalStatusType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's marital status.
+				Stereotype maritalStatusForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="FormMaritalStatusSpainType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -56,26 +76,6 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="MaritalStatusType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's marital status.
-				Stereotype maritalStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
 		
 	</xsd:sequence>
 	

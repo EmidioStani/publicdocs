@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -51,93 +51,15 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="DissolvedType">
+<xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains information about the last marriage or registered partnership of the person concerned by the form.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="DissolvedBy" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="DissolvedOn" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="DissolvedIn" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="QualificationType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
+		This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="pdc:PersonType">
-			<xsd:sequence>
-									<xsd:element name="AcademicTitlePrefix" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="AcademicTitleSuffix" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MaritalStatusType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
-			<xsd:sequence>
-							<xsd:element name="MoreInfo" type="MoreInfoType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class MoreInfo.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MoreInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the former spouse or partner of the person concerned by the form.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:PersonType">
+		<xsd:extension base="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType">
 			<xsd:sequence>
 									<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 										<xsd:annotation>
@@ -209,32 +131,48 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
+<xsd:complexType name="DissolvedType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
+		This class contains information about the last marriage or registered partnership of the person concerned by the form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="DissolvedBy" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DissolvedOn" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="DissolvedIn" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="MaritalStatusType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType">
+		<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
 			<xsd:sequence>
-									<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="AcademicQualificationsOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+							<xsd:element name="MoreInfo" type="MoreInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class MoreInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
 			</xsd:sequence>
 		</xsd:extension>
@@ -261,6 +199,68 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="MoreInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the former spouse or partner of the person concerned by the form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+									<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="AcademicQualificationsOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="QualificationType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+									<xsd:element name="AcademicTitlePrefix" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="AcademicTitleSuffix" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

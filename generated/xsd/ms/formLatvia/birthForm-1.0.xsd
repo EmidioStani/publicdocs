@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -51,42 +51,6 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="FormBirthLatviaType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a birth form.
-				Stereotype birthForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of the class FormHeader.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Birth.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of any type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
 		
 	</xsd:sequence>
 	
@@ -170,6 +134,77 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="FormBirthLatviaType">
+	
+					<xsd:annotation>
+	
+					    <xsd:documentation xml:lang="en">
+	
+						This class contains properties related to a birth form.
+	
+								Stereotype birthForm
+	
+					    </xsd:documentation>
+	
+					</xsd:annotation>
+	
+					<xsd:sequence> 
+	
+													<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+	
+														<xsd:annotation>
+	
+														    <xsd:documentation xml:lang="en">
+	
+																The value of this property is of the class FormHeader.
+	
+														    </xsd:documentation>
+	
+														</xsd:annotation>
+	
+													</xsd:element>
+	
+													
+	
+									<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
+	
+										<xsd:annotation>
+	
+										    <xsd:documentation xml:lang="en">
+	
+												The value of this property is of the class Birth.
+	
+										    </xsd:documentation>
+	
+										</xsd:annotation>
+	
+									</xsd:element>
+	
+									
+	
+											<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+	
+												<xsd:annotation>
+	
+												    <xsd:documentation xml:lang="en">
+	
+														The value of this property is of any type.
+	
+												    </xsd:documentation>
+	
+												</xsd:annotation>
+	
+											</xsd:element>
+	
+											
+	
+						
+	
+					</xsd:sequence>
+	
+					
+	
+				</xsd:complexType>
 <xsd:complexType name="BirthType">
 	
 					<xsd:annotation>

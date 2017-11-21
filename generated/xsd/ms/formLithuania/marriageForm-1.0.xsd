@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,36 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="SpouseType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a spouse.
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type string concerning the personal identification code of a person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="Citizenship" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type string concerning the citizenship of a spouse.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="Spouse" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="FormMarriageLithuaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -89,6 +59,36 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="SpouseType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a spouse.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="PersonalIdentificationCode" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the personal identification code of a person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Citizenship" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type string concerning the citizenship of a spouse.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="Spouse" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+										
 		
 	</xsd:sequence>
 	

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formRomania-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,47 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="MarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to a marriage.
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_marriageForm:MarriageType">
-			<xsd:sequence>
-							<xsd:element name="SpouseA" type="MarriagePersonType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class MarriagePerson.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="SpouseB" type="MarriagePersonType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class MarriagePerson.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-									<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-												<xsd:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormMarriageRomaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -122,6 +81,47 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="MarriageType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to a marriage.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_marriageForm:MarriageType">
+			<xsd:sequence>
+							<xsd:element name="SpouseA" type="MarriagePersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class MarriagePerson.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="SpouseB" type="MarriagePersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class MarriagePerson.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
 				
 			</xsd:sequence>
 		</xsd:extension>

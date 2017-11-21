@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCroatia-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -27,6 +27,26 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="BirthType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties about the birth of a person.
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="Person" type="BirthPersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class BirthPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="BirthPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -53,26 +73,6 @@
 	</xsd:complexContent>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="BirthType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties about the birth of a person.
-				Stereotype birthForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="Person" type="BirthPersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class BirthPerson.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:sequence>
-	
 </xsd:complexType>
 <xsd:complexType name="FormBirthCroatiaType">
 	<xsd:annotation>

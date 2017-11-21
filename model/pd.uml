@@ -1409,6 +1409,7 @@
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_2VwlsM6lEee6huR033F8oA" name="PersonLocation"/>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3Pm-0M6lEee6huR033F8oA" name="PersonJurisdiction"/>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3kVRoM6lEee6huR033F8oA" name="PersonName"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_lpK9sM7TEeepU5KzNNb-YA" name="LocationGeographicID"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_WkhVYPKuEeatr5gJywHJYg" name="ext" URI="">
       <packagedElement xmi:type="uml:Class" xmi:id="_vYpWUPKuEeatr5gJywHJYg" name="UBLExtensionsType"/>
@@ -7054,68 +7055,63 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_6z-SQMoXEeeYZLeI7w8Esg" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_qGXfYM6fEee6huR033F8oA" name="PersonForenameMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_qGXfYc6fEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_XShMkM6kEee6huR033F8oA" general="_A3wPsM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rbv98M6fEee6huR033F8oA" name="AddressPlaceOfBirthMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_rbv98c6fEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_Vx0O0M6kEee6huR033F8oA" general="_ByfZoM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_sJ42UM6fEee6huR033F8oA" name="PersonSurnameAtBirthMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_sJ42Uc6fEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_iuiugM6lEee6huR033F8oA" general="_32ZugM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_2xhRcM6hEee6huR033F8oA" name="AddressPlaceOfDeathMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_2xhRcc6hEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_ZvHK0M6kEee6huR033F8oA" general="_BfPtgM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3c1fUM6hEee6huR033F8oA" name="AddressStreetPOBoxMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_3c2GYM6hEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_kPPsQM6lEee6huR033F8oA" general="_4PRhgM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_33CIAM6hEee6huR033F8oA" name="AddressAddressCountryhMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_33CIAc6hEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_m5Aj0M6lEee6huR033F8oA" general="_4lVREM6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_5ingEM6hEee6huR033F8oA" name="PersonDesignationMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_5ingEc6hEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_IZ3EUM6mEee6huR033F8oA" general="_02rYkM6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_QaP_IM6iEee6huR033F8oA" name="AddressCountryOfDeathMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_QaP_Ic6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_o1xLcM6lEee6huR033F8oA" general="_6IV78M6kEee6huR033F8oA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Qz4AEM6iEee6huR033F8oA" name="AddressAddressPlaceMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_Qz4AEc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Qz4AEM6iEee6huR033F8oA" name="AddressPlaceMaxLength65535">
         <generalization xmi:type="uml:Generalization" xmi:id="_Jp_2gM6mEee6huR033F8oA" general="_1PIU0M6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_RIV0MM6iEee6huR033F8oA" name="AddressPostalCodeMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_RIV0Mc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_LCaa8M6mEee6huR033F8oA" general="_1PIU0M6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ehfmoM6iEee6huR033F8oA" name="PersonPlaceMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_ehfmoc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_V0k9AM6mEee6huR033F8oA" general="_2VwlsM6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_e20WYM6iEee6huR033F8oA" name="LocationPlaceNameMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_e20WYc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_YQVNwM6mEee6huR033F8oA" general="_6IV78M6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_fLj3UM6iEee6huR033F8oA" name="LocationCountrynameMaxLength65535">
-        <generalization xmi:type="uml:Generalization" xmi:id="_fLj3Uc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_f0aqQM6mEee6huR033F8oA" general="_6IV78M6kEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_fcq1cM6iEee6huR033F8oA" name="PersonNationalityNameMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_fcq1cc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_iYVYgM6mEee6huR033F8oA" general="_3kVRoM6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_fuXpcM6iEee6huR033F8oA" name="PersonNationalityMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_fuXpcc6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_Ud-9gM6mEee6huR033F8oA" general="_3Pm-0M6lEee6huR033F8oA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_gBzi0M6iEee6huR033F8oA" name="PersonPersonNationalityMaxLength255">
-        <generalization xmi:type="uml:Generalization" xmi:id="_gBzi0c6iEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_dinmwM6mEee6huR033F8oA" general="_3kVRoM6lEee6huR033F8oA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_F9JQ0M7TEeepU5KzNNb-YA" name="Location">
+        <generalization xmi:type="uml:Generalization" xmi:id="_PcBmEM7TEeepU5KzNNb-YA" general="_cPmU0Jn5EeahIo2b8TyqvQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LfZ_gM7TEeepU5KzNNb-YA" name="GeographicID" type="_lpK9sM7TEeepU5KzNNb-YA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MvJwIM7TEeepU5KzNNb-YA" name="GeographicName" type="_6IV78M6kEee6huR033F8oA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_VrKo4M7TEeepU5KzNNb-YA" name="GeographicIDMaxLength65535">
+        <generalization xmi:type="uml:Generalization" xmi:id="_pHWUwM7TEeepU5KzNNb-YA" general="_lpK9sM7TEeepU5KzNNb-YA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_apMCEM7TEeepU5KzNNb-YA" name="GeographicNameMaxLength65535">
+        <generalization xmi:type="uml:Generalization" xmi:id="_gjOXkM7TEeepU5KzNNb-YA" general="_6IV78M6kEee6huR033F8oA"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_S34kcKRLEeewNp6klooYAA" name="formNetherlands" URI="">
@@ -10136,10 +10132,7 @@ The public document to which this form is attached is automatically generated wi
         </ownedAttribute>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_4mWsIM6hEee6huR033F8oA" name="PersonPlaceOfBirthMaxLength65535">
-      <generalization xmi:type="uml:Generalization" xmi:id="_4mWsIc6hEee6huR033F8oA" general="_8kLhEMoWEeeYZLeI7w8Esg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3YecYM6kEee6huR033F8oA" name="PersonGivenName"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_C1sXsM7TEeepU5KzNNb-YA" name="Interface1"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pL3jgLJOEeacavyzYL89Ug">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kPZEgKgJEeeudazmj8q9YA" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kPZEgagJEeeudazmj8q9YA" key="Version" value="0.0.12"/>

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSpain-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -53,6 +53,31 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
+<xsd:complexType name="BirthPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person being born.
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:BirthPersonType">
+			<xsd:sequence>
+									<xsd:element name="TimeOfBirth" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type time concerning the time of a person's birth.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+										<xsd:element name="MarriageOfParents" type="ms2forms_marriageForm:MarriageType" minOccurs="1" maxOccurs="1"/>
+										
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="FormBirthSpainType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -82,31 +107,6 @@
 		
 	</xsd:sequence>
 	
-</xsd:complexType>
-<xsd:complexType name="BirthPersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person being born.
-				Stereotype birthForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:BirthPersonType">
-			<xsd:sequence>
-									<xsd:element name="TimeOfBirth" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type time concerning the time of a person's birth.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-										<xsd:element name="MarriageOfParents" type="ms2forms_marriageForm:MarriageType" minOccurs="1" maxOccurs="1"/>
-										
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

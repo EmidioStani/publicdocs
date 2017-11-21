@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 21/11/2017 13:22 
+    Generated On: 21/11/2017 16:51 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,6 +32,50 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="PartnershipAmendmentsAndSubsequentEntriesType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype xsdChoice
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="DateRegisteredPartnershipConvertedIntoMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateRegisteredPartnershipEnded" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateRegisteredPartnershipDissolved" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateRegisteredPartnershipAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="FormRegisteredPartnershipNetherlandsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -79,50 +123,6 @@
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="PartnershipAmendmentsAndSubsequentEntriesType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype registeredPartnershipForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DateRegisteredPartnershipConvertedIntoMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateRegisteredPartnershipEnded" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateRegisteredPartnershipDissolved" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateRegisteredPartnershipAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>
 

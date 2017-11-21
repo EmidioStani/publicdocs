@@ -19,57 +19,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="AddressAddressCountryhMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressAdminUnitLocationOneType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="AddressAddressCountryhMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-	
-	
-	
-	
-	
-	<!-- ============================================================ -->
-	<!-- AddressAddressPlaceMaxLength65535-->
-	<!-- ============================================================ -->
-	
-	
-	
-			<xsd:complexType name="AddressAddressPlaceMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="AddressAddressPlaceMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressPostNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="AddressAddressCountryhMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressAdminUnitLocationOneType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -81,26 +40,37 @@
 	<!-- ============================================================ -->
 	
 	
+		
+				<xsd:complexType name="AddressCountryOfDeathMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:LocationGeographicNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
-			<xsd:complexType name="AddressCountryOfDeathMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
 	
 	
-			<xsd:complexType name="AddressCountryOfDeathMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:LocationGeographicNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
 	
+	
+	
+	<!-- ============================================================ -->
+	<!-- AddressPlaceMaxLength65535-->
+	<!-- ============================================================ -->
+	
+	
+		
+				<xsd:complexType name="AddressPlaceMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressPostNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -112,26 +82,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="AddressPlaceOfBirthMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="AddressPlaceOfBirthMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressPlaceOfBirthType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="AddressPlaceOfBirthMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressPlaceOfBirthType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -143,26 +103,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="AddressPlaceOfDeathMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="AddressPlaceOfDeathMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressPlaceOfDeathType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="AddressPlaceOfDeathMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressPlaceOfDeathType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -174,26 +124,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="AddressPostalCodeMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="AddressPostalCodeMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressPostNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="AddressPostalCodeMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressPostNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -205,26 +145,58 @@
 	<!-- ============================================================ -->
 	
 	
+		
+				<xsd:complexType name="AddressStreetPOBoxMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:AddressThoroughfareType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
-			<xsd:complexType name="AddressStreetPOBoxMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
 	
 	
-			<xsd:complexType name="AddressStreetPOBoxMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:AddressThoroughfareType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
 	
+	
+	
+	<!-- ============================================================ -->
+	<!-- GeographicIDMaxLength65535-->
+	<!-- ============================================================ -->
+	
+	
+		
+				<xsd:complexType name="GeographicIDMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:LocationGeographicIDType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
+	
+	
+	
+	
+	
+	
+	<!-- ============================================================ -->
+	<!-- GeographicNameMaxLength65535-->
+	<!-- ============================================================ -->
+	
+	
+		
+				<xsd:complexType name="GeographicNameMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:LocationGeographicNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -236,26 +208,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="LocationCountrynameMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="LocationCountrynameMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:LocationGeographicNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="LocationCountrynameMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:LocationGeographicNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -267,26 +229,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="LocationPlaceNameMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="LocationPlaceNameMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:LocationGeographicNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="LocationPlaceNameMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:LocationGeographicNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -298,26 +250,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonDesignationMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonDesignationMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonLegalNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonDesignationMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonLegalNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -329,26 +271,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonForenameMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonForenameMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonGivenNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonForenameMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonGivenNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -360,26 +292,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonNationalityMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonNationalityMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonJurisdictionType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonNationalityMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonJurisdictionType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -391,26 +313,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonNationalityNameMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonNationalityNameMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonNationalityNameMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -422,26 +334,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonPersonNationalityMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonPersonNationalityMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonPersonNationalityMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -453,26 +355,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonPlaceMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonLocationType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonPlaceMaxLength65535Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="65535" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonPlaceMaxLength65535Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonLocationType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="65535" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -484,26 +376,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonSurnameAtBirthMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
-	
-			<xsd:complexType name="PersonSurnameAtBirthMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonBirthNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonSurnameAtBirthMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonBirthNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -515,16 +397,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="PersonSurnameMaxLength255Type">
-				<xsd:simpleContent>
-						<xsd:restriction base="cvb:PersonFamilyNameType">
-						<xsd:minLength value="0"  />
-						<xsd:maxLength value="255" />
-					</xsd:restriction>
-				</xsd:simpleContent>
-			</xsd:complexType>
-	
+		
+				<xsd:complexType name="PersonSurnameMaxLength255Type">
+					<xsd:simpleContent>
+							<xsd:restriction base="cvb:PersonFamilyNameType">
+							<xsd:minLength value="0"  />
+							<xsd:maxLength value="255" />
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+		
 	
 	
 	
@@ -536,16 +418,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="StringMaxLength255Type">
-						<xsd:simpleContent>
-								<xsd:restriction base="udt:TextType">
-								<xsd:minLength value="0"  />
-								<xsd:maxLength value="255" />
-							</xsd:restriction>
-						</xsd:simpleContent>
-					</xsd:complexType>
-	
+				string Type 255 StringMaxLength255
+				<xsd:complexType name="StringMaxLength255Type">
+							<xsd:simpleContent>
+									<xsd:restriction base="udt:TextType">
+									<xsd:minLength value="0"  />
+									<xsd:maxLength value="255" />
+								</xsd:restriction>
+							</xsd:simpleContent>
+						</xsd:complexType>
+		
 	
 	
 	
@@ -557,16 +439,16 @@
 	<!-- ============================================================ -->
 	
 	
-	
-			<xsd:complexType name="StringMaxLength50Type">
-						<xsd:simpleContent>
-								<xsd:restriction base="udt:TextType">
-								<xsd:minLength value="0"  />
-								<xsd:maxLength value="50" />
-							</xsd:restriction>
-						</xsd:simpleContent>
-					</xsd:complexType>
-	
+				string Type 50 StringMaxLength50
+				<xsd:complexType name="StringMaxLength50Type">
+							<xsd:simpleContent>
+									<xsd:restriction base="udt:TextType">
+									<xsd:minLength value="0"  />
+									<xsd:maxLength value="50" />
+								</xsd:restriction>
+							</xsd:simpleContent>
+						</xsd:complexType>
+		
 	
 	
 	
@@ -612,6 +494,15 @@
 	
 	<!-- ============================================================ -->
 	<!-- AddressThoroughfare-->
+	<!-- ============================================================ -->
+	
+	
+	
+	
+	
+	
+	<!-- ============================================================ -->
+	<!-- LocationGeographicID-->
 	<!-- ============================================================ -->
 	
 	
