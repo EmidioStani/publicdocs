@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -60,6 +60,29 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
+<xsd:complexType name="DeathPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:DeathPersonType">
+			<xsd:sequence>
+									<xsd:element name="TimeOfDeath" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of time type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="DeathType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -97,29 +120,6 @@
 		
 	</xsd:sequence>
 	
-</xsd:complexType>
-<xsd:complexType name="DeathPersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype deathForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:DeathPersonType">
-			<xsd:sequence>
-									<xsd:element name="TimeOfDeath" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of time type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

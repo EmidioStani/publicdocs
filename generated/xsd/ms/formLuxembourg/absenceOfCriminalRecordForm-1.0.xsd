@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,6 +30,34 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="PersonChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This choice class contains the options regarding the type of person (natural or legal).
+				Stereotype xsdChoice
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class LegalPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -95,34 +123,6 @@
 		
 	</xsd:sequence>
 	
-</xsd:complexType>
-<xsd:complexType name="PersonChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This choice class contains the options regarding the type of person (natural or legal).
-				Stereotype xsdChoice
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class LegalPerson.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>

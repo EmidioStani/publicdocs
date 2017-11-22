@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -131,42 +131,6 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="PreviousMarriageInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information about any previous marriages of the deceased person, other than their last partner.
-				Stereotype deathForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="FirstMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class PreviousMarriage.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="SecondMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class PreviousMarriage.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="OtherMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class PreviousMarriage.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="FormDeathLuxembourgType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -193,6 +157,52 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="LastPartnerInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about the last partner of a deceased person.
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the surname of the last partner of the deceased person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the forename of the last partner of the deceased person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="Sex" type="ms2forms_cls:SexType" minOccurs="1" maxOccurs="1" >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is that of class Sex.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+													
+							<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information about the profession of the last partner of the deceased person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="DomicileOrDeceased" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										
 		
 	</xsd:sequence>
 	
@@ -257,48 +267,38 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="LastPartnerInfoType">
+<xsd:complexType name="PreviousMarriageInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains information about the last partner of a deceased person.
+		This class contains information about any previous marriages of the deceased person, other than their last partner.
 				Stereotype deathForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the surname of the last partner of the deceased person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the forename of the last partner of the deceased person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="Sex" type="ms2forms_cls:SexType" minOccurs="1" maxOccurs="1" >
-											<xsd:annotation>
-											    <xsd:documentation xml:lang="en">
-													The value of this property is that of class Sex.
-											    </xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-													
-							<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information about the profession of the last partner of the deceased person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="DomicileOrDeceased" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-										
+					<xsd:element name="FirstMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class PreviousMarriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="SecondMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class PreviousMarriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="OtherMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class PreviousMarriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 		
 	</xsd:sequence>
 	

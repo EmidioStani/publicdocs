@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,34 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="DeclarationTimeAndDateType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information about the time and date of the declaration of a birth.
-				Stereotype birthForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="DeclarationTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the time of declaration of a birth.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the date of declaration of a birth. 
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="BirthType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -108,65 +80,40 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="BirthPersonType">
+<xsd:complexType name="OtherStatementsChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains information about the concerned person being born.
+		This class contains information about other statements and declarations related to the birth of a person.
 				Stereotype birthForm
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:BirthPersonType">
-			<xsd:sequence>
-									<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="FormBirthLuxembourgType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype birthForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Birth.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+	<xsd:choice>
+							<xsd:element name="DeclarantIsTheFather" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										This property can contain any type of information.
+										This property refers to the option that the declarant reconises being the father of the child.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Other" type="udt:TextType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property refers to the option that there are other statements being made about the birth of the child.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
 		
-	</xsd:sequence>
-	
+	</xsd:choice>
 </xsd:complexType>
 <xsd:complexType name="BirthHypothesisChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This choice class contains the options relating to the type of transcription of a document.
-				Stereotype xsdChoice
 				Stereotype birthForm
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -213,33 +160,86 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="OtherStatementsChoiceType">
+<xsd:complexType name="BirthPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains information about other statements and declarations related to the birth of a person.
-				Stereotype xsdChoice
+		This class contains information about the concerned person being born.
 				Stereotype birthForm
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DeclarantIsTheFather" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+	<xsd:complexContent>
+		<xsd:extension base="pdc:BirthPersonType">
+			<xsd:sequence>
+									<xsd:element name="BirthTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DeclarationTimeAndDateType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about the time and date of the declaration of a birth.
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="DeclarationTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										This property refers to the option that the declarant reconises being the father of the child.
+										This property contains the time of declaration of a birth.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Other" type="udt:TextType" minOccurs="0" maxOccurs="1" >
+							<xsd:element name="DeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										This property refers to the option that there are other statements being made about the birth of the child.
+										This property contains the date of declaration of a birth. 
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
 		
-	</xsd:choice>
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="FormBirthLuxembourgType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Birth.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 </xsd:schema>
 

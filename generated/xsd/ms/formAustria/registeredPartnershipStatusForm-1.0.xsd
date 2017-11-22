@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,29 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="RegisteredPartnershipStatusType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the registered partnership status of a person.
-				Stereotype registeredPartnershipStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_registeredPartnershipStatusForm:RegisteredPartnershipStatusType">
-			<xsd:sequence>
-							<xsd:element name="MoreInfo" type="MoreInfoType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class MoreInfo.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormRegisteredPartnerShipStatusAustriaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -85,6 +62,29 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="RegisteredPartnershipStatusType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the registered partnership status of a person.
+				Stereotype registeredPartnershipStatusForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_registeredPartnershipStatusForm:RegisteredPartnershipStatusType">
+			<xsd:sequence>
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

@@ -6,6 +6,7 @@
 [import org::eclipse::acceleo::module::publicdocs::common::util/]
 [import org::eclipse::acceleo::module::publicdocs::common::annotation/]
 
+
 [template public generateElements(class: Class, NDR: String){
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
@@ -287,6 +288,7 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 [if supplierType.name = 'Location' or supplierType.name = 'Address'or supplierType.name = 'Business' or supplierType.name = 'Person' or supplierType.name = 'PublicService']
 [generateReference(prop, elementQualifiedname.concat(getSuffix('core')).concat(supplierType.name))/][else]
 [if supplierPackageName = 'cva'][comment aggregated components/]
+
 [generateReference(prop, elementQualifiedname.concat(supplierType.name))/][else][comment basic components/]
 [generateReference(prop, elementQualifiedname)/][/if][/if][/if]
 [/template]
@@ -303,8 +305,12 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 [comment][if supplierType->isEmpty()][debug('CVB-Empty:'+prop.name)/][else][debug('CVB:'+prop.name)/][/if][/comment]
 [generateElement(prop, 'cvb:'.concat(elementname).concat('Type'))/][else]
 	[if supplierType.name = 'Location' or supplierType.name = 'Address'or supplierType.name = 'Business' or supplierType.name = 'Person' or supplierType.name = 'PublicService']
+[debug('suppliertypename1: ' + supplierType.name)/]
+
 [generateElement(prop, supplierPackageName.concat(':').concat(getSuffix('core')).concat(supplierType.name).concat('Type'))/][else]
 		[if supplierPackageName = 'cva'][comment aggregated components/]
+[debug('suppliertypename2: ' + supplierType.name)/]
+
 [generateElement(prop, supplierPackageName.concat(':').concat(supplierType.name).concat('Type'))/][/if][/if][/if]
 [/template]
 [template public generateElementWithRestrictedType(prop: Property, pack : Package) 
@@ -320,26 +326,26 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 	class                : Class         = client.owner.oclAsType(Class);   
 	maxLength			 : String		 = dependency.name.substring(dependency.name.index('MaxLength')+'MaxLength'.size());        
 }]
+[debug('All ellements: length: ' + maxLength + ' - dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname + ' - clientName: ' + client.name + ' - className: ' + class.name + ' - type: ' + client.type.name)/]
+
 [if supplierType->isEmpty() or supplierPackageName = 'cvb']
 [debug('IF: length: ' + maxLength + ' - dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname + ' - clientName: ' + client.name + ' - className: ' + class.name + ' - type: ' + client.type.name)/]
 		[if maxLength.oclIsUndefined()]
 		[elseif client.type.name = 'string']
 			[generateElementRestriction(prop, 'qdt:'.concat(class.name).concat(prop.name).concat('MaxLength').concat(maxLength).concat('Type'),maxLength)/]
-			[debug('cva1:' + supplier.name + ' - ' + supplierPackageName)/]
 		[else]
 			[comment generateElement(prop, prop.type.namespace.name.concat(':').concat(prop.type.name).concat('Type'))/]
 			[generateElementWithUnqualifiedDataTypes2(prop)/]
-			[debug('cva2:' + supplier.name + ' - ' + supplierPackageName)/]
 		[/if]
 [else]
 	[debug('ELSE: dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname)/]
 	[if supplierPackageName = 'cva']
-			[debug('cva_restriction:' + supplier.name + ' - ' + supplierPackageName)/]
-			[generateElementRestriction(prop, 'cva_ARNETEST:' + prop.owner.oclAsType(Property).name.concat('Type'),maxLength)/]
-	[else]
-		[generateElement(prop, prop.type.name.concat('Type'))/]
+	[debug('property123: ' + prop.name)/]
+		[generateElement(prop, 'qdt'.concat(':').concat(supplierType.name).concat('Type'))/]
 	[/if]
-	[debug('cva3:' + supplier.name + ' - ' + supplierPackageName)/]
+
+	
 [/if]
 
 [/template]
+

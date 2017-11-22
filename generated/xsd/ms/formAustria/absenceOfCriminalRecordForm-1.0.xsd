@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,20 +30,43 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="AbsenceOfACriminalRecordPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+							<xsd:element name="AcademicDegrees" type="AcademicDegreesType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class AcademicDegrees.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to the certificate of absence of criminal record of a person.
 				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="pdc:AbsenceOfCriminalRecordPersonType">
 			<xsd:sequence>
-							<xsd:element name="Academic" type="QualificationType" minOccurs="1" maxOccurs="unbounded">
+							<xsd:element name="Person" type="AbsenceOfACriminalRecordPersonType" minOccurs="1" maxOccurs="unbounded">
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Qualification.
+										The value of this property is of the class AbsenceOfACriminalRecordPerson.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>	

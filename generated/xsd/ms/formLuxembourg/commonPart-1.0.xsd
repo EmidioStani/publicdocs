@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 21/11/2017 16:51 
+    Generated On: 22/11/2017 17:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,80 +33,6 @@
 		<xsd:include schemaLocation="marriageForm-1.0.xsd"/>
 		
 		<!-- ===================================================== -->
-<xsd:complexType name="SubsequentEntriesType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information related to subsequent entries made to the document.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="SubsequentEntry" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is the content of any subsequent entry to the document.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="NumberOfEntries" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the number of subsequent entries to the document.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="ParentRelationshipChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This choice class contains the options about the parental relationship beetween a person and their parents.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="Father" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property refers to the option "Father". 
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="Mother" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property refers to the option "Mother"
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="DocumentKindChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the choice between different types of documents.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_xsdChoicecommonPart:DocumentKindChoiceType">
-			<xsd:sequence>
-						<xsd:element name="CivilStatusDocument" minOccurs="1" maxOccurs="1" type="CivilStatusDocumentChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="DeclarationType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -152,6 +78,107 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="DeclarantType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information related to the person declaring the birth of another person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+									<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the surname of the declarant.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the forename of the declarant.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DateOfBirthAge" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the date of birth and age of the declarant.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains the profession of the declarant.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="Relation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property refers to the relation between the declarant and the person concerned by the document.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property may contain additional information not belonging to other fields.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="InformationOnParentsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information related to the parents of a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="ParentA" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="ParentB" type="ParentType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Parent.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="ParentsMarriage" type="MarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Marriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="ReasonForDissolutionOfMarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -192,8 +219,8 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains the possible choices related to the capacity in which an authority issued a form.
-				Stereotype commonPart
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -407,1595 +434,6 @@
 								    						    						    
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="AuthorityIssuingFormType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		This class contains information related to the authority issuing the form.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:sequence> 
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				<xsd:element name="Capacity" minOccurs="1" maxOccurs="1" type="CapacityChoiceType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					<xsd:element name="SignatureOfPublicDocument" type="SignatureOnPublicDocumentType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
-<xsd:complexType name="PersonType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		<xsd:extension base="pdc:PersonType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			<xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="IdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property contains the identification number of a person.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="MaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		</xsd:extension>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		This class contains elements related to information about a document. 
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			<xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="Kind" type="DocumentKindChoiceType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										This property has the value of class DocumentKindChoice.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												<xsd:element name="PlaceOfIssue" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												<xsd:element name="CountryOfIssue" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		</xsd:extension>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
-<xsd:complexType name="DeclarantType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		This class contains information related to the person declaring the birth of another person.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		<xsd:extension base="PersonType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			<xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property contains the surname of the declarant.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property contains the forename of the declarant.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="DateOfBirthAge" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property contains the date of birth and age of the declarant.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property contains the profession of the declarant.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="Relation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property refers to the relation between the declarant and the person concerned by the document.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									<xsd:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    												This property may contain additional information not belonging to other fields.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    									
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    			</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		</xsd:extension>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:complexContent>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
-<xsd:complexType name="PreviousMarriageType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		This class contains information about a previous marriage of a deceased person, other than their last partner.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:sequence> 
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										This property contains the surname(s) of a previous partner of a deceased person.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										This property contains the forename(s) of a previous partner of the deceased person.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										<xsd:element name="Sex" type="ms2forms_cls:SexType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    											<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    											    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    													The value of this property is that of class Sex.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    											    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    											</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    													
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				<xsd:element name="ReasonOfDissolution" minOccurs="1" maxOccurs="1" type="ReasonForDissolutionOfMarriageType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="DateOfMarriageDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    										This property contains the date of dissolution of a marriage. 
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
 <xsd:complexType name="CivilStatusDocumentChoiceType">
 								
 								    						
@@ -2028,7 +466,7 @@
 								
 								    						
 								
-								    						    						    				Stereotype commonPart
+								    						    						    				Stereotype xsdChoice
 								
 								    						
 								
@@ -2036,7 +474,7 @@
 								
 								    						
 								
-								    						    						    				Stereotype xsdChoice
+								    						    						    				Stereotype commonPart
 								
 								    						
 								
@@ -2269,287 +707,6 @@
 								    						
 								
 								    						    						    	</xsd:choice>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    </xsd:complexType>
-<xsd:complexType name="InformationOnParentsType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		This class contains information related to the parents of a person.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				Stereotype commonPart
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	<xsd:sequence> 
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					<xsd:element name="ParentA" type="ParentType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								The value of this property is that of class Parent.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					<xsd:element name="ParentB" type="ParentType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								The value of this property is that of class Parent.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					<xsd:element name="ParentsMarriage" type="MarriageType" minOccurs="1" maxOccurs="1" >
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						<xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    <xsd:documentation xml:lang="en">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    								The value of this property is that of class Marriage.
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						    </xsd:documentation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    						</xsd:annotation>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    					
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    		
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	</xsd:sequence>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    	
 								
 								    						
 								
@@ -3151,7 +1308,7 @@
 								    						
 								
 								    						    						    </xsd:complexType>
-<xsd:complexType name="TranscriptType">
+<xsd:complexType name="DocumentInfoType">
 								
 								    						
 								
@@ -3175,7 +1332,216 @@
 								
 								    						
 								
-								    						    						    		This class contains information on a transcribed document.
+								    						    						    		This class contains elements related to information about a document. 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:complexContent>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			<xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Kind" type="DocumentKindChoiceType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property has the value of class DocumentKindChoice.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    												<xsd:element name="PlaceOfIssue" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    												
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    												<xsd:element name="CountryOfIssue" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    												
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		</xsd:extension>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:complexContent>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="PreviousMarriageType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This class contains information about a previous marriage of a deceased person, other than their last partner.
 								
 								    						
 								
@@ -3215,31 +1581,7 @@
 								
 								    						
 								
-								    						    						    				<xsd:element name="Hypothesis" minOccurs="1" maxOccurs="1" type="BirthHypothesisChoiceType">
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				</xsd:element>
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    				
-								
-								    						
-								
-								    						    						
-								
-								    						
-								
-								    						    						    							<xsd:element name="ContentOfTranscribedDocument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								    						    						    							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 								
 								    						
 								
@@ -3263,7 +1605,223 @@
 								
 								    						
 								
-								    						    						    										The value of this property is the transcribed content of a document.
+								    						    						    										This property contains the surname(s) of a previous partner of a deceased person.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property contains the forename(s) of a previous partner of the deceased person.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										<xsd:element name="Sex" type="ms2forms_cls:SexType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    											<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    											    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    													The value of this property is that of class Sex.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    											    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    											</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    													
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				<xsd:element name="ReasonOfDissolution" minOccurs="1" maxOccurs="1" type="ReasonForDissolutionOfMarriageType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="DateOfMarriageDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property contains the date of dissolution of a marriage. 
 								
 								    						
 								
@@ -3665,6 +2223,1252 @@
 								    						
 								
 								    						    						    	
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="SubsequentEntriesType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This class contains information related to subsequent entries made to the document.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:sequence> 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="SubsequentEntry" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										The value of this property is the content of any subsequent entry to the document.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="NumberOfEntries" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property contains the number of subsequent entries to the document.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="ParentRelationshipChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This choice class contains the options about the parental relationship beetween a person and their parents.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:sequence> 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Father" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property refers to the option "Father". 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Mother" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										This property refers to the option "Mother"
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="TranscriptType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This class contains information on a transcribed document.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:sequence> 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				<xsd:element name="Hypothesis" minOccurs="1" maxOccurs="1" type="BirthHypothesisChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="ContentOfTranscribedDocument" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										The value of this property is the transcribed content of a document.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="DocumentKindChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This class contains elements related to the choice between different types of documents.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:complexContent>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		<xsd:extension base="ms2forms_xsdChoicecommonPart:DocumentKindChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			<xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						<xsd:element name="CivilStatusDocument" minOccurs="1" maxOccurs="1" type="CivilStatusDocumentChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		</xsd:extension>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:complexContent>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="AuthorityIssuingFormType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		This class contains information related to the authority issuing the form.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:sequence> 
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="Forename" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				<xsd:element name="Capacity" minOccurs="1" maxOccurs="1" type="CapacityChoiceType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    					<xsd:element name="SignatureOfPublicDocument" type="SignatureOnPublicDocumentType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    								
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    						</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    					</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    					
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    </xsd:complexType>
+<xsd:complexType name="PersonType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				Stereotype commonPart
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	<xsd:complexContent>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		<xsd:extension base="pdc:PersonType">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			<xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    									<xsd:element name="IdentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										<xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										    <xsd:documentation xml:lang="en">
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    												This property contains the identification number of a person.
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										    </xsd:documentation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    										</xsd:annotation>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    									</xsd:element>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    									
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							<xsd:element name="MaritalStatus" type="pdc:MaritalStatusChoiceType" minOccurs="1" maxOccurs="1"/>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    							
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    				
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    			</xsd:sequence>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    		</xsd:extension>
+								
+								    						
+								
+								    						    						
+								
+								    						
+								
+								    						    						    	</xsd:complexContent>
 								
 								    						
 								
