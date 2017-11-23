@@ -26,7 +26,7 @@ public class GiveConfiguration {
 			// load a properties file
 			
 				ns=config.getString(configuration);
-				System.out.println(configuration + ": " + ns);
+				// System.out.println(configuration + ": " + ns);
 			
 		}  catch (ConfigurationException e) {
 			// TODO Auto-generated catch block

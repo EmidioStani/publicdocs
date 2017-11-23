@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 22/11/2017 17:20 
+    Generated On: 23/11/2017 10:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,6 +32,24 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="RegisteredPartnershipType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the partnership of a person.
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
+			<xsd:sequence>
+						<xsd:element name="PartnershipAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="PartnershipAmendmentsAndSubsequentEntriesType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="PartnershipAmendmentsAndSubsequentEntriesType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -75,24 +93,6 @@
 							
 		
 	</xsd:choice>
-</xsd:complexType>
-<xsd:complexType name="RegisteredPartnershipType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the partnership of a person.
-				Stereotype registeredPartnershipForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
-			<xsd:sequence>
-						<xsd:element name="PartnershipAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="PartnershipAmendmentsAndSubsequentEntriesType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
 </xsd:complexType>
 <xsd:complexType name="FormRegisteredPartnershipNetherlandsType">
 	<xsd:annotation>

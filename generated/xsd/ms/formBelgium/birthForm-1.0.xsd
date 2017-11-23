@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 22/11/2017 17:20 
+    Generated On: 23/11/2017 10:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,6 +33,42 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="AcknowledgedByChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the choice between the types of ID used to identify a person.
+				Stereotype xsdChoice
+				Stereotype birthForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="FormBirthBelgiumType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -61,8 +97,8 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the choice between the types of ID used to identify a person.
-				Stereotype birthForm
 				Stereotype xsdChoice
+				Stereotype birthForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -99,42 +135,6 @@
 					</xsd:element>
 					
 					<xsd:element name="LegalRepresentative" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:choice>
-</xsd:complexType>
-<xsd:complexType name="AcknowledgedByChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the choice between the types of ID used to identify a person.
-				Stereotype birthForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1" >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Person.

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formRomania-1.0.xsd
-    Generated On: 22/11/2017 17:20 
+    Generated On: 23/11/2017 10:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,29 +33,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="MarriagePersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:MarriageOrRegisteredPartnershipPersonType">
-			<xsd:sequence>
-							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Parents.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormMarriageRomaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -122,6 +99,29 @@
 									
 												<xsd:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="MarriagePersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:MarriageOrRegisteredPartnershipPersonType">
+			<xsd:sequence>
+							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Parents.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
 			</xsd:sequence>
 		</xsd:extension>

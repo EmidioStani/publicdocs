@@ -39,7 +39,6 @@ version: String = getVersion('xsd');
 NDR : String = getNDR('restrictcorevocstypes');
 pack : Package = class.owner.oclAsType(Package);}]
 [if not isLocal(class)]
-[comment][debug('PDC: Global classes: '+class.name)/][/comment]
 [if(class.general->isEmpty())]
 [generateComplextype_ground(class, NDR)/][else]
 [generateComplextype_restriction_complexcontent(class, NDR)/][/if][else]

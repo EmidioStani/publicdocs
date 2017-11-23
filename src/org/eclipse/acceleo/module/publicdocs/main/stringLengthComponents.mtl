@@ -19,7 +19,6 @@ version: String = getVersion('xsd');
 [beginSchema('cvb,udt', pack, version, pack.name)/]
 	[importXSD('cvb,udt')/]
 	[generateContentLengthComponents(pack)/]
-	[comment generateContentLengthComponents(packCVB)/]
 [endSchema(pack, version)/]
 [/file]
 [/template]
@@ -29,19 +28,14 @@ version: String = getVersion('xsd');
 [for (packageableElement: PackageableElement | pElements->sortedBy(name))]
 [if packageableElement.oclIsTypeOf(PrimitiveType)]
 	[let dependencies: Set(Dependency) = pack.getDirectDependencies(packageableElement)] 
-	[comment if not dependencies->isEmpty()/]
 	[generateAnnotationDependency(packageableElement,  dependencies)/]
 	
 		[if pack.name = 'qdt']
 		[generatePrimitiveForType(packageableElement.oclAsType(PrimitiveType))/]
 		[/if]
-		
-	
-	[comment generateBasicComponentsForClass(packageableElement.oclAsType(PrimitiveType))/]
-	[comment /if /]
+
 	[/let]
 [elseif packageableElement.oclIsTypeOf(Class)]
-			[debug('cva_restriction:' + packageableElement.name + ' - name: ' + packageableElement.name )/]
 			[generateComplextype_ground(packageableElement.oclAsType(Class))/]
 [/if]
 [/for]
@@ -52,19 +46,16 @@ version: String = getVersion('xsd');
 pack : Package = class.owner.oclAsType(Package);}]
 
 [if not  class.ownedAttribute->isEmpty()]
-[comment][debug('Complex type:' + class.name)/][/comment]
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 	<[getNS('xs')/]:sequence> 
 
 		[for (property: Property | class.ownedAttribute)]
-			[debug('Complex type - property:' + property.type.name)/]
 
 			[generateElement(property, property.type.name.concat('Type'))/]
 		[/for]
 
 	</[getNS('xs')/]:sequence>
-	[comment generateAttributes(class, NDR)/]
 </[getNS('xs')/]:complexType>
 [/if]
 [/template]
@@ -83,10 +74,8 @@ supplier             : Property      = pack.getDependencies(prop)->any(true).sup
 supplierType         : Type          = supplier.type;
 supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.name);
 }]
-[comment if not pack.getDependencies(prop)->isEmpty() and (supplierType->isEmpty() or supplierType.oclIsTypeOf(PrimitiveType))/]
 [generateClassForType(class, prop)/][comment /if /]
 [if not pack.getDependencies(prop)->isEmpty() and (prop.type.oclIsTypeOf(Enumeration))]
-[comment[generateCodelist(class.name.concat(prop.name), 'cvb:'.concat(supplierQualifiedName).concat('Type'), prop.type.oclAsType(Enumeration))/]
 [/if]
 [if prop.oclIsTypeOf(PrimitiveType)]
 [generatePrimitiveTypeForType(class, prop)/][/if]
@@ -122,7 +111,6 @@ supplierQualifiedName: String        = supplier.namespace.name.concat(supplier.n
 [template public generateElementWithUnqualifiedDataTypes3(prim: PrimitiveType, suffix : String, name : String, maxLength : String) post(trim())
 {deps : Set(Dependency) =  getPrimitiveDependencies(prim, prim.name,'cvb');
 }]
-[debug('maxlength: ' + maxLength)/]
 <[getNS('xs')/]:complexType name="[name/][suffix/]">
 	<[getNS('xs')/]:simpleContent>
 	[for (base: PrimitiveType | prim.oclAsType(PrimitiveType))]
@@ -145,7 +133,6 @@ suffix				 : String 		= getSuffix('complexType');
 
 [if classname = 'String']
 	[for (base: PrimitiveType | class.general.oclAsType(PrimitiveType))]
-			[debug('arne123 ' + base.name + ' ' + suffix + ' ' + maxLength + ' ' + class.name)/]
 			[generateElementWithUnqualifiedDataTypes2(base, suffix, maxLength, class.name)/]
 	
 	[/for]

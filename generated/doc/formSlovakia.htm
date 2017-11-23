@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-22">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-23">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -184,28 +184,28 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovenia#">formSlovenia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/pdc">pdc</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/ireland#">formIreland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/qdt">qdt</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/spain#">formSpain</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
@@ -416,97 +416,7 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="PermanentTemporaryStayChoice">5.4.3 Class PermanentTemporaryStayChoice
-												(choice)
-												</h5>
-												<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>PermanentStay</td>
-															<td>This property contains information of type boolean concerning whether a person's stay at a given address is permanent.</td>
-															<td>1..1</td>
-															<td>udt:IndicatorType</td>
-														</tr>
-														<tr>
-															<td>TemporaryStay</td>
-															<td>This property contains information of type boolean concerning whether a person's stay at a given address is temporary.</td>
-															<td>1..1</td>
-															<td>udt:IndicatorType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="LegalPerson">5.4.4 Class LegalPerson
-												
-												</h5>
-												<p><b>Definition:</b>This class contains properties related to a legal person.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>LegalPersonName</td>
-															<td>This property contains information of type string concerning the name of a legal person.</td>
-															<td>1..1</td>
-															<td>udt:TextType</td>
-														</tr>
-														<tr>
-															<td>RegisteredOffice</td>
-															<td>This property contains information of type string concerning the registered office of a legal person.</td>
-															<td>1..1</td>
-															<td>udt:TextType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="FormDomicileAndOrResidenceSlovakia">5.4.5 Class FormDomicileAndOrResidenceSlovakia
-												
-												</h5>
-												<p><b>Definition:</b>This class contains properties related to the form Domicile and/or Residence.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Header</td>
-															<td>The value of this property is of class FormHeader.</td>
-															<td>1..1</td>
-															<td>formSlovakia:FormHeader</td>
-														</tr>
-														<tr>
-															<td>Body</td>
-															<td>The value of this property is that of class DomicileAndOrResidence.</td>
-															<td>1..1</td>
-															<td>formSlovakia:DomicileAndOrResidence</td>
-														</tr>
-														<tr>
-															<td>Extension</td>
-															<td>This property contains information of any type.</td>
-															<td>0..1</td>
-															<td>ext:UBLExtensionsType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="DomicileAndOrResidence">5.4.6 Class DomicileAndOrResidence
+												<h5 id="DomicileAndOrResidence">5.4.3 Class DomicileAndOrResidence
 												
 												</h5>
 												<p><b>Definition:</b>This class contains properties related to a person's domicile and/or residence.</p>
@@ -547,6 +457,96 @@
 														<tr>
 															<td>RegistrationOfficeNotes</td>
 															<td>This property contains information of type string concerning notes from the registration office.</td>
+															<td>1..1</td>
+															<td>udt:TextType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="PermanentTemporaryStayChoice">5.4.4 Class PermanentTemporaryStayChoice
+												(choice)
+												</h5>
+												<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>PermanentStay</td>
+															<td>This property contains information of type boolean concerning whether a person's stay at a given address is permanent.</td>
+															<td>1..1</td>
+															<td>udt:IndicatorType</td>
+														</tr>
+														<tr>
+															<td>TemporaryStay</td>
+															<td>This property contains information of type boolean concerning whether a person's stay at a given address is temporary.</td>
+															<td>1..1</td>
+															<td>udt:IndicatorType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="FormDomicileAndOrResidenceSlovakia">5.4.5 Class FormDomicileAndOrResidenceSlovakia
+												
+												</h5>
+												<p><b>Definition:</b>This class contains properties related to the form Domicile and/or Residence.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Header</td>
+															<td>The value of this property is of class FormHeader.</td>
+															<td>1..1</td>
+															<td>formSlovakia:FormHeader</td>
+														</tr>
+														<tr>
+															<td>Body</td>
+															<td>The value of this property is that of class DomicileAndOrResidence.</td>
+															<td>1..1</td>
+															<td>formSlovakia:DomicileAndOrResidence</td>
+														</tr>
+														<tr>
+															<td>Extension</td>
+															<td>This property contains information of any type.</td>
+															<td>0..1</td>
+															<td>ext:UBLExtensionsType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="LegalPerson">5.4.6 Class LegalPerson
+												
+												</h5>
+												<p><b>Definition:</b>This class contains properties related to a legal person.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>LegalPersonName</td>
+															<td>This property contains information of type string concerning the name of a legal person.</td>
+															<td>1..1</td>
+															<td>udt:TextType</td>
+														</tr>
+														<tr>
+															<td>RegisteredOffice</td>
+															<td>This property contains information of type string concerning the registered office of a legal person.</td>
 															<td>1..1</td>
 															<td>udt:TextType</td>
 														</tr>

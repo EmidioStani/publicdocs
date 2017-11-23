@@ -11,7 +11,6 @@
 pack : Package = class.owner.oclAsType(Package);}]
 [for (property: Property | class.ownedAttribute)]
 [if property.hasStereotype('isa::commonPartFormCyprus')]
-[comment debug('Property has stereotype isa::commonPartFormCyprus : '.concat(property.name))/]
 [generatePropertyElement(property, pack, NDR)/][else]
 [if not property.hasStereotype('isa::xsdAttribute')]
 [generatePropertyElement(property, pack, NDR)/][/if][/if][/for]
@@ -45,7 +44,6 @@ useUnqualifiedDataTypes: Boolean = true}]
 [if not isLocal(type)]
 	[if isPrimitive]
 		[if typePackName=pack.name]
-			[comment debug('ARNE: Property element generator PREVIOUSLY UNUSED: ' + property.name + 'type: '+ property.type.name) /]
 			[generateElement(property, property.type.name)/][else]
 			[if useUnqualifiedDataTypes]
 				[if typePackName = 'qdt']
@@ -54,13 +52,11 @@ useUnqualifiedDataTypes: Boolean = true}]
 					[generateElementWithUnqualifiedDataTypes2(property)/]
 				[/if]
 				[else]
-				[comment debug('ARNE: Property element generator PREVIOUSLY UNUSED: ' + property.name + 'type: '+ typePackName + ':' + property.type.name) /]
 				[generateElement(property, typePackName.concat(':').concat(property.type.name))/]
 			[/if]
 		[/if]
 	[else]
 		[if typePackName=pack.name and property.name <> 'Header']
-			[comment debug('EMIDIO: samePack:'+property.name)/]
 			[generateElement(property, property.type.name.concat('Type'))/]
 		[else]
 			[if property.name = 'Header' and typePackName='forms' and pack.name ='forms']
@@ -70,7 +66,6 @@ useUnqualifiedDataTypes: Boolean = true}]
 				[generateElement(property, 'ms2forms_commonPart'.concat(':').concat(property.type.name.concat('Type')))/]
 				[else]
 					[if typePackName <> pack.name and typePackName = 'forms']
-						[comment debug('EMIDIO: MS2FORMS: '+(property.type.getAppliedStereotypes())->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' ).name+':'+property.type.name.concat('Type'))/]			
 						[generateElement(property, 'ms2forms_'+(property.type.getAppliedStereotypes())->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' ).name+':'+property.type.name.concat('Type'))/]
 					[else]
 						[if typePackName <> pack.name]
@@ -89,19 +84,15 @@ useUnqualifiedDataTypes: Boolean = true}]
 	[/if]
 [else]
 	[if typePackName=pack.name]
-		[comment debug('ARNE: samePack:'+property.name)/]
 		[generateElementWithLocalType(property, NDR)/]
 	[else]
-		[comment debug('ARNE: Property element Local: ' + property.name + 'type: '+ typePackName + ':' + property.type.name) /]
 		[if typePackName = 'forms']
-			[comment generateElement(property, 'ms2forms_'+property.type.getAppliedStereotypes().name.concat(':').concat(property.type.name).concat('Type'))/]
 			[generateElement(property, 'ms2forms_'+(property.type.getAppliedStereotypes()->asSet()->select(oclIsTypeOf(Stereotype) and name <> 'xsdChoice' )).name.concat(':').concat(property.type.name).concat('Type'))/]
 		[else]
 			[generateElement(property, typePackName.concat(':').concat(property.type.name).concat('Type'))/]
 		[/if]
 	[/if]
 [/if]
-[comment debug('ARNE: internal/external: ' + property.name)/]
 [/template]
 
 [template public generateElementWithLocalType(property: Property, NDR: String){
@@ -125,17 +116,14 @@ class : Class = property.owner.oclAsType(Class);
 [/if]
 [comment]
 [if not  type.oclAsType(Class).ownedAttribute->isEmpty()]
-[debug('Class name:' + class.name)/]
 [generateComplextype_ground(property,NDR)/]
 
 <[getNS('xs')/]:complexType>
 	[if isChoice(type.oclAsType(Class))]
-	[debug('Element with choice local type:' + property.name)/]
 	<[getNS('xs')/]:choice>
 		[generateElements(type.oclAsType(Class), NDR)/]
 	</[getNS('xs')/]:choice>
 	[else]
-	[debug('Element with sequence local type:' + property.name)/]
 	<[getNS('xs')/]:sequence>
 		[generateElements(type.oclAsType(Class), NDR)/]
 	</[getNS('xs')/]:sequence>
@@ -148,7 +136,6 @@ class : Class = property.owner.oclAsType(Class);
 [/template]
 
 [template public generateComplextype_ground(property : Property, NDR : String)]
-[comment debug('Complex type:' + property.name)/]
 <[getNS('xs')/]:complexType name="[property.name/]Type">
 	[generateAnnotation(type.oclAsType(Class))/]
 [if isChoice(type.oclAsType(Class))]
@@ -180,9 +167,7 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 }]
 [if deps->size()>0]
 [for (sup : NamedElement | deps.supplier->any(true))]
-[comment debug('Arne:' + ' --- ' + getFQDN2(sup))/]
 [getFQDN2(sup)/][/for][else]
-[comment debug('Arne2:' + ' --- ' + getFQDN3(property))/]
 [getFQDN3(property)/][/if]
 [/template]
 
@@ -265,8 +250,6 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
  	elementname          : String        = supplier.namespace.name.concat(supplier.name);
 	elementQualifiedname : String        = supplierPackageName.concat(':').concat(elementname);
 }]
-[debug('test: NDR: ' + NDR)/]
-
 [if NDR = 'useCoreVocsElements']
 [generateCoreVocsElementReference(prop, pack)/][else]
 [if NDR = 'restrictCoreVocsTypes']
@@ -302,14 +285,11 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 	elementQualifiedname : String        = supplierPackageName.concat(':').concat(elementname);
 }]
 [if supplierType->isEmpty() or supplierPackageName = 'cvb'][comment if type not given, assume basic components/]
-[comment][if supplierType->isEmpty()][debug('CVB-Empty:'+prop.name)/][else][debug('CVB:'+prop.name)/][/if][/comment]
 [generateElement(prop, 'cvb:'.concat(elementname).concat('Type'))/][else]
 	[if supplierType.name = 'Location' or supplierType.name = 'Address'or supplierType.name = 'Business' or supplierType.name = 'Person' or supplierType.name = 'PublicService']
-[debug('suppliertypename1: ' + supplierType.name)/]
 
 [generateElement(prop, supplierPackageName.concat(':').concat(getSuffix('core')).concat(supplierType.name).concat('Type'))/][else]
 		[if supplierPackageName = 'cva'][comment aggregated components/]
-[debug('suppliertypename2: ' + supplierType.name)/]
 
 [generateElement(prop, supplierPackageName.concat(':').concat(supplierType.name).concat('Type'))/][/if][/if][/if]
 [/template]
@@ -326,21 +306,16 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 	class                : Class         = client.owner.oclAsType(Class);   
 	maxLength			 : String		 = dependency.name.substring(dependency.name.index('MaxLength')+'MaxLength'.size());        
 }]
-[debug('All ellements: length: ' + maxLength + ' - dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname + ' - clientName: ' + client.name + ' - className: ' + class.name + ' - type: ' + client.type.name)/]
 
 [if supplierType->isEmpty() or supplierPackageName = 'cvb']
-[debug('IF: length: ' + maxLength + ' - dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname + ' - clientName: ' + client.name + ' - className: ' + class.name + ' - type: ' + client.type.name)/]
 		[if maxLength.oclIsUndefined()]
 		[elseif client.type.name = 'string']
 			[generateElementRestriction(prop, 'qdt:'.concat(class.name).concat(prop.name).concat('MaxLength').concat(maxLength).concat('Type'),maxLength)/]
 		[else]
-			[comment generateElement(prop, prop.type.namespace.name.concat(':').concat(prop.type.name).concat('Type'))/]
 			[generateElementWithUnqualifiedDataTypes2(prop)/]
 		[/if]
 [else]
-	[debug('ELSE: dependencyName: ' + dependencyName + ' - supplierName: ' + supplier.name + ' - elementName: ' + elementname)/]
 	[if supplierPackageName = 'cva']
-	[debug('property123: ' + prop.name)/]
 		[generateElement(prop, 'qdt'.concat(':').concat(supplierType.name).concat('Type'))/]
 	[/if]
 

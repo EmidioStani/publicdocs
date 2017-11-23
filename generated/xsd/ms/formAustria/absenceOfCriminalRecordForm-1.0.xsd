@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 22/11/2017 17:20 
+    Generated On: 23/11/2017 10:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,29 +30,6 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="AbsenceOfACriminalRecordPersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person.
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="PersonType">
-			<xsd:sequence>
-							<xsd:element name="AcademicDegrees" type="AcademicDegreesType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is that of class AcademicDegrees.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -70,6 +47,29 @@
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>	
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="AbsenceOfACriminalRecordPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+							<xsd:element name="AcademicDegrees" type="AcademicDegreesType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class AcademicDegrees.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
 							
 				
 			</xsd:sequence>

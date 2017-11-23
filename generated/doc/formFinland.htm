@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-22">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-23">2017</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -184,28 +184,28 @@
 				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 				<ul>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/latvia#">formLatvia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/austria#">formAustria</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/denmark#">formDenmark</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovenia#">formSlovenia</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/belgium#">formBelgium</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/romania#">formRomania</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/pdc">pdc</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/slovakia#">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/luxembourg#">formLuxembourg</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1/ns/forms/croatia#">formCroatia</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/ireland#">formIreland</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/qdt">qdt</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/malta#">formMalta</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/lithuania#">formLithuania</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/poland#">formPoland</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms">forms</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/sweden#">formSweden</a>;</li>
-						<li><a href="http://data.europa.eu/edm/1/ns/forms/netherlands#">formNetherlands</a>;</li>
 						<li><a href="http://data.europa.eu/edm/1/ns/forms/spain#">formSpain</a>;</li>
 				</ul>
 				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
@@ -216,7 +216,29 @@
 				<h4 id="CommonElements">5.1 Common Elements</h4>
 				
 				<h4 id="birthForm">5.2 Form birthForm</h4>
-						<h5 id="BirthPerson">5.2.1 Class BirthPerson
+						<h5 id="Birth">5.2.1 Class Birth
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Person</td>
+									<td>The value of this property is of the class BirthPerson.</td>
+									<td>1..1</td>
+									<td>formFinland:BirthPerson</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="BirthPerson">5.2.2 Class BirthPerson
 						
 						</h5>
 						<p><b>Definition:</b></p>
@@ -238,7 +260,41 @@
 								</tr>
 							</tbody>
 						</table>
-						<h5 id="Mother">5.2.2 Class Mother
+						<h5 id="FormBirthFinland">5.2.3 Class FormBirthFinland
+						
+						</h5>
+						<p><b>Definition:</b></p>
+						<table class="generatedTable table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Property Name</th>
+									<th>Definition</th>
+									<th>Cardinality</th>
+									<th>Data Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Header</td>
+									<td>The value of this property is of the class FormHeader.</td>
+									<td>1..1</td>
+									<td>formFinland:FormHeader</td>
+								</tr>
+								<tr>
+									<td>Body</td>
+									<td>The value of this property is of the class Birth.</td>
+									<td>1..1</td>
+									<td>formFinland:Birth</td>
+								</tr>
+								<tr>
+									<td>Extension</td>
+									<td>The value of this property is of any type.</td>
+									<td>0..1</td>
+									<td>ext:UBLExtensionsType</td>
+								</tr>
+							</tbody>
+						</table>
+						<h5 id="Mother">5.2.4 Class Mother
 						
 						</h5>
 						<p><b>Definition:</b></p>
@@ -284,64 +340,42 @@
 								</tr>
 							</tbody>
 						</table>
-						<h5 id="FormBirthFinland">5.2.3 Class FormBirthFinland
-						
-						</h5>
-						<p><b>Definition:</b></p>
-						<table class="generatedTable table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th>Property Name</th>
-									<th>Definition</th>
-									<th>Cardinality</th>
-									<th>Data Type</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Header</td>
-									<td>The value of this property is of the class FormHeader.</td>
-									<td>1..1</td>
-									<td>formFinland:FormHeader</td>
-								</tr>
-								<tr>
-									<td>Body</td>
-									<td>The value of this property is of the class Birth.</td>
-									<td>1..1</td>
-									<td>formFinland:Birth</td>
-								</tr>
-								<tr>
-									<td>Extension</td>
-									<td>The value of this property is of any type.</td>
-									<td>0..1</td>
-									<td>ext:UBLExtensionsType</td>
-								</tr>
-							</tbody>
-						</table>
-						<h5 id="Birth">5.2.4 Class Birth
-						
-						</h5>
-						<p><b>Definition:</b></p>
-						<table class="generatedTable table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th>Property Name</th>
-									<th>Definition</th>
-									<th>Cardinality</th>
-									<th>Data Type</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Person</td>
-									<td>The value of this property is of the class BirthPerson.</td>
-									<td>1..1</td>
-									<td>formFinland:BirthPerson</td>
-								</tr>
-							</tbody>
-						</table>
 							<h4 id="capacityToMarryForm">5.3 Form capacityToMarryForm</h4>
-									<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.3.1 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
+									<h5 id="ExaminationOfImpedimentsToMarriage">5.3.1 Class ExaminationOfImpedimentsToMarriage
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ExaminationRequestNumber</td>
+												<td>The value of this property is of string type.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>ExaminationRequestState</td>
+												<td>The value of this property is of the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>ExaminationRequestDate</td>
+												<td>The value of this property is of date type.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.3.2 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
 									
 									</h5>
 									<p><b>Definition:</b></p>
@@ -384,46 +418,6 @@
 												<td>The value of this property is of string type.</td>
 												<td>1..1</td>
 												<td>udt:TextType</td>
-											</tr>
-										</tbody>
-									</table>
-									<h5 id="CapacityToMarry">5.3.2 Class CapacityToMarry
-									
-									</h5>
-									<p><b>Definition:</b></p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
-											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>ForeignIntendedSpouse</td>
-												<td>The value of this property is of the class ForeignIntendedSpouseChoice.</td>
-												<td>1..1</td>
-												<td>formFinland:ForeignIntendedSpouseChoice</td>
-											</tr>
-											<tr>
-												<td>IntendedSpouseA</td>
-												<td>The value of this property is of the class CapacityToMarryOrEnterRegisteredPartnershipPerson.</td>
-												<td>1..1</td>
-												<td>formFinland:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-											</tr>
-											<tr>
-												<td>IntendedSpouseB</td>
-												<td>The value of this property is of the class CapacityToMarryOrEnterRegisteredPartnershipPerson.</td>
-												<td>1..1</td>
-												<td>formFinland:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
-											</tr>
-											<tr>
-												<td>ExaminationOfImpediments</td>
-												<td>The value of this property is of the class ExaminationOfImpedimentsToMarriage.</td>
-												<td>1..1</td>
-												<td>formFinland:ExaminationOfImpedimentsToMarriage</td>
 											</tr>
 										</tbody>
 									</table>
@@ -517,7 +511,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="ExaminationOfImpedimentsToMarriage">5.3.6 Class ExaminationOfImpedimentsToMarriage
+									<h5 id="CapacityToMarry">5.3.6 Class CapacityToMarry
 									
 									</h5>
 									<p><b>Definition:</b></p>
@@ -532,49 +526,33 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>ExaminationRequestNumber</td>
-												<td>The value of this property is of string type.</td>
+												<td>ForeignIntendedSpouse</td>
+												<td>The value of this property is of the class ForeignIntendedSpouseChoice.</td>
 												<td>1..1</td>
-												<td>udt:TextType</td>
+												<td>formFinland:ForeignIntendedSpouseChoice</td>
 											</tr>
 											<tr>
-												<td>ExaminationRequestState</td>
-												<td>The value of this property is of the class Place.</td>
+												<td>IntendedSpouseA</td>
+												<td>The value of this property is of the class CapacityToMarryOrEnterRegisteredPartnershipPerson.</td>
 												<td>1..1</td>
-												<td>pdc:Place</td>
+												<td>formFinland:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
 											</tr>
 											<tr>
-												<td>ExaminationRequestDate</td>
-												<td>The value of this property is of date type.</td>
+												<td>IntendedSpouseB</td>
+												<td>The value of this property is of the class CapacityToMarryOrEnterRegisteredPartnershipPerson.</td>
 												<td>1..1</td>
-												<td>udt:DateType</td>
+												<td>formFinland:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>ExaminationOfImpediments</td>
+												<td>The value of this property is of the class ExaminationOfImpedimentsToMarriage.</td>
+												<td>1..1</td>
+												<td>formFinland:ExaminationOfImpedimentsToMarriage</td>
 											</tr>
 										</tbody>
 									</table>
 										<h4 id="deathForm">5.4 Form deathForm</h4>
-												<h5 id="Death">5.4.1 Class Death
-												
-												</h5>
-												<p><b>Definition:</b></p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Person</td>
-															<td>The value of this property is of the class Person.</td>
-															<td>1..1</td>
-															<td>formFinland:Person</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="FormDeathFinland">5.4.2 Class FormDeathFinland
+												<h5 id="FormDeathFinland">5.4.1 Class FormDeathFinland
 												
 												</h5>
 												<p><b>Definition:</b></p>
@@ -605,6 +583,28 @@
 															<td>The value of this property is of any type.</td>
 															<td>0..1</td>
 															<td>ext:UBLExtensionsType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="Death">5.4.2 Class Death
+												
+												</h5>
+												<p><b>Definition:</b></p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Person</td>
+															<td>The value of this property is of the class Person.</td>
+															<td>1..1</td>
+															<td>formFinland:Person</td>
 														</tr>
 													</tbody>
 												</table>
@@ -729,41 +729,7 @@
 																			</tbody>
 																		</table>
 																			<h4 id="maritalStatusForm">5.7 Form maritalStatusForm</h4>
-																					<h5 id="FormMaritalStatusFinland">5.7.1 Class FormMaritalStatusFinland
-																					
-																					</h5>
-																					<p><b>Definition:</b></p>
-																					<table class="generatedTable table table-striped table-bordered">
-																						<thead>
-																							<tr>
-																								<th>Property Name</th>
-																								<th>Definition</th>
-																								<th>Cardinality</th>
-																								<th>Data Type</th>
-																							</tr>
-																						</thead>
-																						<tbody>
-																							<tr>
-																								<td>Header</td>
-																								<td>The value of this property is of the class FormHeader.</td>
-																								<td>1..1</td>
-																								<td>formFinland:FormHeader</td>
-																							</tr>
-																							<tr>
-																								<td>Body</td>
-																								<td>The value of this property is of the class MaritalStatus.</td>
-																								<td>1..1</td>
-																								<td>formFinland:MaritalStatus</td>
-																							</tr>
-																							<tr>
-																								<td>Extension</td>
-																								<td>The value of this property is of any type.</td>
-																								<td>1..1</td>
-																								<td>ext:UBLExtensionsType</td>
-																							</tr>
-																						</tbody>
-																					</table>
-																					<h5 id="MaritalStatus">5.7.2 Class MaritalStatus
+																					<h5 id="MaritalStatus">5.7.1 Class MaritalStatus
 																					
 																					</h5>
 																					<p><b>Definition:</b></p>
@@ -785,7 +751,7 @@
 																							</tr>
 																						</tbody>
 																					</table>
-																					<h5 id="MaritalStatusChoice">5.7.3 Class MaritalStatusChoice
+																					<h5 id="MaritalStatusChoice">5.7.2 Class MaritalStatusChoice
 																					(choice)
 																					</h5>
 																					<p><b>Definition:</b></p>
@@ -819,30 +785,42 @@
 																							</tr>
 																						</tbody>
 																					</table>
+																					<h5 id="FormMaritalStatusFinland">5.7.3 Class FormMaritalStatusFinland
+																					
+																					</h5>
+																					<p><b>Definition:</b></p>
+																					<table class="generatedTable table table-striped table-bordered">
+																						<thead>
+																							<tr>
+																								<th>Property Name</th>
+																								<th>Definition</th>
+																								<th>Cardinality</th>
+																								<th>Data Type</th>
+																							</tr>
+																						</thead>
+																						<tbody>
+																							<tr>
+																								<td>Header</td>
+																								<td>The value of this property is of the class FormHeader.</td>
+																								<td>1..1</td>
+																								<td>formFinland:FormHeader</td>
+																							</tr>
+																							<tr>
+																								<td>Body</td>
+																								<td>The value of this property is of the class MaritalStatus.</td>
+																								<td>1..1</td>
+																								<td>formFinland:MaritalStatus</td>
+																							</tr>
+																							<tr>
+																								<td>Extension</td>
+																								<td>The value of this property is of any type.</td>
+																								<td>1..1</td>
+																								<td>ext:UBLExtensionsType</td>
+																							</tr>
+																						</tbody>
+																					</table>
 																						<h4 id="marriageForm">5.8 Form marriageForm</h4>
-																								<h5 id="Marriage">5.8.1 Class Marriage
-																								
-																								</h5>
-																								<p><b>Definition:</b></p>
-																								<table class="generatedTable table table-striped table-bordered">
-																									<thead>
-																										<tr>
-																											<th>Property Name</th>
-																											<th>Definition</th>
-																											<th>Cardinality</th>
-																											<th>Data Type</th>
-																										</tr>
-																									</thead>
-																									<tbody>
-																										<tr>
-																											<td>Person</td>
-																											<td>The value of this property is of the class Person.</td>
-																											<td>1..1</td>
-																											<td>formFinland:Person</td>
-																										</tr>
-																									</tbody>
-																								</table>
-																								<h5 id="FormMarriageFinland">5.8.2 Class FormMarriageFinland
+																								<h5 id="FormMarriageFinland">5.8.1 Class FormMarriageFinland
 																								
 																								</h5>
 																								<p><b>Definition:</b></p>
@@ -873,6 +851,28 @@
 																											<td>The value of this property is of any type.</td>
 																											<td>0..1</td>
 																											<td>ext:UBLExtensionsType</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																								<h5 id="Marriage">5.8.2 Class Marriage
+																								
+																								</h5>
+																								<p><b>Definition:</b></p>
+																								<table class="generatedTable table table-striped table-bordered">
+																									<thead>
+																										<tr>
+																											<th>Property Name</th>
+																											<th>Definition</th>
+																											<th>Cardinality</th>
+																											<th>Data Type</th>
+																										</tr>
+																									</thead>
+																									<tbody>
+																										<tr>
+																											<td>Person</td>
+																											<td>The value of this property is of the class Person.</td>
+																											<td>1..1</td>
+																											<td>formFinland:Person</td>
 																										</tr>
 																									</tbody>
 																								</table>
@@ -940,7 +940,51 @@
 																												</tbody>
 																											</table>
 																												<h4 id="registeredPartnershipStatusForm">5.10 Form registeredPartnershipStatusForm</h4>
-																														<h5 id="MaritalStatusChoice">5.10.1 Class MaritalStatusChoice
+																														<h5 id="RegisteredPartnershipStatus">5.10.1 Class RegisteredPartnershipStatus
+																														
+																														</h5>
+																														<p><b>Definition:</b></p>
+																														<table class="generatedTable table table-striped table-bordered">
+																															<thead>
+																																<tr>
+																																	<th>Property Name</th>
+																																	<th>Definition</th>
+																																	<th>Cardinality</th>
+																																	<th>Data Type</th>
+																																</tr>
+																															</thead>
+																															<tbody>
+																																<tr>
+																																	<td>Person</td>
+																																	<td>The value of this property is of the class MaritalOrRegisteredPartnerShipStatusPerson.</td>
+																																	<td>1..1</td>
+																																	<td>formFinland:MaritalOrRegisteredPartnershipStatusPerson</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																														<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.10.2 Class MaritalOrRegisteredPartnershipStatusPerson
+																														
+																														</h5>
+																														<p><b>Definition:</b></p>
+																														<table class="generatedTable table table-striped table-bordered">
+																															<thead>
+																																<tr>
+																																	<th>Property Name</th>
+																																	<th>Definition</th>
+																																	<th>Cardinality</th>
+																																	<th>Data Type</th>
+																																</tr>
+																															</thead>
+																															<tbody>
+																																<tr>
+																																	<td>MaritalOrRegisteredPartnershipStatus</td>
+																																	<td>The value of this property is of the class NotMarriedChoice.</td>
+																																	<td>1..1</td>
+																																	<td>formFinland:NotMarriedChoice</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																														<h5 id="MaritalStatusChoice">5.10.3 Class MaritalStatusChoice
 																														(choice)
 																														</h5>
 																														<p><b>Definition:</b></p>
@@ -971,50 +1015,6 @@
 																																	<td></td>
 																																	<td>1..1</td>
 																																	<td>udt:IndicatorType</td>
-																																</tr>
-																															</tbody>
-																														</table>
-																														<h5 id="RegisteredPartnershipStatus">5.10.2 Class RegisteredPartnershipStatus
-																														
-																														</h5>
-																														<p><b>Definition:</b></p>
-																														<table class="generatedTable table table-striped table-bordered">
-																															<thead>
-																																<tr>
-																																	<th>Property Name</th>
-																																	<th>Definition</th>
-																																	<th>Cardinality</th>
-																																	<th>Data Type</th>
-																																</tr>
-																															</thead>
-																															<tbody>
-																																<tr>
-																																	<td>Person</td>
-																																	<td>The value of this property is of the class MaritalOrRegisteredPartnerShipStatusPerson.</td>
-																																	<td>1..1</td>
-																																	<td>formFinland:MaritalOrRegisteredPartnershipStatusPerson</td>
-																																</tr>
-																															</tbody>
-																														</table>
-																														<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.10.3 Class MaritalOrRegisteredPartnershipStatusPerson
-																														
-																														</h5>
-																														<p><b>Definition:</b></p>
-																														<table class="generatedTable table table-striped table-bordered">
-																															<thead>
-																																<tr>
-																																	<th>Property Name</th>
-																																	<th>Definition</th>
-																																	<th>Cardinality</th>
-																																	<th>Data Type</th>
-																																</tr>
-																															</thead>
-																															<tbody>
-																																<tr>
-																																	<td>MaritalOrRegisteredPartnershipStatus</td>
-																																	<td>The value of this property is of the class NotMarriedChoice.</td>
-																																	<td>1..1</td>
-																																	<td>formFinland:NotMarriedChoice</td>
 																																</tr>
 																															</tbody>
 																														</table>

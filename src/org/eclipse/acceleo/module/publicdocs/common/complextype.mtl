@@ -9,7 +9,6 @@
 
 [template public generateComplextype_ground(class : Class, NDR : String)]
 [if not  class.ownedAttribute->isEmpty()]
-[comment][debug('Complex type:' + class.name)/][/comment]
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [if isChoice(class)]
@@ -42,7 +41,6 @@
 [if class.belongSamePackage(base.oclAsType(Class))]
 		<[getNS('xs')/]:restriction base="[base.name/]Type">
 [else]
-[comment][debug('Different:'+class.name+'-'+base.name)/][/comment]
 		<[getNS('xs')/]:restriction base="[getFQDN(base.oclAsType(Class))/]Type">
 [/if][/for]
 [if not  class.ownedAttribute->isEmpty()]
@@ -67,12 +65,10 @@
 <[getNS('xs')/]:complexType name="[class.name/]Type">
 	[generateAnnotation(class)/]
 [for (base: Classifier | class.general)]
-	[comment debug(' ComplexType With Extention ' + class.name + ' with base ' + base.name)/]
 	<[getNS('xs')/]:complexContent>
 [if class.belongSamePackage(base.oclAsType(Class))]
 		<[getNS('xs')/]:extension base="[base.name/]Type">
 [else]
-[comment][debug('Different:'+class.name+'-'+base.name)/][/comment]
 		<[getNS('xs')/]:extension base="[getFQDN4(base.oclAsType(Class))/]Type">
 		[/if][/for]
 [if not  class.ownedAttribute->isEmpty()]

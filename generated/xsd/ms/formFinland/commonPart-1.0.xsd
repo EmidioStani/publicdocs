@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 22/11/2017 17:20 
+    Generated On: 23/11/2017 10:20 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -136,12 +136,33 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="NotMarriedChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
-				Stereotype xsdChoice
 				Stereotype commonPart
+				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -163,27 +184,6 @@
 							
 		
 	</xsd:choice>
-</xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-			<xsd:sequence>
-												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 
