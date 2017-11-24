@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCroatia-1.0.xsd
-    Generated On: 24/11/2017 16:25 
+    Generated On: 24/11/2017 16:31 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -87,6 +87,28 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="DeathDeclarerChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This choice class contains the possible choices regarding the entity that declared a death.
+				Stereotype xsdChoice
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					<xsd:element name="DeclarerPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+										<xsd:element name="Institution" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="FormDeathCroatiaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -122,28 +144,6 @@
 		
 	</xsd:sequence>
 	
-</xsd:complexType>
-<xsd:complexType name="DeathDeclarerChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This choice class contains the possible choices regarding the entity that declared a death.
-				Stereotype xsdChoice
-				Stereotype deathForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="DeclarerPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-										<xsd:element name="Institution" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>
 

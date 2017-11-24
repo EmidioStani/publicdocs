@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSlovenia-1.0.xsd
-    Generated On: 24/11/2017 16:25 
+    Generated On: 24/11/2017 16:31 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,7 +33,7 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="PartnerType">
+<xsd:complexType name="DeathPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -41,8 +41,6 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-										<xsd:element name="Person" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-										
 							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -51,6 +49,8 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+										<xsd:element name="LastPlaceOfDomicile" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
 		
 	</xsd:sequence>
 	
@@ -116,7 +116,7 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="DeathPersonType">
+<xsd:complexType name="PartnerType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
@@ -124,6 +124,8 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
+										<xsd:element name="Person" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+										
 							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
@@ -132,8 +134,6 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="LastPlaceOfDomicile" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
 		
 	</xsd:sequence>
 	

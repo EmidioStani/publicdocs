@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 24/11/2017 16:25 
+    Generated On: 24/11/2017 16:31 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,6 +30,42 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="LegalPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about a legal person.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the denomination of a legal person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the social form of the legal person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information about the headquarters of the legal person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="AbsenceOfCriminalRecordType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -87,6 +123,34 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
+<xsd:complexType name="PersonChoiceType">
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+										This choice class contains the options regarding the type of person (natural or legal).
+												Stereotype absenceOfCriminalRecordForm
+												Stereotype xsdChoice
+									    </xsd:documentation>
+									</xsd:annotation>
+									<xsd:choice>
+													<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																The value of this property is that of class Person.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>
+													
+													<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
+														<xsd:annotation>
+														    <xsd:documentation xml:lang="en">
+																The value of this property is that of class LegalPerson.
+														    </xsd:documentation>
+														</xsd:annotation>
+													</xsd:element>
+													
+										
+									</xsd:choice>
+								</xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
 									<xsd:annotation>
 									    <xsd:documentation xml:lang="en">
@@ -116,70 +180,6 @@
 										
 									</xsd:sequence>
 									
-								</xsd:complexType>
-<xsd:complexType name="LegalPersonType">
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-										This class contains information about a legal person.
-												Stereotype absenceOfCriminalRecordForm
-									    </xsd:documentation>
-									</xsd:annotation>
-									<xsd:sequence> 
-															<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		This property contains the denomination of a legal person.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
-															<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		This property contains the social form of the legal person.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
-															<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		This property contains information about the headquarters of the legal person.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
-										
-									</xsd:sequence>
-									
-								</xsd:complexType>
-<xsd:complexType name="PersonChoiceType">
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-										This choice class contains the options regarding the type of person (natural or legal).
-												Stereotype xsdChoice
-												Stereotype absenceOfCriminalRecordForm
-									    </xsd:documentation>
-									</xsd:annotation>
-									<xsd:choice>
-													<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is that of class Person.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-													<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is that of class LegalPerson.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-										
-									</xsd:choice>
 								</xsd:complexType>
 </xsd:schema>
 
