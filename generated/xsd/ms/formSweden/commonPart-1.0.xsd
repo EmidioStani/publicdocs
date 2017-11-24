@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSweden-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -23,6 +23,34 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="SpousesType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="SpouseA" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class PersonalInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="SpouseB" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class PersonalInfo.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="Spouses2Type">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -47,6 +75,30 @@
 						</xsd:annotation>
 					</xsd:element>
 					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="CivilRegistrationType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
 		
 	</xsd:sequence>
 	
@@ -123,58 +175,6 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="SpousesType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="SpouseA" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class PersonalInfo.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="SpouseB" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class PersonalInfo.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="CivilRegistrationType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
 		
 	</xsd:sequence>
 	

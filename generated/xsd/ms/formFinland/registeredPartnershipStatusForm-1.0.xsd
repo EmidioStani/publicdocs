@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -27,30 +27,10 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="RegisteredPartnershipStatusType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype registeredPartnershipStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="Person" type="MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class MaritalOrRegisteredPartnerShipStatusPerson.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="MaritalOrRegisteredPartnershipStatusPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person's marital or registered partnership status.
 				Stereotype registeredPartnershipStatusForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -65,41 +45,10 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="MaritalStatusChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype registeredPartnershipStatusForm
-				Stereotype xsdChoice
-				Stereotype maritalStatusForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="NotMarried" type="pdc:NotMarriedChoiceType" minOccurs="1" maxOccurs="1"/>
-					
-							<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains the date of marriage.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="RegisteredPartnership" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
 <xsd:complexType name="FormRegisteredPartnershipStatusFinlandType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a registered partnership status form.
 				Stereotype registeredPartnershipStatusForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -128,6 +77,57 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="MaritalStatusChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's Marital Status.
+				Stereotype xsdChoice
+				Stereotype maritalStatusForm
+				Stereotype registeredPartnershipStatusForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+					<xsd:element name="NotMarried" type="pdc:NotMarriedChoiceType" minOccurs="1" maxOccurs="1"/>
+					
+							<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains the date of marriage.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="RegisteredPartnership" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="RegisteredPartnershipStatusType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a registered partnership status.
+				Stereotype registeredPartnershipStatusForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="Person" type="MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class MaritalOrRegisteredPartnerShipStatusPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 		
 	</xsd:sequence>
 	

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,33 +30,10 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="LifeType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype lifeForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_lifeForm:LifeType">
-			<xsd:sequence>
-							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Person.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormLifeFinlandType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a life form.
 				Stereotype lifeForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -88,6 +65,29 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="LifeType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's life.
+				Stereotype lifeForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_lifeForm:LifeType">
+			<xsd:sequence>
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

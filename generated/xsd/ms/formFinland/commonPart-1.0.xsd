@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,10 +26,82 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="PersonType">
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the header of a form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
+			<xsd:sequence>
+							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DocumentInfo.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="NotMarriedChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to whether an unmarried person is divorced or widowed.
+				Stereotype xsdChoice
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="DivorcedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="WidowedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="PersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person. 
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -112,78 +184,6 @@
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="FormHeaderType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
-			<xsd:sequence>
-							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DocumentInfo.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-			<xsd:sequence>
-												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="NotMarriedChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DivorcedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="WidowedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>
 

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -11,6 +11,7 @@
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:ms2forms_maritalStatusForm="http://data.europa.eu/edm/1/ns/forms/frmmaritalstatus#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -23,13 +24,91 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmmaritalstatus#"
 			   schemaLocation="../../../xsd/common/core/forms/maritalStatusForm-1.0.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="CanMarryType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's ability to get married.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:CanMarryType">
+			<xsd:sequence>
+									<xsd:element name="NoStatementOnCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains informaiton of type boolean concerning the existence of a statement on a person's capacity to marry. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="MaritalStatusType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the marital status of a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_maritalStatusForm:MaritalStatusType">
+			<xsd:sequence>
+									<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="DateOfLegalSeparation" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="SpouseOrEx" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="NotMarriedChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person being unmarried.
+				Stereotype xsdChoice
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="DissolutionOfRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
 <xsd:complexType name="PersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -87,38 +166,59 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="MaritalStatusType">
+<xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to information about a document.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="ms2forms_maritalStatusForm:MaritalStatusType">
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
 			<xsd:sequence>
-									<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="DateOfLegalSeparation" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-												<xsd:element name="SpouseOrEx" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
-												
+						<xsd:element name="DocumentIssued" minOccurs="1" maxOccurs="1" type="DocumentIssuedChoiceType">
+						</xsd:element>
+						
 				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DocumentIssuedChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the choice between the types of ID used to identify a person.
+				Stereotype xsdChoice
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="AfterSeeingThePerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document has been issued after seeing a person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="OnTheBasisOfThePopulationRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document has been issued on the basis of the Population Register.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="OnTheBasisOfTheIDCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type boolean concerning whether a document has been issued on the basis of the ID card.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>
 

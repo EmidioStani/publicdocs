@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,24 +32,6 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="LifeType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form Life.
-				Stereotype lifeForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_lifeForm:LifeType">
-			<xsd:sequence>
-						<xsd:element name="LifeCheckChoice" minOccurs="1" maxOccurs="1" type="LifeCheckChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormLifeNetherlandsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -83,7 +65,7 @@
 <xsd:complexType name="LifeCheckChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to the choice between ways to verify that someone is alive.
 				Stereotype xsdChoice
 				Stereotype lifeForm
 	    </xsd:documentation>
@@ -92,7 +74,7 @@
 							<xsd:element name="NationalIdentityCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via a national identity card.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -100,15 +82,15 @@
 							<xsd:element name="Passport" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via a passport.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="DrivingLicense" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DrivingLicence" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via a driving licence.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -116,7 +98,7 @@
 							<xsd:element name="ResidencePermit" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via a residence permit.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -124,7 +106,7 @@
 							<xsd:element name="MunicipalRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via municipal registers.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -132,7 +114,7 @@
 							<xsd:element name="ConsularRegisters" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via consular registers.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -140,13 +122,31 @@
 							<xsd:element name="OtherProofOfIdentity" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type boolean concerning whether someone being alive is checked via some proof of identity not mentioned above.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
 		
 	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="LifeType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form Life.
+				Stereotype lifeForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_lifeForm:LifeType">
+			<xsd:sequence>
+						<xsd:element name="LifeCheckChoice" minOccurs="1" maxOccurs="1" type="LifeCheckChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formMalta-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,27 +33,10 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="AbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
-			<xsd:sequence>
-												<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordMaltaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to an absence of criminal record form.
 				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -79,6 +62,69 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="AbsenceOfCriminalRecordType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the absence of criminal record of a person.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
+			<xsd:sequence>
+									<xsd:element name="Declaration" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the declaration of a police representative.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class Person.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="IsAPersonOfGoodConduct" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type boolean concerning whether an individual is a person of good conduct. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type date concerning the date a certificate of absence of criminal record has been issued.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="PoliceCommissioner" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning a police commissioner.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="Initials" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning a person's initials.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

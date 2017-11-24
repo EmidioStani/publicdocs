@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formAustria-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -29,60 +29,6 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmcapacitytomarry#"
 			   schemaLocation="../../../xsd/common/core/forms/capacityToMarryForm-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="PersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to information about a person.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:PersonType">
-			<xsd:sequence>
-									<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type string concerning other names of a person.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="AcademicDegreesOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type string concerning academic degrees or professional titles held by a person.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to information about a document.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-			<xsd:sequence>
-									<xsd:element name="PointInTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type time concerning the time of issue of a document.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="AcademicDegreesType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -114,58 +60,6 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="DissolvedType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information about the last marriage or registered partnership of the person concerned by the form.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="DissolvedBy" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="DissolvedOn" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type date concerning the date on which a marriage or registered partnership was dissolved.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="DissolvedIn" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="LastMarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the last known marriage of a person.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="To" type="PersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Person.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="Dissolved" type="DissolvedType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Dissolved.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="FormHeaderType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -191,24 +85,24 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
+<xsd:complexType name="MaritalStatusType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
+		This class contains properties related to the marital status of a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="PersonType">
+		<xsd:extension base="pdc:MaritalStatusChoiceType">
 			<xsd:sequence>
-									<xsd:element name="RegistrationOfBirth" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type string concerning the registration of a person's birth.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Person
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
 			</xsd:sequence>
 		</xsd:extension>
@@ -263,6 +157,83 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a document.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+									<xsd:element name="PointInTime" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type time concerning the time of issue of a document.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to information about a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:PersonType">
+			<xsd:sequence>
+									<xsd:element name="OtherNames" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning other names of a person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="AcademicDegreesOrProfessionalTitles" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning academic degrees or professional titles held by a person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="CapacityToMarryOrEnterRegisteredPartnershipPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the capacity to marry or enter into a registered partnership of a person.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="PersonType">
+			<xsd:sequence>
+									<xsd:element name="RegistrationOfBirth" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning the registration of a person's birth.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="LastRegisteredPartnershipType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -291,28 +262,57 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="MaritalStatusType">
+<xsd:complexType name="LastMarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the marital status of a person.
+		This class contains properties related to the last known marriage of a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:MaritalStatusChoiceType">
-			<xsd:sequence>
-							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+					<xsd:element name="To" type="PersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="Dissolved" type="DissolvedType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Dissolved.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="DissolvedType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about the last marriage or registered partnership of the person concerned by the form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="DissolvedBy" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="DissolvedOn" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Person
+										This property contains information of type date concerning the date on which a marriage or registered partnership was dissolved.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
+										<xsd:element name="DissolvedIn" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 </xsd:schema>
 

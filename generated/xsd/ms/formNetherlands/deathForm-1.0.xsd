@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,31 +32,6 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="DeathType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the death of a person.
-				Stereotype deathForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_deathForm:DeathType">
-			<xsd:sequence>
-												<xsd:element name="PlaceBodyFound" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-												
-									<xsd:element name="DateBodyFound" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormDeathNetherlandsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -86,6 +61,31 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="DeathType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the death of a person.
+				Stereotype deathForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_deathForm:DeathType">
+			<xsd:sequence>
+												<xsd:element name="PlaceBodyFound" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="DateBodyFound" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type date concerning the date a deceased body was found.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

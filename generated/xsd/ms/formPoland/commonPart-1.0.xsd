@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 15:52 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -29,37 +29,6 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="DeathType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_deathForm:DeathType">
-			<xsd:sequence>
-							<xsd:element name="Details" type="DeathDetailsType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DeathDetails.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-									<xsd:element name="DeathCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="DeathDetailsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -142,6 +111,37 @@
 									
 												<xsd:element name="PlaceOfIssue" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
 												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="DeathType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_deathForm:DeathType">
+			<xsd:sequence>
+							<xsd:element name="Details" type="DeathDetailsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DeathDetails.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="DeathCertificateNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
 				
 			</xsd:sequence>
 		</xsd:extension>

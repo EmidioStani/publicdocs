@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,60 +32,6 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="MarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to a marriage.
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_marriageForm:MarriageType">
-			<xsd:sequence>
-						<xsd:element name="MarriageAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="MarriageAmendmentsAndSubsequentEntriesChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MarriageAmendmentsAndSubsequentEntriesChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype xsdChoice
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DateConvertedIntoRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateDivorceOrDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateMarriageAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
 <xsd:complexType name="FormMarriageNetherlandsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -115,6 +61,60 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="MarriageAmendmentsAndSubsequentEntriesChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the choice between possible marriage amendments and subsequent entries. 
+				Stereotype xsdChoice
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:choice>
+							<xsd:element name="DateConvertedIntoRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a marriage was converted into a registered partnership.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateDivorceOrDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a divorce occurred or a marriage was otherwise dissolved.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateMarriageAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a marriage was annulled.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="MarriageType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to a marriage.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_marriageForm:MarriageType">
+			<xsd:sequence>
+						<xsd:element name="MarriageAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="MarriageAmendmentsAndSubsequentEntriesChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

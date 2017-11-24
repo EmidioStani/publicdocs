@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -36,9 +36,9 @@
 <xsd:complexType name="TypeOfExtractChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
-				Stereotype absenceOfCriminalRecordForm
+		This class contains properties related to the different possible types of extracts from the criminal record.
 				Stereotype xsdChoice
+				Stereotype absenceOfCriminalRecordForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -69,24 +69,6 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="AbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
-			<xsd:sequence>
-						<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
-						</xsd:element>
-						
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="FormAbsenceOfCriminalRecordBelgiumType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -116,6 +98,24 @@
 		
 	</xsd:sequence>
 	
+</xsd:complexType>
+<xsd:complexType name="AbsenceOfCriminalRecordType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's certificate of absence of a criminal record.
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
+			<xsd:sequence>
+						<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
+						</xsd:element>
+						
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 

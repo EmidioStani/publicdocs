@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSlovenia-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -63,28 +63,6 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="RegisteredPartnershipPersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype registeredPartnershipForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="RegisteredPartnershipPerson" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
 <xsd:complexType name="RegisteredPartnershipType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -123,6 +101,28 @@
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="RegisteredPartnershipPersonType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype registeredPartnershipForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="RegisteredPartnershipPerson" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+										
+							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 </xsd:schema>
 

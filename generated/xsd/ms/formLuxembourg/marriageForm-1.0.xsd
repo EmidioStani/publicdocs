@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,28 +33,74 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="FormMarriageLuxembourgType">
+<xsd:complexType name="MarriagePersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains information about a person that is part of a marriage.
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
+			<xsd:sequence>
+												<xsd:element name="PlaceOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												
+												<xsd:element name="CountryOfBirth" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+												
+									<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is the profession of the concerned person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+												<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+												
+							<xsd:element name="PreviousMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class PreviousMarriage.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="OtherPreviousMarriages" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information about any other previous marriages of the concerned person.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="InformationOnParents" type="InformationOnParentsType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class InformationOnParents.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="MarriageDissolutionType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains information about the dissolution of a marriage.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Marriage.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+				<xsd:element name="ReasonForDissolution" minOccurs="1" maxOccurs="1" type="ReasonForDissolutionOfMarriageType">
+				</xsd:element>
+				
+							<xsd:element name="DateOfDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										This property can contain any type of information.
+										The value of this property is the date of the dissolution of a marriage.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -123,21 +169,28 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="MarriageDissolutionType">
+<xsd:complexType name="FormMarriageLuxembourgType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains information about the dissolution of a marriage.
+		This class contains properties related to a marriage form.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-				<xsd:element name="ReasonForDissolution" minOccurs="1" maxOccurs="1" type="ReasonForDissolutionOfMarriageType">
-				</xsd:element>
-				
-							<xsd:element name="DateOfDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						
+					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Marriage.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is the date of the dissolution of a marriage.
+										This property can contain any type of information.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -149,7 +202,7 @@
 <xsd:complexType name="MarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a marriage.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
@@ -216,59 +269,6 @@
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of class MarriageDissolution.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MarriagePersonType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains information about a person that is part of a marriage.
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="pdc:MaritalOrRegisteredPartnershipStatusPersonType">
-			<xsd:sequence>
-												<xsd:element name="PlaceOfBirth" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="CountryOfBirth" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-												
-									<xsd:element name="Profession" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is the profession of the concerned person.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-												<xsd:element name="Domicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-							<xsd:element name="PreviousMarriage" type="PreviousMarriageType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is that of class PreviousMarriage.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-									<xsd:element name="OtherPreviousMarriages" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information about any other previous marriages of the concerned person.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-							<xsd:element name="InformationOnParents" type="InformationOnParentsType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is that of class InformationOnParents.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>

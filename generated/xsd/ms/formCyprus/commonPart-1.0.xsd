@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCyprus-1.0.xsd
-    Generated On: 23/11/2017 10:20 
+    Generated On: 24/11/2017 16:25 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,12 +26,69 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="FormHeaderType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the form header of a form.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
+			<xsd:sequence>
+												<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+												
+						<xsd:element name="AuthorityIssuingForm" minOccurs="1" maxOccurs="1" type="AuthorityChoiceType">
+						</xsd:element>
+						
+						<xsd:element name="AuthorityIssuingDocument" minOccurs="1" maxOccurs="1" type="AuthorityChoiceType">
+						</xsd:element>
+						
+							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DocumentInfo. 
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="SignatureInfo" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"/>
+										
+									<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains a note for the issuing authority regarding which information is to be mentioned. 
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="DocumentKindChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to the choice between different types of documents.
-				Stereotype commonPart
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -77,8 +134,8 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to the choice between the different types of administrative documents. 
-				Stereotype commonPart
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
@@ -141,63 +198,6 @@
 		
 	</xsd:choice>
 </xsd:complexType>
-<xsd:complexType name="FormHeaderType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the form header of a form.
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
-			<xsd:sequence>
-												<xsd:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
-												
-						<xsd:element name="AuthorityIssuingForm" minOccurs="1" maxOccurs="1" type="AuthorityChoiceType">
-						</xsd:element>
-						
-						<xsd:element name="AuthorityIssuingDocument" minOccurs="1" maxOccurs="1" type="AuthorityChoiceType">
-						</xsd:element>
-						
-							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DocumentInfo. 
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="SignatureInfo" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"/>
-										
-									<xsd:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type. 
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type. 
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains a note for the issuing authority regarding which information is to be mentioned. 
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 <xsd:complexType name="DocumentInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -233,8 +233,8 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to the choice between types of authority. 
-				Stereotype commonPart
 				Stereotype xsdChoice
+				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:choice>
