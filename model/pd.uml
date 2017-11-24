@@ -7754,13 +7754,51 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34kfKRLEeewNp6klooYAA" name="LifeCheckChoice">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kfaRLEeewNp6klooYAA" name="NationalIdentityCard" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kfqRLEeewNp6klooYAA" name="Passport" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kf6RLEeewNp6klooYAA" name="DrivingLicense" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgKRLEeewNp6klooYAA" name="ResidencePermit" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgaRLEeewNp6klooYAA" name="MunicipalRegisters" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgqRLEeewNp6klooYAA" name="ConsularRegisters" type="_O31itZPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kg6RLEeewNp6klooYAA" name="OtherProofOfIdentity" type="_O31itZPcEeaaQdure8LlEA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_4378oNEYEeefIujBwAmbSg">
+          <body>This class contains properties related to the choice between ways to verify that someone is alive.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kfaRLEeewNp6klooYAA" name="NationalIdentityCard" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__YHsINEYEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via a national identity card.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_XT6W4NEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kfqRLEeewNp6klooYAA" name="Passport" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BmAgANEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via a passport.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Y0hOANEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kf6RLEeewNp6klooYAA" name="DrivingLicence" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EEwaYNEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via a driving licence.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_aMBMcNEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgKRLEeewNp6klooYAA" name="ResidencePermit" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GMHvgNEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via a residence permit.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_eBcl4NEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgaRLEeewNp6klooYAA" name="MunicipalRegisters" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Kflv0NEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via municipal registers.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_gWWnwNEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kgqRLEeewNp6klooYAA" name="ConsularRegisters" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_NfOwwNEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via consular registers.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_h0y7sNEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kg6RLEeewNp6klooYAA" name="OtherProofOfIdentity" type="_O31itZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RXjtMNEZEeefIujBwAmbSg">
+            <body>This property contains information of type boolean concerning whether someone being alive is checked via some proof of identity not mentioned above.</body>
+          </ownedComment>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_jSdzkNEZEeefIujBwAmbSg" value="true"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34khKRLEeewNp6klooYAA" name="FormLifeNetherlands">
         <ownedComment xmi:type="uml:Comment" xmi:id="_S34khaRLEeewNp6klooYAA">
@@ -7805,7 +7843,11 @@
             <body>The value of this property is of the class Place.</body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kk6RLEeewNp6klooYAA" name="DateBodyFound" type="_O31ispPcEeaaQdure8LlEA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kk6RLEeewNp6klooYAA" name="DateBodyFound" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zPnCMNEYEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning the date a deceased body was found.</body>
+          </ownedComment>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34klKRLEeewNp6klooYAA" name="FormDeathNetherlands">
         <ownedComment xmi:type="uml:Comment" xmi:id="_S34klaRLEeewNp6klooYAA">
@@ -7830,9 +7872,24 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34km6RLEeewNp6klooYAA" name="MarriageAmendmentsAndSubsequentEntriesChoice">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knKRLEeewNp6klooYAA" name="DateConvertedIntoRegisteredPartnership" type="_O31ispPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knaRLEeewNp6klooYAA" name="DateDivorceOrDissolution" type="_O31ispPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knqRLEeewNp6klooYAA" name="DateMarriageAnnulled" type="_O31ispPcEeaaQdure8LlEA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0CdmANEZEeefIujBwAmbSg">
+          <body>This class contains properties related to the choice between possible marriage amendments and subsequent entries. </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knKRLEeewNp6klooYAA" name="DateConvertedIntoRegisteredPartnership" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9TaM8NEZEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning when a marriage was converted into a registered partnership.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knaRLEeewNp6klooYAA" name="DateDivorceOrDissolution" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CdivgNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning when a divorce occurred or a marriage was otherwise dissolved.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34knqRLEeewNp6klooYAA" name="DateMarriageAnnulled" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FnimUNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning when a marriage was annulled.</body>
+          </ownedComment>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34kn6RLEeewNp6klooYAA" name="FormMarriageNetherlands">
         <ownedComment xmi:type="uml:Comment" xmi:id="_S34koKRLEeewNp6klooYAA">
@@ -7868,6 +7925,9 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34kqqRLEeewNp6klooYAA" name="PossibleRecords">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_s45iUNEZEeefIujBwAmbSg">
+          <body>This class contains properties to the possible records of a civil status.</body>
+        </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kq6RLEeewNp6klooYAA" name="DatePartnershipRegistered" type="_O31ispPcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_S34krKRLEeewNp6klooYAA" name="PartnershipRegisteredWith" type="_O31is5PcEeaaQdure8LlEA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kraRLEeewNp6klooYAA" name="DateRegisteredPartnershipEndedOrDissolved" type="_O31ispPcEeaaQdure8LlEA"/>
@@ -7917,10 +7977,29 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34kvKRLEeewNp6klooYAA" name="PartnershipAmendmentsAndSubsequentEntries">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kvaRLEeewNp6klooYAA" name="DateRegisteredPartnershipConvertedIntoMarriage" type="_O31ispPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kvqRLEeewNp6klooYAA" name="DateRegisteredPartnershipEnded" type="_O31ispPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kv6RLEeewNp6klooYAA" name="DateRegisteredPartnershipDissolved" type="_O31ispPcEeaaQdure8LlEA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kwKRLEeewNp6klooYAA" name="DateRegisteredPartnershipAnnulled" type="_O31ispPcEeaaQdure8LlEA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_OMAhwNEaEeefIujBwAmbSg">
+          <body>This class contains properties related to the choices of how a partnership might have been ammended or subsequent entries.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kvaRLEeewNp6klooYAA" name="DateRegisteredPartnershipConvertedIntoMarriage" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VMtkYNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning the date a registered partnership was converted into a marriage.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kvqRLEeewNp6klooYAA" name="DateRegisteredPartnershipEnded" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_X0KHwNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning the date a registered partnership ended.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kv6RLEeewNp6klooYAA" name="DateRegisteredPartnershipDissolved" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZykVMNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning the date a registered partnership was dissolved.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S34kwKRLEeewNp6klooYAA" name="DateRegisteredPartnershipAnnulled" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cdXHgNEaEeefIujBwAmbSg">
+            <body>This property contains information of type date concerning the date a registered partnership was annulled.</body>
+          </ownedComment>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_S34kwaRLEeewNp6klooYAA" name="RegisteredPartnership">
         <ownedComment xmi:type="uml:Comment" xmi:id="_S34kwqRLEeewNp6klooYAA">
