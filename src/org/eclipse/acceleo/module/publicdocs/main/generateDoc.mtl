@@ -210,6 +210,11 @@ h3 i{color: #444;}
 				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author4')/]" href="mailto:[getConf('email_author4')/]">[getConf('name_author4')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author4')/]</a>
 			</span>
 		</dd>
+		<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+			<span typeof="foaf:Person">
+				<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="[getConf('name_author5')/]" href="mailto:[getConf('email_author5')/]">[getConf('name_author5')/]</a>, <a href="[getConf('pwc_website')/]">[getConf('org_author5')/]</a>
+			</span>
+		</dd>
     </dl>
   
     <p>
@@ -279,12 +284,12 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 		</tr>
 	  </thead>
 	  <tbody>
-		<tr><td>pdc</td><td>[getConf('url_pdc')/]</td></tr>
-		<tr><td>forms</td><td>[getConf('url_forms')/]</td></tr>
 	    <tr><td>cva</td><td>[getConf('url_cva')/]</td></tr>
 	    <tr><td>cvb</td><td>[getConf('url_cvb')/]</td></tr>
-	    <tr><td>udt</td><td>[getConf('url_udt')/]</td></tr>
 	    <tr><td>ext</td><td>[getConf('url_ext')/]</td></tr>
+		<tr><td>forms</td><td>[getConf('url_forms')/]</td></tr>
+		<tr><td>pdc</td><td>[getConf('url_pdc')/]</td></tr>
+	    <tr><td>udt</td><td>[getConf('url_udt')/]</td></tr>
 	    <tr><td>xs</td><td>[getConf('url_xs')/]</td></tr>
 	  </tbody>
 	</table>
@@ -294,7 +299,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 	<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
 	<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
 	<ul>
-		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema'))->sortedBy(name))]
 			<li><a href="[getConf('url_'.concat(packageableElement.name))/]">[packageableElement.name/]</a>;</li>
 		[/for]
 	</ul>
@@ -307,7 +312,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 <section id="generatedContent">
 	<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
 	<div class="contentTables">
-		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema')))]
+		[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema'))->sortedBy(name))]
 			[generatePackageDoc(packageableElement.oclAsType(Package), i)/]
 		[/for]
 	</div>
@@ -316,7 +321,7 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 
 [template public generatePackageDoc(pack : Package , j : Integer)]
 <h4 id="[pack.name/]">5.[j/] Package [pack.name/]</h4>
-<img alt="UML model of [pack.name/] package" src="[pack.name/].jpeg" width = 100%> UML class diagram </img>
+<img alt="UML model of [pack.name/] package" src="[pack.name/].png" width = 100%> UML class diagram </img>
 [let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
 	[for (packageableElement: PackageableElement | pClasses->sortedBy(name))]
 		[if packageableElement.oclIsTypeOf(Class)]
@@ -372,16 +377,9 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 [/template]
 
 [template public includeStaticContent3(model : Model)]
-<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
-	<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
-</section>
-
-<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
-	<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
-</section>
 
 <section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
-<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+<h3 id="h2_references" aria-level="1"><span class="secno">A. </span>References</h3>
 
 	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
 		<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
@@ -399,9 +397,6 @@ In order to maximize semantic and technical interoperability, the XML schemas us
 			</dl>
 	</section>
 
-	<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
-		<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
-	</section>
 </section>
 [/template]
 
