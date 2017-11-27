@@ -3,7 +3,9 @@
   <uml:Model xmi:id="_x1vz0JPYEea8WcU2IuteNg" name="PublicDocuments">
     <packagedElement xmi:type="uml:Package" xmi:id="_O3_ToZPcEeaaQdure8LlEA" name="cva" URI="http://www.w3.org/ns/corevocabulary/AggegrateComponents">
       <packagedElement xmi:type="uml:Class" xmi:id="_O3_TopPcEeaaQdure8LlEA" name="Person">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_RpVxcOFuEear-8wQOKPlcA"/>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_RpVxcOFuEear-8wQOKPlcA">
+          <body>This class contains properties related to information about a person.</body>
+        </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_O3_To5PcEeaaQdure8LlEA" name="FamilyName">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O3_TpJPcEeaaQdure8LlEA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O3_TpZPcEeaaQdure8LlEA" value="*"/>
@@ -2509,7 +2511,6 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_geum4NA4EeeyhLmA7RcVZw">
           <body>This class contains properties related to a parent.</body>
         </ownedComment>
-        <generalization xmi:type="uml:Generalization" xmi:id="_iFzSYNA4EeeyhLmA7RcVZw" general="_hWUGYDTNEeelo8Ns44bPUQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_ZocrkNA4EeeyhLmA7RcVZw" name="Surname" type="_O31is5PcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_ZocrkdA4EeeyhLmA7RcVZw">
             <body>This property contains information of type string concerning the surname of a person.</body>
@@ -2518,6 +2519,26 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_c_2sQNA4EeeyhLmA7RcVZw" name="Forename" type="_O31is5PcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_c_2sQdA4EeeyhLmA7RcVZw">
             <body>This property contains information of type string concerning the forename of a person.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_AEd_INNmEee8Qo1gWfFKrQ" name="DateOfBirth" type="_O31ispPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_AEd_IdNmEee8Qo1gWfFKrQ">
+            <body>This property contains information of type string concerning the date of birth of a person.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EHcsYNNmEee8Qo1gWfFKrQ" name="PlaceOfBirth" type="_yBxYcK7FEeavbt_KlNQYCw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EHcsYdNmEee8Qo1gWfFKrQ">
+            <body>The value of this property is that of class Place.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Kf74cNNmEee8Qo1gWfFKrQ" name="Profession" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Kf74cdNmEee8Qo1gWfFKrQ">
+            <body>This property contains information of type string concerning the profession of a person.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TO-FINNmEee8Qo1gWfFKrQ" name="Domicile" type="_O31ivZPcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TO-FIdNmEee8Qo1gWfFKrQ">
+            <body>The value of this property is that of class Address.</body>
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
@@ -4841,15 +4862,29 @@
         <ownedComment xmi:type="uml:Comment" xmi:id="_EEk6AMlfEeev488hJN5EJw">
           <body>This class contains properties related to information about a parent.</body>
         </ownedComment>
-        <generalization xmi:type="uml:Generalization" xmi:id="_oOSFYMlaEeev488hJN5EJw" general="_YaX9MMlZEeev488hJN5EJw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_QDH6EIQbEeeGuf5Kcipq7A" name="ForenameSurnameParentsFather" type="_O31is5PcEeaaQdure8LlEA">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_QDH6EIQbEeeGuf5Kcipq7A" name="ForenameSurnameParents" type="_O31is5PcEeaaQdure8LlEA">
           <ownedComment xmi:type="uml:Comment" xmi:id="_HeNvUMlfEeev488hJN5EJw">
-            <body>This property contains information of type string concerning the forename and surname of a parent.</body>
+            <body>This property contains information of type string concerning the forename and surname of a person's parents.</body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ub0_sIQbEeeGuf5Kcipq7A" name="ForenameSurnameParentsMother" type="_O31is5PcEeaaQdure8LlEA">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_J0ZjkMlfEeev488hJN5EJw">
-            <body>This property contains information of type string concerning the forename and surname of a person.</body>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_uxUm4NNmEee8Qo1gWfFKrQ" name="PlaceOfBirth" type="_tHvAoDS6Eeelo8Ns44bPUQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uxUm4dNmEee8Qo1gWfFKrQ">
+            <body>The value of this property is that of class Place.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0EE58NNmEee8Qo1gWfFKrQ" name="NationalIdentityCard" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_0EE58dNmEee8Qo1gWfFKrQ">
+            <body>This property contains information of type string concerning a person's national identity card.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="__aXcwNNmEee8Qo1gWfFKrQ" name="Forename" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__aXcwdNmEee8Qo1gWfFKrQ">
+            <body>This class contains information of type string concerning a person's forename.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DP0EUNNnEee8Qo1gWfFKrQ" name="Surname" type="_O31is5PcEeaaQdure8LlEA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DP0EUdNnEee8Qo1gWfFKrQ">
+            <body>This class contains information of type string concerning a person's surname.</body>
           </ownedComment>
         </ownedAttribute>
       </packagedElement>
