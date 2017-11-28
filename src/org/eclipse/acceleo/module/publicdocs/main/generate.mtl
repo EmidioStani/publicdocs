@@ -4,9 +4,9 @@
 [module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import org::eclipse::acceleo::module::publicdocs::main::aggregatingSchema /]
-[import org::eclipse::acceleo::module::publicdocs::main::basicComponents /]
 [import org::eclipse::acceleo::module::publicdocs::main::stringLengthComponents /]
 [import org::eclipse::acceleo::module::publicdocs::main::generateDoc /]
+[import org::eclipse::acceleo::module::publicdocs::main::generateForms /]
 [import org::eclipse::acceleo::module::publicdocs::main::codelist /]
 [import org::eclipse::acceleo::module::publicdocs::main::forms /]
 [import org::eclipse::acceleo::module::publicdocs::ms::msForms /]
@@ -20,6 +20,8 @@
 [generateStringLengthComponents(model)/]
 [generateCodeList(model)/]
 [generateDocs(model)/]
+[generateDocForms(model)/]
+
 [comment generateMSForms(model) /]
 [generateMSSeparateForms(model)/]
 [file ('stdout', false)]Generating XML schemas is done.[/file]
