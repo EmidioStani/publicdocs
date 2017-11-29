@@ -56,10 +56,10 @@ useUnqualifiedDataTypes: Boolean = true}]
 			[/if]
 		[/if]
 	[else]
-		[if typePackName=pack.name and property.name <> 'Header']
+		[if (typePackName=pack.name and (property.name <> 'Header' and property.name <> 'Footer'))]
 			[generateElement(property, property.type.name.concat('Type'))/]
 		[else]
-			[if property.name = 'Header' and typePackName='forms' and pack.name ='forms']
+			[if ((property.name = 'Header' or property.name = 'Footer') and typePackName='forms' and pack.name ='forms')]
 				[generateElement(property, 'forms_commonPart'.concat(':').concat(property.type.name.concat('Type')))/]
 			[else]
 				[if property.name = 'Header' and typePackName='forms' and pack.name <>'forms']
@@ -192,18 +192,18 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 [template public generateElement(property: Property, typeName: String)]
 [if (property.upper = -1)]
 [if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded" [hasDefaultValue(property)/]>
 	[generateAnnotation(property)/]
 </[getNS('xs')/]:element>	
 [else] 
-<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded" [hasDefaultValue(property)/]/>
 [/if][else]
 [if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" [hasDefaultValue(property)/] >
 	[generateAnnotation(property)/]
 </[getNS('xs')/]:element>
 [else] 
-<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
+<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" [hasDefaultValue(property)/] />
 [/if][/if]
 [/template]
 
@@ -211,20 +211,20 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 
 [if (property.upper = -1)]
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded">
+		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded" [hasDefaultValue(property)/]>
 			[generateAnnotation(property)/]
 		</[getNS('xs')/]:element>	
 		[else] 
-		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded"/>
+		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="unbounded" [hasDefaultValue(property)/]/>
 	[/if]
 [else]
 
 	[if (property.type.namespace.name.toString() <> 'pdc') and (property.type.namespace.name.toString() <> 'forms')]
-		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" >
+		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" [hasDefaultValue(property)/]>
 			[generateAnnotation(property)/]
 		</[getNS('xs')/]:element>
 		[else] 
-		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]"/>
+		<[getNS('xs')/]:element name="[property.name/]" type="[typeName/]" minOccurs="[property.lower/]" maxOccurs="[property.upper/]" [hasDefaultValue(property)/]/>
 	[/if]
 [/if]
 
