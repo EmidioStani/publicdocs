@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFinland-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,6 +26,58 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<!-- ===================================================== -->
+<xsd:complexType name="DocumentInfoType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+			<xsd:sequence>
+												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"  />
+												
+												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"  />
+												
+												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"  />
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="NotMarriedChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to whether an unmarried person is divorced or widowed.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="pdc:NotMarriedChoiceType">
+			<xsd:sequence>
+									<xsd:element name="DivorcedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="WidowedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 <xsd:complexType name="FormHeaderType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -36,7 +88,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_commonPart:FormHeaderType">
 			<xsd:sequence>
-							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class DocumentInfo.
@@ -49,55 +101,6 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="DocumentInfoType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
-			<xsd:sequence>
-												<xsd:element name="LocalRegistryAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="RegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="NicknameRegistrationAuthority" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="NotMarriedChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to whether an unmarried person is divorced or widowed.
-				Stereotype commonPart
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DivorcedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="WidowedFromRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
 <xsd:complexType name="PersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -108,9 +111,9 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:PersonType">
 			<xsd:sequence>
-												<xsd:element name="PlaceOfDeath" type="pdc:PlaceType" minOccurs="0" maxOccurs="1"/>
+												<xsd:element name="PlaceOfDeath" type="pdc:PlaceType" minOccurs="0" maxOccurs="1"  />
 												
-									<xsd:element name="DateOfDeath" type="udt:DateType" minOccurs="0" maxOccurs="1" >
+									<xsd:element name="DateOfDeath" type="udt:DateType" minOccurs="0" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of date type.
@@ -118,7 +121,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="Surname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+									<xsd:element name="Surname" type="udt:TextType" minOccurs="0" maxOccurs="unbounded" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -126,7 +129,7 @@
 										</xsd:annotation>
 									</xsd:element>	
 									
-									<xsd:element name="Forename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+									<xsd:element name="Forename" type="udt:TextType" minOccurs="0" maxOccurs="unbounded" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -134,7 +137,7 @@
 										</xsd:annotation>
 									</xsd:element>	
 									
-									<xsd:element name="PersonalInfoDisclosureForbidden" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="PersonalInfoDisclosureForbidden" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of boolean type.
@@ -142,9 +145,9 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="TemporaryAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="TemporaryAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="NameNormallyUsed" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="NameNormallyUsed" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -152,7 +155,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="SurnameAtBirth" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+									<xsd:element name="SurnameAtBirth" type="udt:TextType" minOccurs="0" maxOccurs="unbounded" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -160,7 +163,7 @@
 										</xsd:annotation>
 									</xsd:element>	
 									
-									<xsd:element name="IsLiving" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="IsLiving" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of boolean type.
@@ -168,9 +171,9 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="MainResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="MainResidence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="MotherTongue" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="MotherTongue" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												
@@ -178,7 +181,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="PostalAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="PostalAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 												
 				
 			</xsd:sequence>
@@ -190,7 +193,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

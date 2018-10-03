@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -43,9 +43,9 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_capacityToMarryForm:CapacityToMarryType">
 			<xsd:sequence>
-												<xsd:element name="Addressee" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Addressee" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
 												
-							<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="RecordInformation" type="RecordInformationType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class RecordInformation.
@@ -53,9 +53,9 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-												<xsd:element name="Residence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Residence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="FamilyStatus" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="FamilyStatus" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning a person's family status.
@@ -68,17 +68,19 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:element name="FormCapacityToMarryLithuania" type="FormCapacityToMarryLithuaniaType"/>
 <xsd:complexType name="FormCapacityToMarryLithuaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to a capacity to marry form.
 				Stereotype capacityToMarryForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class CapacityToMarry.
@@ -86,7 +88,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property can contain any type of information.
@@ -103,7 +107,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

@@ -171,6 +171,15 @@ deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 [getFQDN3(property)/][/if]
 [/template]
 
+[template public generateUnqualifiedDataTypeDoc(property: Property){
+deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
+}]
+[if deps->size()>0]
+[for (sup : NamedElement | deps.supplier->any(true))]
+[getFQDN2(sup)/][/for][else]
+[getFQDN6(property)/][/if]
+[/template]
+
 [template public generateElementWithUnqualifiedDataTypes2(property: Property)
 {deps : Set(Dependency) =  getPropertyDependencies(property, property.type.name);
 }]

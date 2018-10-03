@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formNetherlands-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -32,17 +32,55 @@
 	<!-- ===== Includes======================================= -->
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="MarriageAmendmentsAndSubsequentEntriesChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to the choice between possible marriage amendments and subsequent entries. 
+				Stereotype marriageForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="DateConvertedIntoRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a marriage was converted into a registered partnership.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateDivorceOrDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a divorce occurred or a marriage was otherwise dissolved.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateMarriageAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning when a marriage was annulled.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:element name="FormMarriageNetherlands" type="FormMarriageNetherlandsType"/>
 <xsd:complexType name="FormMarriageNetherlandsType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the form Marriage.
 				Stereotype marriageForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Marriage.
@@ -50,7 +88,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property can contain any type of information.
@@ -72,56 +112,25 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_marriageForm:MarriageType">
 			<xsd:sequence>
-						<xsd:element name="MarriageAmendmentsAndSubsequentEntries" minOccurs="1" maxOccurs="1" type="MarriageAmendmentsAndSubsequentEntriesChoiceType">
-						</xsd:element>
-						
+							<xsd:element name="MarriageAmendmentsAndSubsequentEntries" type="MarriageAmendmentsAndSubsequentEntriesChoiceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class  MarriageAmendmentsAndSubsequentEntriesChoice.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 				
 			</xsd:sequence>
 		</xsd:extension>
 	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="MarriageAmendmentsAndSubsequentEntriesChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the choice between possible marriage amendments and subsequent entries. 
-				Stereotype marriageForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="DateConvertedIntoRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type date concerning when a marriage was converted into a registered partnership.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateDivorceOrDissolution" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type date concerning when a divorce occurred or a marriage was otherwise dissolved.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="DateMarriageAnnulled" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of type date concerning when a marriage was annulled.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
 </xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

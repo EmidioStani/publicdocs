@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-27">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2018-09-11">2018</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -248,6 +248,12 @@
 									<td>forms:AbsenceOfCriminalRecord</td>
 								</tr>
 								<tr>
+									<td>Footer</td>
+									<td>The value of this property is that of class SignatureInfo.</td>
+									<td>1..1</td>
+									<td>formFrance:SignatureInfo</td>
+								</tr>
+								<tr>
 									<td>Extension</td>
 									<td>This property contains information of any type.</td>
 									<td>0..1</td>
@@ -256,10 +262,10 @@
 							</tbody>
 						</table>
 							<h4 id="birthForm">5.3 Form birthForm</h4>
-									<h5 id="Birth">5.3.1 Class Birth
+									<h5 id="FormBirthFrance">5.3.1 Class FormBirthFrance
 									
 									</h5>
-									<p><b>Definition:</b>This class contains properties related to the birth of a person.</p>
+									<p><b>Definition:</b>This class contains properties related to a birth form.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
 											<tr>
@@ -271,32 +277,66 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>KeyReferences</td>
-												<td>The value of this property is of the class KeyReferencesChoice.</td>
+												<td>Header</td>
+												<td>The value of this property is that of class FormHeader.</td>
 												<td>1..1</td>
-												<td>formFrance:KeyReferencesChoice</td>
+												<td>formFrance:FormHeader</td>
 											</tr>
 											<tr>
-												<td>DeclaredByOther</td>
-												<td>The value of this property is that of class BirthDeclarer.</td>
-												<td>0..1</td>
-												<td>formFrance:BirthDeclarer</td>
-											</tr>
-											<tr>
-												<td>DeclaredByParent</td>
-												<td>The value of this property is that of class class DeclaredByParentChoice.</td>
-												<td>0..1</td>
-												<td>formFrance:DeclaredByParentChoice</td>
-											</tr>
-											<tr>
-												<td>Person</td>
-												<td>The value of this property is that of class BirthPerson.</td>
+												<td>Body</td>
+												<td>The value of this property is that of class Birth.</td>
 												<td>1..1</td>
-												<td>formFrance:BirthPerson</td>
+												<td>formFrance:Birth</td>
+											</tr>
+											<tr>
+												<td>Footer</td>
+												<td>The value of this property is that of class SignatureInfo.</td>
+												<td>1..1</td>
+												<td>formFrance:SignatureInfo</td>
+											</tr>
+											<tr>
+												<td>Extension</td>
+												<td>This property contains information of any type.</td>
+												<td>0..1</td>
+												<td>ext:UBLExtensionsType</td>
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="BirthDeclarer">5.3.2 Class BirthDeclarer
+									<h5 id="DeclaredByParentChoice">5.3.2 Class DeclaredByParentChoice
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice of which parent declared the birth of the person concerned by the form.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>DeclaredByFather</td>
+												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's father.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DeclaredByMother</td>
+												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's mother.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DeclaredByFatherAndMother</td>
+												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's mother and father.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="BirthDeclarer">5.3.3 Class BirthDeclarer
 									
 									</h5>
 									<p><b>Definition:</b>This class contains properties related to a person declaring a birth. </p>
@@ -336,10 +376,10 @@
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="FormBirthFrance">5.3.3 Class FormBirthFrance
+									<h5 id="Birth">5.3.4 Class Birth
 									
 									</h5>
-									<p><b>Definition:</b>This class contains properties related to a birth form.</p>
+									<p><b>Definition:</b>This class contains properties related to the birth of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
 											<tr>
@@ -351,56 +391,28 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>Header</td>
-												<td>The value of this property is that of class FormHeader.</td>
+												<td>KeyReferences</td>
+												<td>The value of this property is of the class KeyReferencesChoice.</td>
 												<td>1..1</td>
-												<td>formFrance:FormHeader</td>
+												<td>formFrance:KeyReferencesChoice</td>
 											</tr>
 											<tr>
-												<td>Body</td>
-												<td>The value of this property is that of class Birth.</td>
-												<td>1..1</td>
-												<td>formFrance:Birth</td>
-											</tr>
-											<tr>
-												<td>Extension</td>
-												<td>This property contains information of any type.</td>
+												<td>DeclaredByOther</td>
+												<td>The value of this property is that of class BirthDeclarer.</td>
 												<td>0..1</td>
-												<td>ext:UBLExtensionsType</td>
+												<td>formFrance:BirthDeclarer</td>
 											</tr>
-										</tbody>
-									</table>
-									<h5 id="DeclaredByParentChoice">5.3.4 Class DeclaredByParentChoice
-									(choice)
-									</h5>
-									<p><b>Definition:</b>This class contains elements related to the choice of which parent declared the birth of the person concerned by the form.</p>
-									<table class="generatedTable table table-striped table-bordered">
-										<thead>
 											<tr>
-												<th>Property Name</th>
-												<th>Definition</th>
-												<th>Cardinality</th>
-												<th>Data Type</th>
+												<td>DeclaredByParent</td>
+												<td>The value of this property is that of class class DeclaredByParentChoice.</td>
+												<td>0..1</td>
+												<td>formFrance:DeclaredByParentChoice</td>
 											</tr>
-										</thead>
-										<tbody>
 											<tr>
-												<td>DeclaredByFather</td>
-												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's father.</td>
+												<td>Person</td>
+												<td>The value of this property is that of class BirthPerson.</td>
 												<td>1..1</td>
-												<td>udt:IndicatorType</td>
-											</tr>
-											<tr>
-												<td>DeclaredByMother</td>
-												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's mother.</td>
-												<td>1..1</td>
-												<td>udt:IndicatorType</td>
-											</tr>
-											<tr>
-												<td>DeclaredByFatherAndMother</td>
-												<td>This property contains information of type boolean concerning whether a birth has been declared by the child's mother and father.</td>
-												<td>1..1</td>
-												<td>udt:IndicatorType</td>
+												<td>formFrance:BirthPerson</td>
 											</tr>
 										</tbody>
 									</table>
@@ -452,6 +464,12 @@
 															<td>The value of this property is of the class CapacityToMarry.</td>
 															<td>1..1</td>
 															<td>formFrance:CapacityToMarry</td>
+														</tr>
+														<tr>
+															<td>Footer</td>
+															<td>The value of this property is that of class SignatureInfo.</td>
+															<td>1..1</td>
+															<td>formFrance:SignatureInfo</td>
 														</tr>
 														<tr>
 															<td>Extension</td>
@@ -542,10 +560,10 @@
 																	</tr>
 																</tbody>
 															</table>
-															<h5 id="Death">5.5.2 Class Death
+															<h5 id="FormDeathFrance">5.5.2 Class FormDeathFrance
 															
 															</h5>
-															<p><b>Definition:</b>This class contains properties related to the death of a person.</p>
+															<p><b>Definition:</b>This class contains properties related to a death form.</p>
 															<table class="generatedTable table table-striped table-bordered">
 																<thead>
 																	<tr>
@@ -557,16 +575,28 @@
 																</thead>
 																<tbody>
 																	<tr>
-																		<td>Person</td>
-																		<td>The value of this property is that of class DeathPerson.</td>
+																		<td>Header</td>
+																		<td>The value of this property is of the class FormHeader.</td>
 																		<td>1..1</td>
-																		<td>formFrance:DeathPerson</td>
+																		<td>formFrance:FormHeader</td>
 																	</tr>
 																	<tr>
-																		<td>Declarer</td>
-																		<td>The value of this property is that of class DeathDeclarer.</td>
+																		<td>Body</td>
+																		<td>The value of this property is of the class Death.</td>
 																		<td>1..1</td>
-																		<td>formFrance:DeathDeclarer</td>
+																		<td>formFrance:Death</td>
+																	</tr>
+																	<tr>
+																		<td>Footer</td>
+																		<td>The value of this property is that of class SignatureInfo.</td>
+																		<td>1..1</td>
+																		<td>formFrance:SignatureInfo</td>
+																	</tr>
+																	<tr>
+																		<td>Extension</td>
+																		<td>The value of this property is of any type.</td>
+																		<td>0..1</td>
+																		<td>ext:UBLExtensionsType</td>
 																	</tr>
 																</tbody>
 															</table>
@@ -598,10 +628,10 @@
 																	</tr>
 																</tbody>
 															</table>
-															<h5 id="FormDeathFrance">5.5.4 Class FormDeathFrance
+															<h5 id="Death">5.5.4 Class Death
 															
 															</h5>
-															<p><b>Definition:</b>This class contains properties related to a death form.</p>
+															<p><b>Definition:</b>This class contains properties related to the death of a person.</p>
 															<table class="generatedTable table table-striped table-bordered">
 																<thead>
 																	<tr>
@@ -613,22 +643,16 @@
 																</thead>
 																<tbody>
 																	<tr>
-																		<td>Header</td>
-																		<td>The value of this property is of the class FormHeader.</td>
+																		<td>Person</td>
+																		<td>The value of this property is that of class DeathPerson.</td>
 																		<td>1..1</td>
-																		<td>formFrance:FormHeader</td>
+																		<td>formFrance:DeathPerson</td>
 																	</tr>
 																	<tr>
-																		<td>Body</td>
-																		<td>The value of this property is of the class Death.</td>
+																		<td>Declarer</td>
+																		<td>The value of this property is that of class DeathDeclarer.</td>
 																		<td>1..1</td>
-																		<td>formFrance:Death</td>
-																	</tr>
-																	<tr>
-																		<td>Extension</td>
-																		<td>The value of this property is of any type.</td>
-																		<td>0..1</td>
-																		<td>ext:UBLExtensionsType</td>
+																		<td>formFrance:DeathDeclarer</td>
 																	</tr>
 																</tbody>
 															</table>
@@ -688,6 +712,12 @@
 																					<td>formFrance:Life</td>
 																				</tr>
 																				<tr>
+																					<td>Footer</td>
+																					<td>The value of this property is that of class SignatureInfo.</td>
+																					<td>1..1</td>
+																					<td>formFrance:SignatureInfo</td>
+																				</tr>
+																				<tr>
 																					<td>Extension</td>
 																					<td>The value of this property is of any type.</td>
 																					<td>0..1</td>
@@ -723,6 +753,12 @@
 																								<td>formFrance:Marriage</td>
 																							</tr>
 																							<tr>
+																								<td>Footer</td>
+																								<td>The value of this property is that of class SignatureInfo.</td>
+																								<td>1..1</td>
+																								<td>formFrance:SignatureInfo</td>
+																							</tr>
+																							<tr>
 																								<td>Extension</td>
 																								<td>The value of this property is of any type.</td>
 																								<td>0..1</td>
@@ -756,6 +792,12 @@
 																											<td>The value of this property is of the class RegisteredPartnership.</td>
 																											<td>1..1</td>
 																											<td>formFrance:RegisteredPartnership</td>
+																										</tr>
+																										<tr>
+																											<td>Footer</td>
+																											<td>The value of this property is that of class SignatureInfo.</td>
+																											<td>1..1</td>
+																											<td>formFrance:SignatureInfo</td>
 																										</tr>
 																										<tr>
 																											<td>Extension</td>

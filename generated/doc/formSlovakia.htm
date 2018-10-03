@@ -78,7 +78,7 @@
 	<body>
 		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
 			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
-			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-11-27">2017</time></h2>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2018-09-11">2018</time></h2>
 			  <dl> 
 				<dt>This version:</dt>
 			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
@@ -248,6 +248,12 @@
 									<td>forms:AbsenceOfCriminalRecord</td>
 								</tr>
 								<tr>
+									<td>Footer</td>
+									<td>The value of this property is that of class SignatureInfo.</td>
+									<td>1..1</td>
+									<td>forms:SignatureInfo</td>
+								</tr>
+								<tr>
 									<td>Extension</td>
 									<td>This property contains information of any type.</td>
 									<td>0..1</td>
@@ -256,10 +262,10 @@
 							</tbody>
 						</table>
 							<h4 id="birthForm">5.3 Form birthForm</h4>
-									<h5 id="Birth">5.3.1 Class Birth
+									<h5 id="BirthPerson">5.3.1 Class BirthPerson
 									
 									</h5>
-									<p><b>Definition:</b>This class contains properties related to the birth of a person.</p>
+									<p><b>Definition:</b>This class contains properties related to a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
 											<tr>
@@ -271,10 +277,10 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>Person</td>
-												<td>The value of this property is that of class BirthPerson.</td>
+												<td>DataOnParents</td>
+												<td>The value of this property is that of class Parents</td>
 												<td>1..1</td>
-												<td>formSlovakia:BirthPerson</td>
+												<td>formSlovakia:Parents</td>
 											</tr>
 										</tbody>
 									</table>
@@ -305,17 +311,23 @@
 												<td>formSlovakia:Birth</td>
 											</tr>
 											<tr>
+												<td>Footer</td>
+												<td>The value of this property is that of class SignatureInfo.</td>
+												<td>1..1</td>
+												<td>forms:SignatureInfo</td>
+											</tr>
+											<tr>
 												<td>Extension</td>
 												<td>This property contains information of any type.</td>
-												<td>1..1</td>
+												<td>0..1</td>
 												<td>ext:UBLExtensionsType</td>
 											</tr>
 										</tbody>
 									</table>
-									<h5 id="BirthPerson">5.3.3 Class BirthPerson
+									<h5 id="Birth">5.3.3 Class Birth
 									
 									</h5>
-									<p><b>Definition:</b>This class contains properties related to a person.</p>
+									<p><b>Definition:</b>This class contains properties related to the birth of a person.</p>
 									<table class="generatedTable table table-striped table-bordered">
 										<thead>
 											<tr>
@@ -327,18 +339,18 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>DataOnParents</td>
-												<td>The value of this property is that of class Parents</td>
+												<td>Person</td>
+												<td>The value of this property is that of class BirthPerson.</td>
 												<td>1..1</td>
-												<td>formSlovakia:Parents</td>
+												<td>formSlovakia:BirthPerson</td>
 											</tr>
 										</tbody>
 									</table>
 										<h4 id="domicileAndOrResidenceForm">5.4 Form domicileAndOrResidenceForm</h4>
-												<h5 id="ConfirmationIssuedForChoice">5.4.1 Class ConfirmationIssuedForChoice
-												(choice)
+												<h5 id="FormDomicileAndOrResidenceSlovakia">5.4.1 Class FormDomicileAndOrResidenceSlovakia
+												
 												</h5>
-												<p><b>Definition:</b>This class contains elements related to the choice between the types of person for whom a domicile and/or residence certificate has been issued.</p>
+												<p><b>Definition:</b>This class contains properties related to the form Domicile and/or Residence.</p>
 												<table class="generatedTable table table-striped table-bordered">
 													<thead>
 														<tr>
@@ -350,16 +362,28 @@
 													</thead>
 													<tbody>
 														<tr>
-															<td>NaturalPerson</td>
-															<td>The value of this property is that of class Person.</td>
+															<td>Header</td>
+															<td>The value of this property is of class FormHeader.</td>
 															<td>1..1</td>
-															<td>formSlovakia:Person</td>
+															<td>formSlovakia:FormHeader</td>
 														</tr>
 														<tr>
-															<td>LegalPerson</td>
-															<td>The value of this class is that of class LegalPerson.</td>
+															<td>Body</td>
+															<td>The value of this property is that of class DomicileAndOrResidence.</td>
 															<td>1..1</td>
-															<td>formSlovakia:LegalPerson</td>
+															<td>formSlovakia:DomicileAndOrResidence</td>
+														</tr>
+														<tr>
+															<td>Footer</td>
+															<td>The value of this property is that of class SignatureInfo.</td>
+															<td>1..1</td>
+															<td>forms:SignatureInfo</td>
+														</tr>
+														<tr>
+															<td>Extension</td>
+															<td>This property contains information of any type.</td>
+															<td>0..1</td>
+															<td>ext:UBLExtensionsType</td>
 														</tr>
 													</tbody>
 												</table>
@@ -421,7 +445,91 @@
 														</tr>
 													</tbody>
 												</table>
-												<h5 id="DomicileAndOrResidence">5.4.3 Class DomicileAndOrResidence
+												<h5 id="PermanentTemporaryStayChoice">5.4.3 Class PermanentTemporaryStayChoice
+												
+												</h5>
+												<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>PermanentStay</td>
+															<td>This property contains information of type boolean concerning whether a person's stay at a given address is permanent.</td>
+															<td>1..1</td>
+															<td>udt:IndicatorType</td>
+														</tr>
+														<tr>
+															<td>TemporaryStay</td>
+															<td>This property contains information of type boolean concerning whether a person's stay at a given address is temporary.</td>
+															<td>1..1</td>
+															<td>udt:IndicatorType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="LegalPerson">5.4.4 Class LegalPerson
+												
+												</h5>
+												<p><b>Definition:</b>This class contains properties related to a legal person.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>LegalPersonName</td>
+															<td>This property contains information of type string concerning the name of a legal person.</td>
+															<td>1..1</td>
+															<td>udt:TextType</td>
+														</tr>
+														<tr>
+															<td>RegisteredOffice</td>
+															<td>This property contains information of type string concerning the registered office of a legal person.</td>
+															<td>1..1</td>
+															<td>udt:TextType</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="ConfirmationIssuedForChoice">5.4.5 Class ConfirmationIssuedForChoice
+												
+												</h5>
+												<p><b>Definition:</b>This class contains elements related to the choice between the types of person for whom a domicile and/or residence certificate has been issued.</p>
+												<table class="generatedTable table table-striped table-bordered">
+													<thead>
+														<tr>
+															<th>Property Name</th>
+															<th>Definition</th>
+															<th>Cardinality</th>
+															<th>Data Type</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>NaturalPerson</td>
+															<td>The value of this property is that of class Person.</td>
+															<td>1..1</td>
+															<td>formSlovakia:Person</td>
+														</tr>
+														<tr>
+															<td>LegalPerson</td>
+															<td>The value of this class is that of class LegalPerson.</td>
+															<td>1..1</td>
+															<td>formSlovakia:LegalPerson</td>
+														</tr>
+													</tbody>
+												</table>
+												<h5 id="DomicileAndOrResidence">5.4.6 Class DomicileAndOrResidence
 												
 												</h5>
 												<p><b>Definition:</b>This class contains properties related to a person's domicile and/or residence.</p>
@@ -462,96 +570,6 @@
 														<tr>
 															<td>RegistrationOfficeNotes</td>
 															<td>This property contains information of type string concerning notes from the registration office.</td>
-															<td>1..1</td>
-															<td>udt:TextType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="PermanentTemporaryStayChoice">5.4.4 Class PermanentTemporaryStayChoice
-												(choice)
-												</h5>
-												<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>PermanentStay</td>
-															<td>This property contains information of type boolean concerning whether a person's stay at a given address is permanent.</td>
-															<td>1..1</td>
-															<td>udt:IndicatorType</td>
-														</tr>
-														<tr>
-															<td>TemporaryStay</td>
-															<td>This property contains information of type boolean concerning whether a person's stay at a given address is temporary.</td>
-															<td>1..1</td>
-															<td>udt:IndicatorType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="FormDomicileAndOrResidenceSlovakia">5.4.5 Class FormDomicileAndOrResidenceSlovakia
-												
-												</h5>
-												<p><b>Definition:</b>This class contains properties related to the form Domicile and/or Residence.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Header</td>
-															<td>The value of this property is of class FormHeader.</td>
-															<td>1..1</td>
-															<td>formSlovakia:FormHeader</td>
-														</tr>
-														<tr>
-															<td>Body</td>
-															<td>The value of this property is that of class DomicileAndOrResidence.</td>
-															<td>1..1</td>
-															<td>formSlovakia:DomicileAndOrResidence</td>
-														</tr>
-														<tr>
-															<td>Extension</td>
-															<td>This property contains information of any type.</td>
-															<td>0..1</td>
-															<td>ext:UBLExtensionsType</td>
-														</tr>
-													</tbody>
-												</table>
-												<h5 id="LegalPerson">5.4.6 Class LegalPerson
-												
-												</h5>
-												<p><b>Definition:</b>This class contains properties related to a legal person.</p>
-												<table class="generatedTable table table-striped table-bordered">
-													<thead>
-														<tr>
-															<th>Property Name</th>
-															<th>Definition</th>
-															<th>Cardinality</th>
-															<th>Data Type</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>LegalPersonName</td>
-															<td>This property contains information of type string concerning the name of a legal person.</td>
-															<td>1..1</td>
-															<td>udt:TextType</td>
-														</tr>
-														<tr>
-															<td>RegisteredOffice</td>
-															<td>This property contains information of type string concerning the registered office of a legal person.</td>
 															<td>1..1</td>
 															<td>udt:TextType</td>
 														</tr>
@@ -647,6 +665,12 @@
 																		<td>The value of this property is that of class Marriage.</td>
 																		<td>1..1</td>
 																		<td>formSlovakia:Marriage</td>
+																	</tr>
+																	<tr>
+																		<td>Footer</td>
+																		<td>The value of this property is that of class SignatureInfo.</td>
+																		<td>1..1</td>
+																		<td>forms:SignatureInfo</td>
 																	</tr>
 																	<tr>
 																		<td>Extension</td>

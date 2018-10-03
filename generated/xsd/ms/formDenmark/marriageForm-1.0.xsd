@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formDenmark-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,17 +33,52 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="FormMarriageDenmarkType">
+<xsd:complexType name="MarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a marriage.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_marriageForm:MarriageType">
+			<xsd:sequence>
+							<xsd:element name="SpouseA" type="SpouseType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Spouse.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="SpouseB" type="SpouseType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class Spouse.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+												<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+												
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FormMarriageDenmark" type="FormMarriageDenmarkType"/>
+<xsd:complexType name="FormMarriageDenmarkType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a marriage form.
+				Stereotype marriageForm
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Marriage.
@@ -51,7 +86,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of any type.
@@ -63,45 +100,12 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="MarriageType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype marriageForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_marriageForm:MarriageType">
-			<xsd:sequence>
-							<xsd:element name="SpouseA" type="SpouseType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Spouse.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="SpouseB" type="SpouseType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class Spouse.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-												<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

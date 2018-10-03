@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLithuania-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -13,6 +13,7 @@
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
 	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:ms2forms_absenceOfCriminalRecordForm="http://data.europa.eu/edm/1/ns/forms/frmabsenceofcriminalrecord#"	
+	xmlns:ms2forms_shaclShape=""	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
 	attributeFormDefault="unqualified"
@@ -28,22 +29,26 @@
 			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmabsenceofcriminalrecord#"
 			   schemaLocation="../../../xsd/common/core/forms/absenceOfCriminalRecordForm-1.0.xsd"/>
+	<xsd:import namespace=""
+			   schemaLocation=""/>
 	<!-- ===================================================== -->
 	<!-- ===== Includes======================================= -->
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:element name="FormAbsenceOfCriminalRecordLithuania" type="FormAbsenceOfCriminalRecordLithuaniaType"/>
 <xsd:complexType name="FormAbsenceOfCriminalRecordLithuaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to an absence of criminal record form.
 				Stereotype absenceOfCriminalRecordForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class AbsenceOfCriminalRecord.
@@ -51,7 +56,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property can contain any type of information.
@@ -71,9 +78,9 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
-		<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
+		<xsd:extension base="ms2forms_absenceOfCriminalRecordFormshaclShape:AbsenceOfCriminalRecordType">
 			<xsd:sequence>
-							<xsd:element name="Recordinformation" type="RecordInformationType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Recordinformation" type="RecordInformationType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class RecordInformation.
@@ -81,9 +88,9 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-												<xsd:element name="Addressee" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Addressee" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="DateOfTheInformationFromTheRegisterOfSuspects" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="DateOfTheInformationFromTheRegisterOfSuspects" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type date concerning the date of the information from the register of suspects.
@@ -101,7 +108,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

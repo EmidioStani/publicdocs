@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCzechRepublic-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -11,6 +11,7 @@
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:ms2forms_capacityToEnterRegisteredPartnershipForm="http://data.europa.eu/edm/1/ns/forms/frmcapacitytoenterregisteredpartnership#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -23,6 +24,8 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmcapacitytoenterregisteredpartnership#"
 			   schemaLocation="../../../xsd/common/core/forms/capacityToEnterRegisteredPartnershipForm-1.0.xsd"/>
 	<!-- ===================================================== -->
@@ -40,7 +43,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_capacityToEnterRegisteredPartnershipForm:CapacityToEnterRegisteredPartnershipType">
 			<xsd:sequence>
-									<xsd:element name="Validity" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="Validity" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -53,15 +56,17 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:element name="FormCapacityToEnterIntoRegisteredPartnershipCzechRepublic" type="FormCapacityToEnterIntoRegisteredPartnershipCzechRepublicType"/>
 <xsd:complexType name="FormCapacityToEnterIntoRegisteredPartnershipCzechRepublicType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to the form Capacity to Enter into Registered Partnership.
 				Stereotype capacityToEnterRegisteredPartnershipForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of the class FormHeader.
@@ -69,7 +74,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-					<xsd:element name="Body" type="CapacityToEnterRegisteredPartnershipType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="CapacityToEnterRegisteredPartnershipType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class CapacityToEnterRegisteredPartnership.
@@ -77,7 +82,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of any type.
@@ -94,7 +101,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

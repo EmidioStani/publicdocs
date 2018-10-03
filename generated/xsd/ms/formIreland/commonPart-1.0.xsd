@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formIreland-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -23,15 +23,15 @@
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
 	<!-- ===================================================== -->
-<xsd:complexType name="CivilRegistrationActType">
+<xsd:complexType name="RegistrarType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a registrar.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="IssuedBy" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="RegisteredInRegistrarOffice" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -39,10 +39,28 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="SuperintendentRegistrarArea" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+										
+							<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="RegistrationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -54,12 +72,12 @@
 <xsd:complexType name="InformantType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to an informant.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Name" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -67,7 +85,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Surname" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -75,7 +93,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Qualifications" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Qualifications" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -83,9 +101,9 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 										
-							<xsd:element name="SignedBy" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="SignedBy" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -97,15 +115,15 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="RegistrarType">
+<xsd:complexType name="CivilRegistrationActType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a civil registration act.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="RegisteredInRegistrarOffice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="IssuedBy" type="udt:TextType" minOccurs="1" maxOccurs="1" default ="Issued in Pursuance of the Civil Registration Act 2004" >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -113,28 +131,10 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="SuperintendentRegistrarArea" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of string type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="RegistrationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="RegistrationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of string type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -148,7 +148,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

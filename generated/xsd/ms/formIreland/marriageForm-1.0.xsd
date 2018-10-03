@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formIreland-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -36,14 +36,14 @@
 <xsd:complexType name="MarriageType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a marriage.
 				Stereotype marriageForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_marriageForm:MarriageType">
 			<xsd:sequence>
-									<xsd:element name="AccordingTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="AccordingTo" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -51,13 +51,13 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="Witness1" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Witness1" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
 												
-												<xsd:element name="Witness2" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Witness2" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
 												
-												<xsd:element name="Solemniser" type="pdc:PersonType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="Solemniser" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
 												
-							<xsd:element name="CivilRegistrationAct" type="CivilRegistrationActType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="CivilRegistrationAct" type="CivilRegistrationActType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class CivilRegistrationAct.
@@ -65,7 +65,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Registrar" type="RegistrarType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Registrar" type="RegistrarType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class Registrar.
@@ -78,17 +78,19 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:element name="FormMarriageIreland" type="FormMarriageIrelandType"/>
 <xsd:complexType name="FormMarriageIrelandType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a marriage form.
 				Stereotype marriageForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Marriage.
@@ -96,7 +98,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of any type.
@@ -113,7 +117,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

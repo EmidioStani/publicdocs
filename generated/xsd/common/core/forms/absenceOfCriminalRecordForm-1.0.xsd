@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,25 +26,6 @@
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/qdt"
 			   schemaLocation="../../../../xsd/common/core/qdt-LengthComponents-1.0.xsd"/>
 	<!-- ===================================================== -->
-<xsd:element name="FrmAbsenceOfCriminalRecord" type="FrmAbsenceOfCriminalRecordType"/>
-<xsd:complexType name="FrmAbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form AbsenceOfCriminalRecord.
-				Stereotype xsdGlobalElement
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"/>
-					
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-
 <xsd:complexType name="OtherIDTypeType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -53,7 +34,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="IDType" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="IDType" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -61,44 +42,10 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="IDNumber" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="IDNumber" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-
-<xsd:complexType name="AbsenceOfCriminalRecordType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the absence of a criminal record of a person. 
-				Stereotype absenceOfCriminalRecordForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="IdentityNumber" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of string type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-				<xsd:element name="IDTypeAndNo" minOccurs="1" maxOccurs="1" type="IDTypeAndNoChoiceType">
-				</xsd:element>
-				
-							<xsd:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of boolean type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -113,11 +60,11 @@
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the choice between the types of ID used to identify a person.
 				Stereotype absenceOfCriminalRecordForm
-				Stereotype xsdChoice
+				Stereotype shaclShape
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="NationalIdentityCardNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+							<xsd:element name="NationalIdentityCardNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -125,7 +72,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PassportNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PassportNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -133,7 +80,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="DrivingLicenceNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DrivingLicenceNo" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="2"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of string type.
@@ -141,17 +88,74 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-					<xsd:element name="OtherIDType" type="OtherIDTypeType" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="OtherIDType" type="OtherIDTypeType" minOccurs="1" maxOccurs="1"  />
 					
 		
-	</xsd:choice>
+	</xsd:sequence>
+	
+</xsd:complexType>
+
+<xsd:complexType name="AbsenceOfCriminalRecordType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the absence of a criminal record of a person. 
+				Stereotype absenceOfCriminalRecordForm
+				Stereotype shaclShape
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"  />
+										
+							<xsd:element name="IdentityNumber" type="qdt:StringMaxLength255Type" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of string type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+					<xsd:element name="IDTypeAndNo" type="IDTypeAndNoChoiceType" minOccurs="1" maxOccurs="1"  />
+					
+							<xsd:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+
+<xsd:element name="FrmAbsenceOfCriminalRecord" type="FrmAbsenceOfCriminalRecordType"/>
+<xsd:complexType name="FrmAbsenceOfCriminalRecordType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form AbsenceOfCriminalRecord.
+				Stereotype absenceOfCriminalRecordForm
+				Stereotype shaclShape
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="unbounded" />
+						
+					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"  />
+					
+						<xsd:element name="Footer" type="forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+						
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

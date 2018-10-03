@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formFrance-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -40,7 +40,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_lifeForm:LifeType">
 			<xsd:sequence>
-									<xsd:element name="PersonAppearedBeforeAuthority" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="PersonAppearedBeforeAuthority" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains the boolean value of whether the person concerned by the form appeared in front of an authority. 
@@ -48,7 +48,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="PresentedID" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="PresentedID" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains the boolean value of whether the person concerned by the form presented an ID.
@@ -61,15 +61,17 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:element name="FormLifeFrance" type="FormLifeFranceType"/>
 <xsd:complexType name="FormLifeFranceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to a death form.
 				Stereotype lifeForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of the class FormHeader.
@@ -77,7 +79,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-					<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Life.
@@ -85,7 +87,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+									<xsd:element name="Footer" type="SignatureInfoType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is that of class SignatureInfo.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of any type.
@@ -102,7 +112,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

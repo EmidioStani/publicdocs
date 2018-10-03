@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,7 +38,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Designation" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains the denomination of a legal person.
@@ -46,7 +46,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="CorporateForm" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains the social form of the legal person.
@@ -54,7 +54,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Headquarters" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains information about the headquarters of the legal person.
@@ -62,6 +62,68 @@
 								</xsd:annotation>
 							</xsd:element>
 							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:element name="FormAbsenceOfCriminalRecordLuxembourg" type="FormAbsenceOfCriminalRecordLuxembourgType"/>
+<xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to an absence of criminal record form.
+				Stereotype absenceOfCriminalRecordForm
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+						
+					<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class AbsenceOfCriminalRecord.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="PersonChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This choice class contains the options regarding the type of person (natural or legal).
+				Stereotype absenceOfCriminalRecordForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class LegalPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 		
 	</xsd:sequence>
 	
@@ -74,10 +136,15 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-				<xsd:element name="PersonKind" minOccurs="1" maxOccurs="1" type="PersonChoiceType">
-				</xsd:element>
-				
-							<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="PersonKind" type="PersonChoiceType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of the class PersonChoice.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+							<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains a note to the receiving authority stating:Criminal Records Bulletin issued:
@@ -123,70 +190,12 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="PersonChoiceType">
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-										This choice class contains the options regarding the type of person (natural or legal).
-												Stereotype absenceOfCriminalRecordForm
-												Stereotype xsdChoice
-									    </xsd:documentation>
-									</xsd:annotation>
-									<xsd:choice>
-													<xsd:element name="PhysicalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is that of class Person.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-													<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is that of class LegalPerson.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-										
-									</xsd:choice>
-								</xsd:complexType>
-<xsd:complexType name="FormAbsenceOfCriminalRecordLuxembourgType">
-									<xsd:annotation>
-									    <xsd:documentation xml:lang="en">
-										This class contains properties related to an absence of criminal record form.
-												Stereotype absenceOfCriminalRecordForm
-									    </xsd:documentation>
-									</xsd:annotation>
-									<xsd:sequence> 
-														<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-														
-													<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1" >
-														<xsd:annotation>
-														    <xsd:documentation xml:lang="en">
-																The value of this property is of the class AbsenceOfCriminalRecord.
-														    </xsd:documentation>
-														</xsd:annotation>
-													</xsd:element>
-													
-															<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-																<xsd:annotation>
-																    <xsd:documentation xml:lang="en">
-																		This property can contain any type of information.
-																    </xsd:documentation>
-																</xsd:annotation>
-															</xsd:element>
-															
-										
-									</xsd:sequence>
-									
-								</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

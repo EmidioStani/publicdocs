@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formRomania-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,32 +30,22 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="FormDeathRomaniaType">
+<xsd:complexType name="DeathType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form Death.
+		This class contains properties related to the death of a person.
 				Stereotype deathForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Death.
+								The value of this property is of the class DeathPerson.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property can contain any type of information. 
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
 		
 	</xsd:sequence>
 	
@@ -63,14 +53,14 @@
 <xsd:complexType name="DeathPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		 This class contains properties related to a deceased person.
 				Stereotype deathForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="pdc:DeathPersonType">
 			<xsd:sequence>
-							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class Parents.
@@ -83,22 +73,36 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="DeathType">
+<xsd:element name="FormDeathRomania" type="FormDeathRomaniaType"/>
+<xsd:complexType name="FormDeathRomaniaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the death of a person.
+		This class contains properties related to the form Death.
 				Stereotype deathForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+						
+					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class DeathPerson.
+								The value of this property is of the class Death.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information. 
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 		
 	</xsd:sequence>
 	
@@ -108,7 +112,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

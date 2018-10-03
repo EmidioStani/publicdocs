@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formPoland-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -36,58 +36,60 @@
 <xsd:complexType name="ResidenceChoiceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
-				Stereotype domicileAndOrResidenceForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="Permanent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="TemporaryUntil" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
-<xsd:complexType name="AddressDetailsType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to the permanent or temporary character of a residence.
 				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+							<xsd:element name="Permanent" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" default ="true" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type Boolean concerning whether a residence is permanent.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="TemporaryUntil" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the date until which a person resides in a given residence.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="AddressDetailsType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to details about an address.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
-										<xsd:element name="Province" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Province" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
 		
 	</xsd:sequence>
 	
 </xsd:complexType>
+<xsd:element name="FormDomicileAndOrResidencePoland" type="FormDomicileAndOrResidencePolandType"/>
 <xsd:complexType name="FormDomicileAndOrResidencePolandType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to a domicile and/or reference form.
 				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class DomicileAndOrResidence.
@@ -95,7 +97,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property can contain any type of information.
@@ -107,51 +111,33 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="ValidityChoiceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype domicileAndOrResidenceForm
-				Stereotype xsdChoice
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="UntiRegisteredResidenceChange" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="NoLaterThan" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
 <xsd:complexType name="DomicileAndOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person’s domicile and/or residence.
 				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
 			<xsd:sequence>
-						<xsd:element name="Validity" minOccurs="1" maxOccurs="1" type="ValidityChoiceType">
-						</xsd:element>
-						
-						<xsd:element name="TypeOfResidence" minOccurs="1" maxOccurs="1" type="ResidenceChoiceType">
-						</xsd:element>
-						
-							<xsd:element name="OtherDetailsOfAddress" type="AddressDetailsType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Validity" type="ValidityChoiceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class ValidityChoice.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="TypeOfResidence" type="ResidenceChoiceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class ResidenceChoice.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="OtherDetailsOfAddress" type="AddressDetailsType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class AddressDetails.
@@ -164,12 +150,40 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:complexType name="ValidityChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to whether a domicile and/or residence certificate is valid until a certain date or until a registered residence change.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="UntiRegisteredResidenceChange" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" default ="true" >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type Boolean concerning whether a certificate is valid until a registered residence change. 
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="NoLaterThan" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of type date concerning the date of validity of a certificate.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

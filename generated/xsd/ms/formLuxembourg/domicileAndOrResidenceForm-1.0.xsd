@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLuxembourg-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,6 +33,40 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:element name="FormDomicileAndOrResidenceLuxembourg" type="FormDomicileAndOrResidenceLuxembourgType"/>
+<xsd:complexType name="FormDomicileAndOrResidenceLuxembourgType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a domicile and/or residence form.
+				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+						
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DomicileAndOrResidence.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property can contain any type of information.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="DomicileAndOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -43,7 +77,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
 			<xsd:sequence>
-							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of the class Person.
@@ -51,7 +85,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PreviousAddress1" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PreviousAddress1" type="PreviousAddressType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of class PreviousAddress.
@@ -59,7 +93,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PreviousAddress2" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PreviousAddress2" type="PreviousAddressType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of class PreviousAddress.
@@ -67,7 +101,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PreviousAddress3" type="PreviousAddressType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PreviousAddress3" type="PreviousAddressType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of class PreviousAddress.
@@ -75,7 +109,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-									<xsd:element name="OtherPreviousAddresses" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="OtherPreviousAddresses" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains any additional previous addresses.
@@ -83,7 +117,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="NoteToReceivingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains a note to the receiving authority stating: "Data extracted from the National Register of Physical Persons in accordance with Article 4 of the Grand-Ducal Regulation of 29 March 2016 concerning certain certificates issued on the basis of the data contained in the National Register of Physical Persons (Memorial No. 52 of 31 March 2016). These data are certified accurate unless indicated by asterisk on a light gray background (*) of the public document to which this form is attached."
@@ -104,42 +138,12 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-										<xsd:element name="PreviousAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="PreviousAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 										
-							<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="FromTo" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains the period in which the concerned person resided at this address.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="FormDomicileAndOrResidenceLuxembourgType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a domicile and/or residence form.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class DomicileAndOrResidence.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property can contain any type of information.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -153,7 +157,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSweden-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -26,67 +26,39 @@
 <xsd:complexType name="PersonalInfoType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to personal information about a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type string concerning the identity number of a person.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="Citizenship" type="pdc:NationalityType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Citizenship" type="pdc:NationalityType" minOccurs="1" maxOccurs="1"  />
 										
-										<xsd:element name="BirthPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="BirthPlace" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
-							<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="MiddleName" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type string concerning a person's middle name.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PrivacyProtectedPersonalData" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PrivacyProtectedPersonalData" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type string concerning privacy-protected personal data.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="Spouses2Type">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		
-				Stereotype commonPart
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-					<xsd:element name="SpouseA" type="PersonalInfo2Type" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class PersonalInfo2.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-					<xsd:element name="SpouseB" type="PersonalInfo2Type" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class PersonalInfo2.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
 		
 	</xsd:sequence>
 	
@@ -94,12 +66,12 @@
 <xsd:complexType name="SpousesType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to spouses.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="SpouseA" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="SpouseA" type="PersonalInfoType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class PersonalInfo.
@@ -107,7 +79,7 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-					<xsd:element name="SpouseB" type="PersonalInfoType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="SpouseB" type="PersonalInfoType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class PersonalInfo.
@@ -122,23 +94,51 @@
 <xsd:complexType name="CivilRegistrationType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a civil registration.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type date concerning the date of a civil registration.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="County" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
-										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Municipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="Spouses2Type">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's spouse.
+				Stereotype commonPart
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="SpouseA" type="PersonalInfo2Type" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class PersonalInfo2.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="SpouseB" type="PersonalInfo2Type" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class PersonalInfo2.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
 		
 	</xsd:sequence>
 	
@@ -146,12 +146,12 @@
 <xsd:complexType name="PersonalInfo2Type">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to personal information about a person.
 				Stereotype commonPart
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-					<xsd:element name="CivilRegistration" type="CivilRegistrationType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="CivilRegistration" type="CivilRegistrationType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class CivilRegistration.
@@ -159,18 +159,18 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type string concerning the identity number of a person.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="PrivacyProtectedPersonalData" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="PrivacyProtectedPersonalData" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										
+										This property contains information of type string concerning privacy-protected personal data.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -184,7 +184,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

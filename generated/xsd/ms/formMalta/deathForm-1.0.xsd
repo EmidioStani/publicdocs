@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formMalta-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -38,11 +38,10 @@
 	    <xsd:documentation xml:lang="en">
 		This choice class contains properties related to the marital status of a person.
 				Stereotype deathForm
-				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="Married" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+							<xsd:element name="Married" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										
@@ -50,7 +49,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Single" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Single" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										
@@ -58,7 +57,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="Widow" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Widow" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										
@@ -67,7 +66,8 @@
 							</xsd:element>
 							
 		
-	</xsd:choice>
+	</xsd:sequence>
+	
 </xsd:complexType>
 <xsd:complexType name="DeathPersonType">
 	<xsd:annotation>
@@ -79,10 +79,15 @@
 	<xsd:complexContent>
 		<xsd:extension base="PersonType">
 			<xsd:sequence>
-						<xsd:element name="MaritalStatus" minOccurs="1" maxOccurs="1" type="MaritalStatusType">
-						</xsd:element>
-						
-									<xsd:element name="AgeYears" type="xsd:nonNegativeInteger" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="MaritalStatus" type="MaritalStatusType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class MaritalStatus.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="AgeYears" type="xsd:nonNegativeInteger" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type nonNegativeInteger regarding the age in years of the deceased person.
@@ -90,9 +95,9 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="PlaceOfResidence" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="CauseOfDeath" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="CauseOfDeath" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning a deceased person's cause of death.
@@ -100,9 +105,9 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="PlaceOfBurial" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="PlaceOfBurial" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="TimeOfDeath" type="udt:TimeType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="TimeOfDeath" type="udt:TimeType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type time concerning a person's time of death.
@@ -125,7 +130,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_deathForm:DeathType">
 			<xsd:sequence>
-							<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is that of class DeathPerson
@@ -138,17 +143,25 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
+<xsd:element name="FormDeathMalta" type="FormDeathMaltaType"/>
 <xsd:complexType name="FormDeathMaltaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to a death form.
 				Stereotype deathForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Death.
@@ -156,7 +169,9 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property can contain any type of information.
@@ -173,7 +188,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

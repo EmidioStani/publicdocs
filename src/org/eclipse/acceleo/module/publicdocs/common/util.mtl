@@ -35,6 +35,9 @@
 [query public getPropertyDependencies (prop: Property, type : String) : Set(Dependency) 
 = prop.getModel().getPackageWithName(getNS('xs')).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
 
+[query public getClassAssociations (pack: String, class: Class, type : String) : Set(Association) 
+= class.getModel().getPackageWithName(pack).packagedElement->select(oclIsTypeOf(Association) and ((oclAsType(Association).memberEnd->any(true).name) = class.name))/]
+
 [query public getPrimitiveDependencies (prim: PrimitiveType, type : String, packageName : String) : Set(Dependency) 
 = prim.getModel().getPackageWithName(getNS(packageName)).packagedElement->select(oclIsTypeOf(Dependency) and ((oclAsType(Dependency).client->any(true).name) = type))/]
 
@@ -140,6 +143,8 @@
 [query public getFilename3 (path : String, name: String, extension : String ) : String
 = getConf(path).concat('forms/'+name).concat('.htm')/]
 
+[query public getFilenameTTL (path : String, name: String ) : String
+= getConf(path).concat(name).concat('.ttl')/]
 
 [query public getFilenameXSD (path : String, name: String, suffix : String, version : String ) : String
 = getFullFilename(path, name, suffix, version, '.xsd')/]
@@ -158,6 +163,14 @@
 
 [query public getFQDN5 (class: PrimitiveType) : String
 = class.namespace.name.concat(':').concat(class.name)/]
+
+[template public getFQDN6 (prop: Property) post(trim())]
+[if (prop.type.namespace.name = 'forms')]
+	[prop.type.owner.getAppliedStereotypes().name+':'.concat(prop.type.name)/]
+[else] 
+	[prop.type.namespace.name.concat(':').concat(prop.type.name)/]
+[/if]
+[/template]
 
 [query public getTodayDate (format: String) : String
 = getDate(format)/]
@@ -197,6 +210,12 @@
 
 [query public getLang (name: String) : String
 = getConf('language_'.concat(name))/]
+
+[query public getSHACLStereotype (name: String) : String
+= getConf('shacl_stereotype_'.concat(name))/]
+
+[query public getSHACLDefault (name: String) : String
+= getConf('shacl_default_'.concat(name))/]
 
 [template public hasDefaultValue (property : Property) post(trim())]
 [if property.default.oclIsUndefined()]

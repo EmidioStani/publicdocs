@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/common/core/forms-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -31,15 +31,17 @@
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the form RegisteredPartnership.
-				Stereotype xsdGlobalElement
 				Stereotype registeredPartnershipForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="Header" type="forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
 						
-					<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1"  />
 					
+						<xsd:element name="Footer" type="forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+						
 		
 	</xsd:sequence>
 	
@@ -53,11 +55,11 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-										<xsd:element name="PartnerA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="PartnerA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"  />
 										
-										<xsd:element name="PartnerB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="PartnerB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"  />
 										
-							<xsd:element name="DateOfRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DateOfRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -65,7 +67,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="PlaceOfRegisteredPartnership" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="PlaceOfRegisteredPartnership" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
 		
 	</xsd:sequence>
@@ -76,7 +78,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

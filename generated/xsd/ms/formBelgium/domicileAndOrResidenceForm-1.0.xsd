@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formBelgium-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -33,6 +33,42 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:complexType name="ConfidentialAddressType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's confidential address.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="DateOfDecisionOnConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfImposingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="DateOfLiftingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of date type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
 <xsd:complexType name="POBoxAbroadType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
@@ -41,7 +77,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -49,59 +85,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="POBoxAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="ApplicationNewMainResidenceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's application for a new main residence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-										<xsd:element name="Place" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-							<xsd:element name="DateOfApplication" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="PreviousDomicileOrResidenceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's previous domicile or residence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="Domicile" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of boolean type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="Residence" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of boolean type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="POBoxAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 										
 		
 	</xsd:sequence>
@@ -115,7 +99,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="DateOfDeclaration" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DateOfDeclaration" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -123,132 +107,51 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="NewAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="NewAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 										
 		
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="DomicileAndOrResidenceType">
+<xsd:complexType name="PreviousDomicileOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's domicile and/or residence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
-			<xsd:sequence>
-							<xsd:element name="DeclarationOfDeparture" type="DeclarationOfDepartureType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DeclarationOfDeparture.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="ResidenceAbroad" type="ResidenceAbroadType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class ResidenceAbroad.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-												<xsd:element name="LegalDomicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="ResidenceReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-												<xsd:element name="POBoxAddressForCorrespondence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-									<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of string type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-									<xsd:element name="TemporaryAbsence" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-							<xsd:element name="ConfidentialAddress" type="ConfidentialAddressType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class ConfidentialAddress.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="PreviousDomicileOrResidence" type="PreviousDomicileOrResidenceType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class PreviousDomicileOrResidence.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-									<xsd:element name="ProlongedDisappearance" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-							<xsd:element name="DeclaredAddressAbroad" type="DeclaredAddressAbroadType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class DeclaredAddressAbroad.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="ApplicationNewMainResidence" type="ApplicationNewMainResidenceType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class ApplicationNewMainResidence.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-												<xsd:element name="DomicileReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
-												
-							<xsd:element name="POBoxAbroad" type="POBoxAbroadType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class POBoxAbroad.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-									<xsd:element name="DateOfDomiciliationInTerritoryOfConsularPost" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of date type.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="ConfidentialAddressType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's confidential address.
+		This class contains properties related to a person's previous domicile or residence.
 				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="DateOfDecisionOnConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Domicile" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="Residence" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of boolean type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+										<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="DeclaredAddressAbroadType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's declared address abroad.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+							<xsd:element name="DeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -256,15 +159,57 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="DateOfImposingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+										<xsd:element name="AddressAbroad" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+										
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:element name="FormDomicileAndOrResidenceBelgium" type="FormDomicileAndOrResidenceBelgiumType"/>
+<xsd:complexType name="FormDomicileAndOrResidenceBelgiumType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the form DomicileAndOrResidence.
+				Stereotype domicileAndOrResidenceForm
+				Stereotype xsdGlobalElement
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+						
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class DomicileAndOrResidence.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
+										The value of this property is of any type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="DateOfLiftingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="ApplicationNewMainResidenceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's application for a new main residence.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+										<xsd:element name="Place" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+										
+							<xsd:element name="DateOfApplication" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -284,7 +229,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of date type.
@@ -292,72 +237,131 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-										<xsd:element name="ResidenceAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="ResidenceAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
 										
-										<xsd:element name="DiplomaticPost" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
-										
-		
-	</xsd:sequence>
-	
-</xsd:complexType>
-<xsd:complexType name="DeclaredAddressAbroadType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's declared address abroad.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-							<xsd:element name="DeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is of date type.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-										<xsd:element name="AddressAbroad" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="DiplomaticPost" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 										
 		
 	</xsd:sequence>
 	
 </xsd:complexType>
-<xsd:complexType name="FormDomicileAndOrResidenceBelgiumType">
+<xsd:complexType name="DomicileAndOrResidenceType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form DomicileAndOrResidence.
+		This class contains properties related to a person's domicile and/or residence.
 				Stereotype domicileAndOrResidenceForm
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:sequence> 
-						<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"/>
-						
-					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class DomicileAndOrResidence.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+			<xsd:sequence>
+							<xsd:element name="DeclarationOfDeparture" type="DeclarationOfDepartureType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of any type.
+										The value of this property is of the class DeclarationOfDeparture.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-		
-	</xsd:sequence>
-	
+							<xsd:element name="ResidenceAbroad" type="ResidenceAbroadType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class ResidenceAbroad.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+												<xsd:element name="LegalDomicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+												
+												<xsd:element name="ResidenceReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+												
+												<xsd:element name="POBoxAddressForCorrespondence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+												
+									<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of string type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+									<xsd:element name="TemporaryAbsence" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="ConfidentialAddress" type="ConfidentialAddressType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class ConfidentialAddress.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="PreviousDomicileOrResidence" type="PreviousDomicileOrResidenceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class PreviousDomicileOrResidence.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="ProlongedDisappearance" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="DeclaredAddressAbroad" type="DeclaredAddressAbroadType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class DeclaredAddressAbroad.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ApplicationNewMainResidence" type="ApplicationNewMainResidenceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class ApplicationNewMainResidence.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+												<xsd:element name="DomicileReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+												
+							<xsd:element name="POBoxAbroad" type="POBoxAbroadType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is of the class POBoxAbroad.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="DateOfDomiciliationInTerritoryOfConsularPost" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of date type.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

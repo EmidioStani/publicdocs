@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formCzechRepublic-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -11,6 +11,7 @@
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:ms2forms_birthForm="http://data.europa.eu/edm/1/ns/forms/frmbirth#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -23,6 +24,8 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmbirth#"
 			   schemaLocation="../../../xsd/common/core/forms/birthForm-1.0.xsd"/>
 	<!-- ===================================================== -->
@@ -30,40 +33,57 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="BirthType">
+<xsd:element name="FormBirthCzechRepublic" type="FormBirthCzechRepublicType"/>
+<xsd:complexType name="FormBirthCzechRepublicType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the birth of a person.
+		This class contains elements related to the form Birth.
 				Stereotype birthForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_birthForm:BirthType">
-			<xsd:sequence>
-							<xsd:element name="Person" type="BirthPersonType" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of the class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is of the class Birth.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of the class BirthPerson.
+										The value of this property is of any type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
+		
+	</xsd:sequence>
+	
 </xsd:complexType>
 <xsd:complexType name="BirthPersonType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		
+		This class contains properties related to a person being born.
 				Stereotype birthForm
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:complexContent>
 		<xsd:extension base="pdc:BirthPersonType">
 			<xsd:sequence>
-							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="DataOnParents" type="ParentsType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class Parents.
@@ -71,7 +91,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-									<xsd:element name="PersonaldentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="PersonaldentificationNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of string type.
@@ -84,48 +104,35 @@
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
-<xsd:complexType name="FormBirthCzechRepublicType">
+<xsd:complexType name="BirthType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the form Birth.
+		This class contains elements related to the birth of a person.
 				Stereotype birthForm
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of the class FormHeader.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-					<xsd:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is of the class Birth.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_birthForm:BirthType">
+			<xsd:sequence>
+							<xsd:element name="Person" type="BirthPersonType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
-										The value of this property is of any type.
+										The value of this property is of the class BirthPerson.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
 							
-		
-	</xsd:sequence>
-	
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
 </xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

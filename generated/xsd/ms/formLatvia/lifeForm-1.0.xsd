@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formLatvia-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -30,15 +30,17 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
+<xsd:element name="FormLifeLatvia" type="FormLifeLatviaType"/>
 <xsd:complexType name="FormLifeLatviaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
 		This class contains properties related to a life form.
 				Stereotype lifeForm
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												The value of this property is of the class FormHeader.
@@ -46,7 +48,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-					<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1" >
+					<xsd:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
 								The value of this property is of the class Life.
@@ -54,7 +56,15 @@
 						</xsd:annotation>
 					</xsd:element>
 					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+									<xsd:element name="Footer" type="SignatureInfoType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is that of class SignatureInfo.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of any type.
@@ -76,7 +86,7 @@
 	<xsd:complexContent>
 		<xsd:extension base="ms2forms_lifeForm:LifeType">
 			<xsd:sequence>
-									<xsd:element name="FeesPaid" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="FeesPaid" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" default ="true" >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type boolean about whether the fees for a life certificate have been paid.
@@ -84,7 +94,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="Person" type="PersonType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										The value of this property is of the class Person.
@@ -102,7 +112,7 @@
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),

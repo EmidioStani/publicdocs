@@ -2,7 +2,7 @@
 <!-- ===== Schema Header ================================= -->
 <!--	
 	Document Type: xsd/ms/formSlovakia-1.0.xsd
-    Generated On: 24/11/2017 16:31 
+    Generated On: 11/09/2018 16:17 
 -->
 <!-- ===================================================== -->
 <xsd:schema
@@ -11,6 +11,7 @@
 	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
 	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
 	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:ms2forms_commonPart="http://data.europa.eu/edm/1/ns/forms/commonpart#"	
 	xmlns:ms2forms_domicileAndOrResidenceForm="http://data.europa.eu/edm/1/ns/forms/frmdomicileandorresidence#"	
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
 	elementFormDefault="qualified"
@@ -23,6 +24,8 @@
 			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/commonpart#"
+			   schemaLocation="../../../xsd/common/core/forms/commonPart-1.0.xsd"/>
 	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms/frmdomicileandorresidence#"
 			   schemaLocation="../../../xsd/common/core/forms/domicileAndOrResidenceForm-1.0.xsd"/>
 	<!-- ===================================================== -->
@@ -30,33 +33,45 @@
 	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
 	
 	<!-- ===================================================== -->
-<xsd:complexType name="ConfirmationIssuedForChoiceType">
+<xsd:element name="FormDomicileAndOrResidenceSlovakia" type="FormDomicileAndOrResidenceSlovakiaType"/>
+<xsd:complexType name="FormDomicileAndOrResidenceSlovakiaType">
 	<xsd:annotation>
 	    <xsd:documentation xml:lang="en">
-		This class contains elements related to the choice between the types of person for whom a domicile and/or residence certificate has been issued.
+		This class contains properties related to the form Domicile and/or Residence.
 				Stereotype domicileAndOrResidenceForm
-				Stereotype xsdChoice
+				Stereotype xsdGlobalElement
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:choice>
-					<xsd:element name="NaturalPerson" type="PersonType" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												The value of this property is of class FormHeader.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"  >
 						<xsd:annotation>
 						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class Person.
+								The value of this property is that of class DomicileAndOrResidence.
 						    </xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					
-					<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this class is that of class LegalPerson.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
+								<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+								
+							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										This property contains information of any type.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
 		
-	</xsd:choice>
+	</xsd:sequence>
+	
 </xsd:complexType>
 <xsd:complexType name="AddressType">
 	<xsd:annotation>
@@ -68,9 +83,9 @@
 	<xsd:complexContent>
 		<xsd:extension base="pdc:AddressType">
 			<xsd:sequence>
-												<xsd:element name="ResidencePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="ResidencePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="ResidenceFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="ResidenceFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning the flat number of a residence.
@@ -78,9 +93,9 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-												<xsd:element name="DomicilePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+												<xsd:element name="DomicilePartOfTheMunicipality" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
 												
-									<xsd:element name="DomicileBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="DomicileBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning the building number of a domicile.
@@ -88,7 +103,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="DomicileDistrict" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="DomicileDistrict" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning the district of a domicile.
@@ -96,7 +111,7 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="DomicileFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="DomicileFlatNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning the flat number of a domicile.
@@ -104,55 +119,10 @@
 										</xsd:annotation>
 									</xsd:element>
 									
-									<xsd:element name="ResidenceBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+									<xsd:element name="ResidenceBuildingNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 										<xsd:annotation>
 										    <xsd:documentation xml:lang="en">
 												This property contains information of type string concerning the building number of a residence.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-				
-			</xsd:sequence>
-		</xsd:extension>
-	</xsd:complexContent>
-</xsd:complexType>
-<xsd:complexType name="DomicileAndOrResidenceType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to a person's domicile and/or residence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:complexContent>
-		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
-			<xsd:sequence>
-						<xsd:element name="ConfirmationIssuedFor" minOccurs="1" maxOccurs="1" type="ConfirmationIssuedForChoiceType">
-						</xsd:element>
-						
-							<xsd:element name="ToStay" type="AddressType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is that of class Address.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-							<xsd:element name="FromStay" type="AddressType" minOccurs="1" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										The value of this property is that of class Address.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-						<xsd:element name="PermanentTemporaryStay" minOccurs="1" maxOccurs="1" type="PermanentTemporaryStayChoiceType">
-						</xsd:element>
-						
-									<xsd:element name="RegistrationOfficeNotes" type="udt:TextType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												This property contains information of type string concerning notes from the registration office.
 										    </xsd:documentation>
 										</xsd:annotation>
 									</xsd:element>
@@ -167,11 +137,10 @@
 	    <xsd:documentation xml:lang="en">
 		This class contains elements related to the choice between the types of ID used to identify a person.
 				Stereotype domicileAndOrResidenceForm
-				Stereotype xsdChoice
 	    </xsd:documentation>
 	</xsd:annotation>
-	<xsd:choice>
-							<xsd:element name="PermanentStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+	<xsd:sequence> 
+							<xsd:element name="PermanentStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains information of type boolean concerning whether a person's stay at a given address is permanent.
@@ -179,45 +148,10 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="TemporaryStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="TemporaryStay" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains information of type boolean concerning whether a person's stay at a given address is temporary.
-								    </xsd:documentation>
-								</xsd:annotation>
-							</xsd:element>
-							
-		
-	</xsd:choice>
-</xsd:complexType>
-<xsd:complexType name="FormDomicileAndOrResidenceSlovakiaType">
-	<xsd:annotation>
-	    <xsd:documentation xml:lang="en">
-		This class contains properties related to the form Domicile and/or Residence.
-				Stereotype domicileAndOrResidenceForm
-	    </xsd:documentation>
-	</xsd:annotation>
-	<xsd:sequence> 
-									<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
-										<xsd:annotation>
-										    <xsd:documentation xml:lang="en">
-												The value of this property is of class FormHeader.
-										    </xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									
-					<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1" >
-						<xsd:annotation>
-						    <xsd:documentation xml:lang="en">
-								The value of this property is that of class DomicileAndOrResidence.
-						    </xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					
-							<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
-								<xsd:annotation>
-								    <xsd:documentation xml:lang="en">
-										This property contains information of any type.
 								    </xsd:documentation>
 								</xsd:annotation>
 							</xsd:element>
@@ -234,7 +168,7 @@
 	    </xsd:documentation>
 	</xsd:annotation>
 	<xsd:sequence> 
-							<xsd:element name="LegalPersonName" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="LegalPersonName" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains information of type string concerning the name of a legal person.
@@ -242,7 +176,7 @@
 								</xsd:annotation>
 							</xsd:element>
 							
-							<xsd:element name="RegisteredOffice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+							<xsd:element name="RegisteredOffice" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
 								<xsd:annotation>
 								    <xsd:documentation xml:lang="en">
 										This property contains information of type string concerning the registered office of a legal person.
@@ -254,12 +188,95 @@
 	</xsd:sequence>
 	
 </xsd:complexType>
+<xsd:complexType name="ConfirmationIssuedForChoiceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains elements related to the choice between the types of person for whom a domicile and/or residence certificate has been issued.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence> 
+					<xsd:element name="NaturalPerson" type="PersonType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this property is that of class Person.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+					<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="1" maxOccurs="1"  >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								The value of this class is that of class LegalPerson.
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+		
+	</xsd:sequence>
+	
+</xsd:complexType>
+<xsd:complexType name="DomicileAndOrResidenceType">
+	<xsd:annotation>
+	    <xsd:documentation xml:lang="en">
+		This class contains properties related to a person's domicile and/or residence.
+				Stereotype domicileAndOrResidenceForm
+	    </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexContent>
+		<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+			<xsd:sequence>
+							<xsd:element name="ConfirmationIssuedFor" type="ConfirmationIssuedForChoiceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class ConfirmationIssuedForChoice
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="ToStay" type="AddressType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class Address.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="FromStay" type="AddressType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class Address.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="PermanentTemporaryStay" type="PermanentTemporaryStayChoiceType" minOccurs="1" maxOccurs="1"  >
+								<xsd:annotation>
+								    <xsd:documentation xml:lang="en">
+										The value of this property is that of class PermanentTemporaryStayChoice.
+								    </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+									<xsd:element name="RegistrationOfficeNotes" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+										<xsd:annotation>
+										    <xsd:documentation xml:lang="en">
+												This property contains information of type string concerning notes from the registration office.
+										    </xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									
+				
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
 </xsd:schema>
 
 <!-- ===== Copyright Notice ============================== -->
 <!--
 	        Public Documents XML schema 1.0
-	        Copyright (C) European Union, 2017
+	        Copyright (C) European Union, 2018
 	        Licensed under the ISA Open Metadata Licence
 	        Original authors:
 	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
