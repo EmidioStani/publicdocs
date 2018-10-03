@@ -1,0 +1,115 @@
+[comment encoding = UTF-8 /]
+[comment Copyright (C) European Union, 2017/]
+[comment Licensed under the EUPL/]
+[module generateSHACL2('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::eclipse::acceleo::module::publicdocs::common::util/]
+[import org::eclipse::acceleo::module::publicdocs::common::element/]
+
+[template public generateSHACL(model : Model){
+version: String = getVersion('xsd');
+}]
+[for (packageableElement: PackageableElement | model.packagedElement->select(oclIsTypeOf(Package)and hasStereotype('isa::xsdSchema') and name='forms'))]
+[for (form: String | getForms(packageableElement.oclAsType(Package)))]
+		[generatePackageDoc(model, packageableElement, form)/]
+[/for]
+[/for]
+[/template]
+
+[template public generatePackageDoc(model : Model, packageableElement: PackageableElement, form: String){
+version: String = getVersion('xsd');
+}]
+[debug('generating shapes')/]
+[file (getFilenameTTL('path_shapes', packageableElement.name + form), false, 'UTF-8')]
+@prefix forms: <http://data.europa.eu/forms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qdt: <http://data.europa.eu/qdt#> . 
+
+[includePackageBody(model, packageableElement, form)/]
+[/file]
+[/template]
+
+[template public includePackageBody(model : Model, pack: PackageableElement, form: String)]
+[generatePackageDoc(pack.oclAsType(Package), 1, form)/]
+[/template]
+
+[template public generatePackageDoc(pack : Package, i: Integer, form: String)]
+[let pClasses : Sequence(Class) = pack.ownedType->asSequence()]
+	[for (packageableElement: PackageableElement | pClasses->select(hasStereotype(getSHACLStereotype('shape')) and hasStereotype('isa::'+form))->sortedBy(name))]
+		[if packageableElement.oclIsTypeOf(Class)]
+[generateClassDoc(pack.name, packageableElement.oclAsType(Class))/]
+
+		[/if]
+	[/for]
+[/let]
+[/template]
+
+[template public generateClassDoc(packname: String, class : Class) post(trim())]
+[getShapeID(packname,class)/]
+  rdf:type sh:NodeShape ;
+  [getShapeName(class)/]
+  [getTargetClass(packname,class)/]
+  [getComment(class)/]
+  [getPropertyShape(class)/]
+[/template]
+
+[template public getShapeID(packname : String , class: Class)]
+[packname/]:[class.name/]Shape
+[/template]
+
+[template public getShapeName(class: Class)]
+sh:name "[class.name/] Shape"@en ;
+[/template]
+
+[template public getTargetClass(packname : String , class: Class)]
+sh:targetClass [packname/]:[class.name/] ;
+[/template]
+
+[template public getComment(class: Class)]
+rdfs:comment "[class.ownedComment._body/]" ;
+[/template]
+
+[template public getPropertyShape(class: Class) post(trim()) {
+size: Integer = class.ownedAttribute->select(hasStereotype(getSHACLStereotype('constraint')))->size();
+}]
+[for (property: Property | class.ownedAttribute->select(hasStereotype(getSHACLStereotype('constraint'))))]
+ sh:property  ['['/]
+  [getPropertyPath(property)/]
+  [getPropertyName(property)/]
+  [getPropertyDescription(property)/]
+  [getPropertyMinCardinality(property)/]
+  [getPropertyMaxCardinality(property)/]
+  [getPropertySeverity(property)/]
+ [']'/] [if i = size].[else];[/if]
+[/for]
+[/template]
+
+[template public getPropertyPath(property: Property)]
+sh:path [property.getFQDN3()/] ;
+[/template]
+
+[template public getPropertyName(property: Property)]
+sh:name "[property.name/]" ;
+[/template]
+
+[template public getPropertyDescription(property: Property)]
+sh:description "[property.ownedComment._body/]" ;
+[/template]
+
+[template public getPropertyMinCardinality(property: Property) post(trim())]
+[if (property.lower >= 1) ]sh:minCount [property.lower/] ;[/if]
+[/template]
+
+[template public getPropertyMaxCardinality(property: Property) post(replaceAll('\r', ''))]
+[if (property.upper >= 1) ]sh:maxCount [property.upper/] ;[/if]
+[/template]
+
+[template public getPropertySeverity(property: Property) post(trim()) {
+severity: String = property.getValue(property.getAppliedStereotype(getSHACLStereotype('constraint')),'severity').toString() ;
+}]
+sh:severity [if (severity = '' or severity = null) ][getSHACLDefault('severity')/][else]sh:[severity/][/if] ;
+[/template]

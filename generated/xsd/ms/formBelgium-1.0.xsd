@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/formBelgium-1.0.xsd
+    Generated On: 29/11/2017 14:14 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/forms/belgium#"
+	xmlns="http://data.europa.eu/edm/1/ns/forms/belgium#"
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
+			   schemaLocation="../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms"
+			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	<xsd:complexType name="AbsenceOfCriminalRecordType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's certificate of absence of a criminal record.
+					Stereotype absenceOfCriminalRecordForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_absenceOfCriminalRecordForm:AbsenceOfCriminalRecordType">
+				<xsd:sequence>
+							<xsd:element name="TypeOfExtract" minOccurs="1" maxOccurs="1" type="TypeOfExtractChoiceType">
+							</xsd:element>
+							
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AcknowledgedByChoiceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the choice between the types of ID used to identify a person.
+					Stereotype birthForm
+					Stereotype xsdChoice
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+						<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+			
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="ApplicationNewMainResidenceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's application for a new main residence.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+											<xsd:element name="Place" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+											
+								<xsd:element name="DateOfApplication" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="BirthType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to the birth of a person.
+					Stereotype birthForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+						<xsd:element name="BirthPerson" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+					<xsd:element name="Consent" minOccurs="1" maxOccurs="1" type="ConsentChoiceType">
+					</xsd:element>
+					
+											<xsd:element name="AuthorityForWhichConsentWasGiven" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"  />
+											
+								<xsd:element name="DateOfConsent" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+					<xsd:element name="AcknowledgedBy" minOccurs="1" maxOccurs="1" type="AcknowledgedByChoiceType">
+					</xsd:element>
+					
+								<xsd:element name="RollNumber" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="JudicialBody" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"  />
+											
+								<xsd:element name="DocumentNoPrenatalAcknowledgementOfParentage" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="PlaceOfConsent" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+											
+								<xsd:element name="JudicialDecisionConsent" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="DateOfAcknowledgement" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="DateOfDecision" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="CanMarryType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's ability to get married.
+					Stereotype commonPart
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pdc:CanMarryType">
+				<xsd:sequence>
+										<xsd:element name="NoStatementOnCapacityToMarry" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													This property contains informaiton of type boolean concerning the existence of a statement on a person's capacity to marry. 
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CapacityToMarryType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's capacity to marry.
+					Stereotype capacityToMarryForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_capacityToMarryForm:CapacityToMarryType">
+				<xsd:sequence>
+										<xsd:element name="Validity" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+								<xsd:element name="CivilStatus" type="MaritalStatusType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class MaritalStatus.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ConfidentialAddressType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's confidential address.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="DateOfDecisionOnConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="DateOfImposingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="DateOfLiftingConfidentiality" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="ConsentChoiceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the choice between the types of ID used to identify a person.
+					Stereotype birthForm
+					Stereotype xsdChoice
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+						<xsd:element name="Father" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="Mother" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="CoMother" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="Child" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+						<xsd:element name="LegalRepresentative" type="PersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Person.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+			
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="DeathType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to the death of a person.
+					Stereotype deathForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+											<xsd:element name="PlaceOfDiscoveryOfDeadBody" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+											
+								<xsd:element name="DateOfDiscoverOfDeadBody" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="TimeOfDiscoveryOfDeadBody" type="udt:TimeType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of time type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+						<xsd:element name="Person" type="DeathPersonType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class DeathPerson.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="DeathPersonType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a deceased person.
+					Stereotype deathForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pdc:DeathPersonType">
+				<xsd:sequence>
+										<xsd:element name="TimeOfDeath" type="udt:TimeType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of time type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DeclarationOfDepartureType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a declaration of departure.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="DateOfDeclaration" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="NewAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+											
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="DeclaredAddressAbroadType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's declared address abroad.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="DeclarationDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="AddressAbroad" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+											
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="DocumentInfoType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to information about a document.
+					Stereotype commonPart
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_commonPart:DocumentInfoType">
+				<xsd:sequence>
+							<xsd:element name="DocumentIssued" minOccurs="1" maxOccurs="1" type="DocumentIssuedChoiceType">
+							</xsd:element>
+							
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentIssuedChoiceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the choice between the types of ID used to identify a person.
+					Stereotype commonPart
+					Stereotype xsdChoice
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+								<xsd:element name="AfterSeeingThePerson" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type boolean concerning whether a document has been issued after seeing a person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="OnTheBasisOfThePopulationRegister" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" default ="true" >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type boolean concerning whether a document has been issued on the basis of the Population Register.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="OnTheBasisOfTheIDCard" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											This property contains information of type boolean concerning whether a document has been issued on the basis of the ID card.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="DomicileAndOrResidenceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's domicile and/or residence.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_domicileAndOrResidenceForm:DomicileAndOrResidenceType">
+				<xsd:sequence>
+								<xsd:element name="DeclarationOfDeparture" type="DeclarationOfDepartureType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class DeclarationOfDeparture.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="ResidenceAbroad" type="ResidenceAbroadType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class ResidenceAbroad.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+													<xsd:element name="LegalDomicile" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+													
+													<xsd:element name="ResidenceReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+													
+													<xsd:element name="POBoxAddressForCorrespondence" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+													
+										<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of string type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+										<xsd:element name="TemporaryAbsence" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+								<xsd:element name="ConfidentialAddress" type="ConfidentialAddressType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class ConfidentialAddress.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="PreviousDomicileOrResidence" type="PreviousDomicileOrResidenceType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class PreviousDomicileOrResidence.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+										<xsd:element name="ProlongedDisappearance" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+								<xsd:element name="DeclaredAddressAbroad" type="DeclaredAddressAbroadType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class DeclaredAddressAbroad.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="ApplicationNewMainResidence" type="ApplicationNewMainResidenceType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class ApplicationNewMainResidence.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+													<xsd:element name="DomicileReferenceAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+													
+								<xsd:element name="POBoxAbroad" type="POBoxAbroadType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class POBoxAbroad.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+										<xsd:element name="DateOfDomiciliationInTerritoryOfConsularPost" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="FormAbsenceOfCriminalRecordBelgium" type="FormAbsenceOfCriminalRecordBelgiumType"/>
+	<xsd:complexType name="FormAbsenceOfCriminalRecordBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form Absence of a Criminal Record.
+					Stereotype absenceOfCriminalRecordForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class AbsenceOfCriminalRecord.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormBirthBelgium" type="FormBirthBelgiumType"/>
+	<xsd:complexType name="FormBirthBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form Birth.
+					Stereotype birthForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+									<xsd:element name="Body" type="ms2forms_birthForm:BirthType" minOccurs="1" maxOccurs="1"  />
+									
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormCapacityToMarryBelgium" type="FormCapacityToMarryBelgiumType"/>
+	<xsd:complexType name="FormCapacityToMarryBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form CapacityToMarry.
+					Stereotype xsdGlobalElement
+					Stereotype capacityToMarryForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class CapacityToMarry.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormDeathBelgium" type="FormDeathBelgiumType"/>
+	<xsd:complexType name="FormDeathBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a death form.
+					Stereotype deathForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Death.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormDomicileAndOrResidenceBelgium" type="FormDomicileAndOrResidenceBelgiumType"/>
+	<xsd:complexType name="FormDomicileAndOrResidenceBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form DomicileAndOrResidence.
+					Stereotype xsdGlobalElement
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class DomicileAndOrResidence.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormLifeBelgium" type="FormLifeBelgiumType"/>
+	<xsd:complexType name="FormLifeBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form Life.
+					Stereotype lifeForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+									<xsd:element name="Body" type="ms2forms_lifeForm:LifeType" minOccurs="1" maxOccurs="1"  />
+									
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormMaritalStatusBelgium" type="FormMaritalStatusBelgiumType"/>
+	<xsd:complexType name="FormMaritalStatusBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form MaritalStatus.
+					Stereotype maritalStatusForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="MaritalStatusType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class MaritalStatus.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormMarriageBelgium" type="FormMarriageBelgiumType"/>
+	<xsd:complexType name="FormMarriageBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form Marriage.
+					Stereotype marriageForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class Marriage.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:element name="FormRegisteredPartnershipBelgium" type="FormRegisteredPartnershipBelgiumType"/>
+	<xsd:complexType name="FormRegisteredPartnershipBelgiumType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains elements related to the form RegisteredPartnership.
+					Stereotype registeredPartnershipForm
+					Stereotype xsdGlobalElement
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+							<xsd:element name="Header" type="ms2forms_commonPart:FormHeaderType" minOccurs="1" maxOccurs="1"  />
+							
+						<xsd:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1"  >
+							<xsd:annotation>
+							    <xsd:documentation xml:lang="en">
+									The value of this property is of the class RegisteredPartnership.
+							    </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						
+									<xsd:element name="Footer" type="ms2forms_commonPart:SignatureInfoType" minOccurs="1" maxOccurs="1"  />
+									
+								<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of any type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="MaritalStatusType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to the marital status of a person.
+					Stereotype commonPart
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_maritalStatusForm:MaritalStatusType">
+				<xsd:sequence>
+										<xsd:element name="Disclaimer" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of string type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+										<xsd:element name="DateOfLegalSeparation" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+													<xsd:element name="SpouseOrEx" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
+													
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MarriageType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a marriage.
+					Stereotype marriageForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_marriageForm:MarriageType">
+				<xsd:sequence>
+								<xsd:element name="Witness1" type="PersonType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class Person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Witness2" type="PersonType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class Person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Witness3" type="PersonType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class Person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Witness4" type="PersonType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of the class Person.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NotMarriedChoiceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person being unmarried.
+					Stereotype commonPart
+					Stereotype xsdChoice
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+								<xsd:element name="DissolutionOfRegisteredPartnershipDate" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="POBoxAbroadType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's PO Box abroad.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="POBoxAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+											
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="PersonType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person.
+					Stereotype commonPart
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="pdc:PersonType">
+				<xsd:sequence>
+										<xsd:element name="NobilityTitle" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of string type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+													<xsd:element name="Father" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
+													
+										<xsd:element name="DateOfRegistration" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+													<xsd:element name="Mother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
+													
+										<xsd:element name="Pseudonym" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of string type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+													<xsd:element name="CoMother" type="pdc:PersonType" minOccurs="1" maxOccurs="1"  />
+													
+										<xsd:element name="TimeOfBirth" type="udt:TimeType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of time type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+										<xsd:element name="NationalRegisterNo" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of string type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PreviousDomicileOrResidenceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's previous domicile or residence.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="Domicile" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of boolean type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Residence" type="udt:IndicatorType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of boolean type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+											
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="RegisteredPartnershipType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a registered partnership.
+					Stereotype registeredPartnershipForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ms2forms_registeredPartnershipForm:RegisteredPartnershipType">
+				<xsd:sequence>
+										<xsd:element name="DateOfRegisteredPartnershipDeclaration" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+										<xsd:element name="DateOfRegisteredPartnershipRegistration" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+											<xsd:annotation>
+											    <xsd:documentation xml:lang="en">
+													The value of this property is of date type.
+											    </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ResidenceAbroadType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to a person's residence abroad.
+					Stereotype domicileAndOrResidenceForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+								<xsd:element name="Date" type="udt:DateType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of date type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+											<xsd:element name="ResidenceAbroadAddress" type="pdc:AddressType" minOccurs="1" maxOccurs="1"  />
+											
+											<xsd:element name="DiplomaticPost" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"  />
+											
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfExtractChoiceType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			This class contains properties related to the different possible types of extracts from the criminal record.
+					Stereotype absenceOfCriminalRecordForm
+					Stereotype xsdChoice
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+								<xsd:element name="Article595" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Article596-1" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+								<xsd:element name="Article596-2" type="udt:TextType" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											The value of this property is of string type.
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								
+			
+		</xsd:choice>
+	</xsd:complexType>
+	</xsd:schema>
+	
+	<!-- ===== Copyright Notice ============================== -->
+	<!--
+		        Public Documents XML schema 1.0
+		        Copyright (C) European Union, 2017
+		        Licensed under the ISA Open Metadata Licence
+		        Original authors:
+		        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+		        Emidio Stani (emidio.stani@be.pwc.com),
+		        Ioana Novacean (ioana.novacean@be.pwc.com),
+		        Inge Gielis (inge.gielis@be.pwc.com),
+				Arne De Proft (arne.de.proft@be.pwc.com)
+	-->
+	<!-- ===================================================== -->

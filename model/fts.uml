@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:isa="http://tempuri.org/isa" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://tempuri.org/isa isa.uml#_Wa_jcDi3Eeic_tlDOdNHgA">
+  <uml:Model xmi:id="_kPZ00DcSEeiTT7fqWbFXPg" name="RootElement">
+    <packagedElement xmi:type="uml:Class" xmi:id="_tAAHwDcSEeiTT7fqWbFXPg" name="Address">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_-6L_8DcTEeiTT7fqWbFXPg" name="country"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BGrFoDcUEeiTT7fqWbFXPg" name="address"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CVZikDcUEeiTT7fqWbFXPg" name="city"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DidLkDcUEeiTT7fqWbFXPg" name="postcode"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tk-dEDcSEeiTT7fqWbFXPg" name="Location">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RVk9MDcUEeiTT7fqWbFXPg" name="geographic name"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YXQ3QDcUEeiTT7fqWbFXPg" name="address" type="_tAAHwDcSEeiTT7fqWbFXPg" association="_YXIUYDcUEeiTT7fqWbFXPg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sCUFkDcUEeigLMKhyG3Iaw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sC8XsDcUEeigLMKhyG3Iaw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_YXIUYDcUEeiTT7fqWbFXPg" name="hasAddress" memberEnd="_YXQ3QDcUEeiTT7fqWbFXPg _YXYMADcUEeiTT7fqWbFXPg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YXPpIDcUEeiTT7fqWbFXPg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YXQQMDcUEeiTT7fqWbFXPg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_YXYMADcUEeiTT7fqWbFXPg" name="location" type="_tk-dEDcSEeiTT7fqWbFXPg" association="_YXIUYDcUEeiTT7fqWbFXPg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tk89ADcUEeigLMKhyG3Iaw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tlE40DcUEeigLMKhyG3Iaw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_eL9nsDc-Eeic_tlDOdNHgA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Nc-eAJxsEeiOnsbUXto8kw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nc-eAZxsEeiOnsbUXto8kw" key="Version" value="0.0.29"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nc-eApxsEeiOnsbUXto8kw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nc-eA5xsEeiOnsbUXto8kw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nc-eBJxsEeiOnsbUXto8kw" key="Date" value="2018-04-05"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nc-eBZxsEeiOnsbUXto8kw" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eL-10Dc-Eeic_tlDOdNHgA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="isa.uml#_Wa_jcDi3Eeic_tlDOdNHgA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="isa.uml#_kMq3kKd3Eeas-9n4KOQ_cA"/>
+    </profileApplication>
+  </uml:Model>
+  <isa:schema xmi:id="_jLT2kDc-Eeic_tlDOdNHgA" base_Class="_tAAHwDcSEeiTT7fqWbFXPg"/>
+</xmi:XMI>

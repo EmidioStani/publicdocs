@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Document Type: xsd/ms/qdt-1.0.xsd
+    Generated On: 29/11/2017 14:14 
+-->
+<!-- ===================================================== -->
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1/ns/qdt"
+	xmlns="http://data.europa.eu/edm/1/ns/qdt"
+	xmlns:pdc="http://data.europa.eu/edm/1/ns/pdc"	
+	xmlns:forms="http://data.europa.eu/edm/1/ns/forms"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/pdc"
+			   schemaLocation="../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1/ns/forms"
+			   schemaLocation="../../xsd/common/core/forms-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	<xsd:complexType name="JurisdictionType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cva:JurisdictionType">
+				<xsd:sequence>
+								<xsd:element name="NameMaxLength65535" type="NameMaxLength65535" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+											<xsd:element name="IdentifierMaxLength65535" type="IdentifierMaxLength65535" minOccurs="1" maxOccurs="1"  >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cva:LocationType">
+				<xsd:sequence>
+								<xsd:element name="GeographicID" type="GeographicIDMaxLength65535" minOccurs="1" maxOccurs="1"  >
+									<xsd:annotation>
+									    <xsd:documentation xml:lang="en">
+											
+									    </xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+											<xsd:element name="GeographicName" type="GeographicNameMaxLength65535" minOccurs="1" maxOccurs="1"  >
+												<xsd:annotation>
+												    <xsd:documentation xml:lang="en">
+														
+												    </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	</xsd:schema>
+	
+	<!-- ===== Copyright Notice ============================== -->
+	<!--
+		        Public Documents XML schema 1.0
+		        Copyright (C) European Union, 2017
+		        Licensed under the ISA Open Metadata Licence
+		        Original authors:
+		        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+		        Emidio Stani (emidio.stani@be.pwc.com),
+		        Ioana Novacean (ioana.novacean@be.pwc.com),
+		        Inge Gielis (inge.gielis@be.pwc.com),
+				Arne De Proft (arne.de.proft@be.pwc.com)
+	-->
+	<!-- ===================================================== -->

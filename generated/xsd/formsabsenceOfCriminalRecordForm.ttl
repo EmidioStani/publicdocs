@@ -1,0 +1,83 @@
+@prefix forms: <http://data.europa.eu/forms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qdt: <http://data.europa.eu/qdt#> . 
+
+forms:AbsenceOfCriminalRecordShape
+  rdf:type sh:NodeShape ;
+  sh:name "AbsenceOfCriminalRecord Shape"@en ;
+  sh:targetClass forms:AbsenceOfCriminalRecord ;
+  rdfs:comment "This class contains elements related to the absence of a criminal record of a person. " ;
+  sh:property  [
+    sh:path qdt:StringMaxLength255 ;
+    sh:name "IdentityNumber" ;
+    sh:description "The value of this property is of string type." ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+   ] ;
+   sh:property  [
+    sh:path xsd:boolean ;
+    sh:name "AbsenceOfACriminalRecord" ;
+    sh:description "The value of this property is of boolean type." ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+   ] .
+
+forms:FrmAbsenceOfCriminalRecordShape
+  rdf:type sh:NodeShape ;
+  sh:name "FrmAbsenceOfCriminalRecord Shape"@en ;
+  sh:targetClass forms:FrmAbsenceOfCriminalRecord ;
+  rdfs:comment "This class contains elements related to the form AbsenceOfCriminalRecord." ;
+  sh:property  [
+    sh:path forms:FormHeader ;
+    sh:name "Header" ;
+    sh:description "The value of this property is of the class FormHeader. " ;
+    sh:minCount 1 ;
+    
+    sh:severity sh:Info ;
+   ] ;
+   sh:property  [
+    sh:path forms:AbsenceOfCriminalRecord ;
+    sh:name "Body" ;
+    sh:description "The value of this property is of the class AbsenceOfCriminalRecord." ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+   ] .
+
+forms:IDTypeAndNoChoiceShape
+  rdf:type sh:NodeShape ;
+  sh:name "IDTypeAndNoChoice Shape"@en ;
+  sh:targetClass forms:IDTypeAndNoChoice ;
+  rdfs:comment "This class contains elements related to the choice between the types of ID used to identify a person." ;
+  sh:property  [
+    sh:path qdt:StringMaxLength255 ;
+    sh:name "NationalIdentityCardNo" ;
+    sh:description "The value of this property is of string type." ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+   ] ;
+   sh:property  [
+    sh:path qdt:StringMaxLength255 ;
+    sh:name "PassportNo" ;
+    sh:description "The value of this property is of string type." ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+   ] ;
+   sh:property  [
+    sh:path qdt:StringMaxLength255 ;
+    sh:name "DrivingLicenceNo" ;
+    sh:description "The value of this property is of string type." ;
+    sh:minCount 1 ;
+    sh:maxCount 2 ;
+    sh:severity sh:Violation ;
+   ] .
+
+
